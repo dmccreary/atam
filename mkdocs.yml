@@ -9,7 +9,7 @@ nav:
   - Home: index.md
   - Case Studies:
     - Introduction: case-studies/index.md
-    - STAR Process: cases-studies/star-process.md
+    - STAR Process: case-studies/star-process.md
   - Presentations: slides.md
   - License: license.md
   - Contact: contact.md
