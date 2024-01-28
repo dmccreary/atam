@@ -11,6 +11,7 @@ nav:
     - Introduction: case-studies/index.md
     - STAR Process: cases-studies/star-process.md
   - Presentations: slides.md
+  - License: license.md
   - Contact: contact.md
  
 # CoderDojo Microsite Standards from here down
