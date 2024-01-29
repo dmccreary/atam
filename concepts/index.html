@@ -12,28 +12,28 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/atam/db-types/06-document/">
+        <link rel="canonical" href="https://dmccreary.github.io/atam/concepts/">
       
       
-        <link rel="prev" href="../05-graph/">
+        <link rel="prev" href="../about/">
       
       
-        <link rel="next" href="../../case-studies/">
+        <link rel="next" href="acid-vs-base/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
-        <title>Document - Architecture Tradeoff Analysis Methodology</title>
+        <title>Introduction - Architecture Tradeoff Analysis Methodology</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.30068a00.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.30068a00.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
       
       
 
@@ -52,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#atam-database-concepts" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -88,7 +93,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Architecture Tradeoff Analysis Methodology" class="md-header__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
+    <a href=".." title="Architecture Tradeoff Analysis Methodology" class="md-header__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -108,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Document
+              Introduction
             
           </span>
         </div>
@@ -194,7 +199,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Architecture Tradeoff Analysis Methodology" class="md-nav__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
+    <a href=".." title="Architecture Tradeoff Analysis Methodology" class="md-nav__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -223,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -242,7 +247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -259,49 +264,6 @@
       
   
   
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../concepts/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Foundational Concepts
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -310,16 +272,6 @@
       
         
           
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
         
       
         
@@ -332,31 +284,31 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   <span class="md-ellipsis">
-    Database Types
+    Foundational Concepts
   </span>
   
 
             </a>
             
-              <label class="md-nav__link " for="__nav_4">
+              <label class="md-nav__link md-nav__link--active" for="__nav_3">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Database Types
+            Foundational Concepts
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -368,123 +320,15 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-relational/" class="md-nav__link">
+      <a href="acid-vs-base/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Relational
+    ACID vs. Base
   </span>
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02-analytica.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Analytical
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03-key-value/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Key Value
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04-column-family/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Column Family
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../05-graph/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Graph
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Document
-  </span>
-  
-
-      </a>
-      
     </li>
   
 
@@ -513,6 +357,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
       
@@ -523,7 +375,52 @@
         
   
   
-    <a href="../../case-studies/" class="md-nav__link">
+    <a href="../db-types/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Database Types
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../case-studies/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -548,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bias/" class="md-nav__link">
+      <a href="../bias/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -567,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slides/" class="md-nav__link">
+      <a href="../slides/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -586,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../license/" class="md-nav__link">
+      <a href="../license/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -605,7 +502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../contact/" class="md-nav__link">
+      <a href="../contact/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -635,6 +532,78 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cross-cutting-concerns" class="md-nav__link">
+    Cross-cutting Concerns
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distributed-database-concerns" class="md-nav__link">
+    Distributed Database Concerns
+  </a>
+  
+    <nav class="md-nav" aria-label="Distributed Database Concerns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distributed-transactions" class="md-nav__link">
+    Distributed Transactions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replication" class="md-nav__link">
+    Replication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-sharding-data-partitioning" class="md-nav__link">
+    Auto-Sharding (Data Partitioning)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-availability" class="md-nav__link">
+    High Availability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-cutting-concepts" class="md-nav__link">
+    Cross-Cutting Concepts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-topics" class="md-nav__link">
+    Advanced Topics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -652,9 +621,60 @@
   
 
 
-  <h1>Document</h1>
-
-
+<h1 id="atam-database-concepts">ATAM Database Concepts</h1>
+<h2 id="cross-cutting-concerns">Cross-cutting Concerns</h2>
+<ul>
+<li><strong>Performance and Scalability</strong>: We will discuss how each type scales and performs under different workloads.</li>
+<li><strong>Data Integrity and Consistency</strong>: We will contrast the approaches to data integrity and consistency, especially compared to ACID properties in RDBMS.</li>
+<li><strong>Maintenance and Operational Complexity</strong>: We will evaluate the maintenance needs and operational complexity of each type.</li>
+<li><strong>Security</strong>: We cover security features and concerns relevant to each database type.  We put a focus on scalable RBAC systems.</li>
+<li><strong>Community and Ecosystem</strong>: We will also assess the community support, availability of tools, and integration capabilities.</li>
+<li><strong>Cost Considerations</strong>: Next, we discuss cost implications, including open-source versus proprietary solutions and cloud-hosted versus on-premise.</li>
+<li><strong>Trends and Future Directions</strong>: Finally, we iscuss emerging trends in database technologies and potential future developments.</li>
+</ul>
+<h2 id="distributed-database-concerns">Distributed Database Concerns</h2>
+<p>Covering core architectural concepts in distributed databases is essential for understanding their capabilities, challenges, and best use cases. Here are some key concepts you should consider including in your book:</p>
+<h3 id="distributed-transactions">Distributed Transactions</h3>
+<ul>
+<li><strong>ACID Properties in Distributed Context</strong>: Explain how Atomicity, Consistency, Isolation, and Durability are maintained across multiple nodes.</li>
+<li><strong>Two-Phase Commit (2PC)</strong>: Discuss the two-phase commit protocol as a method of ensuring all-or-nothing transaction execution across distributed systems.</li>
+<li><strong>Challenges and Trade-offs</strong>: Cover challenges like network latency, partition tolerance, and the CAP theorem's implications on distributed transactions.</li>
+</ul>
+<h3 id="replication">Replication</h3>
+<ul>
+<li><strong>Types of Replication</strong>: Describe synchronous and asynchronous replication, their use cases, and trade-offs.</li>
+<li><strong>Consistency Models</strong>: Explain strong versus eventual consistency and their impact on data integrity and system performance.</li>
+<li><strong>Conflict Resolution</strong>: Discuss how conflicts are resolved in multi-master replication scenarios.</li>
+<li><strong>Replication Topologies</strong>: Cover different replication topologies like master-slave, peer-to-peer, and their implications on system resilience and read/write performance.</li>
+</ul>
+<h3 id="auto-sharding-data-partitioning">Auto-Sharding (Data Partitioning)</h3>
+<ul>
+<li><strong>Concept and Benefits</strong>: Explain how auto-sharding distributes data across multiple nodes to balance load and improve performance.</li>
+<li><strong>Shard Key Selection</strong>: Discuss the importance of choosing the right shard key for optimal data distribution and access patterns.</li>
+<li><strong>Rebalancing and Resharding</strong>: Cover the process of redistributing data when adding or removing nodes and its impact on system performance.</li>
+<li><strong>Challenges</strong>: Highlight potential challenges such as hotspots and cross-shard transactions.</li>
+</ul>
+<h3 id="high-availability">High Availability</h3>
+<ul>
+<li><strong>Redundancy and Failover</strong>: Describe how distributed databases achieve high availability through redundancy and automated failover mechanisms.</li>
+<li><strong>Load Balancing</strong>: Explain load balancing strategies for evenly distributing requests and optimizing resource utilization.</li>
+<li><strong>Disaster Recovery</strong>: Discuss strategies for backup and recovery in distributed environments, including geographical distribution for disaster resilience.</li>
+<li><strong>Monitoring and Health Checks</strong>: Cover the importance of monitoring system health and performing regular checks to ensure high availability.</li>
+</ul>
+<h3 id="cross-cutting-concepts">Cross-Cutting Concepts</h3>
+<ul>
+<li><strong>CAP Theorem</strong>: Discuss the CAP Theorem (Consistency, Availability, Partition Tolerance) and its implications for distributed database design.</li>
+<li><strong>Network Partitioning and Latency</strong>: Explain the impact of network issues on distributed databases and strategies to mitigate these effects.</li>
+<li><strong>Data Consistency Levels</strong>: Differentiate between various levels of data consistency (like read-your-writes, monotonic reads, etc.) in distributed systems.</li>
+<li><strong>Security Considerations</strong>: Highlight security challenges unique to distributed databases, including data encryption and secure communication across nodes.</li>
+</ul>
+<h3 id="advanced-topics">Advanced Topics</h3>
+<ul>
+<li><strong>Global Databases and Multi-Region Deployment</strong>: Discuss the architecture and considerations for deploying globally distributed databases.</li>
+<li><strong>Data Versioning and Time Travel Queries</strong>: Introduce concepts like data versioning and the ability to query data as it existed at a specific point in time.</li>
+<li><strong>Observability and Debugging</strong>: Address the complexity of monitoring and debugging in distributed environments, emphasizing distributed tracing and log aggregation.</li>
+</ul>
+<p>By covering these topics, you'll provide a thorough understanding of the architectural complexities of distributed databases. These concepts are crucial for anyone looking to design, implement, or manage a distributed database system effectively.</p>
 
 
 
@@ -682,7 +702,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../05-graph/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Graph" rel="prev">
+          <a href="../about/" class="md-footer__link md-footer__link--prev" aria-label="Previous: About" rel="prev">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -692,20 +712,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Graph
+                About
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../case-studies/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction" rel="next">
+          <a href="acid-vs-base/" class="md-footer__link md-footer__link--next" aria-label="Next: ACID vs. Base" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Introduction
+                ACID vs. Base
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -738,10 +758,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      <script src="../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
     
   </body>

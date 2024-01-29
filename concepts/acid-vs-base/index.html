@@ -12,22 +12,28 @@
         <meta name="author" content="Dan McCreary">
       
       
+        <link rel="canonical" href="https://dmccreary.github.io/atam/concepts/acid-vs-base/">
       
       
+        <link rel="prev" href="../">
       
-      <link rel="icon" href="/atam/assets/images/favicon.png">
+      
+        <link rel="next" href="../../db-types/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
-        <title>Architecture Tradeoff Analysis Methodology</title>
+        <title>ACID vs. Base - Architecture Tradeoff Analysis Methodology</title>
       
     
     
-      <link rel="stylesheet" href="/atam/assets/stylesheets/main.30068a00.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.30068a00.min.css">
       
         
-        <link rel="stylesheet" href="/atam/assets/stylesheets/palette.85d0ee34.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
       
       
 
@@ -46,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("/atam/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -70,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#acid-vs-base" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -82,7 +93,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/atam/." title="Architecture Tradeoff Analysis Methodology" class="md-header__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
+    <a href="../.." title="Architecture Tradeoff Analysis Methodology" class="md-header__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -102,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              ACID vs. Base
             
           </span>
         </div>
@@ -188,7 +199,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/atam/." title="Architecture Tradeoff Analysis Methodology" class="md-nav__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
+    <a href="../.." title="Architecture Tradeoff Analysis Methodology" class="md-nav__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -217,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/atam/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -236,7 +247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/atam/about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -253,6 +264,8 @@
       
   
   
+    
+  
   
     
     
@@ -265,28 +278,125 @@
       
     
     
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
-  
-  
-    <a href="/atam/concepts/" class="md-nav__link">
-      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Foundational Concepts
   </span>
   
 
+            </a>
+            
+              <label class="md-nav__link " for="__nav_3">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Foundational Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
       
-        <span class="md-nav__icon md-icon"></span>
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
-    </a>
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ACID vs. Base
+  </span>
   
 
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    ACID vs. Base
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acid-explained" class="md-nav__link">
+    ACID Explained
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-explained" class="md-nav__link">
+    BASE Explained
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contrasting-acid-and-base" class="md-nav__link">
+    Contrasting ACID and BASE
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -326,7 +436,7 @@
         
   
   
-    <a href="/atam/db-types/" class="md-nav__link">
+    <a href="../../db-types/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -371,7 +481,7 @@
         
   
   
-    <a href="/atam/case-studies/" class="md-nav__link">
+    <a href="../../case-studies/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -396,7 +506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/atam/bias/" class="md-nav__link">
+      <a href="../../bias/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -415,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/atam/slides/" class="md-nav__link">
+      <a href="../../slides/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -434,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/atam/license/" class="md-nav__link">
+      <a href="../../license/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -453,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/atam/contact/" class="md-nav__link">
+      <a href="../../contact/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -483,6 +593,37 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acid-explained" class="md-nav__link">
+    ACID Explained
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-explained" class="md-nav__link">
+    BASE Explained
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contrasting-acid-and-base" class="md-nav__link">
+    Contrasting ACID and BASE
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -494,8 +635,45 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+  
+
+
+<h1 id="acid-vs-base">ACID vs. BASE</h1>
+<p>In this section, we will discuss the concept of <strong>ACID versus BASE</strong> in the context of distributed database systems. This contrast highlights two fundamentally different approaches to handling data consistency and availability in distributed environments.</p>
+<h3 id="acid-explained">ACID Explained</h3>
+<p><strong>ACID</strong> stands for Atomicity, Consistency, Isolation, and Durability. It is a set of principles aimed at ensuring reliable transaction processing in database systems.</p>
+<ol>
+<li><strong>Atomicity</strong>: Guarantees that all operations within a transaction are treated as a single unit. Either all operations are executed successfully, or none are.</li>
+<li><strong>Consistency</strong>: Ensures that a transaction brings the database from one valid state to another, maintaining all predefined rules, including constraints, cascades, and triggers.</li>
+<li><strong>Isolation</strong>: Ensures that concurrently executed transactions do not affect each other. Each transaction is isolated from others until it's completed.</li>
+<li><strong>Durability</strong>: Once a transaction is committed, it will remain so, even in the event of system failures. This usually involves writing to non-volatile memory or logs.</li>
+</ol>
+<p><strong>ACID in Real-World Systems</strong>: Traditional relational databases like PostgreSQL, MySQL, and Oracle are prime examples of systems implementing ACID properties. They are used in scenarios where data integrity and consistency are non-negotiable, such as financial systems, inventory management, and any system where it's critical to prevent data anomalies.</p>
+<h3 id="base-explained">BASE Explained</h3>
+<p><strong>BASE</strong> stands for Basically Available, Soft state, and Eventual consistency. It's an alternative model designed for distributed systems, focusing on high availability and fault tolerance, at the cost of strong consistency.</p>
+<ol>
+<li><strong>Basically Available</strong>: Indicates that the system guarantees availability in terms of the CAP theorem, but allows for some level of data inconsistency.</li>
+<li><strong>Soft state</strong>: The state of the system may change over time, even without input. This is due to eventual consistency models where data is not immediately consistent across all nodes.</li>
+<li><strong>Eventual Consistency</strong>: The system will eventually become consistent once it stops receiving input. Data replication to achieve consistency can be delayed for better performance and availability.</li>
+</ol>
+<p><strong>BASE in Real-World Systems</strong>: NoSQL databases like Cassandra, Couchbase, and DynamoDB use the BASE model. They are suitable for applications that can tolerate some degree of inconsistency or where the emphasis is on horizontal scalability and speed, such as social networks, big data analytics, and content distribution networks.</p>
+<h3 id="contrasting-acid-and-base">Contrasting ACID and BASE</h3>
+<ol>
+<li><strong>Consistency vs. Availability</strong>: ACID prioritizes consistency (every read receives the most recent write) but may sacrifice availability (the system might not always be able to process transactions). BASE, on the other hand, prioritizes availability with the trade-off that data may not always be consistent immediately.</li>
+<li><strong>System Design</strong>: Systems implementing ACID are often more straightforward to reason about but can be challenging to scale horizontally. BASE systems are designed for scale, but they require more complex designs to handle data inconsistency.</li>
+<li><strong>Use Cases</strong>: ACID is essential where consistency is critical, like banking systems. BASE is preferred where scalability and handling high volumes of data with variable consistency is acceptable, like in social media feeds.</li>
+<li><strong>Network Partitions</strong>: In the event of network partitions, ACID systems might stop processing transactions to maintain consistency, while BASE systems will continue to operate, accepting that the data will be inconsistent until the partition resolves.</li>
+</ol>
+<p>In summary, the choice between ACID and BASE models in distributed databases depends on the specific requirements of the application, particularly in terms of consistency needs and scalability. Understanding the trade-offs between these models is crucial for designing systems that meet the necessary reliability, availability, and performance criteria.</p>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -512,6 +690,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction" rel="prev">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Introduction
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../db-types/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Introduction
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -535,10 +751,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "/atam/", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "/atam/assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/atam/assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
     
   </body>
