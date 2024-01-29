@@ -8,7 +8,9 @@ repo_url: 'https://github.com/dmccreary/atam'
 nav:
   - Home: index.md
   - About: about.md
-  - Bias: bias.md
+  - Foundational Concepts:
+    - Introduction: concepts/index.md
+    - ACID vs. Base: concepts/acid-vs-base.md
   - Database Types:
     - Introduction: db-types/index.md
     - Relational: db-types/01-relational.md
@@ -21,6 +23,7 @@ nav:
     - Introduction: case-studies/index.md
     - STAR Process: case-studies/star-process.md
     - Amazon Shopping Cart: case-studies/amazon-shopping-cart.md
+  - Bias: bias.md
   - Presentations: slides.md
   - License: license.md
   - Contact: contact.md
