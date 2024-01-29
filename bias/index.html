@@ -12,28 +12,28 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/atam/db-types/05-graph/">
+        <link rel="canonical" href="https://dmccreary.github.io/atam/bias/">
       
       
-        <link rel="prev" href="../04-column-family/">
+        <link rel="prev" href="../about/">
       
       
-        <link rel="next" href="../06-document/">
+        <link rel="next" href="../db-types/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
-        <title>Graph - Architecture Tradeoff Analysis Methodology</title>
+        <title>Bias - Architecture Tradeoff Analysis Methodology</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.30068a00.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.30068a00.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
       
       
 
@@ -52,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#cognitive-bias-in-database-selection" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -88,7 +93,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Architecture Tradeoff Analysis Methodology" class="md-header__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
+    <a href=".." title="Architecture Tradeoff Analysis Methodology" class="md-header__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -108,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Graph
+              Bias
             
           </span>
         </div>
@@ -194,7 +199,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Architecture Tradeoff Analysis Methodology" class="md-nav__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
+    <a href=".." title="Architecture Tradeoff Analysis Methodology" class="md-nav__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -223,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -242,7 +247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -259,169 +264,6 @@
       
   
   
-  
-    <li class="md-nav__item">
-      <a href="../../bias/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Bias
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    Database Types
-  </span>
-  
-
-            </a>
-            
-              <label class="md-nav__link " for="__nav_4">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            Database Types
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../01-relational/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Relational
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02-analytica.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Analytical
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03-key-value/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Key Value
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04-column-family/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Column Family
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -430,44 +272,171 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Bias
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Graph
+    Bias
   </span>
   
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#anchoring-bias" class="md-nav__link">
+    Anchoring Bias
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#availability-heuristic-the-tendency-to-estimate-that-what-is-easily-remembered-is-more-likely-than-that-which-is-not-i-hear-that-nosql-does-not-support-acid-or-i-hear-that-xml-is-verbose" class="md-nav__link">
+    Availability heuristic - the tendency to estimate that what is easily remembered is more likely than that which is not. - "I hear that NoSQL does not support ACID." or "I hear that XML is verbose?"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bandwagon-effect-the-tendency-to-do-or-believe-what-others-do-or-believe-everyone-else-at-this-company-and-in-our-local-area-uses-rdbmss" class="md-nav__link">
+    Bandwagon effect - the tendency to do or believe what others do or believe - "Everyone else at this company and in our local area uses RDBMSs."
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confirmation-bias-the-tendency-to-seek-out-only-that-information-that-supports-ones-preconceptions-we-only-read-posts-from-the-oraclemicrosoftibm-groups" class="md-nav__link">
+    Confirmation bias - the tendency to seek out only that information that supports one's preconceptions – "We only read posts from the Oracle|Microsoft|IBM groups."
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#framing-effect" class="md-nav__link">
+    Framing Effect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gamblers-fallacy" class="md-nav__link">
+    Gambler's fallacy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hindsight-bias" class="md-nav__link">
+    Hindsight Bias
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#halo-effect" class="md-nav__link">
+    Halo Effect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#representativeness-heuristic" class="md-nav__link">
+    Representativeness Heuristic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
-    <li class="md-nav__item">
-      <a href="../06-document/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+    <a href="../db-types/" class="md-nav__link">
+      
+  
   <span class="md-ellipsis">
-    Document
+    Database Types
   </span>
   
 
-      </a>
-    </li>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -499,7 +468,7 @@
         
   
   
-    <a href="../../case-studies/" class="md-nav__link">
+    <a href="../case-studies/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -524,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slides/" class="md-nav__link">
+      <a href="../slides/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -543,7 +512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../license/" class="md-nav__link">
+      <a href="../license/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -562,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../contact/" class="md-nav__link">
+      <a href="../contact/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -592,6 +561,86 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#anchoring-bias" class="md-nav__link">
+    Anchoring Bias
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#availability-heuristic-the-tendency-to-estimate-that-what-is-easily-remembered-is-more-likely-than-that-which-is-not-i-hear-that-nosql-does-not-support-acid-or-i-hear-that-xml-is-verbose" class="md-nav__link">
+    Availability heuristic - the tendency to estimate that what is easily remembered is more likely than that which is not. - "I hear that NoSQL does not support ACID." or "I hear that XML is verbose?"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bandwagon-effect-the-tendency-to-do-or-believe-what-others-do-or-believe-everyone-else-at-this-company-and-in-our-local-area-uses-rdbmss" class="md-nav__link">
+    Bandwagon effect - the tendency to do or believe what others do or believe - "Everyone else at this company and in our local area uses RDBMSs."
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confirmation-bias-the-tendency-to-seek-out-only-that-information-that-supports-ones-preconceptions-we-only-read-posts-from-the-oraclemicrosoftibm-groups" class="md-nav__link">
+    Confirmation bias - the tendency to seek out only that information that supports one's preconceptions – "We only read posts from the Oracle|Microsoft|IBM groups."
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#framing-effect" class="md-nav__link">
+    Framing Effect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gamblers-fallacy" class="md-nav__link">
+    Gambler's fallacy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hindsight-bias" class="md-nav__link">
+    Hindsight Bias
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#halo-effect" class="md-nav__link">
+    Halo Effect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#representativeness-heuristic" class="md-nav__link">
+    Representativeness Heuristic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -609,9 +658,36 @@
   
 
 
-  <h1>Graph</h1>
-
-
+<h1 id="cognitive-bias-in-database-selection">Cognitive Bias in Database Selection</h1>
+<p>After attending the Saturn 2013 Conference I was exposed to the use of "Cognitive Bias" in software architecture.</p>
+<p>Here are some examples of cognitive bias I have seen as applied to the world of NoSQL database selection.</p>
+<h2 id="anchoring-bias">Anchoring Bias</h2>
+<p>The tendency to produce an estimate near a cue amount - "Our managers were expecting an RDBMS solution so that’s what we gave them."</p>
+<h2 id="availability-heuristic-the-tendency-to-estimate-that-what-is-easily-remembered-is-more-likely-than-that-which-is-not-i-hear-that-nosql-does-not-support-acid-or-i-hear-that-xml-is-verbose">Availability heuristic - the tendency to estimate that what is easily remembered is more likely than that which is not. - "I hear that NoSQL does not support ACID." or "I hear that XML is verbose?"</h2>
+<h2 id="bandwagon-effect-the-tendency-to-do-or-believe-what-others-do-or-believe-everyone-else-at-this-company-and-in-our-local-area-uses-rdbmss">Bandwagon effect - the tendency to do or believe what others do or believe - "Everyone else at this company and in our local area uses RDBMSs."</h2>
+<h2 id="confirmation-bias-the-tendency-to-seek-out-only-that-information-that-supports-ones-preconceptions-we-only-read-posts-from-the-oraclemicrosoftibm-groups">Confirmation bias - the tendency to seek out only that information that supports one's preconceptions – "We only read posts from the Oracle|Microsoft|IBM groups."</h2>
+<h2 id="framing-effect">Framing Effect</h2>
+<p>The tendency to react to how information is framed, beyond its factual content.</p>
+<p><strong>Example:</strong> "We know of some NoSQL projects that failed."</p>
+<h2 id="gamblers-fallacy">Gambler's fallacy</h2>
+<p>The failure to reset one's expectations based on one's current situation.</p>
+<p><strong>Example:</strong> <em>"We already paid for our Oracle|Microsoft|IBM license so why spend more money?"</em></p>
+<ul>
+<li>Also known as: sunk cost bias</li>
+</ul>
+<h2 id="hindsight-bias">Hindsight Bias</h2>
+<p>The tendency to assess one's previous decisions as more efficacious than they were.</p>
+<p><strong>Example</strong> <em>"Our last five systems worked on RDBMS solutions.
+Why should we change now?"</em></p>
+<h2 id="halo-effect">Halo Effect</h2>
+<p>The tendency to attribute unverified capabilities in a person based on an observed capability.</p>
+<p><strong>Example:</strong> "Oracle|Microsoft|IBM sells billions of dollars of licenses each year, how could so many people be wrong". </p>
+<h2 id="representativeness-heuristic">Representativeness Heuristic</h2>
+<p>The tendency to judge something as belonging to a class based on a few salient characteristics  - "Our accounting systems work on RDBMS so why not our product search?"</p>
+<h2 id="references">References</h2>
+<ol>
+<li><a href="https://datadictionary.blogspot.com/2013/05/cognitive-bias-in-nosql-system-selection.html">Cognitive Bias in Database Selection</a></li>
+</ol>
 
 
 
@@ -639,7 +715,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../04-column-family/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Column Family" rel="prev">
+          <a href="../about/" class="md-footer__link md-footer__link--prev" aria-label="Previous: About" rel="prev">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -649,20 +725,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Column Family
+                About
               </div>
             </div>
           </a>
         
         
           
-          <a href="../06-document/" class="md-footer__link md-footer__link--next" aria-label="Next: Document" rel="next">
+          <a href="../db-types/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Document
+                Introduction
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -695,10 +771,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      <script src="../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
     
   </body>

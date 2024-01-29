@@ -12,28 +12,28 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/atam/db-types/05-graph/">
+        <link rel="canonical" href="https://dmccreary.github.io/atam/about/">
       
       
-        <link rel="prev" href="../04-column-family/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../06-document/">
+        <link rel="next" href="../bias/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
-        <title>Graph - Architecture Tradeoff Analysis Methodology</title>
+        <title>About - Architecture Tradeoff Analysis Methodology</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.30068a00.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.30068a00.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
       
       
 
@@ -52,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#about-the-atamnosql-project" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -88,7 +93,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Architecture Tradeoff Analysis Methodology" class="md-header__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
+    <a href=".." title="Architecture Tradeoff Analysis Methodology" class="md-header__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -108,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Graph
+              About
             
           </span>
         </div>
@@ -194,7 +199,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Architecture Tradeoff Analysis Methodology" class="md-nav__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
+    <a href=".." title="Architecture Tradeoff Analysis Methodology" class="md-nav__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -223,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -240,9 +245,29 @@
       
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -251,6 +276,33 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-day-i-learned-about-exist-db" class="md-nav__link">
+    The Day I Learned about eXist-DB
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -261,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bias/" class="md-nav__link">
+      <a href="../bias/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -278,8 +330,6 @@
       
   
   
-    
-  
   
     
     
@@ -302,172 +352,28 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
-              
+  
+  
+    <a href="../db-types/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     Database Types
   </span>
   
 
-            </a>
-            
-              <label class="md-nav__link " for="__nav_4">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            Database Types
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../01-relational/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Relational
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02-analytica.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Analytical
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03-key-value/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Key Value
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04-column-family/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Column Family
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+        <span class="md-nav__icon md-icon"></span>
       
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Graph
-  </span>
+    </a>
   
 
-      </a>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../06-document/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Document
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -499,7 +405,7 @@
         
   
   
-    <a href="../../case-studies/" class="md-nav__link">
+    <a href="../case-studies/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -524,7 +430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slides/" class="md-nav__link">
+      <a href="../slides/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -543,7 +449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../license/" class="md-nav__link">
+      <a href="../license/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -562,7 +468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../contact/" class="md-nav__link">
+      <a href="../contact/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -592,6 +498,23 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-day-i-learned-about-exist-db" class="md-nav__link">
+    The Day I Learned about eXist-DB
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -609,9 +532,30 @@
   
 
 
-  <h1>Graph</h1>
-
-
+<h1 id="about-the-atamnosql-project">About the ATAM/NoSQL Project</h1>
+<p><img alt="" src="../img/timeless.png" /></p>
+<p>Early in my career, I worked for Bell Labs.
+I met a coworker named <a href="https://en.wikipedia.org/wiki/Bjarne_Stroustrup">Bjarne Stroustrup</a> who was the principal driver behind <a href="https://en.wikipedia.org/wiki/C%2B%2B#History">C++</a>. I was also exposed to <a href="https://en.wikipedia.org/wiki/Objective-C">Objective C</a> when I worked for Steve Jobs at NeXT Computer.  I realized that
+it really didn't matter what flavor of programming language
+you used as long as you used good <a href="https://en.wikipedia.org/wiki/Design_Patterns">Design Patterns</a>.  This brought me to read about the origin of design patterns and the incredible book <a href="https://en.wikipedia.org/wiki/The_Timeless_Way_of_Building">A Timeless Way of Building</a>.  The key word here was <strong>timeless</strong> because it focused on understanding the underlying principles around a topic that didn't vary with the release of the next version of a software system.</p>
+<p>I resolved to not write a book on the latest bugs in Windows 3.1.  The shelf life of that book was less than six months.  But if I could find the underlying patterns in the way that we represent data, that book would be timeless!</p>
+<h2 id="the-day-i-learned-about-exist-db">The Day I Learned about eXist-DB</h2>
+<p><img alt="" src="../img/kurt-email.png" /></p>
+<p>I had a transformative experience starting around Feb 2, 2007, at 11:40 AM.  That was the exact day and time that my friend <a href="https://www.linkedin.com/in/kurtcagle/">Kurt Cagle</a> suggested that I try out the <a href="https://exist-db.org/">eXist</a> database.  My life
+was about to take a surprising turn.</p>
+<p>I was working on a complex forms project where each form
+"Save" had to perform about 45 inserts into a RDBMS.  That process, of shredding the document into individual parts, was very complex and we had allocated six months to that project.</p>
+<p>But with eXist, we could perform all that work in a single line of code.  I recall staring at that single line for what must
+have been 20 minutes.  Could it really be this simple?  Why
+had I never heard about this?  Why did they only teach me
+about RDBMS systems in college?  How could I have been such
+a fool?</p>
+<p>I vowed NEVER to be caught off guard again.  I vowed I would
+travel the world to know the best way to store knowledge.  That
+was the basis of a new conference (NoSQL Now!) I helped orchestrate. From that came the book <a href="https://www.manning.com/books/making-sense-of-nosql">Making Sense of NoSQL</a> which I wrote with my wife, Ann Kelly.</p>
+<p>But my journey didn't end with the publication of the book.  Granted, I did become an expert at helping companies select
+databases.  However, to my utter frustration, despite objective evidence, companies often made poor decisions.
+So I had to start to study why their cognitive bias got in the way.</p>
 
 
 
@@ -639,7 +583,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../04-column-family/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Column Family" rel="prev">
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -649,20 +593,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Column Family
+                Home
               </div>
             </div>
           </a>
         
         
           
-          <a href="../06-document/" class="md-footer__link md-footer__link--next" aria-label="Next: Document" rel="next">
+          <a href="../bias/" class="md-footer__link md-footer__link--next" aria-label="Next: Bias" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Document
+                Bias
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -695,10 +639,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      <script src="../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
     
   </body>

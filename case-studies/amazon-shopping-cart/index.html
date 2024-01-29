@@ -12,13 +12,13 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/atam/db-types/05-graph/">
+        <link rel="canonical" href="https://dmccreary.github.io/atam/case-studies/amazon-shopping-cart/">
       
       
-        <link rel="prev" href="../04-column-family/">
+        <link rel="prev" href="../star-process/">
       
       
-        <link rel="next" href="../06-document/">
+        <link rel="next" href="../../slides/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Graph - Architecture Tradeoff Analysis Methodology</title>
+        <title>Amazon Shopping Cart - Architecture Tradeoff Analysis Methodology</title>
       
     
     
@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#amazon-shopping-cart-failures" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -108,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Graph
+              Amazon Shopping Cart
             
           </span>
         </div>
@@ -278,8 +283,6 @@
       
   
   
-    
-  
   
     
     
@@ -294,6 +297,53 @@
       
         
       
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../db-types/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Database Types
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+          
         
       
         
@@ -308,7 +358,7 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           
@@ -317,22 +367,22 @@
               
   
   <span class="md-ellipsis">
-    Database Types
+    Case Studies
   </span>
   
 
             </a>
             
-              <label class="md-nav__link " for="__nav_4">
+              <label class="md-nav__link " for="__nav_5">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Database Types
+            Case Studies
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -344,71 +394,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-relational/" class="md-nav__link">
+      <a href="../star-process/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Relational
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02-analytica.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Analytical
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03-key-value/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Key Value
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04-column-family/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Column Family
+    STAR Process
   </span>
   
 
@@ -430,37 +420,70 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Amazon Shopping Cart
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Graph
+    Amazon Shopping Cart
   </span>
   
 
       </a>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../06-document/" class="md-nav__link">
         
-  
-  <span class="md-ellipsis">
-    Document
-  </span>
-  
 
-      </a>
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    The Problem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amazons-response" class="md-nav__link">
+    Amazon's Response
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amazon-dynamodb" class="md-nav__link">
+    Amazon DynamoDB
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -468,51 +491,6 @@
             
           </ul>
         </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../../case-studies/" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Case Studies
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
       
     </li>
   
@@ -592,6 +570,37 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    The Problem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amazons-response" class="md-nav__link">
+    Amazon's Response
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amazon-dynamodb" class="md-nav__link">
+    Amazon DynamoDB
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -609,9 +618,31 @@
   
 
 
-  <h1>Graph</h1>
-
-
+<h1 id="amazon-shopping-cart-failures">Amazon Shopping Cart Failures</h1>
+<p>The story of Amazon's struggles with their Oracle-based back-end system during the early 2000s, particularly around the busy holiday shopping season, is a significant one in the history of web-scale computing and database management. It highlights the challenges faced by rapidly growing online businesses and the innovative solutions they developed in response.</p>
+<h3 id="the-problem">The Problem</h3>
+<p>Around 2002, Amazon, which was rapidly growing, faced significant challenges with its Oracle relational database management system (RDBMS). The primary issues were related to scalability, reliability, and performance, especially during peak times like the holiday shopping season. The Oracle RDBMS, while robust and powerful, was not ideally suited to handle the massive, unpredictable spikes in traffic and transactions that Amazon experienced. This led to:</p>
+<ol>
+<li><strong>Slowdowns and Outages</strong>: During peak traffic periods, the database struggled to keep up, resulting in slowdowns and outages.</li>
+<li><strong>Complexity and Cost</strong>: Scaling up the Oracle database to meet the demand was complex and expensive.</li>
+<li><strong>Rigid Schema</strong>: The relational model, with its rigid schema, was not flexible enough for Amazon's rapidly evolving and diverse data needs.</li>
+</ol>
+<h3 id="amazons-response">Amazon's Response</h3>
+<p>Faced with these challenges, Amazon began to explore alternatives. Their response involved a fundamental shift in how they managed their data:</p>
+<ol>
+<li><strong>Distributed Systems</strong>: Amazon moved away from a centralized RDBMS architecture to a distributed system. This approach allowed them to distribute the load across multiple nodes, improving performance and reliability.</li>
+<li><strong>Microservices Architecture</strong>: They adopted a microservices architecture, breaking down their monolithic application into smaller, independent services. Each service could use the most appropriate data storage solution for its needs.</li>
+<li><strong>Custom Solutions</strong>: Amazon started to build its own data storage solutions tailored to their specific requirements.</li>
+</ol>
+<h3 id="amazon-dynamodb">Amazon DynamoDB</h3>
+<p>One of the most significant outcomes of Amazon's efforts to overcome the limitations of traditional RDBMS systems was the creation of Amazon DynamoDB. DynamoDB, introduced in 2012, is a fully managed NoSQL database service provided by Amazon Web Services (AWS). It was designed to address many of the issues that Amazon faced with their Oracle system:</p>
+<ol>
+<li><strong>Scalability</strong>: DynamoDB can handle large amounts of traffic and data, scaling up or down as needed.</li>
+<li><strong>Performance</strong>: It offers fast and predictable performance, even under massive load.</li>
+<li><strong>Flexibility</strong>: Being a NoSQL database, it allows for more flexible data models, which is suitable for various types of applications and services.</li>
+<li><strong>Reliability and Availability</strong>: DynamoDB provides high availability and durability, storing data across multiple AWS regions and Availability Zones.</li>
+</ol>
+<p>In summary, Amazon's move from an Oracle RDBMS to building and eventually offering DynamoDB as a product was a response to the scalability and flexibility challenges they faced. It represents a broader trend in the industry towards distributed, NoSQL databases for web-scale applications.</p>
 
 
 
@@ -639,7 +670,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../04-column-family/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Column Family" rel="prev">
+          <a href="../star-process/" class="md-footer__link md-footer__link--prev" aria-label="Previous: STAR Process" rel="prev">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -649,20 +680,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Column Family
+                STAR Process
               </div>
             </div>
           </a>
         
         
           
-          <a href="../06-document/" class="md-footer__link md-footer__link--next" aria-label="Next: Document" rel="next">
+          <a href="../../slides/" class="md-footer__link md-footer__link--next" aria-label="Next: Presentations" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Document
+                Presentations
               </div>
             </div>
             <div class="md-footer__button md-icon">
