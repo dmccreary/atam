@@ -12,28 +12,28 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/atam/db-types/01-relational/">
+        <link rel="canonical" href="https://dmccreary.github.io/atam/atam-process/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../about/">
       
       
-        <link rel="next" href="../02-analytical/">
+        <link rel="next" href="../atam-db-process/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
-        <title>Relational - Architecture Tradeoff Analysis Methodology</title>
+        <title>ATAM Process - Architecture Tradeoff Analysis Methodology</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.30068a00.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.30068a00.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
       
       
 
@@ -52,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#architectural-tradeoff-analysis-method-process" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -88,7 +93,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Architecture Tradeoff Analysis Methodology" class="md-header__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
+    <a href=".." title="Architecture Tradeoff Analysis Methodology" class="md-header__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -108,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Relational
+              ATAM Process
             
           </span>
         </div>
@@ -194,7 +199,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Architecture Tradeoff Analysis Methodology" class="md-nav__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
+    <a href=".." title="Architecture Tradeoff Analysis Methodology" class="md-nav__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -223,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -242,7 +247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -259,9 +264,18 @@
       
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../atam-process/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -270,6 +284,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -280,7 +295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../atam-db-process/" class="md-nav__link">
+      <a href="../atam-db-process/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -319,7 +334,7 @@
         
   
   
-    <a href="../../concepts/" class="md-nav__link">
+    <a href="../concepts/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -342,8 +357,6 @@
       
   
   
-    
-  
   
     
     
@@ -366,172 +379,28 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
-              
+  
+  
+    <a href="../db-types/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     Database Types
   </span>
   
 
-            </a>
-            
-              <label class="md-nav__link " for="__nav_6">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            Database Types
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+        <span class="md-nav__icon md-icon"></span>
       
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Relational
-  </span>
+    </a>
   
 
-      </a>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02-analytical/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Analytical
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03-key-value/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Key Value
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04-column-family/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Column Family
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../05-graph/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Graph
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../06-document/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Document
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -563,7 +432,7 @@
         
   
   
-    <a href="../../case-studies/" class="md-nav__link">
+    <a href="../case-studies/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
@@ -588,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bias/" class="md-nav__link">
+      <a href="../bias/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -607,7 +476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slides/" class="md-nav__link">
+      <a href="../slides/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -626,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../license/" class="md-nav__link">
+      <a href="../license/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -645,7 +514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../contact/" class="md-nav__link">
+      <a href="../contact/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -675,6 +544,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -692,9 +563,59 @@
   
 
 
-  <h1>Relational</h1>
-
-
+<h1 id="architectural-tradeoff-analysis-method-process">Architectural Tradeoff Analysis Method Process</h1>
+<p><img alt="" src="../img/ATAM-process.png" /></p>
+<p>The Architectural Tradeoff Analysis Method (ATAM) is a structured method for evaluating software architecture with respect to multiple quality attributes. Developed by the Software Engineering Institute (SEI) at Carnegie Mellon University, ATAM helps to understand a system's behavior and determine if it has the right architecture to support the goals of the project. Below is a summary of the ATAM process according to the provided image.</p>
+<p><strong>Goals of the ATAM Process:</strong> The primary goals of the ATAM are to:</p>
+<ol>
+<li>Identify the consequences of architectural decisions.</li>
+<li>Identify risks and non-risks associated with the architecture.</li>
+<li>Assess the tradeoffs in the architectural approach, particularly those involving quality attributes.</li>
+<li>Provide a framework to make informed decisions that balance these tradeoffs.</li>
+</ol>
+<p><strong>Steps of the ATAM Process:</strong></p>
+<ol>
+<li>
+<p><strong>Business Drivers</strong>: This step involves understanding the strategic goals and objectives of the business, which will drive the architectural decisions. This includes constraints, functional and non-functional requirements, and aspirations that shape the architecture.</p>
+</li>
+<li>
+<p><strong>Architecture Plan</strong>: The architecture plan is the outline or blueprint of the system's architecture. It includes details on the architectural style, patterns, and structural organization.</p>
+</li>
+<li>
+<p><strong>Quality Attributes</strong>: Quality attributes are the non-functional requirements such as performance, security, maintainability, and usability that the system must satisfy.</p>
+</li>
+<li>
+<p><strong>Architectural Approaches</strong>: These are the strategies or techniques used to address the quality attributes in the architecture plan, including the use of specific design patterns or systems principles.</p>
+</li>
+<li>
+<p><strong>User Stories</strong>: User stories provide a high-level description of functionality from an end-user perspective. They help to ensure that the architecture addresses real user needs.</p>
+</li>
+<li>
+<p><strong>Architectural Decisions</strong>: This step involves making concrete decisions about the architecture, which are informed by the business drivers, quality attributes, and architectural approaches.</p>
+</li>
+<li>
+<p><strong>Analysis</strong>: The analysis is the core of the ATAM, where the architectural decisions are scrutinized. This stage is where the architectural strategies are evaluated against the desired quality attributes through various analysis techniques.</p>
+</li>
+</ol>
+<p><strong>Documents Produced by the ATAM Process:</strong></p>
+<ol>
+<li>
+<p><strong>Tradeoffs</strong>: This document captures the analysis of various architectural decisions and their impact on different quality attributes, revealing where compromises are made.</p>
+</li>
+<li>
+<p><strong>Sensitivity Points</strong>: These are the points in the architecture that are sensitive to changes. Understanding these helps in predicting the impact of changes on the system's quality attributes.</p>
+</li>
+<li>
+<p><strong>Non-Risks</strong>: These are architectural aspects that have been determined not to pose a risk to the project. They are typically well-understood areas with known solutions.</p>
+</li>
+<li>
+<p><strong>Risks</strong>: These are potential problems that could threaten the project's success. They might stem from ambitious quality attribute goals, reliance on novel technology, or other uncertainties in the architecture.</p>
+</li>
+</ol>
+<p><strong>Distilled Information</strong>: As a result of the ATAM process, distilled information is produced, which encompasses the identified risks, non-risks, sensitivity points, and tradeoffs. This distilled information helps stakeholders make informed decisions about the architecture and the project.</p>
+<p><strong>Risk Themes</strong>: Throughout the ATAM process, certain themes of risk may emerge. These are broad areas of concern that need to be addressed by the project team to ensure the architecture can meet its goals. Risk themes help prioritize subsequent actions and refine the architecture.</p>
+<p><strong>Impacts</strong>: The identified risks, non-risks, sensitivity points, and tradeoffs have direct impacts on the project. The analysis of these impacts is crucial for planning, mitigation, and ensuring that the architecture aligns with the business drivers.</p>
+<p>In conclusion, the ATAM process is a comprehensive method that assesses software architecture rigorously to ensure it aligns with business goals and adequately addresses quality requirements. The process involves a detailed evaluation of tradeoffs, risks, and non-risks, culminating in a well-informed architectural strategy that is essential for the successful delivery of the software system.</p>
 
 
 
@@ -722,7 +643,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction" rel="prev">
+          <a href="../about/" class="md-footer__link md-footer__link--prev" aria-label="Previous: About" rel="prev">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -732,20 +653,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Introduction
+                About
               </div>
             </div>
           </a>
         
         
           
-          <a href="../02-analytical/" class="md-footer__link md-footer__link--next" aria-label="Next: Analytical" rel="next">
+          <a href="../atam-db-process/" class="md-footer__link md-footer__link--next" aria-label="Next: ATAM DB Selection Process" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Analytical
+                ATAM DB Selection Process
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -778,10 +699,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      <script src="../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
     
   </body>
