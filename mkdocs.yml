@@ -8,13 +8,16 @@ repo_url: 'https://github.com/dmccreary/atam'
 nav:
   - Home: index.md
   - About: about.md
+  - ATAM Process: atam-process.md
+  - ATAM DB Selection Process: atam-db-process.md
   - Foundational Concepts:
     - Introduction: concepts/index.md
+    - Utility Tree: concepts/utility-tree.md
     - ACID vs. Base: concepts/acid-vs-base.md
   - Database Types:
     - Introduction: db-types/index.md
     - Relational: db-types/01-relational.md
-    - Analytical: db-types/02-analytica.md
+    - Analytical: db-types/02-analytical.md
     - Key Value: db-types/03-key-value.md
     - Column Family: db-types/04-column-family.md
     - Graph: db-types/05-graph.md
