@@ -6,15 +6,30 @@ Here are some examples of cognitive bias I have seen as applied to the world of 
 
 ## Anchoring Bias
 
-The tendency to produce an estimate near a cue amount - "Our managers were expecting an RDBMS solution so that’s what we gave them."
+The tendency to produce an estimate near a cue amount.
 
-## Availability heuristic - the tendency to estimate that what is easily remembered is more likely than that which is not. - "I hear that NoSQL does not support ACID." or "I hear that XML is verbose?"
+ **Example:** *"Our managers were expecting an RDBMS solution so that’s what we gave them."*
 
-## Bandwagon effect - the tendency to do or believe what others do or believe - "Everyone else at this company and in our local area uses RDBMSs."
+## Availability Heuristic
 
-## Confirmation bias - the tendency to seek out only that information that supports one's preconceptions – "We only read posts from the Oracle|Microsoft|IBM groups."
+The tendency to estimate that what is easily remembered is more likely than that which is not.
+
+ **Example: ** *"I hear that NoSQL does not support ACID."* or *"I hear that XML is verbose."*
+
+## Bandwagon Effect
+
+The tendency to do or believe what others do or believe.
+
+ **Example:** *"Everyone else at this company and in our local area uses RDBMSs."*
+
+## Confirmation Bias
+
+The tendency to seek out only that information that supports one's preconceptions.
+
+ **Example:** *"We only read posts from the Oracle|Microsoft|IBM groups."*
 
 ## Framing Effect
+
 The tendency to react to how information is framed, beyond its factual content.
 
 **Example:** "We know of some NoSQL projects that failed."
