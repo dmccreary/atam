@@ -61,3 +61,5 @@ The tendency to judge something as belonging to a class based on a few salient c
 ## References
 
 1. [Cognitive Bias in Database Selection](https://datadictionary.blogspot.com/2013/05/cognitive-bias-in-nosql-system-selection.html) - my 2013 blog on this topic after attending the CMU SEI meeting with the wonderful [Mary Poppendieck](http://www.poppendieck.com/people.htm)
+
+2. [Cognitive Bias in Architectural Decisions](https://www.linkedin.com/pulse/cognitive-biases-architectural-decisions-mukul-joshi/)
