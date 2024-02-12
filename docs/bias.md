@@ -14,7 +14,7 @@ The tendency to produce an estimate near a cue amount.
 
 The tendency to estimate that what is easily remembered is more likely than that which is not.
 
- **Example: ** *"I hear that NoSQL does not support ACID."* or *"I hear that XML is verbose."*
+ **Example:** *"I hear that NoSQL does not support ACID."* or *"I hear that XML is verbose."*
 
 ## Bandwagon Effect
 
@@ -60,4 +60,4 @@ The tendency to judge something as belonging to a class based on a few salient c
 
 ## References
 
-1. [Cognitive Bias in Database Selection](https://datadictionary.blogspot.com/2013/05/cognitive-bias-in-nosql-system-selection.html)
+1. [Cognitive Bias in Database Selection](https://datadictionary.blogspot.com/2013/05/cognitive-bias-in-nosql-system-selection.html) - my 2013 blog on this topic after attending the CMU SEI meeting with the wonderful [Mary Poppendieck](http://www.poppendieck.com/people.htm)
