@@ -2,112 +2,112 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dmccreary.github.io/atam/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/atam/about/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/atam/atam-db-process/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/atam/atam-process/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/atam/bias/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/atam/contact/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/atam/how-we-built-this-site/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/atam/license/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/atam/slides/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/atam/case-studies/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/atam/case-studies/amazon-shopping-cart/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/atam/case-studies/star-process/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/atam/concepts/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/atam/concepts/acid-vs-base/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/atam/concepts/utility-tree/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/atam/db-types/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/atam/db-types/01-relational/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/atam/db-types/02-analytical/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/atam/db-types/03-key-value/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/atam/db-types/04-column-family/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/atam/db-types/05-graph/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dmccreary.github.io/atam/db-types/06-document/</loc>
-         <lastmod>2024-02-12</lastmod>
+         <lastmod>2024-10-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
