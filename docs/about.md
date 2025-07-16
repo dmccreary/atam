@@ -31,7 +31,9 @@ was the basis of a new conference (NoSQL Now!) I helped orchestrate. From that c
 
 But my journey didn't end with the publication of the book.  Granted, I did become an expert at helping companies select
 databases.  However, to my utter frustration, despite objective evidence, companies often made poor decisions.
-So I had to start to study why their cognitive bias got in the way.
+So I had to start to study why their cognitive [bias](./bias.md) got in the way.
+
+
 
 
 

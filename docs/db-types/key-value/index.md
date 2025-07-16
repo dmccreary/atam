@@ -1,5 +1,7 @@
 # Key Value Stores
 
+## Quotes
+
 *Simplify, simplify, simplify.*<br/>
 Henry David Thoreau
 
@@ -12,4 +14,6 @@ Leonardo da Vinci
 *Any intelligent fool can make things bigger, more complex and more violent. It takes a touch of genius and a lot of courage to move in the opposite direction.*<br/>
  —Albert Einstein
 
+
+## 
  

@@ -7,12 +7,12 @@ types we use when selecting the right database architecutre.
 
 The six types are:
 
-1. [Relational](./01-relational.md)
-2. [Analytical](./02-analytical.md) (OLAP Cubes)
-3. [Key Value Stores](./03-key-value.md)
-4. [Column Family Stores](./04-column-family.md)
-5. [Graph](./05-graph.md)
-6. [Document](./06-document.md)
+1. [Relational](relational/index.md)
+2. [Analytical](analytical/index.md) (OLAP Cubes)
+3. [Key Value Stores](key-value.md)
+4. [Column Family Stores](column-family/index.md)
+5. [Graph](graph/index.md)
+6. [Document](document/index.md)
 
 Each of these database architectures have many sub-types
 and each of these have pros and cons for different applications.
