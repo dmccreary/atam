@@ -16,9 +16,16 @@ When selecting a NoSQL database for scalable applications, understanding the fou
 
 The emergence of NoSQL databases was largely driven by the limitations of traditional relational databases in handling these four dimensions simultaneously. While SQL databases excel in structured environments with predictable workloads, NoSQL databases offer specialized solutions for scenarios where one or more of these "V"s become critical bottlenecks.
 
-Selecting a NoSQL engine is rarely about ticking feature boxes; it is about balancing qualities that matter most to your system's stakeholders. CMU's **Architecture Trade-off Analysis Method (ATAM)** provides the discipline for surfacing quality-attribute scenarios and comparing design options. Within data-intensive systems, these four related attributes—**Volume, Velocity, Variability, and Veracity**—reliably dominate those scenarios.
+Selecting a NoSQL engine is rarely about ticking feature boxes; it is about balancing qualities that matter most to your system's stakeholders. CMU's **Architecture Trade-off Analysis Method (ATAM)** provides the discipline for surfacing quality-attribute scenarios and comparing design options. Within data-intensive systems, these four related attributes are:
 
+1. Volume
+2. Velocity
+3. Variability
+4. Veracity
+
+<!-->
 *[Suggested Image: A diagram showing the four V's as interconnected dimensions of a cube, with NoSQL database types positioned within this space]*
+-->
 
 ## Volume: Managing Massive Data Scale
 
@@ -53,7 +60,9 @@ The volume challenge manifests in several critical areas:
 
 **Amazon's Product Ecosystem**: Amazon's product catalog contains hundreds of millions of products, each with complex attribute sets, pricing history, and customer reviews. The volume challenge involves not just storing this data, but performing complex graph traversals across this massive dataset for features like product recommendations and cross-selling algorithms.
 
+<!--
 *[Suggested Image: A layered diagram showing logical data partitions mapped across multiple racks/AZs, with arrows illustrating compaction and repair traffic]*
+-->
 
 ## Velocity: High-Speed Data Processing
 
@@ -131,7 +140,9 @@ The variability challenge encompasses several dimensions:
 
 **E-commerce Marketplaces**: Online marketplaces like eBay must handle products ranging from simple items (books with ISBN, title, author) to complex configurable products (laptops with dozens of technical specifications) to services (consulting with time-based pricing). The variability challenge involves creating a flexible schema that can accommodate any product type while enabling efficient search and filtering across diverse attribute sets.
 
+<!--
 *[Suggested Image: Side-by-side depiction of a rigid relational ERD vs. a schemaless JSON document showing optional fields in grey]*
+-->
 
 ## Veracity: Ensuring Data Quality and Integrity
 

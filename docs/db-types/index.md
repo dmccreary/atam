@@ -20,3 +20,17 @@ and each of these have pros and cons for different applications.
 It today's AI-driven world, graphs have become a major force.
 We will cover this topic in the next section.
 
+Here is a brief overview of these six database architecture patterns:
+
+## Relational or OLTP
+
+## Analytical or OLAP
+
+## Key Value Stores
+
+## Column Family Stores
+
+## Graph
+
+## Document
+

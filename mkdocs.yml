@@ -12,6 +12,7 @@ nav:
   - ATAM DB Selection Process: atam-db-process.md
   - Foundational Concepts:
     - Introduction: concepts/index.md
+    - Four Vs of NoSQL: concepts/four-vs-of-nosql.md
     - Utility Tree: concepts/utility-tree.md
     - ACID vs. Base: concepts/acid-vs-base.md
   - Database Types:
@@ -24,8 +25,13 @@ nav:
     - Document: db-types/document/index.md
   - Case Studies:
     - Introduction: case-studies/index.md
-    - STAR Process: case-studies/star-process.md
+    - STAR Case Study Process: case-studies/star-process.md
     - Amazon Shopping Cart: case-studies/amazon-shopping-cart.md
+    - Friendster: case-studies/frendster.md
+    - Memcache: case-studies/memcache.md
+    - Google Knowledge Graph: case-studies/google-knowledge-graph.md
+    - LinkedIn: case-studies/linkedin.md
+    - Mo
   - Bias: bias.md
   - Presentations: slides.md
   - License: license.md
