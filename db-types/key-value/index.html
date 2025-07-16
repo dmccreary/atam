@@ -15,14 +15,14 @@
         <link rel="canonical" href="https://dmccreary.github.io/atam/db-types/key-value/">
       
       
-        <link rel="prev" href="../analytical/">
+        <link rel="prev" href="../analytical/inman-vs-kimball/">
       
       
         <link rel="next" href="../column-family/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#key-value-stores" class="md-skip">
+        <a href="#key-value-store-databases" class="md-skip">
           Skip to content
         </a>
       
@@ -124,11 +124,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -160,13 +162,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
         <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -212,7 +215,7 @@
       <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -232,8 +235,10 @@
       <a href="../.." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Home
+    
   </span>
   
 
@@ -252,8 +257,10 @@
       <a href="../../about/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     About
+    
   </span>
   
 
@@ -272,8 +279,10 @@
       <a href="../../atam-process/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     ATAM Process
+    
   </span>
   
 
@@ -292,8 +301,10 @@
       <a href="../../atam-db-process/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     ATAM DB Selection Process
+    
   </span>
   
 
@@ -326,6 +337,7 @@
     
     
     
+    
       
         
         
@@ -336,11 +348,14 @@
         
   
   
+  
     <a href="../../concepts/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
     Foundational Concepts
+    
   </span>
   
 
@@ -371,29 +386,18 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -406,13 +410,14 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
     Database Types
+    
   </span>
   
 
@@ -444,8 +449,10 @@
       <a href="../relational/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Relational
+    
   </span>
   
 
@@ -461,16 +468,47 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../analytical/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../analytical/" class="md-nav__link">
+      
+  
   
   <span class="md-ellipsis">
     Analytical
+    
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -495,8 +533,10 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
+  
   <span class="md-ellipsis">
     Key Value
+    
   </span>
   
 
@@ -506,8 +546,10 @@
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
+  
   <span class="md-ellipsis">
     Key Value
+    
   </span>
   
 
@@ -529,18 +571,354 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quotes" class="md-nav__link">
+  <a href="#key-value-store-quotes" class="md-nav__link">
     <span class="md-ellipsis">
-      Quotes
+      Key Value Store Quotes
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#overview-of-key-value-store-databases" class="md-nav__link">
     <span class="md-ellipsis">
+      Overview of Key-Value Store Databases
+    </span>
+  </a>
+  
+</li>
       
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      Background
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Background">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unix-dbm-database-manager-library-released-by-att-in-1979" class="md-nav__link">
+    <span class="md-ellipsis">
+      UNIX dbm (database manager) library, released by AT&amp;T in 1979
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#berkeley-db-released-in-1991" class="md-nav__link">
+    <span class="md-ellipsis">
+      Berkeley DB: Released in 1991
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amazon-dynamodb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amazon DynamoDB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amazon-s3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amazon S3
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-value-store-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Value Store APIs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-strengths-of-the-key-value-store-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Strengths of the Key Value Store databases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Strengths of the Key Value Store databases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exceptional-performance-and-scalability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exceptional Performance and Scalability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operational-simplicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operational Simplicity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flexible-data-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flexible Data Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-availability-and-fault-tolerance" class="md-nav__link">
+    <span class="md-ellipsis">
+      High Availability and Fault Tolerance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-effectiveness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cost Effectiveness
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-weaknesses-of-key-value-store-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Weaknesses of Key Value Store databases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Weaknesses of Key Value Store databases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#limited-query-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limited Query Capabilities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-modeling-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Modeling Complexity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limited-acid-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limited ACID Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operational-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operational Limitations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-considerations-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cost Considerations at Scale
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#important-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important Use Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Important Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caching-and-session-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caching and Session Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-commerce-and-shopping-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      E-commerce and Shopping Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-time-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real-Time Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-management-and-media" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content Management and Media
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-and-edge-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mobile and Edge Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytics-and-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analytics and Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-avoid-key-value-store-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Avoid Key Value Store Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When to Avoid Key Value Store Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complex-relational-data-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complex Relational Data Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complex-query-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complex Query Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strong-consistency-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strong Consistency Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#small-scale-applications-with-limited-performance-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Small-Scale Applications with Limited Performance Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limited-development-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limited Development Resources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-heavy-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration-Heavy Environments
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -565,8 +943,10 @@
       <a href="../column-family/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Column Family
+    
   </span>
   
 
@@ -586,8 +966,10 @@
       <a href="../graph/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Graph
+    
   </span>
   
 
@@ -607,8 +989,10 @@
       <a href="../document/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Document
+    
   </span>
   
 
@@ -661,6 +1045,7 @@
     
     
     
+    
       
         
         
@@ -671,11 +1056,14 @@
         
   
   
+  
     <a href="../../case-studies/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
     Case Studies
+    
   </span>
   
 
@@ -700,8 +1088,10 @@
       <a href="../../bias/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Bias
+    
   </span>
   
 
@@ -720,8 +1110,10 @@
       <a href="../../slides/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Presentations
+    
   </span>
   
 
@@ -740,8 +1132,10 @@
       <a href="../../license/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     License
+    
   </span>
   
 
@@ -760,8 +1154,10 @@
       <a href="../../how-we-built-this-site/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     How We Built This Site
+    
   </span>
   
 
@@ -780,8 +1176,10 @@
       <a href="../../contact/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Contact
+    
   </span>
   
 
@@ -817,18 +1215,354 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quotes" class="md-nav__link">
+  <a href="#key-value-store-quotes" class="md-nav__link">
     <span class="md-ellipsis">
-      Quotes
+      Key Value Store Quotes
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#overview-of-key-value-store-databases" class="md-nav__link">
     <span class="md-ellipsis">
+      Overview of Key-Value Store Databases
+    </span>
+  </a>
+  
+</li>
       
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      Background
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Background">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unix-dbm-database-manager-library-released-by-att-in-1979" class="md-nav__link">
+    <span class="md-ellipsis">
+      UNIX dbm (database manager) library, released by AT&amp;T in 1979
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#berkeley-db-released-in-1991" class="md-nav__link">
+    <span class="md-ellipsis">
+      Berkeley DB: Released in 1991
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amazon-dynamodb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amazon DynamoDB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amazon-s3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amazon S3
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-value-store-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Value Store APIs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-strengths-of-the-key-value-store-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Strengths of the Key Value Store databases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Strengths of the Key Value Store databases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exceptional-performance-and-scalability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exceptional Performance and Scalability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operational-simplicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operational Simplicity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flexible-data-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flexible Data Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-availability-and-fault-tolerance" class="md-nav__link">
+    <span class="md-ellipsis">
+      High Availability and Fault Tolerance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-effectiveness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cost Effectiveness
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-weaknesses-of-key-value-store-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Weaknesses of Key Value Store databases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Weaknesses of Key Value Store databases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#limited-query-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limited Query Capabilities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-modeling-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Modeling Complexity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limited-acid-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limited ACID Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operational-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operational Limitations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-considerations-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cost Considerations at Scale
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#important-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important Use Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Important Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caching-and-session-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caching and Session Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-commerce-and-shopping-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      E-commerce and Shopping Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-time-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real-Time Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-management-and-media" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content Management and Media
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-and-edge-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mobile and Edge Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytics-and-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analytics and Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-avoid-key-value-store-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Avoid Key Value Store Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When to Avoid Key Value Store Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complex-relational-data-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complex Relational Data Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complex-query-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complex Query Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strong-consistency-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strong Consistency Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#small-scale-applications-with-limited-performance-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Small-Scale Applications with Limited Performance Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limited-development-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limited Development Resources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-heavy-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration-Heavy Environments
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -848,12 +1582,43 @@
                 
                   
 
+
   
   
 
 
-<h1 id="key-value-stores">Key Value Stores</h1>
-<h2 id="quotes">Quotes</h2>
+<h1 id="key-value-store-databases">Key Value Store Databases</h1>
+<!--
+
+Prompt given to Claude Sonnet 4 in July 2025
+
+Please write a full complete chapter on key-value store databases.
+Have a broad definition for key-value stores that include file systems and the world-wide web.
+
+Include level 2 markdown sections for:
+
+## Background
+### UNIX dbm (database manager) library, released by AT&T in 1979
+### Berkeley DB: Released in 1991
+### Amazon DynamoDB
+### Amazon S3
+
+## Data Model
+
+- Focus on the simplicity of the model
+- Mention that the simpler the data model, the easier it is to distribute and secure each value
+
+## Key Value Store APIs
+
+## Key Strengths of the Key Value Store databases
+## Key Weaknesses of Key Value Store databases
+## Important Use Cases
+## When to Avoid Key Value Store Systems
+## References
+1. [Link Title](URL) - publication_date - publication_name - description_and_relevance
+-->
+
+<h2 id="key-value-store-quotes">Key Value Store Quotes</h2>
 <p><em>Simplify, simplify, simplify.</em><br/>
 Henry David Thoreau</p>
 <p><em>Simplicity is the ultimate sophistication.</em><br/>
@@ -862,7 +1627,245 @@ Leonardo da Vinci</p>
 —Antoine de Saint-Exupéry, author of The Little Prince</p>
 <p><em>Any intelligent fool can make things bigger, more complex and more violent. It takes a touch of genius and a lot of courage to move in the opposite direction.</em><br/>
  —Albert Einstein</p>
-<h2 id="_1"></h2>
+<h2 id="overview-of-key-value-store-databases">Overview of Key-Value Store Databases</h2>
+<p>Key-value stores represent the simplest and most fundamental form of NoSQL database, using a straightforward data model where each piece of information is stored as a unique key paired with its associated value. This elemental approach to data storage has proven remarkably versatile and powerful, forming the foundation for everything from local caching systems to massive distributed storage platforms that serve billions of users worldwide.</p>
+<p>In the broadest sense, key-value stores are ubiquitous in computing systems. File systems function as key-value stores where file paths serve as keys and file contents serve as values. The World Wide Web operates as a massive distributed key-value store where URLs (Uniform Resource Locators) act as keys that retrieve web pages, images, and other resources as values. This fundamental pattern of associating identifiers with data permeates computing at every level, from memory management to database systems.</p>
+<p>The elegance of key-value stores lies in their conceptual simplicity: store data using a unique identifier (key) that can later be used to retrieve that exact data (value). This simplicity enables remarkable scalability, performance, and flexibility that more complex database models struggle to achieve. Understanding key-value stores provides insight into the foundational principles that underlie much of modern distributed computing and data management.</p>
+<h2 id="background">Background</h2>
+<h3 id="unix-dbm-database-manager-library-released-by-att-in-1979">UNIX dbm (database manager) library, released by AT&amp;T in 1979</h3>
+<p>The modern lineage of key-value databases begins with the <strong>dbm (database manager)</strong> library, originally written by Ken Thompson and released by AT&amp;T in 1979. This pioneering library established many of the fundamental concepts that continue to influence key-value store design today.</p>
+<p>The original dbm library and file format was a simple database engine that provided a straightforward interface for storing and retrieving data using unique keys. The dbm library stores arbitrary data by use of a single key (a primary key) in fixed-size buckets and uses hashing techniques to enable fast retrieval of the data by key.</p>
+<p>The technical foundation of dbm was surprisingly sophisticated for its time. The hashing scheme used is a form of extendible hashing, so that the hashing scheme expands as new buckets are added to the database, meaning that, when nearly empty, the database starts with one bucket, which is then split when it becomes full. This dynamic expansion capability allowed dbm to grow efficiently as data volumes increased, a principle that remains central to modern distributed key-value stores.</p>
+<p>The influence of dbm extended far beyond its initial AT&amp;T implementation. The original AT&amp;T dbm library has been replaced by its many successor implementations. Notable examples include: ndbm ("new dbm"), based on the original dbm with some new features. GDBM ("GNU dbm"), GNU rewrite of the library implementing ndbm features and its own interface. These implementations spread the dbm approach throughout the UNIX ecosystem, establishing key-value storage as a fundamental building block for system software.</p>
+<p>Key-value stores are based on Ken Thompson's DBM (database management) research in 1979, making dbm the ancestral foundation for modern NoSQL databases like Redis, Amazon DynamoDB, and countless other key-value systems. The simplicity and effectiveness of Thompson's original design demonstrates the enduring power of the key-value paradigm.</p>
+<h3 id="berkeley-db-released-in-1991">Berkeley DB: Released in 1991</h3>
+<p>Berkeley DB originated at the University of California, Berkeley as part of BSD, Berkeley's version of the Unix operating system. After 4.3BSD (1986), the BSD developers attempted to remove or replace all code originating in the original AT&amp;T Unix from which BSD was derived. In doing so, they needed to rewrite the Unix database package.</p>
+<p>Seltzer and Yigit created a new database, unencumbered by any AT&amp;T patents: an on-disk hash table that outperformed the existing dbm libraries. Berkeley DB itself was first released in 1991 and later included with 4.4BSD. This represented a significant advancement over the original dbm, providing enhanced performance and additional features while maintaining the fundamental key-value paradigm.</p>
+<p>The evolution of Berkeley DB showcased the commercial potential of key-value stores. In 1996 Netscape requested that the authors of Berkeley DB improve and extend the library, then at version 1.86, to suit Netscape's requirements for an LDAP server and for use in the Netscape browser. That request led to the creation of Sleepycat Software.</p>
+<p>Berkeley DB's feature evolution demonstrated the versatility of the key-value model. Berkeley DB 1.x releases focused on managing key/value data storage and are referred to as "Data Store" (DS). The 2.x releases added a locking system enabling concurrent access to data. This is what is known as "Concurrent Data Store" (CDS). The 3.x releases added a logging system for transactions and recovery, called "Transactional Data Store" (TDS). The 4.x releases added the ability to replicate log records and create a distributed highly available single-master multi-replica database.</p>
+<p>The scale capabilities of Berkeley DB were impressive for its era. A single database managed by Berkeley DB can be up to 248 bytes, or 256 petabytes, in size. Berkeley DB uses the host filesystem as the backing store for the database, so large databases require big file support from the operating system. Sleepycat Software has customers using Berkeley DB to manage single databases in excess of 100 gigabytes.</p>
+<p>Sleepycat Software was acquired by Oracle Corporation in February 2006, who continued to develop and sell the C Berkeley DB library. This acquisition brought key-value technology into the enterprise mainstream, validating the commercial importance of the key-value paradigm.</p>
+<h3 id="amazon-dynamodb">Amazon DynamoDB</h3>
+<p>Amazon DynamoDB is a managed NoSQL database service provided by Amazon Web Services (AWS). Werner Vogels, CTO at Amazon.com, provided a motivation for the project in his 2012 announcement. DynamoDB represented a revolutionary approach to key-value databases, combining the scalability lessons learned from Amazon's internal Dynamo system with the operational simplicity of a fully managed cloud service.</p>
+<p>Amazon began as a decentralized network of services. Originally, services had direct access to each other's databases. When this became a bottleneck on engineering operations, services moved away from this direct access pattern in favor of public-facing APIs. Still, third-party relational database management systems struggled to handle Amazon's client base. This culminated during the 2004 holiday season, when several technologies failed under high traffic.</p>
+<p>Ten years ago, Amazon Web Services (AWS) launched Amazon DynamoDB, a fast, flexible NoSQL database service that offers single-digit millisecond performance at any scale. In an online post on Jan. 18, 2012, Werner Vogels, chief technical officer at Amazon.com, wrote: "Today is a very exciting day as we release Amazon DynamoDB, a fast, highly reliable and cost-effective NoSQL database service designed for internet scale applications".</p>
+<p>DynamoDB was inspired by the seminal Dynamo white paper (2007) written by a team of Amazon developers. This white paper cited and contrasted itself from Google's Bigtable (2006) paper published the year before. The original Dynamo database was used internally at Amazon as a completely in-house, proprietary solution.</p>
+<p>DynamoDB's launch demonstrated immediate market validation. We launched it on January 18th, 2012 and it was a hit right out of the gate. Don's company and several others started using it. Right from the launch, not just elasticity, but single-digit latency performance was something that resonated really well with customers.</p>
+<p>The system's scale achievements are remarkable. DynamoDB now powers multiple high-traffic Amazon sites and systems including Alexa, Amazon.com, and all Amazon fulfillment centers. Last year, over the course of our 66-hour Prime Day, these sources made trillions of API calls and DynamoDB maintained high availability with single-digit millisecond performance, peaking at 89.2 million requests per second.</p>
+<h3 id="amazon-s3">Amazon S3</h3>
+<p>Amazon Simple Storage Service (S3) is a popular cloud storage service with critical features like encryption, access control, and high availability. First deployed in the US in 2006 and Europe in 2007, Amazon S3 from AWS services is available in all AWS regions where Amazon Web Services provides cloud solutions.</p>
+<p>Amazon S3 stores data as objects within buckets. An object is a file and any metadata that describes the file. A bucket is a container for objects. To store your data in Amazon S3, you first create a bucket and specify a bucket name and AWS Region. Then, you upload your data to that bucket as objects in Amazon S3. Each object has a key (or key name), which is the unique identifier for the object within the bucket.</p>
+<p>From a key-value perspective, AWS S3 is a key-value store, one of the major categories of NoSQL databases used for accumulating voluminous, mutating, unstructured, or semistructured data. Uploaded objects are referenced by a unique key, which can be any string. This positioning of S3 as a key-value store demonstrates the broad applicability of the key-value paradigm beyond traditional database use cases.</p>
+<p>Amazon S3 is an object store that uses unique key-values to store as many objects as you want. You store these objects in one or more buckets, and each object can be up to 5 TB in size. The scale of S3 is extraordinary: Amazon S3 stores more than 350 trillion objects (exabytes of data) for virtually any use case and averages over 100 million requests per second.</p>
+<p>The versatility of S3 as a key-value store enables diverse applications. Companies like Airbnb, Netflix, Pinterest, and Reddit use S3 to host their web content, images, archives, backups of on-premises data for disaster recovery, and systems of record. This broad adoption demonstrates how key-value stores can serve as foundational infrastructure for modern web-scale applications.</p>
+<h2 id="data-model">Data Model</h2>
+<p>The key-value data model represents the ultimate in simplicity for data storage systems. At its core, the model consists of just two components: a <strong>key</strong> that serves as a unique identifier, and a <strong>value</strong> that contains the actual data associated with that key.</p>
+<p><strong>Keys</strong> must be unique within a given key-value store and serve as the primary means of accessing data. Keys can be simple strings, complex hierarchical paths, binary data, or structured identifiers. Both keys and values can be anything, ranging from simple objects to complex compound objects. The flexibility of key design enables various organizational strategies, from simple naming schemes to sophisticated partitioning strategies that optimize performance and distribution.</p>
+<p><strong>Values</strong> can contain any type of data, from simple strings and numbers to complex binary objects, documents, or serialized data structures. The value can be more than a simple number or string. Key-value stores can assign an object to a single key identifier, so developers aren't limited to basic data. This flexibility allows key-value stores to adapt to diverse application requirements without requiring schema modifications.</p>
+<p>The simplicity of this data model provides several critical advantages for distributed systems:</p>
+<p><strong>Simplified Distribution</strong>: The atomic nature of key-value pairs makes them ideal for distribution across multiple nodes. Since each key-value pair is independent, the system can distribute data by partitioning keys across different servers without complex cross-references or relationships that would complicate distribution strategies.</p>
+<p><strong>Enhanced Security</strong>: Key-value stores can assign an object to a single key identifier, meaning that security policies can be applied at the individual key level. Each value can be encrypted, access-controlled, and audited independently. This granular security model is much simpler to implement and verify than complex relational security schemes that must consider table relationships and transactional integrity.</p>
+<p><strong>Atomic Operations</strong>: Every operation in a key-value store operates on a single key-value pair, making it easier to guarantee consistency and implement features like atomic updates, conditional writes, and compare-and-swap operations.</p>
+<p><strong>Schema Flexibility</strong>: Unlike relational databases, key-value stores impose no schema requirements on the data stored as values. Applications can evolve their data structures without requiring database migrations or schema updates, enabling rapid development and deployment cycles.</p>
+<p>The simplicity of the key-value model eliminates many of the complexities that plague other database models. There are no joins to optimize, no foreign key constraints to maintain, no complex query execution plans to analyze, and no schema migrations to coordinate. This simplicity translates directly into operational benefits: easier horizontal scaling, simplified backup and recovery procedures, and reduced operational complexity.</p>
+<h2 id="key-value-store-apis">Key Value Store APIs</h2>
+<p>Key-value stores provide a remarkably consistent API across different implementations, reflecting the fundamental simplicity of the data model. The core operations are intuitive and map directly to the conceptual model of storing and retrieving data by key.</p>
+<p><strong>Core Operations:</strong></p>
+<p><strong>GET(key) → value</strong>: Retrieves the value associated with the specified key. get(Key) -&gt; Value - a lookup operation that retrieves the most recently stored value for a given key. This operation typically returns the value if the key exists, or null/undefined if the key is not found.</p>
+<p><strong>PUT(key, value)</strong>: Stores a value associated with the specified key. put(Key, Value) - an insert/update operation that stores a value for a given key. This operation may create a new key-value pair or update an existing one, depending on whether the key already exists.</p>
+<p><strong>DELETE(key)</strong>: Removes the key-value pair from the store. This operation typically returns a success indicator or the previous value that was deleted.</p>
+<p><strong>Advanced Operations:</strong></p>
+<p>Many key-value stores extend the basic operations with additional functionality:</p>
+<p><strong>Conditional Operations</strong>: Operations that only succeed if certain conditions are met, such as:</p>
+<ul>
+<li>PUT_IF_NOT_EXISTS(key, value): Only stores the value if the key doesn't already exist</li>
+<li>DELETE_IF_EXISTS(key): Only deletes if the key exists</li>
+<li>COMPARE_AND_SWAP(key, expected_value, new_value): Atomically updates a value only if it currently matches the expected value</li>
+</ul>
+<p><strong>Batch Operations</strong>: Enable multiple operations to be performed efficiently:</p>
+<ul>
+<li>MULTI_GET([key1, key2, key3]): Retrieve multiple values in a single operation</li>
+<li>MULTI_PUT([(key1, value1), (key2, value2)]): Store multiple key-value pairs</li>
+<li>BATCH_DELETE([key1, key2, key3]): Delete multiple keys</li>
+</ul>
+<p><strong>Iteration Operations</strong>: For stores that support ordered keys:</p>
+<p>first() -&gt; Key, last() -&gt; Key, next(Key) -&gt; Key, prev(Key) -&gt; Key - a cursor API that enumerates keys in sorted order. These operations enable applications to traverse the key space in order, supporting range queries and bulk processing.</p>
+<p><strong>Metadata Operations</strong>:</p>
+<ul>
+<li>EXISTS(key): Check if a key exists without retrieving the value</li>
+<li>SIZE(): Return the number of key-value pairs in the store</li>
+<li>LIST_KEYS(): Return all keys (often with pagination for large stores)</li>
+</ul>
+<p><strong>Time-Based Operations</strong>: Many modern key-value stores support time-based features:</p>
+<ul>
+<li>PUT_WITH_TTL(key, value, ttl): Store a value that automatically expires after a specified time</li>
+<li>GET_WITH_VERSION(key): Return both the value and a version number or timestamp</li>
+</ul>
+<p><strong>Real-World API Examples</strong>:</p>
+<p>Different key-value stores implement these operations with varying syntax but consistent semantics:</p>
+<p><strong>Redis</strong>: Uses simple command-based syntax</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">SET</span><span class="w"> </span><span class="n">mykey</span><span class="w"> </span><span class="ss">&quot;Hello World&quot;</span>
+<span class="k">GET</span><span class="w"> </span><span class="n">mykey</span>
+<span class="n">DEL</span><span class="w"> </span><span class="n">mykey</span>
+<span class="k">EXISTS</span><span class="w"> </span><span class="n">mykey</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Amazon DynamoDB</strong>: Uses JSON-based APIs</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;TableName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MyTable&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Key&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;S&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mykey&quot;</span><span class="p">}},</span>
+<span class="w">    </span><span class="nt">&quot;Item&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;S&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mykey&quot;</span><span class="p">},</span><span class="w"> </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;S&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hello World&quot;</span><span class="p">}}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Berkeley DB</strong>: Provides C library functions
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">db</span><span class="o">-&gt;</span><span class="n">put</span><span class="p">(</span><span class="n">db</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">db</span><span class="o">-&gt;</span><span class="n">get</span><span class="p">(</span><span class="n">db</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">db</span><span class="o">-&gt;</span><span class="n">del</span><span class="p">(</span><span class="n">db</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div></p>
+<p>The consistency of these APIs across different implementations reflects the fundamental nature of the key-value paradigm and makes it relatively easy for developers to work with different key-value stores or migrate between them when requirements change.</p>
+<h2 id="key-strengths-of-the-key-value-store-databases">Key Strengths of the Key Value Store databases</h2>
+<h3 id="exceptional-performance-and-scalability">Exceptional Performance and Scalability</h3>
+<p>Key value databases are designed for speed. Because they require minimal input for querying compared to other databases, and because they store so simply, key value databases can return query results near instantly. This performance advantage stems from the fundamental simplicity of the data model, which eliminates the overhead associated with complex query processing, joins, and relational operations.</p>
+<p>Applications that do not require persistent storage can create databases that exist only in main memory. These databases bypass the overhead imposed by the I/O system altogether. In-memory key-value stores like Redis can achieve microsecond-level response times for simple operations, making them ideal for applications requiring ultra-low latency.</p>
+<p>Key-value databases (or key-value stores) are highly partitionable and allow horizontal scaling at a level that other types of databases cannot achieve. The independent nature of key-value pairs enables sophisticated distribution strategies that can scale across thousands of nodes while maintaining performance characteristics.</p>
+<h3 id="operational-simplicity">Operational Simplicity</h3>
+<p>The simplicity of key-value stores translates into significant operational advantages. All those databases which are modeled in means other than the tabular relations used in relational databases are known as NO SQL databases. The data structure in key-value database differs from the RDBMS, and therefore some operations are faster in NoSQL and some in RDBMS.</p>
+<p><strong>Minimal Configuration</strong>: Key-value stores typically require minimal configuration and tuning compared to relational databases. There are no complex query optimizers to tune, no indexes to maintain, and no foreign key relationships to manage.</p>
+<p><strong>Simplified Backup and Recovery</strong>: The atomic nature of key-value pairs simplifies backup and recovery operations. Each key-value pair can be backed up independently, and recovery can be performed at a granular level without complex transactional coordination.</p>
+<p><strong>Reduced Administrative Overhead</strong>: A Simple Data Structure: All key-value databases use a simple data structure and this is important because sometimes those extra features are not necessary. Database users can simply add new features when the need arises.</p>
+<h3 id="flexible-data-models">Flexible Data Models</h3>
+<p>NoSQL key-value databases are the least complicated types of NoSQL databases. They store data as a key or attribute name with its value. Each data item has a pointer and a unique key. This simplicity enables remarkable flexibility in how applications structure and store their data.</p>
+<p><strong>Schema-Free Storage</strong>: Key-value stores impose no schema requirements on the data stored as values, enabling applications to evolve their data structures without database migrations or downtime.</p>
+<p><strong>Polyglot Data Support</strong>: Values can contain any type of data - JSON documents, binary objects, serialized data structures, or simple strings and numbers. This flexibility allows a single key-value store to support diverse application requirements.</p>
+<p><strong>Hierarchical Organization</strong>: While the core model is flat, applications can implement hierarchical organization through key naming conventions, enabling both simple and complex data organization strategies.</p>
+<h3 id="high-availability-and-fault-tolerance">High Availability and Fault Tolerance</h3>
+<p>The simplicity of key-value stores enables sophisticated high-availability architectures that are difficult to achieve with more complex database models.</p>
+<p><strong>Simplified Replication</strong>: Scalability: NoSQL key-value databases are easy to scale without disrupting operations. Users can add and remove servers depending on their needs without causing undesirable disruptions. The atomic nature of key-value pairs makes replication straightforward - each key-value pair can be replicated independently across multiple nodes.</p>
+<p><strong>Eventual Consistency Models</strong>: Key-value stores can easily implement eventual consistency models that prioritize availability over immediate consistency, enabling systems to remain operational even during network partitions or node failures.</p>
+<p><strong>Geographic Distribution</strong>: The independence of key-value pairs enables effective geo-distribution strategies, allowing organizations to place data close to users while maintaining global consistency models.</p>
+<h3 id="cost-effectiveness">Cost Effectiveness</h3>
+<p>Rapid storage of data and information due to the simple data structure. High performance because the integrated caching feature allows users to store and retrieve data in the shortest time possible. This performance efficiency translates directly into cost savings through improved resource utilization.</p>
+<p><strong>Efficient Resource Usage</strong>: The minimal overhead of key-value operations means that more of the system's resources are dedicated to storing and serving data rather than processing complex queries or maintaining complex data structures.</p>
+<p><strong>Simplified Infrastructure</strong>: Key-value stores often require less sophisticated hardware and infrastructure compared to high-end relational database systems, reducing both capital and operational expenses.</p>
+<p><strong>Pay-Per-Use Models</strong>: Cloud-based key-value stores like DynamoDB enable pay-per-use pricing models that align costs directly with usage, eliminating the need to provision expensive database infrastructure for peak loads.</p>
+<h2 id="key-weaknesses-of-key-value-store-databases">Key Weaknesses of Key Value Store databases</h2>
+<h3 id="limited-query-capabilities">Limited Query Capabilities</h3>
+<p>The fundamental simplicity that makes key-value stores powerful also represents their most significant limitation. S3 is not for storing key-value pairs. That is more for DynamoDB which is AWS's key-value database offering. You access objects within S3 using the object 'key' but at a conceptual level, you can look at this as the filename. This comparison highlights a key limitation: while you can access data by its key, you cannot easily query across multiple keys or perform complex searches.</p>
+<p><strong>No Complex Queries</strong>: Key-value stores cannot efficiently answer questions like "find all users with age greater than 25" or "list all products in the electronics category under $100." Such queries require scanning all key-value pairs, which defeats the performance advantages of the key-value model.</p>
+<p><strong>No Relationships</strong>: Unlike relational databases, DynamoDB doesn't support a JOIN operator. We recommend that you denormalize your data model to reduce database round trips and processing power needed to answer queries. The lack of native support for relationships between data elements requires applications to implement relationship logic at the application layer.</p>
+<p><strong>Limited Aggregation</strong>: Computing aggregations like sums, averages, or counts requires retrieving and processing multiple key-value pairs in application code, which can be inefficient and complex to implement correctly.</p>
+<h3 id="data-modeling-complexity">Data Modeling Complexity</h3>
+<p>While key-value stores offer schema flexibility, this flexibility can become a burden for complex applications.</p>
+<p><strong>Denormalization Requirements</strong>: DynamoDB data modeling needs to be denormalized. For developers used to working with both SQL and NoSQL databases, the process of rethinking their data model is nontrivial, but also not insurmountable. Applications must often store redundant data to support different access patterns, increasing storage requirements and complexity.</p>
+<p><strong>Key Design Challenges</strong>: Designing effective key structures requires deep understanding of access patterns and performance characteristics. Poor key design can lead to hot spots, uneven distribution, and performance bottlenecks.</p>
+<p><strong>Consistency Management</strong>: In distributed key-value stores, maintaining consistency across related data items becomes an application responsibility, requiring careful design of update patterns and conflict resolution strategies.</p>
+<h3 id="limited-acid-properties">Limited ACID Properties</h3>
+<p>Most key-value stores sacrifice some ACID properties for performance and scalability.</p>
+<p><strong>No Multi-Key Transactions</strong>: Some key/value stores, including LevelDB, are transactional. This means you can bundle several updates together, and LevelDB will make sure that either all of these updates make it through, or none of them do. This is very important to prevent your data getting inconsistent. However, many key-value stores do not support transactions across multiple keys, making it difficult to maintain consistency across related data items.</p>
+<p><strong>Eventual Consistency</strong>: Many distributed key-value stores implement eventual consistency models where updates may not be immediately visible across all nodes. While this improves availability and performance, it can complicate application logic that requires strong consistency guarantees.</p>
+<p><strong>Limited Rollback Capabilities</strong>: Without traditional transaction support, recovering from partial failures or implementing complex business logic that requires rollback capabilities becomes challenging.</p>
+<h3 id="operational-limitations">Operational Limitations</h3>
+<p><strong>Limited Tooling</strong>: Key-value stores often have less mature ecosystems of management tools, monitoring solutions, and administrative interfaces compared to established relational databases.</p>
+<p><strong>Debugging Complexity</strong>: The distributed nature of many key-value stores can make debugging performance issues, consistency problems, and data corruption more challenging than with centralized database systems.</p>
+<p><strong>Vendor Lock-in</strong>: DynamoDB is cloud-native in that it does not run on-premises or even in a hybrid cloud; it only runs on Amazon Web Services (AWS). Some key-value stores, particularly cloud-based offerings, can create vendor lock-in scenarios that limit migration options.</p>
+<h3 id="cost-considerations-at-scale">Cost Considerations at Scale</h3>
+<p>While key-value stores can be cost-effective, certain usage patterns can lead to unexpected costs.</p>
+<p><strong>Request-Based Pricing</strong>: Cloud key-value stores often charge per request, which can become expensive for applications with high read/write volumes or poor access patterns.</p>
+<p><strong>Storage Amplification</strong>: Denormalization requirements and the need to store data in multiple formats to support different access patterns can significantly increase storage costs.</p>
+<p><strong>Network Costs</strong>: Distributed key-value stores may incur significant network costs for cross-region replication and data transfer, particularly for globally distributed applications.</p>
+<h2 id="important-use-cases">Important Use Cases</h2>
+<h3 id="caching-and-session-management">Caching and Session Management</h3>
+<p>Key value databases are optimal for situations with constant read/write operations or situations requiring low latency and lower operational demand than a relational database. This makes them ideal for caching frequently accessed data and managing user sessions.</p>
+<p><strong>Web Application Caching</strong>: Key-value stores excel at caching database query results, computed values, and frequently accessed content. Applications can store expensive computation results using descriptive keys and retrieve them instantly, dramatically reducing response times and database load.</p>
+<p><strong>Session Storage</strong>: Online session information — Need to be able to keep a log of user session data over the course of being logged onto a device, utilizing your website, etc.? Key value databases make it simple to track and store activity information, including which pages were accessed, on-page actions a user took, and more.</p>
+<p><strong>Content Delivery</strong>: Key-value stores can cache static content like images, CSS files, and JavaScript resources, enabling fast content delivery and reducing bandwidth costs. The simple key-based access pattern maps naturally to URL-based content requests.</p>
+<h3 id="e-commerce-and-shopping-applications">E-commerce and Shopping Applications</h3>
+<p>E-commerce shopping carts — Key value databases work fantastically for temporary, lightweight listings, which makes them perfect for storing customer shopping carts while they order products online. The transient nature of shopping cart data and the need for fast read/write access make key-value stores ideal for this use case.</p>
+<p><strong>Product Catalogs</strong>: E-commerce platforms can store product information using product IDs as keys, enabling instant product lookups and reducing the complexity of product data management.</p>
+<p><strong>User Preferences</strong>: Customer preferences, wish lists, and personalization data can be stored efficiently using user IDs as keys, enabling rapid personalization of the shopping experience.</p>
+<p><strong>Inventory Tracking</strong>: Real-time inventory levels can be maintained using product SKUs as keys, enabling instant inventory checks during the purchase process.</p>
+<h3 id="real-time-applications">Real-Time Applications</h3>
+<p><strong>Gaming Platforms</strong>: Focus on driving innovation with no operational overhead. Build out your game platform with player data, session history, and leaderboards for millions of concurrent users. Key-value stores enable real-time updates to player statistics, game state, and leaderboards without the overhead of complex database operations.</p>
+<p><strong>Financial Trading</strong>: High-frequency trading systems use key-value stores to maintain real-time market data, trading positions, and risk calculations. The microsecond-level response times achievable with in-memory key-value stores are critical for competitive trading algorithms.</p>
+<p><strong>IoT Data Collection</strong>: You can scale throughput and concurrency for media and entertainment workloads such as real-time video streaming and interactive content. Internet of Things applications generate massive volumes of sensor data that must be ingested quickly. Key-value stores can handle high-volume writes using device IDs and timestamps as keys.</p>
+<h3 id="content-management-and-media">Content Management and Media</h3>
+<p><strong>Digital Asset Management</strong>: Media companies use key-value stores to manage large collections of digital assets. Companies like Airbnb, Netflix, Pinterest, and Reddit use S3 to host their web content, images, archives, backups of on-premises data for disaster recovery, and systems of record.</p>
+<p><strong>Metadata Storage</strong>: Key-value stores can efficiently store metadata about files, images, videos, and other content using content identifiers as keys. This enables rapid content discovery and organization without requiring complex database queries.</p>
+<p><strong>Content Versioning</strong>: Version control systems for content can use key-value stores to maintain different versions of documents, images, or other digital assets, with keys representing version identifiers.</p>
+<h3 id="mobile-and-edge-applications">Mobile and Edge Applications</h3>
+<p><strong>Offline Synchronization</strong>: Mobile applications can use local key-value stores to maintain data during offline periods, then synchronize changes with backend systems when connectivity is restored.</p>
+<p><strong>Edge Computing</strong>: Key-value stores deployed at edge locations can provide low-latency access to frequently requested data, reducing the need to query centralized databases for every request.</p>
+<p><strong>Device Configuration</strong>: IoT devices and mobile applications can store configuration data, user preferences, and application state in key-value stores, enabling quick startup and configuration persistence.</p>
+<h3 id="analytics-and-monitoring">Analytics and Monitoring</h3>
+<p><strong>Metrics Storage</strong>: Key-value stores can efficiently store time-series metrics data using timestamps and metric names as keys. This enables rapid aggregation and analysis of system performance data.</p>
+<p><strong>Log Aggregation</strong>: Application logs and system events can be stored in key-value stores using timestamps or event IDs as keys, enabling rapid search and analysis of system behavior.</p>
+<p><strong>User Activity Tracking</strong>: Web analytics platforms can use key-value stores to track user behavior, page views, and interaction patterns using session IDs and user identifiers as keys.</p>
+<h2 id="when-to-avoid-key-value-store-systems">When to Avoid Key Value Store Systems</h2>
+<h3 id="complex-relational-data-requirements">Complex Relational Data Requirements</h3>
+<p>Key-value stores are fundamentally unsuitable for applications that require complex relationships between data entities. <strong>Financial accounting systems</strong> that must maintain referential integrity between accounts, transactions, and financial statements cannot effectively leverage key-value stores. The double-entry bookkeeping principle requires atomic updates across multiple related entities, which is difficult to implement reliably in systems that operate on individual key-value pairs.</p>
+<p><strong>Enterprise Resource Planning (ERP) systems</strong> present similar challenges. These systems must maintain complex relationships between customers, orders, inventory, suppliers, and financial records. The business logic often requires multi-table joins and complex queries that span multiple data entities, making relational databases far more appropriate.</p>
+<p><strong>Data Warehousing and Business Intelligence</strong> applications that require complex analytical queries, aggregations across multiple dimensions, and sophisticated reporting capabilities are poorly served by key-value stores. These applications need SQL's rich query language and the ability to perform complex joins and aggregations that key-value stores cannot provide efficiently.</p>
+<h3 id="complex-query-requirements">Complex Query Requirements</h3>
+<p>Applications that need sophisticated query capabilities should avoid key-value stores. <strong>Search engines</strong> that must support complex boolean queries, fuzzy matching, faceted search, and relevance ranking require specialized search technologies rather than simple key-value retrieval.</p>
+<p><strong>Reporting systems</strong> that generate complex business reports with multiple aggregations, groupings, and calculations across large datasets are not well-suited to key-value stores. These applications typically require SQL's analytical functions and the ability to perform complex joins across multiple data sources.</p>
+<p><strong>Geographic Information Systems (GIS)</strong> that need spatial queries, proximity searches, and complex geometric calculations require specialized database capabilities that go far beyond simple key-value operations.</p>
+<h3 id="strong-consistency-requirements">Strong Consistency Requirements</h3>
+<p>Applications requiring ACID transactions across multiple data items should avoid most key-value stores. <strong>Banking systems</strong> that must ensure absolute consistency across account balances, transaction logs, and regulatory reports require the strong consistency guarantees that traditional relational databases provide.</p>
+<p><strong>Inventory management systems</strong> in environments where precise inventory tracking is critical (such as pharmaceutical supply chains) need strong consistency to prevent overselling or compliance violations. The eventual consistency models common in distributed key-value stores can lead to race conditions and inconsistent inventory states.</p>
+<p><strong>Regulatory compliance applications</strong> in industries like healthcare or finance often require audit trails and data lineage that are difficult to implement effectively in key-value stores without additional infrastructure.</p>
+<h3 id="small-scale-applications-with-limited-performance-requirements">Small-Scale Applications with Limited Performance Requirements</h3>
+<p>For small applications with modest performance requirements, the operational complexity of distributed key-value stores may not be justified. <strong>Simple web applications</strong> with a few thousand users and straightforward data requirements are often better served by traditional relational databases that provide richer query capabilities and simpler development models.</p>
+<p><strong>Prototype and development environments</strong> where rapid iteration and flexibility are more important than performance may benefit more from the rich querying capabilities and established tooling of relational databases.</p>
+<p><strong>Applications with unpredictable access patterns</strong> where the benefits of denormalization and key-based access are unclear may find relational databases more forgiving of changing requirements.</p>
+<h3 id="limited-development-resources">Limited Development Resources</h3>
+<p>Organizations with limited NoSQL expertise should carefully consider whether key-value stores are appropriate. <strong>Teams experienced primarily with SQL</strong> may find the mental model shift to key-value thinking and denormalized data design challenging and time-consuming.</p>
+<p><strong>Applications requiring rapid development cycles</strong> may benefit more from the rich ecosystem of ORM tools, administrative interfaces, and development frameworks available for relational databases.</p>
+<p><strong>Organizations with strict data governance requirements</strong> may find the schema flexibility of key-value stores conflicts with their need for centralized data modeling and governance processes.</p>
+<h3 id="integration-heavy-environments">Integration-Heavy Environments</h3>
+<p>Applications that must integrate with many existing systems may find key-value stores challenging. <strong>Enterprise applications</strong> that need to integrate with numerous third-party systems, legacy databases, and established data pipelines may find SQL-based systems provide better compatibility and easier integration paths.</p>
+<p><strong>Data integration scenarios</strong> where data must be regularly exchanged with partners or regulatory bodies often require standardized schemas and formats that are easier to implement with relational databases.</p>
+<p><strong>Business intelligence environments</strong> where data must be accessible to numerous reporting tools, analytics platforms, and visualization systems may benefit from SQL's standardization and broad tool support.</p>
+<h2 id="references">References</h2>
+<ol>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/DBM_(computing)">DBM (computing) - Wikipedia</a> - Wikipedia - Comprehensive overview of the original dbm library created by Ken Thompson in 1979 and its numerous successors including ndbm, gdbm, and Berkeley DB.</p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Berkeley_DB">Berkeley DB - Wikipedia</a> - Wikipedia - Detailed history of Berkeley DB from its origins at UC Berkeley in 1991 through its acquisition by Oracle, including its evolution from simple key-value storage to enterprise-grade transactional database.</p>
+</li>
+<li>
+<p><a href="https://www.allthingsdistributed.com/2012/01/amazon-dynamodb.html">Amazon DynamoDB – a Fast and Scalable NoSQL Database Service</a> - January 18, 2012 - All Things Distributed - Werner Vogels' original announcement of DynamoDB, explaining the motivation behind its creation and how it builds on Amazon's Dynamo research.</p>
+</li>
+<li>
+<p><a href="https://www.amazon.science/latest-news/amazons-dynamodb-10-years-later">Amazon's DynamoDB — 10 years later</a> - January 18, 2022 - Amazon Science - Retrospective on DynamoDB's impact and evolution over its first decade, including performance achievements and scale metrics.</p>
+</li>
+<li>
+<p><a href="https://aws.amazon.com/nosql/key-value/">What is a Key Value Database?</a> - July 2025 - AWS - AWS explanation of key-value databases, their characteristics, and use cases, with particular focus on DynamoDB capabilities.</p>
+</li>
+<li>
+<p><a href="http://blog.vmsplice.net/2024/01/key-value-stores-foundation-of-file.html">Key-Value Stores: The Foundation of File Systems and Databases</a> - 2024 - Stefan Hajnoczi - Technical exploration of how key-value stores serve as the underlying foundation for both file systems and databases.</p>
+</li>
+<li>
+<p><a href="https://www.dataversity.net/brief-history-database-management/">A Brief History of Database Management</a> - March 3, 2023 - DATAVERSITY - Historical overview of database management systems including the role of Ken Thompson's DBM research in establishing key-value stores.</p>
+</li>
+<li>
+<p><a href="https://www.dragonflydb.io/guides/key-value-databases">26 Top Key-Value Databases Compared (2025)</a> - 2025 - DragonflyDB - Comprehensive comparison of modern key-value databases with analysis of trends and features emerging in 2024-2025.</p>
+</li>
+<li>
+<p><a href="https://www.scylladb.com/learn/dynamodb/introduction-to-dynamodb/">Introduction to DynamoDB</a> - January 13, 2025 - ScyllaDB - Technical introduction to DynamoDB including its data model, API characteristics, and relationship to the original Dynamo paper.</p>
+</li>
+<li>
+<p><a href="https://www.stitchdata.com/resources/aws-s3/">What is AWS S3?</a> - Stitch - Analysis of Amazon S3 as a key-value store for object storage, including its role in modern data lakes and cloud architectures.</p>
+</li>
+</ol>
 
 
 
@@ -898,7 +1901,7 @@ Leonardo da Vinci</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../analytical/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Analytical">
+          <a href="../analytical/inman-vs-kimball/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Inman vs. Kimball">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -908,7 +1911,7 @@ Leonardo da Vinci</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Analytical
+                Inman vs. Kimball
               </div>
             </div>
           </a>
@@ -955,10 +1958,12 @@ Leonardo da Vinci</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>
