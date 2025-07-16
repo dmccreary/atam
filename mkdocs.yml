@@ -15,23 +15,27 @@ nav:
     - Four Vs of NoSQL: concepts/four-vs-of-nosql.md
     - Utility Tree: concepts/utility-tree.md
     - ACID vs. Base: concepts/acid-vs-base.md
+    - Scalability: concepts/scalability.md
   - Database Types:
     - Introduction: db-types/index.md
     - Relational: db-types/relational/index.md
     - Analytical: db-types/analytical/index.md
     - Key Value: db-types/key-value/index.md
-    - Column Family: db-types/04-column-family.md
+    - Column Family: db-types/column-family/index.md
     - Graph: db-types/graph/index.md
     - Document: db-types/document/index.md
   - Case Studies:
     - Introduction: case-studies/index.md
     - STAR Case Study Process: case-studies/star-process.md
     - Amazon Shopping Cart: case-studies/amazon-shopping-cart.md
-    - Friendster: case-studies/frendster.md
-    - Memcache: case-studies/memcache.md
-    - Google Knowledge Graph: case-studies/google-knowledge-graph.md
+    - Craigslist: case-studies/craigslist.md
+    - Deep Research: case-studies/deep-research.md
+    - Facebook: case-studies/facebook.md
+    - Friendster: case-studies/friendster.md
+    - Google Knowledge Graph: case-studies/google-knowledege-graph.md
     - LinkedIn: case-studies/linkedin.md
-    - Mo
+    - Memcache: case-studies/memchache.md
+    - Netflix: case-studies/netflix.md
   - Bias: bias.md
   - Presentations: slides.md
   - License: license.md
