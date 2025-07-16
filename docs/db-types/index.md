@@ -9,7 +9,7 @@ The six types are:
 
 1. [Relational](relational/index.md)
 2. [Analytical](analytical/index.md) (OLAP Cubes)
-3. [Key Value Stores](key-value.md)
+3. [Key Value Stores](key-value/index.md)
 4. [Column Family Stores](column-family/index.md)
 5. [Graph](graph/index.md)
 6. [Document](document/index.md)
