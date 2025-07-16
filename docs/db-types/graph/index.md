@@ -1,6 +1,16 @@
 # Graph Databases
 
-<!--->
+In this chapter we will cover graph databases.  We will look at
+their history and their key advantages over older relational
+database systems.  We will then cover their primary benefits and
+most popular use-cases and their ability to store complex
+knowledge at enterprise scale.
+
+The evolution of graph databases represents one of the most significant developments in modern data management, transforming how organizations model, store, and analyze interconnected data. Unlike traditional relational databases that struggle with complex relationships, or NoSQL document stores that excel at hierarchical data, graph databases are purpose-built for scenarios where relationships between entities are as important as the entities themselves.
+
+This chapter explores the historical development of graph databases, from their mathematical foundations through their emergence as enterprise-grade solutions, and examines the specific use cases where graph databases provide transformative business value. Understanding when and why to implement graph databases requires appreciating both their theoretical underpinnings and their practical applications in solving real-world problems that other database types cannot address efficiently.
+
+<!--
 
 prompt:
 
@@ -27,12 +37,6 @@ In my book on NoSQL, I am now working on a chapter on the rise of graph database
 ### Supply Chain Disruption Analysis
 
 -->
-
-# The Rise of Graph Databases: From Mathematical Theory to Enterprise Scale
-
-The evolution of graph databases represents one of the most significant developments in modern data management, transforming how organizations model, store, and analyze interconnected data. Unlike traditional relational databases that struggle with complex relationships, or NoSQL document stores that excel at hierarchical data, graph databases are purpose-built for scenarios where relationships between entities are as important as the entities themselves.
-
-This chapter explores the historical development of graph databases, from their mathematical foundations through their emergence as enterprise-grade solutions, and examines the specific use cases where graph databases provide transformative business value. Understanding when and why to implement graph databases requires appreciating both their theoretical underpinnings and their practical applications in solving real-world problems that other database types cannot address efficiently.
 
 ## History
 
