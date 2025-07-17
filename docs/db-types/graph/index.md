@@ -38,7 +38,7 @@ In my book on NoSQL, I am now working on a chapter on the rise of graph database
 
 -->
 
-## History
+## Background
 
 ### The Mathematical Foundation: Euler's Königsberg Bridges
 
@@ -72,7 +72,7 @@ Despite these limitations, the Semantic Web movement established crucial concept
 
 ### The Labeled Property Graph Model and Neo4j
 
-The emergence of **Neo4j** in the mid-2000s marked a pivotal moment in graph database history through its introduction of the **Labeled Property Graph (LPG)** model. This approach addressed the fundamental limitations of RDF by allowing both nodes and relationships to have properties directly attached to them.
+The emergence of **Neo4j** in the mid-2000s marked a pivotal moment in graph database history through its introduction of the **Labeled Property Graph (LPG)** model. This approach addressed the fundamental limitations of RDF by allowing both nodes and relationships to have properties directly attached to them.  Neo4j 1.0 was released as generally available on February 23, 2010. 
 
 The LPG model introduced several key innovations:
 

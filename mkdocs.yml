@@ -36,6 +36,9 @@ nav:
     - LinkedIn: case-studies/linkedin.md
     - Memcache: case-studies/memchache.md
     - Netflix: case-studies/netflix.md
+  - Stories:
+    - Introduction: stories/index.md
+    - DynamoDB: stories/dynamodb/index.md
   - Bias: bias.md
   - Presentations: slides.md
   - License: license.md
