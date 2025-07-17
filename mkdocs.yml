@@ -44,6 +44,7 @@ nav:
     - DynamoDB: stories/dynamodb/index.md
   - Bias: bias.md
   - Presentations: slides.md
+  - Glossary: glossary.md
   - License: license.md
   - How We Built This Site: how-we-built-this-site.md
   - Contact: contact.md
