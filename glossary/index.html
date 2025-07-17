@@ -1,0 +1,3789 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="DESCRIPTION All content licensed Creative Commons ShareAlike Attribution Noncommercial">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/atam/glossary/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>ATAM Glossary of Terms - Architecture Tradeoff Analysis Methodology</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#atam-glossary-of-terms" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Architecture Tradeoff Analysis Methodology" class="md-header__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Architecture Tradeoff Analysis Methodology
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ATAM Glossary of Terms
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Architecture Tradeoff Analysis Methodology" class="md-nav__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Architecture Tradeoff Analysis Methodology
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atam-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ATAM Process
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atam-db-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ATAM DB Selection Process
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../concepts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Foundational Concepts
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../db-types/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Database Types
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../case-studies/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Case Studies
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../stories/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Stories
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Presentations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    License
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How We Built This Site
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contact
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#iso-11179-term-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      ISO 11179 Term Definition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acid-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      ACID Properties
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anti-entropy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anti-Entropy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Gateway
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architectural-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architectural Approaches
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architectural-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architectural Decisions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atam-architecture-tradeoff-analysis-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      ATAM (Architecture Tradeoff Analysis Method)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atomicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atomicity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auto-Scaling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-sharding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auto-Sharding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Availability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      BASE Properties
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batch Processing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bloom-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom Filters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bson-binary-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      BSON (Binary JSON)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      B-Trees
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bulk-synchronous-parallel-bsp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bulk Synchronous Parallel (BSP)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#business-drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business Drivers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caching
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cap-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAP Theorem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cassandra-query-language-cql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cassandra Query Language (CQL)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cell-timestamps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cell Timestamps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloud-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud Computing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#column-families" class="md-nav__link">
+    <span class="md-ellipsis">
+      Column Families
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#column-family-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Column-Family Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#column-family-stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Column-Family Stores
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#columnar-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Columnar Compression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#columnar-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Columnar Storage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#community-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Community Detection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compaction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#composite-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Composite Keys
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compound-indexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compound Indexes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conflict-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conflict Resolution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consensus-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consensus Algorithms
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consistency
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consistent-hashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consistent Hashing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container Orchestration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-delivery-networks-cdn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content Delivery Networks (CDN)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-based-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cost-Based Optimization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cqrs-command-query-responsibility-segregation" class="md-nav__link">
+    <span class="md-ellipsis">
+      CQRS (Command Query Responsibility Segregation)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cypher" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cypher
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Governance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-ingestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Ingestion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-lakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Lakes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-lineage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Lineage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-locality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Locality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-marts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Marts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-masking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Masking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Modeling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Pipelines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-privacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Privacy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Quality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-warehousing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Warehousing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#denormalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Denormalization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dimension-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dimension Tables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distributed-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distributed Systems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distributed-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distributed Transactions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Document Collections
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Document Databases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Document Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-type-definition-dtd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Document Type Definition (DTD)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drill-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      Drill-Down
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#durability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Durability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Columns
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edge-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Computing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elt-extract-load-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      ELT (Extract, Load, Transform)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embedded-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Embedded Documents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encryption-at-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encryption at Rest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encryption-in-transit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encryption in Transit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entity-relationship-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entity-Relationship Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etl-extract-transform-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      ETL (Extract, Transform, Load)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-sourcing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Sourcing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eventual-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eventual Consistency
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution Plans
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fact-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fact Tables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failover" class="md-nav__link">
+    <span class="md-ellipsis">
+      Failover
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#findability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Findability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fitness-for-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fitness for Purpose
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flwor-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      FLWOR Expressions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#foreign-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Foreign Keys
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-text-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Full-Text Search
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geo-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geo-Distribution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geospatial-indexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geospatial Indexes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gossip-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gossip Protocol
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Algorithms
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Databases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Embeddings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-neural-networks-gnns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Neural Networks (GNNs)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-partitioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Partitioning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-traversal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Traversal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphsage" class="md-nav__link">
+    <span class="md-ellipsis">
+      GraphSAGE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gremlin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gremlin
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gsql-graph-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      GSQL (Graph SQL)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hadoop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hadoop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hbase" class="md-nav__link">
+    <span class="md-ellipsis">
+      HBase
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#health-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Health Checks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hierarchical-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hierarchical Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      High Availability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hinted-handoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hinted Handoff
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#horizontal-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Horizontal Scaling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html-hypertext-markup-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTML (HyperText Markup Language)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hypercubes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hypercubes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iaas-infrastructure-as-a-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      IaaS (Infrastructure as a Service)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Indexing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure-as-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infrastructure as Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interoperability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interoperability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iot-internet-of-things" class="md-nav__link">
+    <span class="md-ellipsis">
+      IoT (Internet of Things)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Isolation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-javascript-object-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON (JavaScript Object Notation)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Schema
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kafka" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kafka
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-value-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key-Value Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-value-stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key-Value Stores
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubernetes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#labeled-property-graph-lpg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Labeled Property Graph (LPG)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-balancing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load Balancing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lsm-trees-log-structured-merge-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      LSM Trees (Log-Structured Merge Trees)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#machine-learning-ml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Machine Learning (ML)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintainability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintainability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapreduce" class="md-nav__link">
+    <span class="md-ellipsis">
+      MapReduce
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#master-master-replication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Master-Master Replication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#master-slave-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Master-Slave Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#massively-parallel-processing-mpp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Massively Parallel Processing (MPP)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materialized-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      Materialized Views
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memcached" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memcached
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microservices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mongodb" class="md-nav__link">
+    <span class="md-ellipsis">
+      MongoDB
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-data-center-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Data Center Deployment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-tenant-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Tenant Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-version-concurrency-control-mvcc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Version Concurrency Control (MVCC)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      MySQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#native-parallel-graph-npg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Native Parallel Graph (NPG)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neo4j" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neo4j
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nfrs-non-functional-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      NFRs (Non-Functional Requirements)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node2vec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node2Vec
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nodes-vertices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nodes (Vertices)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Risks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Normalization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nosql" class="md-nav__link">
+    <span class="md-ellipsis">
+      NoSQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-relational-impedance-mismatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object-Relational Impedance Mismatch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#olap-online-analytical-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      OLAP (Online Analytical Processing)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#olap-cubes" class="md-nav__link">
+    <span class="md-ellipsis">
+      OLAP Cubes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oltp-online-transaction-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      OLTP (Online Transaction Processing)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ontology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ontology
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimistic-concurrency-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimistic Concurrency Control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oracle-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Oracle Database
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pagerank" class="md-nav__link">
+    <span class="md-ellipsis">
+      PageRank
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paas-platform-as-a-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      PaaS (Platform as a Service)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partitioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partitioning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partitioning-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partitioning Strategies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#peer-to-peer-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Peer-to-Peer Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pessimistic-concurrency-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pessimistic Concurrency Control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pivot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pivot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#point-in-time-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Point-in-Time Recovery
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#polyglot-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polyglot Persistence
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      PostgreSQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primary-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primary Keys
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-attribute-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Attribute Scenarios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Attributes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Tree
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#queryability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Queryability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query Optimization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quorum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quorum
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rbac-role-based-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      RBAC (Role-Based Access Control)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rdf-resource-description-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      RDF (Resource Description Framework)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-after-write-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read-After-Write Consistency
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-repair" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read Repair
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-time-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real-Time Processing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referential-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referential Integrity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reliability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Replication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Risks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Risk Themes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roll-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roll-Up
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#row-oriented-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Row-Oriented Storage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saas-software-as-a-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      SaaS (Software as a Service)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scalability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scalability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenarios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schema-evolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Evolution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schema-on-read" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema-on-Read
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schema-on-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema-on-Write
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schemaless" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schemaless
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schematron" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schematron
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secondary-indexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secondary Indexes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semantic-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantic Web
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semi-structured-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semi-Structured Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensitivity-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensitivity Points
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serverless-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Serverless Computing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-level-agreement-sla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service Level Agreement (SLA)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-level-indicator-sli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service Level Indicator (SLI)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-level-objective-slo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service Level Objective (SLO)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service Mesh
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sgml-standard-generalized-markup-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      SGML (Standard Generalized Markup Language)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sharding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shortest-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shortest Path
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slice-and-dice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slice and Dice
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slowly-changing-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slowly Changing Dimensions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snowflake-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Snowflake Schema
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sparse-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sparse Columns
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sparse-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sparse Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sparse-indexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sparse Indexes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spark
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sparql" class="md-nav__link">
+    <span class="md-ellipsis">
+      SPARQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-structured-query-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQL (Structured Query Language)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stakeholders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholders
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#star-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Star Schema
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streaming-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Streaming Analytics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strong-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strong Consistency
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structured-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structured Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#super-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Super Columns
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#surrogate-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Surrogate Keys
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-series-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time-Series Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-series-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time-Series Databases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-to-live-ttl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time-To-Live (TTL)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tigergraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      TigerGraph
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token-ranges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Token Ranges
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tombstones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tombstones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tradeoffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tradeoffs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triple-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Triple Store
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tunable-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tunable Consistency
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-phase-commit-2pc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two-Phase Commit (2PC)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typeswitch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Typeswitch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unstructured-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unstructured Data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Stories
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utility-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utility Tree
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector-clocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Clocks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vectorized-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vectorized Processing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Velocity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#veracity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Veracity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vertical-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertical Scaling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-nodes-vnodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual Nodes (vnodes)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      Volume
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#write-ahead-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Write-Ahead Logging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xml-extensible-markup-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      XML (Extensible Markup Language)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xml-schema-xsd" class="md-nav__link">
+    <span class="md-ellipsis">
+      XML Schema (XSD)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xpath" class="md-nav__link">
+    <span class="md-ellipsis">
+      XPath
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xquery" class="md-nav__link">
+    <span class="md-ellipsis">
+      XQuery
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xslt-extensible-stylesheet-language-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      XSLT (Extensible Stylesheet Language Transformations)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="atam-glossary-of-terms">ATAM Glossary of Terms</h1>
+<h4 id="iso-11179-term-definition">ISO 11179 Term Definition</h4>
+<p>A term definition is considered to be consistent with ISO metadata registry guideline 11179 if it meets the following criteria:</p>
+<ol>
+<li>Precise</li>
+<li>Concise</li>
+<li>Distinct</li>
+<li>Non-circular</li>
+<li>Unencumbered with business rules</li>
+</ol>
+<h4 id="acid-properties">ACID Properties</h4>
+<p>A set of properties that guarantee database transactions are processed reliably through atomicity, consistency, isolation, and durability.</p>
+<p><strong>Example:</strong> PostgreSQL provides ACID compliance for all transactions.</p>
+<h4 id="anti-entropy">Anti-Entropy</h4>
+<p>A distributed system process that ensures data consistency by periodically comparing and synchronizing data across replicas.</p>
+<p><strong>Example:</strong> Cassandra uses anti-entropy repair to maintain consistency across cluster nodes.</p>
+<h4 id="api-gateway">API Gateway</h4>
+<p>A service that acts as an entry point for client requests, providing routing, authentication, and request/response transformation.</p>
+<p><strong>Example:</strong> Kong API Gateway manages traffic between microservices and external clients.</p>
+<h4 id="architectural-approaches">Architectural Approaches</h4>
+<p>Methods or strategies used to achieve desired quality attributes in a software system's architecture.</p>
+<p><strong>Example:</strong> Load balancing is an architectural approach for improving system availability.</p>
+<h4 id="architectural-decisions">Architectural Decisions</h4>
+<p>Fundamental choices made about the structure, behavior, and interaction of system components.</p>
+<p><strong>Example:</strong> Choosing between monolithic and microservices architecture is an architectural decision.</p>
+<h4 id="atam-architecture-tradeoff-analysis-method">ATAM (Architecture Tradeoff Analysis Method)</h4>
+<p>A systematic approach for evaluating software architectures by analyzing how architectural decisions support quality attributes.</p>
+<p><strong>Example:</strong> ATAM helps identify risks and tradeoffs in a proposed microservices architecture.</p>
+<h4 id="atomicity">Atomicity</h4>
+<p>A transaction property ensuring that all operations within a transaction are completed successfully or none are applied.</p>
+<p><strong>Example:</strong> A bank transfer either completes both debit and credit operations or neither.</p>
+<h4 id="authentication">Authentication</h4>
+<p>The process of verifying the identity of a user or system component.</p>
+<p><strong>Example:</strong> Multi-factor authentication requires both password and SMS verification.</p>
+<h4 id="authorization">Authorization</h4>
+<p>The process of determining what actions an authenticated user or system is permitted to perform.</p>
+<p><strong>Example:</strong> RBAC authorization grants different database access levels to users based on their roles.</p>
+<h4 id="auto-scaling">Auto-Scaling</h4>
+<p>The automatic adjustment of computing resources based on current demand or predefined metrics.</p>
+<p><strong>Example:</strong> Kubernetes auto-scaling increases pod replicas when CPU usage exceeds 80%.</p>
+<h4 id="auto-sharding">Auto-Sharding</h4>
+<p>The automatic partitioning of data across multiple database instances without manual intervention.</p>
+<p><strong>Example:</strong> MongoDB auto-sharding distributes collections across shards based on shard keys.</p>
+<h4 id="availability">Availability</h4>
+<p>The degree to which a system is operational and accessible when required for use.</p>
+<p><strong>Example:</strong> 99.9% availability means the system is down for no more than 8.76 hours per year.</p>
+<h4 id="base-properties">BASE Properties</h4>
+<p>A consistency model emphasizing basically available, soft state, and eventual consistency over strict ACID properties.</p>
+<p><strong>Example:</strong> NoSQL databases often implement BASE properties for better scalability.</p>
+<h4 id="batch-processing">Batch Processing</h4>
+<p>A method of processing data in large volumes at scheduled intervals rather than in real-time.</p>
+<p><strong>Example:</strong> Daily ETL jobs process transaction data from the previous day.</p>
+<h4 id="bloom-filters">Bloom Filters</h4>
+<p>A probabilistic data structure used to test whether an element is in a set, with possible false positives but no false negatives.</p>
+<p><strong>Example:</strong> Cassandra uses Bloom filters to reduce disk reads during key lookups.</p>
+<h4 id="bson-binary-json">BSON (Binary JSON)</h4>
+<p>A binary representation of JSON documents that supports additional data types and enables efficient storage and parsing.</p>
+<p><strong>Example:</strong> MongoDB stores documents in BSON format for better performance than plain JSON.</p>
+<h4 id="b-trees">B-Trees</h4>
+<p>A self-balancing tree data structure that maintains sorted data and allows searches, insertions, and deletions in logarithmic time.</p>
+<p><strong>Example:</strong> Most relational databases use B-trees for indexing table data.</p>
+<h4 id="bulk-synchronous-parallel-bsp">Bulk Synchronous Parallel (BSP)</h4>
+<p>A parallel computing model where computation proceeds in synchronized supersteps.</p>
+<p><strong>Example:</strong> Apache Giraph implements BSP for distributed graph processing.</p>
+<h4 id="business-drivers">Business Drivers</h4>
+<p>The key business needs, goals, and constraints that influence architectural decisions.</p>
+<p><strong>Example:</strong> Reducing operational costs is a business driver for cloud migration.</p>
+<h4 id="caching">Caching</h4>
+<p>The temporary storage of frequently accessed data in a faster storage layer to improve response times.</p>
+<p><strong>Example:</strong> Redis caches database query results to reduce database load.</p>
+<h4 id="cap-theorem">CAP Theorem</h4>
+<p>A principle stating that distributed systems can guarantee at most two of consistency, availability, and partition tolerance.</p>
+<p><strong>Example:</strong> During network partitions, systems must choose between consistency and availability.</p>
+<h4 id="cassandra-query-language-cql">Cassandra Query Language (CQL)</h4>
+<p>A query language for Apache Cassandra that provides a SQL-like interface for interacting with Cassandra databases.</p>
+<p><strong>Example:</strong> CQL SELECT statements retrieve data from Cassandra column families.</p>
+<h4 id="cell-timestamps">Cell Timestamps</h4>
+<p>Metadata associated with individual data cells that indicates when the data was written or last modified.</p>
+<p><strong>Example:</strong> Cassandra uses cell timestamps for conflict resolution in distributed writes.</p>
+<h4 id="cloud-computing">Cloud Computing</h4>
+<p>The delivery of computing services over the internet, including servers, storage, databases, and software.</p>
+<p><strong>Example:</strong> AWS provides cloud computing services through EC2 virtual machines.</p>
+<h4 id="column-families">Column Families</h4>
+<p>A data structure in column-family databases that groups related columns together.</p>
+<p><strong>Example:</strong> Cassandra organizes data into column families similar to tables in relational databases.</p>
+<h4 id="column-family-model">Column-Family Model</h4>
+<p>A data model that stores data in column families, where each row can have different columns.</p>
+<p><strong>Example:</strong> Apache HBase implements the column-family model for big data storage.</p>
+<h4 id="column-family-stores">Column-Family Stores</h4>
+<p>Databases that organize data into column families, allowing flexible schemas and horizontal scaling.</p>
+<p><strong>Example:</strong> Cassandra and HBase are column-family stores designed for big data applications.</p>
+<h4 id="columnar-compression">Columnar Compression</h4>
+<p>A data compression technique that compresses data column by column rather than row by row.</p>
+<p><strong>Example:</strong> Parquet files use columnar compression to reduce storage space for analytical queries.</p>
+<h4 id="columnar-storage">Columnar Storage</h4>
+<p>A data storage method that stores data by columns rather than rows, optimizing for analytical queries.</p>
+<p><strong>Example:</strong> Amazon Redshift uses columnar storage for fast aggregation queries.</p>
+<h4 id="community-detection">Community Detection</h4>
+<p>Graph algorithms that identify groups of nodes that are more densely connected to each other than to other nodes.</p>
+<p><strong>Example:</strong> Social networks use community detection to identify user groups with similar interests.</p>
+<h4 id="compaction">Compaction</h4>
+<p>A background process that merges and reorganizes data files to optimize storage and query performance.</p>
+<p><strong>Example:</strong> Cassandra compaction merges SSTables to eliminate deleted data and improve read performance.</p>
+<h4 id="composite-keys">Composite Keys</h4>
+<p>A primary key composed of multiple columns that together uniquely identify a row.</p>
+<p><strong>Example:</strong> A composite key might combine customer_id and order_date to uniquely identify orders.</p>
+<h4 id="compound-indexes">Compound Indexes</h4>
+<p>Database indexes that include multiple columns to optimize queries with multiple search criteria.</p>
+<p><strong>Example:</strong> A compound index on (last_name, first_name) optimizes queries filtering by both fields.</p>
+<h4 id="compression">Compression</h4>
+<p>The process of reducing data size through encoding techniques to save storage space and transfer time.</p>
+<p><strong>Example:</strong> LZ4 compression reduces the size of database backup files.</p>
+<h4 id="conflict-resolution">Conflict Resolution</h4>
+<p>Mechanisms for handling conflicting updates to the same data in distributed systems.</p>
+<p><strong>Example:</strong> Vector clocks provide conflict resolution for concurrent updates in distributed databases.</p>
+<h4 id="consensus-algorithms">Consensus Algorithms</h4>
+<p>Distributed computing algorithms that enable nodes in a network to agree on a single value or decision.</p>
+<p><strong>Example:</strong> Raft consensus algorithm ensures consistency in distributed key-value stores.</p>
+<h4 id="consistency">Consistency</h4>
+<p>The property that all nodes in a distributed system see the same data at the same time.</p>
+<p><strong>Example:</strong> Strong consistency ensures that all reads return the most recent write.</p>
+<h4 id="consistent-hashing">Consistent Hashing</h4>
+<p>A distributed hashing scheme that minimizes data movement when nodes are added or removed.</p>
+<p><strong>Example:</strong> Cassandra uses consistent hashing to distribute data across cluster nodes.</p>
+<h4 id="container-orchestration">Container Orchestration</h4>
+<p>The automated deployment, management, and scaling of containerized applications.</p>
+<p><strong>Example:</strong> Kubernetes orchestrates Docker containers across multiple hosts.</p>
+<h4 id="content-delivery-networks-cdn">Content Delivery Networks (CDN)</h4>
+<p>A distributed network of servers that deliver web content to users based on their geographic location.</p>
+<p><strong>Example:</strong> CloudFlare CDN caches static content closer to users for faster page loads.</p>
+<h4 id="cost-based-optimization">Cost-Based Optimization</h4>
+<p>A query optimization technique that selects execution plans based on estimated resource costs.</p>
+<p><strong>Example:</strong> PostgreSQL's cost-based optimizer chooses between index scans and table scans.</p>
+<h4 id="cqrs-command-query-responsibility-segregation">CQRS (Command Query Responsibility Segregation)</h4>
+<p>An architectural pattern that separates read and write operations to optimize performance and scalability.</p>
+<p><strong>Example:</strong> E-commerce systems use CQRS to separate order processing from product catalog queries.</p>
+<h4 id="cypher">Cypher</h4>
+<p>A declarative query language for graph databases, particularly Neo4j.</p>
+<p><strong>Example:</strong> Cypher queries use pattern matching to find relationships between nodes.</p>
+<h4 id="data-governance">Data Governance</h4>
+<p>The management of data availability, usability, integrity, and security across an organization.</p>
+<p><strong>Example:</strong> Data governance policies define who can access customer personal information.</p>
+<h4 id="data-ingestion">Data Ingestion</h4>
+<p>The process of collecting and importing data from various sources into a storage system.</p>
+<p><strong>Example:</strong> Apache Kafka ingests streaming data from IoT devices into a data lake.</p>
+<h4 id="data-lakes">Data Lakes</h4>
+<p>Large-scale storage repositories that hold raw data in its native format until needed.</p>
+<p><strong>Example:</strong> AWS S3 serves as a data lake for storing unstructured log files and documents.</p>
+<h4 id="data-lineage">Data Lineage</h4>
+<p>The tracking of data flow from its origin through various transformations to its final destination.</p>
+<p><strong>Example:</strong> Data lineage tools show how customer data flows from CRM to analytics dashboards.</p>
+<h4 id="data-locality">Data Locality</h4>
+<p>The principle of storing and processing data close to where it's needed to minimize transfer costs.</p>
+<p><strong>Example:</strong> Hadoop moves computation to data nodes rather than moving data to computation nodes.</p>
+<h4 id="data-marts">Data Marts</h4>
+<p>Specialized subsets of data warehouses focused on specific business areas or departments.</p>
+<p><strong>Example:</strong> A sales data mart contains only sales-related data for the sales team's analytics.</p>
+<h4 id="data-masking">Data Masking</h4>
+<p>The process of hiding sensitive data by replacing it with realistic but fictional data.</p>
+<p><strong>Example:</strong> Production databases use data masking to protect customer SSNs in test environments.</p>
+<h4 id="data-modeling">Data Modeling</h4>
+<p>The process of creating a conceptual representation of data structures and their relationships.</p>
+<p><strong>Example:</strong> Entity-relationship modeling defines how customer and order entities relate.</p>
+<h4 id="data-pipelines">Data Pipelines</h4>
+<p>Automated workflows that move and transform data from source systems to destination systems.</p>
+<p><strong>Example:</strong> ETL pipelines extract data from databases, transform it, and load it into data warehouses.</p>
+<h4 id="data-privacy">Data Privacy</h4>
+<p>The protection of personal and sensitive information from unauthorized access or disclosure.</p>
+<p><strong>Example:</strong> GDPR compliance requires explicit consent for processing personal data.</p>
+<h4 id="data-quality">Data Quality</h4>
+<p>The degree to which data is accurate, complete, consistent, and fit for its intended use.</p>
+<p><strong>Example:</strong> Data quality checks validate that email addresses follow proper format rules.</p>
+<h4 id="data-warehousing">Data Warehousing</h4>
+<p>The process of collecting, storing, and managing data from multiple sources for business intelligence.</p>
+<p><strong>Example:</strong> Snowflake provides cloud data warehousing for analytical workloads.</p>
+<h4 id="denormalization">Denormalization</h4>
+<p>The process of adding redundant data to improve query performance at the cost of storage space.</p>
+<p><strong>Example:</strong> Storing customer names in order tables eliminates joins but increases storage.</p>
+<h4 id="dimension-tables">Dimension Tables</h4>
+<p>Tables in a star schema that contain descriptive attributes for analyzing fact data.</p>
+<p><strong>Example:</strong> A time dimension table contains date, month, quarter, and year attributes.</p>
+<h4 id="distributed-systems">Distributed Systems</h4>
+<p>Computing systems where components are located on different networked computers that communicate through message passing.</p>
+<p><strong>Example:</strong> Google's search engine runs on a distributed system across multiple data centers.</p>
+<h4 id="distributed-transactions">Distributed Transactions</h4>
+<p>Transactions that span multiple databases or systems while maintaining ACID properties.</p>
+<p><strong>Example:</strong> Two-phase commit ensures atomicity across multiple database systems.</p>
+<h4 id="document-collections">Document Collections</h4>
+<p>Groups of related documents stored together in document databases.</p>
+<p><strong>Example:</strong> MongoDB collections store user profiles as JSON documents.</p>
+<h4 id="document-databases">Document Databases</h4>
+<p>NoSQL databases that store data as documents, typically in JSON or XML format.</p>
+<p><strong>Example:</strong> MongoDB stores product catalogs as flexible JSON documents.</p>
+<h4 id="document-model">Document Model</h4>
+<p>A data model that stores information as documents containing nested attributes and arrays.</p>
+<p><strong>Example:</strong> JSON documents can store entire customer profiles with embedded address information.</p>
+<h4 id="document-type-definition-dtd">Document Type Definition (DTD)</h4>
+<p>A markup language for defining the structure and legal elements of XML documents.</p>
+<p><strong>Example:</strong> DTD validates that XML documents contain required elements in correct order.</p>
+<h4 id="drill-down">Drill-Down</h4>
+<p>The process of navigating from summary data to more detailed data in analytical systems.</p>
+<p><strong>Example:</strong> Drilling down from quarterly sales to monthly sales to daily sales.</p>
+<h4 id="durability">Durability</h4>
+<p>The guarantee that once a transaction is committed, it will survive system failures.</p>
+<p><strong>Example:</strong> Write-ahead logging ensures durability by recording changes before applying them.</p>
+<h4 id="dynamic-columns">Dynamic Columns</h4>
+<p>Columns that can be added to rows at runtime without modifying the database schema.</p>
+<p><strong>Example:</strong> Cassandra allows adding new columns to existing rows without schema changes.</p>
+<h4 id="edge-computing">Edge Computing</h4>
+<p>A distributed computing paradigm that brings computation and data storage closer to data sources.</p>
+<p><strong>Example:</strong> IoT sensors process data at the edge before sending summaries to the cloud.</p>
+<h4 id="elt-extract-load-transform">ELT (Extract, Load, Transform)</h4>
+<p>A data integration process that loads raw data first, then transforms it within the destination system.</p>
+<p><strong>Example:</strong> Modern data lakes use ELT to load raw data and transform it for specific analyses.</p>
+<h4 id="embedded-documents">Embedded Documents</h4>
+<p>Documents stored within other documents, creating nested data structures.</p>
+<p><strong>Example:</strong> Customer documents embed address documents rather than referencing separate address records.</p>
+<h4 id="encryption-at-rest">Encryption at Rest</h4>
+<p>The protection of stored data through cryptographic algorithms.</p>
+<p><strong>Example:</strong> Database files are encrypted at rest using AES-256 encryption.</p>
+<h4 id="encryption-in-transit">Encryption in Transit</h4>
+<p>The protection of data while it's being transmitted between systems.</p>
+<p><strong>Example:</strong> HTTPS encrypts data in transit between web browsers and servers.</p>
+<h4 id="entity-relationship-model">Entity-Relationship Model</h4>
+<p>A data modeling technique that represents entities and their relationships in a database.</p>
+<p><strong>Example:</strong> ER diagrams show how customer entities relate to order entities.</p>
+<h4 id="etl-extract-transform-load">ETL (Extract, Transform, Load)</h4>
+<p>A data integration process that extracts data from sources, transforms it, and loads it into destinations.</p>
+<p><strong>Example:</strong> Nightly ETL jobs extract sales data, calculate metrics, and load results into reporting tables.</p>
+<h4 id="event-sourcing">Event Sourcing</h4>
+<p>An architectural pattern that stores all changes to application state as a sequence of events.</p>
+<p><strong>Example:</strong> Banking systems use event sourcing to maintain an audit trail of all account transactions.</p>
+<h4 id="eventual-consistency">Eventual Consistency</h4>
+<p>A consistency model where the system will become consistent over time if no new updates are made.</p>
+<p><strong>Example:</strong> DNS updates eventually propagate to all servers worldwide.</p>
+<h4 id="execution-plans">Execution Plans</h4>
+<p>Detailed steps that database engines use to execute queries, including access methods and join strategies.</p>
+<p><strong>Example:</strong> Query execution plans show whether indexes are used for table scans.</p>
+<h4 id="fact-tables">Fact Tables</h4>
+<p>Tables in a star schema that contain quantitative measures for business analysis.</p>
+<p><strong>Example:</strong> Sales fact tables contain revenue, quantity, and cost measures.</p>
+<h4 id="failover">Failover</h4>
+<p>The automatic switching to a backup system when the primary system fails.</p>
+<p><strong>Example:</strong> Database failover redirects traffic to standby servers during primary server outages.</p>
+<h4 id="findability">Findability</h4>
+<p>The ease with which information can be located and retrieved from a system.</p>
+<p><strong>Example:</strong> Search functionality and clear navigation improve content findability.</p>
+<h4 id="fitness-for-purpose">Fitness for Purpose</h4>
+<p>The degree to which a system meets its intended use and requirements.</p>
+<p><strong>Example:</strong> A real-time trading system's fitness for purpose depends on low-latency performance.</p>
+<h4 id="flwor-expressions">FLWOR Expressions</h4>
+<p>XQuery expressions that use For, Let, Where, Order by, and Return clauses to query XML data.</p>
+<p><strong>Example:</strong> FLWOR expressions extract and sort product information from XML catalogs.</p>
+<h4 id="foreign-keys">Foreign Keys</h4>
+<p>Database constraints that link rows in one table to rows in another table.</p>
+<p><strong>Example:</strong> Order tables use customer_id foreign keys to reference customer tables.</p>
+<h4 id="full-text-search">Full-Text Search</h4>
+<p>The capability to search for text within documents or database fields.</p>
+<p><strong>Example:</strong> Elasticsearch provides full-text search across document collections.</p>
+<h4 id="geo-distribution">Geo-Distribution</h4>
+<p>The deployment of system components across multiple geographic locations.</p>
+<p><strong>Example:</strong> Global CDNs use geo-distribution to serve content from nearby edge locations.</p>
+<h4 id="geospatial-indexes">Geospatial Indexes</h4>
+<p>Specialized indexes for efficiently querying location-based data.</p>
+<p><strong>Example:</strong> MongoDB geospatial indexes enable finding nearby restaurants within a radius.</p>
+<h4 id="gossip-protocol">Gossip Protocol</h4>
+<p>A communication protocol where nodes periodically exchange state information with randomly selected peers.</p>
+<p><strong>Example:</strong> Cassandra uses gossip protocol for cluster membership and failure detection.</p>
+<h4 id="graph-algorithms">Graph Algorithms</h4>
+<p>Computational methods for analyzing graph structures and relationships.</p>
+<p><strong>Example:</strong> PageRank algorithm determines the importance of web pages based on link structure.</p>
+<h4 id="graph-databases">Graph Databases</h4>
+<p>NoSQL databases designed to store and query data with complex relationships.</p>
+<p><strong>Example:</strong> Neo4j stores social network connections as graph nodes and relationships.</p>
+<h4 id="graph-embeddings">Graph Embeddings</h4>
+<p>Vector representations of graph nodes that capture their structural properties.</p>
+<p><strong>Example:</strong> Node2Vec creates embeddings for recommendation systems based on user interaction graphs.</p>
+<h4 id="graph-model">Graph Model</h4>
+<p>A data model that represents data as nodes connected by edges or relationships.</p>
+<p><strong>Example:</strong> Social networks use graph models to represent friend connections.</p>
+<h4 id="graph-neural-networks-gnns">Graph Neural Networks (GNNs)</h4>
+<p>Neural network architectures designed to operate on graph-structured data.</p>
+<p><strong>Example:</strong> GNNs predict protein functions based on molecular interaction graphs.</p>
+<h4 id="graph-partitioning">Graph Partitioning</h4>
+<p>The division of large graphs into smaller subgraphs for distributed processing.</p>
+<p><strong>Example:</strong> Graph partitioning enables parallel processing of social network analysis.</p>
+<h4 id="graph-traversal">Graph Traversal</h4>
+<p>The process of visiting nodes and edges in a graph following specific patterns.</p>
+<p><strong>Example:</strong> Breadth-first traversal finds the shortest path between two nodes.</p>
+<h4 id="graphsage">GraphSAGE</h4>
+<p>A graph neural network framework for generating node embeddings through sampling and aggregation.</p>
+<p><strong>Example:</strong> GraphSAGE learns user preferences from social network interaction patterns.</p>
+<h4 id="gremlin">Gremlin</h4>
+<p>A graph traversal language for querying graph databases.</p>
+<p><strong>Example:</strong> Gremlin queries find mutual friends between users in a social network.</p>
+<h4 id="gsql-graph-sql">GSQL (Graph SQL)</h4>
+<p>A query language for graph databases that extends SQL with graph-specific operations.</p>
+<p><strong>Example:</strong> GSQL queries analyze fraud patterns in financial transaction graphs.</p>
+<h4 id="hadoop">Hadoop</h4>
+<p>An open-source framework for distributed storage and processing of big data.</p>
+<p><strong>Example:</strong> Hadoop MapReduce processes terabytes of log data across cluster nodes.</p>
+<h4 id="hbase">HBase</h4>
+<p>A distributed, column-family NoSQL database built on top of Hadoop.</p>
+<p><strong>Example:</strong> HBase stores time-series data for real-time analytics applications.</p>
+<h4 id="health-checks">Health Checks</h4>
+<p>Monitoring mechanisms that verify system components are functioning correctly.</p>
+<p><strong>Example:</strong> Load balancers use health checks to route traffic only to healthy servers.</p>
+<h4 id="hierarchical-data">Hierarchical Data</h4>
+<p>Data organized in a tree-like structure with parent-child relationships.</p>
+<p><strong>Example:</strong> File systems organize files and directories in hierarchical structures.</p>
+<h4 id="high-availability">High Availability</h4>
+<p>The characteristic of a system that remains operational for extended periods.</p>
+<p><strong>Example:</strong> Database clusters provide high availability through redundant nodes.</p>
+<h4 id="hinted-handoff">Hinted Handoff</h4>
+<p>A mechanism where nodes temporarily store data intended for unavailable nodes.</p>
+<p><strong>Example:</strong> Cassandra uses hinted handoff to ensure data delivery after node recovery.</p>
+<h4 id="horizontal-scaling">Horizontal Scaling</h4>
+<p>The practice of adding more servers to handle increased load.</p>
+<p><strong>Example:</strong> Web applications achieve horizontal scaling by adding more web server instances.</p>
+<h4 id="html-hypertext-markup-language">HTML (HyperText Markup Language)</h4>
+<p>A markup language used to create web pages and web applications.</p>
+<p><strong>Example:</strong> HTML forms collect user input for database storage.</p>
+<h4 id="hypercubes">Hypercubes</h4>
+<p>Multidimensional data structures used in OLAP systems for fast analytical queries.</p>
+<p><strong>Example:</strong> Sales hypercubes allow analysis across product, time, and region dimensions.</p>
+<h4 id="iaas-infrastructure-as-a-service">IaaS (Infrastructure as a Service)</h4>
+<p>Cloud computing services that provide virtualized computing resources over the internet.</p>
+<p><strong>Example:</strong> AWS EC2 provides IaaS through virtual machine instances.</p>
+<h4 id="indexing">Indexing</h4>
+<p>The creation of data structures that improve query performance by providing fast access paths.</p>
+<p><strong>Example:</strong> B-tree indexes on customer_id columns speed up customer lookups.</p>
+<h4 id="infrastructure-as-code">Infrastructure as Code</h4>
+<p>The practice of managing infrastructure through code rather than manual configuration.</p>
+<p><strong>Example:</strong> Terraform scripts define cloud infrastructure as version-controlled code.</p>
+<h4 id="interoperability">Interoperability</h4>
+<p>The ability of different systems to work together and exchange information.</p>
+<p><strong>Example:</strong> RESTful APIs enable interoperability between different software systems.</p>
+<h4 id="iot-internet-of-things">IoT (Internet of Things)</h4>
+<p>A network of physical devices embedded with sensors and software for data collection and exchange.</p>
+<p><strong>Example:</strong> Smart thermostats collect temperature data and adjust settings automatically.</p>
+<h4 id="isolation">Isolation</h4>
+<p>The guarantee that concurrent transactions do not interfere with each other.</p>
+<p><strong>Example:</strong> Database isolation prevents one user's changes from affecting another user's transaction.</p>
+<h4 id="json-javascript-object-notation">JSON (JavaScript Object Notation)</h4>
+<p>A lightweight data interchange format that is easy for humans to read and write.</p>
+<p><strong>Example:</strong> REST APIs commonly use JSON for request and response payloads.</p>
+<h4 id="json-schema">JSON Schema</h4>
+<p>A specification for validating the structure and content of JSON documents.</p>
+<p><strong>Example:</strong> JSON Schema validates that API requests contain required fields.</p>
+<h4 id="kafka">Kafka</h4>
+<p>A distributed streaming platform for building real-time data pipelines and applications.</p>
+<p><strong>Example:</strong> Kafka processes millions of events per second for real-time analytics.</p>
+<h4 id="key-value-model">Key-Value Model</h4>
+<p>A data model that stores data as key-value pairs with unique keys.</p>
+<p><strong>Example:</strong> Redis uses the key-value model for caching session data.</p>
+<h4 id="key-value-stores">Key-Value Stores</h4>
+<p>NoSQL databases that store data as collections of key-value pairs.</p>
+<p><strong>Example:</strong> Amazon DynamoDB stores user preferences as key-value pairs.</p>
+<h4 id="kubernetes">Kubernetes</h4>
+<p>An open-source container orchestration platform for automating deployment and management.</p>
+<p><strong>Example:</strong> Kubernetes automatically scales application pods based on resource usage.</p>
+<h4 id="labeled-property-graph-lpg">Labeled Property Graph (LPG)</h4>
+<p>A graph model where nodes and edges can have labels and properties.</p>
+<p><strong>Example:</strong> Neo4j uses LPG to model complex relationships with rich metadata.</p>
+<h4 id="load-balancing">Load Balancing</h4>
+<p>The distribution of incoming requests across multiple servers to optimize performance.</p>
+<p><strong>Example:</strong> Application load balancers distribute web traffic across multiple web servers.</p>
+<h4 id="logging">Logging</h4>
+<p>The systematic recording of events and messages for monitoring and debugging.</p>
+<p><strong>Example:</strong> Application logs record user actions for security auditing.</p>
+<h4 id="lsm-trees-log-structured-merge-trees">LSM Trees (Log-Structured Merge Trees)</h4>
+<p>A data structure optimized for high-volume sequential writes.</p>
+<p><strong>Example:</strong> Cassandra uses LSM trees for efficient handling of write-heavy workloads.</p>
+<h4 id="machine-learning-ml">Machine Learning (ML)</h4>
+<p>The use of algorithms and statistical models to enable computers to improve performance through experience.</p>
+<p><strong>Example:</strong> ML algorithms analyze customer behavior to recommend products.</p>
+<h4 id="maintainability">Maintainability</h4>
+<p>The ease with which a system can be modified to correct faults or improve performance.</p>
+<p><strong>Example:</strong> Modular code architecture improves maintainability by isolating changes.</p>
+<h4 id="mapreduce">MapReduce</h4>
+<p>A programming model for processing large datasets in parallel across distributed systems.</p>
+<p><strong>Example:</strong> MapReduce jobs analyze web server logs to identify popular pages.</p>
+<h4 id="master-master-replication">Master-Master Replication</h4>
+<p>A replication setup where multiple nodes can accept writes and synchronize changes.</p>
+<p><strong>Example:</strong> MySQL master-master replication allows writes to multiple database servers.</p>
+<h4 id="master-slave-architecture">Master-Slave Architecture</h4>
+<p>A distributed system design where one master node coordinates multiple slave nodes.</p>
+<p><strong>Example:</strong> Redis master-slave architecture replicates data from master to slave nodes.</p>
+<h4 id="massively-parallel-processing-mpp">Massively Parallel Processing (MPP)</h4>
+<p>A computing architecture that uses many processors to perform computations in parallel.</p>
+<p><strong>Example:</strong> Data warehouses use MPP to execute complex analytical queries quickly.</p>
+<h4 id="materialized-views">Materialized Views</h4>
+<p>Pre-computed query results stored as tables to improve query performance.</p>
+<p><strong>Example:</strong> Materialized views store aggregated sales data for faster reporting.</p>
+<h4 id="memcached">Memcached</h4>
+<p>A high-performance, distributed memory caching system.</p>
+<p><strong>Example:</strong> Memcached stores database query results in memory for faster access.</p>
+<h4 id="microservices">Microservices</h4>
+<p>An architectural pattern that structures applications as collections of loosely coupled services.</p>
+<p><strong>Example:</strong> E-commerce platforms use microservices for user management, inventory, and payments.</p>
+<h4 id="mongodb">MongoDB</h4>
+<p>A document-oriented NoSQL database that stores data in flexible JSON documents.</p>
+<p><strong>Example:</strong> MongoDB stores product catalogs with varying attributes per product.</p>
+<h4 id="monitoring">Monitoring</h4>
+<p>The continuous observation of system performance and behavior.</p>
+<p><strong>Example:</strong> Application monitoring alerts developers when response times exceed thresholds.</p>
+<h4 id="multi-data-center-deployment">Multi-Data Center Deployment</h4>
+<p>The distribution of system components across multiple data centers for redundancy.</p>
+<p><strong>Example:</strong> Global applications deploy across multiple data centers for disaster recovery.</p>
+<h4 id="multi-tenant-architecture">Multi-Tenant Architecture</h4>
+<p>A software architecture where a single instance serves multiple tenants or customers.</p>
+<p><strong>Example:</strong> SaaS applications use multi-tenant architecture to serve multiple organizations.</p>
+<h4 id="multi-version-concurrency-control-mvcc">Multi-Version Concurrency Control (MVCC)</h4>
+<p>A concurrency control method that maintains multiple versions of data to avoid locking.</p>
+<p><strong>Example:</strong> PostgreSQL uses MVCC to allow concurrent reads and writes without blocking.</p>
+<h4 id="mysql">MySQL</h4>
+<p>An open-source relational database management system.</p>
+<p><strong>Example:</strong> MySQL powers many web applications with ACID-compliant transactions.</p>
+<h4 id="native-parallel-graph-npg">Native Parallel Graph (NPG)</h4>
+<p>A graph processing model designed for native parallel execution.</p>
+<p><strong>Example:</strong> TigerGraph implements NPG for real-time graph analytics.</p>
+<h4 id="neo4j">Neo4j</h4>
+<p>A graph database management system designed for handling connected data.</p>
+<p><strong>Example:</strong> Neo4j analyzes social network connections to detect fraud patterns.</p>
+<h4 id="nfrs-non-functional-requirements">NFRs (Non-Functional Requirements)</h4>
+<p>Requirements that specify criteria for system operation rather than specific behaviors.</p>
+<p><strong>Example:</strong> NFRs include performance targets like "response time under 100ms."</p>
+<h4 id="node2vec">Node2Vec</h4>
+<p>A machine learning algorithm that generates vector representations of graph nodes.</p>
+<p><strong>Example:</strong> Node2Vec creates embeddings for social network users based on connection patterns.</p>
+<h4 id="nodes-vertices">Nodes (Vertices)</h4>
+<p>Individual entities in a graph database that can store properties and connect to other nodes.</p>
+<p><strong>Example:</strong> User nodes in a social network contain profile information and friend connections.</p>
+<h4 id="non-risks">Non-Risks</h4>
+<p>Architectural elements that do not pose threats to system quality attributes.</p>
+<p><strong>Example:</strong> Well-established libraries with proven track records are typically non-risks.</p>
+<h4 id="normalization">Normalization</h4>
+<p>The process of organizing database tables to reduce redundancy and improve data integrity.</p>
+<p><strong>Example:</strong> Third normal form eliminates transitive dependencies between columns.</p>
+<h4 id="nosql">NoSQL</h4>
+<p>Database systems that provide flexible schemas and horizontal scaling beyond traditional SQL databases.</p>
+<p><strong>Example:</strong> Document databases like MongoDB store JSON documents without fixed schemas.</p>
+<h4 id="object-relational-impedance-mismatch">Object-Relational Impedance Mismatch</h4>
+<p>The conceptual difference between object-oriented programming and relational databases.</p>
+<p><strong>Example:</strong> Object inheritance doesn't map directly to relational table structures.</p>
+<h4 id="olap-online-analytical-processing">OLAP (Online Analytical Processing)</h4>
+<p>A category of database processing focused on complex analytical queries.</p>
+<p><strong>Example:</strong> OLAP cubes enable fast analysis of sales data across multiple dimensions.</p>
+<h4 id="olap-cubes">OLAP Cubes</h4>
+<p>Multidimensional data structures that enable fast analytical queries.</p>
+<p><strong>Example:</strong> Sales cubes allow quick analysis by product, region, and time period.</p>
+<h4 id="oltp-online-transaction-processing">OLTP (Online Transaction Processing)</h4>
+<p>A category of database processing focused on transaction-oriented applications.</p>
+<p><strong>Example:</strong> OLTP systems handle credit card transactions in real-time.</p>
+<h4 id="ontology">Ontology</h4>
+<p>A formal representation of knowledge that defines concepts and relationships within a domain.</p>
+<p><strong>Example:</strong> Medical ontologies define relationships between diseases, symptoms, and treatments.</p>
+<h4 id="optimistic-concurrency-control">Optimistic Concurrency Control</h4>
+<p>A concurrency control method that assumes conflicts are rare and checks for conflicts at commit time.</p>
+<p><strong>Example:</strong> Version numbers detect conflicts when multiple users edit the same document.</p>
+<h4 id="oracle-database">Oracle Database</h4>
+<p>A commercial relational database management system.</p>
+<p><strong>Example:</strong> Oracle Database provides enterprise-grade features for mission-critical applications.</p>
+<h4 id="pagerank">PageRank</h4>
+<p>A graph algorithm that measures the importance of nodes based on link structure.</p>
+<p><strong>Example:</strong> Google's PageRank algorithm ranks web pages based on incoming links.</p>
+<h4 id="paas-platform-as-a-service">PaaS (Platform as a Service)</h4>
+<p>Cloud computing services that provide a platform for developing and running applications.</p>
+<p><strong>Example:</strong> Heroku provides PaaS for deploying web applications without managing servers.</p>
+<h4 id="partitioning">Partitioning</h4>
+<p>The division of large databases into smaller, more manageable pieces.</p>
+<p><strong>Example:</strong> Date-based partitioning splits tables by time periods for better performance.</p>
+<h4 id="partitioning-strategies">Partitioning Strategies</h4>
+<p>Methods for dividing data across multiple storage units or servers.</p>
+<p><strong>Example:</strong> Hash partitioning distributes data evenly across database shards.</p>
+<h4 id="peer-to-peer-architecture">Peer-to-Peer Architecture</h4>
+<p>A distributed system design where nodes act as both clients and servers.</p>
+<p><strong>Example:</strong> BitTorrent uses peer-to-peer architecture for file sharing.</p>
+<h4 id="performance">Performance</h4>
+<p>The degree to which a system accomplishes its functions within time and resource constraints.</p>
+<p><strong>Example:</strong> Database performance measures include query response time and throughput.</p>
+<h4 id="pessimistic-concurrency-control">Pessimistic Concurrency Control</h4>
+<p>A concurrency control method that prevents conflicts by locking resources before use.</p>
+<p><strong>Example:</strong> Database row locking prevents concurrent updates to the same record.</p>
+<h4 id="pivot">Pivot</h4>
+<p>The operation of rotating data from rows to columns for analysis.</p>
+<p><strong>Example:</strong> Pivot tables transform monthly sales data into columns for yearly comparison.</p>
+<h4 id="point-in-time-recovery">Point-in-Time Recovery</h4>
+<p>The ability to restore a database to a specific point in time.</p>
+<p><strong>Example:</strong> Database backups enable point-in-time recovery after data corruption.</p>
+<h4 id="polyglot-persistence">Polyglot Persistence</h4>
+<p>The use of multiple database technologies within a single application.</p>
+<p><strong>Example:</strong> Applications might use Redis for caching and PostgreSQL for transactions.</p>
+<h4 id="postgresql">PostgreSQL</h4>
+<p>An open-source relational database with advanced features and SQL compliance.</p>
+<p><strong>Example:</strong> PostgreSQL supports JSON data types alongside traditional relational features.</p>
+<h4 id="primary-keys">Primary Keys</h4>
+<p>Database constraints that uniquely identify rows in a table.</p>
+<p><strong>Example:</strong> Customer tables use customer_id as the primary key.</p>
+<h4 id="quality-attribute-scenarios">Quality Attribute Scenarios</h4>
+<p>Concrete examples that illustrate how quality attributes apply to specific system situations.</p>
+<p><strong>Example:</strong> "System responds to 1000 concurrent users within 2 seconds" describes a performance scenario.</p>
+<h4 id="quality-attributes">Quality Attributes</h4>
+<p>System properties that describe how well a system performs its intended functions.</p>
+<p><strong>Example:</strong> Performance, security, and scalability are key quality attributes.</p>
+<h4 id="quality-tree">Quality Tree</h4>
+<p>A hierarchical structure that organizes quality attributes and their refinements.</p>
+<p><strong>Example:</strong> Performance quality trees might include response time and throughput branches.</p>
+<h4 id="queryability">Queryability</h4>
+<p>The ease with which data can be retrieved and analyzed through queries.</p>
+<p><strong>Example:</strong> SQL databases provide high queryability through standardized query language.</p>
+<h4 id="query-optimization">Query Optimization</h4>
+<p>The process of improving query performance through better execution strategies.</p>
+<p><strong>Example:</strong> Query optimizers choose index scans over table scans for selective queries.</p>
+<h4 id="quorum">Quorum</h4>
+<p>A minimum number of nodes that must agree before a distributed system operation can proceed.</p>
+<p><strong>Example:</strong> Cassandra quorum reads ensure consistency by reading from majority of replicas.</p>
+<h4 id="rbac-role-based-access-control">RBAC (Role-Based Access Control)</h4>
+<p>A security model that grants access based on user roles rather than individual permissions.</p>
+<p><strong>Example:</strong> Database administrators have different access roles than application users.</p>
+<h4 id="rdf-resource-description-framework">RDF (Resource Description Framework)</h4>
+<p>A framework for representing information about resources on the web.</p>
+<p><strong>Example:</strong> RDF triples describe relationships between web resources in semantic format.</p>
+<h4 id="read-after-write-consistency">Read-After-Write Consistency</h4>
+<p>A consistency model that ensures reads following writes return the written value.</p>
+<p><strong>Example:</strong> Social media posts appear immediately to the author after publishing.</p>
+<h4 id="read-repair">Read Repair</h4>
+<p>A mechanism that fixes inconsistencies by comparing data during read operations.</p>
+<p><strong>Example:</strong> Cassandra read repair synchronizes data when inconsistencies are detected.</p>
+<h4 id="real-time-processing">Real-Time Processing</h4>
+<p>The processing of data as it arrives without significant delay.</p>
+<p><strong>Example:</strong> Stream processing engines handle real-time event data for immediate analysis.</p>
+<h4 id="redis">Redis</h4>
+<p>An in-memory data structure store used as a database, cache, and message broker.</p>
+<p><strong>Example:</strong> Redis stores session data for fast web application access.</p>
+<h4 id="referential-integrity">Referential Integrity</h4>
+<p>The guarantee that foreign key relationships remain valid across database operations.</p>
+<p><strong>Example:</strong> Referential integrity prevents deletion of customers who have existing orders.</p>
+<h4 id="reliability">Reliability</h4>
+<p>The probability that a system will perform its intended function without failure.</p>
+<p><strong>Example:</strong> Database reliability measures include mean time between failures.</p>
+<h4 id="replication">Replication</h4>
+<p>The process of copying data across multiple database servers for redundancy.</p>
+<p><strong>Example:</strong> Master-slave replication keeps backup servers synchronized with the primary.</p>
+<h4 id="risks">Risks</h4>
+<p>Architectural elements that may prevent a system from achieving its quality attributes.</p>
+<p><strong>Example:</strong> Single points of failure represent availability risks.</p>
+<h4 id="risk-themes">Risk Themes</h4>
+<p>Categories of related risks that affect system quality attributes.</p>
+<p><strong>Example:</strong> Security risk themes might include authentication and data protection risks.</p>
+<h4 id="roll-up">Roll-Up</h4>
+<p>The aggregation of detailed data into summary data at higher levels.</p>
+<p><strong>Example:</strong> Rolling up daily sales data into monthly and quarterly summaries.</p>
+<h4 id="row-oriented-storage">Row-Oriented Storage</h4>
+<p>A data storage method that stores complete rows together sequentially.</p>
+<p><strong>Example:</strong> Traditional relational databases use row-oriented storage for transactional workloads.</p>
+<h4 id="saas-software-as-a-service">SaaS (Software as a Service)</h4>
+<p>Cloud computing services that provide software applications over the internet.</p>
+<p><strong>Example:</strong> Salesforce provides CRM functionality as a SaaS application.</p>
+<h4 id="scalability">Scalability</h4>
+<p>The ability of a system to handle increased load by adding resources.</p>
+<p><strong>Example:</strong> Horizontal scalability adds more servers to handle growing user traffic.</p>
+<h4 id="scenarios">Scenarios</h4>
+<p>Specific situations or use cases that demonstrate how quality attributes apply.</p>
+<p><strong>Example:</strong> Load testing scenarios simulate peak traffic conditions.</p>
+<h4 id="schema-evolution">Schema Evolution</h4>
+<p>The process of modifying database schemas while maintaining backward compatibility.</p>
+<p><strong>Example:</strong> Adding new columns to existing tables without breaking existing applications.</p>
+<h4 id="schema-on-read">Schema-on-Read</h4>
+<p>A data processing approach where schema is applied when data is read rather than written.</p>
+<p><strong>Example:</strong> Data lakes use schema-on-read to handle diverse data formats.</p>
+<h4 id="schema-on-write">Schema-on-Write</h4>
+<p>A data processing approach where schema is enforced when data is written to storage.</p>
+<p><strong>Example:</strong> Relational databases use schema-on-write to ensure data consistency.</p>
+<h4 id="schemaless">Schemaless</h4>
+<p>The ability to store data without predefined schema requirements.</p>
+<p><strong>Example:</strong> Document databases allow schemaless storage of JSON documents.</p>
+<h4 id="schematron">Schematron</h4>
+<p>A rule-based validation language for XML documents.</p>
+<p><strong>Example:</strong> Schematron validates business rules in XML documents beyond basic schema validation.</p>
+<h4 id="secondary-indexes">Secondary Indexes</h4>
+<p>Additional indexes created on columns other than the primary key.</p>
+<p><strong>Example:</strong> Email indexes on user tables enable fast lookups by email address.</p>
+<h4 id="security">Security</h4>
+<p>The protection of system resources and data from unauthorized access or modification.</p>
+<p><strong>Example:</strong> Database security includes authentication, authorization, and encryption.</p>
+<h4 id="semantic-web">Semantic Web</h4>
+<p>An extension of the web that enables machines to understand and process web content.</p>
+<p><strong>Example:</strong> RDF data enables semantic web applications to reason about relationships.</p>
+<h4 id="semi-structured-data">Semi-Structured Data</h4>
+<p>Data that has some organizational structure but doesn't fit rigid schemas.</p>
+<p><strong>Example:</strong> JSON documents represent semi-structured data with flexible schemas.</p>
+<h4 id="sensitivity-points">Sensitivity Points</h4>
+<p>Architectural elements where changes significantly affect quality attributes.</p>
+<p><strong>Example:</strong> Database connection pools are sensitivity points for performance.</p>
+<h4 id="serverless-computing">Serverless Computing</h4>
+<p>A cloud computing model where the cloud provider manages server infrastructure.</p>
+<p><strong>Example:</strong> AWS Lambda runs code without provisioning or managing servers.</p>
+<h4 id="service-level-agreement-sla">Service Level Agreement (SLA)</h4>
+<p>A contract that defines expected service performance levels.</p>
+<p><strong>Example:</strong> SLAs specify 99.9% uptime guarantees for cloud services.</p>
+<h4 id="service-level-indicator-sli">Service Level Indicator (SLI)</h4>
+<p>A quantitative measure of service performance.</p>
+<p><strong>Example:</strong> Response time percentiles serve as SLIs for web services.</p>
+<h4 id="service-level-objective-slo">Service Level Objective (SLO)</h4>
+<p>A target value or range for service performance metrics.</p>
+<p><strong>Example:</strong> SLOs might target 95% of requests completing within 100ms.</p>
+<h4 id="service-mesh">Service Mesh</h4>
+<p>An infrastructure layer that handles service-to-service communication in microservices.</p>
+<p><strong>Example:</strong> Istio service mesh provides load balancing and security between microservices.</p>
+<h4 id="sgml-standard-generalized-markup-language">SGML (Standard Generalized Markup Language)</h4>
+<p>A markup language standard for defining document structure.</p>
+<p><strong>Example:</strong> HTML and XML are both derived from SGML principles.</p>
+<h4 id="sharding">Sharding</h4>
+<p>The horizontal partitioning of data across multiple database instances.</p>
+<p><strong>Example:</strong> User data sharding distributes users across multiple database servers.</p>
+<h4 id="shortest-path">Shortest Path</h4>
+<p>Graph algorithms that find the minimum distance between two nodes.</p>
+<p><strong>Example:</strong> GPS navigation uses shortest path algorithms to find optimal routes.</p>
+<h4 id="slice-and-dice">Slice and Dice</h4>
+<p>The operation of viewing data from different perspectives by selecting and filtering.</p>
+<p><strong>Example:</strong> Sales analysis tools slice and dice data by product, region, and time.</p>
+<h4 id="slowly-changing-dimensions">Slowly Changing Dimensions</h4>
+<p>Dimension table records that change slowly over time.</p>
+<p><strong>Example:</strong> Customer addresses change slowly and require historical tracking.</p>
+<h4 id="snowflake-schema">Snowflake Schema</h4>
+<p>A dimensional modeling approach where dimension tables are normalized.</p>
+<p><strong>Example:</strong> Snowflake schemas reduce redundancy by normalizing dimension tables.</p>
+<h4 id="sparse-columns">Sparse Columns</h4>
+<p>Columns that contain null values for most rows.</p>
+<p><strong>Example:</strong> Product tables use sparse columns for optional attributes.</p>
+<h4 id="sparse-data">Sparse Data</h4>
+<p>Data where most values are zero or null.</p>
+<p><strong>Example:</strong> User preference matrices are sparse since users rate few products.</p>
+<h4 id="sparse-indexes">Sparse Indexes</h4>
+<p>Indexes that only include rows with non-null values in indexed columns.</p>
+<p><strong>Example:</strong> MongoDB sparse indexes skip documents with missing fields.</p>
+<h4 id="spark">Spark</h4>
+<p>A distributed computing framework for large-scale data processing.</p>
+<p><strong>Example:</strong> Apache Spark processes big data analytics jobs across cluster nodes.</p>
+<h4 id="sparql">SPARQL</h4>
+<p>A query language for retrieving and manipulating RDF data.</p>
+<p><strong>Example:</strong> SPARQL queries extract information from semantic web knowledge graphs.</p>
+<h4 id="sql-structured-query-language">SQL (Structured Query Language)</h4>
+<p>A standardized language for managing relational databases.</p>
+<p><strong>Example:</strong> SQL SELECT statements retrieve data from relational database tables.</p>
+<h4 id="stakeholders">Stakeholders</h4>
+<p>Individuals or groups who have an interest in or are affected by a system.</p>
+<p><strong>Example:</strong> System stakeholders include users, developers, and business owners.</p>
+<h4 id="star-schema">Star Schema</h4>
+<p>A dimensional modeling approach with a central fact table surrounded by dimension tables.</p>
+<p><strong>Example:</strong> Sales star schemas have sales facts connected to customer, product, and time dimensions.</p>
+<h4 id="storm">Storm</h4>
+<p>A distributed stream processing framework for real-time data analysis.</p>
+<p><strong>Example:</strong> Apache Storm processes streaming data from social media feeds.</p>
+<h4 id="streaming-analytics">Streaming Analytics</h4>
+<p>The real-time analysis of data as it flows through a system.</p>
+<p><strong>Example:</strong> Streaming analytics detect fraudulent transactions as they occur.</p>
+<h4 id="strong-consistency">Strong Consistency</h4>
+<p>A consistency model where all nodes return the same data simultaneously.</p>
+<p><strong>Example:</strong> Traditional relational databases provide strong consistency for transactions.</p>
+<h4 id="structured-data">Structured Data</h4>
+<p>Data that is organized in a predefined format with clear relationships.</p>
+<p><strong>Example:</strong> Relational database tables contain structured data with defined columns.</p>
+<h4 id="super-columns">Super Columns</h4>
+<p>Columns that contain multiple sub-columns in column-family databases.</p>
+<p><strong>Example:</strong> Cassandra super columns group related data within a single column.</p>
+<h4 id="surrogate-keys">Surrogate Keys</h4>
+<p>Artificial keys created solely for uniquely identifying rows.</p>
+<p><strong>Example:</strong> Auto-incrementing ID columns serve as surrogate keys.</p>
+<h4 id="time-series-data">Time-Series Data</h4>
+<p>Data points collected over time intervals, typically for analysis of trends.</p>
+<p><strong>Example:</strong> IoT sensors generate time-series data for temperature monitoring.</p>
+<h4 id="time-series-databases">Time-Series Databases</h4>
+<p>Specialized databases optimized for storing and querying time-series data.</p>
+<p><strong>Example:</strong> InfluxDB stores metrics data with timestamp-based indexing.</p>
+<h4 id="time-to-live-ttl">Time-To-Live (TTL)</h4>
+<p>A mechanism that automatically expires data after a specified time period.</p>
+<p><strong>Example:</strong> Cache entries use TTL to automatically remove stale data.</p>
+<h4 id="tigergraph">TigerGraph</h4>
+<p>A graph database designed for real-time analytics on large-scale graphs.</p>
+<p><strong>Example:</strong> TigerGraph analyzes fraud patterns in financial transaction networks.</p>
+<h4 id="token-ranges">Token Ranges</h4>
+<p>Ranges of hash values that determine data distribution in consistent hashing.</p>
+<p><strong>Example:</strong> Cassandra assigns token ranges to nodes for data distribution.</p>
+<h4 id="tombstones">Tombstones</h4>
+<p>Markers that indicate deleted data in distributed databases.</p>
+<p><strong>Example:</strong> Cassandra tombstones mark deleted records for eventual cleanup.</p>
+<h4 id="tradeoffs">Tradeoffs</h4>
+<p>The architectural decisions that improve one quality attribute at the expense of another.</p>
+<p><strong>Example:</strong> Caching improves performance but may reduce consistency.</p>
+<h4 id="transformability">Transformability</h4>
+<p>The ease with which a system can be modified to incorporate new requirements.</p>
+<p><strong>Example:</strong> Plugin architectures provide high transformability for extending functionality.</p>
+<h4 id="triple-store">Triple Store</h4>
+<p>A database designed for storing and querying RDF triples.</p>
+<p><strong>Example:</strong> Triple stores enable semantic web applications to query knowledge graphs.</p>
+<h4 id="tunable-consistency">Tunable Consistency</h4>
+<p>The ability to adjust consistency levels based on application requirements.</p>
+<p><strong>Example:</strong> Cassandra allows tunable consistency from eventual to strong consistency.</p>
+<h4 id="two-phase-commit-2pc">Two-Phase Commit (2PC)</h4>
+<p>A distributed transaction protocol that ensures atomicity across multiple databases.</p>
+<p><strong>Example:</strong> 2PC coordinates commits across multiple database systems.</p>
+<h4 id="typeswitch">Typeswitch</h4>
+<p>A conditional construct in XQuery that performs different actions based on data types.</p>
+<p><strong>Example:</strong> Typeswitch handles different XML element types in query processing.</p>
+<h4 id="unstructured-data">Unstructured Data</h4>
+<p>Data that doesn't fit into traditional row-column database structures.</p>
+<p><strong>Example:</strong> Text documents, images, and videos are unstructured data.</p>
+<h4 id="usability">Usability</h4>
+<p>The ease with which users can learn and use a system effectively.</p>
+<p><strong>Example:</strong> Intuitive user interfaces improve system usability.</p>
+<h4 id="user-stories">User Stories</h4>
+<p>Short descriptions of system features from the user's perspective.</p>
+<p><strong>Example:</strong> "As a customer, I want to view my order history" is a user story.</p>
+<h4 id="utility-tree">Utility Tree</h4>
+<p>A hierarchical structure that organizes quality attributes by their importance to stakeholders.</p>
+<p><strong>Example:</strong> Utility trees prioritize performance over security for gaming applications.</p>
+<h4 id="variability">Variability</h4>
+<p>The degree to which data values differ from each other.</p>
+<p><strong>Example:</strong> Customer age data shows low variability while income data shows high variability.</p>
+<h4 id="vector-clocks">Vector Clocks</h4>
+<p>A logical clock mechanism for ordering events in distributed systems.</p>
+<p><strong>Example:</strong> Vector clocks resolve conflicts in distributed database updates.</p>
+<h4 id="vectorized-processing">Vectorized Processing</h4>
+<p>A processing technique that applies operations to multiple data elements simultaneously.</p>
+<p><strong>Example:</strong> Columnar databases use vectorized processing for efficient aggregations.</p>
+<h4 id="velocity">Velocity</h4>
+<p>The speed at which data is generated and processed.</p>
+<p><strong>Example:</strong> High-velocity data streams require real-time processing capabilities.</p>
+<h4 id="veracity">Veracity</h4>
+<p>The accuracy and trustworthiness of data.</p>
+<p><strong>Example:</strong> Data validation ensures veracity by checking for errors and inconsistencies.</p>
+<h4 id="vertical-scaling">Vertical Scaling</h4>
+<p>The practice of adding more power to existing servers to handle increased load.</p>
+<p><strong>Example:</strong> Upgrading database servers with more RAM provides vertical scaling.</p>
+<h4 id="virtual-nodes-vnodes">Virtual Nodes (vnodes)</h4>
+<p>A technique that divides each physical node into multiple virtual nodes for better data distribution.</p>
+<p><strong>Example:</strong> Cassandra vnodes improve load balancing across cluster nodes.</p>
+<h4 id="volume">Volume</h4>
+<p>The amount of data that needs to be stored and processed.</p>
+<p><strong>Example:</strong> Big data applications handle large volumes of data across distributed systems.</p>
+<h4 id="write-ahead-logging">Write-Ahead Logging</h4>
+<p>A technique that logs changes before applying them to ensure durability.</p>
+<p><strong>Example:</strong> Database WAL ensures recovery after system crashes.</p>
+<h4 id="xml-extensible-markup-language">XML (Extensible Markup Language)</h4>
+<p>A markup language for encoding documents in human-readable format.</p>
+<p><strong>Example:</strong> XML documents store structured data with custom tags.</p>
+<h4 id="xml-schema-xsd">XML Schema (XSD)</h4>
+<p>A language for describing the structure and constraints of XML documents.</p>
+<p><strong>Example:</strong> XSD validates that XML documents conform to expected structures.</p>
+<h4 id="xpath">XPath</h4>
+<p>A query language for selecting nodes from XML documents.</p>
+<p><strong>Example:</strong> XPath expressions extract specific elements from XML documents.</p>
+<h4 id="xquery">XQuery</h4>
+<p>A query language for finding and extracting information from XML documents.</p>
+<p><strong>Example:</strong> XQuery transforms XML data into different formats for presentation.</p>
+<h4 id="xslt-extensible-stylesheet-language-transformations">XSLT (Extensible Stylesheet Language Transformations)</h4>
+<p>A language for transforming XML documents into other formats.</p>
+<p><strong>Example:</strong> XSLT transforms XML data into HTML for web presentation.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
