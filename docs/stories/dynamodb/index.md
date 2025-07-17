@@ -1,7 +1,7 @@
 # The Story of DynamoDB: From Relational Failures to Distributed Key-Value Store
 
 <details>
-   <summary>Image NN Prompt</summary>
+   <summary>Narrative Prompt</summary>
 
 Create a narrative for a story about the creation of Amazon's DynamoDB.
 
