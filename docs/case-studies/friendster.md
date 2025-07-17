@@ -1,10 +1,23 @@
 # Case Study: The Fall of Friendster - A Database Architecture Failure
 
+<details>
+    <summary>Technical Case Study Prompt</summary>
+Create a detailed technical case study of the use of Friendster around 20002. 
 
+Use the STAR process 
+1. Situation - give context to the case study 
+2. Task - what was the challenge being addressed 
+3. Approach - What was the architectural approach? 
+4. Results - What were the results, both measurable and intangible 
 
 *Failure to Scale* is a common term in the startup industry.  One of the most
 notable failures in the history of the NoSQL movement is the failure of
 the company Friendster to scale out its social networking application.
+Create 10 real working references using the following format:
+## References
+1. [Title](WORKING_URL) - publication_date - publication_name - description_and_relevance
+
+</details>
 
 ## Situation: The Dawn of Social Networking
 

@@ -24,8 +24,6 @@ Add a scene a huge party at Amazon when the decommissioned the last Oracle serve
 The narrative should describe each image with a detailed image prompt that uses the
 following template:
 
-
-
 ![](image-NN.png)
 \<details>
    <summary>Image NN Prompt</summary>
@@ -34,6 +32,12 @@ following template:
 
    description of image to be given to a text-to-image program
 \</details>
+
+Create 10 real working references using the following format:
+
+## References
+
+1. [Title](WORKING_URL) - publication_date - publication_name - description_and_relevance
 
 </details>
 
