@@ -1,3 +1,5 @@
+
+
 # The Story of DynamoDB: From Relational Failures to Distributed Key-Value Store
 
 <details>
