@@ -1,8 +1,8 @@
-# TigerGraph
+# TigerGraph Scale-Out Graph Database Case Study (2017)
 
  <details>
     <summary>Technical Case Study Prompt</summary>
-Given to Claude Sonnet 4.0
+Given to Claude Sonnet 4.0 in July 2025
 
 Title: TigerGraph Case Study
 Create a detailed technical case study of the use of the scaleout graph database TigerGraph around 2017. 
@@ -20,8 +20,6 @@ Create 10 real working references using the following format:
 1. [Title](WORKING_URL) - publication_date - publication_name - description_and_relevance
 
 </details>
-
-# TigerGraph Scale-Out Graph Database Case Study (2017)
 
 ## Executive Summary
 
