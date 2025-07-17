@@ -1,4 +1,6 @@
-# Deep Research
+# NoSQL Case Studies: Scaling Challenges and Innovative Architectures (2000–Present)
+
+Here is my OpenAI Deep Research on the most influential stories on the evolution of NoSQL.
 
 !!! prompt
     I am writing a book on how to select the right database architecture.  I am interested in the most important case studies of how organizations achieved a competitive advantage by using a relational database.  For example when Amazon moved off of Oracle for their shopping carts and moved to DynamoDB.
@@ -7,7 +9,6 @@
 
     Great. I’ll gather influential case studies from 2000 to the present where organizations adopted NoSQL databases to address scalability challenges and achieved competitive advantages. This will include well-referenced examples from both large enterprises and smaller yet influential systems like LiveJournal’s memcached. I’ll also focus on specific NoSQL patterns—key-value, document, column family, and graph—and how their adoption addressed real-world scalability and performance issues.
 
-# NoSQL Case Studies: Scaling Challenges and Innovative Architectures (2000–Present)
 
 ## Early Warnings: Relational Limits and the Rise of Caching (2000–2005)
 
