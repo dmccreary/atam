@@ -19,7 +19,9 @@ nav:
   - Database Types:
     - Introduction: db-types/index.md
     - Relational: db-types/relational/index.md
-    - Analytical: db-types/analytical/index.md
+    - Analytical:
+      - Introduction: db-types/analytical/index.md
+      - Inman vs. Kimball: db-types/analytical/inman-vs-kimball.md
     - Key Value: db-types/key-value/index.md
     - Column Family: db-types/column-family/index.md
     - Graph: db-types/graph/index.md
