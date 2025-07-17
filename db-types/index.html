@@ -375,8 +375,6 @@
         
       
         
-          
-        
       
         
           
@@ -461,16 +459,43 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="analytical/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="analytical/" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     Analytical
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -887,7 +912,7 @@ types we use when selecting the right database architecutre.</p>
 <ol>
 <li><a href="relational/">Relational</a></li>
 <li><a href="analytical/">Analytical</a> (OLAP Cubes)</li>
-<li><a href="key-value/">Key Value Stores</a></li>
+<li><a href="key-value.md">Key Value Stores</a></li>
 <li><a href="column-family/">Column Family Stores</a></li>
 <li><a href="graph/">Graph</a></li>
 <li><a href="document/">Document</a></li>
@@ -898,11 +923,77 @@ and each of these have pros and cons for different applications.</p>
 We will cover this topic in the next section.</p>
 <p>Here is a brief overview of these six database architecture patterns:</p>
 <h2 id="relational-or-oltp">Relational or OLTP</h2>
+<p>Relational databases use structured tables with predefined schemas to store data in rows and columns. They enforce ACID (Atomicity, Consistency, Isolation, Durability) properties and use SQL for querying. These databases excel at maintaining data integrity and supporting complex transactions, making them ideal for applications requiring strict consistency like financial systems, e-commerce transactions, and enterprise resource planning.</p>
+<p><strong>Key Characteristics:</strong></p>
+<ul>
+<li>Structured schema with enforced relationships</li>
+<li>ACID compliance for transaction reliability</li>
+<li>SQL-based querying with complex joins</li>
+<li>Vertical scaling (scaling up with more powerful hardware)</li>
+<li>Strong consistency guarantees</li>
+</ul>
+<p><strong>Best Use Cases:</strong> Financial transactions, inventory management, user authentication systems, order processing, and any application requiring immediate consistency and complex relational queries.</p>
+<p><strong>Examples:</strong> PostgreSQL, MySQL, Oracle Database, Microsoft SQL Server</p>
 <h2 id="analytical-or-olap">Analytical or OLAP</h2>
+<p>Online Analytical Processing (OLAP) databases are optimized for complex analytical queries and reporting rather than transaction processing. They use multidimensional data models organized into cubes that enable fast aggregation and slice-and-dice operations across large datasets. OLAP systems typically handle the "Volume" challenge by using column-oriented storage and pre-computed aggregations.</p>
+<p><strong>Key Characteristics:</strong></p>
+<ul>
+<li>Columnar storage for efficient analytical queries</li>
+<li>Pre-computed aggregations and materialized views</li>
+<li>Optimized for read-heavy analytical workloads</li>
+<li>Multidimensional data modeling (facts and dimensions)</li>
+<li>Excellent compression ratios</li>
+</ul>
+<p><strong>Best Use Cases:</strong> Business intelligence, data warehousing, financial reporting, sales analytics, trend analysis, and any scenario requiring complex aggregations across large historical datasets.</p>
+<p><strong>Examples:</strong> Amazon Redshift, Google BigQuery, Snowflake, Apache Druid, ClickHouse</p>
 <h2 id="key-value-stores">Key Value Stores</h2>
+<p>Key-value stores represent the simplest NoSQL model, storing data as unique key-identifier pairs with associated values. They excel at handling "Velocity" challenges by providing extremely fast read and write operations with minimal overhead. The simplicity of their data model enables horizontal scaling and high-performance caching scenarios.</p>
+<p><strong>Key Characteristics:</strong></p>
+<ul>
+<li>Simple key-value data model</li>
+<li>Extremely fast read/write operations</li>
+<li>Horizontal scaling across distributed nodes</li>
+<li>Eventually consistent (though some offer strong consistency)</li>
+<li>Minimal query capabilities beyond key lookups</li>
+</ul>
+<p><strong>Best Use Cases:</strong> Session storage, caching layers, user preferences, shopping carts, real-time recommendations, gaming leaderboards, and any application requiring sub-millisecond response times for simple data retrieval.</p>
+<p><strong>Examples:</strong> Redis, Amazon DynamoDB, Apache Cassandra (as key-value), Riak, Amazon ElastiCache</p>
 <h2 id="column-family-stores">Column Family Stores</h2>
+<p>Column family databases store data in column families (similar to tables) but organize data by columns rather than rows. They handle both "Volume" and "Velocity" challenges effectively by enabling efficient compression, supporting sparse data structures, and providing excellent write performance. Each row can have different columns, providing flexibility similar to document stores.</p>
+<p><strong>Key Characteristics:</strong></p>
+<ul>
+<li>Column-oriented storage within rows</li>
+<li>Sparse data support (not all rows need all columns)</li>
+<li>Excellent write performance and compression</li>
+<li>Flexible schema within column families</li>
+<li>Horizontal scaling with eventual consistency</li>
+</ul>
+<p><strong>Best Use Cases:</strong> Time-series data, IoT sensor data, logging systems, content management, social media feeds, and applications with high write volumes and varying data structures per record.</p>
+<p><strong>Examples:</strong> Apache Cassandra, HBase, Amazon SimpleDB, Google Bigtable</p>
 <h2 id="graph">Graph</h2>
+<p>Graph databases store data as nodes (entities) and edges (relationships), making them ideal for handling complex interconnected data. They excel at traversing relationships and can address "Variability" challenges by supporting flexible node properties while maintaining "Veracity" through relationship constraints. Graph databases are becoming increasingly important for AI applications, knowledge graphs, and recommendation systems.</p>
+<p><strong>Key Characteristics:</strong></p>
+<ul>
+<li>Nodes and edges data model</li>
+<li>Efficient relationship traversal</li>
+<li>Flexible properties on nodes and edges</li>
+<li>Specialized query languages (Cypher, Gremlin)</li>
+<li>ACID properties for graph operations</li>
+</ul>
+<p><strong>Best Use Cases:</strong> Social networks, fraud detection, recommendation engines, knowledge graphs, supply chain analysis, network topology, AI/ML feature engineering, and any application requiring complex relationship analysis.</p>
+<p><strong>Examples:</strong> Neo4j, Amazon Neptune, TigerGraph, Memgraph</p>
 <h2 id="document">Document</h2>
+<p>Document databases store data in flexible, schema-free documents (typically JSON, BSON, or XML). They excel at handling "Variability" challenges by allowing different document structures within the same collection. Document stores provide a balance between the flexibility of key-value stores and the queryability of relational databases.</p>
+<p><strong>Key Characteristics:</strong></p>
+<ul>
+<li>Flexible, schema-free document structure</li>
+<li>Rich querying capabilities including nested fields</li>
+<li>Horizontal scaling with sharding</li>
+<li>Eventually consistent with tunable consistency levels</li>
+<li>Native support for complex data types and arrays</li>
+</ul>
+<p><strong>Best Use Cases:</strong> Content management systems, product catalogs, user profiles, configuration management, rapid application development, and scenarios requiring flexible schemas that evolve over time.</p>
+<p><strong>Examples:</strong> MongoDB, Amazon DocumentDB, CouchDB,  Firebase Firestore</p>
 
 
 
