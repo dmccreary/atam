@@ -178,3 +178,16 @@ The Memcached case study demonstrates several important principles for scaling w
 - **Open source release** can transform internal solutions into industry-standard technologies
 
 The creation of Memcached at LiveJournal represents a pivotal moment in web architecture evolution, showing how practical engineering solutions to immediate scaling problems can become foundational technologies that enable the modern internet.
+
+## References
+
+1.  [Memcached - a distributed memory object caching system](https://memcached.org/about) - 2003-2025 - Memcached Official Documentation - Official project page detailing Memcached's origins at LiveJournal and its current development status under Dormando's maintenance.
+2.  [LiveJournal's Backend and memcached: Past, Present, and Future](https://www.usenix.org/conference/lisa-04/livejournals-backend-and-memcached-past-present-and-future) - November 2004 - USENIX LISA Conference - Technical presentation by Brad Fitzpatrick and Lisa Phillips detailing LiveJournal's scaling challenges and Memcached's role in solving database performance issues.
+3.  [The evolution of Memcached](https://lwn.net/Articles/1007303/) - February 2025 - LWN.net - Comprehensive analysis of Memcached's 20+ year evolution from LiveJournal's internal tool to modern distributed caching system, including recent developments and protocol enhancements.
+4.  [Memcached](https://en.wikipedia.org/wiki/Memcached) - Updated January 2025 - Wikipedia - Detailed technical overview of Memcached's architecture, development history, and current usage across major platforms including YouTube, Facebook, and Twitter.
+5.  [LiveJournal](https://en.wikipedia.org/wiki/LiveJournal) - Updated June 2025 - Wikipedia - Comprehensive history of LiveJournal's growth from 1999 hobby project to major social platform, including scaling challenges that necessitated innovative solutions.
+6.  [A casual stroll through LiveJournal's backend](https://lj-maintenance.livejournal.com/60984.html) - 2003 - LiveJournal Maintenance Blog - First-hand account from LiveJournal's engineering team describing database performance problems and the implementation of their distributed memory cache solution.
+7.  [LiveJournal Architecture](http://highscalability.com/livejournal-architecture) - 2018 - High Scalability - Technical analysis of LiveJournal's architectural evolution and scaling strategies, highlighting the role of Memcached in solving database bottlenecks.
+8.  [Brad Fitzpatrick](https://en.wikipedia.org/wiki/Brad_Fitzpatrick) - Updated 2025 - Wikipedia - Biography of Memcached's creator, covering his work at LiveJournal, subsequent career at Google, and contributions to open source technologies.
+9.  [AMA with Brad Fitzpatrick, LiveJournal, Memcached & Camlistore Founder](https://codefor.cash/brad_fitzpatrick_ama.php) - 2020 - CodeFor.Cash - Interview with Brad Fitzpatrick discussing the early days of LiveJournal, the development challenges that led to Memcached, and insights into scaling web applications.
+10.  [Brad Fitzpatrick Personal Website](https://bradfitz.com/) - Updated 2025 - Personal Website - Brad Fitzpatrick's official website documenting his work history including the founding of Danga Interactive, development of LiveJournal and Memcached, and subsequent projects at Google and Tailscale.

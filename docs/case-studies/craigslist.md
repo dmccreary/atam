@@ -1,5 +1,7 @@
 # Craigslist MongoDB Migration Case Study: Solving Archive Analytics Challenges
 
+2011 NoSQL Case Study
+
 ## Situation: The Growing Archive Problem
 
 Craigslist, the American classified advertisements website serving 570 cities in 50 countries, faced a critical data management challenge in 2011. As one of the most popular classified platforms globally, Craigslist was processing 1.5 million new classified ads posted every day, generating an enormous volume of data that required careful management for both operational and legal compliance reasons.

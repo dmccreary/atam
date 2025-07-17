@@ -1,29 +1,36 @@
 # Case Studies in the History of the NoSQL Movement
 
-## Amazon Shopping Cart
+## Amazon Shopping Cart - 2002
 
 [Go to the Amazon Shopping Cart](./amazon-shopping-cart.md)
 
-## Friendster
+## Friendster - 2002
 
 [Go to the Friendster Case Study](friendster.md)
 
-## Memcache
+## Memcache 2003
 
 [Go to the Memcache Case Study](./memchache.md)
 
-## Netflix
+## Cassandra - 2008
 
-[Go to the NetFlix Case Study](netflix.md)
+[Go to the Cassandra Case Study](./cassandra.md)
 
-## Google Knowledge Graph
+## Facebook - 2010
 
-[](google-knowledege-graph.md)
+[Go to the Facebook Memcache Case Study](./facebook.md)
 
-## LinkedIn
+## Craigslist - 2011
 
-[Go to LinkedIn Case Study](./linkedin.md)
+[Go to the Google Knowledge Graph Case Study](./craigslist.md)
 
-## Facebook
+## Google Knowledge Graph (2012)
 
-[](./facebook.md)
+[Go to the Google Knowledge Graph Case Study](google-knowledege-graph.md)
+
+## LinkedIn (2012)
+
+[Go to the LinkedIn Case Study](./linkedin.md)
+
+## TigerGraph
+

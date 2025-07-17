@@ -1,4 +1,4 @@
-# Google's Knowledge Graph
+# Google Knowledge Graph: Technical Case Study (2012)
 
 <details>
     <summary>Technical Case Study Prompt</summary>
@@ -20,7 +20,6 @@ Create 10 real working references using the following format:
 
 </details>
 
-# Google Knowledge Graph: Technical Case Study (2012)
 
 ## Executive Summary
 
