@@ -75,6 +75,8 @@ TigerGraph's breakthrough was developing what they termed the **Native Parallel 
 
 ### Core Technical Components
 
+![](tigergraph.png)
+
 **Graph Storage Engine (GSE)**: TigerGraph developed a custom storage engine optimized for distributed graph data. The GSE co-located with the processing engine for efficient data access and implemented sophisticated compression techniques achieving typical 10x compression ratios. For example, 1TB of input data would require only 100GB of system memory after compression and optimization.
 
 **Graph Processing Engine (GPE)**: The GPE provided built-in parallelism using a MapReduce-based computing model. Unlike traditional approaches, TigerGraph made each vertex and edge not just a storage unit but also a computational unit, enabling massive parallelism across the entire graph structure.
