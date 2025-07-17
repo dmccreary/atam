@@ -845,7 +845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../netflix/" class="md-nav__link">
+      <a href="../netflix.md" class="md-nav__link">
         
   
   
@@ -1161,8 +1161,8 @@
 <p class="admonition-title">Prompt</p>
 <p>I am writing a book on how to select the right database architecture.  I am interested in the most important case studies of how organizations achieved a competitive advantage by using a relational database.  For example when Amazon moved off of Oracle for their shopping carts and moved to DynamoDB.</p>
 <p>Please do detailed research and find the most influential case studies of database innovation and leadership in NoSQL.  Focus on the key challenges of scalability.  Make sure that the case studies are well referenced and influenced the NoSQL movement.</p>
-<p>Great. I’ll gather influential case studies from 2000 to the present where organizations adopted NoSQL databases to address scalability challenges and achieved competitive advantages. This will include well-referenced examples from both large enterprises and smaller yet influential systems like LiveJournal’s memcached. I’ll also focus on specific NoSQL patterns—key-value, document, column family, and graph—and how their adoption addressed real-world scalability and performance issues.</p>
 </div>
+<p>Great. I’ll gather influential case studies from 2000 to the present where organizations adopted NoSQL databases to address scalability challenges and achieved competitive advantages. This will include well-referenced examples from both large enterprises and smaller yet influential systems like LiveJournal’s memcached. I’ll also focus on specific NoSQL patterns—key-value, document, column family, and graph—and how their adoption addressed real-world scalability and performance issues.</p>
 <h2 id="early-warnings-relational-limits-and-the-rise-of-caching-20002005">Early Warnings: Relational Limits and the Rise of Caching (2000–2005)</h2>
 <p>In the early 2000s, explosive growth of web services began exposing the scalability limits of traditional relational databases. A cautionary tale was <strong>Friendster</strong>, an early social network that rapidly lost its lead due to severe performance issues. As a former Friendster executive recounted, <em>“we had millions of members begging us to get the site working faster… [but] the early pioneer made critical mistakes that enabled later entrants… to learn and excel”</em>. Friendster’s pages would take 40 seconds to load at times, illustrating that relying on a single MySQL setup without new scaling strategies was untenable. This failure underscored the need for new approaches to scaling beyond the one-big-database model.</p>
 <p>Around the same time, <strong>LiveJournal</strong>, a blogging social site, pioneered an architectural innovation that would influence countless others: distributed caching. In 2003, LiveJournal’s lead engineer Brad Fitzpatrick created <strong>Memcached</strong> to tackle the site’s “rapid growth and scalability challenges”. By caching frequently accessed data in memory, LiveJournal dramatically reduced load on its MySQL database, improving response times and allowing the site to serve more users. Memcached was open-sourced in 2004 and quickly became a fundamental building block for scaling web apps – an approach soon adopted by MySpace, <strong>Facebook</strong>, YouTube, Wikipedia, and many others. This simple key-value cache, distributed across cheap servers, proved that you could <strong>achieve massive read scalability</strong> without expensive high-end databases. It was an early “NoSQL” pattern (even if not a database per se) that showed how decoupling reads from the primary SQL store could give a competitive edge in performance.</p>
