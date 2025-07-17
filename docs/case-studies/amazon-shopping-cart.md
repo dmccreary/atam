@@ -1,6 +1,6 @@
 # Amazon Shopping Cart Failures
 
-[See our graphic novel on this case study here](../stoties/dynamodb/index.md)
+[See our graphic novel on this case study here](../stories/dynamodb/index.md)
 
 The story of Amazon's struggles with their Oracle-based back-end system during the early 2000s, particularly around the busy holiday shopping season, is a significant one in the history of web-scale computing and database management. It highlights the challenges faced by rapidly growing online businesses and the innovative solutions they developed in response.
 

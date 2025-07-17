@@ -34,7 +34,8 @@ Mention that breaking the key of a key-balue into components is key
 [Link Title](URL) - publication_date - publication_name - description_and_relevance
 
 -->
-Column-family databases store data in column families (similar to tables) but organize data by columns rather than rows. They handle both "Volume" and "Velocity" challenges effectively by enabling efficient compression, supporting sparse data structures, and providing excellent write performance. Each row can have different columns, providing flexibility similar to document stores.
+
+Column-family databases (wide column stores) store data in column families (similar to tables) but organize data by columns rather than rows. They handle both "Volume" and "Velocity" challenges effectively by enabling efficient compression, supporting sparse data structures, and providing excellent write performance. Each row can have different columns, providing flexibility similar to document stores.
 
 **Key Characteristics:**
 
