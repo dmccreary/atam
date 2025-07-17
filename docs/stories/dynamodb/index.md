@@ -1,4 +1,4 @@
-# The Story of DynamoDB
+# The Story of DynamoDB: From Relational Failures to Distributed Key-Value Store
 
 <details>
    <summary>Image NN Prompt</summary>
@@ -22,18 +22,18 @@ Add a scene a huge party at Amazon when the decommissioned the last Oracle serve
 The narrative should describe each image with a detailed image prompt that uses the
 following template:
 
-</details>
+
 
 ![](image-NN.png)
-<details>
+\<details>
    <summary>Image NN Prompt</summary>
    Image NN
    Please generate a graphic-novel style drawing using a tech-forward optimistic high energy color scheme.  Generate the drawing using a wide-landscape format.
 
    description of image to be given to a text-to-image program
-</details>
+\</details>
 
-# The Story of DynamoDB: From Oracle's Failures to Amazon's Triumph
+</details>
 
 ## Chapter 1: The Breaking Point
 
