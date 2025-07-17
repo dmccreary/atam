@@ -1,4 +1,4 @@
-# LinkedIn's Liquid: A Graph Database that Scales
+# LinkedIn's LIquid: A Graph Database that Scales
 
 <details>
     <summary>Technical Case Study Prompt</summary>
@@ -9,6 +9,7 @@ Create a detailed technical case study of the use of graphs at LinkedIn around 2
 Focus on their creation of the Economic Graph and the creation of the scale-out Liquid Graph Database.
 
 Use the STAR process:
+
 1. Situation - give context to the case study 
 2. Task - what was the challenge being addressed 
 3. Approach - What was the architectural approach? 

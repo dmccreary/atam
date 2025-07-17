@@ -24,13 +24,15 @@
 
 [Go to the Google Knowledge Graph Case Study](./craigslist.md)
 
-## Google Knowledge Graph (2012)
+## Google Knowledge Graph - 2012
 
 [Go to the Google Knowledge Graph Case Study](google-knowledege-graph.md)
 
-## LinkedIn (2012)
+## LinkedIn - 2012
 
 [Go to the LinkedIn Case Study](./linkedin.md)
 
-## TigerGraph
+## TigerGraph - 2017
+
+[Go to the TigerGraph Case Study](tigergraph.md)
 
