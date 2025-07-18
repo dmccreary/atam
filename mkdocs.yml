@@ -42,6 +42,9 @@ nav:
   - Stories:
     - Introduction: stories/index.md
     - DynamoDB: stories/dynamodb/index.md
+  - Prompts:
+    - Introduction: prompts/index.md
+    - Glossary Prompt: prompts/glossary-prompt.md
   - Bias: bias.md
   - Presentations: slides.md
   - Glossary: glossary.md
