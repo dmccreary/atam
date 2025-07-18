@@ -13,6 +13,7 @@ nav:
   - Foundational Concepts:
     - Introduction: concepts/index.md
     - Four Vs of NoSQL: concepts/four-vs-of-nosql.md
+    - Top NoSQL Strategies: concepts/top-10-nosql-tricks.md
     - Utility Tree: concepts/utility-tree.md
     - ACID vs. Base: concepts/acid-vs-base.md
     - Scalability: concepts/scalability.md
