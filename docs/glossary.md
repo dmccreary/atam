@@ -1,14 +1,4 @@
-# ATAM Glossary of Terms
-
-#### ISO 11179 Term Definition
-
-A term definition is considered to be consistent with ISO metadata registry guideline 11179 if it meets the following criteria:
-
-1. Precise
-2. Concise
-3. Distinct
-4. Non-circular
-5. Unencumbered with business rules
+# NoSQL ATAM Glossary of Terms
 
 #### ACID Properties
 
@@ -669,6 +659,18 @@ The ability of different systems to work together and exchange information.
 A network of physical devices embedded with sensors and software for data collection and exchange.
 
 **Example:** Smart thermostats collect temperature data and adjust settings automatically.
+
+#### ISO 11179 Term Definition
+
+A term definition is considered to be consistent with ISO metadata registry guideline 11179 if it meets the following criteria:
+
+1. Precise
+2. Concise
+3. Distinct
+4. Non-circular
+5. Unencumbered with business rules
+
+**Example:** We use ISO term definition guidelines for creating definitions for our glossary of terms.
 
 #### Isolation
 
