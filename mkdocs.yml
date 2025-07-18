@@ -45,7 +45,8 @@ nav:
     - DynamoDB: stories/dynamodb/index.md
   - Prompts:
     - Introduction: prompts/index.md
-    - Glossary Prompt: prompts/glossary-prompt.md
+    - Glossary Generation: prompts/glossary-generation.md
+    - Top 10 Innovations: prompts/to-10-innovations.md
   - Bias: bias.md
   - Presentations: slides.md
   - Glossary: glossary.md
