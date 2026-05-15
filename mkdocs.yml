@@ -9,6 +9,24 @@ nav:
   - Home: index.md
   - About: about.md
   - Course Description: course-description.md
+  - Chapters:
+    - List of Chapters: chapters/index.md
+    - 1. The ATAM Method: chapters/01-atam-method/index.md
+    - 2. Database Foundations: chapters/02-database-foundations/index.md
+    - 3. Relational Databases: chapters/03-relational-databases/index.md
+    - 4. Analytical Databases: chapters/04-analytical-databases/index.md
+    - 5. Key-Value Stores: chapters/05-key-value-stores/index.md
+    - 6. Column-Family Databases: chapters/06-column-family-databases/index.md
+    - 7. Document Databases: chapters/07-document-databases/index.md
+    - 8. Graph Databases: chapters/08-graph-databases/index.md
+    - 9. CAP Theorem and Consensus: chapters/09-cap-theorem-consensus/index.md
+    - 10. ACID Transactions: chapters/10-acid-transactions/index.md
+    - 11. Distributed Scaling: chapters/11-distributed-scaling/index.md
+    - 12. Distributed ACID and NewSQL: chapters/12-distributed-acid-newsql/index.md
+    - 13. High Availability: chapters/13-high-availability/index.md
+    - 14. Vector Search: chapters/14-vector-search/index.md
+    - 15. LLM-Generated Embeddings: chapters/15-llm-embeddings/index.md
+    - 16. Database Selection: chapters/16-database-selection/index.md
   - ATAM Process: atam-process.md
   - ATAM DB Selection Process: atam-db-process.md
   - Foundational Concepts:
@@ -49,7 +67,12 @@ nav:
     - Glossary Generation: prompts/glossary-generation.md
     - Top 10 Innovations: prompts/to-10-innovations.md
   - Learning Graph:
+    - Introduction: learning-graph/index.md
     - Course Description Assessment: learning-graph/course-description-assessment.md
+    - Concept Enumeration: learning-graph/concept-list.md
+    - Graph Quality Analysis: learning-graph/quality-metrics.md
+    - Concept Taxonomy: learning-graph/concept-taxonomy.md
+    - Taxonomy Distribution Report: learning-graph/taxonomy-distribution.md
   - Bias: bias.md
   - Presentations: slides.md
   - Glossary: glossary.md

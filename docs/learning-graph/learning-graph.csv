@@ -1,0 +1,255 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Architecture Tradeoff Analysis,,ATAM
+2,Quality Attribute Workshop,1,ATAM
+3,Utility Tree,1|2,ATAM
+4,Quality Attribute Scenario,3,ATAM
+5,Architectural Driver,4,ATAM
+6,Sensitivity Point,3|5,ATAM
+7,Tradeoff Point,6,ATAM
+8,Architectural Risk,5|6,ATAM
+9,Non-Risk,8,ATAM
+10,Risk Theme,8,ATAM
+11,Utility Tree Prioritization,3|4,ATAM
+12,ATAM Stakeholder Roles,1,ATAM
+13,Business Driver,1|12,ATAM
+14,Architectural Approach,5|13,ATAM
+15,ATAM Evaluation Team,1|12,ATAM
+16,ATAM Nine-Step Process,1|13|15,ATAM
+17,Architectural Decision Record,7|8|16,ATAM
+18,Quality Attribute Refinement,3|4,ATAM
+19,Scenario Stimulus,4,ATAM
+20,Scenario Response Measure,4|19,ATAM
+21,ATAM Output Artifacts,16|17,ATAM
+22,Software Architecture View,14,ATAM
+23,Database Management System,,FOUND
+24,Data Model,23,FOUND
+25,Schema,24,FOUND
+26,Query Language,23|25,FOUND
+27,Database Index,23|25,FOUND
+28,Query Optimizer,26|27,FOUND
+29,Storage Engine,23,FOUND
+30,Data Serialization,23,FOUND
+31,Workload Characterization,23,FOUND
+32,Read/Write Ratio,31,FOUND
+33,Latency vs Throughput,31,FOUND
+34,OLTP Workload,31|32,FOUND
+35,OLAP Workload,31|32,FOUND
+36,HTAP Workload,34|35,FOUND
+37,Data Volume Scaling,23|31,FOUND
+38,Impedance Mismatch,24|26,FOUND
+39,Query Expressiveness,26|28,FOUND
+40,Operational Complexity,23,FOUND
+41,Relational Data Model,24,REL
+42,SQL,26|41,REL
+43,Primary Key,41,REL
+44,Foreign Key,41|43,REL
+45,Normalization,41|43|44,REL
+46,First Normal Form,45,REL
+47,Third Normal Form,45|46,REL
+48,Join Operation,41|42|44,REL
+49,B-Tree Index,27|41,REL
+50,Query Execution Plan,28|42|49,REL
+51,Stored Procedure,42,REL
+52,Database View,42|41,REL
+53,Transaction Log,29,REL
+54,Write-Ahead Log,53,REL
+55,Multi-Version Concurrency,29|53,REL
+56,Lock-Based Concurrency,29,REL
+57,Deadlock Detection,56,REL
+58,Connection Pooling,23,REL
+59,PostgreSQL,41|42|55,REL
+60,MySQL,41|42|56,REL
+61,Columnar Storage,29|35,ANAL
+62,Massively Parallel Processing,37|61,ANAL
+63,Data Warehouse,35|24,ANAL
+64,Star Schema,63|41,ANAL
+65,Snowflake Schema,64,ANAL
+66,OLAP Cube,63|35,ANAL
+67,ETL Pipeline,63|75,ANAL
+68,Inmon Architecture,63|67,ANAL
+69,Kimball Architecture,63|64,ANAL
+70,Bitmap Index,27|61,ANAL
+71,Materialized View,52|63,ANAL
+72,Query Pushdown,28|62,ANAL
+73,Snowflake Database,62|61,ANAL
+74,BigQuery,62|61,ANAL
+75,Apache Parquet Format,30|61,ANAL
+76,Key-Value Data Model,24,KV
+77,Hash Table Storage,29|76,KV
+78,Time-to-Live,76,KV
+79,Cache Eviction Policy,76|78,KV
+80,Redis,76|77|78,KV
+81,DynamoDB,76|77,KV
+82,Read-Through Cache,79|80,KV
+83,Write-Through Cache,79|80,KV
+84,Write-Behind Cache,79|80,KV
+85,Cache Stampede,79|82,KV
+86,Hot Key Problem,77|76,KV
+87,Key Expiration,78,KV
+88,Column-Family Data Model,24|76,COL
+89,Wide Row,88,COL
+90,LSM Tree,29,COL
+91,Compaction Strategy,90,COL
+92,Bloom Filter,90,COL
+93,Apache Cassandra,88|89|90,COL
+94,Apache HBase,88|90,COL
+95,Partition Key,88|89,COL
+96,Clustering Column,88|95,COL
+97,Write-Optimized Storage,90|91,COL
+98,Read Amplification,90|92,COL
+99,Write Amplification,90|91,COL
+100,Property Graph Model,24,GRAPH
+101,RDF Graph Model,24,GRAPH
+102,SPARQL,26|101,GRAPH
+103,Cypher Query Language,26|100,GRAPH
+104,Graph Traversal Algorithm,100,GRAPH
+105,Depth-First Search,104,GRAPH
+106,Breadth-First Search,104,GRAPH
+107,Shortest Path Algorithm,104|105|106,GRAPH
+108,Neo4j,100|103,GRAPH
+109,TigerGraph,100|104,GRAPH
+110,Amazon Neptune,100|101,GRAPH
+111,Distributed Graph Database,100,GRAPH
+112,Graph Partitioning,111,GRAPH
+113,GSQL,26|109,GRAPH
+114,Knowledge Graph,100|101,GRAPH
+115,Document Data Model,24,DOC
+116,JSON Document Storage,29|115,DOC
+117,BSON Format,116,DOC
+118,Embedded Document,115|116,DOC
+119,Document Reference,115|43,DOC
+120,Aggregation Pipeline,26|115,DOC
+121,Schema Flexibility,25|115,DOC
+122,MongoDB,115|116|117,DOC
+123,Couchbase,115|116,DOC
+124,Compound Index,27|115,DOC
+125,Full-Text Search Index,27|115,DOC
+126,Change Stream,115|122,DOC
+127,CAP Theorem,,DIST
+128,Consistency (CAP),127,DIST
+129,Availability (CAP),127,DIST
+130,Partition Tolerance,127,DIST
+131,CP Database System,127|128|130,DIST
+132,AP Database System,127|129|130,DIST
+133,PACELC Model,127,DIST
+134,Latency-Consistency Tradeoff,133|128|129|33,DIST
+135,Eventual Consistency,129|132,DIST
+136,Strong Consistency,128|131,DIST
+137,Read-Your-Writes Consistency,135,DIST
+138,Monotonic Read Consistency,135,DIST
+139,Causal Consistency,135,DIST
+140,Session Consistency,137|138,DIST
+141,Linearizability,136|128,DIST
+142,Serializability,136|141,DIST
+143,BASE Semantics,135|127,DIST
+144,Conflict Resolution,135,DIST
+145,Vector Clock,139,DIST
+146,Gossip Protocol,135|188,DIST
+147,Atomicity,,ACID
+148,Consistency (ACID),147,ACID
+149,Isolation,147,ACID
+150,Durability,147|53,ACID
+151,Transaction Isolation Level,149,ACID
+152,Read Uncommitted,151,ACID
+153,Read Committed,151|152,ACID
+154,Repeatable Read,151|153,ACID
+155,Serializable Isolation,151|154|142,ACID
+156,Dirty Read,152,ACID
+157,Phantom Read,154,ACID
+158,Non-Repeatable Read,153,ACID
+159,Two-Phase Locking,56|149,ACID
+160,Optimistic Concurrency Control,55|149,ACID
+161,Savepoint,147,ACID
+162,Rollback,147|161,ACID
+163,Commit Protocol,147|150,ACID
+164,Distributed Saga,147,ACID
+165,Two-Phase Commit,163|127,NACID
+166,Three-Phase Commit,165,NACID
+167,Distributed Transaction Coordinator,165,NACID
+168,Saga Orchestration,164,NACID
+169,Saga Choreography,164,NACID
+170,Compensating Transaction,164,NACID
+171,NewSQL Database,147|181|136|36,NACID
+172,Google Spanner,171|178|179,NACID
+173,CockroachDB,171|178|179,NACID
+174,YugabyteDB,171|178|179,NACID
+175,TrueTime API,172,NACID
+176,Global Transaction ID,165|167,NACID
+177,Cross-Shard Transaction,165|183,NACID
+178,Paxos Protocol,127,NACID
+179,Raft Consensus Protocol,127,NACID
+180,ZAB Protocol,127|196,NACID
+181,Horizontal Scaling,37,SCALE
+182,Vertical Scaling,37,SCALE
+183,Data Sharding,181|24,SCALE
+184,Range-Based Sharding,183,SCALE
+185,Hash-Based Sharding,183|77,SCALE
+186,Directory-Based Sharding,183,SCALE
+187,Geographic Sharding,183,SCALE
+188,Database Replication,23|181,SCALE
+189,Single-Leader Replication,188,SCALE
+190,Multi-Leader Replication,188|144,SCALE
+191,Leaderless Replication,188|192,SCALE
+192,Quorum Read/Write,188|127,SCALE
+193,Read Replica,189,SCALE
+194,Replication Lag,188|189,SCALE
+195,Split-Brain Problem,190|130,SCALE
+196,Leader Election,189|178|179,SCALE
+197,ZooKeeper Coordination,196,SCALE
+198,etcd,179|196,SCALE
+199,High Availability,,HA
+200,Five-Nines Availability,199,HA
+201,SLA Decomposition,200,HA
+202,Failure Domain,199|203,HA
+203,Single Point of Failure,199,HA
+204,Active-Active Clustering,199|188,HA
+205,Active-Passive Clustering,199|189,HA
+206,Failover,199|205|196,HA
+207,Heartbeat Monitoring,199|206,HA
+208,Chaos Engineering,199|200,HA
+209,Mean Time Between Failures,199,HA
+210,Mean Time to Recovery,199|206,HA
+211,Geographic Redundancy,200|187,HA
+212,Multi-Region Deployment,211|187,HA
+213,Circuit Breaker Pattern,199|206,HA
+214,Vector Embedding,,VEC
+215,Embedding Dimensionality,214,VEC
+216,Cosine Similarity,214,VEC
+217,Dot Product Similarity,214,VEC
+218,Euclidean Distance,214,VEC
+219,Approximate Nearest Neighbor,214|215,VEC
+220,HNSW Index,219|27,VEC
+221,IVF Index,219|27,VEC
+222,Flat Vector Index,219|27,VEC
+223,pgvector Extension,59|220,VEC
+224,Semantic Search,214|219,VEC
+225,Hybrid Search,224|27,VEC
+226,Native Vector Search Feature,27|219,VEC
+227,ANN Recall vs Speed,219|220|221,VEC
+228,Large Language Model,,LLM
+229,Transformer Architecture,228,LLM
+230,Tokenization,229,LLM
+231,Attention Mechanism,229,LLM
+232,CLS Token Pooling,229|231,LLM
+233,Mean Pooling,229|231,LLM
+234,Embedding Model Selection,228|215,LLM
+235,OpenAI Embeddings API,228|214,LLM
+236,Sentence Transformers,228|214,LLM
+237,Self-Hosted Embedding Model,228|214,LLM
+238,Embedding Cost at Scale,235|215|37,LLM
+239,Re-Embedding Migration,234|215,LLM
+240,Multimodal Embedding,228|214,LLM
+241,Embedding Pipeline Architecture,214|235|236,LLM
+242,Embedding Model Versioning,239|241,LLM
+243,Polyglot Persistence,23|24|59|80|93|108|122,SEL
+244,Database Selection Framework,1|23|31|59|73|80|93|108|122,SEL
+245,Scoring Matrix,244|4|254,SEL
+246,Total Cost of Ownership,244|40,SEL
+247,Vendor Lock-In Risk,244|246,SEL
+248,Database Migration Plan,243|244,SEL
+249,Schema Migration,248|25,SEL
+250,Multi-Model Database,243|24|93|108|122,SEL
+251,Operational Runbook,40|200|208,SEL
+252,Team Expertise Factor,244|246,SEL
+253,Database Deprecation Risk,247|239|242,SEL
+254,Data Access Pattern Analysis,31|32|38,SEL

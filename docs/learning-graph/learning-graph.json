@@ -1,0 +1,3211 @@
+{
+  "metadata": {
+    "title": "The Right Database: Architecture Tradeoff Analysis for Distributed and High-Availability Systems",
+    "description": "A structured guide to selecting the right database using the CMU SEI Architecture Tradeoff Analysis Method (ATAM). Covers six database paradigms, distributed systems foundations, ACID and distributed transactions, high-availability architecture, vector search, LLM embeddings, and decision frameworks.",
+    "creator": "Dan McCreary",
+    "date": "2026-05-14",
+    "version": "1.0",
+    "format": "Learning Graph JSON v1.0",
+    "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+    "license": "CC BY-NC-SA 4.0 DEED"
+  },
+  "groups": {
+    "ATAM": {
+      "classifierName": "ATAM Methodology",
+      "color": "DarkSlateBlue",
+      "font": {
+        "color": "white"
+      }
+    },
+    "FOUND": {
+      "classifierName": "Foundation Concepts",
+      "color": "SteelBlue",
+      "font": {
+        "color": "white"
+      }
+    },
+    "REL": {
+      "classifierName": "Relational Databases",
+      "color": "DarkGreen",
+      "font": {
+        "color": "white"
+      }
+    },
+    "ANAL": {
+      "classifierName": "Analytical Databases",
+      "color": "LimeGreen",
+      "font": {
+        "color": "black"
+      }
+    },
+    "KV": {
+      "classifierName": "Key-Value Stores",
+      "color": "Gold",
+      "font": {
+        "color": "black"
+      }
+    },
+    "COL": {
+      "classifierName": "Column-Family Databases",
+      "color": "DarkGoldenrod",
+      "font": {
+        "color": "white"
+      }
+    },
+    "GRAPH": {
+      "classifierName": "Graph Databases",
+      "color": "Teal",
+      "font": {
+        "color": "white"
+      }
+    },
+    "DOC": {
+      "classifierName": "Document Databases",
+      "color": "DodgerBlue",
+      "font": {
+        "color": "white"
+      }
+    },
+    "DIST": {
+      "classifierName": "Distributed Consistency",
+      "color": "Crimson",
+      "font": {
+        "color": "white"
+      }
+    },
+    "ACID": {
+      "classifierName": "ACID Transactions",
+      "color": "DarkRed",
+      "font": {
+        "color": "white"
+      }
+    },
+    "NACID": {
+      "classifierName": "Distributed ACID and NewSQL",
+      "color": "MediumPurple",
+      "font": {
+        "color": "white"
+      }
+    },
+    "SCALE": {
+      "classifierName": "Distributed Scaling",
+      "color": "Indigo",
+      "font": {
+        "color": "white"
+      }
+    },
+    "HA": {
+      "classifierName": "High Availability",
+      "color": "OliveDrab",
+      "font": {
+        "color": "white"
+      }
+    },
+    "VEC": {
+      "classifierName": "Vector Search and Embeddings",
+      "color": "Orange",
+      "font": {
+        "color": "black"
+      }
+    },
+    "LLM": {
+      "classifierName": "LLM Embeddings",
+      "color": "Coral",
+      "font": {
+        "color": "black"
+      }
+    },
+    "SEL": {
+      "classifierName": "Database Selection Framework",
+      "color": "DeepPink",
+      "font": {
+        "color": "white"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "label": "Architecture Tradeoff Analysis",
+      "group": "ATAM",
+      "shape": "box"
+    },
+    {
+      "id": 2,
+      "label": "Quality Attribute Workshop",
+      "group": "ATAM"
+    },
+    {
+      "id": 3,
+      "label": "Utility Tree",
+      "group": "ATAM"
+    },
+    {
+      "id": 4,
+      "label": "Quality Attribute Scenario",
+      "group": "ATAM"
+    },
+    {
+      "id": 5,
+      "label": "Architectural Driver",
+      "group": "ATAM"
+    },
+    {
+      "id": 6,
+      "label": "Sensitivity Point",
+      "group": "ATAM"
+    },
+    {
+      "id": 7,
+      "label": "Tradeoff Point",
+      "group": "ATAM"
+    },
+    {
+      "id": 8,
+      "label": "Architectural Risk",
+      "group": "ATAM"
+    },
+    {
+      "id": 9,
+      "label": "Non-Risk",
+      "group": "ATAM"
+    },
+    {
+      "id": 10,
+      "label": "Risk Theme",
+      "group": "ATAM"
+    },
+    {
+      "id": 11,
+      "label": "Utility Tree Prioritization",
+      "group": "ATAM"
+    },
+    {
+      "id": 12,
+      "label": "ATAM Stakeholder Roles",
+      "group": "ATAM"
+    },
+    {
+      "id": 13,
+      "label": "Business Driver",
+      "group": "ATAM"
+    },
+    {
+      "id": 14,
+      "label": "Architectural Approach",
+      "group": "ATAM"
+    },
+    {
+      "id": 15,
+      "label": "ATAM Evaluation Team",
+      "group": "ATAM"
+    },
+    {
+      "id": 16,
+      "label": "ATAM Nine-Step Process",
+      "group": "ATAM"
+    },
+    {
+      "id": 17,
+      "label": "Architectural Decision Record",
+      "group": "ATAM"
+    },
+    {
+      "id": 18,
+      "label": "Quality Attribute Refinement",
+      "group": "ATAM"
+    },
+    {
+      "id": 19,
+      "label": "Scenario Stimulus",
+      "group": "ATAM"
+    },
+    {
+      "id": 20,
+      "label": "Scenario Response Measure",
+      "group": "ATAM"
+    },
+    {
+      "id": 21,
+      "label": "ATAM Output Artifacts",
+      "group": "ATAM"
+    },
+    {
+      "id": 22,
+      "label": "Software Architecture View",
+      "group": "ATAM"
+    },
+    {
+      "id": 23,
+      "label": "Database Management System",
+      "group": "FOUND",
+      "shape": "box"
+    },
+    {
+      "id": 24,
+      "label": "Data Model",
+      "group": "FOUND"
+    },
+    {
+      "id": 25,
+      "label": "Schema",
+      "group": "FOUND"
+    },
+    {
+      "id": 26,
+      "label": "Query Language",
+      "group": "FOUND"
+    },
+    {
+      "id": 27,
+      "label": "Database Index",
+      "group": "FOUND"
+    },
+    {
+      "id": 28,
+      "label": "Query Optimizer",
+      "group": "FOUND"
+    },
+    {
+      "id": 29,
+      "label": "Storage Engine",
+      "group": "FOUND"
+    },
+    {
+      "id": 30,
+      "label": "Data Serialization",
+      "group": "FOUND"
+    },
+    {
+      "id": 31,
+      "label": "Workload Characterization",
+      "group": "FOUND"
+    },
+    {
+      "id": 32,
+      "label": "Read/Write Ratio",
+      "group": "FOUND"
+    },
+    {
+      "id": 33,
+      "label": "Latency vs Throughput",
+      "group": "FOUND"
+    },
+    {
+      "id": 34,
+      "label": "OLTP Workload",
+      "group": "FOUND"
+    },
+    {
+      "id": 35,
+      "label": "OLAP Workload",
+      "group": "FOUND"
+    },
+    {
+      "id": 36,
+      "label": "HTAP Workload",
+      "group": "FOUND"
+    },
+    {
+      "id": 37,
+      "label": "Data Volume Scaling",
+      "group": "FOUND"
+    },
+    {
+      "id": 38,
+      "label": "Impedance Mismatch",
+      "group": "FOUND"
+    },
+    {
+      "id": 39,
+      "label": "Query Expressiveness",
+      "group": "FOUND"
+    },
+    {
+      "id": 40,
+      "label": "Operational Complexity",
+      "group": "FOUND"
+    },
+    {
+      "id": 41,
+      "label": "Relational Data Model",
+      "group": "REL"
+    },
+    {
+      "id": 42,
+      "label": "SQL",
+      "group": "REL"
+    },
+    {
+      "id": 43,
+      "label": "Primary Key",
+      "group": "REL"
+    },
+    {
+      "id": 44,
+      "label": "Foreign Key",
+      "group": "REL"
+    },
+    {
+      "id": 45,
+      "label": "Normalization",
+      "group": "REL"
+    },
+    {
+      "id": 46,
+      "label": "First Normal Form",
+      "group": "REL"
+    },
+    {
+      "id": 47,
+      "label": "Third Normal Form",
+      "group": "REL"
+    },
+    {
+      "id": 48,
+      "label": "Join Operation",
+      "group": "REL"
+    },
+    {
+      "id": 49,
+      "label": "B-Tree Index",
+      "group": "REL"
+    },
+    {
+      "id": 50,
+      "label": "Query Execution Plan",
+      "group": "REL"
+    },
+    {
+      "id": 51,
+      "label": "Stored Procedure",
+      "group": "REL"
+    },
+    {
+      "id": 52,
+      "label": "Database View",
+      "group": "REL"
+    },
+    {
+      "id": 53,
+      "label": "Transaction Log",
+      "group": "REL"
+    },
+    {
+      "id": 54,
+      "label": "Write-Ahead Log",
+      "group": "REL"
+    },
+    {
+      "id": 55,
+      "label": "Multi-Version Concurrency",
+      "group": "REL"
+    },
+    {
+      "id": 56,
+      "label": "Lock-Based Concurrency",
+      "group": "REL"
+    },
+    {
+      "id": 57,
+      "label": "Deadlock Detection",
+      "group": "REL"
+    },
+    {
+      "id": 58,
+      "label": "Connection Pooling",
+      "group": "REL"
+    },
+    {
+      "id": 59,
+      "label": "PostgreSQL",
+      "group": "REL"
+    },
+    {
+      "id": 60,
+      "label": "MySQL",
+      "group": "REL"
+    },
+    {
+      "id": 61,
+      "label": "Columnar Storage",
+      "group": "ANAL"
+    },
+    {
+      "id": 62,
+      "label": "Massively Parallel Processing",
+      "group": "ANAL"
+    },
+    {
+      "id": 63,
+      "label": "Data Warehouse",
+      "group": "ANAL"
+    },
+    {
+      "id": 64,
+      "label": "Star Schema",
+      "group": "ANAL"
+    },
+    {
+      "id": 65,
+      "label": "Snowflake Schema",
+      "group": "ANAL"
+    },
+    {
+      "id": 66,
+      "label": "OLAP Cube",
+      "group": "ANAL"
+    },
+    {
+      "id": 67,
+      "label": "ETL Pipeline",
+      "group": "ANAL"
+    },
+    {
+      "id": 68,
+      "label": "Inmon Architecture",
+      "group": "ANAL"
+    },
+    {
+      "id": 69,
+      "label": "Kimball Architecture",
+      "group": "ANAL"
+    },
+    {
+      "id": 70,
+      "label": "Bitmap Index",
+      "group": "ANAL"
+    },
+    {
+      "id": 71,
+      "label": "Materialized View",
+      "group": "ANAL"
+    },
+    {
+      "id": 72,
+      "label": "Query Pushdown",
+      "group": "ANAL"
+    },
+    {
+      "id": 73,
+      "label": "Snowflake Database",
+      "group": "ANAL"
+    },
+    {
+      "id": 74,
+      "label": "BigQuery",
+      "group": "ANAL"
+    },
+    {
+      "id": 75,
+      "label": "Apache Parquet Format",
+      "group": "ANAL"
+    },
+    {
+      "id": 76,
+      "label": "Key-Value Data Model",
+      "group": "KV"
+    },
+    {
+      "id": 77,
+      "label": "Hash Table Storage",
+      "group": "KV"
+    },
+    {
+      "id": 78,
+      "label": "Time-to-Live",
+      "group": "KV"
+    },
+    {
+      "id": 79,
+      "label": "Cache Eviction Policy",
+      "group": "KV"
+    },
+    {
+      "id": 80,
+      "label": "Redis",
+      "group": "KV"
+    },
+    {
+      "id": 81,
+      "label": "DynamoDB",
+      "group": "KV"
+    },
+    {
+      "id": 82,
+      "label": "Read-Through Cache",
+      "group": "KV"
+    },
+    {
+      "id": 83,
+      "label": "Write-Through Cache",
+      "group": "KV"
+    },
+    {
+      "id": 84,
+      "label": "Write-Behind Cache",
+      "group": "KV"
+    },
+    {
+      "id": 85,
+      "label": "Cache Stampede",
+      "group": "KV"
+    },
+    {
+      "id": 86,
+      "label": "Hot Key Problem",
+      "group": "KV"
+    },
+    {
+      "id": 87,
+      "label": "Key Expiration",
+      "group": "KV"
+    },
+    {
+      "id": 88,
+      "label": "Column-Family Data Model",
+      "group": "COL"
+    },
+    {
+      "id": 89,
+      "label": "Wide Row",
+      "group": "COL"
+    },
+    {
+      "id": 90,
+      "label": "LSM Tree",
+      "group": "COL"
+    },
+    {
+      "id": 91,
+      "label": "Compaction Strategy",
+      "group": "COL"
+    },
+    {
+      "id": 92,
+      "label": "Bloom Filter",
+      "group": "COL"
+    },
+    {
+      "id": 93,
+      "label": "Apache Cassandra",
+      "group": "COL"
+    },
+    {
+      "id": 94,
+      "label": "Apache HBase",
+      "group": "COL"
+    },
+    {
+      "id": 95,
+      "label": "Partition Key",
+      "group": "COL"
+    },
+    {
+      "id": 96,
+      "label": "Clustering Column",
+      "group": "COL"
+    },
+    {
+      "id": 97,
+      "label": "Write-Optimized Storage",
+      "group": "COL"
+    },
+    {
+      "id": 98,
+      "label": "Read Amplification",
+      "group": "COL"
+    },
+    {
+      "id": 99,
+      "label": "Write Amplification",
+      "group": "COL"
+    },
+    {
+      "id": 100,
+      "label": "Property Graph Model",
+      "group": "GRAPH"
+    },
+    {
+      "id": 101,
+      "label": "RDF Graph Model",
+      "group": "GRAPH"
+    },
+    {
+      "id": 102,
+      "label": "SPARQL",
+      "group": "GRAPH"
+    },
+    {
+      "id": 103,
+      "label": "Cypher Query Language",
+      "group": "GRAPH"
+    },
+    {
+      "id": 104,
+      "label": "Graph Traversal Algorithm",
+      "group": "GRAPH"
+    },
+    {
+      "id": 105,
+      "label": "Depth-First Search",
+      "group": "GRAPH"
+    },
+    {
+      "id": 106,
+      "label": "Breadth-First Search",
+      "group": "GRAPH"
+    },
+    {
+      "id": 107,
+      "label": "Shortest Path Algorithm",
+      "group": "GRAPH"
+    },
+    {
+      "id": 108,
+      "label": "Neo4j",
+      "group": "GRAPH"
+    },
+    {
+      "id": 109,
+      "label": "TigerGraph",
+      "group": "GRAPH"
+    },
+    {
+      "id": 110,
+      "label": "Amazon Neptune",
+      "group": "GRAPH"
+    },
+    {
+      "id": 111,
+      "label": "Distributed Graph Database",
+      "group": "GRAPH"
+    },
+    {
+      "id": 112,
+      "label": "Graph Partitioning",
+      "group": "GRAPH"
+    },
+    {
+      "id": 113,
+      "label": "GSQL",
+      "group": "GRAPH"
+    },
+    {
+      "id": 114,
+      "label": "Knowledge Graph",
+      "group": "GRAPH"
+    },
+    {
+      "id": 115,
+      "label": "Document Data Model",
+      "group": "DOC"
+    },
+    {
+      "id": 116,
+      "label": "JSON Document Storage",
+      "group": "DOC"
+    },
+    {
+      "id": 117,
+      "label": "BSON Format",
+      "group": "DOC"
+    },
+    {
+      "id": 118,
+      "label": "Embedded Document",
+      "group": "DOC"
+    },
+    {
+      "id": 119,
+      "label": "Document Reference",
+      "group": "DOC"
+    },
+    {
+      "id": 120,
+      "label": "Aggregation Pipeline",
+      "group": "DOC"
+    },
+    {
+      "id": 121,
+      "label": "Schema Flexibility",
+      "group": "DOC"
+    },
+    {
+      "id": 122,
+      "label": "MongoDB",
+      "group": "DOC"
+    },
+    {
+      "id": 123,
+      "label": "Couchbase",
+      "group": "DOC"
+    },
+    {
+      "id": 124,
+      "label": "Compound Index",
+      "group": "DOC"
+    },
+    {
+      "id": 125,
+      "label": "Full-Text Search Index",
+      "group": "DOC"
+    },
+    {
+      "id": 126,
+      "label": "Change Stream",
+      "group": "DOC"
+    },
+    {
+      "id": 127,
+      "label": "CAP Theorem",
+      "group": "DIST",
+      "shape": "box"
+    },
+    {
+      "id": 128,
+      "label": "Consistency (CAP)",
+      "group": "DIST"
+    },
+    {
+      "id": 129,
+      "label": "Availability (CAP)",
+      "group": "DIST"
+    },
+    {
+      "id": 130,
+      "label": "Partition Tolerance",
+      "group": "DIST"
+    },
+    {
+      "id": 131,
+      "label": "CP Database System",
+      "group": "DIST"
+    },
+    {
+      "id": 132,
+      "label": "AP Database System",
+      "group": "DIST"
+    },
+    {
+      "id": 133,
+      "label": "PACELC Model",
+      "group": "DIST"
+    },
+    {
+      "id": 134,
+      "label": "Latency-Consistency Tradeoff",
+      "group": "DIST"
+    },
+    {
+      "id": 135,
+      "label": "Eventual Consistency",
+      "group": "DIST"
+    },
+    {
+      "id": 136,
+      "label": "Strong Consistency",
+      "group": "DIST"
+    },
+    {
+      "id": 137,
+      "label": "Read-Your-Writes Consistency",
+      "group": "DIST"
+    },
+    {
+      "id": 138,
+      "label": "Monotonic Read Consistency",
+      "group": "DIST"
+    },
+    {
+      "id": 139,
+      "label": "Causal Consistency",
+      "group": "DIST"
+    },
+    {
+      "id": 140,
+      "label": "Session Consistency",
+      "group": "DIST"
+    },
+    {
+      "id": 141,
+      "label": "Linearizability",
+      "group": "DIST"
+    },
+    {
+      "id": 142,
+      "label": "Serializability",
+      "group": "DIST"
+    },
+    {
+      "id": 143,
+      "label": "BASE Semantics",
+      "group": "DIST"
+    },
+    {
+      "id": 144,
+      "label": "Conflict Resolution",
+      "group": "DIST"
+    },
+    {
+      "id": 145,
+      "label": "Vector Clock",
+      "group": "DIST"
+    },
+    {
+      "id": 146,
+      "label": "Gossip Protocol",
+      "group": "DIST"
+    },
+    {
+      "id": 147,
+      "label": "Atomicity",
+      "group": "ACID",
+      "shape": "box"
+    },
+    {
+      "id": 148,
+      "label": "Consistency (ACID)",
+      "group": "ACID"
+    },
+    {
+      "id": 149,
+      "label": "Isolation",
+      "group": "ACID"
+    },
+    {
+      "id": 150,
+      "label": "Durability",
+      "group": "ACID"
+    },
+    {
+      "id": 151,
+      "label": "Transaction Isolation Level",
+      "group": "ACID"
+    },
+    {
+      "id": 152,
+      "label": "Read Uncommitted",
+      "group": "ACID"
+    },
+    {
+      "id": 153,
+      "label": "Read Committed",
+      "group": "ACID"
+    },
+    {
+      "id": 154,
+      "label": "Repeatable Read",
+      "group": "ACID"
+    },
+    {
+      "id": 155,
+      "label": "Serializable Isolation",
+      "group": "ACID"
+    },
+    {
+      "id": 156,
+      "label": "Dirty Read",
+      "group": "ACID"
+    },
+    {
+      "id": 157,
+      "label": "Phantom Read",
+      "group": "ACID"
+    },
+    {
+      "id": 158,
+      "label": "Non-Repeatable Read",
+      "group": "ACID"
+    },
+    {
+      "id": 159,
+      "label": "Two-Phase Locking",
+      "group": "ACID"
+    },
+    {
+      "id": 160,
+      "label": "Optimistic Concurrency Control",
+      "group": "ACID"
+    },
+    {
+      "id": 161,
+      "label": "Savepoint",
+      "group": "ACID"
+    },
+    {
+      "id": 162,
+      "label": "Rollback",
+      "group": "ACID"
+    },
+    {
+      "id": 163,
+      "label": "Commit Protocol",
+      "group": "ACID"
+    },
+    {
+      "id": 164,
+      "label": "Distributed Saga",
+      "group": "ACID"
+    },
+    {
+      "id": 165,
+      "label": "Two-Phase Commit",
+      "group": "NACID"
+    },
+    {
+      "id": 166,
+      "label": "Three-Phase Commit",
+      "group": "NACID"
+    },
+    {
+      "id": 167,
+      "label": "Distributed Transaction Coordinator",
+      "group": "NACID"
+    },
+    {
+      "id": 168,
+      "label": "Saga Orchestration",
+      "group": "NACID"
+    },
+    {
+      "id": 169,
+      "label": "Saga Choreography",
+      "group": "NACID"
+    },
+    {
+      "id": 170,
+      "label": "Compensating Transaction",
+      "group": "NACID"
+    },
+    {
+      "id": 171,
+      "label": "NewSQL Database",
+      "group": "NACID"
+    },
+    {
+      "id": 172,
+      "label": "Google Spanner",
+      "group": "NACID"
+    },
+    {
+      "id": 173,
+      "label": "CockroachDB",
+      "group": "NACID"
+    },
+    {
+      "id": 174,
+      "label": "YugabyteDB",
+      "group": "NACID"
+    },
+    {
+      "id": 175,
+      "label": "TrueTime API",
+      "group": "NACID"
+    },
+    {
+      "id": 176,
+      "label": "Global Transaction ID",
+      "group": "NACID"
+    },
+    {
+      "id": 177,
+      "label": "Cross-Shard Transaction",
+      "group": "NACID"
+    },
+    {
+      "id": 178,
+      "label": "Paxos Protocol",
+      "group": "NACID"
+    },
+    {
+      "id": 179,
+      "label": "Raft Consensus Protocol",
+      "group": "NACID"
+    },
+    {
+      "id": 180,
+      "label": "ZAB Protocol",
+      "group": "NACID"
+    },
+    {
+      "id": 181,
+      "label": "Horizontal Scaling",
+      "group": "SCALE"
+    },
+    {
+      "id": 182,
+      "label": "Vertical Scaling",
+      "group": "SCALE"
+    },
+    {
+      "id": 183,
+      "label": "Data Sharding",
+      "group": "SCALE"
+    },
+    {
+      "id": 184,
+      "label": "Range-Based Sharding",
+      "group": "SCALE"
+    },
+    {
+      "id": 185,
+      "label": "Hash-Based Sharding",
+      "group": "SCALE"
+    },
+    {
+      "id": 186,
+      "label": "Directory-Based Sharding",
+      "group": "SCALE"
+    },
+    {
+      "id": 187,
+      "label": "Geographic Sharding",
+      "group": "SCALE"
+    },
+    {
+      "id": 188,
+      "label": "Database Replication",
+      "group": "SCALE"
+    },
+    {
+      "id": 189,
+      "label": "Single-Leader Replication",
+      "group": "SCALE"
+    },
+    {
+      "id": 190,
+      "label": "Multi-Leader Replication",
+      "group": "SCALE"
+    },
+    {
+      "id": 191,
+      "label": "Leaderless Replication",
+      "group": "SCALE"
+    },
+    {
+      "id": 192,
+      "label": "Quorum Read/Write",
+      "group": "SCALE"
+    },
+    {
+      "id": 193,
+      "label": "Read Replica",
+      "group": "SCALE"
+    },
+    {
+      "id": 194,
+      "label": "Replication Lag",
+      "group": "SCALE"
+    },
+    {
+      "id": 195,
+      "label": "Split-Brain Problem",
+      "group": "SCALE"
+    },
+    {
+      "id": 196,
+      "label": "Leader Election",
+      "group": "SCALE"
+    },
+    {
+      "id": 197,
+      "label": "ZooKeeper Coordination",
+      "group": "SCALE"
+    },
+    {
+      "id": 198,
+      "label": "etcd",
+      "group": "SCALE"
+    },
+    {
+      "id": 199,
+      "label": "High Availability",
+      "group": "HA",
+      "shape": "box"
+    },
+    {
+      "id": 200,
+      "label": "Five-Nines Availability",
+      "group": "HA"
+    },
+    {
+      "id": 201,
+      "label": "SLA Decomposition",
+      "group": "HA"
+    },
+    {
+      "id": 202,
+      "label": "Failure Domain",
+      "group": "HA"
+    },
+    {
+      "id": 203,
+      "label": "Single Point of Failure",
+      "group": "HA"
+    },
+    {
+      "id": 204,
+      "label": "Active-Active Clustering",
+      "group": "HA"
+    },
+    {
+      "id": 205,
+      "label": "Active-Passive Clustering",
+      "group": "HA"
+    },
+    {
+      "id": 206,
+      "label": "Failover",
+      "group": "HA"
+    },
+    {
+      "id": 207,
+      "label": "Heartbeat Monitoring",
+      "group": "HA"
+    },
+    {
+      "id": 208,
+      "label": "Chaos Engineering",
+      "group": "HA"
+    },
+    {
+      "id": 209,
+      "label": "Mean Time Between Failures",
+      "group": "HA"
+    },
+    {
+      "id": 210,
+      "label": "Mean Time to Recovery",
+      "group": "HA"
+    },
+    {
+      "id": 211,
+      "label": "Geographic Redundancy",
+      "group": "HA"
+    },
+    {
+      "id": 212,
+      "label": "Multi-Region Deployment",
+      "group": "HA"
+    },
+    {
+      "id": 213,
+      "label": "Circuit Breaker Pattern",
+      "group": "HA"
+    },
+    {
+      "id": 214,
+      "label": "Vector Embedding",
+      "group": "VEC",
+      "shape": "box"
+    },
+    {
+      "id": 215,
+      "label": "Embedding Dimensionality",
+      "group": "VEC"
+    },
+    {
+      "id": 216,
+      "label": "Cosine Similarity",
+      "group": "VEC"
+    },
+    {
+      "id": 217,
+      "label": "Dot Product Similarity",
+      "group": "VEC"
+    },
+    {
+      "id": 218,
+      "label": "Euclidean Distance",
+      "group": "VEC"
+    },
+    {
+      "id": 219,
+      "label": "Approximate Nearest Neighbor",
+      "group": "VEC"
+    },
+    {
+      "id": 220,
+      "label": "HNSW Index",
+      "group": "VEC"
+    },
+    {
+      "id": 221,
+      "label": "IVF Index",
+      "group": "VEC"
+    },
+    {
+      "id": 222,
+      "label": "Flat Vector Index",
+      "group": "VEC"
+    },
+    {
+      "id": 223,
+      "label": "pgvector Extension",
+      "group": "VEC"
+    },
+    {
+      "id": 224,
+      "label": "Semantic Search",
+      "group": "VEC"
+    },
+    {
+      "id": 225,
+      "label": "Hybrid Search",
+      "group": "VEC"
+    },
+    {
+      "id": 226,
+      "label": "Native Vector Search Feature",
+      "group": "VEC"
+    },
+    {
+      "id": 227,
+      "label": "ANN Recall vs Speed",
+      "group": "VEC"
+    },
+    {
+      "id": 228,
+      "label": "Large Language Model",
+      "group": "LLM",
+      "shape": "box"
+    },
+    {
+      "id": 229,
+      "label": "Transformer Architecture",
+      "group": "LLM"
+    },
+    {
+      "id": 230,
+      "label": "Tokenization",
+      "group": "LLM"
+    },
+    {
+      "id": 231,
+      "label": "Attention Mechanism",
+      "group": "LLM"
+    },
+    {
+      "id": 232,
+      "label": "CLS Token Pooling",
+      "group": "LLM"
+    },
+    {
+      "id": 233,
+      "label": "Mean Pooling",
+      "group": "LLM"
+    },
+    {
+      "id": 234,
+      "label": "Embedding Model Selection",
+      "group": "LLM"
+    },
+    {
+      "id": 235,
+      "label": "OpenAI Embeddings API",
+      "group": "LLM"
+    },
+    {
+      "id": 236,
+      "label": "Sentence Transformers",
+      "group": "LLM"
+    },
+    {
+      "id": 237,
+      "label": "Self-Hosted Embedding Model",
+      "group": "LLM"
+    },
+    {
+      "id": 238,
+      "label": "Embedding Cost at Scale",
+      "group": "LLM"
+    },
+    {
+      "id": 239,
+      "label": "Re-Embedding Migration",
+      "group": "LLM"
+    },
+    {
+      "id": 240,
+      "label": "Multimodal Embedding",
+      "group": "LLM"
+    },
+    {
+      "id": 241,
+      "label": "Embedding Pipeline Architecture",
+      "group": "LLM"
+    },
+    {
+      "id": 242,
+      "label": "Embedding Model Versioning",
+      "group": "LLM"
+    },
+    {
+      "id": 243,
+      "label": "Polyglot Persistence",
+      "group": "SEL"
+    },
+    {
+      "id": 244,
+      "label": "Database Selection Framework",
+      "group": "SEL"
+    },
+    {
+      "id": 245,
+      "label": "Scoring Matrix",
+      "group": "SEL"
+    },
+    {
+      "id": 246,
+      "label": "Total Cost of Ownership",
+      "group": "SEL"
+    },
+    {
+      "id": 247,
+      "label": "Vendor Lock-In Risk",
+      "group": "SEL"
+    },
+    {
+      "id": 248,
+      "label": "Database Migration Plan",
+      "group": "SEL"
+    },
+    {
+      "id": 249,
+      "label": "Schema Migration",
+      "group": "SEL"
+    },
+    {
+      "id": 250,
+      "label": "Multi-Model Database",
+      "group": "SEL"
+    },
+    {
+      "id": 251,
+      "label": "Operational Runbook",
+      "group": "SEL"
+    },
+    {
+      "id": 252,
+      "label": "Team Expertise Factor",
+      "group": "SEL"
+    },
+    {
+      "id": 253,
+      "label": "Database Deprecation Risk",
+      "group": "SEL"
+    },
+    {
+      "id": 254,
+      "label": "Data Access Pattern Analysis",
+      "group": "SEL"
+    }
+  ],
+  "edges": [
+    {
+      "from": 2,
+      "to": 1
+    },
+    {
+      "from": 3,
+      "to": 1
+    },
+    {
+      "from": 3,
+      "to": 2
+    },
+    {
+      "from": 4,
+      "to": 3
+    },
+    {
+      "from": 5,
+      "to": 4
+    },
+    {
+      "from": 6,
+      "to": 3
+    },
+    {
+      "from": 6,
+      "to": 5
+    },
+    {
+      "from": 7,
+      "to": 6
+    },
+    {
+      "from": 8,
+      "to": 5
+    },
+    {
+      "from": 8,
+      "to": 6
+    },
+    {
+      "from": 9,
+      "to": 8
+    },
+    {
+      "from": 10,
+      "to": 8
+    },
+    {
+      "from": 11,
+      "to": 3
+    },
+    {
+      "from": 11,
+      "to": 4
+    },
+    {
+      "from": 12,
+      "to": 1
+    },
+    {
+      "from": 13,
+      "to": 1
+    },
+    {
+      "from": 13,
+      "to": 12
+    },
+    {
+      "from": 14,
+      "to": 5
+    },
+    {
+      "from": 14,
+      "to": 13
+    },
+    {
+      "from": 15,
+      "to": 1
+    },
+    {
+      "from": 15,
+      "to": 12
+    },
+    {
+      "from": 16,
+      "to": 1
+    },
+    {
+      "from": 16,
+      "to": 13
+    },
+    {
+      "from": 16,
+      "to": 15
+    },
+    {
+      "from": 17,
+      "to": 7
+    },
+    {
+      "from": 17,
+      "to": 8
+    },
+    {
+      "from": 17,
+      "to": 16
+    },
+    {
+      "from": 18,
+      "to": 3
+    },
+    {
+      "from": 18,
+      "to": 4
+    },
+    {
+      "from": 19,
+      "to": 4
+    },
+    {
+      "from": 20,
+      "to": 4
+    },
+    {
+      "from": 20,
+      "to": 19
+    },
+    {
+      "from": 21,
+      "to": 16
+    },
+    {
+      "from": 21,
+      "to": 17
+    },
+    {
+      "from": 22,
+      "to": 14
+    },
+    {
+      "from": 24,
+      "to": 23
+    },
+    {
+      "from": 25,
+      "to": 24
+    },
+    {
+      "from": 26,
+      "to": 23
+    },
+    {
+      "from": 26,
+      "to": 25
+    },
+    {
+      "from": 27,
+      "to": 23
+    },
+    {
+      "from": 27,
+      "to": 25
+    },
+    {
+      "from": 28,
+      "to": 26
+    },
+    {
+      "from": 28,
+      "to": 27
+    },
+    {
+      "from": 29,
+      "to": 23
+    },
+    {
+      "from": 30,
+      "to": 23
+    },
+    {
+      "from": 31,
+      "to": 23
+    },
+    {
+      "from": 32,
+      "to": 31
+    },
+    {
+      "from": 33,
+      "to": 31
+    },
+    {
+      "from": 34,
+      "to": 31
+    },
+    {
+      "from": 34,
+      "to": 32
+    },
+    {
+      "from": 35,
+      "to": 31
+    },
+    {
+      "from": 35,
+      "to": 32
+    },
+    {
+      "from": 36,
+      "to": 34
+    },
+    {
+      "from": 36,
+      "to": 35
+    },
+    {
+      "from": 37,
+      "to": 23
+    },
+    {
+      "from": 37,
+      "to": 31
+    },
+    {
+      "from": 38,
+      "to": 24
+    },
+    {
+      "from": 38,
+      "to": 26
+    },
+    {
+      "from": 39,
+      "to": 26
+    },
+    {
+      "from": 39,
+      "to": 28
+    },
+    {
+      "from": 40,
+      "to": 23
+    },
+    {
+      "from": 41,
+      "to": 24
+    },
+    {
+      "from": 42,
+      "to": 26
+    },
+    {
+      "from": 42,
+      "to": 41
+    },
+    {
+      "from": 43,
+      "to": 41
+    },
+    {
+      "from": 44,
+      "to": 41
+    },
+    {
+      "from": 44,
+      "to": 43
+    },
+    {
+      "from": 45,
+      "to": 41
+    },
+    {
+      "from": 45,
+      "to": 43
+    },
+    {
+      "from": 45,
+      "to": 44
+    },
+    {
+      "from": 46,
+      "to": 45
+    },
+    {
+      "from": 47,
+      "to": 45
+    },
+    {
+      "from": 47,
+      "to": 46
+    },
+    {
+      "from": 48,
+      "to": 41
+    },
+    {
+      "from": 48,
+      "to": 42
+    },
+    {
+      "from": 48,
+      "to": 44
+    },
+    {
+      "from": 49,
+      "to": 27
+    },
+    {
+      "from": 49,
+      "to": 41
+    },
+    {
+      "from": 50,
+      "to": 28
+    },
+    {
+      "from": 50,
+      "to": 42
+    },
+    {
+      "from": 50,
+      "to": 49
+    },
+    {
+      "from": 51,
+      "to": 42
+    },
+    {
+      "from": 52,
+      "to": 42
+    },
+    {
+      "from": 52,
+      "to": 41
+    },
+    {
+      "from": 53,
+      "to": 29
+    },
+    {
+      "from": 54,
+      "to": 53
+    },
+    {
+      "from": 55,
+      "to": 29
+    },
+    {
+      "from": 55,
+      "to": 53
+    },
+    {
+      "from": 56,
+      "to": 29
+    },
+    {
+      "from": 57,
+      "to": 56
+    },
+    {
+      "from": 58,
+      "to": 23
+    },
+    {
+      "from": 59,
+      "to": 41
+    },
+    {
+      "from": 59,
+      "to": 42
+    },
+    {
+      "from": 59,
+      "to": 55
+    },
+    {
+      "from": 60,
+      "to": 41
+    },
+    {
+      "from": 60,
+      "to": 42
+    },
+    {
+      "from": 60,
+      "to": 56
+    },
+    {
+      "from": 61,
+      "to": 29
+    },
+    {
+      "from": 61,
+      "to": 35
+    },
+    {
+      "from": 62,
+      "to": 37
+    },
+    {
+      "from": 62,
+      "to": 61
+    },
+    {
+      "from": 63,
+      "to": 35
+    },
+    {
+      "from": 63,
+      "to": 24
+    },
+    {
+      "from": 64,
+      "to": 63
+    },
+    {
+      "from": 64,
+      "to": 41
+    },
+    {
+      "from": 65,
+      "to": 64
+    },
+    {
+      "from": 66,
+      "to": 63
+    },
+    {
+      "from": 66,
+      "to": 35
+    },
+    {
+      "from": 67,
+      "to": 63
+    },
+    {
+      "from": 67,
+      "to": 75
+    },
+    {
+      "from": 68,
+      "to": 63
+    },
+    {
+      "from": 68,
+      "to": 67
+    },
+    {
+      "from": 69,
+      "to": 63
+    },
+    {
+      "from": 69,
+      "to": 64
+    },
+    {
+      "from": 70,
+      "to": 27
+    },
+    {
+      "from": 70,
+      "to": 61
+    },
+    {
+      "from": 71,
+      "to": 52
+    },
+    {
+      "from": 71,
+      "to": 63
+    },
+    {
+      "from": 72,
+      "to": 28
+    },
+    {
+      "from": 72,
+      "to": 62
+    },
+    {
+      "from": 73,
+      "to": 62
+    },
+    {
+      "from": 73,
+      "to": 61
+    },
+    {
+      "from": 74,
+      "to": 62
+    },
+    {
+      "from": 74,
+      "to": 61
+    },
+    {
+      "from": 75,
+      "to": 30
+    },
+    {
+      "from": 75,
+      "to": 61
+    },
+    {
+      "from": 76,
+      "to": 24
+    },
+    {
+      "from": 77,
+      "to": 29
+    },
+    {
+      "from": 77,
+      "to": 76
+    },
+    {
+      "from": 78,
+      "to": 76
+    },
+    {
+      "from": 79,
+      "to": 76
+    },
+    {
+      "from": 79,
+      "to": 78
+    },
+    {
+      "from": 80,
+      "to": 76
+    },
+    {
+      "from": 80,
+      "to": 77
+    },
+    {
+      "from": 80,
+      "to": 78
+    },
+    {
+      "from": 81,
+      "to": 76
+    },
+    {
+      "from": 81,
+      "to": 77
+    },
+    {
+      "from": 82,
+      "to": 79
+    },
+    {
+      "from": 82,
+      "to": 80
+    },
+    {
+      "from": 83,
+      "to": 79
+    },
+    {
+      "from": 83,
+      "to": 80
+    },
+    {
+      "from": 84,
+      "to": 79
+    },
+    {
+      "from": 84,
+      "to": 80
+    },
+    {
+      "from": 85,
+      "to": 79
+    },
+    {
+      "from": 85,
+      "to": 82
+    },
+    {
+      "from": 86,
+      "to": 77
+    },
+    {
+      "from": 86,
+      "to": 76
+    },
+    {
+      "from": 87,
+      "to": 78
+    },
+    {
+      "from": 88,
+      "to": 24
+    },
+    {
+      "from": 88,
+      "to": 76
+    },
+    {
+      "from": 89,
+      "to": 88
+    },
+    {
+      "from": 90,
+      "to": 29
+    },
+    {
+      "from": 91,
+      "to": 90
+    },
+    {
+      "from": 92,
+      "to": 90
+    },
+    {
+      "from": 93,
+      "to": 88
+    },
+    {
+      "from": 93,
+      "to": 89
+    },
+    {
+      "from": 93,
+      "to": 90
+    },
+    {
+      "from": 94,
+      "to": 88
+    },
+    {
+      "from": 94,
+      "to": 90
+    },
+    {
+      "from": 95,
+      "to": 88
+    },
+    {
+      "from": 95,
+      "to": 89
+    },
+    {
+      "from": 96,
+      "to": 88
+    },
+    {
+      "from": 96,
+      "to": 95
+    },
+    {
+      "from": 97,
+      "to": 90
+    },
+    {
+      "from": 97,
+      "to": 91
+    },
+    {
+      "from": 98,
+      "to": 90
+    },
+    {
+      "from": 98,
+      "to": 92
+    },
+    {
+      "from": 99,
+      "to": 90
+    },
+    {
+      "from": 99,
+      "to": 91
+    },
+    {
+      "from": 100,
+      "to": 24
+    },
+    {
+      "from": 101,
+      "to": 24
+    },
+    {
+      "from": 102,
+      "to": 26
+    },
+    {
+      "from": 102,
+      "to": 101
+    },
+    {
+      "from": 103,
+      "to": 26
+    },
+    {
+      "from": 103,
+      "to": 100
+    },
+    {
+      "from": 104,
+      "to": 100
+    },
+    {
+      "from": 105,
+      "to": 104
+    },
+    {
+      "from": 106,
+      "to": 104
+    },
+    {
+      "from": 107,
+      "to": 104
+    },
+    {
+      "from": 107,
+      "to": 105
+    },
+    {
+      "from": 107,
+      "to": 106
+    },
+    {
+      "from": 108,
+      "to": 100
+    },
+    {
+      "from": 108,
+      "to": 103
+    },
+    {
+      "from": 109,
+      "to": 100
+    },
+    {
+      "from": 109,
+      "to": 104
+    },
+    {
+      "from": 110,
+      "to": 100
+    },
+    {
+      "from": 110,
+      "to": 101
+    },
+    {
+      "from": 111,
+      "to": 100
+    },
+    {
+      "from": 112,
+      "to": 111
+    },
+    {
+      "from": 113,
+      "to": 26
+    },
+    {
+      "from": 113,
+      "to": 109
+    },
+    {
+      "from": 114,
+      "to": 100
+    },
+    {
+      "from": 114,
+      "to": 101
+    },
+    {
+      "from": 115,
+      "to": 24
+    },
+    {
+      "from": 116,
+      "to": 29
+    },
+    {
+      "from": 116,
+      "to": 115
+    },
+    {
+      "from": 117,
+      "to": 116
+    },
+    {
+      "from": 118,
+      "to": 115
+    },
+    {
+      "from": 118,
+      "to": 116
+    },
+    {
+      "from": 119,
+      "to": 115
+    },
+    {
+      "from": 119,
+      "to": 43
+    },
+    {
+      "from": 120,
+      "to": 26
+    },
+    {
+      "from": 120,
+      "to": 115
+    },
+    {
+      "from": 121,
+      "to": 25
+    },
+    {
+      "from": 121,
+      "to": 115
+    },
+    {
+      "from": 122,
+      "to": 115
+    },
+    {
+      "from": 122,
+      "to": 116
+    },
+    {
+      "from": 122,
+      "to": 117
+    },
+    {
+      "from": 123,
+      "to": 115
+    },
+    {
+      "from": 123,
+      "to": 116
+    },
+    {
+      "from": 124,
+      "to": 27
+    },
+    {
+      "from": 124,
+      "to": 115
+    },
+    {
+      "from": 125,
+      "to": 27
+    },
+    {
+      "from": 125,
+      "to": 115
+    },
+    {
+      "from": 126,
+      "to": 115
+    },
+    {
+      "from": 126,
+      "to": 122
+    },
+    {
+      "from": 128,
+      "to": 127
+    },
+    {
+      "from": 129,
+      "to": 127
+    },
+    {
+      "from": 130,
+      "to": 127
+    },
+    {
+      "from": 131,
+      "to": 127
+    },
+    {
+      "from": 131,
+      "to": 128
+    },
+    {
+      "from": 131,
+      "to": 130
+    },
+    {
+      "from": 132,
+      "to": 127
+    },
+    {
+      "from": 132,
+      "to": 129
+    },
+    {
+      "from": 132,
+      "to": 130
+    },
+    {
+      "from": 133,
+      "to": 127
+    },
+    {
+      "from": 134,
+      "to": 133
+    },
+    {
+      "from": 134,
+      "to": 128
+    },
+    {
+      "from": 134,
+      "to": 129
+    },
+    {
+      "from": 134,
+      "to": 33
+    },
+    {
+      "from": 135,
+      "to": 129
+    },
+    {
+      "from": 135,
+      "to": 132
+    },
+    {
+      "from": 136,
+      "to": 128
+    },
+    {
+      "from": 136,
+      "to": 131
+    },
+    {
+      "from": 137,
+      "to": 135
+    },
+    {
+      "from": 138,
+      "to": 135
+    },
+    {
+      "from": 139,
+      "to": 135
+    },
+    {
+      "from": 140,
+      "to": 137
+    },
+    {
+      "from": 140,
+      "to": 138
+    },
+    {
+      "from": 141,
+      "to": 136
+    },
+    {
+      "from": 141,
+      "to": 128
+    },
+    {
+      "from": 142,
+      "to": 136
+    },
+    {
+      "from": 142,
+      "to": 141
+    },
+    {
+      "from": 143,
+      "to": 135
+    },
+    {
+      "from": 143,
+      "to": 127
+    },
+    {
+      "from": 144,
+      "to": 135
+    },
+    {
+      "from": 145,
+      "to": 139
+    },
+    {
+      "from": 146,
+      "to": 135
+    },
+    {
+      "from": 146,
+      "to": 188
+    },
+    {
+      "from": 148,
+      "to": 147
+    },
+    {
+      "from": 149,
+      "to": 147
+    },
+    {
+      "from": 150,
+      "to": 147
+    },
+    {
+      "from": 150,
+      "to": 53
+    },
+    {
+      "from": 151,
+      "to": 149
+    },
+    {
+      "from": 152,
+      "to": 151
+    },
+    {
+      "from": 153,
+      "to": 151
+    },
+    {
+      "from": 153,
+      "to": 152
+    },
+    {
+      "from": 154,
+      "to": 151
+    },
+    {
+      "from": 154,
+      "to": 153
+    },
+    {
+      "from": 155,
+      "to": 151
+    },
+    {
+      "from": 155,
+      "to": 154
+    },
+    {
+      "from": 155,
+      "to": 142
+    },
+    {
+      "from": 156,
+      "to": 152
+    },
+    {
+      "from": 157,
+      "to": 154
+    },
+    {
+      "from": 158,
+      "to": 153
+    },
+    {
+      "from": 159,
+      "to": 56
+    },
+    {
+      "from": 159,
+      "to": 149
+    },
+    {
+      "from": 160,
+      "to": 55
+    },
+    {
+      "from": 160,
+      "to": 149
+    },
+    {
+      "from": 161,
+      "to": 147
+    },
+    {
+      "from": 162,
+      "to": 147
+    },
+    {
+      "from": 162,
+      "to": 161
+    },
+    {
+      "from": 163,
+      "to": 147
+    },
+    {
+      "from": 163,
+      "to": 150
+    },
+    {
+      "from": 164,
+      "to": 147
+    },
+    {
+      "from": 165,
+      "to": 163
+    },
+    {
+      "from": 165,
+      "to": 127
+    },
+    {
+      "from": 166,
+      "to": 165
+    },
+    {
+      "from": 167,
+      "to": 165
+    },
+    {
+      "from": 168,
+      "to": 164
+    },
+    {
+      "from": 169,
+      "to": 164
+    },
+    {
+      "from": 170,
+      "to": 164
+    },
+    {
+      "from": 171,
+      "to": 147
+    },
+    {
+      "from": 171,
+      "to": 181
+    },
+    {
+      "from": 171,
+      "to": 136
+    },
+    {
+      "from": 171,
+      "to": 36
+    },
+    {
+      "from": 172,
+      "to": 171
+    },
+    {
+      "from": 172,
+      "to": 178
+    },
+    {
+      "from": 172,
+      "to": 179
+    },
+    {
+      "from": 173,
+      "to": 171
+    },
+    {
+      "from": 173,
+      "to": 178
+    },
+    {
+      "from": 173,
+      "to": 179
+    },
+    {
+      "from": 174,
+      "to": 171
+    },
+    {
+      "from": 174,
+      "to": 178
+    },
+    {
+      "from": 174,
+      "to": 179
+    },
+    {
+      "from": 175,
+      "to": 172
+    },
+    {
+      "from": 176,
+      "to": 165
+    },
+    {
+      "from": 176,
+      "to": 167
+    },
+    {
+      "from": 177,
+      "to": 165
+    },
+    {
+      "from": 177,
+      "to": 183
+    },
+    {
+      "from": 178,
+      "to": 127
+    },
+    {
+      "from": 179,
+      "to": 127
+    },
+    {
+      "from": 180,
+      "to": 127
+    },
+    {
+      "from": 180,
+      "to": 196
+    },
+    {
+      "from": 181,
+      "to": 37
+    },
+    {
+      "from": 182,
+      "to": 37
+    },
+    {
+      "from": 183,
+      "to": 181
+    },
+    {
+      "from": 183,
+      "to": 24
+    },
+    {
+      "from": 184,
+      "to": 183
+    },
+    {
+      "from": 185,
+      "to": 183
+    },
+    {
+      "from": 185,
+      "to": 77
+    },
+    {
+      "from": 186,
+      "to": 183
+    },
+    {
+      "from": 187,
+      "to": 183
+    },
+    {
+      "from": 188,
+      "to": 23
+    },
+    {
+      "from": 188,
+      "to": 181
+    },
+    {
+      "from": 189,
+      "to": 188
+    },
+    {
+      "from": 190,
+      "to": 188
+    },
+    {
+      "from": 190,
+      "to": 144
+    },
+    {
+      "from": 191,
+      "to": 188
+    },
+    {
+      "from": 191,
+      "to": 192
+    },
+    {
+      "from": 192,
+      "to": 188
+    },
+    {
+      "from": 192,
+      "to": 127
+    },
+    {
+      "from": 193,
+      "to": 189
+    },
+    {
+      "from": 194,
+      "to": 188
+    },
+    {
+      "from": 194,
+      "to": 189
+    },
+    {
+      "from": 195,
+      "to": 190
+    },
+    {
+      "from": 195,
+      "to": 130
+    },
+    {
+      "from": 196,
+      "to": 189
+    },
+    {
+      "from": 196,
+      "to": 178
+    },
+    {
+      "from": 196,
+      "to": 179
+    },
+    {
+      "from": 197,
+      "to": 196
+    },
+    {
+      "from": 198,
+      "to": 179
+    },
+    {
+      "from": 198,
+      "to": 196
+    },
+    {
+      "from": 200,
+      "to": 199
+    },
+    {
+      "from": 201,
+      "to": 200
+    },
+    {
+      "from": 202,
+      "to": 199
+    },
+    {
+      "from": 202,
+      "to": 203
+    },
+    {
+      "from": 203,
+      "to": 199
+    },
+    {
+      "from": 204,
+      "to": 199
+    },
+    {
+      "from": 204,
+      "to": 188
+    },
+    {
+      "from": 205,
+      "to": 199
+    },
+    {
+      "from": 205,
+      "to": 189
+    },
+    {
+      "from": 206,
+      "to": 199
+    },
+    {
+      "from": 206,
+      "to": 205
+    },
+    {
+      "from": 206,
+      "to": 196
+    },
+    {
+      "from": 207,
+      "to": 199
+    },
+    {
+      "from": 207,
+      "to": 206
+    },
+    {
+      "from": 208,
+      "to": 199
+    },
+    {
+      "from": 208,
+      "to": 200
+    },
+    {
+      "from": 209,
+      "to": 199
+    },
+    {
+      "from": 210,
+      "to": 199
+    },
+    {
+      "from": 210,
+      "to": 206
+    },
+    {
+      "from": 211,
+      "to": 200
+    },
+    {
+      "from": 211,
+      "to": 187
+    },
+    {
+      "from": 212,
+      "to": 211
+    },
+    {
+      "from": 212,
+      "to": 187
+    },
+    {
+      "from": 213,
+      "to": 199
+    },
+    {
+      "from": 213,
+      "to": 206
+    },
+    {
+      "from": 215,
+      "to": 214
+    },
+    {
+      "from": 216,
+      "to": 214
+    },
+    {
+      "from": 217,
+      "to": 214
+    },
+    {
+      "from": 218,
+      "to": 214
+    },
+    {
+      "from": 219,
+      "to": 214
+    },
+    {
+      "from": 219,
+      "to": 215
+    },
+    {
+      "from": 220,
+      "to": 219
+    },
+    {
+      "from": 220,
+      "to": 27
+    },
+    {
+      "from": 221,
+      "to": 219
+    },
+    {
+      "from": 221,
+      "to": 27
+    },
+    {
+      "from": 222,
+      "to": 219
+    },
+    {
+      "from": 222,
+      "to": 27
+    },
+    {
+      "from": 223,
+      "to": 59
+    },
+    {
+      "from": 223,
+      "to": 220
+    },
+    {
+      "from": 224,
+      "to": 214
+    },
+    {
+      "from": 224,
+      "to": 219
+    },
+    {
+      "from": 225,
+      "to": 224
+    },
+    {
+      "from": 225,
+      "to": 27
+    },
+    {
+      "from": 226,
+      "to": 27
+    },
+    {
+      "from": 226,
+      "to": 219
+    },
+    {
+      "from": 227,
+      "to": 219
+    },
+    {
+      "from": 227,
+      "to": 220
+    },
+    {
+      "from": 227,
+      "to": 221
+    },
+    {
+      "from": 229,
+      "to": 228
+    },
+    {
+      "from": 230,
+      "to": 229
+    },
+    {
+      "from": 231,
+      "to": 229
+    },
+    {
+      "from": 232,
+      "to": 229
+    },
+    {
+      "from": 232,
+      "to": 231
+    },
+    {
+      "from": 233,
+      "to": 229
+    },
+    {
+      "from": 233,
+      "to": 231
+    },
+    {
+      "from": 234,
+      "to": 228
+    },
+    {
+      "from": 234,
+      "to": 215
+    },
+    {
+      "from": 235,
+      "to": 228
+    },
+    {
+      "from": 235,
+      "to": 214
+    },
+    {
+      "from": 236,
+      "to": 228
+    },
+    {
+      "from": 236,
+      "to": 214
+    },
+    {
+      "from": 237,
+      "to": 228
+    },
+    {
+      "from": 237,
+      "to": 214
+    },
+    {
+      "from": 238,
+      "to": 235
+    },
+    {
+      "from": 238,
+      "to": 215
+    },
+    {
+      "from": 238,
+      "to": 37
+    },
+    {
+      "from": 239,
+      "to": 234
+    },
+    {
+      "from": 239,
+      "to": 215
+    },
+    {
+      "from": 240,
+      "to": 228
+    },
+    {
+      "from": 240,
+      "to": 214
+    },
+    {
+      "from": 241,
+      "to": 214
+    },
+    {
+      "from": 241,
+      "to": 235
+    },
+    {
+      "from": 241,
+      "to": 236
+    },
+    {
+      "from": 242,
+      "to": 239
+    },
+    {
+      "from": 242,
+      "to": 241
+    },
+    {
+      "from": 243,
+      "to": 23
+    },
+    {
+      "from": 243,
+      "to": 24
+    },
+    {
+      "from": 243,
+      "to": 59
+    },
+    {
+      "from": 243,
+      "to": 80
+    },
+    {
+      "from": 243,
+      "to": 93
+    },
+    {
+      "from": 243,
+      "to": 108
+    },
+    {
+      "from": 243,
+      "to": 122
+    },
+    {
+      "from": 244,
+      "to": 1
+    },
+    {
+      "from": 244,
+      "to": 23
+    },
+    {
+      "from": 244,
+      "to": 31
+    },
+    {
+      "from": 244,
+      "to": 59
+    },
+    {
+      "from": 244,
+      "to": 73
+    },
+    {
+      "from": 244,
+      "to": 80
+    },
+    {
+      "from": 244,
+      "to": 93
+    },
+    {
+      "from": 244,
+      "to": 108
+    },
+    {
+      "from": 244,
+      "to": 122
+    },
+    {
+      "from": 245,
+      "to": 244
+    },
+    {
+      "from": 245,
+      "to": 4
+    },
+    {
+      "from": 245,
+      "to": 254
+    },
+    {
+      "from": 246,
+      "to": 244
+    },
+    {
+      "from": 246,
+      "to": 40
+    },
+    {
+      "from": 247,
+      "to": 244
+    },
+    {
+      "from": 247,
+      "to": 246
+    },
+    {
+      "from": 248,
+      "to": 243
+    },
+    {
+      "from": 248,
+      "to": 244
+    },
+    {
+      "from": 249,
+      "to": 248
+    },
+    {
+      "from": 249,
+      "to": 25
+    },
+    {
+      "from": 250,
+      "to": 243
+    },
+    {
+      "from": 250,
+      "to": 24
+    },
+    {
+      "from": 250,
+      "to": 93
+    },
+    {
+      "from": 250,
+      "to": 108
+    },
+    {
+      "from": 250,
+      "to": 122
+    },
+    {
+      "from": 251,
+      "to": 40
+    },
+    {
+      "from": 251,
+      "to": 200
+    },
+    {
+      "from": 251,
+      "to": 208
+    },
+    {
+      "from": 252,
+      "to": 244
+    },
+    {
+      "from": 252,
+      "to": 246
+    },
+    {
+      "from": 253,
+      "to": 247
+    },
+    {
+      "from": 253,
+      "to": 239
+    },
+    {
+      "from": 253,
+      "to": 242
+    },
+    {
+      "from": 254,
+      "to": 31
+    },
+    {
+      "from": 254,
+      "to": 32
+    },
+    {
+      "from": 254,
+      "to": 38
+    }
+  ]
+}

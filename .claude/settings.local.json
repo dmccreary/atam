@@ -1,7 +1,16 @@
 {
   "permissions": {
     "allow": [
-      "Bash(cat /Users/dan/.claude/skills/course-description-analyzer/assets/course-description-template.md 2>/dev/null || echo \"Template not found\")"
+      "Bash(cat /Users/dan/.claude/skills/course-description-analyzer/assets/course-description-template.md 2>/dev/null || echo \"Template not found\")",
+      "Bash(ls /Users/dan/.claude/skills/learning-graph-generator/)",
+      "Bash(cp /Users/dan/.claude/skills/learning-graph-generator/analyze-graph.py /Users/dan/Documents/ws/atam/docs/learning-graph/)",
+      "Bash(cp /Users/dan/.claude/skills/learning-graph-generator/csv-to-json.py /Users/dan/Documents/ws/atam/docs/learning-graph/)",
+      "Bash(cp /Users/dan/.claude/skills/learning-graph-generator/add-taxonomy.py /Users/dan/Documents/ws/atam/docs/learning-graph/)",
+      "Bash(cp /Users/dan/.claude/skills/learning-graph-generator/taxonomy-distribution.py /Users/dan/Documents/ws/atam/docs/learning-graph/)",
+      "Bash(cp /Users/dan/.claude/skills/learning-graph-generator/validate-learning-graph.py /Users/dan/Documents/ws/atam/docs/learning-graph/)",
+      "Bash(python analyze-graph.py learning-graph.csv quality-metrics.md)",
+      "Bash(python3 -)",
+      "Bash(python csv-to-json.py learning-graph.csv learning-graph.json color-config.json metadata.json taxonomy-names.json)"
     ]
   }
 }

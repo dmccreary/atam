@@ -1,0 +1,18 @@
+{
+  "ATAM":  "DarkSlateBlue",
+  "FOUND": "SteelBlue",
+  "REL":   "DarkGreen",
+  "ANAL":  "LimeGreen",
+  "KV":    "Gold",
+  "COL":   "DarkGoldenrod",
+  "GRAPH": "Teal",
+  "DOC":   "DodgerBlue",
+  "DIST":  "Crimson",
+  "ACID":  "DarkRed",
+  "NACID": "MediumPurple",
+  "SCALE": "Indigo",
+  "HA":    "OliveDrab",
+  "VEC":   "Orange",
+  "LLM":   "Coral",
+  "SEL":   "DeepPink"
+}
