@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat /Users/dan/.claude/skills/course-description-analyzer/assets/course-description-template.md 2>/dev/null || echo \"Template not found\")"
+    ]
+  }
+}
