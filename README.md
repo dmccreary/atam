@@ -1,135 +1,152 @@
 # Selecting the Right Database
 
+[![MkDocs](https://img.shields.io/badge/Made%20with-MkDocs-526CFE?logo=materialformkdocs)](https://www.mkdocs.org/)
+[![Material for MkDocs](https://img.shields.io/badge/Material%20for%20MkDocs-526CFE?logo=materialformkdocs)](https://squidfunk.github.io/mkdocs-material/)
+[![GitHub Pages](https://img.shields.io/badge/View%20on-GitHub%20Pages-blue?logo=github)](https://dmccreary.github.io/right-database/)
+[![Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-DA7857?logo=anthropic)](https://claude.ai/code)
+[![Claude Skills](https://img.shields.io/badge/Uses-Claude%20Skills-DA7857?logo=anthropic)](https://github.com/dmccreary/claude-skills)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-[![Website](https://img.shields.io/badge/Website-Live-brightgreen)](https://dmccreary.github.io/right-database/)
 
-This repository contains educational resources for teaching the Architecture Tradeoff Analysis Methodology (ATAM) adapted for NoSQL database selection. Originally developed by Carnegie Mellon University for large computer architecture projects, ATAM has been adapted here to help organizations select the most appropriate database architecture for their business challenges.
+## View the Live Site
 
-## 🌐 Live Website
+Visit the interactive textbook at: [https://dmccreary.github.io/right-database](https://dmccreary.github.io/right-database)
 
-Visit the live documentation site: [https://dmccreary.github.io/right-database/](https://dmccreary.github.io/right-database/)
+## Overview
 
-## 📚 About
+**Selecting the Right Database** is an intelligent textbook for software architects, senior engineers, technical leads, and database administrators who need to make real-world database selection and design decisions. It teaches a disciplined, structured approach using the Carnegie Mellon University Software Engineering Institute's **Architecture Tradeoff Analysis Method (ATAM)** — the gold standard for evaluating architectural decisions against competing quality attribute requirements.
 
-This site supports the textbook **"Making Sense of NoSQL"** by Dan McCreary and Ann Kelly, published by Manning Publications. The resources help students and professionals understand:
+The course builds deep understanding of six major database paradigms — relational, analytical, key-value, column-family, graph, and document — and teaches you to reason about each in terms of the tradeoffs they make across consistency, availability, partition tolerance, scalability, query expressiveness, and operational complexity. Rather than seeking a "best" database, you learn to identify the *right* database for a given set of architectural drivers, constraints, and quality attribute scenarios.
 
-- The ATAM methodology for database selection
-- Trade-offs between different NoSQL database types
-- Real-world case studies and implementation strategies
-- Quality attributes and utility trees for database architectures
+The textbook also covers the distributed systems foundations that underpin modern database architectures: the CAP theorem, BASE vs. ACID semantics, consensus protocols, replication strategies, sharding, five-nines availability, vector search, and LLM-generated embeddings. Sixteen structured chapters culminate in a full ATAM-based database selection capstone exercise.
 
-## 🗂️ Repository Structure
-
-```
-.
-├── README.md
-├── docs/                          # Documentation source files
-│   ├── index.md                  # Homepage
-│   ├── about.md                  # Project background
-│   ├── atam-process.md           # Core ATAM methodology
-│   ├── atam-db-process.md        # ATAM for database selection
-│   ├── concepts/                 # Foundational concepts
-│   │   ├── utility-tree.md
-│   │   └── acid-vs-base.md
-│   ├── db-types/                 # Database type explanations
-│   │   ├── 01-relational.md
-│   │   ├── 02-analytical.md
-│   │   ├── 03-key-value.md
-│   │   ├── 04-column-family.md
-│   │   ├── 05-graph.md
-│   │   └── 06-document.md
-│   ├── case-studies/             # Real-world examples
-│   │   ├── star-process.md
-│   │   └── amazon-shopping-cart.md
-│   ├── img/                      # Images and diagrams
-│   └── slides.md                 # Presentation materials
-├── slides/                       # PowerPoint presentations
-├── mkdocs.yml                    # MkDocs configuration
-└── mkdocs-gen.sh                 # Build script
-```
-
-## 🚀 Quick Start
+## Getting Started
 
 ### Prerequisites
 
 - Python 3.7+
 - MkDocs with Material theme
 
-### Local Development
+### Clone the Repository
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/dmccreary/right-database.git
-   cd right-database
-   ```
+```bash
+git clone https://github.com/dmccreary/right-database.git
+cd right-database
+```
 
-2. Install dependencies:
-   ```bash
-   pip install mkdocs mkdocs-material
-   ```
+### Install Dependencies
 
-3. Serve locally:
-   ```bash
-   mkdocs serve
-   ```
+```bash
+pip install mkdocs mkdocs-material
+```
 
-4. Open your browser to `http://localhost:8000`
+### Serve Locally
 
-### Building for Production
+```bash
+mkdocs serve
+```
+
+Open your browser to `http://localhost:8000`
+
+### Build for Production
 
 ```bash
 mkdocs build
 ```
 
-## 📖 Key Topics Covered
+### Deploy to GitHub Pages
 
-- **ATAM Methodology**: Step-by-step process for architecture evaluation
-- **Database Types**: Comprehensive coverage of 6 major NoSQL database categories
-- **Quality Attributes**: Performance, scalability, consistency, and availability trade-offs
-- **Case Studies**: Real-world examples including Amazon's shopping cart architecture
-- **Utility Trees**: Structured approach to quality attribute analysis
+```bash
+mkdocs gh-deploy
+```
 
-## 🎯 Database Types Covered
+## Repository Structure
 
-1. **Relational** - Traditional RDBMS systems
-2. **Analytical** - Data warehousing and OLAP systems
-3. **Key-Value** - Simple key-value stores
-4. **Column Family** - Wide-column databases
-5. **Graph** - Graph databases for connected data
-6. **Document** - Document-oriented databases
+```
+right-database/
+├── docs/                          # MkDocs documentation source
+│   ├── chapters/                  # 16 structured chapters
+│   │   ├── 01-atam-method/
+│   │   ├── 02-database-foundations/
+│   │   ├── ...
+│   │   └── 16-database-selection/
+│   ├── concepts/                  # Foundational concept pages
+│   │   ├── four-vs-of-nosql.md
+│   │   ├── utility-tree.md
+│   │   └── acid-vs-base.md
+│   ├── db-types/                  # Database paradigm deep-dives
+│   ├── case-studies/              # Real-world architecture examples
+│   │   ├── amazon-shopping-cart.md
+│   │   ├── facebook.md
+│   │   ├── linkedin.md
+│   │   └── cassandra.md
+│   ├── learning-graph/            # Concept dependency graph
+│   │   ├── learning-graph.csv
+│   │   └── quality-metrics.md
+│   ├── stories/                   # Historical narrative content
+│   ├── glossary.md                # Term definitions
+│   ├── course-description.md      # Full Bloom's Taxonomy outcomes
+│   └── img/                       # Images and mascot assets
+├── plugins/                       # MkDocs plugin hooks
+├── slides/                        # Presentation materials
+├── mkdocs.yml                     # Site configuration
+└── README.md                      # This file
+```
 
-## 📊 Learning Resources
+## Topics Covered
 
-- Interactive case studies with real-world scenarios
-- Visual diagrams and process flows
-- Presentation slides for classroom use
-- Hands-on exercises and examples
+- **ATAM Methodology** — CMU SEI process, utility trees, scenario prioritization, sensitivity and tradeoff points
+- **Database Paradigms** — Relational, analytical, key-value, column-family, graph, and document databases
+- **Distributed Systems Foundations** — CAP theorem, PACELC model, BASE vs. ACID, consensus protocols (Paxos, Raft)
+- **Transactions** — ACID guarantees, MVCC, distributed 2PC, sagas, NewSQL (Spanner, CockroachDB, YugabyteDB)
+- **Scaling and High Availability** — Sharding strategies, replication topologies, five-nines availability, chaos engineering
+- **Vector Search** — ANN indexes (HNSW, IVF), similarity metrics, pgvector, Atlas Vector Search, Redis Vector
+- **LLM Embeddings** — Embedding model selection, dimensionality tradeoffs, batching strategies, production cost
+- **Polyglot Persistence** — When and how to combine multiple database types in one architecture
+- **Case Studies** — Amazon, Facebook, LinkedIn, Cassandra, TigerGraph, Google Knowledge Graph, and more
 
-## 🤝 Contributing
+## Reporting Issues
 
-This is an educational resource. If you find errors or have suggestions for improvements, please:
+Found a bug, typo, or have a suggestion? Please open an issue:
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+[https://github.com/dmccreary/right-database/issues](https://github.com/dmccreary/right-database/issues)
 
-## 📄 License
+When reporting, please include a description of the problem, steps to reproduce, and any relevant screenshots.
+
+## License
 
 This work is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-## 👨‍💼 Author
+**You are free to:**
+- Share — copy and redistribute the material
+- Adapt — remix, transform, and build upon the material
+
+**Under the following terms:**
+- **Attribution** — Give appropriate credit with a link to the original
+- **NonCommercial** — No commercial use without permission
+- **ShareAlike** — Distribute contributions under the same license
+
+See [license.md](docs/license.md) for full details.
+
+## Acknowledgements
+
+This project is built on the shoulders of giants in the open source community:
+
+- **[MkDocs](https://www.mkdocs.org/)** — Static site generator optimized for documentation
+- **[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)** — Beautiful, responsive documentation theme
+- **[Claude AI](https://claude.ai)** by Anthropic — AI-assisted content generation and skills
+- **[GitHub Pages](https://pages.github.com/)** — Free hosting for open source projects
+- **[CMU Software Engineering Institute](https://sei.cmu.edu/)** — Original ATAM methodology
+
+## Related Resources
+
+- [Making Sense of NoSQL](https://www.manning.com/books/making-sense-of-nosql) — Book by Dan McCreary and Ann Kelly (Manning Publications)
+- [Carnegie Mellon ATAM](https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=5177) — Original ATAM documentation from CMU SEI
+
+## Contact
 
 **Dan McCreary**
-- LinkedIn: [danmccreary](https://www.linkedin.com/in/danmccreary/)
-- Book: [Making Sense of NoSQL](https://www.manning.com/books/making-sense-of-nosql)
 
-## 🔗 Related Resources
+- LinkedIn: [linkedin.com/in/danmccreary](https://www.linkedin.com/in/danmccreary/)
+- GitHub: [@dmccreary](https://github.com/dmccreary)
 
-- [Manning Publications - Making Sense of NoSQL](https://www.manning.com/books/making-sense-of-nosql)
-- [Carnegie Mellon ATAM](https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=5177)
-- [NoSQL Database Information](https://nosql-database.org/)
-
----
-
-*This repository supports educational initiatives in database architecture and selection methodologies.*
+Questions, suggestions, or collaboration opportunities? Connect on LinkedIn or open an issue on GitHub.

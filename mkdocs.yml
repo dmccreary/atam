@@ -85,8 +85,7 @@ nav:
 edit_uri: 'blob/master/docs'
 theme:
   name: material
-  extra_css:
-    - styles/custom.css
+
   # logo: img/my-icon.png
   # favicon: img/my-icon.png
   palette:
@@ -103,12 +102,14 @@ theme:
     - navigation.top
     # this adds the prev and next icons in the footer
     - navigation.footer
+
 hooks:
   - plugins/social_override.py
 
 plugins:
   - search
-#  - social
+  - social
+
 markdown_extensions:
   - admonition
   - pymdownx.details
@@ -116,18 +117,28 @@ markdown_extensions:
   - attr_list
   - pymdownx.highlight:
       linenums: true
-#extra:
-#  analytics:
-#    provider: google
-    # https://analytics.google.com/analytics/web/#/a1420179p349994530/admin/streams/table/4433129821
-#    property: G-XXXX
+
 watch:
   - docs
   - mkdocs.yml
 
 copyright: Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+
+extra_css:
+  - css/extra.css
+  - css/mascot.css
+
+extra_javascript:
+  - js/extra.js
+
 extra:
   schema: https://dmccreary.github.io/intelligent-textbooks/ns/textbook/v1
   textbook_name: Selecting the Right Database
   textbook_version: "1.0"
   generator: false
+
+#  G-C8YG80XNGY
+extra:
+ analytics:
+   provider: google
+   property: G-C8YG80XNGY
