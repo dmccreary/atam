@@ -1,28 +1,22 @@
-"""MkDocs hook that replaces the social plugin's auto-generated og:image
-and twitter:image meta tags with a custom image URL from a page's
-`image:` frontmatter field.
+"""MkDocs hook that sets og:image and twitter:image meta tags from a
+page's `image:` frontmatter field.
 
-Loaded via the `hooks:` entry in mkdocs.yml, not as a plugin — this
-avoids collisions with other projects that also install a package
-called `social_override` or a top-level module called `plugins`.
+Works in two modes:
+- If the social plugin is active: replaces its auto-generated card URLs
+  (which point to /assets/images/social/...) with the custom image.
+- If the social plugin is absent: injects the og:image / twitter:image
+  tags directly into <head> so previews still work.
 
-Usage:
-    In mkdocs.yml, add at the top level (NOT under `plugins:`):
+Loaded via the `hooks:` entry in mkdocs.yml (NOT under `plugins:`):
 
-        hooks:
-          - plugins/social_override.py
+    hooks:
+      - plugins/social_override.py
 
-    Make sure `social` is in your plugins list so the default cards
-    still get generated (this hook only rewrites the emitted meta
-    tags; pages without an `image:` frontmatter field fall through
-    to the generated card).
+Usage — add to any page frontmatter:
 
-    Then on any page you want a custom preview image:
-
-        ---
-        title: My Page
-        image: img/my-custom-social-card.png
-        ---
+    ---
+    image: img/cover.png
+    ---
 """
 
 import re
@@ -36,8 +30,7 @@ def on_page_context(context, page, config, **kwargs):
 
 
 def on_post_page(html, page, config, **kwargs):
-    """Replace the social plugin's generated og:image / twitter:image
-    tags with the page's custom cover image URL."""
+    """Inject or replace og:image / twitter:image with the custom cover."""
     if not hasattr(page, 'custom_image'):
         return html
 
@@ -45,22 +38,32 @@ def on_post_page(html, page, config, **kwargs):
     image_path = '/' + page.custom_image.lstrip('/')
     full_image_url = site_url + image_path
 
-    # og:image uses property=
+    og_tag      = f'<meta property="og:image" content="{full_image_url}">'
+    twitter_tag = f'<meta property="twitter:image" content="{full_image_url}">'
+
+    # Replace social-plugin-generated tags if present
     og_pattern = re.compile(r'<meta\s+property="og:image"[^>]*?>')
+    replaced_og = False
     for tag in og_pattern.findall(html):
         if '/assets/images/social/' in tag:
-            new_tag = f'<meta property="og:image" content="{full_image_url}">'
-            html = html.replace(tag, new_tag)
+            html = html.replace(tag, og_tag)
+            replaced_og = True
 
-    # Material emits twitter:image with property= (not name=), so match both
-    twitter_pattern = re.compile(
-        r'<meta\s+(?:property|name)="twitter:image"[^>]*?>'
-    )
+    twitter_pattern = re.compile(r'<meta\s+(?:property|name)="twitter:image"[^>]*?>')
+    replaced_twitter = False
     for tag in twitter_pattern.findall(html):
         if '/assets/images/social/' in tag:
-            # Preserve whichever attribute style was in the original tag
             attr = 'property' if 'property=' in tag else 'name'
-            new_tag = f'<meta {attr}="twitter:image" content="{full_image_url}">'
-            html = html.replace(tag, new_tag)
+            html = html.replace(tag, f'<meta {attr}="twitter:image" content="{full_image_url}">')
+            replaced_twitter = True
+
+    # Inject tags when the social plugin is not active
+    if not replaced_og or not replaced_twitter:
+        inject = ''
+        if not replaced_og:
+            inject += f'\n    {og_tag}'
+        if not replaced_twitter:
+            inject += f'\n    {twitter_tag}'
+        html = html.replace('</head>', f'{inject}\n  </head>', 1)
 
     return html
