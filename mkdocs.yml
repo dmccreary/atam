@@ -73,6 +73,7 @@ nav:
     - Graph Quality Analysis: learning-graph/quality-metrics.md
     - Concept Taxonomy: learning-graph/concept-taxonomy.md
     - Taxonomy Distribution Report: learning-graph/taxonomy-distribution.md
+    - Mascot Test: learning-graph/mascot-test.md
   - Bias: bias.md
   - Presentations: slides.md
   - Glossary: glossary.md
