@@ -1,13 +1,13 @@
-# Architecture Tradeoff Analysis Methodology (ATAM) for NoSQL Databases
+# Selecting the Right Database
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-[![Website](https://img.shields.io/badge/Website-Live-brightgreen)](https://dmccreary.github.io/atam/)
+[![Website](https://img.shields.io/badge/Website-Live-brightgreen)](https://dmccreary.github.io/right-database/)
 
 This repository contains educational resources for teaching the Architecture Tradeoff Analysis Methodology (ATAM) adapted for NoSQL database selection. Originally developed by Carnegie Mellon University for large computer architecture projects, ATAM has been adapted here to help organizations select the most appropriate database architecture for their business challenges.
 
 ## 🌐 Live Website
 
-Visit the live documentation site: [https://dmccreary.github.io/atam/](https://dmccreary.github.io/atam/)
+Visit the live documentation site: [https://dmccreary.github.io/right-database/](https://dmccreary.github.io/right-database/)
 
 ## 📚 About
 
@@ -59,8 +59,8 @@ This site supports the textbook **"Making Sense of NoSQL"** by Dan McCreary and 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/dmccreary/atam.git
-   cd atam
+   git clone https://github.com/dmccreary/right-database.git
+   cd right-database
    ```
 
 2. Install dependencies:

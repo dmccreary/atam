@@ -1,9 +1,9 @@
-site_name: Architecture Tradeoff Analysis Methodology
+site_name: Selecting the Right Database
 site_description: 'DESCRIPTION All content licensed Creative Commons ShareAlike Attribution Noncommercial'
 site_author: 'Dan McCreary'
 repo_name: 'GitHub Repo'
-site_url: 'https://dmccreary.github.io/atam'
-repo_url: 'https://github.com/dmccreary/atam'
+site_url: 'https://dmccreary.github.io/right-database'
+repo_url: 'https://github.com/dmccreary/right-database'
 
 nav:
   - Home: index.md
