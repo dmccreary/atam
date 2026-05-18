@@ -1,0 +1,1579 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A detailed course description for The Right Database — Architecture Tradeoff Analysis for Distributed and High-Availability Systems, including overview, topics covered, and learning objectives in the format of the 2001 Bloom Taxonomy">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/right-database/course-description/">
+      
+      
+        <link rel="prev" href="../about/">
+      
+      
+        <link rel="next" href="../chapters/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>The Right Database - Selecting the Right Database</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-right-database" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Selecting the Right Database" class="md-header__button md-logo" aria-label="Selecting the Right Database" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Selecting the Right Database
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The Right Database
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/right-database" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Selecting the Right Database" class="md-nav__button md-logo" aria-label="Selecting the Right Database" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Selecting the Right Database
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/right-database" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#course-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Course Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-topics-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Topics Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topics-not-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topics Not Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Outcomes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning Outcomes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remember
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apply
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyze" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analyze
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../chapters/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atam-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ATAM Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atam-db-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ATAM DB Selection Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../concepts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundational Concepts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../db-types/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Types
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../case-studies/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Studies
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../stories/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stories
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../prompts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bias
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presentations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-we-built-this-site/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How We Built This Site
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#course-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Course Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-topics-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Topics Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topics-not-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topics Not Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Outcomes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning Outcomes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remember
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apply
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyze" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analyze
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="the-right-database">The Right Database</h1>
+<p><strong>Title:</strong> The Right Database: Architecture Tradeoff Analysis for Distributed and High-Availability Systems</p>
+<p><strong>Target Audience:</strong> Professional development — software architects, senior engineers, technical leads, and database administrators making real-world database selection and design decisions</p>
+<p><strong>Prerequisites:</strong> General programming experience in at least one language; basic familiarity with software systems and application development</p>
+<h2 id="course-overview">Course Overview</h2>
+<p>Choosing the wrong database is one of the most expensive architectural mistakes an engineering team can make. Once data is in production, migration is painful, risky, and slow — yet most teams select a database based on familiarity, marketing, or habit rather than on rigorous analysis of their system's quality attributes. This course teaches a disciplined, structured approach to database selection using the Carnegie Mellon University Software Engineering Institute's <strong>Architecture Tradeoff Analysis Method (ATAM)</strong>, the gold standard for evaluating architectural decisions against competing quality attribute requirements.</p>
+<p>Students will build a deep understanding of six major database paradigms — relational, analytical, key-value, column-family, graph, and document — and learn to reason about each in terms of the tradeoffs they make across consistency, availability, partition tolerance, scalability, query expressiveness, and operational complexity. Rather than seeking a "best" database, this course teaches students to identify the <em>right</em> database for a given set of architectural drivers, constraints, and quality attribute scenarios.</p>
+<p>The course also covers the distributed systems foundations that underpin modern database architectures: the CAP theorem, BASE vs. ACID semantics, consensus protocols, replication strategies, sharding, and the engineering challenges of achieving five-nines (99.999%) availability in production systems. Students complete the course by conducting a full ATAM-based database selection exercise for a realistic architecture scenario, producing a documented decision artifact that reflects professional-grade architectural reasoning.</p>
+<h2 id="main-topics-covered">Main Topics Covered</h2>
+<ul>
+<li>The CMU SEI Architecture Tradeoff Analysis Method (ATAM): process, artifacts, and stakeholder utility tree construction</li>
+<li>Utility trees: structure, quality attribute hierarchy, scenario elicitation, (H,H)/(H,M)/(M,H) prioritization, and reading utility trees as visual decision artifacts</li>
+<li>Quality Attribute Workshop (QAW) techniques for eliciting database-relevant requirements</li>
+<li>Relational databases: ACID guarantees, normalization, SQL, indexing strategies, and scalability limits</li>
+<li>Analytical (OLAP) databases: columnar storage, MPP architectures, data warehousing, and BI workloads</li>
+<li>Key-value stores: extreme read/write throughput, eventual consistency, TTL patterns, and caching use cases</li>
+<li>Column-family (wide-column) databases: sparse data models, write-optimized LSM trees, and time-series workloads</li>
+<li>Graph databases: property graph and RDF models, traversal algorithms, and relationship-heavy query patterns; distributed graph databases (e.g., TigerGraph) that scale graph storage and traversal horizontally across a cluster</li>
+<li>Document databases: schema flexibility, embedded documents, aggregation pipelines, and developer ergonomics</li>
+<li>CAP theorem, PACELC model, and their implications for database selection under network partition</li>
+<li>ACID transactions: atomicity, consistency, isolation, durability, lock-based and MVCC implementations</li>
+<li>Distributed ACID: two-phase commit (2PC), distributed sagas, and NewSQL (Google Spanner, CockroachDB, YugabyteDB)</li>
+<li>Scale-out distributed computing: horizontal sharding, consistent hashing, replication topologies, and read/write splitting</li>
+<li>High availability architecture: active-active vs. active-passive clustering, failover, leader election, and quorum protocols</li>
+<li>Five-nines (99.999%) availability: failure mode analysis, SLA decomposition, chaos engineering, and operational runbooks</li>
+<li>Workload characterization: OLTP vs. OLAP vs. HTAP, read/write ratios, data volume, and latency/throughput budgets</li>
+<li>Vector search as a database feature: embedding generation, approximate nearest-neighbor (ANN) indexes (HNSW, IVF), similarity metrics (cosine, dot product, Euclidean), and how vector search is added to relational, document, key-value, and graph databases to enable similarity retrieval across any item or property</li>
+<li>LLM-generated embeddings: how large language models encode semantic meaning into dense floating-point vectors, embedding model selection (OpenAI text-embedding-3, Sentence Transformers, Cohere Embed), dimensionality tradeoffs, batching strategies, cost and latency at scale, and storing embeddings alongside structured data in a database</li>
+<li>Multi-model and polyglot persistence architectures: when and how to combine multiple database types</li>
+<li>Database selection decision frameworks: scoring matrices, architectural risk analysis, and sensitivity/tradeoff point identification</li>
+</ul>
+<h2 id="topics-not-covered">Topics Not Covered</h2>
+<ul>
+<li>Internal database engine implementation (query planners, buffer pool management, storage engine internals beyond conceptual overview)</li>
+<li>Database administration operations (backup procedures, index tuning playbooks, query optimization deep dives)</li>
+<li>SQL or NoSQL query language tutorials beyond what is needed to understand capability tradeoffs</li>
+<li>Standalone vector databases as a separate paradigm (covered instead as a cross-cutting feature that any database type may expose)</li>
+<li>ML model training pipelines and feature stores as primary content</li>
+<li>Specific cloud provider managed database services beyond illustrative examples</li>
+<li>Data modeling for specific business domains (e-commerce, healthcare, finance) as primary content</li>
+<li>Full ATAM facilitator certification training (this course teaches application, not facilitation)</li>
+</ul>
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<p>After completing this course, students will be able to:</p>
+<h3 id="remember">Remember</h3>
+<p><em>Retrieving, recognizing, and recalling relevant knowledge from long-term memory.</em></p>
+<ul>
+<li>Recall the six major database paradigms (relational, analytical, key-value, column-family, graph, document) and their primary use cases</li>
+<li>State the four ACID properties (Atomicity, Consistency, Isolation, Durability) and what each guarantees</li>
+<li>Identify the three properties of the CAP theorem and state that only two can be simultaneously guaranteed under network partition</li>
+<li>List the key steps of the CMU SEI ATAM process: present ATAM, present business drivers, present architecture, identify architectural approaches, generate utility tree, analyze architectural approaches, brainstorm and prioritize scenarios, analyze architectural approaches (continued), present results</li>
+<li>Identify the three levels of a utility tree: quality attribute (root), attribute refinement (branches), and quality attribute scenario (leaves)</li>
+<li>Recall the two-axis prioritization scheme for utility tree scenarios: importance to stakeholders (H/M/L) and difficulty to achieve (H/M/L)</li>
+<li>Recall common availability SLA targets and their allowable downtime equivalents (99.9% = 8.7 hrs/yr, 99.99% = 52 min/yr, 99.999% = 5.26 min/yr)</li>
+<li>Name consensus protocols used in distributed databases (Paxos, Raft, ZAB)</li>
+<li>Identify BASE semantics (Basically Available, Soft state, Eventually consistent) and contrast with ACID</li>
+<li>List common sharding strategies: range-based, hash-based, directory-based, and geographic sharding</li>
+<li>Define vector embeddings and identify the similarity metrics used in vector search (cosine similarity, dot product, Euclidean distance)</li>
+<li>Name canonical database products by paradigm, including distributed graph databases such as TigerGraph and Amazon Neptune alongside single-server graph databases such as Neo4j</li>
+<li>Name the approximate nearest-neighbor index types commonly used for vector search (HNSW, IVF, flat) and identify which databases natively expose vector search as a feature (e.g., pgvector for PostgreSQL, Atlas Vector Search for MongoDB, Redis Vector, Cassandra with SAI)</li>
+<li>Recall that LLMs produce embeddings by encoding input text (or other modalities) into dense high-dimensional vectors, and name representative embedding models (OpenAI text-embedding-3-small/large, Sentence-BERT, Cohere Embed) along with their typical output dimensionalities (256–3072 dimensions)</li>
+</ul>
+<h3 id="understand">Understand</h3>
+<p><em>Constructing meaning from instructional messages, including oral, written, and graphic communication.</em></p>
+<ul>
+<li>Explain why no single database type is universally optimal and how workload characteristics drive the tradeoff space</li>
+<li>Describe the ATAM utility tree structure and how quality attribute scenarios capture architectural requirements</li>
+<li>Explain how a utility tree makes implicit architectural priorities explicit and visible to all stakeholders</li>
+<li>Describe how competing quality attributes (e.g., consistency vs. availability, performance vs. durability) appear as tension between branches of the same utility tree</li>
+<li>Explain the difference between OLTP and OLAP workloads and why they favor fundamentally different database architectures</li>
+<li>Summarize the tradeoffs between strong consistency (CP systems) and high availability (AP systems) in real-world operational terms</li>
+<li>Explain how LSM-tree storage engines optimize for write throughput at the cost of read amplification, and why this matters for column-family databases</li>
+<li>Describe how distributed ACID transactions (2PC, Paxos-based commit) achieve global consistency and what latency costs they introduce</li>
+<li>Explain the concept of a "sensitivity point" and a "tradeoff point" in ATAM and how they appear in database architecture analysis</li>
+<li>Summarize the failure modes that prevent five-nines availability and how redundancy, failover, and chaos engineering address them</li>
+<li>Describe the property graph model and contrast it with the relational model for relationship-heavy queries</li>
+<li>Explain eventual consistency, read-your-writes, monotonic reads, and causal consistency as a spectrum of consistency models</li>
+<li>Explain vector search as a database feature rather than a separate paradigm: how embedding indexes sit alongside traditional indexes, how they enable "find items similar to this one" queries across text, images, products, or any property that can be embedded, and what latency and storage tradeoffs the ANN index introduces</li>
+<li>Explain how LLMs generate embeddings: tokenization, transformer encoder pass, pooling strategies (CLS token vs. mean pooling), and why semantically similar inputs produce geometrically close vectors in embedding space</li>
+<li>Describe the embedding pipeline architecture — input data → embedding model API call → vector stored in DB alongside source record — and explain how model versioning and re-embedding requirements affect database design and operational cost</li>
+</ul>
+<h3 id="apply">Apply</h3>
+<p><em>Carrying out or using a procedure in a given situation.</em></p>
+<ul>
+<li>Conduct a Quality Attribute Workshop (QAW) to elicit database-relevant quality attribute scenarios from stakeholders</li>
+<li>Construct an ATAM utility tree with quality attributes, attribute refinements, and prioritized scenarios for a given system</li>
+<li>Apply the (importance, difficulty) prioritization matrix to rank utility tree leaf scenarios and identify which drive the most significant architectural decisions</li>
+<li>Use a utility tree as a communication artifact to align engineering teams and business stakeholders on database selection criteria</li>
+<li>Select an appropriate database type for a specified workload description by mapping workload characteristics to database strengths</li>
+<li>Apply the PACELC model to characterize a specific database system's behavior under both normal operation and partition</li>
+<li>Calculate allowable downtime budgets for a system given an SLA target and decompose that budget across dependent services</li>
+<li>Design a replication topology (single-leader, multi-leader, leaderless) appropriate for a given availability and consistency requirement</li>
+<li>Apply consistent hashing to design a sharding scheme for a specified data distribution and scaling requirement</li>
+<li>Use a scoring matrix to compare three or more database candidates against a weighted set of quality attribute requirements</li>
+<li>Add a vector search feature to a database selection decision: identify whether the candidate database exposes native ANN indexing, estimate the throughput and memory overhead, and incorporate those tradeoffs into the ATAM utility tree under a "semantic similarity" quality attribute scenario</li>
+<li>Select an appropriate LLM embedding model for a given use case by comparing dimensionality, token limits, multilingual support, cost per token, and latency, then design the batching and caching strategy to manage embedding generation at production scale</li>
+</ul>
+<h3 id="analyze">Analyze</h3>
+<p><em>Breaking material into constituent parts and determining how the parts relate to one another and to an overall structure or purpose.</em></p>
+<ul>
+<li>Analyze a system's read/write ratio, latency requirements, data volume, and consistency needs to identify which database paradigms are viable candidates</li>
+<li>Identify architectural risks, sensitivity points, and tradeoff points in a proposed database architecture using ATAM vocabulary</li>
+<li>Analyze a completed utility tree to locate scenarios where two high-priority quality attributes are in direct tension, revealing the core architectural tradeoff of the system</li>
+<li>Deconstruct a poorly formed utility tree (vague scenarios, missing prioritization, unbalanced branches) and identify what information is lost as a result</li>
+<li>Break down a high-availability architecture into its failure domains and analyze single points of failure that threaten five-nines targets</li>
+<li>Compare the consistency guarantees of two-phase commit vs. distributed sagas and analyze the failure scenarios each handles poorly</li>
+<li>Distinguish between accidental and essential complexity in a polyglot persistence architecture and assess whether added databases are justified</li>
+<li>Analyze the impedance mismatch between an application's data access patterns and a proposed database's data model</li>
+<li>Analyze the tradeoffs of adding vector search to an existing database (e.g., pgvector on PostgreSQL) versus routing similarity queries to a specialized ANN layer, considering index build time, memory footprint, query latency, and operational complexity</li>
+<li>Analyze the downstream database implications of LLM embedding model choice: how dimensionality affects storage cost per row, index build time, and ANN recall accuracy; and how switching embedding models invalidates stored vectors and forces a full re-embedding migration</li>
+<li>Decompose a transaction workload to determine whether distributed ACID is necessary or whether eventual consistency with compensation suffices</li>
+<li>Evaluate the operational implications of a database selection decision: deployment complexity, backup/restore, monitoring, and team expertise</li>
+</ul>
+<h3 id="evaluate">Evaluate</h3>
+<p><em>Making judgments based on criteria and standards through checking and critiquing.</em></p>
+<ul>
+<li>Evaluate competing database candidates for a given architecture scenario using a structured ATAM-based decision process</li>
+<li>Judge whether a proposed polyglot persistence architecture introduces more complexity than the problem warrants</li>
+<li>Evaluate a utility tree produced by a team for completeness, scenario specificity, and prioritization accuracy — including whether the tree faithfully represents stakeholder intent or reflects only engineering bias</li>
+<li>Critique a database selection decision made without ATAM by identifying unstated assumptions, missing quality attribute scenarios, and unexamined tradeoffs</li>
+<li>Assess the risk level of a distributed database architecture's consistency model against the business consequences of stale or lost data</li>
+<li>Evaluate the achievability of a five-nines SLA for a proposed database architecture given its replication strategy and known failure modes</li>
+<li>Judge the adequacy of a utility tree by testing it against adversarial scenarios that stress the proposed architecture</li>
+<li>Assess the total cost of ownership of a database selection decision including licensing, operational overhead, and migration risk</li>
+<li>Validate that a NewSQL database's consistency guarantees meet the isolation level requirements of a given OLTP workload</li>
+<li>Evaluate whether a system requirement for similarity search ("find products like this one", "retrieve documents semantically related to this query") is best served by native vector search in the primary database or by a dedicated embedding index, based on scale, recall requirements, and operational constraints</li>
+<li>Evaluate the architectural risk of coupling a system's semantic retrieval quality to a third-party LLM embedding API: assess model deprecation risk, vendor lock-in, latency sensitivity, data privacy constraints, and the cost-benefit of self-hosted open-source embedding models versus managed API services</li>
+</ul>
+<h3 id="create">Create</h3>
+<p><em>Putting elements together to form a coherent or functional whole; reorganizing elements into a new pattern or structure.</em></p>
+<ul>
+<li>Design a complete ATAM-based database selection analysis for a realistic multi-service architecture, including utility tree, candidate evaluation, risk register, and documented decision rationale</li>
+<li>Construct a database-specific utility tree template reusable across projects, with pre-populated quality attribute branches (performance, availability, consistency, scalability, operability, security) and annotated example scenarios for each database paradigm</li>
+<li>Architect a polyglot persistence solution that assigns each data domain to the most appropriate database type, with documented tradeoff justification</li>
+<li>Construct a high-availability database topology targeting 99.999% uptime, including replication, failover, geographic redundancy, and chaos engineering test plan</li>
+<li>Develop a database migration plan that transitions a system from a mismatched database to the selected optimal type with minimal downtime</li>
+<li>Create a database selection decision template (utility tree, scoring rubric, risk register) reusable across future projects in an organization</li>
+<li>Design a distributed transaction strategy for a microservices system that achieves adequate consistency guarantees without requiring global 2PC</li>
+<li>Synthesize a "database selection playbook" for a specific industry vertical (e.g., fintech, e-commerce, IoT) based on recurring quality attribute patterns</li>
+<li>Design a hybrid retrieval architecture that combines traditional structured queries with vector similarity search, mapping each query type to the appropriate index, specifying embedding model choices, and documenting the tradeoffs in an architectural decision record</li>
+<li>Design an end-to-end LLM embedding pipeline for a production system: choose an embedding model, define the ingestion strategy (batch vs. real-time), specify how embeddings are stored and co-located with source records in the chosen database, plan for model version upgrades, and estimate the total storage and API cost at target data volume</li>
+<li><strong>Capstone:</strong> Conduct a full ATAM database selection analysis for a provided real-world architecture case study, produce a written architectural decision record (ADR), and present findings and recommendations to a stakeholder panel</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../about/" class="md-footer__link md-footer__link--prev" aria-label="Previous: About">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                About
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../chapters/" class="md-footer__link md-footer__link--next" aria-label="Next: List of Chapters">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                List of Chapters
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

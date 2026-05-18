@@ -1,0 +1,10 @@
+{
+  "title": "The Right Database: Architecture Tradeoff Analysis for Distributed and High-Availability Systems",
+  "description": "A structured guide to selecting the right database using the CMU SEI Architecture Tradeoff Analysis Method (ATAM). Covers six database paradigms, distributed systems foundations, ACID and distributed transactions, high-availability architecture, vector search, LLM embeddings, and decision frameworks.",
+  "creator": "Dan McCreary",
+  "date": "2026-05-14",
+  "version": "1.0",
+  "format": "Learning Graph JSON v1.0",
+  "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+  "license": "CC BY-NC-SA 4.0 DEED"
+}

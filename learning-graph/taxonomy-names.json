@@ -1,0 +1,18 @@
+{
+  "ATAM": "ATAM Methodology",
+  "FOUND": "Foundation Concepts",
+  "REL": "Relational Databases",
+  "ANAL": "Analytical Databases",
+  "KV": "Key-Value Stores",
+  "COL": "Column-Family Databases",
+  "GRAPH": "Graph Databases",
+  "DOC": "Document Databases",
+  "DIST": "Distributed Consistency",
+  "ACID": "ACID Transactions",
+  "NACID": "Distributed ACID and NewSQL",
+  "SCALE": "Distributed Scaling",
+  "HA": "High Availability",
+  "VEC": "Vector Search and Embeddings",
+  "LLM": "LLM Embeddings",
+  "SEL": "Database Selection Framework"
+}

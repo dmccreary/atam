@@ -12,7 +12,7 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/atam/glossary/">
+        <link rel="canonical" href="https://dmccreary.github.io/right-database/glossary/">
       
       
         <link rel="prev" href="../slides/">
@@ -21,19 +21,22 @@
         <link rel="next" href="../license/">
       
       
+        
+      
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>Glossary - Architecture Tradeoff Analysis Methodology</title>
+        <title>Glossary - Selecting the Right Database</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -56,7 +59,6 @@
     
       
 
-    
     
     
   </head>
@@ -92,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Architecture Tradeoff Analysis Methodology" class="md-header__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
+    <a href=".." title="Selecting the Right Database" class="md-header__button md-logo" aria-label="Selecting the Right Database" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,7 +108,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Architecture Tradeoff Analysis Methodology
+            Selecting the Right Database
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -124,11 +126,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -160,13 +164,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
-        <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/dmccreary/right-database" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -199,20 +204,20 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Architecture Tradeoff Analysis Methodology" class="md-nav__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
+    <a href=".." title="Selecting the Right Database" class="md-nav__button md-logo" aria-label="Selecting the Right Database" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Architecture Tradeoff Analysis Methodology
+    Selecting the Right Database
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/dmccreary/right-database" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -232,9 +237,16 @@
       <a href=".." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -252,9 +264,16 @@
       <a href="../about/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     About
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -269,12 +288,132 @@
   
   
     <li class="md-nav__item">
+      <a href="../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../chapters/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../atam-process/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     ATAM Process
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -292,9 +431,16 @@
       <a href="../atam-db-process/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     ATAM DB Selection Process
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -328,6 +474,7 @@
     
     
     
+    
       
         
         
@@ -336,14 +483,22 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
   
   
     <a href="../concepts/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Foundational Concepts
+  
+
+    
   </span>
+  
   
 
       
@@ -371,27 +526,18 @@
         
       
         
-          
+      
+        
+      
         
       
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -403,14 +549,22 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
   
   
     <a href="../db-types/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Database Types
+  
+
+    
   </span>
+  
   
 
       
@@ -462,6 +616,7 @@
     
     
     
+    
       
         
         
@@ -470,14 +625,22 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
   
   
     <a href="../case-studies/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Case Studies
+  
+
+    
   </span>
+  
   
 
       
@@ -505,9 +668,8 @@
         
       
         
-          
-        
       
+    
     
     
     
@@ -519,14 +681,22 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
   
   
     <a href="../stories/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Stories
+  
+
+    
   </span>
+  
   
 
       
@@ -560,6 +730,7 @@
     
     
     
+    
       
         
         
@@ -570,12 +741,86 @@
         
   
   
+  
     <a href="../prompts/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Prompts
+  
+
+    
   </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
   
 
       
@@ -599,9 +844,16 @@
       <a href="../bias/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Bias
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -619,9 +871,16 @@
       <a href="../slides/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Presentations
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -648,9 +907,16 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
+  
   <span class="md-ellipsis">
+    
+  
     Glossary
+  
+
+    
   </span>
+  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -659,9 +925,16 @@
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Glossary
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -684,7 +957,9 @@
         <li class="md-nav__item">
   <a href="#acid-properties" class="md-nav__link">
     <span class="md-ellipsis">
-      ACID Properties
+      
+        ACID Properties
+      
     </span>
   </a>
   
@@ -693,7 +968,9 @@
         <li class="md-nav__item">
   <a href="#anti-entropy" class="md-nav__link">
     <span class="md-ellipsis">
-      Anti-Entropy
+      
+        Anti-Entropy
+      
     </span>
   </a>
   
@@ -702,7 +979,9 @@
         <li class="md-nav__item">
   <a href="#api-gateway" class="md-nav__link">
     <span class="md-ellipsis">
-      API Gateway
+      
+        API Gateway
+      
     </span>
   </a>
   
@@ -711,7 +990,9 @@
         <li class="md-nav__item">
   <a href="#architectural-approaches" class="md-nav__link">
     <span class="md-ellipsis">
-      Architectural Approaches
+      
+        Architectural Approaches
+      
     </span>
   </a>
   
@@ -720,7 +1001,9 @@
         <li class="md-nav__item">
   <a href="#architectural-decisions" class="md-nav__link">
     <span class="md-ellipsis">
-      Architectural Decisions
+      
+        Architectural Decisions
+      
     </span>
   </a>
   
@@ -729,7 +1012,9 @@
         <li class="md-nav__item">
   <a href="#atam-architecture-tradeoff-analysis-method" class="md-nav__link">
     <span class="md-ellipsis">
-      ATAM (Architecture Tradeoff Analysis Method)
+      
+        ATAM (Architecture Tradeoff Analysis Method)
+      
     </span>
   </a>
   
@@ -738,7 +1023,9 @@
         <li class="md-nav__item">
   <a href="#atomicity" class="md-nav__link">
     <span class="md-ellipsis">
-      Atomicity
+      
+        Atomicity
+      
     </span>
   </a>
   
@@ -747,7 +1034,9 @@
         <li class="md-nav__item">
   <a href="#authentication" class="md-nav__link">
     <span class="md-ellipsis">
-      Authentication
+      
+        Authentication
+      
     </span>
   </a>
   
@@ -756,7 +1045,9 @@
         <li class="md-nav__item">
   <a href="#authorization" class="md-nav__link">
     <span class="md-ellipsis">
-      Authorization
+      
+        Authorization
+      
     </span>
   </a>
   
@@ -765,7 +1056,9 @@
         <li class="md-nav__item">
   <a href="#auto-scaling" class="md-nav__link">
     <span class="md-ellipsis">
-      Auto-Scaling
+      
+        Auto-Scaling
+      
     </span>
   </a>
   
@@ -774,7 +1067,9 @@
         <li class="md-nav__item">
   <a href="#auto-sharding" class="md-nav__link">
     <span class="md-ellipsis">
-      Auto-Sharding
+      
+        Auto-Sharding
+      
     </span>
   </a>
   
@@ -783,7 +1078,9 @@
         <li class="md-nav__item">
   <a href="#availability" class="md-nav__link">
     <span class="md-ellipsis">
-      Availability
+      
+        Availability
+      
     </span>
   </a>
   
@@ -792,7 +1089,9 @@
         <li class="md-nav__item">
   <a href="#base-properties" class="md-nav__link">
     <span class="md-ellipsis">
-      BASE Properties
+      
+        BASE Properties
+      
     </span>
   </a>
   
@@ -801,7 +1100,9 @@
         <li class="md-nav__item">
   <a href="#batch-processing" class="md-nav__link">
     <span class="md-ellipsis">
-      Batch Processing
+      
+        Batch Processing
+      
     </span>
   </a>
   
@@ -810,7 +1111,9 @@
         <li class="md-nav__item">
   <a href="#bloom-filters" class="md-nav__link">
     <span class="md-ellipsis">
-      Bloom Filters
+      
+        Bloom Filters
+      
     </span>
   </a>
   
@@ -819,7 +1122,9 @@
         <li class="md-nav__item">
   <a href="#bson-binary-json" class="md-nav__link">
     <span class="md-ellipsis">
-      BSON (Binary JSON)
+      
+        BSON (Binary JSON)
+      
     </span>
   </a>
   
@@ -828,7 +1133,9 @@
         <li class="md-nav__item">
   <a href="#b-trees" class="md-nav__link">
     <span class="md-ellipsis">
-      B-Trees
+      
+        B-Trees
+      
     </span>
   </a>
   
@@ -837,7 +1144,9 @@
         <li class="md-nav__item">
   <a href="#bulk-synchronous-parallel-bsp" class="md-nav__link">
     <span class="md-ellipsis">
-      Bulk Synchronous Parallel (BSP)
+      
+        Bulk Synchronous Parallel (BSP)
+      
     </span>
   </a>
   
@@ -846,7 +1155,9 @@
         <li class="md-nav__item">
   <a href="#business-drivers" class="md-nav__link">
     <span class="md-ellipsis">
-      Business Drivers
+      
+        Business Drivers
+      
     </span>
   </a>
   
@@ -855,7 +1166,9 @@
         <li class="md-nav__item">
   <a href="#caching" class="md-nav__link">
     <span class="md-ellipsis">
-      Caching
+      
+        Caching
+      
     </span>
   </a>
   
@@ -864,7 +1177,9 @@
         <li class="md-nav__item">
   <a href="#cap-theorem" class="md-nav__link">
     <span class="md-ellipsis">
-      CAP Theorem
+      
+        CAP Theorem
+      
     </span>
   </a>
   
@@ -873,7 +1188,9 @@
         <li class="md-nav__item">
   <a href="#cassandra-query-language-cql" class="md-nav__link">
     <span class="md-ellipsis">
-      Cassandra Query Language (CQL)
+      
+        Cassandra Query Language (CQL)
+      
     </span>
   </a>
   
@@ -882,7 +1199,9 @@
         <li class="md-nav__item">
   <a href="#cell-timestamps" class="md-nav__link">
     <span class="md-ellipsis">
-      Cell Timestamps
+      
+        Cell Timestamps
+      
     </span>
   </a>
   
@@ -891,7 +1210,9 @@
         <li class="md-nav__item">
   <a href="#cloud-computing" class="md-nav__link">
     <span class="md-ellipsis">
-      Cloud Computing
+      
+        Cloud Computing
+      
     </span>
   </a>
   
@@ -900,7 +1221,9 @@
         <li class="md-nav__item">
   <a href="#column-families" class="md-nav__link">
     <span class="md-ellipsis">
-      Column Families
+      
+        Column Families
+      
     </span>
   </a>
   
@@ -909,7 +1232,9 @@
         <li class="md-nav__item">
   <a href="#column-family-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Column-Family Model
+      
+        Column-Family Model
+      
     </span>
   </a>
   
@@ -918,7 +1243,9 @@
         <li class="md-nav__item">
   <a href="#column-family-stores" class="md-nav__link">
     <span class="md-ellipsis">
-      Column-Family Stores
+      
+        Column-Family Stores
+      
     </span>
   </a>
   
@@ -927,7 +1254,9 @@
         <li class="md-nav__item">
   <a href="#columnar-compression" class="md-nav__link">
     <span class="md-ellipsis">
-      Columnar Compression
+      
+        Columnar Compression
+      
     </span>
   </a>
   
@@ -936,7 +1265,9 @@
         <li class="md-nav__item">
   <a href="#columnar-storage" class="md-nav__link">
     <span class="md-ellipsis">
-      Columnar Storage
+      
+        Columnar Storage
+      
     </span>
   </a>
   
@@ -945,7 +1276,9 @@
         <li class="md-nav__item">
   <a href="#community-detection" class="md-nav__link">
     <span class="md-ellipsis">
-      Community Detection
+      
+        Community Detection
+      
     </span>
   </a>
   
@@ -954,7 +1287,9 @@
         <li class="md-nav__item">
   <a href="#compaction" class="md-nav__link">
     <span class="md-ellipsis">
-      Compaction
+      
+        Compaction
+      
     </span>
   </a>
   
@@ -963,7 +1298,9 @@
         <li class="md-nav__item">
   <a href="#composite-keys" class="md-nav__link">
     <span class="md-ellipsis">
-      Composite Keys
+      
+        Composite Keys
+      
     </span>
   </a>
   
@@ -972,7 +1309,9 @@
         <li class="md-nav__item">
   <a href="#compound-indexes" class="md-nav__link">
     <span class="md-ellipsis">
-      Compound Indexes
+      
+        Compound Indexes
+      
     </span>
   </a>
   
@@ -981,7 +1320,9 @@
         <li class="md-nav__item">
   <a href="#compression" class="md-nav__link">
     <span class="md-ellipsis">
-      Compression
+      
+        Compression
+      
     </span>
   </a>
   
@@ -990,7 +1331,9 @@
         <li class="md-nav__item">
   <a href="#conflict-resolution" class="md-nav__link">
     <span class="md-ellipsis">
-      Conflict Resolution
+      
+        Conflict Resolution
+      
     </span>
   </a>
   
@@ -999,7 +1342,9 @@
         <li class="md-nav__item">
   <a href="#consensus-algorithms" class="md-nav__link">
     <span class="md-ellipsis">
-      Consensus Algorithms
+      
+        Consensus Algorithms
+      
     </span>
   </a>
   
@@ -1008,7 +1353,9 @@
         <li class="md-nav__item">
   <a href="#consistency" class="md-nav__link">
     <span class="md-ellipsis">
-      Consistency
+      
+        Consistency
+      
     </span>
   </a>
   
@@ -1017,7 +1364,9 @@
         <li class="md-nav__item">
   <a href="#consistent-hashing" class="md-nav__link">
     <span class="md-ellipsis">
-      Consistent Hashing
+      
+        Consistent Hashing
+      
     </span>
   </a>
   
@@ -1026,7 +1375,9 @@
         <li class="md-nav__item">
   <a href="#container-orchestration" class="md-nav__link">
     <span class="md-ellipsis">
-      Container Orchestration
+      
+        Container Orchestration
+      
     </span>
   </a>
   
@@ -1035,7 +1386,9 @@
         <li class="md-nav__item">
   <a href="#content-delivery-networks-cdn" class="md-nav__link">
     <span class="md-ellipsis">
-      Content Delivery Networks (CDN)
+      
+        Content Delivery Networks (CDN)
+      
     </span>
   </a>
   
@@ -1044,7 +1397,9 @@
         <li class="md-nav__item">
   <a href="#cost-based-optimization" class="md-nav__link">
     <span class="md-ellipsis">
-      Cost-Based Optimization
+      
+        Cost-Based Optimization
+      
     </span>
   </a>
   
@@ -1053,7 +1408,9 @@
         <li class="md-nav__item">
   <a href="#cqrs-command-query-responsibility-segregation" class="md-nav__link">
     <span class="md-ellipsis">
-      CQRS (Command Query Responsibility Segregation)
+      
+        CQRS (Command Query Responsibility Segregation)
+      
     </span>
   </a>
   
@@ -1062,7 +1419,9 @@
         <li class="md-nav__item">
   <a href="#cypher" class="md-nav__link">
     <span class="md-ellipsis">
-      Cypher
+      
+        Cypher
+      
     </span>
   </a>
   
@@ -1071,7 +1430,9 @@
         <li class="md-nav__item">
   <a href="#data-governance" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Governance
+      
+        Data Governance
+      
     </span>
   </a>
   
@@ -1080,7 +1441,9 @@
         <li class="md-nav__item">
   <a href="#data-ingestion" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Ingestion
+      
+        Data Ingestion
+      
     </span>
   </a>
   
@@ -1089,7 +1452,9 @@
         <li class="md-nav__item">
   <a href="#data-lakes" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Lakes
+      
+        Data Lakes
+      
     </span>
   </a>
   
@@ -1098,7 +1463,9 @@
         <li class="md-nav__item">
   <a href="#data-lineage" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Lineage
+      
+        Data Lineage
+      
     </span>
   </a>
   
@@ -1107,7 +1474,9 @@
         <li class="md-nav__item">
   <a href="#data-locality" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Locality
+      
+        Data Locality
+      
     </span>
   </a>
   
@@ -1116,7 +1485,9 @@
         <li class="md-nav__item">
   <a href="#data-marts" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Marts
+      
+        Data Marts
+      
     </span>
   </a>
   
@@ -1125,7 +1496,9 @@
         <li class="md-nav__item">
   <a href="#data-masking" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Masking
+      
+        Data Masking
+      
     </span>
   </a>
   
@@ -1134,7 +1507,9 @@
         <li class="md-nav__item">
   <a href="#data-modeling" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Modeling
+      
+        Data Modeling
+      
     </span>
   </a>
   
@@ -1143,7 +1518,9 @@
         <li class="md-nav__item">
   <a href="#data-pipelines" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Pipelines
+      
+        Data Pipelines
+      
     </span>
   </a>
   
@@ -1152,7 +1529,9 @@
         <li class="md-nav__item">
   <a href="#data-privacy" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Privacy
+      
+        Data Privacy
+      
     </span>
   </a>
   
@@ -1161,7 +1540,9 @@
         <li class="md-nav__item">
   <a href="#data-quality" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Quality
+      
+        Data Quality
+      
     </span>
   </a>
   
@@ -1170,7 +1551,9 @@
         <li class="md-nav__item">
   <a href="#data-warehousing" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Warehousing
+      
+        Data Warehousing
+      
     </span>
   </a>
   
@@ -1179,7 +1562,9 @@
         <li class="md-nav__item">
   <a href="#denormalization" class="md-nav__link">
     <span class="md-ellipsis">
-      Denormalization
+      
+        Denormalization
+      
     </span>
   </a>
   
@@ -1188,7 +1573,9 @@
         <li class="md-nav__item">
   <a href="#dimension-tables" class="md-nav__link">
     <span class="md-ellipsis">
-      Dimension Tables
+      
+        Dimension Tables
+      
     </span>
   </a>
   
@@ -1197,7 +1584,9 @@
         <li class="md-nav__item">
   <a href="#distributed-systems" class="md-nav__link">
     <span class="md-ellipsis">
-      Distributed Systems
+      
+        Distributed Systems
+      
     </span>
   </a>
   
@@ -1206,7 +1595,9 @@
         <li class="md-nav__item">
   <a href="#distributed-transactions" class="md-nav__link">
     <span class="md-ellipsis">
-      Distributed Transactions
+      
+        Distributed Transactions
+      
     </span>
   </a>
   
@@ -1215,7 +1606,9 @@
         <li class="md-nav__item">
   <a href="#document-collections" class="md-nav__link">
     <span class="md-ellipsis">
-      Document Collections
+      
+        Document Collections
+      
     </span>
   </a>
   
@@ -1224,7 +1617,9 @@
         <li class="md-nav__item">
   <a href="#document-databases" class="md-nav__link">
     <span class="md-ellipsis">
-      Document Databases
+      
+        Document Databases
+      
     </span>
   </a>
   
@@ -1233,7 +1628,9 @@
         <li class="md-nav__item">
   <a href="#document-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Document Model
+      
+        Document Model
+      
     </span>
   </a>
   
@@ -1242,7 +1639,9 @@
         <li class="md-nav__item">
   <a href="#document-type-definition-dtd" class="md-nav__link">
     <span class="md-ellipsis">
-      Document Type Definition (DTD)
+      
+        Document Type Definition (DTD)
+      
     </span>
   </a>
   
@@ -1251,7 +1650,9 @@
         <li class="md-nav__item">
   <a href="#drill-down" class="md-nav__link">
     <span class="md-ellipsis">
-      Drill-Down
+      
+        Drill-Down
+      
     </span>
   </a>
   
@@ -1260,7 +1661,9 @@
         <li class="md-nav__item">
   <a href="#durability" class="md-nav__link">
     <span class="md-ellipsis">
-      Durability
+      
+        Durability
+      
     </span>
   </a>
   
@@ -1269,7 +1672,9 @@
         <li class="md-nav__item">
   <a href="#dynamic-columns" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Columns
+      
+        Dynamic Columns
+      
     </span>
   </a>
   
@@ -1278,7 +1683,9 @@
         <li class="md-nav__item">
   <a href="#edge-computing" class="md-nav__link">
     <span class="md-ellipsis">
-      Edge Computing
+      
+        Edge Computing
+      
     </span>
   </a>
   
@@ -1287,7 +1694,9 @@
         <li class="md-nav__item">
   <a href="#elt-extract-load-transform" class="md-nav__link">
     <span class="md-ellipsis">
-      ELT (Extract, Load, Transform)
+      
+        ELT (Extract, Load, Transform)
+      
     </span>
   </a>
   
@@ -1296,7 +1705,9 @@
         <li class="md-nav__item">
   <a href="#embedded-documents" class="md-nav__link">
     <span class="md-ellipsis">
-      Embedded Documents
+      
+        Embedded Documents
+      
     </span>
   </a>
   
@@ -1305,7 +1716,9 @@
         <li class="md-nav__item">
   <a href="#encryption-at-rest" class="md-nav__link">
     <span class="md-ellipsis">
-      Encryption at Rest
+      
+        Encryption at Rest
+      
     </span>
   </a>
   
@@ -1314,7 +1727,9 @@
         <li class="md-nav__item">
   <a href="#encryption-in-transit" class="md-nav__link">
     <span class="md-ellipsis">
-      Encryption in Transit
+      
+        Encryption in Transit
+      
     </span>
   </a>
   
@@ -1323,7 +1738,9 @@
         <li class="md-nav__item">
   <a href="#entity-relationship-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Entity-Relationship Model
+      
+        Entity-Relationship Model
+      
     </span>
   </a>
   
@@ -1332,7 +1749,9 @@
         <li class="md-nav__item">
   <a href="#etl-extract-transform-load" class="md-nav__link">
     <span class="md-ellipsis">
-      ETL (Extract, Transform, Load)
+      
+        ETL (Extract, Transform, Load)
+      
     </span>
   </a>
   
@@ -1341,7 +1760,9 @@
         <li class="md-nav__item">
   <a href="#event-sourcing" class="md-nav__link">
     <span class="md-ellipsis">
-      Event Sourcing
+      
+        Event Sourcing
+      
     </span>
   </a>
   
@@ -1350,7 +1771,9 @@
         <li class="md-nav__item">
   <a href="#eventual-consistency" class="md-nav__link">
     <span class="md-ellipsis">
-      Eventual Consistency
+      
+        Eventual Consistency
+      
     </span>
   </a>
   
@@ -1359,7 +1782,9 @@
         <li class="md-nav__item">
   <a href="#execution-plans" class="md-nav__link">
     <span class="md-ellipsis">
-      Execution Plans
+      
+        Execution Plans
+      
     </span>
   </a>
   
@@ -1368,7 +1793,9 @@
         <li class="md-nav__item">
   <a href="#fact-tables" class="md-nav__link">
     <span class="md-ellipsis">
-      Fact Tables
+      
+        Fact Tables
+      
     </span>
   </a>
   
@@ -1377,7 +1804,9 @@
         <li class="md-nav__item">
   <a href="#failover" class="md-nav__link">
     <span class="md-ellipsis">
-      Failover
+      
+        Failover
+      
     </span>
   </a>
   
@@ -1386,7 +1815,9 @@
         <li class="md-nav__item">
   <a href="#findability" class="md-nav__link">
     <span class="md-ellipsis">
-      Findability
+      
+        Findability
+      
     </span>
   </a>
   
@@ -1395,7 +1826,9 @@
         <li class="md-nav__item">
   <a href="#fitness-for-purpose" class="md-nav__link">
     <span class="md-ellipsis">
-      Fitness for Purpose
+      
+        Fitness for Purpose
+      
     </span>
   </a>
   
@@ -1404,7 +1837,9 @@
         <li class="md-nav__item">
   <a href="#flwor-expressions" class="md-nav__link">
     <span class="md-ellipsis">
-      FLWOR Expressions
+      
+        FLWOR Expressions
+      
     </span>
   </a>
   
@@ -1413,7 +1848,9 @@
         <li class="md-nav__item">
   <a href="#foreign-keys" class="md-nav__link">
     <span class="md-ellipsis">
-      Foreign Keys
+      
+        Foreign Keys
+      
     </span>
   </a>
   
@@ -1422,7 +1859,9 @@
         <li class="md-nav__item">
   <a href="#full-text-search" class="md-nav__link">
     <span class="md-ellipsis">
-      Full-Text Search
+      
+        Full-Text Search
+      
     </span>
   </a>
   
@@ -1431,7 +1870,9 @@
         <li class="md-nav__item">
   <a href="#geo-distribution" class="md-nav__link">
     <span class="md-ellipsis">
-      Geo-Distribution
+      
+        Geo-Distribution
+      
     </span>
   </a>
   
@@ -1440,7 +1881,9 @@
         <li class="md-nav__item">
   <a href="#geospatial-indexes" class="md-nav__link">
     <span class="md-ellipsis">
-      Geospatial Indexes
+      
+        Geospatial Indexes
+      
     </span>
   </a>
   
@@ -1449,7 +1892,9 @@
         <li class="md-nav__item">
   <a href="#gossip-protocol" class="md-nav__link">
     <span class="md-ellipsis">
-      Gossip Protocol
+      
+        Gossip Protocol
+      
     </span>
   </a>
   
@@ -1458,7 +1903,9 @@
         <li class="md-nav__item">
   <a href="#graph-algorithms" class="md-nav__link">
     <span class="md-ellipsis">
-      Graph Algorithms
+      
+        Graph Algorithms
+      
     </span>
   </a>
   
@@ -1467,7 +1914,9 @@
         <li class="md-nav__item">
   <a href="#graph-databases" class="md-nav__link">
     <span class="md-ellipsis">
-      Graph Databases
+      
+        Graph Databases
+      
     </span>
   </a>
   
@@ -1476,7 +1925,9 @@
         <li class="md-nav__item">
   <a href="#graph-embeddings" class="md-nav__link">
     <span class="md-ellipsis">
-      Graph Embeddings
+      
+        Graph Embeddings
+      
     </span>
   </a>
   
@@ -1485,7 +1936,9 @@
         <li class="md-nav__item">
   <a href="#graph-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Graph Model
+      
+        Graph Model
+      
     </span>
   </a>
   
@@ -1494,7 +1947,9 @@
         <li class="md-nav__item">
   <a href="#graph-neural-networks-gnns" class="md-nav__link">
     <span class="md-ellipsis">
-      Graph Neural Networks (GNNs)
+      
+        Graph Neural Networks (GNNs)
+      
     </span>
   </a>
   
@@ -1503,7 +1958,9 @@
         <li class="md-nav__item">
   <a href="#graph-partitioning" class="md-nav__link">
     <span class="md-ellipsis">
-      Graph Partitioning
+      
+        Graph Partitioning
+      
     </span>
   </a>
   
@@ -1512,7 +1969,9 @@
         <li class="md-nav__item">
   <a href="#graph-traversal" class="md-nav__link">
     <span class="md-ellipsis">
-      Graph Traversal
+      
+        Graph Traversal
+      
     </span>
   </a>
   
@@ -1521,7 +1980,9 @@
         <li class="md-nav__item">
   <a href="#graphsage" class="md-nav__link">
     <span class="md-ellipsis">
-      GraphSAGE
+      
+        GraphSAGE
+      
     </span>
   </a>
   
@@ -1530,7 +1991,9 @@
         <li class="md-nav__item">
   <a href="#gremlin" class="md-nav__link">
     <span class="md-ellipsis">
-      Gremlin
+      
+        Gremlin
+      
     </span>
   </a>
   
@@ -1539,7 +2002,9 @@
         <li class="md-nav__item">
   <a href="#gsql-graph-sql" class="md-nav__link">
     <span class="md-ellipsis">
-      GSQL (Graph SQL)
+      
+        GSQL (Graph SQL)
+      
     </span>
   </a>
   
@@ -1548,7 +2013,9 @@
         <li class="md-nav__item">
   <a href="#hadoop" class="md-nav__link">
     <span class="md-ellipsis">
-      Hadoop
+      
+        Hadoop
+      
     </span>
   </a>
   
@@ -1557,7 +2024,9 @@
         <li class="md-nav__item">
   <a href="#hbase" class="md-nav__link">
     <span class="md-ellipsis">
-      HBase
+      
+        HBase
+      
     </span>
   </a>
   
@@ -1566,7 +2035,9 @@
         <li class="md-nav__item">
   <a href="#health-checks" class="md-nav__link">
     <span class="md-ellipsis">
-      Health Checks
+      
+        Health Checks
+      
     </span>
   </a>
   
@@ -1575,7 +2046,9 @@
         <li class="md-nav__item">
   <a href="#hierarchical-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Hierarchical Data
+      
+        Hierarchical Data
+      
     </span>
   </a>
   
@@ -1584,7 +2057,9 @@
         <li class="md-nav__item">
   <a href="#high-availability" class="md-nav__link">
     <span class="md-ellipsis">
-      High Availability
+      
+        High Availability
+      
     </span>
   </a>
   
@@ -1593,7 +2068,9 @@
         <li class="md-nav__item">
   <a href="#hinted-handoff" class="md-nav__link">
     <span class="md-ellipsis">
-      Hinted Handoff
+      
+        Hinted Handoff
+      
     </span>
   </a>
   
@@ -1602,7 +2079,9 @@
         <li class="md-nav__item">
   <a href="#horizontal-scaling" class="md-nav__link">
     <span class="md-ellipsis">
-      Horizontal Scaling
+      
+        Horizontal Scaling
+      
     </span>
   </a>
   
@@ -1611,7 +2090,9 @@
         <li class="md-nav__item">
   <a href="#html-hypertext-markup-language" class="md-nav__link">
     <span class="md-ellipsis">
-      HTML (HyperText Markup Language)
+      
+        HTML (HyperText Markup Language)
+      
     </span>
   </a>
   
@@ -1620,7 +2101,9 @@
         <li class="md-nav__item">
   <a href="#hypercubes" class="md-nav__link">
     <span class="md-ellipsis">
-      Hypercubes
+      
+        Hypercubes
+      
     </span>
   </a>
   
@@ -1629,7 +2112,9 @@
         <li class="md-nav__item">
   <a href="#iaas-infrastructure-as-a-service" class="md-nav__link">
     <span class="md-ellipsis">
-      IaaS (Infrastructure as a Service)
+      
+        IaaS (Infrastructure as a Service)
+      
     </span>
   </a>
   
@@ -1638,7 +2123,9 @@
         <li class="md-nav__item">
   <a href="#indexing" class="md-nav__link">
     <span class="md-ellipsis">
-      Indexing
+      
+        Indexing
+      
     </span>
   </a>
   
@@ -1647,7 +2134,9 @@
         <li class="md-nav__item">
   <a href="#infrastructure-as-code" class="md-nav__link">
     <span class="md-ellipsis">
-      Infrastructure as Code
+      
+        Infrastructure as Code
+      
     </span>
   </a>
   
@@ -1656,7 +2145,9 @@
         <li class="md-nav__item">
   <a href="#interoperability" class="md-nav__link">
     <span class="md-ellipsis">
-      Interoperability
+      
+        Interoperability
+      
     </span>
   </a>
   
@@ -1665,7 +2156,9 @@
         <li class="md-nav__item">
   <a href="#iot-internet-of-things" class="md-nav__link">
     <span class="md-ellipsis">
-      IoT (Internet of Things)
+      
+        IoT (Internet of Things)
+      
     </span>
   </a>
   
@@ -1674,7 +2167,9 @@
         <li class="md-nav__item">
   <a href="#iso-11179-term-definition" class="md-nav__link">
     <span class="md-ellipsis">
-      ISO 11179 Term Definition
+      
+        ISO 11179 Term Definition
+      
     </span>
   </a>
   
@@ -1683,7 +2178,9 @@
         <li class="md-nav__item">
   <a href="#isolation" class="md-nav__link">
     <span class="md-ellipsis">
-      Isolation
+      
+        Isolation
+      
     </span>
   </a>
   
@@ -1692,7 +2189,9 @@
         <li class="md-nav__item">
   <a href="#json-javascript-object-notation" class="md-nav__link">
     <span class="md-ellipsis">
-      JSON (JavaScript Object Notation)
+      
+        JSON (JavaScript Object Notation)
+      
     </span>
   </a>
   
@@ -1701,7 +2200,9 @@
         <li class="md-nav__item">
   <a href="#json-schema" class="md-nav__link">
     <span class="md-ellipsis">
-      JSON Schema
+      
+        JSON Schema
+      
     </span>
   </a>
   
@@ -1710,7 +2211,9 @@
         <li class="md-nav__item">
   <a href="#kafka" class="md-nav__link">
     <span class="md-ellipsis">
-      Kafka
+      
+        Kafka
+      
     </span>
   </a>
   
@@ -1719,7 +2222,9 @@
         <li class="md-nav__item">
   <a href="#key-value-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Key-Value Model
+      
+        Key-Value Model
+      
     </span>
   </a>
   
@@ -1728,7 +2233,9 @@
         <li class="md-nav__item">
   <a href="#key-value-stores" class="md-nav__link">
     <span class="md-ellipsis">
-      Key-Value Stores
+      
+        Key-Value Stores
+      
     </span>
   </a>
   
@@ -1737,7 +2244,9 @@
         <li class="md-nav__item">
   <a href="#kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
-      Kubernetes
+      
+        Kubernetes
+      
     </span>
   </a>
   
@@ -1746,7 +2255,9 @@
         <li class="md-nav__item">
   <a href="#labeled-property-graph-lpg" class="md-nav__link">
     <span class="md-ellipsis">
-      Labeled Property Graph (LPG)
+      
+        Labeled Property Graph (LPG)
+      
     </span>
   </a>
   
@@ -1755,7 +2266,9 @@
         <li class="md-nav__item">
   <a href="#load-balancing" class="md-nav__link">
     <span class="md-ellipsis">
-      Load Balancing
+      
+        Load Balancing
+      
     </span>
   </a>
   
@@ -1764,7 +2277,9 @@
         <li class="md-nav__item">
   <a href="#logging" class="md-nav__link">
     <span class="md-ellipsis">
-      Logging
+      
+        Logging
+      
     </span>
   </a>
   
@@ -1773,7 +2288,9 @@
         <li class="md-nav__item">
   <a href="#lsm-trees-log-structured-merge-trees" class="md-nav__link">
     <span class="md-ellipsis">
-      LSM Trees (Log-Structured Merge Trees)
+      
+        LSM Trees (Log-Structured Merge Trees)
+      
     </span>
   </a>
   
@@ -1782,7 +2299,9 @@
         <li class="md-nav__item">
   <a href="#machine-learning-ml" class="md-nav__link">
     <span class="md-ellipsis">
-      Machine Learning (ML)
+      
+        Machine Learning (ML)
+      
     </span>
   </a>
   
@@ -1791,7 +2310,9 @@
         <li class="md-nav__item">
   <a href="#maintainability" class="md-nav__link">
     <span class="md-ellipsis">
-      Maintainability
+      
+        Maintainability
+      
     </span>
   </a>
   
@@ -1800,7 +2321,9 @@
         <li class="md-nav__item">
   <a href="#mapreduce" class="md-nav__link">
     <span class="md-ellipsis">
-      MapReduce
+      
+        MapReduce
+      
     </span>
   </a>
   
@@ -1809,7 +2332,9 @@
         <li class="md-nav__item">
   <a href="#master-master-replication" class="md-nav__link">
     <span class="md-ellipsis">
-      Master-Master Replication
+      
+        Master-Master Replication
+      
     </span>
   </a>
   
@@ -1818,7 +2343,9 @@
         <li class="md-nav__item">
   <a href="#master-slave-architecture" class="md-nav__link">
     <span class="md-ellipsis">
-      Master-Slave Architecture
+      
+        Master-Slave Architecture
+      
     </span>
   </a>
   
@@ -1827,7 +2354,9 @@
         <li class="md-nav__item">
   <a href="#massively-parallel-processing-mpp" class="md-nav__link">
     <span class="md-ellipsis">
-      Massively Parallel Processing (MPP)
+      
+        Massively Parallel Processing (MPP)
+      
     </span>
   </a>
   
@@ -1836,7 +2365,9 @@
         <li class="md-nav__item">
   <a href="#materialized-views" class="md-nav__link">
     <span class="md-ellipsis">
-      Materialized Views
+      
+        Materialized Views
+      
     </span>
   </a>
   
@@ -1845,7 +2376,9 @@
         <li class="md-nav__item">
   <a href="#memcached" class="md-nav__link">
     <span class="md-ellipsis">
-      Memcached
+      
+        Memcached
+      
     </span>
   </a>
   
@@ -1854,7 +2387,9 @@
         <li class="md-nav__item">
   <a href="#microservices" class="md-nav__link">
     <span class="md-ellipsis">
-      Microservices
+      
+        Microservices
+      
     </span>
   </a>
   
@@ -1863,7 +2398,9 @@
         <li class="md-nav__item">
   <a href="#mongodb" class="md-nav__link">
     <span class="md-ellipsis">
-      MongoDB
+      
+        MongoDB
+      
     </span>
   </a>
   
@@ -1872,7 +2409,9 @@
         <li class="md-nav__item">
   <a href="#monitoring" class="md-nav__link">
     <span class="md-ellipsis">
-      Monitoring
+      
+        Monitoring
+      
     </span>
   </a>
   
@@ -1881,7 +2420,9 @@
         <li class="md-nav__item">
   <a href="#multi-data-center-deployment" class="md-nav__link">
     <span class="md-ellipsis">
-      Multi-Data Center Deployment
+      
+        Multi-Data Center Deployment
+      
     </span>
   </a>
   
@@ -1890,7 +2431,9 @@
         <li class="md-nav__item">
   <a href="#multi-tenant-architecture" class="md-nav__link">
     <span class="md-ellipsis">
-      Multi-Tenant Architecture
+      
+        Multi-Tenant Architecture
+      
     </span>
   </a>
   
@@ -1899,7 +2442,9 @@
         <li class="md-nav__item">
   <a href="#multi-version-concurrency-control-mvcc" class="md-nav__link">
     <span class="md-ellipsis">
-      Multi-Version Concurrency Control (MVCC)
+      
+        Multi-Version Concurrency Control (MVCC)
+      
     </span>
   </a>
   
@@ -1908,7 +2453,9 @@
         <li class="md-nav__item">
   <a href="#mysql" class="md-nav__link">
     <span class="md-ellipsis">
-      MySQL
+      
+        MySQL
+      
     </span>
   </a>
   
@@ -1917,7 +2464,9 @@
         <li class="md-nav__item">
   <a href="#native-parallel-graph-npg" class="md-nav__link">
     <span class="md-ellipsis">
-      Native Parallel Graph (NPG)
+      
+        Native Parallel Graph (NPG)
+      
     </span>
   </a>
   
@@ -1926,7 +2475,9 @@
         <li class="md-nav__item">
   <a href="#neo4j" class="md-nav__link">
     <span class="md-ellipsis">
-      Neo4j
+      
+        Neo4j
+      
     </span>
   </a>
   
@@ -1935,7 +2486,9 @@
         <li class="md-nav__item">
   <a href="#nfrs-non-functional-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      NFRs (Non-Functional Requirements)
+      
+        NFRs (Non-Functional Requirements)
+      
     </span>
   </a>
   
@@ -1944,7 +2497,9 @@
         <li class="md-nav__item">
   <a href="#node2vec" class="md-nav__link">
     <span class="md-ellipsis">
-      Node2Vec
+      
+        Node2Vec
+      
     </span>
   </a>
   
@@ -1953,7 +2508,9 @@
         <li class="md-nav__item">
   <a href="#nodes-vertices" class="md-nav__link">
     <span class="md-ellipsis">
-      Nodes (Vertices)
+      
+        Nodes (Vertices)
+      
     </span>
   </a>
   
@@ -1962,7 +2519,9 @@
         <li class="md-nav__item">
   <a href="#non-risks" class="md-nav__link">
     <span class="md-ellipsis">
-      Non-Risks
+      
+        Non-Risks
+      
     </span>
   </a>
   
@@ -1971,7 +2530,9 @@
         <li class="md-nav__item">
   <a href="#normalization" class="md-nav__link">
     <span class="md-ellipsis">
-      Normalization
+      
+        Normalization
+      
     </span>
   </a>
   
@@ -1980,7 +2541,9 @@
         <li class="md-nav__item">
   <a href="#nosql" class="md-nav__link">
     <span class="md-ellipsis">
-      NoSQL
+      
+        NoSQL
+      
     </span>
   </a>
   
@@ -1989,7 +2552,9 @@
         <li class="md-nav__item">
   <a href="#object-relational-impedance-mismatch" class="md-nav__link">
     <span class="md-ellipsis">
-      Object-Relational Impedance Mismatch
+      
+        Object-Relational Impedance Mismatch
+      
     </span>
   </a>
   
@@ -1998,7 +2563,9 @@
         <li class="md-nav__item">
   <a href="#olap-online-analytical-processing" class="md-nav__link">
     <span class="md-ellipsis">
-      OLAP (Online Analytical Processing)
+      
+        OLAP (Online Analytical Processing)
+      
     </span>
   </a>
   
@@ -2007,7 +2574,9 @@
         <li class="md-nav__item">
   <a href="#olap-cubes" class="md-nav__link">
     <span class="md-ellipsis">
-      OLAP Cubes
+      
+        OLAP Cubes
+      
     </span>
   </a>
   
@@ -2016,7 +2585,9 @@
         <li class="md-nav__item">
   <a href="#oltp-online-transaction-processing" class="md-nav__link">
     <span class="md-ellipsis">
-      OLTP (Online Transaction Processing)
+      
+        OLTP (Online Transaction Processing)
+      
     </span>
   </a>
   
@@ -2025,7 +2596,9 @@
         <li class="md-nav__item">
   <a href="#ontology" class="md-nav__link">
     <span class="md-ellipsis">
-      Ontology
+      
+        Ontology
+      
     </span>
   </a>
   
@@ -2034,7 +2607,9 @@
         <li class="md-nav__item">
   <a href="#optimistic-concurrency-control" class="md-nav__link">
     <span class="md-ellipsis">
-      Optimistic Concurrency Control
+      
+        Optimistic Concurrency Control
+      
     </span>
   </a>
   
@@ -2043,7 +2618,9 @@
         <li class="md-nav__item">
   <a href="#oracle-database" class="md-nav__link">
     <span class="md-ellipsis">
-      Oracle Database
+      
+        Oracle Database
+      
     </span>
   </a>
   
@@ -2052,7 +2629,9 @@
         <li class="md-nav__item">
   <a href="#pagerank" class="md-nav__link">
     <span class="md-ellipsis">
-      PageRank
+      
+        PageRank
+      
     </span>
   </a>
   
@@ -2061,7 +2640,9 @@
         <li class="md-nav__item">
   <a href="#paas-platform-as-a-service" class="md-nav__link">
     <span class="md-ellipsis">
-      PaaS (Platform as a Service)
+      
+        PaaS (Platform as a Service)
+      
     </span>
   </a>
   
@@ -2070,7 +2651,9 @@
         <li class="md-nav__item">
   <a href="#partitioning" class="md-nav__link">
     <span class="md-ellipsis">
-      Partitioning
+      
+        Partitioning
+      
     </span>
   </a>
   
@@ -2079,7 +2662,9 @@
         <li class="md-nav__item">
   <a href="#partitioning-strategies" class="md-nav__link">
     <span class="md-ellipsis">
-      Partitioning Strategies
+      
+        Partitioning Strategies
+      
     </span>
   </a>
   
@@ -2088,7 +2673,9 @@
         <li class="md-nav__item">
   <a href="#peer-to-peer-architecture" class="md-nav__link">
     <span class="md-ellipsis">
-      Peer-to-Peer Architecture
+      
+        Peer-to-Peer Architecture
+      
     </span>
   </a>
   
@@ -2097,7 +2684,9 @@
         <li class="md-nav__item">
   <a href="#performance" class="md-nav__link">
     <span class="md-ellipsis">
-      Performance
+      
+        Performance
+      
     </span>
   </a>
   
@@ -2106,7 +2695,9 @@
         <li class="md-nav__item">
   <a href="#pessimistic-concurrency-control" class="md-nav__link">
     <span class="md-ellipsis">
-      Pessimistic Concurrency Control
+      
+        Pessimistic Concurrency Control
+      
     </span>
   </a>
   
@@ -2115,7 +2706,9 @@
         <li class="md-nav__item">
   <a href="#pivot" class="md-nav__link">
     <span class="md-ellipsis">
-      Pivot
+      
+        Pivot
+      
     </span>
   </a>
   
@@ -2124,7 +2717,9 @@
         <li class="md-nav__item">
   <a href="#point-in-time-recovery" class="md-nav__link">
     <span class="md-ellipsis">
-      Point-in-Time Recovery
+      
+        Point-in-Time Recovery
+      
     </span>
   </a>
   
@@ -2133,7 +2728,9 @@
         <li class="md-nav__item">
   <a href="#polyglot-persistence" class="md-nav__link">
     <span class="md-ellipsis">
-      Polyglot Persistence
+      
+        Polyglot Persistence
+      
     </span>
   </a>
   
@@ -2142,7 +2739,9 @@
         <li class="md-nav__item">
   <a href="#postgresql" class="md-nav__link">
     <span class="md-ellipsis">
-      PostgreSQL
+      
+        PostgreSQL
+      
     </span>
   </a>
   
@@ -2151,7 +2750,9 @@
         <li class="md-nav__item">
   <a href="#primary-keys" class="md-nav__link">
     <span class="md-ellipsis">
-      Primary Keys
+      
+        Primary Keys
+      
     </span>
   </a>
   
@@ -2160,7 +2761,9 @@
         <li class="md-nav__item">
   <a href="#quality-attribute-scenarios" class="md-nav__link">
     <span class="md-ellipsis">
-      Quality Attribute Scenarios
+      
+        Quality Attribute Scenarios
+      
     </span>
   </a>
   
@@ -2169,7 +2772,9 @@
         <li class="md-nav__item">
   <a href="#quality-attributes" class="md-nav__link">
     <span class="md-ellipsis">
-      Quality Attributes
+      
+        Quality Attributes
+      
     </span>
   </a>
   
@@ -2178,7 +2783,9 @@
         <li class="md-nav__item">
   <a href="#quality-tree" class="md-nav__link">
     <span class="md-ellipsis">
-      Quality Tree
+      
+        Quality Tree
+      
     </span>
   </a>
   
@@ -2187,7 +2794,9 @@
         <li class="md-nav__item">
   <a href="#queryability" class="md-nav__link">
     <span class="md-ellipsis">
-      Queryability
+      
+        Queryability
+      
     </span>
   </a>
   
@@ -2196,7 +2805,9 @@
         <li class="md-nav__item">
   <a href="#query-optimization" class="md-nav__link">
     <span class="md-ellipsis">
-      Query Optimization
+      
+        Query Optimization
+      
     </span>
   </a>
   
@@ -2205,7 +2816,9 @@
         <li class="md-nav__item">
   <a href="#quorum" class="md-nav__link">
     <span class="md-ellipsis">
-      Quorum
+      
+        Quorum
+      
     </span>
   </a>
   
@@ -2214,7 +2827,9 @@
         <li class="md-nav__item">
   <a href="#rbac-role-based-access-control" class="md-nav__link">
     <span class="md-ellipsis">
-      RBAC (Role-Based Access Control)
+      
+        RBAC (Role-Based Access Control)
+      
     </span>
   </a>
   
@@ -2223,7 +2838,9 @@
         <li class="md-nav__item">
   <a href="#rdf-resource-description-framework" class="md-nav__link">
     <span class="md-ellipsis">
-      RDF (Resource Description Framework)
+      
+        RDF (Resource Description Framework)
+      
     </span>
   </a>
   
@@ -2232,7 +2849,9 @@
         <li class="md-nav__item">
   <a href="#read-after-write-consistency" class="md-nav__link">
     <span class="md-ellipsis">
-      Read-After-Write Consistency
+      
+        Read-After-Write Consistency
+      
     </span>
   </a>
   
@@ -2241,7 +2860,9 @@
         <li class="md-nav__item">
   <a href="#read-repair" class="md-nav__link">
     <span class="md-ellipsis">
-      Read Repair
+      
+        Read Repair
+      
     </span>
   </a>
   
@@ -2250,7 +2871,9 @@
         <li class="md-nav__item">
   <a href="#real-time-processing" class="md-nav__link">
     <span class="md-ellipsis">
-      Real-Time Processing
+      
+        Real-Time Processing
+      
     </span>
   </a>
   
@@ -2259,7 +2882,9 @@
         <li class="md-nav__item">
   <a href="#redis" class="md-nav__link">
     <span class="md-ellipsis">
-      Redis
+      
+        Redis
+      
     </span>
   </a>
   
@@ -2268,7 +2893,9 @@
         <li class="md-nav__item">
   <a href="#referential-integrity" class="md-nav__link">
     <span class="md-ellipsis">
-      Referential Integrity
+      
+        Referential Integrity
+      
     </span>
   </a>
   
@@ -2277,7 +2904,9 @@
         <li class="md-nav__item">
   <a href="#reliability" class="md-nav__link">
     <span class="md-ellipsis">
-      Reliability
+      
+        Reliability
+      
     </span>
   </a>
   
@@ -2286,7 +2915,9 @@
         <li class="md-nav__item">
   <a href="#replication" class="md-nav__link">
     <span class="md-ellipsis">
-      Replication
+      
+        Replication
+      
     </span>
   </a>
   
@@ -2295,7 +2926,9 @@
         <li class="md-nav__item">
   <a href="#risks" class="md-nav__link">
     <span class="md-ellipsis">
-      Risks
+      
+        Risks
+      
     </span>
   </a>
   
@@ -2304,7 +2937,9 @@
         <li class="md-nav__item">
   <a href="#risk-themes" class="md-nav__link">
     <span class="md-ellipsis">
-      Risk Themes
+      
+        Risk Themes
+      
     </span>
   </a>
   
@@ -2313,7 +2948,9 @@
         <li class="md-nav__item">
   <a href="#roll-up" class="md-nav__link">
     <span class="md-ellipsis">
-      Roll-Up
+      
+        Roll-Up
+      
     </span>
   </a>
   
@@ -2322,7 +2959,9 @@
         <li class="md-nav__item">
   <a href="#row-oriented-storage" class="md-nav__link">
     <span class="md-ellipsis">
-      Row-Oriented Storage
+      
+        Row-Oriented Storage
+      
     </span>
   </a>
   
@@ -2331,7 +2970,9 @@
         <li class="md-nav__item">
   <a href="#saas-software-as-a-service" class="md-nav__link">
     <span class="md-ellipsis">
-      SaaS (Software as a Service)
+      
+        SaaS (Software as a Service)
+      
     </span>
   </a>
   
@@ -2340,7 +2981,9 @@
         <li class="md-nav__item">
   <a href="#scalability" class="md-nav__link">
     <span class="md-ellipsis">
-      Scalability
+      
+        Scalability
+      
     </span>
   </a>
   
@@ -2349,7 +2992,9 @@
         <li class="md-nav__item">
   <a href="#scenarios" class="md-nav__link">
     <span class="md-ellipsis">
-      Scenarios
+      
+        Scenarios
+      
     </span>
   </a>
   
@@ -2358,7 +3003,9 @@
         <li class="md-nav__item">
   <a href="#schema-evolution" class="md-nav__link">
     <span class="md-ellipsis">
-      Schema Evolution
+      
+        Schema Evolution
+      
     </span>
   </a>
   
@@ -2367,7 +3014,9 @@
         <li class="md-nav__item">
   <a href="#schema-on-read" class="md-nav__link">
     <span class="md-ellipsis">
-      Schema-on-Read
+      
+        Schema-on-Read
+      
     </span>
   </a>
   
@@ -2376,7 +3025,9 @@
         <li class="md-nav__item">
   <a href="#schema-on-write" class="md-nav__link">
     <span class="md-ellipsis">
-      Schema-on-Write
+      
+        Schema-on-Write
+      
     </span>
   </a>
   
@@ -2385,7 +3036,9 @@
         <li class="md-nav__item">
   <a href="#schemaless" class="md-nav__link">
     <span class="md-ellipsis">
-      Schemaless
+      
+        Schemaless
+      
     </span>
   </a>
   
@@ -2394,7 +3047,9 @@
         <li class="md-nav__item">
   <a href="#schematron" class="md-nav__link">
     <span class="md-ellipsis">
-      Schematron
+      
+        Schematron
+      
     </span>
   </a>
   
@@ -2403,7 +3058,9 @@
         <li class="md-nav__item">
   <a href="#secondary-indexes" class="md-nav__link">
     <span class="md-ellipsis">
-      Secondary Indexes
+      
+        Secondary Indexes
+      
     </span>
   </a>
   
@@ -2412,7 +3069,9 @@
         <li class="md-nav__item">
   <a href="#security" class="md-nav__link">
     <span class="md-ellipsis">
-      Security
+      
+        Security
+      
     </span>
   </a>
   
@@ -2421,7 +3080,9 @@
         <li class="md-nav__item">
   <a href="#semantic-web" class="md-nav__link">
     <span class="md-ellipsis">
-      Semantic Web
+      
+        Semantic Web
+      
     </span>
   </a>
   
@@ -2430,7 +3091,9 @@
         <li class="md-nav__item">
   <a href="#semi-structured-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Semi-Structured Data
+      
+        Semi-Structured Data
+      
     </span>
   </a>
   
@@ -2439,7 +3102,9 @@
         <li class="md-nav__item">
   <a href="#sensitivity-points" class="md-nav__link">
     <span class="md-ellipsis">
-      Sensitivity Points
+      
+        Sensitivity Points
+      
     </span>
   </a>
   
@@ -2448,7 +3113,9 @@
         <li class="md-nav__item">
   <a href="#serverless-computing" class="md-nav__link">
     <span class="md-ellipsis">
-      Serverless Computing
+      
+        Serverless Computing
+      
     </span>
   </a>
   
@@ -2457,7 +3124,9 @@
         <li class="md-nav__item">
   <a href="#service-level-agreement-sla" class="md-nav__link">
     <span class="md-ellipsis">
-      Service Level Agreement (SLA)
+      
+        Service Level Agreement (SLA)
+      
     </span>
   </a>
   
@@ -2466,7 +3135,9 @@
         <li class="md-nav__item">
   <a href="#service-level-indicator-sli" class="md-nav__link">
     <span class="md-ellipsis">
-      Service Level Indicator (SLI)
+      
+        Service Level Indicator (SLI)
+      
     </span>
   </a>
   
@@ -2475,7 +3146,9 @@
         <li class="md-nav__item">
   <a href="#service-level-objective-slo" class="md-nav__link">
     <span class="md-ellipsis">
-      Service Level Objective (SLO)
+      
+        Service Level Objective (SLO)
+      
     </span>
   </a>
   
@@ -2484,7 +3157,9 @@
         <li class="md-nav__item">
   <a href="#service-mesh" class="md-nav__link">
     <span class="md-ellipsis">
-      Service Mesh
+      
+        Service Mesh
+      
     </span>
   </a>
   
@@ -2493,7 +3168,9 @@
         <li class="md-nav__item">
   <a href="#sgml-standard-generalized-markup-language" class="md-nav__link">
     <span class="md-ellipsis">
-      SGML (Standard Generalized Markup Language)
+      
+        SGML (Standard Generalized Markup Language)
+      
     </span>
   </a>
   
@@ -2502,7 +3179,9 @@
         <li class="md-nav__item">
   <a href="#sharding" class="md-nav__link">
     <span class="md-ellipsis">
-      Sharding
+      
+        Sharding
+      
     </span>
   </a>
   
@@ -2511,7 +3190,9 @@
         <li class="md-nav__item">
   <a href="#shortest-path" class="md-nav__link">
     <span class="md-ellipsis">
-      Shortest Path
+      
+        Shortest Path
+      
     </span>
   </a>
   
@@ -2520,7 +3201,9 @@
         <li class="md-nav__item">
   <a href="#slice-and-dice" class="md-nav__link">
     <span class="md-ellipsis">
-      Slice and Dice
+      
+        Slice and Dice
+      
     </span>
   </a>
   
@@ -2529,7 +3212,9 @@
         <li class="md-nav__item">
   <a href="#slowly-changing-dimensions" class="md-nav__link">
     <span class="md-ellipsis">
-      Slowly Changing Dimensions
+      
+        Slowly Changing Dimensions
+      
     </span>
   </a>
   
@@ -2538,7 +3223,9 @@
         <li class="md-nav__item">
   <a href="#snowflake-schema" class="md-nav__link">
     <span class="md-ellipsis">
-      Snowflake Schema
+      
+        Snowflake Schema
+      
     </span>
   </a>
   
@@ -2547,7 +3234,9 @@
         <li class="md-nav__item">
   <a href="#sparse-columns" class="md-nav__link">
     <span class="md-ellipsis">
-      Sparse Columns
+      
+        Sparse Columns
+      
     </span>
   </a>
   
@@ -2556,7 +3245,9 @@
         <li class="md-nav__item">
   <a href="#sparse-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Sparse Data
+      
+        Sparse Data
+      
     </span>
   </a>
   
@@ -2565,7 +3256,9 @@
         <li class="md-nav__item">
   <a href="#sparse-indexes" class="md-nav__link">
     <span class="md-ellipsis">
-      Sparse Indexes
+      
+        Sparse Indexes
+      
     </span>
   </a>
   
@@ -2574,7 +3267,9 @@
         <li class="md-nav__item">
   <a href="#spark" class="md-nav__link">
     <span class="md-ellipsis">
-      Spark
+      
+        Spark
+      
     </span>
   </a>
   
@@ -2583,7 +3278,9 @@
         <li class="md-nav__item">
   <a href="#sparql" class="md-nav__link">
     <span class="md-ellipsis">
-      SPARQL
+      
+        SPARQL
+      
     </span>
   </a>
   
@@ -2592,7 +3289,9 @@
         <li class="md-nav__item">
   <a href="#sql-structured-query-language" class="md-nav__link">
     <span class="md-ellipsis">
-      SQL (Structured Query Language)
+      
+        SQL (Structured Query Language)
+      
     </span>
   </a>
   
@@ -2601,7 +3300,9 @@
         <li class="md-nav__item">
   <a href="#stakeholders" class="md-nav__link">
     <span class="md-ellipsis">
-      Stakeholders
+      
+        Stakeholders
+      
     </span>
   </a>
   
@@ -2610,7 +3311,9 @@
         <li class="md-nav__item">
   <a href="#star-schema" class="md-nav__link">
     <span class="md-ellipsis">
-      Star Schema
+      
+        Star Schema
+      
     </span>
   </a>
   
@@ -2619,7 +3322,9 @@
         <li class="md-nav__item">
   <a href="#storm" class="md-nav__link">
     <span class="md-ellipsis">
-      Storm
+      
+        Storm
+      
     </span>
   </a>
   
@@ -2628,7 +3333,9 @@
         <li class="md-nav__item">
   <a href="#streaming-analytics" class="md-nav__link">
     <span class="md-ellipsis">
-      Streaming Analytics
+      
+        Streaming Analytics
+      
     </span>
   </a>
   
@@ -2637,7 +3344,9 @@
         <li class="md-nav__item">
   <a href="#strong-consistency" class="md-nav__link">
     <span class="md-ellipsis">
-      Strong Consistency
+      
+        Strong Consistency
+      
     </span>
   </a>
   
@@ -2646,7 +3355,9 @@
         <li class="md-nav__item">
   <a href="#structured-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Structured Data
+      
+        Structured Data
+      
     </span>
   </a>
   
@@ -2655,7 +3366,9 @@
         <li class="md-nav__item">
   <a href="#super-columns" class="md-nav__link">
     <span class="md-ellipsis">
-      Super Columns
+      
+        Super Columns
+      
     </span>
   </a>
   
@@ -2664,7 +3377,9 @@
         <li class="md-nav__item">
   <a href="#surrogate-keys" class="md-nav__link">
     <span class="md-ellipsis">
-      Surrogate Keys
+      
+        Surrogate Keys
+      
     </span>
   </a>
   
@@ -2673,7 +3388,9 @@
         <li class="md-nav__item">
   <a href="#time-series-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Time-Series Data
+      
+        Time-Series Data
+      
     </span>
   </a>
   
@@ -2682,7 +3399,9 @@
         <li class="md-nav__item">
   <a href="#time-series-databases" class="md-nav__link">
     <span class="md-ellipsis">
-      Time-Series Databases
+      
+        Time-Series Databases
+      
     </span>
   </a>
   
@@ -2691,7 +3410,9 @@
         <li class="md-nav__item">
   <a href="#time-to-live-ttl" class="md-nav__link">
     <span class="md-ellipsis">
-      Time-To-Live (TTL)
+      
+        Time-To-Live (TTL)
+      
     </span>
   </a>
   
@@ -2700,7 +3421,9 @@
         <li class="md-nav__item">
   <a href="#tigergraph" class="md-nav__link">
     <span class="md-ellipsis">
-      TigerGraph
+      
+        TigerGraph
+      
     </span>
   </a>
   
@@ -2709,7 +3432,9 @@
         <li class="md-nav__item">
   <a href="#token-ranges" class="md-nav__link">
     <span class="md-ellipsis">
-      Token Ranges
+      
+        Token Ranges
+      
     </span>
   </a>
   
@@ -2718,7 +3443,9 @@
         <li class="md-nav__item">
   <a href="#tombstones" class="md-nav__link">
     <span class="md-ellipsis">
-      Tombstones
+      
+        Tombstones
+      
     </span>
   </a>
   
@@ -2727,7 +3454,9 @@
         <li class="md-nav__item">
   <a href="#tradeoffs" class="md-nav__link">
     <span class="md-ellipsis">
-      Tradeoffs
+      
+        Tradeoffs
+      
     </span>
   </a>
   
@@ -2736,7 +3465,9 @@
         <li class="md-nav__item">
   <a href="#transformability" class="md-nav__link">
     <span class="md-ellipsis">
-      Transformability
+      
+        Transformability
+      
     </span>
   </a>
   
@@ -2745,7 +3476,9 @@
         <li class="md-nav__item">
   <a href="#triple-store" class="md-nav__link">
     <span class="md-ellipsis">
-      Triple Store
+      
+        Triple Store
+      
     </span>
   </a>
   
@@ -2754,7 +3487,9 @@
         <li class="md-nav__item">
   <a href="#tunable-consistency" class="md-nav__link">
     <span class="md-ellipsis">
-      Tunable Consistency
+      
+        Tunable Consistency
+      
     </span>
   </a>
   
@@ -2763,7 +3498,9 @@
         <li class="md-nav__item">
   <a href="#two-phase-commit-2pc" class="md-nav__link">
     <span class="md-ellipsis">
-      Two-Phase Commit (2PC)
+      
+        Two-Phase Commit (2PC)
+      
     </span>
   </a>
   
@@ -2772,7 +3509,9 @@
         <li class="md-nav__item">
   <a href="#typeswitch" class="md-nav__link">
     <span class="md-ellipsis">
-      Typeswitch
+      
+        Typeswitch
+      
     </span>
   </a>
   
@@ -2781,7 +3520,9 @@
         <li class="md-nav__item">
   <a href="#unstructured-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Unstructured Data
+      
+        Unstructured Data
+      
     </span>
   </a>
   
@@ -2790,7 +3531,9 @@
         <li class="md-nav__item">
   <a href="#usability" class="md-nav__link">
     <span class="md-ellipsis">
-      Usability
+      
+        Usability
+      
     </span>
   </a>
   
@@ -2799,7 +3542,9 @@
         <li class="md-nav__item">
   <a href="#user-stories" class="md-nav__link">
     <span class="md-ellipsis">
-      User Stories
+      
+        User Stories
+      
     </span>
   </a>
   
@@ -2808,7 +3553,9 @@
         <li class="md-nav__item">
   <a href="#utility-tree" class="md-nav__link">
     <span class="md-ellipsis">
-      Utility Tree
+      
+        Utility Tree
+      
     </span>
   </a>
   
@@ -2817,7 +3564,9 @@
         <li class="md-nav__item">
   <a href="#variability" class="md-nav__link">
     <span class="md-ellipsis">
-      Variability
+      
+        Variability
+      
     </span>
   </a>
   
@@ -2826,7 +3575,9 @@
         <li class="md-nav__item">
   <a href="#vector-clocks" class="md-nav__link">
     <span class="md-ellipsis">
-      Vector Clocks
+      
+        Vector Clocks
+      
     </span>
   </a>
   
@@ -2835,7 +3586,9 @@
         <li class="md-nav__item">
   <a href="#vectorized-processing" class="md-nav__link">
     <span class="md-ellipsis">
-      Vectorized Processing
+      
+        Vectorized Processing
+      
     </span>
   </a>
   
@@ -2844,7 +3597,9 @@
         <li class="md-nav__item">
   <a href="#velocity" class="md-nav__link">
     <span class="md-ellipsis">
-      Velocity
+      
+        Velocity
+      
     </span>
   </a>
   
@@ -2853,7 +3608,9 @@
         <li class="md-nav__item">
   <a href="#veracity" class="md-nav__link">
     <span class="md-ellipsis">
-      Veracity
+      
+        Veracity
+      
     </span>
   </a>
   
@@ -2862,7 +3619,9 @@
         <li class="md-nav__item">
   <a href="#vertical-scaling" class="md-nav__link">
     <span class="md-ellipsis">
-      Vertical Scaling
+      
+        Vertical Scaling
+      
     </span>
   </a>
   
@@ -2871,7 +3630,9 @@
         <li class="md-nav__item">
   <a href="#virtual-nodes-vnodes" class="md-nav__link">
     <span class="md-ellipsis">
-      Virtual Nodes (vnodes)
+      
+        Virtual Nodes (vnodes)
+      
     </span>
   </a>
   
@@ -2880,7 +3641,9 @@
         <li class="md-nav__item">
   <a href="#volume" class="md-nav__link">
     <span class="md-ellipsis">
-      Volume
+      
+        Volume
+      
     </span>
   </a>
   
@@ -2889,7 +3652,9 @@
         <li class="md-nav__item">
   <a href="#write-ahead-logging" class="md-nav__link">
     <span class="md-ellipsis">
-      Write-Ahead Logging
+      
+        Write-Ahead Logging
+      
     </span>
   </a>
   
@@ -2898,7 +3663,9 @@
         <li class="md-nav__item">
   <a href="#xml-extensible-markup-language" class="md-nav__link">
     <span class="md-ellipsis">
-      XML (Extensible Markup Language)
+      
+        XML (Extensible Markup Language)
+      
     </span>
   </a>
   
@@ -2907,7 +3674,9 @@
         <li class="md-nav__item">
   <a href="#xml-schema-xsd" class="md-nav__link">
     <span class="md-ellipsis">
-      XML Schema (XSD)
+      
+        XML Schema (XSD)
+      
     </span>
   </a>
   
@@ -2916,7 +3685,9 @@
         <li class="md-nav__item">
   <a href="#xpath" class="md-nav__link">
     <span class="md-ellipsis">
-      XPath
+      
+        XPath
+      
     </span>
   </a>
   
@@ -2925,7 +3696,9 @@
         <li class="md-nav__item">
   <a href="#xquery" class="md-nav__link">
     <span class="md-ellipsis">
-      XQuery
+      
+        XQuery
+      
     </span>
   </a>
   
@@ -2934,7 +3707,9 @@
         <li class="md-nav__item">
   <a href="#xslt-extensible-stylesheet-language-transformations" class="md-nav__link">
     <span class="md-ellipsis">
-      XSLT (Extensible Stylesheet Language Transformations)
+      
+        XSLT (Extensible Stylesheet Language Transformations)
+      
     </span>
   </a>
   
@@ -2958,9 +3733,16 @@
       <a href="../license/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     License
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2978,9 +3760,16 @@
       <a href="../how-we-built-this-site/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     How We Built This Site
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2998,9 +3787,16 @@
       <a href="../contact/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Contact
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3037,7 +3833,9 @@
         <li class="md-nav__item">
   <a href="#acid-properties" class="md-nav__link">
     <span class="md-ellipsis">
-      ACID Properties
+      
+        ACID Properties
+      
     </span>
   </a>
   
@@ -3046,7 +3844,9 @@
         <li class="md-nav__item">
   <a href="#anti-entropy" class="md-nav__link">
     <span class="md-ellipsis">
-      Anti-Entropy
+      
+        Anti-Entropy
+      
     </span>
   </a>
   
@@ -3055,7 +3855,9 @@
         <li class="md-nav__item">
   <a href="#api-gateway" class="md-nav__link">
     <span class="md-ellipsis">
-      API Gateway
+      
+        API Gateway
+      
     </span>
   </a>
   
@@ -3064,7 +3866,9 @@
         <li class="md-nav__item">
   <a href="#architectural-approaches" class="md-nav__link">
     <span class="md-ellipsis">
-      Architectural Approaches
+      
+        Architectural Approaches
+      
     </span>
   </a>
   
@@ -3073,7 +3877,9 @@
         <li class="md-nav__item">
   <a href="#architectural-decisions" class="md-nav__link">
     <span class="md-ellipsis">
-      Architectural Decisions
+      
+        Architectural Decisions
+      
     </span>
   </a>
   
@@ -3082,7 +3888,9 @@
         <li class="md-nav__item">
   <a href="#atam-architecture-tradeoff-analysis-method" class="md-nav__link">
     <span class="md-ellipsis">
-      ATAM (Architecture Tradeoff Analysis Method)
+      
+        ATAM (Architecture Tradeoff Analysis Method)
+      
     </span>
   </a>
   
@@ -3091,7 +3899,9 @@
         <li class="md-nav__item">
   <a href="#atomicity" class="md-nav__link">
     <span class="md-ellipsis">
-      Atomicity
+      
+        Atomicity
+      
     </span>
   </a>
   
@@ -3100,7 +3910,9 @@
         <li class="md-nav__item">
   <a href="#authentication" class="md-nav__link">
     <span class="md-ellipsis">
-      Authentication
+      
+        Authentication
+      
     </span>
   </a>
   
@@ -3109,7 +3921,9 @@
         <li class="md-nav__item">
   <a href="#authorization" class="md-nav__link">
     <span class="md-ellipsis">
-      Authorization
+      
+        Authorization
+      
     </span>
   </a>
   
@@ -3118,7 +3932,9 @@
         <li class="md-nav__item">
   <a href="#auto-scaling" class="md-nav__link">
     <span class="md-ellipsis">
-      Auto-Scaling
+      
+        Auto-Scaling
+      
     </span>
   </a>
   
@@ -3127,7 +3943,9 @@
         <li class="md-nav__item">
   <a href="#auto-sharding" class="md-nav__link">
     <span class="md-ellipsis">
-      Auto-Sharding
+      
+        Auto-Sharding
+      
     </span>
   </a>
   
@@ -3136,7 +3954,9 @@
         <li class="md-nav__item">
   <a href="#availability" class="md-nav__link">
     <span class="md-ellipsis">
-      Availability
+      
+        Availability
+      
     </span>
   </a>
   
@@ -3145,7 +3965,9 @@
         <li class="md-nav__item">
   <a href="#base-properties" class="md-nav__link">
     <span class="md-ellipsis">
-      BASE Properties
+      
+        BASE Properties
+      
     </span>
   </a>
   
@@ -3154,7 +3976,9 @@
         <li class="md-nav__item">
   <a href="#batch-processing" class="md-nav__link">
     <span class="md-ellipsis">
-      Batch Processing
+      
+        Batch Processing
+      
     </span>
   </a>
   
@@ -3163,7 +3987,9 @@
         <li class="md-nav__item">
   <a href="#bloom-filters" class="md-nav__link">
     <span class="md-ellipsis">
-      Bloom Filters
+      
+        Bloom Filters
+      
     </span>
   </a>
   
@@ -3172,7 +3998,9 @@
         <li class="md-nav__item">
   <a href="#bson-binary-json" class="md-nav__link">
     <span class="md-ellipsis">
-      BSON (Binary JSON)
+      
+        BSON (Binary JSON)
+      
     </span>
   </a>
   
@@ -3181,7 +4009,9 @@
         <li class="md-nav__item">
   <a href="#b-trees" class="md-nav__link">
     <span class="md-ellipsis">
-      B-Trees
+      
+        B-Trees
+      
     </span>
   </a>
   
@@ -3190,7 +4020,9 @@
         <li class="md-nav__item">
   <a href="#bulk-synchronous-parallel-bsp" class="md-nav__link">
     <span class="md-ellipsis">
-      Bulk Synchronous Parallel (BSP)
+      
+        Bulk Synchronous Parallel (BSP)
+      
     </span>
   </a>
   
@@ -3199,7 +4031,9 @@
         <li class="md-nav__item">
   <a href="#business-drivers" class="md-nav__link">
     <span class="md-ellipsis">
-      Business Drivers
+      
+        Business Drivers
+      
     </span>
   </a>
   
@@ -3208,7 +4042,9 @@
         <li class="md-nav__item">
   <a href="#caching" class="md-nav__link">
     <span class="md-ellipsis">
-      Caching
+      
+        Caching
+      
     </span>
   </a>
   
@@ -3217,7 +4053,9 @@
         <li class="md-nav__item">
   <a href="#cap-theorem" class="md-nav__link">
     <span class="md-ellipsis">
-      CAP Theorem
+      
+        CAP Theorem
+      
     </span>
   </a>
   
@@ -3226,7 +4064,9 @@
         <li class="md-nav__item">
   <a href="#cassandra-query-language-cql" class="md-nav__link">
     <span class="md-ellipsis">
-      Cassandra Query Language (CQL)
+      
+        Cassandra Query Language (CQL)
+      
     </span>
   </a>
   
@@ -3235,7 +4075,9 @@
         <li class="md-nav__item">
   <a href="#cell-timestamps" class="md-nav__link">
     <span class="md-ellipsis">
-      Cell Timestamps
+      
+        Cell Timestamps
+      
     </span>
   </a>
   
@@ -3244,7 +4086,9 @@
         <li class="md-nav__item">
   <a href="#cloud-computing" class="md-nav__link">
     <span class="md-ellipsis">
-      Cloud Computing
+      
+        Cloud Computing
+      
     </span>
   </a>
   
@@ -3253,7 +4097,9 @@
         <li class="md-nav__item">
   <a href="#column-families" class="md-nav__link">
     <span class="md-ellipsis">
-      Column Families
+      
+        Column Families
+      
     </span>
   </a>
   
@@ -3262,7 +4108,9 @@
         <li class="md-nav__item">
   <a href="#column-family-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Column-Family Model
+      
+        Column-Family Model
+      
     </span>
   </a>
   
@@ -3271,7 +4119,9 @@
         <li class="md-nav__item">
   <a href="#column-family-stores" class="md-nav__link">
     <span class="md-ellipsis">
-      Column-Family Stores
+      
+        Column-Family Stores
+      
     </span>
   </a>
   
@@ -3280,7 +4130,9 @@
         <li class="md-nav__item">
   <a href="#columnar-compression" class="md-nav__link">
     <span class="md-ellipsis">
-      Columnar Compression
+      
+        Columnar Compression
+      
     </span>
   </a>
   
@@ -3289,7 +4141,9 @@
         <li class="md-nav__item">
   <a href="#columnar-storage" class="md-nav__link">
     <span class="md-ellipsis">
-      Columnar Storage
+      
+        Columnar Storage
+      
     </span>
   </a>
   
@@ -3298,7 +4152,9 @@
         <li class="md-nav__item">
   <a href="#community-detection" class="md-nav__link">
     <span class="md-ellipsis">
-      Community Detection
+      
+        Community Detection
+      
     </span>
   </a>
   
@@ -3307,7 +4163,9 @@
         <li class="md-nav__item">
   <a href="#compaction" class="md-nav__link">
     <span class="md-ellipsis">
-      Compaction
+      
+        Compaction
+      
     </span>
   </a>
   
@@ -3316,7 +4174,9 @@
         <li class="md-nav__item">
   <a href="#composite-keys" class="md-nav__link">
     <span class="md-ellipsis">
-      Composite Keys
+      
+        Composite Keys
+      
     </span>
   </a>
   
@@ -3325,7 +4185,9 @@
         <li class="md-nav__item">
   <a href="#compound-indexes" class="md-nav__link">
     <span class="md-ellipsis">
-      Compound Indexes
+      
+        Compound Indexes
+      
     </span>
   </a>
   
@@ -3334,7 +4196,9 @@
         <li class="md-nav__item">
   <a href="#compression" class="md-nav__link">
     <span class="md-ellipsis">
-      Compression
+      
+        Compression
+      
     </span>
   </a>
   
@@ -3343,7 +4207,9 @@
         <li class="md-nav__item">
   <a href="#conflict-resolution" class="md-nav__link">
     <span class="md-ellipsis">
-      Conflict Resolution
+      
+        Conflict Resolution
+      
     </span>
   </a>
   
@@ -3352,7 +4218,9 @@
         <li class="md-nav__item">
   <a href="#consensus-algorithms" class="md-nav__link">
     <span class="md-ellipsis">
-      Consensus Algorithms
+      
+        Consensus Algorithms
+      
     </span>
   </a>
   
@@ -3361,7 +4229,9 @@
         <li class="md-nav__item">
   <a href="#consistency" class="md-nav__link">
     <span class="md-ellipsis">
-      Consistency
+      
+        Consistency
+      
     </span>
   </a>
   
@@ -3370,7 +4240,9 @@
         <li class="md-nav__item">
   <a href="#consistent-hashing" class="md-nav__link">
     <span class="md-ellipsis">
-      Consistent Hashing
+      
+        Consistent Hashing
+      
     </span>
   </a>
   
@@ -3379,7 +4251,9 @@
         <li class="md-nav__item">
   <a href="#container-orchestration" class="md-nav__link">
     <span class="md-ellipsis">
-      Container Orchestration
+      
+        Container Orchestration
+      
     </span>
   </a>
   
@@ -3388,7 +4262,9 @@
         <li class="md-nav__item">
   <a href="#content-delivery-networks-cdn" class="md-nav__link">
     <span class="md-ellipsis">
-      Content Delivery Networks (CDN)
+      
+        Content Delivery Networks (CDN)
+      
     </span>
   </a>
   
@@ -3397,7 +4273,9 @@
         <li class="md-nav__item">
   <a href="#cost-based-optimization" class="md-nav__link">
     <span class="md-ellipsis">
-      Cost-Based Optimization
+      
+        Cost-Based Optimization
+      
     </span>
   </a>
   
@@ -3406,7 +4284,9 @@
         <li class="md-nav__item">
   <a href="#cqrs-command-query-responsibility-segregation" class="md-nav__link">
     <span class="md-ellipsis">
-      CQRS (Command Query Responsibility Segregation)
+      
+        CQRS (Command Query Responsibility Segregation)
+      
     </span>
   </a>
   
@@ -3415,7 +4295,9 @@
         <li class="md-nav__item">
   <a href="#cypher" class="md-nav__link">
     <span class="md-ellipsis">
-      Cypher
+      
+        Cypher
+      
     </span>
   </a>
   
@@ -3424,7 +4306,9 @@
         <li class="md-nav__item">
   <a href="#data-governance" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Governance
+      
+        Data Governance
+      
     </span>
   </a>
   
@@ -3433,7 +4317,9 @@
         <li class="md-nav__item">
   <a href="#data-ingestion" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Ingestion
+      
+        Data Ingestion
+      
     </span>
   </a>
   
@@ -3442,7 +4328,9 @@
         <li class="md-nav__item">
   <a href="#data-lakes" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Lakes
+      
+        Data Lakes
+      
     </span>
   </a>
   
@@ -3451,7 +4339,9 @@
         <li class="md-nav__item">
   <a href="#data-lineage" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Lineage
+      
+        Data Lineage
+      
     </span>
   </a>
   
@@ -3460,7 +4350,9 @@
         <li class="md-nav__item">
   <a href="#data-locality" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Locality
+      
+        Data Locality
+      
     </span>
   </a>
   
@@ -3469,7 +4361,9 @@
         <li class="md-nav__item">
   <a href="#data-marts" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Marts
+      
+        Data Marts
+      
     </span>
   </a>
   
@@ -3478,7 +4372,9 @@
         <li class="md-nav__item">
   <a href="#data-masking" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Masking
+      
+        Data Masking
+      
     </span>
   </a>
   
@@ -3487,7 +4383,9 @@
         <li class="md-nav__item">
   <a href="#data-modeling" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Modeling
+      
+        Data Modeling
+      
     </span>
   </a>
   
@@ -3496,7 +4394,9 @@
         <li class="md-nav__item">
   <a href="#data-pipelines" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Pipelines
+      
+        Data Pipelines
+      
     </span>
   </a>
   
@@ -3505,7 +4405,9 @@
         <li class="md-nav__item">
   <a href="#data-privacy" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Privacy
+      
+        Data Privacy
+      
     </span>
   </a>
   
@@ -3514,7 +4416,9 @@
         <li class="md-nav__item">
   <a href="#data-quality" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Quality
+      
+        Data Quality
+      
     </span>
   </a>
   
@@ -3523,7 +4427,9 @@
         <li class="md-nav__item">
   <a href="#data-warehousing" class="md-nav__link">
     <span class="md-ellipsis">
-      Data Warehousing
+      
+        Data Warehousing
+      
     </span>
   </a>
   
@@ -3532,7 +4438,9 @@
         <li class="md-nav__item">
   <a href="#denormalization" class="md-nav__link">
     <span class="md-ellipsis">
-      Denormalization
+      
+        Denormalization
+      
     </span>
   </a>
   
@@ -3541,7 +4449,9 @@
         <li class="md-nav__item">
   <a href="#dimension-tables" class="md-nav__link">
     <span class="md-ellipsis">
-      Dimension Tables
+      
+        Dimension Tables
+      
     </span>
   </a>
   
@@ -3550,7 +4460,9 @@
         <li class="md-nav__item">
   <a href="#distributed-systems" class="md-nav__link">
     <span class="md-ellipsis">
-      Distributed Systems
+      
+        Distributed Systems
+      
     </span>
   </a>
   
@@ -3559,7 +4471,9 @@
         <li class="md-nav__item">
   <a href="#distributed-transactions" class="md-nav__link">
     <span class="md-ellipsis">
-      Distributed Transactions
+      
+        Distributed Transactions
+      
     </span>
   </a>
   
@@ -3568,7 +4482,9 @@
         <li class="md-nav__item">
   <a href="#document-collections" class="md-nav__link">
     <span class="md-ellipsis">
-      Document Collections
+      
+        Document Collections
+      
     </span>
   </a>
   
@@ -3577,7 +4493,9 @@
         <li class="md-nav__item">
   <a href="#document-databases" class="md-nav__link">
     <span class="md-ellipsis">
-      Document Databases
+      
+        Document Databases
+      
     </span>
   </a>
   
@@ -3586,7 +4504,9 @@
         <li class="md-nav__item">
   <a href="#document-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Document Model
+      
+        Document Model
+      
     </span>
   </a>
   
@@ -3595,7 +4515,9 @@
         <li class="md-nav__item">
   <a href="#document-type-definition-dtd" class="md-nav__link">
     <span class="md-ellipsis">
-      Document Type Definition (DTD)
+      
+        Document Type Definition (DTD)
+      
     </span>
   </a>
   
@@ -3604,7 +4526,9 @@
         <li class="md-nav__item">
   <a href="#drill-down" class="md-nav__link">
     <span class="md-ellipsis">
-      Drill-Down
+      
+        Drill-Down
+      
     </span>
   </a>
   
@@ -3613,7 +4537,9 @@
         <li class="md-nav__item">
   <a href="#durability" class="md-nav__link">
     <span class="md-ellipsis">
-      Durability
+      
+        Durability
+      
     </span>
   </a>
   
@@ -3622,7 +4548,9 @@
         <li class="md-nav__item">
   <a href="#dynamic-columns" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Columns
+      
+        Dynamic Columns
+      
     </span>
   </a>
   
@@ -3631,7 +4559,9 @@
         <li class="md-nav__item">
   <a href="#edge-computing" class="md-nav__link">
     <span class="md-ellipsis">
-      Edge Computing
+      
+        Edge Computing
+      
     </span>
   </a>
   
@@ -3640,7 +4570,9 @@
         <li class="md-nav__item">
   <a href="#elt-extract-load-transform" class="md-nav__link">
     <span class="md-ellipsis">
-      ELT (Extract, Load, Transform)
+      
+        ELT (Extract, Load, Transform)
+      
     </span>
   </a>
   
@@ -3649,7 +4581,9 @@
         <li class="md-nav__item">
   <a href="#embedded-documents" class="md-nav__link">
     <span class="md-ellipsis">
-      Embedded Documents
+      
+        Embedded Documents
+      
     </span>
   </a>
   
@@ -3658,7 +4592,9 @@
         <li class="md-nav__item">
   <a href="#encryption-at-rest" class="md-nav__link">
     <span class="md-ellipsis">
-      Encryption at Rest
+      
+        Encryption at Rest
+      
     </span>
   </a>
   
@@ -3667,7 +4603,9 @@
         <li class="md-nav__item">
   <a href="#encryption-in-transit" class="md-nav__link">
     <span class="md-ellipsis">
-      Encryption in Transit
+      
+        Encryption in Transit
+      
     </span>
   </a>
   
@@ -3676,7 +4614,9 @@
         <li class="md-nav__item">
   <a href="#entity-relationship-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Entity-Relationship Model
+      
+        Entity-Relationship Model
+      
     </span>
   </a>
   
@@ -3685,7 +4625,9 @@
         <li class="md-nav__item">
   <a href="#etl-extract-transform-load" class="md-nav__link">
     <span class="md-ellipsis">
-      ETL (Extract, Transform, Load)
+      
+        ETL (Extract, Transform, Load)
+      
     </span>
   </a>
   
@@ -3694,7 +4636,9 @@
         <li class="md-nav__item">
   <a href="#event-sourcing" class="md-nav__link">
     <span class="md-ellipsis">
-      Event Sourcing
+      
+        Event Sourcing
+      
     </span>
   </a>
   
@@ -3703,7 +4647,9 @@
         <li class="md-nav__item">
   <a href="#eventual-consistency" class="md-nav__link">
     <span class="md-ellipsis">
-      Eventual Consistency
+      
+        Eventual Consistency
+      
     </span>
   </a>
   
@@ -3712,7 +4658,9 @@
         <li class="md-nav__item">
   <a href="#execution-plans" class="md-nav__link">
     <span class="md-ellipsis">
-      Execution Plans
+      
+        Execution Plans
+      
     </span>
   </a>
   
@@ -3721,7 +4669,9 @@
         <li class="md-nav__item">
   <a href="#fact-tables" class="md-nav__link">
     <span class="md-ellipsis">
-      Fact Tables
+      
+        Fact Tables
+      
     </span>
   </a>
   
@@ -3730,7 +4680,9 @@
         <li class="md-nav__item">
   <a href="#failover" class="md-nav__link">
     <span class="md-ellipsis">
-      Failover
+      
+        Failover
+      
     </span>
   </a>
   
@@ -3739,7 +4691,9 @@
         <li class="md-nav__item">
   <a href="#findability" class="md-nav__link">
     <span class="md-ellipsis">
-      Findability
+      
+        Findability
+      
     </span>
   </a>
   
@@ -3748,7 +4702,9 @@
         <li class="md-nav__item">
   <a href="#fitness-for-purpose" class="md-nav__link">
     <span class="md-ellipsis">
-      Fitness for Purpose
+      
+        Fitness for Purpose
+      
     </span>
   </a>
   
@@ -3757,7 +4713,9 @@
         <li class="md-nav__item">
   <a href="#flwor-expressions" class="md-nav__link">
     <span class="md-ellipsis">
-      FLWOR Expressions
+      
+        FLWOR Expressions
+      
     </span>
   </a>
   
@@ -3766,7 +4724,9 @@
         <li class="md-nav__item">
   <a href="#foreign-keys" class="md-nav__link">
     <span class="md-ellipsis">
-      Foreign Keys
+      
+        Foreign Keys
+      
     </span>
   </a>
   
@@ -3775,7 +4735,9 @@
         <li class="md-nav__item">
   <a href="#full-text-search" class="md-nav__link">
     <span class="md-ellipsis">
-      Full-Text Search
+      
+        Full-Text Search
+      
     </span>
   </a>
   
@@ -3784,7 +4746,9 @@
         <li class="md-nav__item">
   <a href="#geo-distribution" class="md-nav__link">
     <span class="md-ellipsis">
-      Geo-Distribution
+      
+        Geo-Distribution
+      
     </span>
   </a>
   
@@ -3793,7 +4757,9 @@
         <li class="md-nav__item">
   <a href="#geospatial-indexes" class="md-nav__link">
     <span class="md-ellipsis">
-      Geospatial Indexes
+      
+        Geospatial Indexes
+      
     </span>
   </a>
   
@@ -3802,7 +4768,9 @@
         <li class="md-nav__item">
   <a href="#gossip-protocol" class="md-nav__link">
     <span class="md-ellipsis">
-      Gossip Protocol
+      
+        Gossip Protocol
+      
     </span>
   </a>
   
@@ -3811,7 +4779,9 @@
         <li class="md-nav__item">
   <a href="#graph-algorithms" class="md-nav__link">
     <span class="md-ellipsis">
-      Graph Algorithms
+      
+        Graph Algorithms
+      
     </span>
   </a>
   
@@ -3820,7 +4790,9 @@
         <li class="md-nav__item">
   <a href="#graph-databases" class="md-nav__link">
     <span class="md-ellipsis">
-      Graph Databases
+      
+        Graph Databases
+      
     </span>
   </a>
   
@@ -3829,7 +4801,9 @@
         <li class="md-nav__item">
   <a href="#graph-embeddings" class="md-nav__link">
     <span class="md-ellipsis">
-      Graph Embeddings
+      
+        Graph Embeddings
+      
     </span>
   </a>
   
@@ -3838,7 +4812,9 @@
         <li class="md-nav__item">
   <a href="#graph-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Graph Model
+      
+        Graph Model
+      
     </span>
   </a>
   
@@ -3847,7 +4823,9 @@
         <li class="md-nav__item">
   <a href="#graph-neural-networks-gnns" class="md-nav__link">
     <span class="md-ellipsis">
-      Graph Neural Networks (GNNs)
+      
+        Graph Neural Networks (GNNs)
+      
     </span>
   </a>
   
@@ -3856,7 +4834,9 @@
         <li class="md-nav__item">
   <a href="#graph-partitioning" class="md-nav__link">
     <span class="md-ellipsis">
-      Graph Partitioning
+      
+        Graph Partitioning
+      
     </span>
   </a>
   
@@ -3865,7 +4845,9 @@
         <li class="md-nav__item">
   <a href="#graph-traversal" class="md-nav__link">
     <span class="md-ellipsis">
-      Graph Traversal
+      
+        Graph Traversal
+      
     </span>
   </a>
   
@@ -3874,7 +4856,9 @@
         <li class="md-nav__item">
   <a href="#graphsage" class="md-nav__link">
     <span class="md-ellipsis">
-      GraphSAGE
+      
+        GraphSAGE
+      
     </span>
   </a>
   
@@ -3883,7 +4867,9 @@
         <li class="md-nav__item">
   <a href="#gremlin" class="md-nav__link">
     <span class="md-ellipsis">
-      Gremlin
+      
+        Gremlin
+      
     </span>
   </a>
   
@@ -3892,7 +4878,9 @@
         <li class="md-nav__item">
   <a href="#gsql-graph-sql" class="md-nav__link">
     <span class="md-ellipsis">
-      GSQL (Graph SQL)
+      
+        GSQL (Graph SQL)
+      
     </span>
   </a>
   
@@ -3901,7 +4889,9 @@
         <li class="md-nav__item">
   <a href="#hadoop" class="md-nav__link">
     <span class="md-ellipsis">
-      Hadoop
+      
+        Hadoop
+      
     </span>
   </a>
   
@@ -3910,7 +4900,9 @@
         <li class="md-nav__item">
   <a href="#hbase" class="md-nav__link">
     <span class="md-ellipsis">
-      HBase
+      
+        HBase
+      
     </span>
   </a>
   
@@ -3919,7 +4911,9 @@
         <li class="md-nav__item">
   <a href="#health-checks" class="md-nav__link">
     <span class="md-ellipsis">
-      Health Checks
+      
+        Health Checks
+      
     </span>
   </a>
   
@@ -3928,7 +4922,9 @@
         <li class="md-nav__item">
   <a href="#hierarchical-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Hierarchical Data
+      
+        Hierarchical Data
+      
     </span>
   </a>
   
@@ -3937,7 +4933,9 @@
         <li class="md-nav__item">
   <a href="#high-availability" class="md-nav__link">
     <span class="md-ellipsis">
-      High Availability
+      
+        High Availability
+      
     </span>
   </a>
   
@@ -3946,7 +4944,9 @@
         <li class="md-nav__item">
   <a href="#hinted-handoff" class="md-nav__link">
     <span class="md-ellipsis">
-      Hinted Handoff
+      
+        Hinted Handoff
+      
     </span>
   </a>
   
@@ -3955,7 +4955,9 @@
         <li class="md-nav__item">
   <a href="#horizontal-scaling" class="md-nav__link">
     <span class="md-ellipsis">
-      Horizontal Scaling
+      
+        Horizontal Scaling
+      
     </span>
   </a>
   
@@ -3964,7 +4966,9 @@
         <li class="md-nav__item">
   <a href="#html-hypertext-markup-language" class="md-nav__link">
     <span class="md-ellipsis">
-      HTML (HyperText Markup Language)
+      
+        HTML (HyperText Markup Language)
+      
     </span>
   </a>
   
@@ -3973,7 +4977,9 @@
         <li class="md-nav__item">
   <a href="#hypercubes" class="md-nav__link">
     <span class="md-ellipsis">
-      Hypercubes
+      
+        Hypercubes
+      
     </span>
   </a>
   
@@ -3982,7 +4988,9 @@
         <li class="md-nav__item">
   <a href="#iaas-infrastructure-as-a-service" class="md-nav__link">
     <span class="md-ellipsis">
-      IaaS (Infrastructure as a Service)
+      
+        IaaS (Infrastructure as a Service)
+      
     </span>
   </a>
   
@@ -3991,7 +4999,9 @@
         <li class="md-nav__item">
   <a href="#indexing" class="md-nav__link">
     <span class="md-ellipsis">
-      Indexing
+      
+        Indexing
+      
     </span>
   </a>
   
@@ -4000,7 +5010,9 @@
         <li class="md-nav__item">
   <a href="#infrastructure-as-code" class="md-nav__link">
     <span class="md-ellipsis">
-      Infrastructure as Code
+      
+        Infrastructure as Code
+      
     </span>
   </a>
   
@@ -4009,7 +5021,9 @@
         <li class="md-nav__item">
   <a href="#interoperability" class="md-nav__link">
     <span class="md-ellipsis">
-      Interoperability
+      
+        Interoperability
+      
     </span>
   </a>
   
@@ -4018,7 +5032,9 @@
         <li class="md-nav__item">
   <a href="#iot-internet-of-things" class="md-nav__link">
     <span class="md-ellipsis">
-      IoT (Internet of Things)
+      
+        IoT (Internet of Things)
+      
     </span>
   </a>
   
@@ -4027,7 +5043,9 @@
         <li class="md-nav__item">
   <a href="#iso-11179-term-definition" class="md-nav__link">
     <span class="md-ellipsis">
-      ISO 11179 Term Definition
+      
+        ISO 11179 Term Definition
+      
     </span>
   </a>
   
@@ -4036,7 +5054,9 @@
         <li class="md-nav__item">
   <a href="#isolation" class="md-nav__link">
     <span class="md-ellipsis">
-      Isolation
+      
+        Isolation
+      
     </span>
   </a>
   
@@ -4045,7 +5065,9 @@
         <li class="md-nav__item">
   <a href="#json-javascript-object-notation" class="md-nav__link">
     <span class="md-ellipsis">
-      JSON (JavaScript Object Notation)
+      
+        JSON (JavaScript Object Notation)
+      
     </span>
   </a>
   
@@ -4054,7 +5076,9 @@
         <li class="md-nav__item">
   <a href="#json-schema" class="md-nav__link">
     <span class="md-ellipsis">
-      JSON Schema
+      
+        JSON Schema
+      
     </span>
   </a>
   
@@ -4063,7 +5087,9 @@
         <li class="md-nav__item">
   <a href="#kafka" class="md-nav__link">
     <span class="md-ellipsis">
-      Kafka
+      
+        Kafka
+      
     </span>
   </a>
   
@@ -4072,7 +5098,9 @@
         <li class="md-nav__item">
   <a href="#key-value-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Key-Value Model
+      
+        Key-Value Model
+      
     </span>
   </a>
   
@@ -4081,7 +5109,9 @@
         <li class="md-nav__item">
   <a href="#key-value-stores" class="md-nav__link">
     <span class="md-ellipsis">
-      Key-Value Stores
+      
+        Key-Value Stores
+      
     </span>
   </a>
   
@@ -4090,7 +5120,9 @@
         <li class="md-nav__item">
   <a href="#kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
-      Kubernetes
+      
+        Kubernetes
+      
     </span>
   </a>
   
@@ -4099,7 +5131,9 @@
         <li class="md-nav__item">
   <a href="#labeled-property-graph-lpg" class="md-nav__link">
     <span class="md-ellipsis">
-      Labeled Property Graph (LPG)
+      
+        Labeled Property Graph (LPG)
+      
     </span>
   </a>
   
@@ -4108,7 +5142,9 @@
         <li class="md-nav__item">
   <a href="#load-balancing" class="md-nav__link">
     <span class="md-ellipsis">
-      Load Balancing
+      
+        Load Balancing
+      
     </span>
   </a>
   
@@ -4117,7 +5153,9 @@
         <li class="md-nav__item">
   <a href="#logging" class="md-nav__link">
     <span class="md-ellipsis">
-      Logging
+      
+        Logging
+      
     </span>
   </a>
   
@@ -4126,7 +5164,9 @@
         <li class="md-nav__item">
   <a href="#lsm-trees-log-structured-merge-trees" class="md-nav__link">
     <span class="md-ellipsis">
-      LSM Trees (Log-Structured Merge Trees)
+      
+        LSM Trees (Log-Structured Merge Trees)
+      
     </span>
   </a>
   
@@ -4135,7 +5175,9 @@
         <li class="md-nav__item">
   <a href="#machine-learning-ml" class="md-nav__link">
     <span class="md-ellipsis">
-      Machine Learning (ML)
+      
+        Machine Learning (ML)
+      
     </span>
   </a>
   
@@ -4144,7 +5186,9 @@
         <li class="md-nav__item">
   <a href="#maintainability" class="md-nav__link">
     <span class="md-ellipsis">
-      Maintainability
+      
+        Maintainability
+      
     </span>
   </a>
   
@@ -4153,7 +5197,9 @@
         <li class="md-nav__item">
   <a href="#mapreduce" class="md-nav__link">
     <span class="md-ellipsis">
-      MapReduce
+      
+        MapReduce
+      
     </span>
   </a>
   
@@ -4162,7 +5208,9 @@
         <li class="md-nav__item">
   <a href="#master-master-replication" class="md-nav__link">
     <span class="md-ellipsis">
-      Master-Master Replication
+      
+        Master-Master Replication
+      
     </span>
   </a>
   
@@ -4171,7 +5219,9 @@
         <li class="md-nav__item">
   <a href="#master-slave-architecture" class="md-nav__link">
     <span class="md-ellipsis">
-      Master-Slave Architecture
+      
+        Master-Slave Architecture
+      
     </span>
   </a>
   
@@ -4180,7 +5230,9 @@
         <li class="md-nav__item">
   <a href="#massively-parallel-processing-mpp" class="md-nav__link">
     <span class="md-ellipsis">
-      Massively Parallel Processing (MPP)
+      
+        Massively Parallel Processing (MPP)
+      
     </span>
   </a>
   
@@ -4189,7 +5241,9 @@
         <li class="md-nav__item">
   <a href="#materialized-views" class="md-nav__link">
     <span class="md-ellipsis">
-      Materialized Views
+      
+        Materialized Views
+      
     </span>
   </a>
   
@@ -4198,7 +5252,9 @@
         <li class="md-nav__item">
   <a href="#memcached" class="md-nav__link">
     <span class="md-ellipsis">
-      Memcached
+      
+        Memcached
+      
     </span>
   </a>
   
@@ -4207,7 +5263,9 @@
         <li class="md-nav__item">
   <a href="#microservices" class="md-nav__link">
     <span class="md-ellipsis">
-      Microservices
+      
+        Microservices
+      
     </span>
   </a>
   
@@ -4216,7 +5274,9 @@
         <li class="md-nav__item">
   <a href="#mongodb" class="md-nav__link">
     <span class="md-ellipsis">
-      MongoDB
+      
+        MongoDB
+      
     </span>
   </a>
   
@@ -4225,7 +5285,9 @@
         <li class="md-nav__item">
   <a href="#monitoring" class="md-nav__link">
     <span class="md-ellipsis">
-      Monitoring
+      
+        Monitoring
+      
     </span>
   </a>
   
@@ -4234,7 +5296,9 @@
         <li class="md-nav__item">
   <a href="#multi-data-center-deployment" class="md-nav__link">
     <span class="md-ellipsis">
-      Multi-Data Center Deployment
+      
+        Multi-Data Center Deployment
+      
     </span>
   </a>
   
@@ -4243,7 +5307,9 @@
         <li class="md-nav__item">
   <a href="#multi-tenant-architecture" class="md-nav__link">
     <span class="md-ellipsis">
-      Multi-Tenant Architecture
+      
+        Multi-Tenant Architecture
+      
     </span>
   </a>
   
@@ -4252,7 +5318,9 @@
         <li class="md-nav__item">
   <a href="#multi-version-concurrency-control-mvcc" class="md-nav__link">
     <span class="md-ellipsis">
-      Multi-Version Concurrency Control (MVCC)
+      
+        Multi-Version Concurrency Control (MVCC)
+      
     </span>
   </a>
   
@@ -4261,7 +5329,9 @@
         <li class="md-nav__item">
   <a href="#mysql" class="md-nav__link">
     <span class="md-ellipsis">
-      MySQL
+      
+        MySQL
+      
     </span>
   </a>
   
@@ -4270,7 +5340,9 @@
         <li class="md-nav__item">
   <a href="#native-parallel-graph-npg" class="md-nav__link">
     <span class="md-ellipsis">
-      Native Parallel Graph (NPG)
+      
+        Native Parallel Graph (NPG)
+      
     </span>
   </a>
   
@@ -4279,7 +5351,9 @@
         <li class="md-nav__item">
   <a href="#neo4j" class="md-nav__link">
     <span class="md-ellipsis">
-      Neo4j
+      
+        Neo4j
+      
     </span>
   </a>
   
@@ -4288,7 +5362,9 @@
         <li class="md-nav__item">
   <a href="#nfrs-non-functional-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      NFRs (Non-Functional Requirements)
+      
+        NFRs (Non-Functional Requirements)
+      
     </span>
   </a>
   
@@ -4297,7 +5373,9 @@
         <li class="md-nav__item">
   <a href="#node2vec" class="md-nav__link">
     <span class="md-ellipsis">
-      Node2Vec
+      
+        Node2Vec
+      
     </span>
   </a>
   
@@ -4306,7 +5384,9 @@
         <li class="md-nav__item">
   <a href="#nodes-vertices" class="md-nav__link">
     <span class="md-ellipsis">
-      Nodes (Vertices)
+      
+        Nodes (Vertices)
+      
     </span>
   </a>
   
@@ -4315,7 +5395,9 @@
         <li class="md-nav__item">
   <a href="#non-risks" class="md-nav__link">
     <span class="md-ellipsis">
-      Non-Risks
+      
+        Non-Risks
+      
     </span>
   </a>
   
@@ -4324,7 +5406,9 @@
         <li class="md-nav__item">
   <a href="#normalization" class="md-nav__link">
     <span class="md-ellipsis">
-      Normalization
+      
+        Normalization
+      
     </span>
   </a>
   
@@ -4333,7 +5417,9 @@
         <li class="md-nav__item">
   <a href="#nosql" class="md-nav__link">
     <span class="md-ellipsis">
-      NoSQL
+      
+        NoSQL
+      
     </span>
   </a>
   
@@ -4342,7 +5428,9 @@
         <li class="md-nav__item">
   <a href="#object-relational-impedance-mismatch" class="md-nav__link">
     <span class="md-ellipsis">
-      Object-Relational Impedance Mismatch
+      
+        Object-Relational Impedance Mismatch
+      
     </span>
   </a>
   
@@ -4351,7 +5439,9 @@
         <li class="md-nav__item">
   <a href="#olap-online-analytical-processing" class="md-nav__link">
     <span class="md-ellipsis">
-      OLAP (Online Analytical Processing)
+      
+        OLAP (Online Analytical Processing)
+      
     </span>
   </a>
   
@@ -4360,7 +5450,9 @@
         <li class="md-nav__item">
   <a href="#olap-cubes" class="md-nav__link">
     <span class="md-ellipsis">
-      OLAP Cubes
+      
+        OLAP Cubes
+      
     </span>
   </a>
   
@@ -4369,7 +5461,9 @@
         <li class="md-nav__item">
   <a href="#oltp-online-transaction-processing" class="md-nav__link">
     <span class="md-ellipsis">
-      OLTP (Online Transaction Processing)
+      
+        OLTP (Online Transaction Processing)
+      
     </span>
   </a>
   
@@ -4378,7 +5472,9 @@
         <li class="md-nav__item">
   <a href="#ontology" class="md-nav__link">
     <span class="md-ellipsis">
-      Ontology
+      
+        Ontology
+      
     </span>
   </a>
   
@@ -4387,7 +5483,9 @@
         <li class="md-nav__item">
   <a href="#optimistic-concurrency-control" class="md-nav__link">
     <span class="md-ellipsis">
-      Optimistic Concurrency Control
+      
+        Optimistic Concurrency Control
+      
     </span>
   </a>
   
@@ -4396,7 +5494,9 @@
         <li class="md-nav__item">
   <a href="#oracle-database" class="md-nav__link">
     <span class="md-ellipsis">
-      Oracle Database
+      
+        Oracle Database
+      
     </span>
   </a>
   
@@ -4405,7 +5505,9 @@
         <li class="md-nav__item">
   <a href="#pagerank" class="md-nav__link">
     <span class="md-ellipsis">
-      PageRank
+      
+        PageRank
+      
     </span>
   </a>
   
@@ -4414,7 +5516,9 @@
         <li class="md-nav__item">
   <a href="#paas-platform-as-a-service" class="md-nav__link">
     <span class="md-ellipsis">
-      PaaS (Platform as a Service)
+      
+        PaaS (Platform as a Service)
+      
     </span>
   </a>
   
@@ -4423,7 +5527,9 @@
         <li class="md-nav__item">
   <a href="#partitioning" class="md-nav__link">
     <span class="md-ellipsis">
-      Partitioning
+      
+        Partitioning
+      
     </span>
   </a>
   
@@ -4432,7 +5538,9 @@
         <li class="md-nav__item">
   <a href="#partitioning-strategies" class="md-nav__link">
     <span class="md-ellipsis">
-      Partitioning Strategies
+      
+        Partitioning Strategies
+      
     </span>
   </a>
   
@@ -4441,7 +5549,9 @@
         <li class="md-nav__item">
   <a href="#peer-to-peer-architecture" class="md-nav__link">
     <span class="md-ellipsis">
-      Peer-to-Peer Architecture
+      
+        Peer-to-Peer Architecture
+      
     </span>
   </a>
   
@@ -4450,7 +5560,9 @@
         <li class="md-nav__item">
   <a href="#performance" class="md-nav__link">
     <span class="md-ellipsis">
-      Performance
+      
+        Performance
+      
     </span>
   </a>
   
@@ -4459,7 +5571,9 @@
         <li class="md-nav__item">
   <a href="#pessimistic-concurrency-control" class="md-nav__link">
     <span class="md-ellipsis">
-      Pessimistic Concurrency Control
+      
+        Pessimistic Concurrency Control
+      
     </span>
   </a>
   
@@ -4468,7 +5582,9 @@
         <li class="md-nav__item">
   <a href="#pivot" class="md-nav__link">
     <span class="md-ellipsis">
-      Pivot
+      
+        Pivot
+      
     </span>
   </a>
   
@@ -4477,7 +5593,9 @@
         <li class="md-nav__item">
   <a href="#point-in-time-recovery" class="md-nav__link">
     <span class="md-ellipsis">
-      Point-in-Time Recovery
+      
+        Point-in-Time Recovery
+      
     </span>
   </a>
   
@@ -4486,7 +5604,9 @@
         <li class="md-nav__item">
   <a href="#polyglot-persistence" class="md-nav__link">
     <span class="md-ellipsis">
-      Polyglot Persistence
+      
+        Polyglot Persistence
+      
     </span>
   </a>
   
@@ -4495,7 +5615,9 @@
         <li class="md-nav__item">
   <a href="#postgresql" class="md-nav__link">
     <span class="md-ellipsis">
-      PostgreSQL
+      
+        PostgreSQL
+      
     </span>
   </a>
   
@@ -4504,7 +5626,9 @@
         <li class="md-nav__item">
   <a href="#primary-keys" class="md-nav__link">
     <span class="md-ellipsis">
-      Primary Keys
+      
+        Primary Keys
+      
     </span>
   </a>
   
@@ -4513,7 +5637,9 @@
         <li class="md-nav__item">
   <a href="#quality-attribute-scenarios" class="md-nav__link">
     <span class="md-ellipsis">
-      Quality Attribute Scenarios
+      
+        Quality Attribute Scenarios
+      
     </span>
   </a>
   
@@ -4522,7 +5648,9 @@
         <li class="md-nav__item">
   <a href="#quality-attributes" class="md-nav__link">
     <span class="md-ellipsis">
-      Quality Attributes
+      
+        Quality Attributes
+      
     </span>
   </a>
   
@@ -4531,7 +5659,9 @@
         <li class="md-nav__item">
   <a href="#quality-tree" class="md-nav__link">
     <span class="md-ellipsis">
-      Quality Tree
+      
+        Quality Tree
+      
     </span>
   </a>
   
@@ -4540,7 +5670,9 @@
         <li class="md-nav__item">
   <a href="#queryability" class="md-nav__link">
     <span class="md-ellipsis">
-      Queryability
+      
+        Queryability
+      
     </span>
   </a>
   
@@ -4549,7 +5681,9 @@
         <li class="md-nav__item">
   <a href="#query-optimization" class="md-nav__link">
     <span class="md-ellipsis">
-      Query Optimization
+      
+        Query Optimization
+      
     </span>
   </a>
   
@@ -4558,7 +5692,9 @@
         <li class="md-nav__item">
   <a href="#quorum" class="md-nav__link">
     <span class="md-ellipsis">
-      Quorum
+      
+        Quorum
+      
     </span>
   </a>
   
@@ -4567,7 +5703,9 @@
         <li class="md-nav__item">
   <a href="#rbac-role-based-access-control" class="md-nav__link">
     <span class="md-ellipsis">
-      RBAC (Role-Based Access Control)
+      
+        RBAC (Role-Based Access Control)
+      
     </span>
   </a>
   
@@ -4576,7 +5714,9 @@
         <li class="md-nav__item">
   <a href="#rdf-resource-description-framework" class="md-nav__link">
     <span class="md-ellipsis">
-      RDF (Resource Description Framework)
+      
+        RDF (Resource Description Framework)
+      
     </span>
   </a>
   
@@ -4585,7 +5725,9 @@
         <li class="md-nav__item">
   <a href="#read-after-write-consistency" class="md-nav__link">
     <span class="md-ellipsis">
-      Read-After-Write Consistency
+      
+        Read-After-Write Consistency
+      
     </span>
   </a>
   
@@ -4594,7 +5736,9 @@
         <li class="md-nav__item">
   <a href="#read-repair" class="md-nav__link">
     <span class="md-ellipsis">
-      Read Repair
+      
+        Read Repair
+      
     </span>
   </a>
   
@@ -4603,7 +5747,9 @@
         <li class="md-nav__item">
   <a href="#real-time-processing" class="md-nav__link">
     <span class="md-ellipsis">
-      Real-Time Processing
+      
+        Real-Time Processing
+      
     </span>
   </a>
   
@@ -4612,7 +5758,9 @@
         <li class="md-nav__item">
   <a href="#redis" class="md-nav__link">
     <span class="md-ellipsis">
-      Redis
+      
+        Redis
+      
     </span>
   </a>
   
@@ -4621,7 +5769,9 @@
         <li class="md-nav__item">
   <a href="#referential-integrity" class="md-nav__link">
     <span class="md-ellipsis">
-      Referential Integrity
+      
+        Referential Integrity
+      
     </span>
   </a>
   
@@ -4630,7 +5780,9 @@
         <li class="md-nav__item">
   <a href="#reliability" class="md-nav__link">
     <span class="md-ellipsis">
-      Reliability
+      
+        Reliability
+      
     </span>
   </a>
   
@@ -4639,7 +5791,9 @@
         <li class="md-nav__item">
   <a href="#replication" class="md-nav__link">
     <span class="md-ellipsis">
-      Replication
+      
+        Replication
+      
     </span>
   </a>
   
@@ -4648,7 +5802,9 @@
         <li class="md-nav__item">
   <a href="#risks" class="md-nav__link">
     <span class="md-ellipsis">
-      Risks
+      
+        Risks
+      
     </span>
   </a>
   
@@ -4657,7 +5813,9 @@
         <li class="md-nav__item">
   <a href="#risk-themes" class="md-nav__link">
     <span class="md-ellipsis">
-      Risk Themes
+      
+        Risk Themes
+      
     </span>
   </a>
   
@@ -4666,7 +5824,9 @@
         <li class="md-nav__item">
   <a href="#roll-up" class="md-nav__link">
     <span class="md-ellipsis">
-      Roll-Up
+      
+        Roll-Up
+      
     </span>
   </a>
   
@@ -4675,7 +5835,9 @@
         <li class="md-nav__item">
   <a href="#row-oriented-storage" class="md-nav__link">
     <span class="md-ellipsis">
-      Row-Oriented Storage
+      
+        Row-Oriented Storage
+      
     </span>
   </a>
   
@@ -4684,7 +5846,9 @@
         <li class="md-nav__item">
   <a href="#saas-software-as-a-service" class="md-nav__link">
     <span class="md-ellipsis">
-      SaaS (Software as a Service)
+      
+        SaaS (Software as a Service)
+      
     </span>
   </a>
   
@@ -4693,7 +5857,9 @@
         <li class="md-nav__item">
   <a href="#scalability" class="md-nav__link">
     <span class="md-ellipsis">
-      Scalability
+      
+        Scalability
+      
     </span>
   </a>
   
@@ -4702,7 +5868,9 @@
         <li class="md-nav__item">
   <a href="#scenarios" class="md-nav__link">
     <span class="md-ellipsis">
-      Scenarios
+      
+        Scenarios
+      
     </span>
   </a>
   
@@ -4711,7 +5879,9 @@
         <li class="md-nav__item">
   <a href="#schema-evolution" class="md-nav__link">
     <span class="md-ellipsis">
-      Schema Evolution
+      
+        Schema Evolution
+      
     </span>
   </a>
   
@@ -4720,7 +5890,9 @@
         <li class="md-nav__item">
   <a href="#schema-on-read" class="md-nav__link">
     <span class="md-ellipsis">
-      Schema-on-Read
+      
+        Schema-on-Read
+      
     </span>
   </a>
   
@@ -4729,7 +5901,9 @@
         <li class="md-nav__item">
   <a href="#schema-on-write" class="md-nav__link">
     <span class="md-ellipsis">
-      Schema-on-Write
+      
+        Schema-on-Write
+      
     </span>
   </a>
   
@@ -4738,7 +5912,9 @@
         <li class="md-nav__item">
   <a href="#schemaless" class="md-nav__link">
     <span class="md-ellipsis">
-      Schemaless
+      
+        Schemaless
+      
     </span>
   </a>
   
@@ -4747,7 +5923,9 @@
         <li class="md-nav__item">
   <a href="#schematron" class="md-nav__link">
     <span class="md-ellipsis">
-      Schematron
+      
+        Schematron
+      
     </span>
   </a>
   
@@ -4756,7 +5934,9 @@
         <li class="md-nav__item">
   <a href="#secondary-indexes" class="md-nav__link">
     <span class="md-ellipsis">
-      Secondary Indexes
+      
+        Secondary Indexes
+      
     </span>
   </a>
   
@@ -4765,7 +5945,9 @@
         <li class="md-nav__item">
   <a href="#security" class="md-nav__link">
     <span class="md-ellipsis">
-      Security
+      
+        Security
+      
     </span>
   </a>
   
@@ -4774,7 +5956,9 @@
         <li class="md-nav__item">
   <a href="#semantic-web" class="md-nav__link">
     <span class="md-ellipsis">
-      Semantic Web
+      
+        Semantic Web
+      
     </span>
   </a>
   
@@ -4783,7 +5967,9 @@
         <li class="md-nav__item">
   <a href="#semi-structured-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Semi-Structured Data
+      
+        Semi-Structured Data
+      
     </span>
   </a>
   
@@ -4792,7 +5978,9 @@
         <li class="md-nav__item">
   <a href="#sensitivity-points" class="md-nav__link">
     <span class="md-ellipsis">
-      Sensitivity Points
+      
+        Sensitivity Points
+      
     </span>
   </a>
   
@@ -4801,7 +5989,9 @@
         <li class="md-nav__item">
   <a href="#serverless-computing" class="md-nav__link">
     <span class="md-ellipsis">
-      Serverless Computing
+      
+        Serverless Computing
+      
     </span>
   </a>
   
@@ -4810,7 +6000,9 @@
         <li class="md-nav__item">
   <a href="#service-level-agreement-sla" class="md-nav__link">
     <span class="md-ellipsis">
-      Service Level Agreement (SLA)
+      
+        Service Level Agreement (SLA)
+      
     </span>
   </a>
   
@@ -4819,7 +6011,9 @@
         <li class="md-nav__item">
   <a href="#service-level-indicator-sli" class="md-nav__link">
     <span class="md-ellipsis">
-      Service Level Indicator (SLI)
+      
+        Service Level Indicator (SLI)
+      
     </span>
   </a>
   
@@ -4828,7 +6022,9 @@
         <li class="md-nav__item">
   <a href="#service-level-objective-slo" class="md-nav__link">
     <span class="md-ellipsis">
-      Service Level Objective (SLO)
+      
+        Service Level Objective (SLO)
+      
     </span>
   </a>
   
@@ -4837,7 +6033,9 @@
         <li class="md-nav__item">
   <a href="#service-mesh" class="md-nav__link">
     <span class="md-ellipsis">
-      Service Mesh
+      
+        Service Mesh
+      
     </span>
   </a>
   
@@ -4846,7 +6044,9 @@
         <li class="md-nav__item">
   <a href="#sgml-standard-generalized-markup-language" class="md-nav__link">
     <span class="md-ellipsis">
-      SGML (Standard Generalized Markup Language)
+      
+        SGML (Standard Generalized Markup Language)
+      
     </span>
   </a>
   
@@ -4855,7 +6055,9 @@
         <li class="md-nav__item">
   <a href="#sharding" class="md-nav__link">
     <span class="md-ellipsis">
-      Sharding
+      
+        Sharding
+      
     </span>
   </a>
   
@@ -4864,7 +6066,9 @@
         <li class="md-nav__item">
   <a href="#shortest-path" class="md-nav__link">
     <span class="md-ellipsis">
-      Shortest Path
+      
+        Shortest Path
+      
     </span>
   </a>
   
@@ -4873,7 +6077,9 @@
         <li class="md-nav__item">
   <a href="#slice-and-dice" class="md-nav__link">
     <span class="md-ellipsis">
-      Slice and Dice
+      
+        Slice and Dice
+      
     </span>
   </a>
   
@@ -4882,7 +6088,9 @@
         <li class="md-nav__item">
   <a href="#slowly-changing-dimensions" class="md-nav__link">
     <span class="md-ellipsis">
-      Slowly Changing Dimensions
+      
+        Slowly Changing Dimensions
+      
     </span>
   </a>
   
@@ -4891,7 +6099,9 @@
         <li class="md-nav__item">
   <a href="#snowflake-schema" class="md-nav__link">
     <span class="md-ellipsis">
-      Snowflake Schema
+      
+        Snowflake Schema
+      
     </span>
   </a>
   
@@ -4900,7 +6110,9 @@
         <li class="md-nav__item">
   <a href="#sparse-columns" class="md-nav__link">
     <span class="md-ellipsis">
-      Sparse Columns
+      
+        Sparse Columns
+      
     </span>
   </a>
   
@@ -4909,7 +6121,9 @@
         <li class="md-nav__item">
   <a href="#sparse-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Sparse Data
+      
+        Sparse Data
+      
     </span>
   </a>
   
@@ -4918,7 +6132,9 @@
         <li class="md-nav__item">
   <a href="#sparse-indexes" class="md-nav__link">
     <span class="md-ellipsis">
-      Sparse Indexes
+      
+        Sparse Indexes
+      
     </span>
   </a>
   
@@ -4927,7 +6143,9 @@
         <li class="md-nav__item">
   <a href="#spark" class="md-nav__link">
     <span class="md-ellipsis">
-      Spark
+      
+        Spark
+      
     </span>
   </a>
   
@@ -4936,7 +6154,9 @@
         <li class="md-nav__item">
   <a href="#sparql" class="md-nav__link">
     <span class="md-ellipsis">
-      SPARQL
+      
+        SPARQL
+      
     </span>
   </a>
   
@@ -4945,7 +6165,9 @@
         <li class="md-nav__item">
   <a href="#sql-structured-query-language" class="md-nav__link">
     <span class="md-ellipsis">
-      SQL (Structured Query Language)
+      
+        SQL (Structured Query Language)
+      
     </span>
   </a>
   
@@ -4954,7 +6176,9 @@
         <li class="md-nav__item">
   <a href="#stakeholders" class="md-nav__link">
     <span class="md-ellipsis">
-      Stakeholders
+      
+        Stakeholders
+      
     </span>
   </a>
   
@@ -4963,7 +6187,9 @@
         <li class="md-nav__item">
   <a href="#star-schema" class="md-nav__link">
     <span class="md-ellipsis">
-      Star Schema
+      
+        Star Schema
+      
     </span>
   </a>
   
@@ -4972,7 +6198,9 @@
         <li class="md-nav__item">
   <a href="#storm" class="md-nav__link">
     <span class="md-ellipsis">
-      Storm
+      
+        Storm
+      
     </span>
   </a>
   
@@ -4981,7 +6209,9 @@
         <li class="md-nav__item">
   <a href="#streaming-analytics" class="md-nav__link">
     <span class="md-ellipsis">
-      Streaming Analytics
+      
+        Streaming Analytics
+      
     </span>
   </a>
   
@@ -4990,7 +6220,9 @@
         <li class="md-nav__item">
   <a href="#strong-consistency" class="md-nav__link">
     <span class="md-ellipsis">
-      Strong Consistency
+      
+        Strong Consistency
+      
     </span>
   </a>
   
@@ -4999,7 +6231,9 @@
         <li class="md-nav__item">
   <a href="#structured-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Structured Data
+      
+        Structured Data
+      
     </span>
   </a>
   
@@ -5008,7 +6242,9 @@
         <li class="md-nav__item">
   <a href="#super-columns" class="md-nav__link">
     <span class="md-ellipsis">
-      Super Columns
+      
+        Super Columns
+      
     </span>
   </a>
   
@@ -5017,7 +6253,9 @@
         <li class="md-nav__item">
   <a href="#surrogate-keys" class="md-nav__link">
     <span class="md-ellipsis">
-      Surrogate Keys
+      
+        Surrogate Keys
+      
     </span>
   </a>
   
@@ -5026,7 +6264,9 @@
         <li class="md-nav__item">
   <a href="#time-series-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Time-Series Data
+      
+        Time-Series Data
+      
     </span>
   </a>
   
@@ -5035,7 +6275,9 @@
         <li class="md-nav__item">
   <a href="#time-series-databases" class="md-nav__link">
     <span class="md-ellipsis">
-      Time-Series Databases
+      
+        Time-Series Databases
+      
     </span>
   </a>
   
@@ -5044,7 +6286,9 @@
         <li class="md-nav__item">
   <a href="#time-to-live-ttl" class="md-nav__link">
     <span class="md-ellipsis">
-      Time-To-Live (TTL)
+      
+        Time-To-Live (TTL)
+      
     </span>
   </a>
   
@@ -5053,7 +6297,9 @@
         <li class="md-nav__item">
   <a href="#tigergraph" class="md-nav__link">
     <span class="md-ellipsis">
-      TigerGraph
+      
+        TigerGraph
+      
     </span>
   </a>
   
@@ -5062,7 +6308,9 @@
         <li class="md-nav__item">
   <a href="#token-ranges" class="md-nav__link">
     <span class="md-ellipsis">
-      Token Ranges
+      
+        Token Ranges
+      
     </span>
   </a>
   
@@ -5071,7 +6319,9 @@
         <li class="md-nav__item">
   <a href="#tombstones" class="md-nav__link">
     <span class="md-ellipsis">
-      Tombstones
+      
+        Tombstones
+      
     </span>
   </a>
   
@@ -5080,7 +6330,9 @@
         <li class="md-nav__item">
   <a href="#tradeoffs" class="md-nav__link">
     <span class="md-ellipsis">
-      Tradeoffs
+      
+        Tradeoffs
+      
     </span>
   </a>
   
@@ -5089,7 +6341,9 @@
         <li class="md-nav__item">
   <a href="#transformability" class="md-nav__link">
     <span class="md-ellipsis">
-      Transformability
+      
+        Transformability
+      
     </span>
   </a>
   
@@ -5098,7 +6352,9 @@
         <li class="md-nav__item">
   <a href="#triple-store" class="md-nav__link">
     <span class="md-ellipsis">
-      Triple Store
+      
+        Triple Store
+      
     </span>
   </a>
   
@@ -5107,7 +6363,9 @@
         <li class="md-nav__item">
   <a href="#tunable-consistency" class="md-nav__link">
     <span class="md-ellipsis">
-      Tunable Consistency
+      
+        Tunable Consistency
+      
     </span>
   </a>
   
@@ -5116,7 +6374,9 @@
         <li class="md-nav__item">
   <a href="#two-phase-commit-2pc" class="md-nav__link">
     <span class="md-ellipsis">
-      Two-Phase Commit (2PC)
+      
+        Two-Phase Commit (2PC)
+      
     </span>
   </a>
   
@@ -5125,7 +6385,9 @@
         <li class="md-nav__item">
   <a href="#typeswitch" class="md-nav__link">
     <span class="md-ellipsis">
-      Typeswitch
+      
+        Typeswitch
+      
     </span>
   </a>
   
@@ -5134,7 +6396,9 @@
         <li class="md-nav__item">
   <a href="#unstructured-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Unstructured Data
+      
+        Unstructured Data
+      
     </span>
   </a>
   
@@ -5143,7 +6407,9 @@
         <li class="md-nav__item">
   <a href="#usability" class="md-nav__link">
     <span class="md-ellipsis">
-      Usability
+      
+        Usability
+      
     </span>
   </a>
   
@@ -5152,7 +6418,9 @@
         <li class="md-nav__item">
   <a href="#user-stories" class="md-nav__link">
     <span class="md-ellipsis">
-      User Stories
+      
+        User Stories
+      
     </span>
   </a>
   
@@ -5161,7 +6429,9 @@
         <li class="md-nav__item">
   <a href="#utility-tree" class="md-nav__link">
     <span class="md-ellipsis">
-      Utility Tree
+      
+        Utility Tree
+      
     </span>
   </a>
   
@@ -5170,7 +6440,9 @@
         <li class="md-nav__item">
   <a href="#variability" class="md-nav__link">
     <span class="md-ellipsis">
-      Variability
+      
+        Variability
+      
     </span>
   </a>
   
@@ -5179,7 +6451,9 @@
         <li class="md-nav__item">
   <a href="#vector-clocks" class="md-nav__link">
     <span class="md-ellipsis">
-      Vector Clocks
+      
+        Vector Clocks
+      
     </span>
   </a>
   
@@ -5188,7 +6462,9 @@
         <li class="md-nav__item">
   <a href="#vectorized-processing" class="md-nav__link">
     <span class="md-ellipsis">
-      Vectorized Processing
+      
+        Vectorized Processing
+      
     </span>
   </a>
   
@@ -5197,7 +6473,9 @@
         <li class="md-nav__item">
   <a href="#velocity" class="md-nav__link">
     <span class="md-ellipsis">
-      Velocity
+      
+        Velocity
+      
     </span>
   </a>
   
@@ -5206,7 +6484,9 @@
         <li class="md-nav__item">
   <a href="#veracity" class="md-nav__link">
     <span class="md-ellipsis">
-      Veracity
+      
+        Veracity
+      
     </span>
   </a>
   
@@ -5215,7 +6495,9 @@
         <li class="md-nav__item">
   <a href="#vertical-scaling" class="md-nav__link">
     <span class="md-ellipsis">
-      Vertical Scaling
+      
+        Vertical Scaling
+      
     </span>
   </a>
   
@@ -5224,7 +6506,9 @@
         <li class="md-nav__item">
   <a href="#virtual-nodes-vnodes" class="md-nav__link">
     <span class="md-ellipsis">
-      Virtual Nodes (vnodes)
+      
+        Virtual Nodes (vnodes)
+      
     </span>
   </a>
   
@@ -5233,7 +6517,9 @@
         <li class="md-nav__item">
   <a href="#volume" class="md-nav__link">
     <span class="md-ellipsis">
-      Volume
+      
+        Volume
+      
     </span>
   </a>
   
@@ -5242,7 +6528,9 @@
         <li class="md-nav__item">
   <a href="#write-ahead-logging" class="md-nav__link">
     <span class="md-ellipsis">
-      Write-Ahead Logging
+      
+        Write-Ahead Logging
+      
     </span>
   </a>
   
@@ -5251,7 +6539,9 @@
         <li class="md-nav__item">
   <a href="#xml-extensible-markup-language" class="md-nav__link">
     <span class="md-ellipsis">
-      XML (Extensible Markup Language)
+      
+        XML (Extensible Markup Language)
+      
     </span>
   </a>
   
@@ -5260,7 +6550,9 @@
         <li class="md-nav__item">
   <a href="#xml-schema-xsd" class="md-nav__link">
     <span class="md-ellipsis">
-      XML Schema (XSD)
+      
+        XML Schema (XSD)
+      
     </span>
   </a>
   
@@ -5269,7 +6561,9 @@
         <li class="md-nav__item">
   <a href="#xpath" class="md-nav__link">
     <span class="md-ellipsis">
-      XPath
+      
+        XPath
+      
     </span>
   </a>
   
@@ -5278,7 +6572,9 @@
         <li class="md-nav__item">
   <a href="#xquery" class="md-nav__link">
     <span class="md-ellipsis">
-      XQuery
+      
+        XQuery
+      
     </span>
   </a>
   
@@ -5287,7 +6583,9 @@
         <li class="md-nav__item">
   <a href="#xslt-extensible-stylesheet-language-transformations" class="md-nav__link">
     <span class="md-ellipsis">
-      XSLT (Extensible Stylesheet Language Transformations)
+      
+        XSLT (Extensible Stylesheet Language Transformations)
+      
     </span>
   </a>
   
@@ -5303,9 +6601,19 @@
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
+
 
   
   
@@ -6163,10 +7471,13 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
   </body>

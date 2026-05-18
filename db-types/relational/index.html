@@ -12,7 +12,7 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccreary.github.io/atam/db-types/relational/">
+        <link rel="canonical" href="https://dmccreary.github.io/right-database/db-types/relational/">
       
       
         <link rel="prev" href="../">
@@ -21,19 +21,22 @@
         <link rel="next" href="../analytical/">
       
       
+        
+      
+      
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>Relational - Architecture Tradeoff Analysis Methodology</title>
+        <title>Relational - Selecting the Right Database</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -56,7 +59,6 @@
     
       
 
-    
     
     
   </head>
@@ -92,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Architecture Tradeoff Analysis Methodology" class="md-header__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
+    <a href="../.." title="Selecting the Right Database" class="md-header__button md-logo" aria-label="Selecting the Right Database" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,7 +108,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Architecture Tradeoff Analysis Methodology
+            Selecting the Right Database
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -124,11 +126,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -160,13 +164,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
-        <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/dmccreary/right-database" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -199,20 +204,20 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Architecture Tradeoff Analysis Methodology" class="md-nav__button md-logo" aria-label="Architecture Tradeoff Analysis Methodology" data-md-component="logo">
+    <a href="../.." title="Selecting the Right Database" class="md-nav__button md-logo" aria-label="Selecting the Right Database" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Architecture Tradeoff Analysis Methodology
+    Selecting the Right Database
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/dmccreary/right-database" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -232,9 +237,16 @@
       <a href="../.." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -252,9 +264,16 @@
       <a href="../../about/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     About
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -269,12 +288,132 @@
   
   
     <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../chapters/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../atam-process/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     ATAM Process
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -292,9 +431,16 @@
       <a href="../../atam-db-process/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     ATAM DB Selection Process
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -328,6 +474,7 @@
     
     
     
+    
       
         
         
@@ -338,12 +485,20 @@
         
   
   
+  
     <a href="../../concepts/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Foundational Concepts
+  
+
+    
   </span>
+  
   
 
       
@@ -373,27 +528,18 @@
         
       
         
-          
+      
+        
+      
         
       
         
       
         
-          
-        
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -403,32 +549,42 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
-          
           
           <div class="md-nav__link md-nav__container">
             <a href="../" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     Database Types
+  
+
+    
   </span>
+  
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
-            Database Types
+            
+  
+    Database Types
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -453,9 +609,16 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
+  
   <span class="md-ellipsis">
+    
+  
     Relational
+  
+
+    
   </span>
+  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -464,9 +627,16 @@
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Relational
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -489,7 +659,9 @@
         <li class="md-nav__item">
   <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      
+        Overview
+      
     </span>
   </a>
   
@@ -498,7 +670,9 @@
         <li class="md-nav__item">
   <a href="#background" class="md-nav__link">
     <span class="md-ellipsis">
-      Background
+      
+        Background
+      
     </span>
   </a>
   
@@ -508,7 +682,9 @@
           <li class="md-nav__item">
   <a href="#mathematical-foundations-and-early-development" class="md-nav__link">
     <span class="md-ellipsis">
-      Mathematical Foundations and Early Development
+      
+        Mathematical Foundations and Early Development
+      
     </span>
   </a>
   
@@ -517,7 +693,9 @@
           <li class="md-nav__item">
   <a href="#commercial-development-and-standardization" class="md-nav__link">
     <span class="md-ellipsis">
-      Commercial Development and Standardization
+      
+        Commercial Development and Standardization
+      
     </span>
   </a>
   
@@ -526,7 +704,9 @@
           <li class="md-nav__item">
   <a href="#the-rise-of-open-source-databases" class="md-nav__link">
     <span class="md-ellipsis">
-      The Rise of Open Source Databases
+      
+        The Rise of Open Source Databases
+      
     </span>
   </a>
   
@@ -540,7 +720,9 @@
         <li class="md-nav__item">
   <a href="#the-relational-data-model" class="md-nav__link">
     <span class="md-ellipsis">
-      The Relational Data Model
+      
+        The Relational Data Model
+      
     </span>
   </a>
   
@@ -550,7 +732,9 @@
           <li class="md-nav__item">
   <a href="#fundamental-concepts" class="md-nav__link">
     <span class="md-ellipsis">
-      Fundamental Concepts
+      
+        Fundamental Concepts
+      
     </span>
   </a>
   
@@ -559,7 +743,9 @@
           <li class="md-nav__item">
   <a href="#schema-design-and-normalization" class="md-nav__link">
     <span class="md-ellipsis">
-      Schema Design and Normalization
+      
+        Schema Design and Normalization
+      
     </span>
   </a>
   
@@ -568,7 +754,9 @@
           <li class="md-nav__item">
   <a href="#relationships-and-constraints" class="md-nav__link">
     <span class="md-ellipsis">
-      Relationships and Constraints
+      
+        Relationships and Constraints
+      
     </span>
   </a>
   
@@ -582,7 +770,9 @@
         <li class="md-nav__item">
   <a href="#the-sql-query-language" class="md-nav__link">
     <span class="md-ellipsis">
-      The SQL Query Language
+      
+        The SQL Query Language
+      
     </span>
   </a>
   
@@ -592,7 +782,9 @@
           <li class="md-nav__item">
   <a href="#sql-fundamentals" class="md-nav__link">
     <span class="md-ellipsis">
-      SQL Fundamentals
+      
+        SQL Fundamentals
+      
     </span>
   </a>
   
@@ -601,7 +793,9 @@
           <li class="md-nav__item">
   <a href="#advanced-sql-features" class="md-nav__link">
     <span class="md-ellipsis">
-      Advanced SQL Features
+      
+        Advanced SQL Features
+      
     </span>
   </a>
   
@@ -610,7 +804,9 @@
           <li class="md-nav__item">
   <a href="#query-optimization" class="md-nav__link">
     <span class="md-ellipsis">
-      Query Optimization
+      
+        Query Optimization
+      
     </span>
   </a>
   
@@ -624,7 +820,9 @@
         <li class="md-nav__item">
   <a href="#key-strengths-of-the-relational-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Strengths of the Relational Model
+      
+        Key Strengths of the Relational Model
+      
     </span>
   </a>
   
@@ -634,7 +832,9 @@
           <li class="md-nav__item">
   <a href="#acid-compliance-and-data-integrity" class="md-nav__link">
     <span class="md-ellipsis">
-      ACID Compliance and Data Integrity
+      
+        ACID Compliance and Data Integrity
+      
     </span>
   </a>
   
@@ -643,7 +843,9 @@
           <li class="md-nav__item">
   <a href="#mature-ecosystem-and-tooling" class="md-nav__link">
     <span class="md-ellipsis">
-      Mature Ecosystem and Tooling
+      
+        Mature Ecosystem and Tooling
+      
     </span>
   </a>
   
@@ -652,7 +854,9 @@
           <li class="md-nav__item">
   <a href="#query-flexibility-and-ad-hoc-analysis" class="md-nav__link">
     <span class="md-ellipsis">
-      Query Flexibility and Ad-Hoc Analysis
+      
+        Query Flexibility and Ad-Hoc Analysis
+      
     </span>
   </a>
   
@@ -661,7 +865,9 @@
           <li class="md-nav__item">
   <a href="#standards-compliance-and-portability" class="md-nav__link">
     <span class="md-ellipsis">
-      Standards Compliance and Portability
+      
+        Standards Compliance and Portability
+      
     </span>
   </a>
   
@@ -675,7 +881,9 @@
         <li class="md-nav__item">
   <a href="#key-weaknesses-of-the-relational-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Weaknesses of the Relational Model
+      
+        Key Weaknesses of the Relational Model
+      
     </span>
   </a>
   
@@ -685,7 +893,9 @@
           <li class="md-nav__item">
   <a href="#scalability-limitations" class="md-nav__link">
     <span class="md-ellipsis">
-      Scalability Limitations
+      
+        Scalability Limitations
+      
     </span>
   </a>
   
@@ -694,7 +904,9 @@
           <li class="md-nav__item">
   <a href="#schema-rigidity" class="md-nav__link">
     <span class="md-ellipsis">
-      Schema Rigidity
+      
+        Schema Rigidity
+      
     </span>
   </a>
   
@@ -703,7 +915,9 @@
           <li class="md-nav__item">
   <a href="#performance-characteristics" class="md-nav__link">
     <span class="md-ellipsis">
-      Performance Characteristics
+      
+        Performance Characteristics
+      
     </span>
   </a>
   
@@ -712,7 +926,9 @@
           <li class="md-nav__item">
   <a href="#cost-considerations" class="md-nav__link">
     <span class="md-ellipsis">
-      Cost Considerations
+      
+        Cost Considerations
+      
     </span>
   </a>
   
@@ -726,7 +942,9 @@
         <li class="md-nav__item">
   <a href="#key-relational-benchmarks" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Relational Benchmarks
+      
+        Key Relational Benchmarks
+      
     </span>
   </a>
   
@@ -736,7 +954,9 @@
           <li class="md-nav__item">
   <a href="#transaction-processing-benchmarks" class="md-nav__link">
     <span class="md-ellipsis">
-      Transaction Processing Benchmarks
+      
+        Transaction Processing Benchmarks
+      
     </span>
   </a>
   
@@ -750,7 +970,9 @@
         <li class="md-nav__item">
   <a href="#relationships-10-foreign-key-relationships" class="md-nav__link">
     <span class="md-ellipsis">
-      Relationships: 10 Foreign Key Relationships
+      
+        Relationships: 10 Foreign Key Relationships
+      
     </span>
   </a>
   
@@ -760,7 +982,9 @@
           <li class="md-nav__item">
   <a href="#analytical-processing-benchmarks" class="md-nav__link">
     <span class="md-ellipsis">
-      Analytical Processing Benchmarks
+      
+        Analytical Processing Benchmarks
+      
     </span>
   </a>
   
@@ -769,7 +993,9 @@
           <li class="md-nav__item">
   <a href="#performance-metrics-and-considerations" class="md-nav__link">
     <span class="md-ellipsis">
-      Performance Metrics and Considerations
+      
+        Performance Metrics and Considerations
+      
     </span>
   </a>
   
@@ -783,7 +1009,9 @@
         <li class="md-nav__item">
   <a href="#important-use-cases" class="md-nav__link">
     <span class="md-ellipsis">
-      Important Use Cases
+      
+        Important Use Cases
+      
     </span>
   </a>
   
@@ -793,7 +1021,9 @@
           <li class="md-nav__item">
   <a href="#financial-services-and-banking" class="md-nav__link">
     <span class="md-ellipsis">
-      Financial Services and Banking
+      
+        Financial Services and Banking
+      
     </span>
   </a>
   
@@ -802,7 +1032,9 @@
           <li class="md-nav__item">
   <a href="#enterprise-resource-planning-erp" class="md-nav__link">
     <span class="md-ellipsis">
-      Enterprise Resource Planning (ERP)
+      
+        Enterprise Resource Planning (ERP)
+      
     </span>
   </a>
   
@@ -811,7 +1043,9 @@
           <li class="md-nav__item">
   <a href="#healthcare-and-life-sciences" class="md-nav__link">
     <span class="md-ellipsis">
-      Healthcare and Life Sciences
+      
+        Healthcare and Life Sciences
+      
     </span>
   </a>
   
@@ -820,7 +1054,9 @@
           <li class="md-nav__item">
   <a href="#e-commerce-and-retail" class="md-nav__link">
     <span class="md-ellipsis">
-      E-commerce and Retail
+      
+        E-commerce and Retail
+      
     </span>
   </a>
   
@@ -829,7 +1065,9 @@
           <li class="md-nav__item">
   <a href="#government-and-public-sector" class="md-nav__link">
     <span class="md-ellipsis">
-      Government and Public Sector
+      
+        Government and Public Sector
+      
     </span>
   </a>
   
@@ -843,7 +1081,9 @@
         <li class="md-nav__item">
   <a href="#when-to-avoid-using-rdbms-systems" class="md-nav__link">
     <span class="md-ellipsis">
-      When to Avoid Using RDBMS Systems
+      
+        When to Avoid Using RDBMS Systems
+      
     </span>
   </a>
   
@@ -853,7 +1093,9 @@
           <li class="md-nav__item">
   <a href="#high-volume-high-velocity-data-ingestion" class="md-nav__link">
     <span class="md-ellipsis">
-      High-Volume, High-Velocity Data Ingestion
+      
+        High-Volume, High-Velocity Data Ingestion
+      
     </span>
   </a>
   
@@ -862,7 +1104,9 @@
           <li class="md-nav__item">
   <a href="#highly-variable-or-unstructured-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Highly Variable or Unstructured Data
+      
+        Highly Variable or Unstructured Data
+      
     </span>
   </a>
   
@@ -871,7 +1115,9 @@
           <li class="md-nav__item">
   <a href="#geographic-distribution-and-edge-computing" class="md-nav__link">
     <span class="md-ellipsis">
-      Geographic Distribution and Edge Computing
+      
+        Geographic Distribution and Edge Computing
+      
     </span>
   </a>
   
@@ -880,7 +1126,9 @@
           <li class="md-nav__item">
   <a href="#rapid-development-and-prototyping" class="md-nav__link">
     <span class="md-ellipsis">
-      Rapid Development and Prototyping
+      
+        Rapid Development and Prototyping
+      
     </span>
   </a>
   
@@ -889,7 +1137,9 @@
           <li class="md-nav__item">
   <a href="#specific-performance-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      Specific Performance Requirements
+      
+        Specific Performance Requirements
+      
     </span>
   </a>
   
@@ -903,7 +1153,9 @@
         <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
-      References
+      
+        References
+      
     </span>
   </a>
   
@@ -936,6 +1188,7 @@
     
     
     
+    
       
         
         
@@ -946,12 +1199,20 @@
         
   
   
+  
     <a href="../analytical/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Analytical
+  
+
+    
   </span>
+  
   
 
       
@@ -976,9 +1237,16 @@
       <a href="../key-value/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Key Value
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -997,9 +1265,16 @@
       <a href="../column-family/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Column Family
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1018,9 +1293,16 @@
       <a href="../graph/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Graph
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1039,9 +1321,16 @@
       <a href="../document/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Document
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1095,6 +1384,7 @@
     
     
     
+    
       
         
         
@@ -1103,14 +1393,22 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
   
   
     <a href="../../case-studies/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Case Studies
+  
+
+    
   </span>
+  
   
 
       
@@ -1138,9 +1436,8 @@
         
       
         
-          
-        
       
+    
     
     
     
@@ -1152,14 +1449,22 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
+  
   
   
     <a href="../../stories/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Stories
+  
+
+    
   </span>
+  
   
 
       
@@ -1193,6 +1498,7 @@
     
     
     
+    
       
         
         
@@ -1203,12 +1509,86 @@
         
   
   
+  
     <a href="../../prompts/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Prompts
+  
+
+    
   </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
   
 
       
@@ -1232,9 +1612,16 @@
       <a href="../../bias/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Bias
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1252,9 +1639,16 @@
       <a href="../../slides/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Presentations
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1272,9 +1666,16 @@
       <a href="../../glossary/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Glossary
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1292,9 +1693,16 @@
       <a href="../../license/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     License
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1312,9 +1720,16 @@
       <a href="../../how-we-built-this-site/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     How We Built This Site
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1332,9 +1747,16 @@
       <a href="../../contact/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Contact
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1371,7 +1793,9 @@
         <li class="md-nav__item">
   <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      
+        Overview
+      
     </span>
   </a>
   
@@ -1380,7 +1804,9 @@
         <li class="md-nav__item">
   <a href="#background" class="md-nav__link">
     <span class="md-ellipsis">
-      Background
+      
+        Background
+      
     </span>
   </a>
   
@@ -1390,7 +1816,9 @@
           <li class="md-nav__item">
   <a href="#mathematical-foundations-and-early-development" class="md-nav__link">
     <span class="md-ellipsis">
-      Mathematical Foundations and Early Development
+      
+        Mathematical Foundations and Early Development
+      
     </span>
   </a>
   
@@ -1399,7 +1827,9 @@
           <li class="md-nav__item">
   <a href="#commercial-development-and-standardization" class="md-nav__link">
     <span class="md-ellipsis">
-      Commercial Development and Standardization
+      
+        Commercial Development and Standardization
+      
     </span>
   </a>
   
@@ -1408,7 +1838,9 @@
           <li class="md-nav__item">
   <a href="#the-rise-of-open-source-databases" class="md-nav__link">
     <span class="md-ellipsis">
-      The Rise of Open Source Databases
+      
+        The Rise of Open Source Databases
+      
     </span>
   </a>
   
@@ -1422,7 +1854,9 @@
         <li class="md-nav__item">
   <a href="#the-relational-data-model" class="md-nav__link">
     <span class="md-ellipsis">
-      The Relational Data Model
+      
+        The Relational Data Model
+      
     </span>
   </a>
   
@@ -1432,7 +1866,9 @@
           <li class="md-nav__item">
   <a href="#fundamental-concepts" class="md-nav__link">
     <span class="md-ellipsis">
-      Fundamental Concepts
+      
+        Fundamental Concepts
+      
     </span>
   </a>
   
@@ -1441,7 +1877,9 @@
           <li class="md-nav__item">
   <a href="#schema-design-and-normalization" class="md-nav__link">
     <span class="md-ellipsis">
-      Schema Design and Normalization
+      
+        Schema Design and Normalization
+      
     </span>
   </a>
   
@@ -1450,7 +1888,9 @@
           <li class="md-nav__item">
   <a href="#relationships-and-constraints" class="md-nav__link">
     <span class="md-ellipsis">
-      Relationships and Constraints
+      
+        Relationships and Constraints
+      
     </span>
   </a>
   
@@ -1464,7 +1904,9 @@
         <li class="md-nav__item">
   <a href="#the-sql-query-language" class="md-nav__link">
     <span class="md-ellipsis">
-      The SQL Query Language
+      
+        The SQL Query Language
+      
     </span>
   </a>
   
@@ -1474,7 +1916,9 @@
           <li class="md-nav__item">
   <a href="#sql-fundamentals" class="md-nav__link">
     <span class="md-ellipsis">
-      SQL Fundamentals
+      
+        SQL Fundamentals
+      
     </span>
   </a>
   
@@ -1483,7 +1927,9 @@
           <li class="md-nav__item">
   <a href="#advanced-sql-features" class="md-nav__link">
     <span class="md-ellipsis">
-      Advanced SQL Features
+      
+        Advanced SQL Features
+      
     </span>
   </a>
   
@@ -1492,7 +1938,9 @@
           <li class="md-nav__item">
   <a href="#query-optimization" class="md-nav__link">
     <span class="md-ellipsis">
-      Query Optimization
+      
+        Query Optimization
+      
     </span>
   </a>
   
@@ -1506,7 +1954,9 @@
         <li class="md-nav__item">
   <a href="#key-strengths-of-the-relational-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Strengths of the Relational Model
+      
+        Key Strengths of the Relational Model
+      
     </span>
   </a>
   
@@ -1516,7 +1966,9 @@
           <li class="md-nav__item">
   <a href="#acid-compliance-and-data-integrity" class="md-nav__link">
     <span class="md-ellipsis">
-      ACID Compliance and Data Integrity
+      
+        ACID Compliance and Data Integrity
+      
     </span>
   </a>
   
@@ -1525,7 +1977,9 @@
           <li class="md-nav__item">
   <a href="#mature-ecosystem-and-tooling" class="md-nav__link">
     <span class="md-ellipsis">
-      Mature Ecosystem and Tooling
+      
+        Mature Ecosystem and Tooling
+      
     </span>
   </a>
   
@@ -1534,7 +1988,9 @@
           <li class="md-nav__item">
   <a href="#query-flexibility-and-ad-hoc-analysis" class="md-nav__link">
     <span class="md-ellipsis">
-      Query Flexibility and Ad-Hoc Analysis
+      
+        Query Flexibility and Ad-Hoc Analysis
+      
     </span>
   </a>
   
@@ -1543,7 +1999,9 @@
           <li class="md-nav__item">
   <a href="#standards-compliance-and-portability" class="md-nav__link">
     <span class="md-ellipsis">
-      Standards Compliance and Portability
+      
+        Standards Compliance and Portability
+      
     </span>
   </a>
   
@@ -1557,7 +2015,9 @@
         <li class="md-nav__item">
   <a href="#key-weaknesses-of-the-relational-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Weaknesses of the Relational Model
+      
+        Key Weaknesses of the Relational Model
+      
     </span>
   </a>
   
@@ -1567,7 +2027,9 @@
           <li class="md-nav__item">
   <a href="#scalability-limitations" class="md-nav__link">
     <span class="md-ellipsis">
-      Scalability Limitations
+      
+        Scalability Limitations
+      
     </span>
   </a>
   
@@ -1576,7 +2038,9 @@
           <li class="md-nav__item">
   <a href="#schema-rigidity" class="md-nav__link">
     <span class="md-ellipsis">
-      Schema Rigidity
+      
+        Schema Rigidity
+      
     </span>
   </a>
   
@@ -1585,7 +2049,9 @@
           <li class="md-nav__item">
   <a href="#performance-characteristics" class="md-nav__link">
     <span class="md-ellipsis">
-      Performance Characteristics
+      
+        Performance Characteristics
+      
     </span>
   </a>
   
@@ -1594,7 +2060,9 @@
           <li class="md-nav__item">
   <a href="#cost-considerations" class="md-nav__link">
     <span class="md-ellipsis">
-      Cost Considerations
+      
+        Cost Considerations
+      
     </span>
   </a>
   
@@ -1608,7 +2076,9 @@
         <li class="md-nav__item">
   <a href="#key-relational-benchmarks" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Relational Benchmarks
+      
+        Key Relational Benchmarks
+      
     </span>
   </a>
   
@@ -1618,7 +2088,9 @@
           <li class="md-nav__item">
   <a href="#transaction-processing-benchmarks" class="md-nav__link">
     <span class="md-ellipsis">
-      Transaction Processing Benchmarks
+      
+        Transaction Processing Benchmarks
+      
     </span>
   </a>
   
@@ -1632,7 +2104,9 @@
         <li class="md-nav__item">
   <a href="#relationships-10-foreign-key-relationships" class="md-nav__link">
     <span class="md-ellipsis">
-      Relationships: 10 Foreign Key Relationships
+      
+        Relationships: 10 Foreign Key Relationships
+      
     </span>
   </a>
   
@@ -1642,7 +2116,9 @@
           <li class="md-nav__item">
   <a href="#analytical-processing-benchmarks" class="md-nav__link">
     <span class="md-ellipsis">
-      Analytical Processing Benchmarks
+      
+        Analytical Processing Benchmarks
+      
     </span>
   </a>
   
@@ -1651,7 +2127,9 @@
           <li class="md-nav__item">
   <a href="#performance-metrics-and-considerations" class="md-nav__link">
     <span class="md-ellipsis">
-      Performance Metrics and Considerations
+      
+        Performance Metrics and Considerations
+      
     </span>
   </a>
   
@@ -1665,7 +2143,9 @@
         <li class="md-nav__item">
   <a href="#important-use-cases" class="md-nav__link">
     <span class="md-ellipsis">
-      Important Use Cases
+      
+        Important Use Cases
+      
     </span>
   </a>
   
@@ -1675,7 +2155,9 @@
           <li class="md-nav__item">
   <a href="#financial-services-and-banking" class="md-nav__link">
     <span class="md-ellipsis">
-      Financial Services and Banking
+      
+        Financial Services and Banking
+      
     </span>
   </a>
   
@@ -1684,7 +2166,9 @@
           <li class="md-nav__item">
   <a href="#enterprise-resource-planning-erp" class="md-nav__link">
     <span class="md-ellipsis">
-      Enterprise Resource Planning (ERP)
+      
+        Enterprise Resource Planning (ERP)
+      
     </span>
   </a>
   
@@ -1693,7 +2177,9 @@
           <li class="md-nav__item">
   <a href="#healthcare-and-life-sciences" class="md-nav__link">
     <span class="md-ellipsis">
-      Healthcare and Life Sciences
+      
+        Healthcare and Life Sciences
+      
     </span>
   </a>
   
@@ -1702,7 +2188,9 @@
           <li class="md-nav__item">
   <a href="#e-commerce-and-retail" class="md-nav__link">
     <span class="md-ellipsis">
-      E-commerce and Retail
+      
+        E-commerce and Retail
+      
     </span>
   </a>
   
@@ -1711,7 +2199,9 @@
           <li class="md-nav__item">
   <a href="#government-and-public-sector" class="md-nav__link">
     <span class="md-ellipsis">
-      Government and Public Sector
+      
+        Government and Public Sector
+      
     </span>
   </a>
   
@@ -1725,7 +2215,9 @@
         <li class="md-nav__item">
   <a href="#when-to-avoid-using-rdbms-systems" class="md-nav__link">
     <span class="md-ellipsis">
-      When to Avoid Using RDBMS Systems
+      
+        When to Avoid Using RDBMS Systems
+      
     </span>
   </a>
   
@@ -1735,7 +2227,9 @@
           <li class="md-nav__item">
   <a href="#high-volume-high-velocity-data-ingestion" class="md-nav__link">
     <span class="md-ellipsis">
-      High-Volume, High-Velocity Data Ingestion
+      
+        High-Volume, High-Velocity Data Ingestion
+      
     </span>
   </a>
   
@@ -1744,7 +2238,9 @@
           <li class="md-nav__item">
   <a href="#highly-variable-or-unstructured-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Highly Variable or Unstructured Data
+      
+        Highly Variable or Unstructured Data
+      
     </span>
   </a>
   
@@ -1753,7 +2249,9 @@
           <li class="md-nav__item">
   <a href="#geographic-distribution-and-edge-computing" class="md-nav__link">
     <span class="md-ellipsis">
-      Geographic Distribution and Edge Computing
+      
+        Geographic Distribution and Edge Computing
+      
     </span>
   </a>
   
@@ -1762,7 +2260,9 @@
           <li class="md-nav__item">
   <a href="#rapid-development-and-prototyping" class="md-nav__link">
     <span class="md-ellipsis">
-      Rapid Development and Prototyping
+      
+        Rapid Development and Prototyping
+      
     </span>
   </a>
   
@@ -1771,7 +2271,9 @@
           <li class="md-nav__item">
   <a href="#specific-performance-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      Specific Performance Requirements
+      
+        Specific Performance Requirements
+      
     </span>
   </a>
   
@@ -1785,7 +2287,9 @@
         <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
-      References
+      
+        References
+      
     </span>
   </a>
   
@@ -1801,9 +2305,59 @@
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Database Types
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
+
 
   
   
@@ -2239,10 +2793,13 @@ Include level 2 markdown sections for:
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
   </body>
