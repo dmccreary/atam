@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="DESCRIPTION All content licensed Creative Commons ShareAlike Attribution Noncommercial">
+        <meta name="description" content="Introduces the Carnegie Mellon SEI Architecture Tradeoff Analysis Method (ATAM) as the analytical framework for database selection decisions throughout this course.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -29,7 +29,7 @@
     
     
       
-        <title>1. The ATAM Method - Selecting the Right Database</title>
+        <title>Chapter 1 - The ATAM Method - Selecting the Right Database</title>
       
     
     
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1. The ATAM Method
+              Chapter 1 - The ATAM Method
             
           </span>
         </div>
@@ -499,6 +499,255 @@
     <span class="md-ellipsis">
       
         Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-database-selection-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Database Selection Fails
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-tradeoff-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Tradeoff Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atam-stakeholder-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATAM Stakeholder Roles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-atam-evaluation-team" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The ATAM Evaluation Team
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#business-drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Drivers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-attributes-and-their-refinements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Attributes and Their Refinements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-utility-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Utility Tree
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Utility Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-interactive-utility-tree-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Interactive Utility Tree Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-attribute-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Attribute Scenarios
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utility-tree-prioritization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utility Tree Prioritization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architectural-approaches-and-software-architecture-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architectural Approaches and Software Architecture Views
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architectural-drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architectural Drivers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensitivity-points-and-tradeoff-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensitivity Points and Tradeoff Points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architectural-risks-non-risks-and-risk-themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architectural Risks, Non-Risks, and Risk Themes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-atam-nine-step-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The ATAM Nine-Step Process
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The ATAM Nine-Step Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-atam-nine-step-process-navigator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: ATAM Nine-Step Process Navigator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atam-applied-to-database-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATAM Applied to Database Selection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ATAM Applied to Database Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-atam-database-selection-process-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: ATAM Database Selection Process Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atam-output-artifacts-and-architectural-decision-records" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATAM Output Artifacts and Architectural Decision Records
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-the-atam-analytical-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Putting It All Together: The ATAM Analytical Chain
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
       
     </span>
   </a>
@@ -1602,6 +1851,255 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#why-database-selection-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Database Selection Fails
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-tradeoff-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Tradeoff Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atam-stakeholder-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATAM Stakeholder Roles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-atam-evaluation-team" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The ATAM Evaluation Team
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#business-drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Drivers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-attributes-and-their-refinements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Attributes and Their Refinements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-utility-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Utility Tree
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Utility Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-interactive-utility-tree-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Interactive Utility Tree Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-attribute-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Attribute Scenarios
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utility-tree-prioritization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utility Tree Prioritization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architectural-approaches-and-software-architecture-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architectural Approaches and Software Architecture Views
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architectural-drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architectural Drivers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensitivity-points-and-tradeoff-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensitivity Points and Tradeoff Points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architectural-risks-non-risks-and-risk-themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architectural Risks, Non-Risks, and Risk Themes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-atam-nine-step-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The ATAM Nine-Step Process
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The ATAM Nine-Step Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-atam-nine-step-process-navigator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: ATAM Nine-Step Process Navigator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atam-applied-to-database-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATAM Applied to Database Selection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ATAM Applied to Database Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-atam-database-selection-process-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: ATAM Database Selection Process Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atam-output-artifacts-and-architectural-decision-records" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ATAM Output Artifacts and Architectural Decision Records
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-the-atam-analytical-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Putting It All Together: The ATAM Analytical Chain
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1702,13 +2200,666 @@
 <h2 id="prerequisites">Prerequisites</h2>
 <p>This chapter assumes only the prerequisites listed in the <a href="../../course-description/">course description</a>.</p>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<h2 id="why-database-selection-fails">Why Database Selection Fails</h2>
+<p>The most expensive architectural mistakes are often the quietest. A team evaluating databases rarely sits down and decides to pick the wrong one — instead, they pick the familiar one, the one that worked on the last project, the one a respected engineer advocated for at a conference, or the one whose marketing material aligned neatly with their intuitions. Three years later, the system is in production, data is locked in, and engineers spend more time working around the database than working with it.</p>
+<p>The root cause is almost never ignorance of the database's features. It is the absence of a structured method for connecting architectural requirements to architectural decisions. Without such a method, teams optimize for what they can measure easily (developer familiarity, query syntax, benchmark numbers) rather than for what actually drives system success (consistency guarantees under failure, replication topologies, scalability limits, operational complexity at scale).</p>
+<p>This course teaches a disciplined alternative: the <strong>Architecture Tradeoff Analysis Method (ATAM)</strong>, developed at the Carnegie Mellon University Software Engineering Institute. ATAM gives teams a shared vocabulary, a repeatable process, and a set of artifacts that make architectural tradeoffs explicit, visible, and defensible. Applied to database selection, it transforms what is usually a partially-informed debate into a structured decision with documented rationale.</p>
+<p>Every chapter in this book applies ATAM concepts. This chapter builds the foundation.</p>
+<h2 id="architecture-tradeoff-analysis">Architecture Tradeoff Analysis</h2>
+<p><strong>Architecture Tradeoff Analysis</strong> (also called ATAM) is a structured evaluation method that helps teams assess how well a proposed architecture satisfies competing quality requirements. It was developed by researchers at the CMU Software Engineering Institute (SEI) in the late 1990s, with the seminal description published by Kazman, Klein, and Clements in 2000.</p>
+<p>The central insight of ATAM is that architectural decisions rarely optimize a single quality attribute in isolation. A database that maximizes write throughput typically relaxes consistency guarantees. A system designed for five-nines availability often requires operational complexity that strains small teams. A schema optimized for rich ad-hoc queries is rarely the same schema that handles million-records-per-second ingestion. Every architectural choice is, at its core, a negotiated tradeoff — and ATAM is the method for making those negotiations explicit.</p>
+<p>ATAM is not a scoring system that produces a "best" answer. It is a structured conversation that surfaces the right questions, documents the tradeoffs inherent in candidate architectures, identifies where architectural risks concentrate, and produces artifacts that justify the final decision. Applied rigorously, it replaces "we chose PostgreSQL because it's reliable" with a documented utility tree, a prioritized scenario list, a tradeoff analysis, and an architectural decision record.</p>
+<h2 id="atam-stakeholder-roles">ATAM Stakeholder Roles</h2>
+<p>Before any analysis can happen, ATAM requires that the right people are in the room. Architectural decisions affect different stakeholders differently, and surfacing those differences is one of ATAM's core functions. ATAM defines three broad <strong>stakeholder</strong> categories:</p>
+<p><strong>Project decision makers</strong> are the people with authority to commit resources and make binding architectural choices. In a database selection context, this typically includes senior engineering leadership, product managers, and the system architects who will own the decision. They define the business drivers that constrain the design space.</p>
+<p><strong>Architects and developers</strong> are the technical practitioners who understand the proposed architecture's implementation details. They present the architectural approaches under consideration, identify where quality attribute tradeoffs emerge, and respond to scenario-based challenges during the analysis phase.</p>
+<p><strong>Users and operators</strong> represent the people who will live with the architecture in production. Operators understand failure modes, operational complexity, and maintenance burden — perspectives that are systematically underweighted when architecture decisions are driven solely by developer convenience.</p>
+<p>The following table summarizes the primary stakeholder types and their contributions to the ATAM process:</p>
+<table>
+<thead>
+<tr>
+<th>Stakeholder Type</th>
+<th>Primary Contribution</th>
+<th>Risk of Exclusion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project decision makers</td>
+<td>Business drivers, priority weighting</td>
+<td>Architectural decisions misaligned with organizational goals</td>
+</tr>
+<tr>
+<td>Architects / senior engineers</td>
+<td>Architectural approach presentation, sensitivity point identification</td>
+<td>Incomplete tradeoff analysis</td>
+</tr>
+<tr>
+<td>Operations / SRE</td>
+<td>Failure mode scenarios, operational complexity assessment</td>
+<td>Underestimated operational risk</td>
+</tr>
+<tr>
+<td>End users / consumers</td>
+<td>Response measure requirements ("how fast is fast enough?")</td>
+<td>Scenarios that pass on paper but fail in practice</td>
+</tr>
+<tr>
+<td>Security / compliance</td>
+<td>Regulatory constraints, threat model scenarios</td>
+<td>Compliance violations discovered post-deployment</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-atam-evaluation-team">The ATAM Evaluation Team</h2>
+<p>The <strong>ATAM Evaluation Team</strong> is a distinct group from the project stakeholders described above. It is the team that <em>conducts</em> the analysis, as opposed to the stakeholders who <em>participate</em> in it. This separation is intentional: the evaluation team acts as a neutral analytical body that helps elicit scenarios, challenges architectural assumptions, and documents findings without having a stake in any particular outcome.</p>
+<p>In formal SEI-style ATAM engagements, the evaluation team consists of a trained facilitator, a questioner, a recorder, and optionally domain experts. In the more pragmatic applications common in industry, the evaluation team is often a small group of architects who are respected but not directly responsible for the decision being made — a lightweight separation that preserves the analytical independence the method requires.</p>
+<p>The key principle is that effective tradeoff analysis requires someone asking uncomfortable questions. The ATAM Evaluation Team's job is to be that someone, systematically, using the scenario-based challenge structure the method provides.</p>
+<h2 id="business-drivers">Business Drivers</h2>
+<p>A <strong>business driver</strong> is an organizational goal or constraint that shapes what a system must accomplish before any technical analysis begins. Business drivers translate strategic intent into architectural requirements. They are the reason the system exists, and they determine which quality attributes matter most for this particular project.</p>
+<p>Typical business drivers for a database selection decision include:</p>
+<ul>
+<li><strong>Time to market pressure</strong> — a startup choosing a document database for schema flexibility because the product schema will change weekly during the discovery phase</li>
+<li><strong>Regulatory compliance</strong> — a financial system requiring strong consistency guarantees and full audit trails because regulators mandate it</li>
+<li><strong>Scale requirements</strong> — an IoT platform expecting ten billion events per day that makes write throughput the dominant architectural driver</li>
+<li><strong>Cost constraints</strong> — a cost-conscious team ruling out managed services in favor of self-hosted deployments, which shifts the operational complexity tradeoff</li>
+<li><strong>Team expertise</strong> — an organization with deep PostgreSQL expertise treating migration risk as a business driver, adding a premium to any alternative that requires retraining</li>
+</ul>
+<p>Business drivers are not the same as quality attributes. "We need high availability" is a quality attribute. "We operate a healthcare platform where downtime results in regulatory fines and patient harm" is the business driver that makes high availability critical. The distinction matters because ATAM connects quality attribute prioritization directly to business drivers — if a team cannot articulate why a quality attribute matters in business terms, they cannot reliably prioritize it against competing attributes.</p>
+<h2 id="quality-attributes-and-their-refinements">Quality Attributes and Their Refinements</h2>
+<p><strong>Quality attributes</strong> are the non-functional characteristics by which architectural fitness is measured. In software systems, they are frequently called "ilities" — availability, scalability, durability, maintainability, security, and so on. In database selection, quality attributes define the dimensions along which candidate databases are evaluated.</p>
+<p>The image below shows a quality tree — a visual representation of how quality attributes are organized hierarchically for a database selection decision:</p>
+<p><img alt="Quality tree showing database quality attributes with H/H priority ratings" src="../../img/quality-tree.png" /></p>
+<p>In ATAM, quality attributes are not treated as flat checklist items. Each quality attribute is broken down into one or more <strong>quality attribute refinements</strong> — more specific sub-characteristics that make the attribute concrete enough to evaluate. This process of refinement is what allows ATAM to move from vague aspirations ("we need good performance") to specific, measurable scenarios.</p>
+<p>For database selection, a typical set of quality attributes and their refinements looks like this:</p>
+<table>
+<thead>
+<tr>
+<th>Quality Attribute</th>
+<th>Example Refinements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Performance</td>
+<td>Write throughput under sustained load; read latency at p99; query execution time for complex joins</td>
+</tr>
+<tr>
+<td>Availability</td>
+<td>Uptime SLA (99.9% vs 99.999%); failover time; behavior during partial network failure</td>
+</tr>
+<tr>
+<td>Consistency</td>
+<td>Isolation level guarantees; behavior during concurrent writes; read-after-write semantics</td>
+</tr>
+<tr>
+<td>Scalability</td>
+<td>Horizontal scale-out behavior; sharding strategy; maximum data volume before performance degrades</td>
+</tr>
+<tr>
+<td>Operability</td>
+<td>Deployment complexity; monitoring and observability; backup and restore procedures</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>Authentication mechanisms; encryption at rest and in transit; audit logging capabilities</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>Quality Attribute Workshop (QAW)</strong> is the structured facilitated session in which stakeholders collaboratively elicit, refine, and prioritize quality attributes. A QAW typically takes two to four hours for a moderately complex system. Participants brainstorm quality attributes from their stakeholder perspective, discuss conflicts between competing attributes, and converge on the set of attributes that will populate the utility tree. The QAW is where implicit architectural priorities become explicit for the first time.</p>
+<h2 id="the-utility-tree">The Utility Tree</h2>
+<p>The <strong>utility tree</strong> is the central artifact of ATAM. It is a hierarchical structure that organizes quality attributes, their refinements, and specific quality attribute scenarios into a single visual representation of what the architecture must accomplish. The term "utility" reflects the goal: a good architecture maximizes the utility it delivers across all the quality dimensions that matter to stakeholders.</p>
+<p>The utility tree has three levels:</p>
+<ol>
+<li><strong>Root:</strong> The single node labeled "Utility" — representing overall system goodness</li>
+<li><strong>Quality attribute branches:</strong> One branch per major quality attribute (performance, availability, consistency, etc.)</li>
+<li><strong>Leaf nodes:</strong> Specific, testable quality attribute scenarios — the concrete expressions of what each quality attribute means for this system</li>
+</ol>
+<p>Think of the utility tree as the architectural equivalent of fitting a glove to a hand. Each quality attribute is a dimension of fit — just as each finger must fit individually for the glove to be useful, each quality attribute scenario must be satisfiable for the architecture to succeed. The tree makes these dimensions explicit, so teams can reason about them together rather than each carrying an invisible mental model.</p>
+<p><img alt="The hand-in-glove metaphor: each quality attribute is a dimension of fit, and all must be satisfied" src="../../img/hand-in-glove.png" /></p>
+<p>Before examining the interactive utility tree below, let's define the two key terms that appear on every leaf node.</p>
+<h4 id="diagram-interactive-utility-tree-explorer">Diagram: Interactive Utility Tree Explorer</h4>
+<details markdown="1">
+<summary>Interactive Utility Tree Explorer — click any node to see its scenario details and priority rating</summary>
+Type: interactive-infographic
+**sim-id:** utility-tree-explorer<br/>
+**Library:** vis-network<br/>
+**Status:** Specified
+
+**Learning objective:** Analyzing (Bloom's level 4) — students examine the structure of a complete ATAM utility tree for a database selection scenario, identify how quality attributes decompose into refinements and scenarios, and interpret priority ratings.
+
+**Canvas:** 900 × 560px, responsive to window resize. A vis-network hierarchical layout (direction: UD) is used for the tree. An info panel (300px wide) appears to the right of the tree when a node is selected.
+
+**Node hierarchy and data:**
+
+Root node (id: 0): label "Utility", color "#4a90d9", font size 18, shape "ellipse"
+
+Quality attribute nodes (level 1, color "#f0a500", shape "box"):
+- id: 1, label: "Performance"
+- id: 2, label: "Availability"
+- id: 3, label: "Consistency"
+- id: 4, label: "Scalability"
+- id: 5, label: "Operability"
+
+Refinement nodes (level 2, color "#7db8e8", shape "box"):
+- id: 10, label: "Write Throughput", parent: 1
+- id: 11, label: "Read Latency", parent: 1
+- id: 20, label: "Uptime SLA", parent: 2
+- id: 21, label: "Failover Behavior", parent: 2
+- id: 30, label: "Isolation Guarantees", parent: 3
+- id: 31, label: "Read-After-Write", parent: 3
+- id: 40, label: "Horizontal Scale-Out", parent: 4
+- id: 41, label: "Data Volume Limits", parent: 4
+- id: 50, label: "Operational Complexity", parent: 5
+- id: 51, label: "Observability", parent: 5
+
+Scenario leaf nodes (level 3, color "#e8f4e8", shape "box", border "#4a7c4a"):
+Each leaf node displays a priority badge in the format (Importance, Difficulty): H=High, M=Medium, L=Low.
+
+- id: 100, label: "Write 100K events/sec\n(H,H)", parent: 10
+  info: { scenario: "Under sustained IoT ingestion load of 100,000 events per second, the database sustains write throughput with p99 write latency below 5ms.", stimulus: "Sustained 100K writes/sec for 4 hours", response: "All writes committed", measure: "p99 write latency < 5ms, zero write rejections", priority: "(H,H) — High importance, High difficulty" }
+
+- id: 101, label: "p99 read < 10ms\n(H,M)", parent: 11
+  info: { scenario: "Under normal operational load, 99th percentile read latency for single-key lookups remains below 10ms.", stimulus: "Mixed read workload at 10K QPS", response: "Reads served from primary or replica", measure: "p99 < 10ms", priority: "(H,M)" }
+
+- id: 200, label: "99.99% uptime\n(H,H)", parent: 20
+  info: { scenario: "The database cluster sustains 99.99% monthly availability measured at the application layer.", stimulus: "Normal operational load", response: "Service available", measure: "< 52 min downtime per year", priority: "(H,H)" }
+
+- id: 201, label: "Failover < 30s\n(H,M)", parent: 21
+  info: { scenario: "When the primary node fails, the cluster elects a new leader and resumes writes within 30 seconds.", stimulus: "Primary node becomes unavailable", response: "New primary elected, writes resume", measure: "Write gap < 30 seconds", priority: "(H,M)" }
+
+- id: 300, label: "Serializable reads\n(H,H)", parent: 30
+  info: { scenario: "Financial transactions require serializable isolation to prevent phantom reads in balance calculations.", stimulus: "Concurrent transactions modifying same account", response: "No phantom reads", measure: "Zero anomalous reads under concurrent load", priority: "(H,H)" }
+
+- id: 301, label: "Read-your-writes\n(M,M)", parent: 31
+  info: { scenario: "After a user updates their profile, subsequent reads from any replica return the updated value.", stimulus: "User writes profile update, immediately reads", response: "Updated value returned", measure: "Zero stale reads for the writing session", priority: "(M,M)" }
+
+- id: 400, label: "Scale to 10TB\n(H,M)", parent: 40
+  info: { scenario: "The database horizontally partitions data across nodes as volume grows to 10TB with no schema changes.", stimulus: "Data volume grows from 1TB to 10TB", response: "Query performance maintained", measure: "p99 read latency degrades < 20% vs 1TB baseline", priority: "(H,M)" }
+
+- id: 500, label: "Single-cmd deploy\n(M,H)", parent: 50
+  info: { scenario: "A new database node can be provisioned, configured, and added to the cluster using a single idempotent command.", stimulus: "Operations team adds a new node", response: "Node joins cluster, begins replication", measure: "Provisioning completes in < 10 minutes", priority: "(M,H)" }
+
+**Interactions:**
+- Clicking any leaf node opens the info panel on the right showing: Scenario description, Stimulus, Response, Response Measure, and Priority rating with color-coded badge (H=red, M=yellow, L=green).
+- Clicking a refinement or quality attribute node collapses/expands its children.
+- Hovering any node shows a tooltip with the full label.
+- A "Reset View" button repositions the tree to the default centered view.
+- Color-coded priority badge in each leaf label: (H,H) = red background, (H,M) = orange, (M,M) = yellow, (M,H) = yellow-orange.
+
+**Legend panel (bottom-left):**
+- Gold box: Quality Attribute
+- Light blue box: Quality Attribute Refinement
+- Light green box: Quality Attribute Scenario (leaf)
+- Priority notation: (Importance, Difficulty) — H/M/L
+
+**Responsive behavior:** On window resize, the canvas and info panel reflow to maintain usability at widths from 600px to 1400px.
+</details>
+
+<h2 id="quality-attribute-scenarios">Quality Attribute Scenarios</h2>
+<p>A <strong>quality attribute scenario</strong> is the leaf-node unit of the utility tree. It is a concrete, testable statement of what the architecture must do under specified conditions. ATAM scenarios follow a six-part structure, each element of which constrains how the scenario can be evaluated:</p>
+<ol>
+<li><strong>Source of stimulus</strong> — the entity that triggers the event (a user, an external system, a hardware failure, a load spike)</li>
+<li><strong>Scenario stimulus</strong> — the specific event that occurs (a concurrent write storm, a node failure, a regulatory audit request)</li>
+<li><strong>Artifact</strong> — the part of the system affected (the database primary, a replication lag monitor, a transaction log)</li>
+<li><strong>Environment</strong> — the operational context at the time (peak load, partial network partition, scheduled maintenance window)</li>
+<li><strong>Response</strong> — what the system does in reaction to the stimulus</li>
+<li><strong>Scenario response measure</strong> — the quantitative or binary criterion that determines whether the response is acceptable</li>
+</ol>
+<p>The <strong>scenario stimulus</strong> is the "what happens" of the scenario. The <strong>scenario response measure</strong> is the "how do we know it worked" — the quantitative threshold that distinguishes acceptable from unacceptable behavior. Without a response measure, a scenario is not testable, and untestable scenarios cannot drive architectural decisions.</p>
+<p>Consider a concrete example from a financial transaction system:</p>
+<ul>
+<li><strong>Source:</strong> A batch reconciliation process</li>
+<li><strong>Stimulus:</strong> 50,000 concurrent read-modify-write transactions executing simultaneously</li>
+<li><strong>Artifact:</strong> Account balance records in the primary database</li>
+<li><strong>Environment:</strong> End-of-day peak, system under 80% of maximum rated load</li>
+<li><strong>Response:</strong> All transactions complete with serializable isolation, no phantom reads</li>
+<li><strong>Response measure:</strong> Zero consistency violations detected by post-batch audit; p99 transaction latency below 200ms</li>
+</ul>
+<p>This scenario is actionable because it is specific. A team evaluating PostgreSQL versus CockroachDB versus Cassandra for this scenario can reason about each candidate's isolation guarantees and known latency characteristics. Without the response measure, "handles concurrent writes well" is not evaluable.</p>
+<h2 id="utility-tree-prioritization">Utility Tree Prioritization</h2>
+<p>Not all scenarios are equally important, and not all are equally difficult for the candidate architectures to satisfy. <strong>Utility tree prioritization</strong> assigns each leaf-node scenario a two-dimensional rating that captures both dimensions:</p>
+<ul>
+<li><strong>Importance to stakeholders (H/M/L):</strong> How critical is this scenario to the success of the system? A high importance scenario is one whose failure would be a system-level failure.</li>
+<li><strong>Difficulty to achieve (H/M/L):</strong> How hard is it for the candidate architecture to satisfy this scenario? A high difficulty scenario identifies where architectural skill is required.</li>
+</ul>
+<p>The most architecturally significant scenarios are those rated <strong>(H, H)</strong> — high importance and high difficulty. These are the scenarios that should dominate the analysis, because they are both critical and non-trivially satisfiable. Scenarios rated <strong>(H, M)</strong> and <strong>(M, H)</strong> form the second tier. Low-importance or low-difficulty scenarios are documented but consume less analysis time.</p>
+<p>The prioritization matrix produces a ranked list that guides the rest of the ATAM analysis. Before examining candidate architectures, the evaluation team knows exactly which scenarios will be the most revealing stress tests.</p>
+<h2 id="architectural-approaches-and-software-architecture-views">Architectural Approaches and Software Architecture Views</h2>
+<p>With a prioritized utility tree in hand, the analysis turns to the architectures under consideration. An <strong>architectural approach</strong> is a strategy, pattern, or technology choice that addresses one or more quality attribute scenarios. In database selection, architectural approaches include:</p>
+<ul>
+<li>Choosing a relational database with synchronous replication for strong consistency</li>
+<li>Using a key-value store with eventual consistency for maximum write throughput</li>
+<li>Implementing a leader-follower topology for read scaling with write serialization</li>
+<li>Selecting a graph database for traversal-heavy relationship queries</li>
+<li>Deploying a column-family store for time-series ingest with TTL-based expiration</li>
+</ul>
+<p>Each architectural approach affects multiple quality attributes simultaneously. A single-leader relational topology improves write consistency but creates a write scalability ceiling. A leaderless eventual-consistency store removes that ceiling but introduces consistency complexity that must be handled at the application layer. These are the tradeoffs that ATAM analysis makes visible.</p>
+<p>A <strong>software architecture view</strong> is a representation of an architectural approach from a particular stakeholder perspective. The most commonly used views in database architecture analysis are:</p>
+<ul>
+<li><strong>The component view</strong> — what software components exist (primary, replicas, proxies, application layer)</li>
+<li><strong>The deployment view</strong> — how components map to physical or virtual infrastructure (availability zones, regions, nodes)</li>
+<li><strong>The data flow view</strong> — how data moves through the system (writes to primary, replication to followers, reads from replicas)</li>
+<li><strong>The sequence view</strong> — how a specific scenario (e.g., a failover) plays out in time</li>
+</ul>
+<p>Architecture views are not optional documentation. In ATAM, presenting multiple views of a candidate architecture is what allows the evaluation team and stakeholders to probe it meaningfully. An architecture described only in words cannot be stress-tested against concrete scenarios.</p>
+<h2 id="architectural-drivers">Architectural Drivers</h2>
+<p>An <strong>architectural driver</strong> is a quality attribute scenario that is both high-priority and highly influential on the architectural decisions being made. Not every scenario in the utility tree is an architectural driver — many are satisfied trivially or are addressed by the same decisions that satisfy the (H,H) scenarios. Architectural drivers are the subset of scenarios whose specific requirements noticeably constrain the design space.</p>
+<p>Identifying architectural drivers is the step that focuses the analysis. For a high-throughput IoT platform, write throughput and partition tolerance are likely architectural drivers. For a financial compliance system, serializable consistency and audit logging are drivers. For a social graph application, traversal performance and flexible schema evolution are drivers. The architectural drivers determine which database paradigms are viable candidates and which are immediately eliminated.</p>
+<h2 id="sensitivity-points-and-tradeoff-points">Sensitivity Points and Tradeoff Points</h2>
+<p>Two of ATAM's most precise analytical concepts are <strong>sensitivity points</strong> and <strong>tradeoff points</strong>. Understanding the distinction between them is critical for using ATAM vocabulary correctly.</p>
+<p>A <strong>sensitivity point</strong> is a property of one or more components that is critical to achieving a specific quality attribute. A small change in the value of a sensitivity point produces a large change in a quality attribute. Sensitivity points identify where architectural decisions are fragile — where getting the details right matters a great deal.</p>
+<p>For database architectures, common sensitivity points include:
+- Replication lag threshold (sensitivity point for consistency under failure)
+- Write buffer size and flush interval (sensitivity point for write throughput and durability tradeoff)
+- Number of quorum members required for a write commit (sensitivity point for availability vs. consistency)
+- Index type selection (sensitivity point for read query performance)</p>
+<p>A <strong>tradeoff point</strong> is a property that is a sensitivity point for <em>multiple</em> quality attributes simultaneously — and satisfying one quality attribute necessarily degrades another. Tradeoff points are where architectural tensions become unavoidable.</p>
+<p>The table below contrasts the two concepts using concrete database architecture examples:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Definition</th>
+<th>Database Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sensitivity Point</td>
+<td>A parameter that strongly affects one quality attribute</td>
+<td>Replication factor (affects availability)</td>
+</tr>
+<tr>
+<td>Tradeoff Point</td>
+<td>A parameter that affects two+ quality attributes in opposing directions</td>
+<td>Quorum size: higher quorum → stronger consistency, lower availability</td>
+</tr>
+<tr>
+<td>Sensitivity Point</td>
+<td>A design choice whose value matters greatly</td>
+<td>Synchronous vs. asynchronous replication</td>
+</tr>
+<tr>
+<td>Tradeoff Point</td>
+<td>A design choice that forces a negotiated balance</td>
+<td>Write-ahead log sync frequency: durability vs. write throughput</td>
+</tr>
+</tbody>
+</table>
+<p>Every tradeoff point is a sensitivity point, but not every sensitivity point is a tradeoff point. When you find a tradeoff point during ATAM analysis, you have found a place where the architecture cannot satisfy all high-priority scenarios simultaneously — and where stakeholders must make an explicit priority decision.</p>
+<h2 id="architectural-risks-non-risks-and-risk-themes">Architectural Risks, Non-Risks, and Risk Themes</h2>
+<p>ATAM analysis produces three distinct categories of findings about the candidate architecture's relationship to the quality attribute scenarios.</p>
+<p>An <strong>architectural risk</strong> is a potentially unsatisfied quality attribute scenario — a scenario that the proposed architecture may not satisfy under the conditions the scenario specifies. Risks are not defects; they are open questions where the analysis has identified concern. A single-leader relational database has a known architectural risk for the scenario "sustains 99.999% availability during a primary node failure" — because the failover window during leader re-election violates the five-nines response measure.</p>
+<p>A <strong>non-risk</strong> is an architectural decision that the analysis confirms is good in the context of the relevant quality attribute scenarios. Non-risks are as important to document as risks. They justify the parts of the architecture that are correct, and they provide the baseline from which further design proceeds. Documenting non-risks is what prevents teams from second-guessing decisions that are already sound.</p>
+<p>A <strong>risk theme</strong> is a pattern of risks that share a common root cause or that collectively point to a systemic weakness in the architecture. Risk themes emerge when analysis reveals that multiple individual risks trace to the same architectural assumption or design choice. For example, a cluster of risks around "behavior under network partition" may coalesce into a risk theme of "insufficient partition tolerance design" — a theme that points to a specific part of the architecture requiring attention.</p>
+<p>The following classification guides how findings are recorded during analysis:</p>
+<table>
+<thead>
+<tr>
+<th>Finding Type</th>
+<th>Definition</th>
+<th>Documentation Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Architectural Risk</td>
+<td>Scenario may not be satisfied</td>
+<td>Document risk, assign priority, identify mitigation</td>
+</tr>
+<tr>
+<td>Non-Risk</td>
+<td>Decision positively contributes to scenario satisfaction</td>
+<td>Document as justified; use to stabilize downstream decisions</td>
+</tr>
+<tr>
+<td>Risk Theme</td>
+<td>Cluster of related risks with common root cause</td>
+<td>Elevate to architectural design concern; assign remediation owner</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-atam-nine-step-process">The ATAM Nine-Step Process</h2>
+<p>ATAM is not freeform discussion — it is a structured nine-step process with defined participants, artifacts, and outputs at each stage. The steps divide into three natural phases: presentation (steps 1–3), analysis (steps 4–8), and reporting (step 9).</p>
+<p>Before examining the interactive navigator below, note that steps 4–8 are not strictly sequential in practice. ATAM is designed to iterate — the team may return to earlier steps as new information surfaces during analysis.</p>
+<h4 id="diagram-atam-nine-step-process-navigator">Diagram: ATAM Nine-Step Process Navigator</h4>
+<details markdown="1">
+<summary>ATAM Nine-Step Process Navigator — click each step to see participants, activities, and artifacts</summary>
+Type: MicroSim
+**sim-id:** atam-nine-step-navigator<br/>
+**Library:** p5.js<br/>
+**Status:** Specified
+
+**Learning objective:** Remembering and Understanding (Bloom's levels 1–2) — students recall all nine ATAM steps in order and understand the purpose, participants, and outputs of each step.
+
+**Canvas:** 900 × 580px, responsive. The left panel (280px wide) shows a vertical numbered list of all nine steps. The right panel (580px wide) shows the detail card for the selected step.
+
+**Step data:**
+
+Step 1: Present ATAM
+- Phase: Presentation
+- Participants: ATAM team lead, all stakeholders
+- Activity: The evaluation team presents the ATAM method to stakeholders — its purpose, vocabulary, activities, and expected outputs. This establishes shared understanding before analysis begins.
+- Artifacts produced: None (informational only)
+- Color: #4a90d9 (blue, presentation phase)
+
+Step 2: Present Business Drivers
+- Phase: Presentation
+- Participants: Project decision makers, product owners
+- Activity: Key stakeholders present the system's business context — why the system exists, what goals it must support, market and regulatory constraints, and what success looks like from a business perspective.
+- Artifacts produced: Documented business driver list
+- Color: #4a90d9
+
+Step 3: Present Architecture
+- Phase: Presentation
+- Participants: Lead architect(s), evaluation team
+- Activity: The architecture team presents the current or proposed architecture using multiple views (component, deployment, data flow). Architectural constraints and design decisions made to date are surfaced.
+- Artifacts produced: Architecture views, initial constraint list
+- Color: #4a90d9
+
+Step 4: Identify Architectural Approaches
+- Phase: Analysis
+- Participants: Architects, evaluation team
+- Activity: The evaluation team elicits the architectural patterns and strategies present in the architecture (caching strategies, replication topologies, consistency models, partitioning schemes, etc.).
+- Artifacts produced: Catalog of architectural approaches
+- Color: #f0a500 (gold, analysis phase)
+
+Step 5: Generate Utility Tree
+- Phase: Analysis
+- Participants: All stakeholders, evaluation team
+- Activity: The team collaboratively builds the utility tree — identifying quality attributes, refining them into sub-characteristics, and eliciting specific quality attribute scenarios. Scenarios are prioritized with (H/M/L, H/M/L) ratings.
+- Artifacts produced: Prioritized utility tree with (H,H)/(H,M)/(M,H) scenarios identified
+- Color: #f0a500
+
+Step 6: Analyze Architectural Approaches
+- Phase: Analysis
+- Participants: Architects, evaluation team
+- Activity: The evaluation team probes the architectural approaches against the (H,H) utility tree scenarios. Sensitivity points and tradeoff points are identified. Risks and non-risks are documented as they are discovered.
+- Artifacts produced: Initial risk list, non-risk list, sensitivity points, tradeoff points
+- Color: #f0a500
+
+Step 7: Brainstorm and Prioritize Scenarios
+- Phase: Analysis
+- Participants: All stakeholders
+- Activity: A broader set of stakeholders brainstorm additional scenarios not yet in the utility tree. The full scenario list is re-prioritized. This step surfaces requirements that may not have been visible to the architect or project team.
+- Artifacts produced: Expanded, re-prioritized scenario list
+- Color: #f0a500
+
+Step 8: Analyze Architectural Approaches (continued)
+- Phase: Analysis
+- Participants: Architects, evaluation team
+- Activity: The highest-priority scenarios from Step 7 that are not yet covered are analyzed against the architectural approaches. Additional risks, non-risks, sensitivity points, and tradeoff points are documented.
+- Artifacts produced: Final risk list, non-risk list, sensitivity points, tradeoff points
+- Color: #f0a500
+
+Step 9: Present Results
+- Phase: Reporting
+- Participants: All stakeholders
+- Activity: The evaluation team presents a consolidated summary: the utility tree, identified risks (with themes), non-risks, sensitivity points, tradeoff points, and architectural decision records. Stakeholders validate findings and identify next actions.
+- Artifacts produced: Final ATAM report, risk themes, architectural decision records (ADRs)
+- Color: #4aaa4a (green, reporting phase)
+
+**UI layout:**
+Left panel: vertical list of 9 numbered step cards. Selected step is highlighted with a gold left border and bold text. Each card shows step number and short name.
+Right panel: detail card for the selected step, containing: Step title (h2), Phase badge (Presentation / Analysis / Reporting), Participants section, Activity description (2-3 sentences), and "Artifacts Produced" bulleted list.
+
+**Interaction:**
+- Clicking any step card in the left panel loads its detail in the right panel.
+- Default selected step on load: Step 1.
+- A "← Prev" and "Next →" button at the bottom of the right panel allow sequential navigation.
+- The phase badge color matches the step's phase color (blue/gold/green).
+
+**Responsive behavior:** Below 700px width, the left panel collapses to a horizontal tab strip above the detail card. The detail card remains full-width below.
+</details>
+
+<p>The nine steps divide responsibility clearly: steps 1–3 ensure shared understanding before any analysis begins; steps 4–8 are the core analytical work; step 9 closes the loop with documented findings. The two-pass structure (step 6 followed by step 8) is deliberate — the first analysis pass works from the utility tree the architects brought, and the second pass incorporates the broader stakeholder perspective that step 7 surfaces.</p>
+<h2 id="atam-applied-to-database-selection">ATAM Applied to Database Selection</h2>
+<p>The canonical ATAM process was designed for general software architecture evaluation, but it maps directly to database selection with a specific adaptation: the "Architectural Approaches" in the analysis phase are the candidate database paradigms — relational, analytical, key-value, column-family, graph, and document.</p>
+<p>The diagram below shows the ATAM process as adapted for database selection in this course. The top row (Business Drivers → Quality Attributes → User Stories) represents the requirements path. The bottom row (Architecture Plan → Architectural Approaches → Architectural Decisions) represents the design path. Analysis synthesizes both paths to produce the ATAM outputs.</p>
+<p><img alt="ATAM process adapted for database selection, showing how the six database paradigms appear as architectural approaches feeding the analysis" src="../../img/ATAM-db-process.png" /></p>
+<p>The adapted process produces the same outputs as standard ATAM — risks, non-risks, sensitivity points, tradeoff points, risk themes — but in the specific context of choosing a database. An architectural risk in this context is a candidate database that may not satisfy a high-priority quality attribute scenario. A tradeoff point is a design decision (such as choosing eventual consistency) that improves one quality attribute while degrading another.</p>
+<p>The following MicroSim makes this flow interactive, allowing you to explore each element of the process and understand its role:</p>
+<h4 id="diagram-atam-database-selection-process-explorer">Diagram: ATAM Database Selection Process Explorer</h4>
+<details markdown="1">
+<summary>ATAM Database Selection Process Explorer — click any element to see its definition and role</summary>
+Type: MicroSim
+**sim-id:** atam-db-process-explorer<br/>
+**Library:** p5.js<br/>
+**Status:** Specified
+
+**Learning objective:** Understanding (Bloom's level 2) — students explain the role of each element in the ATAM database selection process and describe how requirements and architectural approaches flow through the process to produce analysis outputs.
+
+**Canvas:** 900 × 520px, responsive to window resize events. The diagram reproduces the flow from ATAM-db-process.png as interactive nodes. An info panel (300px) slides in from the right when a node is clicked.
+
+**Node layout (two rows + output column):**
+
+Row 1 (requirements path, y=120, color #f0a500 orange boxes with blue border):
+- Node A: "Business Drivers" (x=100)
+- Node B: "Quality Attributes" (x=320)
+- Node C: "User Stories" (x=540)
+- Node Analysis: "Analysis" (x=760, shape: ellipse, color #b0c8e8)
+
+Row 2 (design path, y=250, color #ffff99 yellow boxes with blue border):
+- Node D: "Architecture Plan" (x=100)
+- Node E: "Architectural Approaches" (x=320) — contains a small icon grid of 6 DB type thumbnails (text labels: Relational, Analytical, Key-Value, Column-Family, Graph, Document)
+- Node F: "Architectural Decisions" (x=540)
+
+Output column (right side, x=760):
+- Node T: "Tradeoffs" (y=300, color #aaaaaa gray)
+- Node S: "Sensitivity Points" (y=350, color #aaaaaa)
+- Node NR: "Non-Risks" (y=400, color #88cc88 green)
+- Node R: "Risks" (y=450, color #e8a0a0 pink)
+
+Bottom row:
+- Node RT: "Risk Themes" (x=100, y=400, color #cc0000 red, white text)
+
+Arrows:
+- A → B → C → Analysis (horizontal, row 1)
+- D → E → F → Analysis (horizontal, row 2)
+- Analysis → T, S, NR, R (right column outputs)
+- R → RT (labeled "Distilled info")
+- RT → A (labeled "Impacts", left side vertical feedback arrow)
+
+**Info panel content for each node:**
+
+Node A (Business Drivers):
+"Business drivers are the organizational goals and constraints that determine what quality attributes matter most for this system. They translate strategic intent into architectural requirements. Examples: regulatory compliance, time-to-market pressure, scale requirements, cost constraints."
+
+Node B (Quality Attributes):
+"Quality attributes (or 'ilities') are the non-functional characteristics by which architectural fitness is measured: availability, consistency, scalability, performance, operability, security. Each business driver maps to one or more quality attributes that the architecture must satisfy."
+
+Node C (User Stories):
+"In the ATAM context, user stories represent quality attribute scenarios — concrete, testable expressions of what the system must do under specified conditions. Each leaf of the utility tree is a quality attribute scenario with a measurable response criterion."
+
+Node D (Architecture Plan):
+"The architecture plan documents the existing or proposed system architecture using multiple views: component diagram, deployment topology, data flow, and sequence views for key scenarios. This is what the evaluation team analyzes."
+
+Node E (Architectural Approaches):
+"For database selection, the architectural approaches are the candidate database paradigms and their specific configurations: Relational (PostgreSQL, MySQL), Analytical (Snowflake, BigQuery), Key-Value (Redis, DynamoDB), Column-Family (Cassandra, HBase), Graph (Neo4j, TigerGraph), and Document (MongoDB, Firestore). Each approach is evaluated against the prioritized utility tree scenarios."
+
+Node F (Architectural Decisions):
+"Architectural decisions are the specific choices made about how to implement the architecture — which database type, which replication topology, which consistency model, which sharding strategy. ATAM analysis produces documented justification for each significant decision."
+
+Node Analysis (Analysis):
+"Analysis is the core ATAM activity: probing each architectural approach against each prioritized quality attribute scenario to identify sensitivity points, tradeoff points, risks, and non-risks. It is structured, evidence-based, and produces documented findings."
+
+Node T (Tradeoffs):
+"Tradeoff points are properties of the architecture that are sensitivity points for multiple quality attributes simultaneously — satisfying one quality attribute necessarily degrades another. Example: increasing replication factor improves availability but increases write latency."
+
+Node S (Sensitivity Points):
+"Sensitivity points are properties of one or more components that are critical to achieving a specific quality attribute. A small change in the property produces a large change in the quality attribute. Example: the quorum size parameter is a sensitivity point for both consistency and availability."
+
+Node NR (Non-Risks):
+"Non-risks are architectural decisions confirmed to positively contribute to the system's quality attribute scenarios. Documenting non-risks is as important as documenting risks — they justify parts of the architecture that are correct and prevent unnecessary second-guessing."
+
+Node R (Risks):
+"Architectural risks are potentially unsatisfied quality attribute scenarios. They identify places where the architecture may fail to meet requirements, not certain failures. Each risk should include a description, the affected scenario, the likelihood assessment, and the recommended mitigation."
+
+Node RT (Risk Themes):
+"Risk themes are patterns of risks that share a common root cause or collectively point to a systemic architectural weakness. Identifying risk themes allows teams to address root causes rather than symptoms. Risk themes feed back to inform business driver prioritization."
+
+**Interaction:**
+- Click any node to open the info panel on the right.
+- Clicking a node also highlights its incoming and outgoing arrows in bright blue; all other arrows remain dark gray.
+- The info panel has a close (×) button.
+- Hovering any node shows a tooltip with its short name.
+
+**Color scheme:** Orange boxes = requirements path; yellow boxes = design path; gray/green/pink/red = analysis outputs; blue ellipse = analysis process.
+
+**Responsive behavior:** On resize, all elements scale proportionally. Node labels truncate with ellipsis if canvas width drops below 700px. Below 500px, layout switches to a vertical single-column list of nodes, each expandable.
+</details>
+
+<h2 id="atam-output-artifacts-and-architectural-decision-records">ATAM Output Artifacts and Architectural Decision Records</h2>
+<p>A completed ATAM analysis produces a defined set of <strong>ATAM output artifacts</strong> — documented findings that serve as the deliverables of the evaluation:</p>
+<ul>
+<li><strong>Prioritized utility tree</strong> with all quality attribute scenarios and their (H/M/L, H/M/L) ratings</li>
+<li><strong>Risk list</strong> with each identified architectural risk, its associated scenario, and recommended mitigation</li>
+<li><strong>Non-risk list</strong> documenting confirmed sound architectural decisions</li>
+<li><strong>Sensitivity point catalog</strong> identifying which architectural parameters most affect quality attribute outcomes</li>
+<li><strong>Tradeoff point catalog</strong> identifying where quality attribute tensions require explicit stakeholder priority decisions</li>
+<li><strong>Risk themes</strong> summarizing patterns in the risk list</li>
+<li><strong>Architectural Decision Records (ADRs)</strong></li>
+</ul>
+<p>The <strong>Architectural Decision Record</strong> (ADR) is the artifact that closes the loop between analysis and action. An ADR is a short, structured document that captures a single significant architectural decision, the context that drove it, the options considered, the tradeoffs identified, and the rationale for the chosen approach. ADRs become the institutional memory of the decision-making process.</p>
+<p>A well-formed ADR for a database selection decision includes the following elements:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gh"># ADR-001: Database Selection for Transaction Processing Service</span>
+
+<span class="gs">**Status:**</span> Accepted
+<span class="gs">**Date:**</span> 2026-05-18
+<span class="gs">**Deciders:**</span> [Lead Architect, Engineering VP, DBA Team Lead]
+
+<span class="gu">## Context</span>
+
+The transaction processing service handles 50,000 financial transactions per
+second at peak, requires serializable isolation to prevent balance anomalies,
+and must achieve 99.99% availability. The team evaluated PostgreSQL (with
+synchronous replication), CockroachDB (distributed SQL), and Cassandra
+(eventual consistency) against the prioritized utility tree.
+
+<span class="gu">## Decision</span>
+
+Selected CockroachDB as the transaction processing database.
+
+<span class="gu">## Drivers (from utility tree)</span>
+
+<span class="k">-</span><span class="w"> </span>(H,H) Serializable isolation for concurrent balance operations
+<span class="k">-</span><span class="w"> </span>(H,H) 99.99% uptime with automatic failover &lt; 30 seconds
+<span class="k">-</span><span class="w"> </span>(H,M) Write throughput of 50,000 TPS at p99 &lt; 10ms
+
+<span class="gu">## Options Considered</span>
+
+| Option | Consistency | Availability | Write Throughput |
+|--------|------------|--------------|-----------------|
+| PostgreSQL + sync replication | Serializable ✓ | Single-AZ risk ✗ | Limited by single-leader ✗ |
+| CockroachDB | Serializable ✓ | Multi-region ✓ | Distributed ✓ |
+| Cassandra (tunable) | Eventual only ✗ | Excellent ✓ | Excellent ✓ |
+
+<span class="gu">## Tradeoffs Accepted</span>
+
+CockroachDB introduces higher write latency than PostgreSQL on single-node
+benchmarks due to Raft consensus overhead. Accepted because the (H,H)
+availability and consistency scenarios outweigh the latency cost, and the
+latency remains within the response measure at target load.
+
+<span class="gu">## Risks</span>
+
+<span class="k">-</span><span class="w"> </span>RISK-003: CockroachDB operational expertise is limited on the team.
+  Mitigation: Training budget approved; on-call runbooks required before launch.
+
+<span class="gu">## Consequences</span>
+
+All services writing financial transactions route through CockroachDB. Eventual
+consistency patterns (Cassandra, DynamoDB) are unavailable for this data domain.
+</code></pre></div></td></tr></table></div>
+<p>The ADR format is intentionally brief. Its purpose is not to reproduce all analysis artifacts — those live in the utility tree and ATAM report — but to capture the essential reasoning in a form that remains useful to future engineers who were not present for the evaluation.</p>
+<h2 id="putting-it-all-together-the-atam-analytical-chain">Putting It All Together: The ATAM Analytical Chain</h2>
+<p>The 22 concepts in this chapter form a coherent analytical chain. It is worth stepping back to see how they connect before you encounter them applied to specific database paradigms in subsequent chapters:</p>
+<p><strong>Business drivers</strong> shape which <strong>quality attributes</strong> matter. Quality attributes are organized into a <strong>utility tree</strong> through a <strong>Quality Attribute Workshop</strong>, where each attribute is <strong>refined</strong> into specific sub-characteristics and then into concrete <strong>quality attribute scenarios</strong> — each with a <strong>scenario stimulus</strong> and a <strong>scenario response measure</strong>. Scenarios are assigned <strong>utility tree prioritization</strong> ratings that identify the <strong>architectural drivers</strong>: the scenarios that most constrain the design space.</p>
+<p><strong>ATAM stakeholder roles</strong> ensure that the analysis captures the full range of perspectives — decision makers, architects, operators, and users. The <strong>ATAM evaluation team</strong> conducts the analysis independently. Together they execute the <strong>ATAM nine-step process</strong>, presenting business context and architecture, generating the utility tree, and then probing <strong>architectural approaches</strong> through <strong>software architecture views</strong> to identify <strong>sensitivity points</strong> and <strong>tradeoff points</strong>.</p>
+<p>Analysis produces three categories of findings: <strong>architectural risks</strong>, <strong>non-risks</strong>, and — when patterns emerge — <strong>risk themes</strong>. All findings are captured in <strong>ATAM output artifacts</strong>, with significant decisions documented as <strong>architectural decision records</strong>.</p>
+<p>This chain is what the rest of this book applies to each database paradigm. When you encounter the ATAM analysis of a relational database in Chapter 3, you will recognize the utility tree, the sensitivity points, the tradeoff points, and the ADRs as the same tools you learned here — now applied to a specific set of architectural choices with their own characteristic tradeoffs.</p>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<p>The following summarizes the core ideas from this chapter:</p>
+<ul>
+<li>
+<p><strong>ATAM makes tradeoffs explicit.</strong> Its central value is not generating answers but surfacing the right questions — specifically, where competing quality attributes create unavoidable design tension.</p>
+</li>
+<li>
+<p><strong>The utility tree is the analytical anchor.</strong> It translates vague aspirations into testable, prioritized scenarios. Without a utility tree, architectural comparison is informal and hard to defend.</p>
+</li>
+<li>
+<p><strong>Quality attribute scenarios require response measures.</strong> A scenario without a measurable response criterion cannot drive an architectural decision. "Fast" is not a response measure. "p99 read latency below 10ms under 10,000 concurrent requests" is.</p>
+</li>
+<li>
+<p><strong>Sensitivity points and tradeoff points are different.</strong> Sensitivity points affect one quality attribute. Tradeoff points affect multiple quality attributes in opposing directions — these are where stakeholder priority decisions become unavoidable.</p>
+</li>
+<li>
+<p><strong>Risks and non-risks are both worth documenting.</strong> Knowing what is right is as important as knowing what is at risk. Non-risks stabilize the design process.</p>
+</li>
+<li>
+<p><strong>ADRs capture the reasoning, not just the result.</strong> Future engineers inheriting a database architecture need to understand why decisions were made, not just what decisions were made. An ADR without tradeoff analysis is a decision without justification.</p>
+</li>
+<li>
+<p><strong>ATAM is the analytical framework for every chapter in this book.</strong> The vocabulary and structure introduced here — utility trees, quality attribute scenarios, sensitivity points, tradeoff points, architectural drivers — appear in every subsequent chapter as the lens through which each database paradigm is evaluated.</p>
+</li>
+</ul>
 
 
 
 
 
 
+
+  
+  
 
 
 
