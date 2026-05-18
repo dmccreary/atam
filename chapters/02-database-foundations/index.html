@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="DESCRIPTION All content licensed Creative Commons ShareAlike Attribution Noncommercial">
+        <meta name="description" content="Establishes the core vocabulary shared by all database systems — data models, schemas, query languages, storage engines, indexes, and workload characterization — that forms the analytical basis for every database tradeoff discussion in the book.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -29,7 +29,7 @@
     
     
       
-        <title>2. Database Foundations - Selecting the Right Database</title>
+        <title>Chapter 2 - Database Foundations - Selecting the Right Database</title>
       
     
     
@@ -55,13 +55,40 @@
       
     
     
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-C8YG80XNGY"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-C8YG80XNGY",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-C8YG80XNGY",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
-  </head>
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Chapter 2 - Database Foundations - Selecting the Right Database" />
+<meta property="og:description" content="Establishes the core vocabulary shared by all database systems — data models, schemas, query languages, storage engines, indexes, and workload characterization — that forms the analytical basis for every database tradeoff discussion in the book." />
+<meta property="og:image" content="https://dmccreary.github.io/right-database/assets/images/social/chapters/02-database-foundations/index.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://dmccreary.github.io/right-database/chapters/02-database-foundations/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Chapter 2 - Database Foundations - Selecting the Right Database" />
+<meta property="twitter:description" content="Establishes the core vocabulary shared by all database systems — data models, schemas, query languages, storage engines, indexes, and workload characterization — that forms the analytical basis for every database tradeoff discussion in the book." />
+<meta property="twitter:image" content="https://dmccreary.github.io/right-database/assets/images/social/chapters/02-database-foundations/index.png" />
+</head>
   
   
     
@@ -114,7 +141,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2. Database Foundations
+              Chapter 2 - Database Foundations
             
           </span>
         </div>
@@ -527,6 +554,261 @@
     <span class="md-ellipsis">
       
         Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-database-management-system-actually-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a Database Management System Actually Does
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What a Database Management System Actually Does">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-dbms-architecture-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: DBMS Architecture Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-models-and-schemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Models and Schemas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-languages-and-query-expressiveness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query Languages and Query Expressiveness
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-indexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Indexes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-query-optimizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Query Optimizer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage-engines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage Engines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-serialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Serialization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workload-characterization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workload Characterization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workload Characterization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#readwrite-ratio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read/Write Ratio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#latency-vs-throughput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Latency vs. Throughput
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oltp-olap-and-htap-workloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OLTP, OLAP, and HTAP Workloads
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OLTP, OLAP, and HTAP Workloads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oltp-workload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OLTP Workload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#olap-workload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OLAP Workload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#htap-workload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTAP Workload
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTAP Workload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-workload-characterization-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Workload Characterization Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-volume-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Volume Scaling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#impedance-mismatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impedance Mismatch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-expressiveness-and-operational-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query Expressiveness and Operational Complexity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-the-foundations-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Putting the Foundations Together
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
       
     </span>
   </a>
@@ -1602,6 +1884,261 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#what-a-database-management-system-actually-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a Database Management System Actually Does
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What a Database Management System Actually Does">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-dbms-architecture-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: DBMS Architecture Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-models-and-schemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Models and Schemas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-languages-and-query-expressiveness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query Languages and Query Expressiveness
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-indexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Indexes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-query-optimizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Query Optimizer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage-engines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage Engines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-serialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Serialization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workload-characterization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workload Characterization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workload Characterization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#readwrite-ratio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read/Write Ratio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#latency-vs-throughput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Latency vs. Throughput
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oltp-olap-and-htap-workloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OLTP, OLAP, and HTAP Workloads
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OLTP, OLAP, and HTAP Workloads">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oltp-workload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OLTP Workload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#olap-workload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OLAP Workload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#htap-workload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTAP Workload
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTAP Workload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-workload-characterization-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Workload Characterization Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-volume-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Volume Scaling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#impedance-mismatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impedance Mismatch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-expressiveness-and-operational-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query Expressiveness and Operational Complexity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-the-foundations-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Putting the Foundations Together
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1698,7 +2235,495 @@
 <h2 id="prerequisites">Prerequisites</h2>
 <p>This chapter assumes only the prerequisites listed in the <a href="../../course-description/">course description</a>.</p>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to Chapter 2!</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Dex waving welcome">
+Before we can evaluate any database against a utility tree, we need a shared vocabulary for <em>what databases actually are and how they work</em>. This chapter is that vocabulary. The concepts here — storage engines, data models, workload patterns — appear in every ATAM tradeoff discussion from Chapter 3 onward. Let's build the foundation. Let's analyze the tradeoffs!</p>
+</div>
+<h2 id="what-a-database-management-system-actually-does">What a Database Management System Actually Does</h2>
+<p>When engineers reach for a database, they often think of it as a place to store and retrieve data. That characterization is accurate but radically incomplete. A <strong>Database Management System (DBMS)</strong> is a software system that manages persistent, structured data with guarantees about correctness, durability, and concurrent access. The "management" part is where nearly all the interesting engineering lives.</p>
+<p>A DBMS provides four distinct services that applications could theoretically implement themselves but almost never should:</p>
+<ul>
+<li><strong>Persistence</strong> — data survives process restarts, hardware failures, and power loss</li>
+<li><strong>Concurrency control</strong> — multiple clients can read and write simultaneously without producing inconsistent results</li>
+<li><strong>Query processing</strong> — data is retrieved by describing <em>what</em> is wanted, not <em>how</em> to find it</li>
+<li><strong>Durability</strong> — committed writes are never lost, even if the system crashes immediately after the commit acknowledgment</li>
+</ul>
+<p>The architectural decisions that shape every database's tradeoff profile — how fast it writes, how consistent it reads, how well it scales — are almost entirely determined by <em>how</em> a specific DBMS implements these four services. Understanding that implementation vocabulary is what makes ATAM analysis of database choices possible.</p>
+<p>The diagram below shows how the major components of a DBMS relate to one another. Click any component to see its role and the tradeoffs it creates.</p>
+<h4 id="diagram-dbms-architecture-explorer">Diagram: DBMS Architecture Explorer</h4>
+<details markdown="1">
+<summary>DBMS Architecture Explorer — click any component to understand its role and the tradeoffs it drives</summary>
+Type: interactive-infographic
+**sim-id:** dbms-architecture-explorer
+**Library:** vis-network
+**Status:** Specified
+
+**Learning objective:** Understanding (Bloom's level 2) — students explain the role of each DBMS component and describe how the components interact to deliver persistence, concurrency, query processing, and durability.
+
+**Canvas:** 900 × 520px, responsive. A layered architecture diagram rendered as a vis-network graph with a fixed hierarchical layout (direction: UD, physics: false). An info panel (300px) appears to the right when a node is clicked.
+
+**Node layers and data (top to bottom):**
+
+Layer 1 — Application interface (y=60, color #4682B4, shape: box):
+- id: 1, label: "Client / Application", x: 450
+
+Layer 2 — Query interface (y=160, color #E65100, shape: box):
+- id: 2, label: "Query Language\nParser", x: 220
+- id: 3, label: "Query Optimizer", x: 680
+
+Layer 3 — Execution (y=260, color #6f42c1, shape: box):
+- id: 4, label: "Query Executor", x: 450
+
+Layer 4 — Data management (y=360, color #28a745, shape: box):
+- id: 5, label: "Concurrency\nController", x: 220
+- id: 6, label: "Buffer Pool\nManager", x: 450
+- id: 7, label: "Index Manager", x: 680
+
+Layer 5 — Storage (y=460, color #6c757d, shape: box):
+- id: 8, label: "Storage Engine\n(B-tree / LSM)", x: 220
+- id: 9, label: "Write-Ahead Log\n(WAL)", x: 680
+
+**Edges (all arrows pointing downward):**
+- 1 → 2 (label: "SQL / query text")
+- 2 → 3 (label: "parse tree")
+- 3 → 4 (label: "execution plan")
+- 4 → 5, 4 → 6, 4 → 7
+- 6 → 8, 6 → 9
+
+**Info panel content per node:**
+
+Node 1 (Client / Application): "The application issues queries or commands using the database's query language or API. Every request enters through this boundary — it is the only interface the application should use, because it ensures all DBMS guarantees apply."
+
+Node 2 (Query Language Parser): "The parser tokenizes and validates the query text, then produces a structured representation (parse tree or AST) the optimizer can reason about. This is where syntax errors are caught. The query language abstracts the application from storage details — the same SQL can be executed against very different storage layouts."
+
+Node 3 (Query Optimizer): "The optimizer transforms the parse tree into a physical execution plan by selecting join algorithms, access paths (index scan vs. full table scan), and operation ordering. A good optimizer can make a naive query run 1000× faster than the obvious execution path. A poor optimizer — or an optimizer operating without statistics — can make the same query run 1000× slower."
+
+Node 4 (Query Executor): "The executor runs the physical plan produced by the optimizer, pulling data from the buffer pool and passing it through operator pipelines (scan, filter, join, aggregate). Execution performance is heavily influenced by whether intermediate results fit in memory and whether sequential I/O patterns allow hardware prefetch."
+
+Node 5 (Concurrency Controller): "The concurrency controller ensures that concurrent reads and writes produce results consistent with some defined isolation level. It implements either lock-based control (two-phase locking) or multiversion concurrency control (MVCC). The choice of isolation level is a sensitivity point: stronger isolation prevents more anomalies but reduces throughput."
+
+Node 6 (Buffer Pool Manager): "The buffer pool is a memory cache of disk pages. It decides which pages to keep in RAM and which to evict when memory is full. Hit rate is the dominant factor in read performance. Buffer pool management is a critical sensitivity point: too small, and every read goes to disk; too large, and the OS is memory-starved."
+
+Node 7 (Index Manager): "The index manager maintains secondary data structures (B-trees, hash tables, inverted indexes, ANN indexes) that allow the query executor to find records without scanning every row. Indexes dramatically accelerate selective queries but consume storage and slow down writes, since every write must update all relevant indexes."
+
+Node 8 (Storage Engine): "The storage engine implements how data is physically organized on disk. B-tree engines (InnoDB, PostgreSQL heap) optimize for read performance and range queries. LSM-tree engines (RocksDB, Cassandra) optimize for write throughput. The choice of storage engine is a fundamental tradeoff point between write performance and read amplification."
+
+Node 9 (Write-Ahead Log / WAL): "The WAL is an append-only log of every change made to the database, written before the change is applied to the data files. It enables crash recovery (replay the log from the last checkpoint) and replication (ship the log to replicas). WAL sync frequency is a critical sensitivity point for the durability-vs-write-throughput tradeoff."
+
+**Interaction:** Click any node to open the info panel. Hovering a node highlights its direct connections. A "Reset" button centers the view.
+</details>
+
+<h2 id="data-models-and-schemas">Data Models and Schemas</h2>
+<p>Every database imposes a <strong>data model</strong> — the conceptual framework that governs how data is organized and what operations are valid on it. The data model is not the same as the database's file format or storage layout; it is the logical abstraction the application programmer works with. Choosing the right data model for a workload is one of the most consequential early architectural decisions, because mismatched data models produce impedance mismatch (discussed later in this chapter) that compounds throughout the system's lifetime.</p>
+<p>The six database paradigms this course covers each embody a distinct data model:</p>
+<table>
+<thead>
+<tr>
+<th>Data Model</th>
+<th>Organizing Abstraction</th>
+<th>Canonical Query</th>
+<th>Best Fit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Relational</td>
+<td>Tables, rows, columns, foreign keys</td>
+<td>SQL SELECT with JOINs</td>
+<td>Transactional systems with complex relationships</td>
+</tr>
+<tr>
+<td>Analytical</td>
+<td>Fact tables, dimension tables, star/snowflake schema</td>
+<td>Aggregate queries over wide scans</td>
+<td>Business intelligence, historical analysis</td>
+</tr>
+<tr>
+<td>Key-Value</td>
+<td>Unordered map: key → opaque value</td>
+<td>GET key / SET key value</td>
+<td>Caching, session state, simple lookups</td>
+</tr>
+<tr>
+<td>Column-Family</td>
+<td>Rows with dynamic column sets, partitioned by key</td>
+<td>Wide-row scan with column filters</td>
+<td>Time-series, event logs, IoT ingestion</td>
+</tr>
+<tr>
+<td>Graph</td>
+<td>Vertices (entities) and edges (relationships)</td>
+<td>Traversal: find all paths of type X from node Y</td>
+<td>Social networks, knowledge graphs, fraud detection</td>
+</tr>
+<tr>
+<td>Document</td>
+<td>Hierarchical, self-describing JSON/BSON documents</td>
+<td>Field projection, aggregation pipelines</td>
+<td>Content management, user profiles, catalogs</td>
+</tr>
+</tbody>
+</table>
+<p>A <strong>schema</strong> is the formal definition of a data model instance — the specific tables, columns, types, constraints, and relationships for a particular application's data. Schemas exist on a spectrum from rigid to flexible:</p>
+<ul>
+<li><strong>Schema-on-write</strong> (relational, column-family): the structure is defined before data is stored; the DBMS enforces it at write time. Violations are rejected. This makes reads fast and queries predictable, but schema changes require migration procedures.</li>
+<li><strong>Schema-on-read</strong> (document, key-value): structure is enforced by the application when data is read; the DBMS stores arbitrary values. This enables rapid iteration but pushes validation responsibility to application code — which often means it doesn't happen.</li>
+<li><strong>Schema evolution</strong> is the process of changing a schema while the system is live. Every paradigm handles this differently, and schema migration complexity is a significant operational complexity driver in long-lived systems.</li>
+</ul>
+<h2 id="query-languages-and-query-expressiveness">Query Languages and Query Expressiveness</h2>
+<p>A <strong>query language</strong> is the interface through which applications describe what data they want. Query languages matter architecturally because they determine what queries are possible, what queries are efficient, and where query logic must live when the query language cannot express a required operation.</p>
+<p><strong>Query expressiveness</strong> measures the breadth of questions a query language can answer natively within the database — without pulling data into the application and computing in code. A highly expressive language (SQL with window functions, CTEs, and lateral joins) can answer questions that a less expressive language (key-value GET/SET) cannot formulate at all.</p>
+<p>The tradeoff is real: query expressiveness correlates with query complexity, which correlates with optimizer cost and operational sensitivity. SQL's expressiveness is why relational databases have complex query optimizers, expensive EXPLAIN plans, and entire specialist roles dedicated to query tuning. A key-value store's inexpressiveness is why its query performance is predictable enough to promise sub-millisecond SLAs.</p>
+<p>The following spectrum maps common query languages to their expressiveness and associated complexity:</p>
+<table>
+<thead>
+<tr>
+<th>Query Language</th>
+<th>Paradigm</th>
+<th>Expressiveness</th>
+<th>Key Limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SQL (full)</td>
+<td>Relational</td>
+<td>High</td>
+<td>Complex query plans; JOIN scalability</td>
+</tr>
+<tr>
+<td>SQL (analytical)</td>
+<td>Analytical</td>
+<td>High + aggregates</td>
+<td>Not suited for point lookups</td>
+</tr>
+<tr>
+<td>Cypher / SPARQL</td>
+<td>Graph</td>
+<td>High for traversals</td>
+<td>Not suited for bulk aggregation</td>
+</tr>
+<tr>
+<td>MongoDB Aggregation</td>
+<td>Document</td>
+<td>Medium-high</td>
+<td>No multi-collection JOINs at scale</td>
+</tr>
+<tr>
+<td>Cassandra CQL</td>
+<td>Column-family</td>
+<td>Medium</td>
+<td>No ad-hoc queries; partition key required</td>
+</tr>
+<tr>
+<td>Redis commands</td>
+<td>Key-value</td>
+<td>Low</td>
+<td>Single-key or simple set operations only</td>
+</tr>
+</tbody>
+</table>
+<p>When a query language cannot express a required query, the application must retrieve more data than needed and filter in application memory. This pattern — <strong>client-side filtering</strong> — is a performance antipattern that consistently appears in database misfit situations. Identifying it during ATAM analysis is a signal that the data model or query language may be mismatched to the workload.</p>
+<h2 id="database-indexes">Database Indexes</h2>
+<p>A <strong>database index</strong> is a secondary data structure maintained alongside the primary data, designed to answer specific queries faster than scanning the full dataset. Indexes are the primary mechanism by which databases achieve selective read performance at scale.</p>
+<p>Every index type encodes a different access pattern:</p>
+<ul>
+<li><strong>B-tree index:</strong> supports equality and range queries on ordered columns; the dominant index type in relational databases</li>
+<li><strong>Hash index:</strong> supports equality lookups in O(1); cannot support range queries; common in key-value stores and hash partitioning</li>
+<li><strong>LSM-tree (Log-Structured Merge-tree):</strong> optimized for sequential writes; trades write speed for read amplification; dominant in column-family stores</li>
+<li><strong>Inverted index:</strong> maps values to the rows that contain them; the foundation of full-text search</li>
+<li><strong>Approximate Nearest-Neighbor (ANN) index (HNSW, IVF):</strong> finds vectors similar to a query vector; the foundation of vector search</li>
+</ul>
+<p>The performance equation for indexes is not one-sided. Every index maintained on a table adds write overhead, because every INSERT, UPDATE, and DELETE must update all affected indexes as part of the write path. A table with eight indexes may read eight times faster and write eight times slower than the same table with no indexes. This write amplification is a direct sensitivity point for write-heavy workloads.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Index the Query, Not the Table</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Dex giving a tip">
+A common mistake is to index every column "just in case." The right approach is to index the queries you have, not the data you store. Start with no indexes, identify your slowest queries under realistic load, then add indexes that specifically accelerate those query patterns. An index that is never used still pays the write-amplification tax on every write.</p>
+</div>
+<h2 id="the-query-optimizer">The Query Optimizer</h2>
+<p>The <strong>query optimizer</strong> is the component responsible for transforming a declarative query (what the application wants) into an efficient execution plan (how the DBMS will retrieve it). For databases with expressive query languages, the optimizer is one of the most complex components in the system.</p>
+<p>Optimizers function by enumerating candidate execution plans and estimating their cost using statistics about the data — column cardinality, value distribution histograms, table sizes, index selectivity. The optimizer selects the plan with the lowest estimated cost. When statistics are stale or absent, the optimizer's estimates diverge from reality, and "optimal" plans become catastrophically slow.</p>
+<p>Understanding optimizer behavior is critical for ATAM analysis because optimizer quality is a hidden sensitivity point. Two databases that support the same SQL syntax may produce execution plans whose performance differs by orders of magnitude on the same query and data distribution. This is not a theoretical concern — it is a routine source of production incidents during database migrations.</p>
+<h2 id="storage-engines">Storage Engines</h2>
+<p>The <strong>storage engine</strong> is the component responsible for how data is physically organized on disk, how writes are applied, and how reads are served. It is the lowest layer of the DBMS that most engineers interact with indirectly through performance characteristics, and it is one of the most consequential architectural choices a database makes.</p>
+<p>Two storage engine architectures dominate modern databases:</p>
+<p><strong>B-tree engines</strong> organize data in a balanced tree structure where leaf pages hold sorted rows (or row references). Reads are efficient because data is stored in sorted order and the tree structure provides O(log n) lookup. Writes are update-in-place: the page containing the modified row is read into the buffer pool, updated, and written back. This makes random writes expensive on spinning disks and creates <strong>write amplification</strong> — a single logical write may require multiple physical page writes.</p>
+<p><strong>LSM-tree (Log-Structured Merge-tree) engines</strong> abandon update-in-place in favor of sequential writes to an in-memory buffer (memtable), which is periodically flushed to immutable sorted files on disk (SSTables). Background compaction merges SSTables to reclaim space and maintain read performance. This architecture dramatically reduces write latency by converting random I/O to sequential I/O, but at the cost of <strong>read amplification</strong> — a read must check multiple SSTables and the memtable, and compaction consumes background I/O.</p>
+<p>The table below summarizes the performance profile of each engine type:</p>
+<table>
+<thead>
+<tr>
+<th>Characteristic</th>
+<th>B-tree Engine</th>
+<th>LSM-tree Engine</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Write pattern</td>
+<td>Random update-in-place</td>
+<td>Sequential append + compaction</td>
+</tr>
+<tr>
+<td>Write latency</td>
+<td>Moderate (page locking)</td>
+<td>Low (memtable append)</td>
+</tr>
+<tr>
+<td>Read latency</td>
+<td>Low (sorted pages, buffer cache)</td>
+<td>Higher (multi-level lookup)</td>
+</tr>
+<tr>
+<td>Space efficiency</td>
+<td>High (no compaction overhead)</td>
+<td>Lower (space amplification during compaction)</td>
+</tr>
+<tr>
+<td>Suited for</td>
+<td>Read-heavy, point lookups, range scans</td>
+<td>Write-heavy, time-series, event ingestion</td>
+</tr>
+<tr>
+<td>Examples</td>
+<td>PostgreSQL, MySQL InnoDB, SQLite</td>
+<td>RocksDB, Cassandra, LevelDB</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Storage Engine Choice Echoes Through the ATAM Analysis</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Dex thinking">
+The storage engine is a root-level sensitivity point. When you see a database's write throughput scenario in a utility tree, the answer almost always traces back to whether the underlying engine is LSM-tree or B-tree. This connection — engine → write amplification → write latency scenario → utility tree leaf — appears in Chapters 5 (Key-Value), 6 (Column-Family), and again in Chapter 10 (ACID Transactions).</p>
+</div>
+<h2 id="data-serialization">Data Serialization</h2>
+<p><strong>Data serialization</strong> is the process of encoding data structures into a format suitable for storage or transmission, and deserializing them back. Serialization affects the database at two points: how data moves between the application and the database (wire protocol), and how data is stored on disk (storage format).</p>
+<p>Common serialization formats in database contexts include:</p>
+<ul>
+<li><strong>Row formats (PostgreSQL tuple, MySQL row):</strong> store all columns of a row contiguously; efficient for OLTP point lookups that need all columns of a record</li>
+<li><strong>Columnar formats (Parquet, ORC, Arrow):</strong> store all values of a column contiguously; efficient for OLAP aggregate queries that scan one or two columns across millions of rows</li>
+<li><strong>Document formats (BSON, MessagePack):</strong> encode arbitrary nested structures; used by document databases and wire protocols</li>
+<li><strong>Protocol Buffers / Thrift / Avro:</strong> schema-driven binary serialization used in inter-service communication and log-structured systems</li>
+</ul>
+<p>The choice between row and columnar storage is one of the clearest examples of a tradeoff point in database architecture: row storage is a sensitivity point for OLTP read performance (all columns of one row in one I/O), while columnar storage is a sensitivity point for OLAP aggregate performance (all values of one column in sequential I/O). A database cannot optimize both simultaneously — which is the foundational reason OLTP and OLAP workloads have historically required different database systems.</p>
+<h2 id="workload-characterization">Workload Characterization</h2>
+<p>Before any ATAM analysis can proceed meaningfully, the workload the database must handle must be characterized. <strong>Workload characterization</strong> is the process of describing a system's data access patterns in terms that predict which database architectures will succeed or fail.</p>
+<p>The primary dimensions of workload characterization are:</p>
+<ul>
+<li><strong>Read/write ratio:</strong> the proportion of read operations to write operations over time</li>
+<li><strong>Latency requirements:</strong> the maximum acceptable time per individual operation (e.g., p99 &lt; 10ms)</li>
+<li><strong>Throughput requirements:</strong> the number of operations the system must sustain per second</li>
+<li><strong>Data volume:</strong> how much data the database must manage at peak capacity</li>
+<li><strong>Query pattern:</strong> whether queries are simple point lookups, complex joins, full-text searches, or aggregate scans</li>
+</ul>
+<p>These dimensions do not vary independently. A system with high write throughput requirements and low write latency requirements simultaneously is far more constrained than one with just one of those requirements — and understanding the interaction between them is where workload analysis produces genuine architectural insight.</p>
+<h3 id="readwrite-ratio">Read/Write Ratio</h3>
+<p>The <strong>read/write ratio</strong> expresses how many read operations occur for every write operation. A ratio of 10:1 (ten reads per write) characterizes most OLTP systems. A ratio of 100:1 or higher characterizes caching layers and read-heavy content delivery. A ratio of 1:10 or lower (more writes than reads) characterizes ingestion-heavy systems like IoT telemetry collectors and financial event logs.</p>
+<p>Read/write ratio matters because almost every database design decision that improves read performance degrades write performance, and vice versa:</p>
+<ul>
+<li><strong>Indexing:</strong> adds read speed, subtracts write speed</li>
+<li><strong>Replication for read scaling:</strong> adds read throughput, adds write propagation overhead</li>
+<li><strong>LSM-tree storage:</strong> improves write throughput, adds read amplification</li>
+<li><strong>In-memory caching:</strong> dramatically improves read latency, adds cache invalidation complexity for writes</li>
+</ul>
+<p>A team that mis-characterizes its read/write ratio will optimize for the wrong half of the workload. This is not hypothetical — it is one of the most common root causes of database selection regrets.</p>
+<h3 id="latency-vs-throughput">Latency vs. Throughput</h3>
+<p><strong>Latency</strong> and <strong>throughput</strong> are frequently conflated but describe fundamentally different properties of a system's performance:</p>
+<ul>
+<li><strong>Latency</strong> is the time elapsed from the moment an individual request is issued to the moment a response is received. It is measured per-request and typically expressed as a percentile (p50, p95, p99, p99.9). Latency is experienced by the user.</li>
+<li><strong>Throughput</strong> is the rate at which the system processes requests over time, expressed in operations per second (ops/sec), transactions per second (TPS), or bytes per second. Throughput is a property of the system as a whole.</li>
+</ul>
+<p>These properties exist in tension. For a single database node, maximizing throughput often requires batching operations together — which increases per-operation latency. Minimizing latency often requires prioritizing individual operations over batch efficiency — which reduces throughput. Understanding which of these is the binding constraint for a given workload is essential for accurate utility tree scenario construction.</p>
+<h2 id="oltp-olap-and-htap-workloads">OLTP, OLAP, and HTAP Workloads</h2>
+<p>The most consequential workload distinction in database architecture is the division between transactional and analytical workloads. This distinction — and the hybrid that bridges it — appears as an architectural driver in almost every database selection scenario in this book.</p>
+<p>Before examining these three patterns in detail, understand that they are not primarily a property of the data — they are a property of <em>how the data is accessed</em>. The same customer data might be accessed in OLTP fashion by a purchase flow and in OLAP fashion by a monthly revenue report. The architectural challenge is that these access patterns favor radically different storage organizations.</p>
+<h3 id="oltp-workload">OLTP Workload</h3>
+<p><strong>Online Transaction Processing (OLTP)</strong> describes workloads characterized by high volumes of short, concurrent transactions that read and modify small numbers of rows. OLTP systems serve user-facing operations: purchase transactions, reservation confirmations, account balance updates, user authentication.</p>
+<p>The defining characteristics of an OLTP workload are:</p>
+<ul>
+<li><strong>High concurrency:</strong> hundreds to thousands of simultaneous users, each issuing independent transactions</li>
+<li><strong>Low latency requirement:</strong> user interactions require sub-second response times</li>
+<li><strong>Read/write mix:</strong> typically 70–95% reads, 5–30% writes, but writes must be fast and consistent</li>
+<li><strong>Small result sets:</strong> queries retrieve one record or a small number of related records</li>
+<li><strong>Strong consistency:</strong> concurrent writers must not produce anomalous results; ACID guarantees are expected</li>
+</ul>
+<p>Row-oriented storage with B-tree indexes is well-suited for OLTP because point lookups and row-level updates are its dominant access patterns. When a purchase transaction updates a user's balance, it needs exactly one row's columns — all of them — and the write must commit atomically.</p>
+<h3 id="olap-workload">OLAP Workload</h3>
+<p><strong>Online Analytical Processing (OLAP)</strong> describes workloads characterized by complex queries that aggregate large volumes of historical data. OLAP systems serve analytical and reporting functions: monthly revenue summaries, user retention cohorts, supply chain forecasts.</p>
+<p>The defining characteristics of an OLAP workload are:</p>
+<ul>
+<li><strong>Low concurrency:</strong> a small number of simultaneous analysts running complex queries</li>
+<li><strong>High query latency acceptable:</strong> a dashboard refresh in 5 seconds is acceptable; a transaction confirmation in 5 seconds is not</li>
+<li><strong>Read-dominant:</strong> historical data is rarely modified; the dominant operation is read-and-aggregate</li>
+<li><strong>Large result sets (scan-heavy):</strong> queries scan millions or billions of rows to produce aggregate results</li>
+<li><strong>Relaxed consistency:</strong> slight data staleness (hourly refresh, ETL lag) is usually acceptable</li>
+</ul>
+<p>Columnar storage is well-suited for OLAP because aggregate queries scan one or two columns across vast datasets. A query computing the average order value for the last quarter only needs the <code>order_amount</code> and <code>created_at</code> columns — columnar storage delivers those columns as sequential disk reads, while row storage would read every column of every order row just to extract two values.</p>
+<h3 id="htap-workload">HTAP Workload</h3>
+<p><strong>Hybrid Transactional/Analytical Processing (HTAP)</strong> describes workloads that require both OLTP and OLAP access patterns against the same dataset, with minimal latency between data being written and being available for analysis.</p>
+<p>Classic OLTP/OLAP separation solved the problem by running separate systems: OLTP transactions written to a relational database, nightly ETL jobs loading data into a data warehouse for OLAP queries. This architecture has two costs: ETL latency (analytics see yesterday's data, not today's) and operational complexity (two systems to operate, monitor, and keep synchronized).</p>
+<p>HTAP architectures — implemented by systems like TiDB, SingleStore, and Google AlloyDB — attempt to serve both workloads from a single system by maintaining both row-oriented and columnar views of the same data. This eliminates ETL latency but introduces significant internal complexity. The sensitivity point is isolation: OLAP scans must not degrade OLTP transaction latency, which requires careful workload routing and storage engine design.</p>
+<p>The interactive diagram below lets you explore how the three workload types differ across the key dimensions of database selection.</p>
+<h4 id="diagram-workload-characterization-explorer">Diagram: Workload Characterization Explorer</h4>
+<details markdown="1">
+<summary>Workload Characterization Explorer — click OLTP, OLAP, or HTAP to see their architectural signatures</summary>
+Type: interactive-infographic
+**sim-id:** workload-characterization-explorer
+**Library:** p5.js
+**Status:** Specified
+
+**Learning objective:** Analyzing (Bloom's level 4) — students compare the architectural signatures of OLTP, OLAP, and HTAP workloads across seven dimensions and identify which database design choices each workload drives.
+
+**Canvas:** 900 × 540px, responsive. Left panel (280px): three large clickable workload cards (OLTP, OLAP, HTAP). Right panel (580px): a radar chart showing the selected workload's profile across seven axes, plus a text summary below.
+
+**Workload data:**
+
+Seven radar axes (each scored 1–5):
+- Concurrency (simultaneous users)
+- Write frequency
+- Read frequency
+- Result set size
+- Query complexity
+- Latency sensitivity
+- Consistency strictness
+
+OLTP scores: Concurrency=5, Write=4, Read=4, ResultSize=1, Complexity=2, Latency=5, Consistency=5
+OLAP scores: Concurrency=1, Write=1, Read=5, ResultSize=5, Complexity=5, Latency=2, Consistency=2
+HTAP scores: Concurrency=4, Write=4, Read=5, ResultSize=3, Complexity=4, Latency=4, Consistency=4
+
+**Left panel cards:**
+- OLTP card: blue (#4682B4), icon of "⚡ Fast Transactions", subtitle "Point reads/writes at scale"
+- OLAP card: purple (#6f42c1), icon of "📊 Deep Analysis", subtitle "Aggregate scans over history"
+- HTAP card: orange (#E65100), icon of "🔀 Hybrid", subtitle "Both, from one system"
+
+**Right panel:**
+Radar chart with axes labeled. Selected workload polygon filled at 40% opacity in the workload's card color. A second semi-transparent grey polygon shows the "other" workload profiles at low opacity for comparison.
+
+Below the radar: a text block with three subsections:
+- "Typical storage engine" (B-tree / Columnar / Both)
+- "Canonical database examples" (PostgreSQL, MySQL / Snowflake, BigQuery / TiDB, SingleStore)
+- "When to choose this workload pattern" (2-sentence description)
+
+**Interaction:**
+- Clicking a workload card highlights it and updates the radar and text panel with animation (300ms ease).
+- Default selected on load: OLTP.
+- Hovering a radar axis label shows a tooltip with a one-sentence description of that dimension.
+
+**Responsive:** Below 700px, left panel stacks above the radar chart.
+</details>
+
+<h2 id="data-volume-scaling">Data Volume Scaling</h2>
+<p><strong>Data volume scaling</strong> describes how a database's performance, architecture, and operational complexity change as the amount of stored data grows. Volume scaling is not a linear problem — many databases that perform acceptably at 10 GB exhibit qualitative behavioral changes at 1 TB and again at 100 TB.</p>
+<p>The critical scaling thresholds for a given database architecture are determined by:</p>
+<ul>
+<li><strong>Buffer pool hit rate degradation:</strong> as data outgrows RAM, the percentage of reads served from disk increases, and latency rises non-linearly</li>
+<li><strong>Index size growth:</strong> B-tree depth increases logarithmically with data size; at extreme scale, index pages that once fit in L1 cache no longer fit in RAM</li>
+<li><strong>Compaction overhead:</strong> LSM-tree databases at high data volumes spend increasing CPU and I/O on background compaction, which competes with foreground read/write operations</li>
+<li><strong>Horizontal partitioning threshold:</strong> many databases require sharding (partitioning data across multiple nodes) only above certain volume thresholds; the operational complexity jump at that threshold is a significant risk factor</li>
+</ul>
+<p>Volume scaling is a first-class ATAM scenario for any system expected to grow. A utility tree scenario of the form "database sustains p99 read latency below 20ms as data volume grows from 500 GB to 10 TB over 18 months" is an architectural driver that eliminates several candidate architectures immediately.</p>
+<h2 id="impedance-mismatch">Impedance Mismatch</h2>
+<p><strong>Impedance mismatch</strong> is the structural friction that occurs when the data model a database imposes does not align naturally with the data structures the application uses. The term originates from electrical engineering (where impedance mismatch causes signal loss at circuit boundaries) and describes the same phenomenon in software: energy is lost translating between representations.</p>
+<p>The classic impedance mismatch is relational-to-object: application code organizes data as objects with nested properties and collections, while relational databases organize data as flat tables with foreign key relationships. An <code>Order</code> object with an embedded <code>customer</code> field and a <code>lineItems</code> array must be decomposed into three tables (<code>orders</code>, <code>customers</code>, <code>order_items</code>) for storage and reconstructed by JOIN queries for retrieval. Object-Relational Mappers (ORMs) automate this translation but do not eliminate the cost — they often make it harder to see.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Impedance Mismatch Compounds Over Time</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Dex warning">
+Teams often tolerate an impedance mismatch early in a project because the ORM handles it automatically. The cost becomes visible at scale: N+1 query problems, overfetching, JOIN complexity that the optimizer cannot optimize away, and schema migrations that require application changes. Impedance mismatch is an architectural risk worth documenting in the utility tree, not a problem to defer until it's urgent.</p>
+</div>
+<p>Document databases partially address the relational-to-object mismatch by storing documents that mirror object structures directly. But they introduce their own mismatch: when queries need to find relationships <em>between</em> documents (e.g., "all orders placed by customers in a specific region"), the document model requires either denormalization (duplicating data) or multi-round application-level joins. There is no mismatch-free data model — only mismatches that better fit the specific application's dominant access patterns.</p>
+<h2 id="query-expressiveness-and-operational-complexity">Query Expressiveness and Operational Complexity</h2>
+<p><strong>Query expressiveness</strong> was introduced earlier as the breadth of questions a query language can answer natively. Its ATAM significance lies in the tradeoff it creates with operational predictability: more expressive query languages produce more complex, less predictable execution plans — which means more optimizer sensitivity, more query tuning work, and more expertise required to operate the system well.</p>
+<p><strong>Operational complexity</strong> is the total ongoing engineering effort required to run a database system reliably in production. It encompasses deployment, configuration, monitoring, backup and restore, schema migration, capacity planning, version upgrades, and failure response. Operational complexity is systematically underweighted in database selection decisions made by development teams (who don't operate the system) and overweighted by operations teams (who do).</p>
+<p>Operational complexity is not just a secondary concern — it is a direct ATAM scenario dimension. A scenario of "a new database node can be provisioned and added to the cluster using a single idempotent command completing in under 10 minutes" directly tests operational complexity. Databases with complex, manual cluster management procedures fail this scenario routinely, and that failure is as consequential as a latency or availability failure.</p>
+<p>The following table provides a rough operational complexity profile across the six paradigms covered in this course:</p>
+<table>
+<thead>
+<tr>
+<th>Paradigm</th>
+<th>Operational Complexity</th>
+<th>Primary Driver</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Relational (single-node)</td>
+<td>Low-Medium</td>
+<td>Schema migrations; backup size</td>
+</tr>
+<tr>
+<td>Relational (sharded/replicated)</td>
+<td>High</td>
+<td>Replication lag; failover management</td>
+</tr>
+<tr>
+<td>Analytical / Data Warehouse</td>
+<td>Medium</td>
+<td>ETL pipeline; storage costs</td>
+</tr>
+<tr>
+<td>Key-Value</td>
+<td>Low (managed) / Medium (self-hosted)</td>
+<td>Eviction policy; cluster sizing</td>
+</tr>
+<tr>
+<td>Column-Family</td>
+<td>High</td>
+<td>Compaction tuning; multi-datacenter replication</td>
+</tr>
+<tr>
+<td>Graph</td>
+<td>Medium</td>
+<td>Index maintenance; query plan tuning</td>
+</tr>
+<tr>
+<td>Document</td>
+<td>Low-Medium</td>
+<td>Schema drift; aggregation pipeline complexity</td>
+</tr>
+</tbody>
+</table>
+<h2 id="putting-the-foundations-together">Putting the Foundations Together</h2>
+<p>The 18 concepts in this chapter are not independent facts — they form an interconnected model of how databases work and how to reason about their tradeoffs. Before each database paradigm chapter, it is worth asking:</p>
+<ul>
+<li>What <strong>data model</strong> does this paradigm use, and does it match the workload's access patterns?</li>
+<li>What <strong>storage engine</strong> architecture does it employ, and what does that imply for write vs. read amplification?</li>
+<li>What <strong>query language</strong> expressiveness does it offer, and what queries will require client-side filtering?</li>
+<li>What <strong>indexes</strong> does it maintain, and how does that affect the write path?</li>
+<li>What <strong>workload type</strong> (OLTP / OLAP / HTAP) is it optimized for?</li>
+<li>What <strong>data volume</strong> thresholds trigger qualitative performance changes?</li>
+<li>What <strong>operational complexity</strong> does the team inherit by choosing it?</li>
+</ul>
+<p>These questions are the practical translation of ATAM utility tree scenarios into database evaluation criteria. Each question maps to one or more quality attribute scenarios; each answer is either a sensitivity point, a tradeoff point, a risk, or a non-risk. The rest of this book applies this vocabulary systematically to each paradigm.</p>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li>
+<p><strong>A DBMS provides four guarantees</strong> — persistence, concurrency, query processing, and durability — and every architectural decision is a tradeoff among them. Understanding <em>how</em> a database implements each guarantee is the prerequisite for meaningful ATAM analysis.</p>
+</li>
+<li>
+<p><strong>Data models are the first architectural constraint.</strong> The relational, key-value, column-family, graph, and document models each impose a different organizing abstraction — and the mismatch between that abstraction and the application's access patterns is one of the most consequential long-term costs.</p>
+</li>
+<li>
+<p><strong>Storage engine architecture is a root-level sensitivity point.</strong> B-tree engines favor reads; LSM-tree engines favor writes. No database can simultaneously maximize both, and this tradeoff appears in every write-throughput and read-latency scenario.</p>
+</li>
+<li>
+<p><strong>Workload characterization precedes database selection.</strong> OLTP, OLAP, and HTAP workloads require different storage organizations, different consistency guarantees, and different operational postures. A database selected before the workload is characterized is a database selected without evidence.</p>
+</li>
+<li>
+<p><strong>Read/write ratio and latency/throughput are different dimensions.</strong> Conflating them produces incorrect utility tree scenarios. Know your binding constraint: is the problem that individual operations are too slow (latency), or that the system cannot handle enough operations concurrently (throughput)?</p>
+</li>
+<li>
+<p><strong>Impedance mismatch is an architectural risk, not a DX annoyance.</strong> The friction between an application's data model and the database's data model compounds at scale. Document it in the utility tree; do not defer it.</p>
+</li>
+<li>
+<p><strong>Operational complexity is a first-class quality attribute.</strong> Query expressiveness, index flexibility, and replication topology all carry an operational cost that the team inheriting the system will pay indefinitely. Every chapter ahead quantifies this cost for each paradigm.</p>
+</li>
+</ul>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Chapter 2 Complete — Your Database Vocabulary Is Solid!</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Dex celebrating">
+You now have the shared vocabulary that every database chapter builds on: storage engines, data models, workload patterns, impedance mismatch, query expressiveness, operational complexity. When Chapter 3 says "B-tree storage engine" or Chapter 6 says "LSM-tree write path," you'll know exactly what's at stake in the ATAM tradeoff. Onward to the relational database — the system that defined the baseline for everything else. Choose wisely — and document why!</p>
+</div>
 
 
 
@@ -1706,7 +2731,12 @@
 
 
 
+  
+  
 
+
+
+  
 
 
 
@@ -1778,6 +2808,11 @@
     </div>
   
   
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
 </div>
       
     </div>
@@ -1797,6 +2832,8 @@
     
     
       <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
       
     
   </body>

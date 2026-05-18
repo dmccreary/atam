@@ -55,13 +55,40 @@
       
     
     
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-C8YG80XNGY"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-C8YG80XNGY",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-C8YG80XNGY",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
-  </head>
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Chapter 1 - The ATAM Method - Selecting the Right Database" />
+<meta property="og:description" content="Introduces the Carnegie Mellon SEI Architecture Tradeoff Analysis Method (ATAM) as the analytical framework for database selection decisions throughout this course." />
+<meta property="og:image" content="https://dmccreary.github.io/right-database/assets/images/social/chapters/01-atam-method/index.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://dmccreary.github.io/right-database/chapters/01-atam-method/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Chapter 1 - The ATAM Method - Selecting the Right Database" />
+<meta property="twitter:description" content="Introduces the Carnegie Mellon SEI Architecture Tradeoff Analysis Method (ATAM) as the analytical framework for database selection decisions throughout this course." />
+<meta property="twitter:image" content="https://dmccreary.github.io/right-database/assets/images/social/chapters/01-atam-method/index.png" />
+</head>
   
   
     
@@ -2200,6 +2227,11 @@
 <h2 id="prerequisites">Prerequisites</h2>
 <p>This chapter assumes only the prerequisites listed in the <a href="../../course-description/">course description</a>.</p>
 <hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to Chapter 1!</p>
+<p><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Dex waving welcome">
+I'm Dex — your database architecture guide. This chapter hands you the most powerful tool in this book: ATAM, the structured method that turns "which database should we use?" from a heated opinion contest into a documented, defensible decision. By the end, you'll have the vocabulary and the analytical framework that every subsequent chapter builds on. Let's analyze the tradeoffs!</p>
+</div>
 <h2 id="why-database-selection-fails">Why Database Selection Fails</h2>
 <p>The most expensive architectural mistakes are often the quietest. A team evaluating databases rarely sits down and decides to pick the wrong one — instead, they pick the familiar one, the one that worked on the last project, the one a respected engineer advocated for at a conference, or the one whose marketing material aligned neatly with their intuitions. Three years later, the system is in production, data is locked in, and engineers spend more time working around the database than working with it.</p>
 <p>The root cause is almost never ignorance of the database's features. It is the absence of a structured method for connecting architectural requirements to architectural decisions. Without such a method, teams optimize for what they can measure easily (developer familiarity, query syntax, benchmark numbers) rather than for what actually drives system success (consistency guarantees under failure, replication topologies, scalability limits, operational complexity at scale).</p>
@@ -2317,6 +2349,11 @@
 </ol>
 <p>Think of the utility tree as the architectural equivalent of fitting a glove to a hand. Each quality attribute is a dimension of fit — just as each finger must fit individually for the glove to be useful, each quality attribute scenario must be satisfiable for the architecture to succeed. The tree makes these dimensions explicit, so teams can reason about them together rather than each carrying an invisible mental model.</p>
 <p><img alt="The hand-in-glove metaphor: each quality attribute is a dimension of fit, and all must be satisfied" src="../../img/hand-in-glove.png" /></p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">The Utility Tree: Your Most Reused Artifact</p>
+<p><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Dex thinking">
+The utility tree is the concept you will use in <em>every single chapter</em> of this book. Relational, graph, column-family, document — every database paradigm gets evaluated the same way: against a prioritized utility tree. Internalize this structure now and the rest of the book snaps into place.</p>
+</div>
 <p>Before examining the interactive utility tree below, let's define the two key terms that appear on every leaf node.</p>
 <h4 id="diagram-interactive-utility-tree-explorer">Diagram: Interactive Utility Tree Explorer</h4>
 <details markdown="1">
@@ -2417,6 +2454,11 @@ Each leaf node displays a priority badge in the format (Importance, Difficulty):
 <li><strong>Response measure:</strong> Zero consistency violations detected by post-batch audit; p99 transaction latency below 200ms</li>
 </ul>
 <p>This scenario is actionable because it is specific. A team evaluating PostgreSQL versus CockroachDB versus Cassandra for this scenario can reason about each candidate's isolation guarantees and known latency characteristics. Without the response measure, "handles concurrent writes well" is not evaluable.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">A Scenario Without a Response Measure Is Just a Wish</p>
+<p><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Dex warning">
+The most common ATAM mistake: writing scenarios that sound specific but have no measurable criterion. "The database performs well under load" is a wish. "p99 write latency remains below 5ms under 100,000 writes per second" is a scenario. If you cannot write a test that unambiguously passes or fails it, rewrite the scenario until you can.</p>
+</div>
 <h2 id="utility-tree-prioritization">Utility Tree Prioritization</h2>
 <p>Not all scenarios are equally important, and not all are equally difficult for the candidate architectures to satisfy. <strong>Utility tree prioritization</strong> assigns each leaf-node scenario a two-dimensional rating that captures both dimensions:</p>
 <ul>
@@ -2488,6 +2530,11 @@ Each leaf node displays a priority badge in the format (Importance, Difficulty):
 </tbody>
 </table>
 <p>Every tradeoff point is a sensitivity point, but not every sensitivity point is a tradeoff point. When you find a tradeoff point during ATAM analysis, you have found a place where the architecture cannot satisfy all high-priority scenarios simultaneously — and where stakeholders must make an explicit priority decision.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Tradeoff Points: Sensitivity Points That Got Complicated</p>
+<p><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Dex giving a tip">
+Here's the practical test: find all the parameters that matter a great deal (sensitivity points), then ask "does tuning this <em>up</em> hurt something else?" If yes, you have a tradeoff point — mark it carefully and bring it to stakeholders. These are the decisions no architect should make alone.</p>
+</div>
 <h2 id="architectural-risks-non-risks-and-risk-themes">Architectural Risks, Non-Risks, and Risk Themes</h2>
 <p>ATAM analysis produces three distinct categories of findings about the candidate architecture's relationship to the quality attribute scenarios.</p>
 <p>An <strong>architectural risk</strong> is a potentially unsatisfied quality attribute scenario — a scenario that the proposed architecture may not satisfy under the conditions the scenario specifies. Risks are not defects; they are open questions where the analysis has identified concern. A single-leader relational database has a known architectural risk for the scenario "sustains 99.999% availability during a primary node failure" — because the failover window during leader re-election violates the five-nines response measure.</p>
@@ -2851,6 +2898,11 @@ consistency patterns (Cassandra, DynamoDB) are unavailable for this data domain.
 <p><strong>ATAM is the analytical framework for every chapter in this book.</strong> The vocabulary and structure introduced here — utility trees, quality attribute scenarios, sensitivity points, tradeoff points, architectural drivers — appear in every subsequent chapter as the lens through which each database paradigm is evaluated.</p>
 </li>
 </ul>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Chapter 1 Complete — Your ATAM Foundation Is Solid!</p>
+<p><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Dex celebrating">
+You now hold the analytical toolkit that drives every decision in this book. Utility trees, quality attribute scenarios, sensitivity points, tradeoff points, architectural decision records — not just vocabulary, but professional tools you'll use for the rest of your career. Every database chapter ahead applies exactly these tools to a specific paradigm. You're ready. Choose wisely — and document why!</p>
+</div>
 
 
 
@@ -2862,6 +2914,8 @@ consistency patterns (Cassandra, DynamoDB) are unavailable for this data domain.
   
 
 
+
+  
 
 
 
@@ -2933,6 +2987,11 @@ consistency patterns (Cassandra, DynamoDB) are unavailable for this data domain.
     </div>
   
   
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
 </div>
       
     </div>
@@ -2952,6 +3011,8 @@ consistency patterns (Cassandra, DynamoDB) are unavailable for this data domain.
     
     
       <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
       
     
   </body>
