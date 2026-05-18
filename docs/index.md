@@ -1,4 +1,16 @@
-# Architecture Tradeoff Analysis Methodology
+---
+title: Selecting the Right Database
+description: Learn how to apply the Architecture Tradeoff Analysis Methodology (ATAM) to select the right database for any business challenge.
+image: img/cover.png
+hide:
+  - toc
+---
+
+<style>
+.md-content__inner h1 { display: none !important; }
+</style>
+
+# Selecting the Right Database
 
 ![Book Cover](img/cover.png)
 
