@@ -38,8 +38,24 @@ nav:
 
   - Chapters:
       - List of Chapters: chapters/index.md
-      # Add chapter entries here as content is generated, e.g.:
-      # - 1. Introduction: chapters/01-introduction/index.md
+      - 1. Software Architecture Foundations: chapters/01-software-architecture-foundations/index.md
+      - 2. Architecture Principles and Governance: chapters/02-architecture-principles-governance/index.md
+      - 3. ATAM Introduction and Process Phases: chapters/03-atam-introduction-process/index.md
+      - 4. Stakeholder and Business Analysis: chapters/04-stakeholder-business-analysis/index.md
+      - 5. Quality Attributes: chapters/05-quality-attributes/index.md
+      - 6. Quality Attribute Scenarios: chapters/06-quality-attribute-scenarios/index.md
+      - 7. Utility Trees and Prioritization: chapters/07-utility-trees-prioritization/index.md
+      - 8. Architectural Patterns and Styles: chapters/08-architectural-patterns-styles/index.md
+      - 9. Architectural Tactics and Principles: chapters/09-architectural-tactics-principles/index.md
+      - 10. Risk Analysis and ATAM Reporting: chapters/10-risk-analysis-atam-reporting/index.md
+      - 11. Distributed Systems Fundamentals: chapters/11-distributed-systems-fundamentals/index.md
+      - 12. Distributed Systems Patterns: chapters/12-distributed-systems-patterns/index.md
+      - 13. Cloud-Native Architecture: chapters/13-cloud-native-architecture/index.md
+      - 14. Security Architecture: chapters/14-security-architecture/index.md
+      - 15. Performance Engineering and Scaling: chapters/15-performance-engineering-scaling/index.md
+      - 16. Observability and Reliability: chapters/16-observability-reliability/index.md
+      - 17. AI and ML System Architecture: chapters/17-ai-ml-system-architecture/index.md
+      - 18. Advanced Data and Emerging AI: chapters/18-advanced-data-emerging-ai/index.md
 
   - Learning Graph:
       - Introduction: learning-graph/index.md
@@ -48,6 +64,7 @@ nav:
       - Concept Taxonomy: learning-graph/concept-taxonomy.md
       - Graph Quality Analysis: learning-graph/quality-metrics.md
       - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
+      - Mascot Style Guide: learning-graph/mascot-test.md
 
   - MicroSims:
       - List of MicroSims: sims/index.md
@@ -59,9 +76,8 @@ nav:
 # Theme configuration
 theme:
   name: material
-  # Once a logo is generated, point this at docs/img/logo.png or a mascot pose:
-  # logo: img/logo.png
-  # favicon: img/favicon.ico
+  logo: img/mascot/neutral.png
+  favicon: img/favicon.ico
   palette:
     primary: 'indigo'
     accent: 'orange'
@@ -123,6 +139,7 @@ markdown_extensions:
 # Custom CSS — file is created by init-textbook
 extra_css:
   - css/extra.css
+  - css/mascot.css
 
 # Custom JavaScript — uncomment once a corresponding file exists
 # extra_javascript:
