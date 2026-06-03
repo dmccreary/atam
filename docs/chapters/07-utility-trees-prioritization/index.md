@@ -104,7 +104,7 @@ An **(H, H)** scenario demands the following from the evaluation team:
 
 #### Diagram: Utility Tree Interactive Explorer
 
-<iframe src="../../sims/utility-tree-explorer/main.html" width="100%" height="600px" scrolling="no"></iframe>
+<iframe src="../../sims/utility-tree-explorer/main.html" width="100%" height="602px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Utility Tree Interactive Explorer</summary>

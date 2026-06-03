@@ -1,98 +1,70 @@
 ---
 title: Utility Tree Interactive Explorer
-description: Students will be able to identify each level of a utility tree (root, quality attribute branch, sub-attribute node, leaf scenario), interpret the importance and difficulty ratings, and explain why (H,H) scenarios receive priority analytical attention.
-status: scaffold
-library: p5.js
-bloom_level: Understand (L2) — Explain the hierarchical structure of a utility tree and interpret the importance/difficulty ratings of leaf-level scenarios.
+description: Interactive p5.js MicroSim for exploring a complete healthcare-portal utility tree with color-coded Importance/Difficulty rating badges.
+image: /sims/utility-tree-explorer/utility-tree-explorer.png
+og:image: /sims/utility-tree-explorer/utility-tree-explorer.png
+twitter:image: /sims/utility-tree-explorer/utility-tree-explorer.png
+social:
+   cards: false
+quality_score: 0
 ---
 
 # Utility Tree Interactive Explorer
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="602" width="100%" scrolling="no"></iframe>
 
-## Learning Objective
+[Run the Utility Tree Explorer MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
+<br/>
+[Edit in the p5.js Editor](https://editor.p5js.org/)
 
-Students will be able to identify each level of a utility tree (root, quality attribute branch, sub-attribute node, leaf scenario), interpret the importance and difficulty ratings, and explain why (H,H) scenarios receive priority analytical attention.
+## About This MicroSim
 
-- **Bloom Level:** Understand (L2) — Explain the hierarchical structure of a utility tree and interpret the importance/difficulty ratings of leaf-level scenarios.
-- **Bloom Verb:** Explain
-- **Library:** p5.js
+This MicroSim presents a complete utility tree for a healthcare patient-portal system as an indented, expandable outline. It shows the four levels of every utility tree — the gold **root** (overall Utility), blue quality attribute **branches**, teal **sub-attribute** nodes, and **leaf scenarios** — and gives each leaf a color-coded **(Importance, Difficulty)** rating badge. Clicking a leaf explains why it earned its rating, which is the skill the chapter is teaching: interpreting ratings to find the scenarios that deserve priority analytical attention.
 
-## Preview
+## How to Use
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+1. **Expand and collapse** any node by clicking it (or use **Expand All** / **Collapse All**).
+2. **Read the rating badges** on the leaves. The color tells you the priority class: red (H,H) is *analyze first*, orange is high-value, gold is a quick win, blue is secondary, gray is monitor-only.
+3. **Click a leaf scenario** to open the detail panel, which shows its branch → sub-attribute path, its rating label, and a one-sentence rationale for the Importance and Difficulty.
+4. **Focus (H,H)** hides every lower-priority leaf so the critical set across the whole tree stands out.
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+## Iframe Embed Code
 
-## Specification
+You can add this MicroSim to any web page by adding this to your HTML:
 
-The full specification below is extracted from
-[Chapter 7: Utility Trees and Scenario Prioritization](../../chapters/07-utility-trees-prioritization/index.md).
-
-```text
-Type: diagram
-**sim-id:** utility-tree-explorer<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
-
-Purpose: Provide an interactive, expandable utility tree visualization showing a complete example tree for a healthcare patient portal system, with color-coded (H,H)/(H,M)/(M,H)/(M,M) scenario ratings, and click-to-expand nodes revealing scenario details.
-
-Bloom Level: Understand (L2) — Explain the hierarchical structure of a utility tree and interpret the importance/difficulty ratings of leaf-level scenarios.
-Bloom Verb: Explain
-
-Learning Objective: Students will be able to identify each level of a utility tree (root, quality attribute branch, sub-attribute node, leaf scenario), interpret the importance and difficulty ratings, and explain why (H,H) scenarios receive priority analytical attention.
-
-Canvas layout:
-- Tree visualization expanding downward from root
-- Root node (top center): "Utility" in gold
-- Level 2 branches (quality attribute names): 4 branches visible by default (Performance, Availability, Security, Modifiability), expandable to 6
-- Level 3 sub-attribute nodes under each branch
-- Level 4 leaf scenarios with (Importance, Difficulty) rating badges
-- Color coding: (H,H) = red, (H,M) or (M,H) = orange, (H,L) = gold, (M,M) = blue, (L,*) = gray
-- Detail panel on the right showing full scenario when a leaf is clicked
-- "Focus Mode" button that dims all nodes except (H,H) ones
-
-Example tree content (healthcare patient portal):
-Performance branch:
-- Sub-attribute: Response Latency
-  - Leaf: Patient appointment search returns results in <800ms at p99 under peak load [H,H]
-  - Leaf: Patient record retrieval completes in <2s for records with >500 attachments [H,M]
-- Sub-attribute: Batch Processing
-  - Leaf: Nightly claim reconciliation completes within 4-hour window [M,M]
-
-Availability branch:
-- Sub-attribute: Fault Tolerance
-  - Leaf: EHR integration failure does not prevent appointment scheduling [H,H]
-  - Leaf: Authentication service failure redirects to backup IdP within 10 seconds [H,M]
-- Sub-attribute: Planned Maintenance
-  - Leaf: Maintenance window limited to 30 minutes per week, off-peak [H,L]
-
-Security branch:
-- Sub-attribute: Access Control
-  - Leaf: PHI access limited to authenticated, authorized users; all access logged [H,H]
-  - Leaf: Admin account compromise detected and locked within 60 seconds [H,H]
-- Sub-attribute: Data Protection
-  - Leaf: All PHI encrypted at rest and in transit [H,L]
-
-Modifiability branch:
-- Sub-attribute: Feature Evolution
-  - Leaf: New insurance provider integration added without changing patient-facing features [H,H]
-  - Leaf: HIPAA regulation change implementable within one sprint cycle [M,H]
-
-Interactive elements:
-- Click any node to expand its children; click again to collapse
-- Click any leaf node to see full six-component scenario in detail panel
-- Click (Importance, Difficulty) badge to see the rating rationale
-- "Focus (H,H)" button collapses all non-(H,H) leaves and highlights the remaining ones
-- Drag-and-drop: drag a leaf to a different sub-attribute to see how the tree restructures
-
-Color scheme: Gold root, blue branches, teal sub-attribute nodes, color-coded leaves by rating. Gray background.
-
-Responsive: Tree scales horizontally; collapses to single-column list on narrow screens.
+```html
+<iframe src="https://dmccreary.github.io/atam/sims/utility-tree-explorer/main.html"
+        width="100%"
+        scrolling="no"></iframe>
 ```
 
-## Related Resources
+## Lesson Plan
 
-- [Chapter 7: Utility Trees and Scenario Prioritization](../../chapters/07-utility-trees-prioritization/index.md)
+### Grade Level
+Undergraduate / Professional
+
+### Duration
+10-15 minutes
+
+### Prerequisites
+None beyond an introduction to quality attributes.
+
+### Bloom's Taxonomy Level
+Understand (L2)
+
+### Learning Objective
+Students will be able to identify each level of a utility tree (root, quality attribute branch, sub-attribute node, leaf scenario), interpret the importance and difficulty ratings, and explain why (H,H) scenarios receive priority analytical attention.
+
+### Activities
+
+1. **Name the levels** (4 min): Students click through the tree and label an example of each of the four levels.
+2. **Interpret ratings** (5 min): Students open three different leaves and explain, in their own words, why each pair of ratings makes sense.
+3. **Focus** (4 min): Students click Focus (H,H) and list the critical scenarios, then explain why those five would be analyzed first.
+
+### Assessment
+Give students an unrated leaf scenario and ask them to assign and justify an (Importance, Difficulty) rating consistent with the examples in the tree.
+
+## References
+
+1. Bass, L., Clements, P., & Kazman, R. (2021). *Software Architecture in Practice* (4th ed.). Addison-Wesley.
+2. Kazman, R., Klein, M., & Clements, P. (2000). *ATAM: Method for Architecture Evaluation* (CMU/SEI-2000-TR-004).

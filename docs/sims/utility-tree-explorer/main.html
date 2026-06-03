@@ -3,148 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Utility Tree Interactive Explorer</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Utility Tree Interactive Explorer using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="utility-tree-explorer.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Utility Tree Interactive Explorer</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> utility-tree-explorer</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Understand (L2) — Explain the hierarchical structure of a utility tree and interpret the importance/difficulty ratings of leaf-level scenarios.</p>
-            <p><strong>Learning Objective:</strong> Students will be able to identify each level of a utility tree (root, quality attribute branch, sub-attribute node, leaf scenario), interpret the importance and difficulty ratings, and explain why (H,H) scenarios receive priority analytical attention.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: diagram
-    **sim-id:** utility-tree-explorer<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    Purpose: Provide an interactive, expandable utility tree visualization showing a complete example tree for a healthcare patient portal system, with color-coded (H,H)/(H,M)/(M,H)/(M,M) scenario ratings, and click-to-expand nodes revealing scenario details.
-    
-    Bloom Level: Understand (L2) — Explain the hierarchical structure of a utility tree and interpret the importance/difficulty ratings of leaf-level scenarios.
-    Bloom Verb: Explain
-    
-    Learning Objective: Students will be able to identify each level of a utility tree (root, quality attribute branch, sub-attribute node, leaf scenario), interpret the importance and difficulty ratings, and explain why (H,H) scenarios receive priority analytical attention.
-    
-    Canvas layout:
-    - Tree visualization expanding downward from root
-    - Root node (top center): "Utility" in gold
-    - Level 2 branches (quality attribute names): 4 branches visible by default (Performance, Availability, Security, Modifiability), expandable to 6
-    - Level 3 sub-attribute nodes under each branch
-    - Level 4 leaf scenarios with (Importance, Difficulty) rating badges
-    - Color coding: (H,H) = red, (H,M) or (M,H) = orange, (H,L) = gold, (M,M) = blue, (L,*) = gray
-    - Detail panel on the right showing full scenario when a leaf is clicked
-    - "Focus Mode" button that dims all nodes except (H,H) ones
-    
-    Example tree content (healthcare patient portal):
-    Performance branch:
-    - Sub-attribute: Response Latency
-      - Leaf: Patient appointment search returns results in <800ms at p99 under peak load [H,H]
-      - Leaf: Patient record retrieval completes in <2s for records with >500 attachments [H,M]
-    - Sub-attribute: Batch Processing
-      - Leaf: Nightly claim reconciliation completes within 4-hour window [M,M]
-    
-    Availability branch:
-    - Sub-attribute: Fault Tolerance
-      - Leaf: EHR integration failure does not prevent appointment scheduling [H,H]
-      - Leaf: Authentication service failure redirects to backup IdP within 10 seconds [H,M]
-    - Sub-attribute: Planned Maintenance
-      - Leaf: Maintenance window limited to 30 minutes per week, off-peak [H,L]
-    
-    Security branch:
-    - Sub-attribute: Access Control
-      - Leaf: PHI access limited to authenticated, authorized users; all access logged [H,H]
-      - Leaf: Admin account compromise detected and locked within 60 seconds [H,H]
-    - Sub-attribute: Data Protection
-      - Leaf: All PHI encrypted at rest and in transit [H,L]
-    
-    Modifiability branch:
-    - Sub-attribute: Feature Evolution
-      - Leaf: New insurance provider integration added without changing patient-facing features [H,H]
-      - Leaf: HIPAA regulation change implementable within one sprint cycle [M,H]
-    
-    Interactive elements:
-    - Click any node to expand its children; click again to collapse
-    - Click any leaf node to see full six-component scenario in detail panel
-    - Click (Importance, Difficulty) badge to see the rating rationale
-    - "Focus (H,H)" button collapses all non-(H,H) leaves and highlights the remaining ones
-    - Drag-and-drop: drag a leaf to a different sub-attribute to see how the tree restructures
-    
-    Color scheme: Gold root, blue branches, teal sub-attribute nodes, color-coded leaves by rating. Gray background.
-    
-    Responsive: Tree scales horizontally; collapses to single-column list on narrow screens.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>
