@@ -1,82 +1,73 @@
 ---
 title: Scenario Construction Workbench
-description: Students will be able to transform a general scenario template into a concrete, system-specific scenario with a quantitative response measure, for any of the five typed scenario families (performance, availability, security, modifiability, scalability).
-status: scaffold
-library: p5.js
-bloom_level: Apply (L3) — Use the six-component scenario model to construct well-formed concrete quality attribute scenarios from general templates.
+description: Interactive p5.js MicroSim for constructing well-formed quality attribute scenarios from typed templates with a live completeness meter.
+image: /sims/scenario-construction-workbench/scenario-construction-workbench.png
+og:image: /sims/scenario-construction-workbench/scenario-construction-workbench.png
+twitter:image: /sims/scenario-construction-workbench/scenario-construction-workbench.png
+social:
+   cards: false
+quality_score: 0
 ---
 
 # Scenario Construction Workbench
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="592" width="100%" scrolling="no"></iframe>
 
-## Learning Objective
+[Run the Scenario Construction Workbench MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
+<br/>
+[Edit in the p5.js Editor](https://editor.p5js.org/)
 
-Students will be able to transform a general scenario template into a concrete, system-specific scenario with a quantitative response measure, for any of the five typed scenario families (performance, availability, security, modifiability, scalability).
+## About This MicroSim
 
-- **Bloom Level:** Apply (L3) — Use the six-component scenario model to construct well-formed concrete quality attribute scenarios from general templates.
-- **Bloom Verb:** Construct
-- **Library:** p5.js
+A workbench for turning a general scenario template into a concrete, system-specific quality attribute scenario. Five tabs select a scenario family — Performance, Availability, Security, Modifiability, or Scalability — each with its own general template and a measure-field hint. As you fill the six scenario components, a live Completeness meter and an ATAM-Ready badge react to how specific and measurable your content is. Well-formed scenarios can be saved to a catalog to build a coverage set across quality attributes.
 
-## Preview
+## How to Use
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+1. **Pick a scenario family** by clicking one of the five colored tabs.
+2. **Load Template** pre-fills a partially complete worked example — the Response Measure is intentionally left blank so you supply the quantitative bar.
+3. **Fill the six components**: Source, Stimulus, Environment, Artifact, Response, and Response Measure. The green/amber/red dot beside each field marks how specific it is.
+4. **Evaluate Scenario** shows per-component feedback (✓ Specific, ⚠ Add a quantitative measure, ✗ Too vague).
+5. **Save to Catalog** stores a well-formed scenario so you can build a set spanning several quality attributes.
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+A scenario reaches **ATAM-Ready** when every component is specific and the response measure is quantitative.
 
-## Specification
+## Iframe Embed Code
 
-The full specification below is extracted from
-[Chapter 6: Quality Attribute Scenarios](../../chapters/06-quality-attribute-scenarios/index.md).
+You can add this MicroSim to any web page by adding this to your HTML:
 
-```text
-Type: microsim
-**sim-id:** scenario-construction-workbench<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
-
-Purpose: Interactive workbench for constructing well-formed quality attribute scenarios using the six-component model, with instant feedback on completeness and quality, and library of general scenario templates to start from.
-
-Bloom Level: Apply (L3) — Use the six-component scenario model to construct well-formed concrete quality attribute scenarios from general templates.
-Bloom Verb: Construct
-
-Learning Objective: Students will be able to transform a general scenario template into a concrete, system-specific scenario with a quantitative response measure, for any of the five typed scenario families (performance, availability, security, modifiability, scalability).
-
-Canvas layout:
-- Top: Quality attribute selector tabs (Performance, Availability, Security, Modifiability, Scalability)
-- Left panel: Six labeled input fields for the six scenario components
-- Center: Completeness meter (0-100%) and "ATAM-Ready" indicator
-- Right panel: General scenario template for selected quality attribute, with "Load Template" button
-- Bottom: "Evaluate Scenario" button showing detailed per-component feedback
-
-Template library (one per quality attribute type):
-Performance: "N requests of type X arrive at rate Y; system must respond within Z ms at the Pnn percentile"
-Availability: "Component X fails; system must recover/degrade within T seconds with at most M data loss"
-Security: "Adversarial actor attempts X attack type; system must detect and respond with Y within Z seconds"
-Modifiability: "New requirement X must be implemented; change must be confined to Y modules within Z effort"
-Scalability: "Workload increases by Nx; system must scale to handle it within T minutes with P% cost increase"
-
-Completeness scoring (same as Chapter 5 workbench but extended):
-- Each empty field: -15 points
-- Generic/vague field (no numbers, no specifics): -10 points
-- Specific field with quantitative measure: +15 points
-
-Behavior:
-- Selecting a quality attribute tab changes the general template and field hints
-- "Load Template" pre-fills fields with a partially complete example
-- As student fills fields, completeness meter animates
-- "Evaluate Scenario" shows per-field feedback: "✓ Specific" / "⚠ Add a quantitative measure" / "✗ Too vague"
-- "Save to Catalog" button (multiple scenarios can be saved) enables catalog building exercise
-
-Instructional Rationale: Active construction from templates is appropriate because the Apply objective requires practice with concrete values. Loading templates reduces blank-page anxiety while still requiring students to supply the system-specific details.
-
-Color scheme: Tabs in quality attribute colors from Chapter 5. Completeness meter in red-yellow-green gradient. Gold for component field headers.
-
-Responsive: Panels stack vertically on narrow screens.
+```html
+<iframe src="https://dmccreary.github.io/atam/sims/scenario-construction-workbench/main.html"
+        width="100%"
+        scrolling="no"></iframe>
 ```
 
-## Related Resources
+## Lesson Plan
 
-- [Chapter 6: Quality Attribute Scenarios](../../chapters/06-quality-attribute-scenarios/index.md)
+### Grade Level
+Undergraduate / Professional
+
+### Duration
+10-15 minutes
+
+### Prerequisites
+Familiarity with the six-component quality attribute scenario model and the five quality attribute families used in ATAM.
+
+### Bloom's Taxonomy Level
+Apply (L3)
+
+### Learning Objective
+Students will be able to transform a general scenario template into a concrete, system-specific scenario with a quantitative response measure, for any of the five typed scenario families.
+
+### Activities
+
+1. **Exploration** (5 min): Students load a template for each quality attribute family and observe how the general template differs from a concrete scenario.
+2. **Guided Practice** (5 min): For two different families, students construct a scenario that reaches the ATAM-Ready badge, then Save it to the catalog.
+3. **Discussion** (5 min): Students compare catalogs and discuss why the response measure is the component that makes a scenario testable.
+
+### Assessment
+Give students a vague goal ("the checkout should scale for Black Friday") and ask them to construct a Scalability scenario that reaches an ATAM-Ready (90%+) completeness score.
+
+## References
+
+1. Bass, L., Clements, P., & Kazman, R. (2021). *Software Architecture in Practice* (4th ed.). Addison-Wesley.
+2. Kazman, R., Klein, M., & Clements, P. (2000). *ATAM: Method for Architecture Evaluation* (CMU/SEI-2000-TR-004).

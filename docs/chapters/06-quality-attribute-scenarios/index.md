@@ -226,7 +226,7 @@ Scalability scenarios specify how the system responds to a sustained increase in
 
 #### Diagram: Scenario Construction Workbench
 
-<iframe src="../../sims/scenario-construction-workbench/main.html" width="100%" height="580px" scrolling="no"></iframe>
+<iframe src="../../sims/scenario-construction-workbench/main.html" width="100%" height="592px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Scenario Construction Workbench</summary>
