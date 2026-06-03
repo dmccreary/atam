@@ -1,77 +1,70 @@
 ---
 title: Tactic Interaction Web
-description: Students will be able to identify at least three tactic interaction chains (where applying tactic A improves QA-1 but degrades QA-2, which may require applying tactic B to compensate), and explain why these interactions are ATAM tradeoff points.
-status: scaffold
-library: vis-network
-bloom_level: Analyze (L4) — Examine tactic interactions to identify where applying a tactic to improve one quality attribute creates risks for another, and trace the interaction chain through multiple tactics.
+description: Interactive vis-network MicroSim showing how architectural tactics improve one quality attribute while degrading another, and which compensating tactic the tradeoff requires.
+image: /sims/tactic-interaction-web/tactic-interaction-web.png
+og:image: /sims/tactic-interaction-web/tactic-interaction-web.png
+twitter:image: /sims/tactic-interaction-web/tactic-interaction-web.png
+social:
+   cards: false
+quality_score: 0
 ---
 
 # Tactic Interaction Web
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="562" width="100%" scrolling="no"></iframe>
 
-## Learning Objective
+[Run the Tactic Interaction Web MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 
-Students will be able to identify at least three tactic interaction chains (where applying tactic A improves QA-1 but degrades QA-2, which may require applying tactic B to compensate), and explain why these interactions are ATAM tradeoff points.
+## About This MicroSim
 
-- **Bloom Level:** Analyze (L4) — Examine tactic interactions to identify where applying a tactic to improve one quality attribute creates risks for another, and trace the interaction chain through multiple tactics.
-- **Bloom Verb:** Examine
-- **Library:** vis-network
+This MicroSim is a network graph of architectural tactics and the quality attributes they affect. Quality attributes are blue ellipses (Performance, Availability, Security, Modifiability, Consistency); tactics are gold boxes (Caching, Redundancy, Retry, Encryption, Circuit Breaker, Rate Limiting, Connection Pooling, Dependency Injection, Information Hiding); compensating tactics are orange boxes. Green arrows mean a tactic improves an attribute, red dashed arrows mean it degrades one, and orange arrows point to the compensating tactic a tradeoff requires. These tactic interactions are exactly the tradeoff points an ATAM evaluation is built to surface.
 
-## Preview
+## How to Use
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+1. **Click a tactic** (gold) to read what it improves (green) and degrades (red); its connected edges highlight.
+2. **Click a quality attribute** (blue) to see every tactic that affects it.
+3. **Click an edge** to read the specific mechanism and a realistic example.
+4. Turn on **Show Interaction Chains**, then click **Caching**, **Redundancy**, or **Encryption** to trace its tradeoff to the compensating tactic it requires (e.g., Caching → degrades Consistency → Cache Invalidation Strategy).
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+When embedded, use the navigation buttons in the corner to zoom and pan.
 
-## Specification
+## Iframe Embed Code
 
-The full specification below is extracted from
-[Chapter 9: Architectural Tactics and Design Principles](../../chapters/09-architectural-tactics-principles/index.md).
+You can add this MicroSim to any web page by adding this to your HTML:
 
-```text
-Type: diagram
-**sim-id:** tactic-interaction-web<br/>
-**Library:** vis-network<br/>
-**Status:** Specified
-
-Purpose: Interactive network graph showing architectural tactics as nodes, quality attributes as colored zones, and tactic interactions as directed edges — allowing students to explore how applying one tactic affects other quality attributes.
-
-Bloom Level: Analyze (L4) — Examine tactic interactions to identify where applying a tactic to improve one quality attribute creates risks for another, and trace the interaction chain through multiple tactics.
-Bloom Verb: Examine
-
-Learning Objective: Students will be able to identify at least three tactic interaction chains (where applying tactic A improves QA-1 but degrades QA-2, which may require applying tactic B to compensate), and explain why these interactions are ATAM tradeoff points.
-
-Node types:
-- Quality Attribute nodes (large circles, colored by QA): Performance, Availability, Security, Modifiability, Consistency
-- Tactic nodes (smaller rectangles): Caching, Redundancy, Retry, Encryption, Circuit Breaker, Rate Limiting, Connection Pooling, Dependency Injection, Information Hiding
-
-Edge types:
-- Green arrows: "Tactic improves this QA" (pointing from tactic to QA)
-- Red dashed arrows: "Tactic degrades this QA" (pointing from tactic to QA)
-- Orange arrows: "This QA degradation may require this compensating tactic" (pointing from one tactic to another)
-
-Sample interaction chains:
-Chain 1: Caching → improves Performance, degrades Consistency; Consistency degradation → may require Cache Invalidation Strategy (compensating tactic)
-Chain 2: Redundancy → improves Availability, degrades Performance (coordination); performance degradation → may require Asynchronous Replication (compensating tactic)
-Chain 3: Encryption → improves Security, degrades Performance; performance degradation → may require Hardware Security Module (HSM) offload (compensating tactic)
-
-Interactive elements:
-- Click any tactic node to highlight all its green (improves) and red (degrades) edges
-- Click any QA node to highlight all tactics that affect it
-- Click any edge to see the specific mechanism and a realistic example
-- "Show Interaction Chains" mode: click a tactic and see the full chain of compensation tactics required
-
-vis-network configuration:
-- Physics: force-directed layout with repulsion between nodes
-- Node colors: blue for QA nodes, gold for tactic nodes, orange for compensation chain nodes
-- Edge colors: green for improvement, red for degradation, orange for compensation
-
-Responsive: Canvas scales to container width; physics layout recomputes on resize.
+```html
+<iframe src="https://dmccreary.github.io/atam/sims/tactic-interaction-web/main.html"
+        width="100%"
+        scrolling="no"></iframe>
 ```
 
-## Related Resources
+## Lesson Plan
 
-- [Chapter 9: Architectural Tactics and Design Principles](../../chapters/09-architectural-tactics-principles/index.md)
+### Grade Level
+Undergraduate / Professional
+
+### Duration
+15-20 minutes
+
+### Prerequisites
+Familiarity with architectural tactics and quality attributes.
+
+### Bloom's Taxonomy Level
+Analyze (L4)
+
+### Learning Objective
+Students will be able to identify at least three tactic interaction chains (where applying tactic A improves one quality attribute but degrades another, which may require a compensating tactic B) and explain why these interactions are ATAM tradeoff points.
+
+### Activities
+
+1. **Map a tactic** (5 min): Students click three tactics and record what each improves and degrades.
+2. **Trace chains** (7 min): In chain mode, students trace all three compensation chains and write each as "Tactic → improves X, degrades Y → compensate with Z."
+3. **Discussion** (5 min): Students explain why a tactic that only ever helps would never appear as an ATAM tradeoff point.
+
+### Assessment
+Give students a new tactic (e.g., "Load Shedding") and ask them to predict one attribute it improves, one it degrades, and a plausible compensating tactic.
+
+## References
+
+1. Bass, L., Clements, P., & Kazman, R. (2021). *Software Architecture in Practice* (4th ed.). Addison-Wesley.
+2. Kazman, R., Klein, M., & Clements, P. (2000). *ATAM: Method for Architecture Evaluation* (CMU/SEI-2000-TR-004).

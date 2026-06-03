@@ -308,7 +308,7 @@ In ATAM practice, tactic interactions are **tradeoff points**. When the evaluati
 
 #### Diagram: Tactic Interaction Web
 
-<iframe src="../../sims/tactic-interaction-web/main.html" width="100%" height="540px" scrolling="no"></iframe>
+<iframe src="../../sims/tactic-interaction-web/main.html" width="100%" height="562px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Tactic Interaction Web</summary>
