@@ -1,0 +1,1329 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An interactive intelligent textbook on software architecture tradeoff analysis.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/atam/learning-graph/concept-taxonomy/">
+      
+      
+        <link rel="prev" href="../concept-list/">
+      
+      
+        <link rel="next" href="../quality-metrics/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Concept Taxonomy - Architecture Tradeoff Analysis Method</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#concept-taxonomy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Architecture Tradeoff Analysis Method" class="md-header__button md-logo" aria-label="Architecture Tradeoff Analysis Method" data-md-component="logo">
+      
+  <img src="../../img/mascot/neutral.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Architecture Tradeoff Analysis Method
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Concept Taxonomy
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Architecture Tradeoff Analysis Method" class="md-nav__button md-logo" aria-label="Architecture Tradeoff Analysis Method" data-md-component="logo">
+      
+  <img src="../../img/mascot/neutral.png" alt="logo">
+
+    </a>
+    Architecture Tradeoff Analysis Method
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Learning Graph
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course-description-assessment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Assessment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concept-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Concept List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Concept Taxonomy
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Concept Taxonomy
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#found-foundation-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      FOUND — Foundation Concepts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proc-atam-process-and-facilitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      PROC — ATAM Process and Facilitation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stke-stakeholder-and-business-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      STKE — Stakeholder and Business Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qual-quality-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      QUAL — Quality Attributes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scen-scenarios-and-utility-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      SCEN — Scenarios and Utility Trees
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tact-architectural-tactics-and-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      TACT — Architectural Tactics and Patterns
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-sensitivity-tradeoffs-and-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      RISK — Sensitivity, Tradeoffs, and Risk
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dist-distributed-systems-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      DIST — Distributed Systems Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clou-cloud-native-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLOU — Cloud-Native Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secp-security-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      SECP — Security Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perf-performance-and-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      PERF — Performance and Observability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aiem-ai-and-emerging-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      AIEM — AI and Emerging Systems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distribution-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distribution Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quality-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graph Quality Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../taxonomy-distribution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Taxonomy Distribution
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mascot-test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mascot Style Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#found-foundation-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      FOUND — Foundation Concepts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proc-atam-process-and-facilitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      PROC — ATAM Process and Facilitation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stke-stakeholder-and-business-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      STKE — Stakeholder and Business Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qual-quality-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      QUAL — Quality Attributes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scen-scenarios-and-utility-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      SCEN — Scenarios and Utility Trees
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tact-architectural-tactics-and-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      TACT — Architectural Tactics and Patterns
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-sensitivity-tradeoffs-and-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      RISK — Sensitivity, Tradeoffs, and Risk
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dist-distributed-systems-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      DIST — Distributed Systems Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clou-cloud-native-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLOU — Cloud-Native Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secp-security-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      SECP — Security Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perf-performance-and-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      PERF — Performance and Observability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aiem-ai-and-emerging-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      AIEM — AI and Emerging Systems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distribution-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distribution Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/atam/blob/main/docs/learning-graph/concept-taxonomy.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="concept-taxonomy">Concept Taxonomy<a class="headerlink" href="#concept-taxonomy" title="Permanent link">&para;</a></h1>
+<p>Twelve categories for the Architecture Tradeoff Analysis Method learning graph.
+Each TaxonomyID is 3–5 uppercase letters used in <code>learning-graph.csv</code>.</p>
+<hr />
+<h2 id="found-foundation-concepts">FOUND — Foundation Concepts<a class="headerlink" href="#found-foundation-concepts" title="Permanent link">&para;</a></h2>
+<p><strong>TaxonomyID:</strong> <code>FOUND</code>
+<strong>Count:</strong> 33</p>
+<p>Core vocabulary of software architecture: definitions, views, decisions, quality goals,
+principles, and the lifecycle that frame every other topic in the course.
+Also includes architectural fitness functions and evolutionary architecture,
+which require foundational knowledge before they can be applied.</p>
+<hr />
+<h2 id="proc-atam-process-and-facilitation">PROC — ATAM Process and Facilitation<a class="headerlink" href="#proc-atam-process-and-facilitation" title="Permanent link">&para;</a></h2>
+<p><strong>TaxonomyID:</strong> <code>PROC</code>
+<strong>Count:</strong> 29</p>
+<p>The mechanics of running an ATAM evaluation from end to end: phases, team roles,
+scripted presentations, facilitation techniques, consensus building, planning documents,
+briefing formats, and evaluation reports. Related methods (SAAM, ARID, mini-ATAM) appear
+here for comparison.</p>
+<hr />
+<h2 id="stke-stakeholder-and-business-analysis">STKE — Stakeholder and Business Analysis<a class="headerlink" href="#stke-stakeholder-and-business-analysis" title="Permanent link">&para;</a></h2>
+<p><strong>TaxonomyID:</strong> <code>STKE</code>
+<strong>Count:</strong> 24</p>
+<p>Identifying and engaging stakeholders, mapping business goals and drivers to
+architectural decisions, organizational context, executive communication, architecture
+vision documents, and roadmaps. The bridge between business strategy and technical
+architecture.</p>
+<hr />
+<h2 id="qual-quality-attributes">QUAL — Quality Attributes<a class="headerlink" href="#qual-quality-attributes" title="Permanent link">&para;</a></h2>
+<p><strong>TaxonomyID:</strong> <code>QUAL</code>
+<strong>Count:</strong> 23</p>
+<p>The eight canonical quality attributes (performance, availability, security,
+modifiability, interoperability, scalability, reliability, usability) plus testability,
+deployability, portability, safety, maintainability, and energy efficiency. Includes
+quality model, taxonomy, conflicts, prioritization, and requirements.</p>
+<hr />
+<h2 id="scen-scenarios-and-utility-trees">SCEN — Scenarios and Utility Trees<a class="headerlink" href="#scen-scenarios-and-utility-trees" title="Permanent link">&para;</a></h2>
+<p><strong>TaxonomyID:</strong> <code>SCEN</code>
+<strong>Count:</strong> 31</p>
+<p>The stimulus-response scenario model and all six of its components, general and concrete
+scenarios, scenario brainstorming and prioritization, the five typed scenario families
+(performance, availability, security, modifiability, scalability), utility tree
+construction from root through leaf-level scenarios, importance/difficulty ratings,
+and HH-priority negotiation workshops.</p>
+<hr />
+<h2 id="tact-architectural-tactics-and-patterns">TACT — Architectural Tactics and Patterns<a class="headerlink" href="#tact-architectural-tactics-and-patterns" title="Permanent link">&para;</a></h2>
+<p><strong>TaxonomyID:</strong> <code>TACT</code>
+<strong>Count:</strong> 45</p>
+<p>Architectural patterns (layered, client-server, SOA, microservices, event-driven,
+pipe-and-filter, CQRS, Saga, Strangler Fig, event sourcing, DDD, hexagonal, clean,
+REST, gRPC, GraphQL, WebSocket) and quality attribute tactics (performance, availability,
+security, modifiability, caching, load balancing, redundancy, replication, fault
+tolerance, circuit breaker, retry, bulkhead). Also covers tactic interaction, ADRs,
+component decomposition, interfaces, coupling, cohesion, information hiding,
+encapsulation, dependency injection, and plugin architecture.</p>
+<hr />
+<h2 id="risk-sensitivity-tradeoffs-and-risk">RISK — Sensitivity, Tradeoffs, and Risk<a class="headerlink" href="#risk-sensitivity-tradeoffs-and-risk" title="Permanent link">&para;</a></h2>
+<p><strong>TaxonomyID:</strong> <code>RISK</code>
+<strong>Count:</strong> 22</p>
+<p>Sensitivity points, tradeoff points, architectural risks and non-risks, risk themes,
+identification, classification, severity, probability, risk register, communication,
+risk-driven architecture, architectural debt, mitigation, monitoring, conflicting
+quality attributes, design rationale, decision impact, sensitivity analysis, risk
+theme documentation, debt management, and architecture improvement plan.</p>
+<hr />
+<h2 id="dist-distributed-systems-architecture">DIST — Distributed Systems Architecture<a class="headerlink" href="#dist-distributed-systems-architecture" title="Permanent link">&para;</a></h2>
+<p><strong>TaxonomyID:</strong> <code>DIST</code>
+<strong>Count:</strong> 28</p>
+<p>Distributed system fundamentals through advanced patterns: service decomposition,
+API gateway, service mesh, event-driven messaging, message queues, publish-subscribe,
+service registry and discovery, distributed transactions, CAP theorem, eventual
+consistency, two-phase commit, distributed tracing, service contracts, API versioning,
+backward compatibility, integration patterns, sidecar, ambassador, database-per-service,
+synchronous vs asynchronous communication, idempotency, schema registry, message
+transformation, and contract-first design.</p>
+<hr />
+<h2 id="clou-cloud-native-architecture">CLOU — Cloud-Native Architecture<a class="headerlink" href="#clou-cloud-native-architecture" title="Permanent link">&para;</a></h2>
+<p><strong>TaxonomyID:</strong> <code>CLOU</code>
+<strong>Count:</strong> 25</p>
+<p>Cloud-native patterns from containers and Kubernetes through serverless, FaaS,
+infrastructure as code, immutable infrastructure, auto-scaling, cloud service models,
+multi-cloud, hybrid cloud, resilience patterns, chaos engineering, deployment strategies
+(blue-green, canary, zero-downtime), cost optimization, vendor lock-in, elasticity,
+cloud security, managed services, GitOps, cost-vs-reliability tradeoffs, and cloud
+observability.</p>
+<hr />
+<h2 id="secp-security-architecture">SECP — Security Architecture<a class="headerlink" href="#secp-security-architecture" title="Permanent link">&para;</a></h2>
+<p><strong>TaxonomyID:</strong> <code>SECP</code>
+<strong>Count:</strong> 25</p>
+<p>Security architecture from threat modeling (STRIDE) through attack surface reduction,
+defense in depth, zero trust, authentication, authorization, encryption at rest and in
+transit, OAuth 2.0, API security, secret management, security monitoring, intrusion
+detection, SIEM, least privilege, compliance, SDLC security, penetration testing,
+security scenarios, tactic catalog, IAM, incident response, and privacy by design.</p>
+<hr />
+<h2 id="perf-performance-and-observability">PERF — Performance and Observability<a class="headerlink" href="#perf-performance-and-observability" title="Permanent link">&para;</a></h2>
+<p><strong>TaxonomyID:</strong> <code>PERF</code>
+<strong>Count:</strong> 30</p>
+<p>Performance fundamentals (latency, throughput, response time, Amdahl's law),
+profiling, load and stress testing, capacity planning, vertical and horizontal scaling,
+sharding, connection pooling, CDN, observability (logging, metrics, health checks),
+SLO/SLI/error budgets, SRE, MTTR, MTBF, availability calculation, disaster recovery,
+RTO/RPO, geographic redundancy, and active-passive failover.</p>
+<hr />
+<h2 id="aiem-ai-and-emerging-systems">AIEM — AI and Emerging Systems<a class="headerlink" href="#aiem-ai-and-emerging-systems" title="Permanent link">&para;</a></h2>
+<p><strong>TaxonomyID:</strong> <code>AIEM</code>
+<strong>Count:</strong> 35</p>
+<p>AI/ML system architecture from training pipelines through model serving, feature stores,
+model registry, AI latency, non-deterministic behavior, drift detection, data pipelines,
+batch and stream processing, LLM architecture, prompt engineering, RAG, GraphRAG,
+vector databases, AI observability and explainability, responsible AI, data mesh,
+data lakehouse, lambda/kappa/space-based architectures, AI security, model versioning,
+A/B testing, online learning, data governance, multi-modal AI, federated learning,
+edge AI, pipeline monitoring, and autonomous systems.</p>
+<hr />
+<h2 id="distribution-summary">Distribution Summary<a class="headerlink" href="#distribution-summary" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>TaxonomyID</th>
+<th>Category Name</th>
+<th style="text-align: right;">Count</th>
+<th style="text-align: right;">%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FOUND</td>
+<td>Foundation Concepts</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">9.4%</td>
+</tr>
+<tr>
+<td>PROC</td>
+<td>ATAM Process and Facilitation</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">8.3%</td>
+</tr>
+<tr>
+<td>STKE</td>
+<td>Stakeholder and Business Analysis</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">6.9%</td>
+</tr>
+<tr>
+<td>QUAL</td>
+<td>Quality Attributes</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">6.6%</td>
+</tr>
+<tr>
+<td>SCEN</td>
+<td>Scenarios and Utility Trees</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">8.9%</td>
+</tr>
+<tr>
+<td>TACT</td>
+<td>Architectural Tactics and Patterns</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">12.9%</td>
+</tr>
+<tr>
+<td>RISK</td>
+<td>Sensitivity, Tradeoffs, and Risk</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">6.3%</td>
+</tr>
+<tr>
+<td>DIST</td>
+<td>Distributed Systems Architecture</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">8.0%</td>
+</tr>
+<tr>
+<td>CLOU</td>
+<td>Cloud-Native Architecture</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">7.1%</td>
+</tr>
+<tr>
+<td>SECP</td>
+<td>Security Architecture</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">7.1%</td>
+</tr>
+<tr>
+<td>PERF</td>
+<td>Performance and Observability</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">8.6%</td>
+</tr>
+<tr>
+<td>AIEM</td>
+<td>AI and Emerging Systems</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">10.0%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td style="text-align: right;"><strong>350</strong></td>
+<td style="text-align: right;"><strong>100%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>No category exceeds 30% of total concepts. The largest (TACT at 12.9%) reflects the
+breadth of architectural patterns and tactics covered by the course.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../concept-list/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Concept List">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Concept List
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../quality-metrics/" class="md-footer__link md-footer__link--next" aria-label="Next: Graph Quality Analysis">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Graph Quality Analysis
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
