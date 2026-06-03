@@ -333,7 +333,7 @@ The ATAM evaluation's value extends beyond the evaluation report. **Post-evaluat
 
 #### Diagram: ATAM Output to Action Pipeline
 
-<iframe src="../../sims/atam-output-pipeline/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/atam-output-pipeline/main.html" width="100%" height="550px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>ATAM Output to Organizational Action Pipeline</summary>
