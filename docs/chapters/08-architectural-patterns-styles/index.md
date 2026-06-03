@@ -282,7 +282,7 @@ The following table summarizes the communication style comparison:
 
 #### Diagram: Communication Style Tradeoff Explorer
 
-<iframe src="../../sims/communication-style-explorer/main.html" width="100%" height="540px" scrolling="no"></iframe>
+<iframe src="../../sims/communication-style-explorer/main.html" width="100%" height="554px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Communication Style Tradeoff Explorer</summary>

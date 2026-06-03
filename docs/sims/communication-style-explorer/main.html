@@ -3,130 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Communication Style Tradeoff Explorer</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Communication Style Tradeoff Explorer using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="communication-style-explorer.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Communication Style Tradeoff Explorer</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> communication-style-explorer</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Evaluate (L5) — Assess which communication style best fits a set of quality attribute requirements and justify the selection with tradeoff analysis.</p>
-            <p><strong>Learning Objective:</strong> Students will be able to select the most appropriate communication style for a given quality attribute scenario set, and explain the tradeoff implications of their choice using the five comparison dimensions.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** communication-style-explorer<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    Purpose: Interactive simulator comparing the four communication styles (REST, gRPC, GraphQL, WebSocket) across five dimensions, with scenario-based matching that lets students select quality attribute requirements and see which style best fits.
-    
-    Bloom Level: Evaluate (L5) — Assess which communication style best fits a set of quality attribute requirements and justify the selection with tradeoff analysis.
-    Bloom Verb: Assess
-    
-    Learning Objective: Students will be able to select the most appropriate communication style for a given quality attribute scenario set, and explain the tradeoff implications of their choice using the five comparison dimensions.
-    
-    Canvas layout:
-    - Left panel: Five quality attribute requirement sliders (Performance Priority, Interoperability Priority, Real-Time Requirement, Schema Enforcement, Simplicity Priority — each 1-5)
-    - Center: Radar chart showing how each of the four communication styles scores on these dimensions, with the student's "requirement" polygon overlaid
-    - Right panel: Recommendation panel showing best-fit style and gap analysis (where requirements exceed scores)
-    - Bottom: Scenario selector with three pre-built scenarios to load
-    
-    Radar axes:
-    - Performance (internal throughput) — gRPC scores 5, REST scores 3, GraphQL 3, WebSocket 4
-    - Interoperability — REST scores 5, GraphQL 4, gRPC 2, WebSocket 2
-    - Real-Time Suitability — WebSocket scores 5, gRPC 4, REST 1, GraphQL 2
-    - Schema Enforcement — gRPC scores 5, GraphQL 4, REST 2, WebSocket 1
-    - Operational Simplicity — REST scores 5, gRPC 3, GraphQL 2, WebSocket 2
-    
-    Pre-built scenarios:
-    1. Public API for e-commerce: high interoperability, moderate performance, no real-time → REST recommended
-    2. Microservices backbone for financial transactions: high performance, high schema enforcement, no real-time → gRPC recommended
-    3. Live collaborative document editor: high real-time, moderate performance, low interop → WebSocket recommended
-    
-    Behavior:
-    - Moving sliders updates the requirement polygon on the radar in real-time
-    - Best-fit style is highlighted when requirement polygon most closely matches a style's polygon
-    - "Explain Choice" button reveals a text panel explaining why the selected style fits and what tradeoffs it accepts
-    - Clicking any style's polygon highlights it and shows its full tradeoff profile
-    
-    Instructional Rationale: Slider-driven exploration is appropriate for the Evaluate objective because it forces students to externalize their quality attribute priorities before seeing recommendations, preventing anchoring on a familiar default choice.
-    
-    Color scheme: Gold for REST polygon, Blue for gRPC, Green for GraphQL, Orange for WebSocket, Red dashed for student requirement polygon.
-    
-    Responsive: Radar and panels scale to container width.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

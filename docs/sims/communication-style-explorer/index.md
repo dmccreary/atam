@@ -1,80 +1,71 @@
 ---
 title: Communication Style Tradeoff Explorer
-description: Students will be able to select the most appropriate communication style for a given quality attribute scenario set, and explain the tradeoff implications of their choice using the five comparison dimensions.
-status: scaffold
-library: p5.js
-bloom_level: Evaluate (L5) — Assess which communication style best fits a set of quality attribute requirements and justify the selection with tradeoff analysis.
+description: Interactive p5.js radar MicroSim for assessing which communication style (REST, gRPC, GraphQL, WebSocket) best fits a set of quality attribute priorities.
+image: /sims/communication-style-explorer/communication-style-explorer.png
+og:image: /sims/communication-style-explorer/communication-style-explorer.png
+twitter:image: /sims/communication-style-explorer/communication-style-explorer.png
+social:
+   cards: false
+quality_score: 0
 ---
 
 # Communication Style Tradeoff Explorer
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="554" width="100%" scrolling="no"></iframe>
 
-## Learning Objective
+[Run the Communication Style Explorer MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
+<br/>
+[Edit in the p5.js Editor](https://editor.p5js.org/)
 
-Students will be able to select the most appropriate communication style for a given quality attribute scenario set, and explain the tradeoff implications of their choice using the five comparison dimensions.
+## About This MicroSim
 
-- **Bloom Level:** Evaluate (L5) — Assess which communication style best fits a set of quality attribute requirements and justify the selection with tradeoff analysis.
-- **Bloom Verb:** Assess
-- **Library:** p5.js
+This MicroSim compares the four common communication styles — REST, gRPC, GraphQL, and WebSocket — across five dimensions on a radar chart: Performance, Interoperability, Real-Time suitability, Schema Enforcement, and Operational Simplicity. Five sliders let you express your own quality attribute priorities as a red requirement polygon overlaid on the four style polygons. A recommendation panel names the best-fit style and lists any unmet gaps, so the choice comes from your stated priorities rather than a familiar default.
 
-## Preview
+## How to Use
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+1. **Set the five sliders** to express how much each dimension matters for your scenario (1–5). The red dashed requirement polygon updates live.
+2. Read the **Best fit** panel — the highlighted style polygon is the one that leaves the fewest of your high-priority requirements unmet.
+3. Check **Unmet gaps**: dimensions where your requirement exceeds the recommended style's score.
+4. Click **Explain Choice** for a one-paragraph tradeoff justification.
+5. Load **Scenario 1–3** to try three worked cases (public API, financial microservices, live collaborative editor).
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+## Iframe Embed Code
 
-## Specification
+You can add this MicroSim to any web page by adding this to your HTML:
 
-The full specification below is extracted from
-[Chapter 8: Architectural Patterns and Styles](../../chapters/08-architectural-patterns-styles/index.md).
-
-```text
-Type: microsim
-**sim-id:** communication-style-explorer<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
-
-Purpose: Interactive simulator comparing the four communication styles (REST, gRPC, GraphQL, WebSocket) across five dimensions, with scenario-based matching that lets students select quality attribute requirements and see which style best fits.
-
-Bloom Level: Evaluate (L5) — Assess which communication style best fits a set of quality attribute requirements and justify the selection with tradeoff analysis.
-Bloom Verb: Assess
-
-Learning Objective: Students will be able to select the most appropriate communication style for a given quality attribute scenario set, and explain the tradeoff implications of their choice using the five comparison dimensions.
-
-Canvas layout:
-- Left panel: Five quality attribute requirement sliders (Performance Priority, Interoperability Priority, Real-Time Requirement, Schema Enforcement, Simplicity Priority — each 1-5)
-- Center: Radar chart showing how each of the four communication styles scores on these dimensions, with the student's "requirement" polygon overlaid
-- Right panel: Recommendation panel showing best-fit style and gap analysis (where requirements exceed scores)
-- Bottom: Scenario selector with three pre-built scenarios to load
-
-Radar axes:
-- Performance (internal throughput) — gRPC scores 5, REST scores 3, GraphQL 3, WebSocket 4
-- Interoperability — REST scores 5, GraphQL 4, gRPC 2, WebSocket 2
-- Real-Time Suitability — WebSocket scores 5, gRPC 4, REST 1, GraphQL 2
-- Schema Enforcement — gRPC scores 5, GraphQL 4, REST 2, WebSocket 1
-- Operational Simplicity — REST scores 5, gRPC 3, GraphQL 2, WebSocket 2
-
-Pre-built scenarios:
-1. Public API for e-commerce: high interoperability, moderate performance, no real-time → REST recommended
-2. Microservices backbone for financial transactions: high performance, high schema enforcement, no real-time → gRPC recommended
-3. Live collaborative document editor: high real-time, moderate performance, low interop → WebSocket recommended
-
-Behavior:
-- Moving sliders updates the requirement polygon on the radar in real-time
-- Best-fit style is highlighted when requirement polygon most closely matches a style's polygon
-- "Explain Choice" button reveals a text panel explaining why the selected style fits and what tradeoffs it accepts
-- Clicking any style's polygon highlights it and shows its full tradeoff profile
-
-Instructional Rationale: Slider-driven exploration is appropriate for the Evaluate objective because it forces students to externalize their quality attribute priorities before seeing recommendations, preventing anchoring on a familiar default choice.
-
-Color scheme: Gold for REST polygon, Blue for gRPC, Green for GraphQL, Orange for WebSocket, Red dashed for student requirement polygon.
-
-Responsive: Radar and panels scale to container width.
+```html
+<iframe src="https://dmccreary.github.io/atam/sims/communication-style-explorer/main.html"
+        width="100%"
+        scrolling="no"></iframe>
 ```
 
-## Related Resources
+## Lesson Plan
 
-- [Chapter 8: Architectural Patterns and Styles](../../chapters/08-architectural-patterns-styles/index.md)
+### Grade Level
+Undergraduate / Professional
+
+### Duration
+15-20 minutes
+
+### Prerequisites
+Familiarity with REST, gRPC, GraphQL, and WebSocket, and with quality attribute tradeoffs.
+
+### Bloom's Taxonomy Level
+Evaluate (L5)
+
+### Learning Objective
+Students will be able to select the most appropriate communication style for a given quality attribute scenario set and explain the tradeoff implications of their choice using the five comparison dimensions.
+
+### Activities
+
+1. **Predict then check** (6 min): Students set sliders for a scenario *before* loading it, then compare their requirement polygon and chosen style with the recommendation.
+2. **Tradeoff justification** (6 min): For each of the three built-in scenarios, students use Explain Choice and restate the justification in their own words.
+3. **Gap analysis** (5 min): Students find a slider setting where the best fit still has an unmet gap, and propose how they would mitigate it.
+
+### Assessment
+Give students a new scenario description and ask them to set the sliders, record the recommended style, and write a two-sentence tradeoff justification.
+
+## References
+
+1. Bass, L., Clements, P., & Kazman, R. (2021). *Software Architecture in Practice* (4th ed.). Addison-Wesley.
+2. Richardson, C. (2018). *Microservices Patterns*. Manning. (Inter-service communication styles.)
