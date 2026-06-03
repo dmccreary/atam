@@ -1,0 +1,14 @@
+{
+  "sim_id": "ml-pipeline-explorer",
+  "diagram_name": "ML Pipeline Architecture Flow",
+  "chapter_number": 17,
+  "chapter_title": "AI and Machine Learning System Architecture",
+  "chapter_dir": "17-ai-ml-system-architecture",
+  "library": "vis-network",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: Interactive workflow diagram\n**sim-id:** ml-pipeline-explorer<br/>\n**Library:** vis-network<br/>\n**Status:** Specified\n\n**Purpose:** Interactive visualization of the complete ML pipeline from data ingestion through deployment, with quality attribute risk indicators at each stage and ATAM evaluation hooks.\n\n**Nodes:** Data Sources, Data Ingestion, Feature Engineering, Feature Store, Model Training, Model Registry, Model Evaluation, Deployment (Batch/Online/Streaming), Monitoring\n\n**Interactions:**\n- Click each node to see: quality attribute risks, common failure modes, ATAM sensitivity points\n- Toggle pipeline type (batch, online, streaming) to see architecture variations\n- \"Simulate Drift\" button shows monitoring alerts activating\n\n**Display:** Risk heat map overlay showing which pipeline stages are most commonly flagged in ATAM evaluations."
+}

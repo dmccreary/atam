@@ -1,0 +1,3123 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An interactive intelligent textbook on software architecture tradeoff analysis.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/atam/faq/">
+      
+      
+        <link rel="prev" href="../sims/scaling-tradeoff-explorer/">
+      
+      
+        <link rel="next" href="../license/">
+      
+      
+      <link rel="icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>FAQ - Architecture Tradeoff Analysis Method</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="../css/mascot.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#architecture-tradeoff-analysis-methodology-atam-faq" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Architecture Tradeoff Analysis Method" class="md-header__button md-logo" aria-label="Architecture Tradeoff Analysis Method" data-md-component="logo">
+      
+  <img src="../img/mascot/neutral.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Architecture Tradeoff Analysis Method
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FAQ
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Architecture Tradeoff Analysis Method" class="md-nav__button md-logo" aria-label="Architecture Tradeoff Analysis Method" data-md-component="logo">
+      
+  <img src="../img/mascot/neutral.png" alt="logo">
+
+    </a>
+    Architecture Tradeoff Analysis Method
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Description
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../chapters/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Chapters
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Learning Graph
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    MicroSims
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-this-site-about" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is this site about?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#who-is-this-course-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      Who is this course for?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-atam" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is ATAM?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-textbook-does-this-site-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      What textbook does this site support?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-prerequisites-for-using-this-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the prerequisites for using this site?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-is-this-site-organized" class="md-nav__link">
+    <span class="md-ellipsis">
+      How is this site organized?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-nosql" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is NoSQL?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-will-i-learn-from-this-course" class="md-nav__link">
+    <span class="md-ellipsis">
+      What will I learn from this course?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-nosql-and-relational-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between NoSQL and relational databases?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-six-database-architecture-types-covered-on-this-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the six database architecture types covered on this site?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-contact-the-author" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I contact the author?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-the-content-on-this-site-freely-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      Is the content on this site freely available?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-concept-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Concept Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Concept Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-atam-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the ATAM process?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-main-steps-of-the-atam-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the main steps of the ATAM process?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-documents-does-the-atam-process-produce" class="md-nav__link">
+    <span class="md-ellipsis">
+      What documents does the ATAM process produce?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-quality-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are quality attributes?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-utility-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a utility tree?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-quality-attribute-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a quality attribute scenario?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-sensitivity-points-in-atam" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are sensitivity points in ATAM?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-risks-in-atam" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are risks in ATAM?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-non-risks-in-atam" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are non-risks in ATAM?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-tradeoffs-in-atam" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are tradeoffs in ATAM?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-four-vs-of-nosql" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the Four V's of NoSQL?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-volume-in-nosql-database-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Volume in NoSQL database selection?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-velocity-in-nosql-database-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Velocity in NoSQL database selection?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-variability-in-nosql-database-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Variability in NoSQL database selection?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-veracity-in-nosql-database-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Veracity in NoSQL database selection?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-main-characteristics-of-relational-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the main characteristics of relational databases?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-main-characteristics-of-column-family-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the main characteristics of column-family databases?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-main-characteristics-of-graph-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the main characteristics of graph databases?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-main-characteristics-of-document-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the main characteristics of document databases?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-acid-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are ACID properties?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-base-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are BASE properties?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-risk-themes-in-atam" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are risk themes in ATAM?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-detail-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Detail Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Detail Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-cap-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the CAP Theorem?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-eventual-consistency-and-strong-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between eventual consistency and strong consistency?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-sharding" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is sharding?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-consistent-hashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is consistent hashing?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-replication-in-distributed-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is replication in distributed databases?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-denormalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is denormalization?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-schema-on-read-and-schema-on-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between schema-on-read and schema-on-write?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-polyglot-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is polyglot persistence?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-oltp-and-olap" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between OLTP and OLAP?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-star-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a star schema?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-query-languages-are-used-with-graph-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      What query languages are used with graph databases?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-lsm-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are LSM trees?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-bloom-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a bloom filter?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-write-ahead-log-wal" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the Write-Ahead Log (WAL)?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-tunable-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is tunable consistency?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-virtual-nodes-vnodes-in-cassandra" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are virtual nodes (vnodes) in Cassandra?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-tombstones-in-distributed-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are tombstones in distributed databases?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-gossip-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the gossip protocol?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-mapreduce" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is MapReduce?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-challenge-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Challenge Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Challenge Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-should-i-choose-nosql-over-a-relational-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      When should I choose NoSQL over a relational database?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-select-the-right-database-type-for-my-use-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I select the right database type for my use case?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-challenges-arise-from-horizontal-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      What challenges arise from horizontal scaling?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-handle-data-consistency-in-distributed-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I handle data consistency in distributed systems?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-hot-partitions-and-how-do-i-avoid-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are hot partitions and how do I avoid them?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-does-atam-surface-conflicting-quality-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      How does ATAM surface conflicting quality attributes?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-ensure-data-quality-veracity-in-nosql-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I ensure data quality (veracity) in NoSQL systems?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-object-relational-impedance-mismatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the object-relational impedance mismatch?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-does-eventual-consistency-cause-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      When does eventual consistency cause problems?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-distributed-transactions-work-in-nosql-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do distributed transactions work in NoSQL systems?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-common-pitfalls-in-nosql-database-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the common pitfalls in NoSQL database selection?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practice-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practice Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practice Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-apply-atam-to-database-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I apply ATAM to database selection?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-a-good-quality-attribute-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      What makes a good quality attribute scenario?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-should-i-structure-a-utility-tree-for-database-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      How should I structure a utility tree for database evaluation?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-should-i-use-a-graph-database-instead-of-a-document-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      When should I use a graph database instead of a document database?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-best-practices-for-shard-key-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are best practices for shard key selection?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-stakeholders-participate-in-the-atam-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do stakeholders participate in the ATAM process?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-should-i-document-architectural-tradeoffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      How should I document architectural tradeoffs?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-best-practices-for-schema-design-in-nosql-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the best practices for schema design in NoSQL databases?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-star-case-study-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the STAR case study process?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-should-i-evaluate-vendor-claims-against-quality-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      How should I evaluate vendor claims against quality attributes?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-topic-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Topic Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Topic Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-graph-databases-support-ai-and-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do graph databases support AI and machine learning?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-write-audit-publish-wap-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the Write-Audit-Publish (WAP) pattern?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-does-polyglot-persistence-relate-to-atam" class="md-nav__link">
+    <span class="md-ellipsis">
+      How does polyglot persistence relate to ATAM?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-graph-neural-networks-gnns-and-when-are-they-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are graph neural networks (GNNs) and when are they used?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-does-the-cap-theorem-affect-cloud-native-database-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      How does the CAP Theorem affect cloud-native database design?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-inmon-vs-kimball-debate-in-analytical-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the Inmon vs. Kimball debate in analytical databases?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-role-of-streaming-platforms-like-kafka-in-nosql-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the role of streaming platforms like Kafka in NoSQL architectures?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-future-directions-in-nosql-database-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the future directions in NoSQL database architecture?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    License
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contact
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-this-site-about" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is this site about?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#who-is-this-course-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      Who is this course for?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-atam" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is ATAM?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-textbook-does-this-site-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      What textbook does this site support?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-prerequisites-for-using-this-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the prerequisites for using this site?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-is-this-site-organized" class="md-nav__link">
+    <span class="md-ellipsis">
+      How is this site organized?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-nosql" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is NoSQL?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-will-i-learn-from-this-course" class="md-nav__link">
+    <span class="md-ellipsis">
+      What will I learn from this course?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-nosql-and-relational-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between NoSQL and relational databases?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-six-database-architecture-types-covered-on-this-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the six database architecture types covered on this site?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-contact-the-author" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I contact the author?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-the-content-on-this-site-freely-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      Is the content on this site freely available?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-concept-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Concept Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Concept Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-atam-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the ATAM process?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-main-steps-of-the-atam-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the main steps of the ATAM process?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-documents-does-the-atam-process-produce" class="md-nav__link">
+    <span class="md-ellipsis">
+      What documents does the ATAM process produce?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-quality-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are quality attributes?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-utility-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a utility tree?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-quality-attribute-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a quality attribute scenario?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-sensitivity-points-in-atam" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are sensitivity points in ATAM?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-risks-in-atam" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are risks in ATAM?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-non-risks-in-atam" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are non-risks in ATAM?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-tradeoffs-in-atam" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are tradeoffs in ATAM?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-four-vs-of-nosql" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the Four V's of NoSQL?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-volume-in-nosql-database-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Volume in NoSQL database selection?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-velocity-in-nosql-database-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Velocity in NoSQL database selection?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-variability-in-nosql-database-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Variability in NoSQL database selection?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-veracity-in-nosql-database-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Veracity in NoSQL database selection?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-main-characteristics-of-relational-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the main characteristics of relational databases?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-main-characteristics-of-column-family-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the main characteristics of column-family databases?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-main-characteristics-of-graph-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the main characteristics of graph databases?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-main-characteristics-of-document-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the main characteristics of document databases?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-acid-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are ACID properties?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-base-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are BASE properties?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-risk-themes-in-atam" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are risk themes in ATAM?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-detail-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Detail Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Detail Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-cap-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the CAP Theorem?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-eventual-consistency-and-strong-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between eventual consistency and strong consistency?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-sharding" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is sharding?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-consistent-hashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is consistent hashing?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-replication-in-distributed-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is replication in distributed databases?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-denormalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is denormalization?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-schema-on-read-and-schema-on-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between schema-on-read and schema-on-write?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-polyglot-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is polyglot persistence?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-oltp-and-olap" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the difference between OLTP and OLAP?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-star-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a star schema?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-query-languages-are-used-with-graph-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      What query languages are used with graph databases?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-lsm-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are LSM trees?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-bloom-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a bloom filter?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-write-ahead-log-wal" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the Write-Ahead Log (WAL)?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-tunable-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is tunable consistency?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-virtual-nodes-vnodes-in-cassandra" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are virtual nodes (vnodes) in Cassandra?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-tombstones-in-distributed-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are tombstones in distributed databases?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-gossip-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the gossip protocol?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-mapreduce" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is MapReduce?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-challenge-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Challenge Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Challenge Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-should-i-choose-nosql-over-a-relational-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      When should I choose NoSQL over a relational database?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-select-the-right-database-type-for-my-use-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I select the right database type for my use case?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-challenges-arise-from-horizontal-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      What challenges arise from horizontal scaling?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-handle-data-consistency-in-distributed-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I handle data consistency in distributed systems?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-hot-partitions-and-how-do-i-avoid-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are hot partitions and how do I avoid them?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-does-atam-surface-conflicting-quality-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      How does ATAM surface conflicting quality attributes?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-ensure-data-quality-veracity-in-nosql-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I ensure data quality (veracity) in NoSQL systems?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-object-relational-impedance-mismatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the object-relational impedance mismatch?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-does-eventual-consistency-cause-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      When does eventual consistency cause problems?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-distributed-transactions-work-in-nosql-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do distributed transactions work in NoSQL systems?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-common-pitfalls-in-nosql-database-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the common pitfalls in NoSQL database selection?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practice-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practice Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practice Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-apply-atam-to-database-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I apply ATAM to database selection?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-a-good-quality-attribute-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      What makes a good quality attribute scenario?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-should-i-structure-a-utility-tree-for-database-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      How should I structure a utility tree for database evaluation?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-should-i-use-a-graph-database-instead-of-a-document-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      When should I use a graph database instead of a document database?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-best-practices-for-shard-key-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are best practices for shard key selection?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-stakeholders-participate-in-the-atam-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do stakeholders participate in the ATAM process?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-should-i-document-architectural-tradeoffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      How should I document architectural tradeoffs?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-best-practices-for-schema-design-in-nosql-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the best practices for schema design in NoSQL databases?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-star-case-study-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the STAR case study process?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-should-i-evaluate-vendor-claims-against-quality-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      How should I evaluate vendor claims against quality attributes?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-topic-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Topic Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Topic Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-graph-databases-support-ai-and-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do graph databases support AI and machine learning?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-write-audit-publish-wap-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the Write-Audit-Publish (WAP) pattern?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-does-polyglot-persistence-relate-to-atam" class="md-nav__link">
+    <span class="md-ellipsis">
+      How does polyglot persistence relate to ATAM?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-graph-neural-networks-gnns-and-when-are-they-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are graph neural networks (GNNs) and when are they used?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-does-the-cap-theorem-affect-cloud-native-database-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      How does the CAP Theorem affect cloud-native database design?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-inmon-vs-kimball-debate-in-analytical-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the Inmon vs. Kimball debate in analytical databases?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-role-of-streaming-platforms-like-kafka-in-nosql-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the role of streaming platforms like Kafka in NoSQL architectures?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-future-directions-in-nosql-database-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are the future directions in NoSQL database architecture?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/atam/blob/main/docs/faq.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="architecture-tradeoff-analysis-methodology-atam-faq">Architecture Tradeoff Analysis Methodology (ATAM) FAQ<a class="headerlink" href="#architecture-tradeoff-analysis-methodology-atam-faq" title="Permanent link">&para;</a></h1>
+<h2 id="getting-started-questions">Getting Started Questions<a class="headerlink" href="#getting-started-questions" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-this-site-about">What is this site about?<a class="headerlink" href="#what-is-this-site-about" title="Permanent link">&para;</a></h3>
+<p>This site provides educational resources for the Architecture Tradeoff Analysis Methodology (ATAM) applied specifically to NoSQL database selection. It covers the structured ATAM process developed at Carnegie Mellon University, six major database architecture types, the Four V's of NoSQL (Volume, Velocity, Variability, Veracity), and real-world case studies of organizations that adopted NoSQL technologies. The content supports the textbook <em>Making Sense of NoSQL</em> by Dan McCreary.</p>
+<h3 id="who-is-this-course-for">Who is this course for?<a class="headerlink" href="#who-is-this-course-for" title="Permanent link">&para;</a></h3>
+<p>This course is designed for software architects, database administrators, engineering managers, and technical decision-makers who must evaluate and select database architectures for data-intensive applications. It is also valuable for senior developers who want to understand how architectural decisions affect quality attributes such as scalability, availability, and maintainability. Familiarity with basic database concepts is helpful but not required.</p>
+<h3 id="what-is-atam">What is ATAM?<a class="headerlink" href="#what-is-atam" title="Permanent link">&para;</a></h3>
+<p>ATAM stands for <strong>Architecture Tradeoff Analysis Method</strong>. It is a systematic approach for evaluating software architectures by analyzing how architectural decisions support or conflict with desired quality attributes. Originally developed by the Software Engineering Institute (SEI) at Carnegie Mellon University, ATAM helps teams identify risks, non-risks, sensitivity points, and tradeoffs before committing to an architecture. See <a href="atam-process.md">ATAM Process</a> for the full overview.</p>
+<h3 id="what-textbook-does-this-site-support">What textbook does this site support?<a class="headerlink" href="#what-textbook-does-this-site-support" title="Permanent link">&para;</a></h3>
+<p>This site supports <a href="https://www.manning.com/books/making-sense-of-nosql">Making Sense of NoSQL</a>, published by Manning Publications. The site extends the textbook with interactive examples, case studies, diagrams, and additional conceptual material organized for web-based learning.</p>
+<h3 id="what-are-the-prerequisites-for-using-this-site">What are the prerequisites for using this site?<a class="headerlink" href="#what-are-the-prerequisites-for-using-this-site" title="Permanent link">&para;</a></h3>
+<p>No formal prerequisites are required. Readers benefit most if they have some familiarity with:</p>
+<ul>
+<li>Basic relational database concepts (tables, rows, columns, SQL)</li>
+<li>General software development or systems design</li>
+<li>High-level understanding of distributed systems</li>
+</ul>
+<p>Advanced topics such as graph neural networks and CAP Theorem assume more technical background, but introductory sections are accessible to non-specialists.</p>
+<h3 id="how-is-this-site-organized">How is this site organized?<a class="headerlink" href="#how-is-this-site-organized" title="Permanent link">&para;</a></h3>
+<p>The site is organized into five main sections:</p>
+<ol>
+<li><strong>ATAM Process</strong> — the methodology steps and documents produced</li>
+<li><strong>Foundational Concepts</strong> — the Four V's, quality attributes, utility trees, ACID vs. BASE</li>
+<li><strong>Database Types</strong> — detailed coverage of the six major NoSQL architectures</li>
+<li><strong>Case Studies</strong> — real-world examples from companies like Amazon, Facebook, LinkedIn, and TigerGraph</li>
+<li><strong>Glossary</strong> — 150+ term definitions for the ATAM and NoSQL domain</li>
+</ol>
+<h3 id="what-is-nosql">What is NoSQL?<a class="headerlink" href="#what-is-nosql" title="Permanent link">&para;</a></h3>
+<p>NoSQL is a category of database systems that provide flexible schemas and horizontal scaling beyond what traditional SQL relational databases support. NoSQL databases were developed to address the scale and schema challenges of modern web, mobile, and big data applications. The term "NoSQL" is often interpreted as "Not Only SQL" because some NoSQL databases also support SQL-like query interfaces. See <a href="db-types/index.md">Database Architecture Types</a> for an overview of the six primary types.</p>
+<h3 id="what-will-i-learn-from-this-course">What will I learn from this course?<a class="headerlink" href="#what-will-i-learn-from-this-course" title="Permanent link">&para;</a></h3>
+<p>By working through this site you will be able to:</p>
+<ul>
+<li>Apply the ATAM methodology to database architecture selection</li>
+<li>Distinguish among the six major database architecture types and their appropriate use cases</li>
+<li>Use the Four V's (Volume, Velocity, Variability, Veracity) as a framework for evaluating NoSQL options</li>
+<li>Construct a utility tree to compare quality attributes across candidate architectures</li>
+<li>Analyze real-world case studies of NoSQL adoption at scale</li>
+<li>Document architectural tradeoffs for stakeholder communication</li>
+</ul>
+<h3 id="what-is-the-difference-between-nosql-and-relational-databases">What is the difference between NoSQL and relational databases?<a class="headerlink" href="#what-is-the-difference-between-nosql-and-relational-databases" title="Permanent link">&para;</a></h3>
+<p>Relational databases organize data into structured tables with predefined schemas and enforce ACID (Atomicity, Consistency, Isolation, Durability) properties. They use SQL as a standardized query language and typically scale vertically. NoSQL databases offer flexible or schema-free data models, horizontal scaling across commodity hardware, and often trade strict consistency for higher availability and partition tolerance. See <a href="concepts/acid-vs-base.md">ACID vs. BASE</a> for a deeper comparison.</p>
+<h3 id="what-are-the-six-database-architecture-types-covered-on-this-site">What are the six database architecture types covered on this site?<a class="headerlink" href="#what-are-the-six-database-architecture-types-covered-on-this-site" title="Permanent link">&para;</a></h3>
+<p>The site covers six major database architecture types:</p>
+<ol>
+<li><strong>Relational (OLTP)</strong> — PostgreSQL, MySQL, Oracle</li>
+<li><strong>Analytical (OLAP)</strong> — Redshift, BigQuery, Snowflake</li>
+<li><strong>Key-Value Stores</strong> — Redis, DynamoDB</li>
+<li><strong>Column-Family Stores</strong> — Cassandra, HBase</li>
+<li><strong>Graph Databases</strong> — Neo4j, TigerGraph, Amazon Neptune</li>
+<li><strong>Document Databases</strong> — MongoDB, CouchDB, Firebase Firestore</li>
+</ol>
+<p>See <a href="db-types/index.md">Database Architecture Types</a> for a full comparison.</p>
+<h3 id="how-do-i-contact-the-author">How do I contact the author?<a class="headerlink" href="#how-do-i-contact-the-author" title="Permanent link">&para;</a></h3>
+<p>You can reach Dan McCreary through his <a href="https://www.linkedin.com/in/danmccreary/">LinkedIn profile</a> or via the <a href="../contact/">Contact</a> page on this site.</p>
+<h3 id="is-the-content-on-this-site-freely-available">Is the content on this site freely available?<a class="headerlink" href="#is-the-content-on-this-site-freely-available" title="Permanent link">&para;</a></h3>
+<p>Yes. All content on this site is licensed under Creative Commons ShareAlike Attribution Noncommercial. You may share and adapt the material for non-commercial purposes as long as you provide attribution. See the <a href="../license/">License</a> page for full details.</p>
+<hr />
+<h2 id="core-concept-questions">Core Concept Questions<a class="headerlink" href="#core-concept-questions" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-the-atam-process">What is the ATAM process?<a class="headerlink" href="#what-is-the-atam-process" title="Permanent link">&para;</a></h3>
+<p>The Architecture Tradeoff Analysis Method (ATAM) is a structured, multi-step process for evaluating a software architecture against desired quality attributes before the system is built. It brings together stakeholders, architects, and evaluators to surface risks, sensitivity points, and tradeoffs early — when changes are still inexpensive. The process was developed by the Software Engineering Institute (SEI) at Carnegie Mellon University and is widely used for mission-critical systems.</p>
+<p>For database selection, the standard ATAM process has been adapted to compare candidate database architectures against quality attribute scenarios. See <a href="atam-process.md">ATAM Process</a> and <a href="atam-db-process.md">ATAM DB Selection Process</a>.</p>
+<h3 id="what-are-the-main-steps-of-the-atam-process">What are the main steps of the ATAM process?<a class="headerlink" href="#what-are-the-main-steps-of-the-atam-process" title="Permanent link">&para;</a></h3>
+<p>The ATAM process follows seven main steps:</p>
+<ol>
+<li><strong>Business Drivers</strong> — understand the strategic goals and constraints driving the architecture</li>
+<li><strong>Architecture Plan</strong> — present the proposed architecture, including patterns and structural decisions</li>
+<li><strong>Quality Attributes</strong> — identify and prioritize non-functional requirements (NFRs)</li>
+<li><strong>Architectural Approaches</strong> — describe the strategies used to achieve quality attributes</li>
+<li><strong>User Stories</strong> — ensure the architecture addresses real user needs</li>
+<li><strong>Architectural Decisions</strong> — make and document concrete choices</li>
+<li><strong>Analysis</strong> — evaluate decisions against quality attributes to find tradeoffs, sensitivity points, risks, and non-risks</li>
+</ol>
+<p>See <a href="atam-process.md">ATAM Process</a> for the full description with visual diagrams.</p>
+<h3 id="what-documents-does-the-atam-process-produce">What documents does the ATAM process produce?<a class="headerlink" href="#what-documents-does-the-atam-process-produce" title="Permanent link">&para;</a></h3>
+<p>The ATAM process produces four key output documents:</p>
+<ul>
+<li><strong>Tradeoffs</strong> — records where architectural decisions improve one quality attribute at the expense of another</li>
+<li><strong>Sensitivity Points</strong> — identifies parts of the architecture where changes have outsized quality impact</li>
+<li><strong>Risks</strong> — flags potential problems that could prevent the system from achieving its quality goals</li>
+<li><strong>Non-Risks</strong> — documents well-understood decisions that are not expected to cause problems</li>
+</ul>
+<p>Together these form the "distilled information" that stakeholders use to make final architectural decisions. See <a href="atam-process.md">ATAM Process</a>.</p>
+<h3 id="what-are-quality-attributes">What are quality attributes?<a class="headerlink" href="#what-are-quality-attributes" title="Permanent link">&para;</a></h3>
+<p>Quality attributes (also called non-functional requirements or NFRs) are system properties that describe <em>how well</em> a system performs its functions, rather than <em>what</em> functions it performs. In the context of database selection, key quality attributes include:</p>
+<ul>
+<li><strong>Scalability</strong> — ability to handle growing data and user load</li>
+<li><strong>Availability</strong> — degree to which the system is operational when needed</li>
+<li><strong>Performance</strong> — speed of query response and write throughput</li>
+<li><strong>Security</strong> — protection against unauthorized access</li>
+<li><strong>Maintainability</strong> — ease of modifying or extending the system</li>
+<li><strong>Queryability</strong> — richness of the supported query language</li>
+</ul>
+<p>Quality attributes are the core of the ATAM analysis. See <a href="concepts/index.md">Foundational Concepts</a>.</p>
+<h3 id="what-is-a-utility-tree">What is a utility tree?<a class="headerlink" href="#what-is-a-utility-tree" title="Permanent link">&para;</a></h3>
+<p>A utility tree (also called a quality tree) is a hierarchical diagram that organizes quality attributes by their importance to project stakeholders. Each node in the tree represents an attribute — such as scalability, availability, or security — scored across two dimensions:</p>
+<ul>
+<li><strong>Importance (I):</strong> Critical (C), High (H), Medium (M), or Low (L)</li>
+<li><strong>Ease of fulfillment (E):</strong> Easy (E), Medium (M), or Hard (H)</li>
+</ul>
+<p>The utility tree gives teams a concise visual showing which attributes are most critical and hardest to satisfy — exactly where architectural risk concentrates. See <a href="concepts/utility-tree.md">Utility Tree</a> for examples.</p>
+<h3 id="what-is-a-quality-attribute-scenario">What is a quality attribute scenario?<a class="headerlink" href="#what-is-a-quality-attribute-scenario" title="Permanent link">&para;</a></h3>
+<p>A quality attribute scenario is a concrete, testable statement that describes how a system should behave under specific conditions with respect to a quality attribute. For example:</p>
+<blockquote>
+<p>"The system responds to 1,000 concurrent users within 2 seconds under normal load."</p>
+</blockquote>
+<p>Good scenarios are specific, measurable, and drive architectural decisions. They are used in ATAM to evaluate whether a proposed architecture can satisfy stakeholder expectations. Scenarios have three parts: a stimulus, a context, and a response measure.</p>
+<h3 id="what-are-sensitivity-points-in-atam">What are sensitivity points in ATAM?<a class="headerlink" href="#what-are-sensitivity-points-in-atam" title="Permanent link">&para;</a></h3>
+<p>Sensitivity points are architectural elements where a small change has a significant effect on one or more quality attributes. For example, a database connection pool size is a sensitivity point for performance — tuning it up or down has a disproportionate impact on response time and throughput.</p>
+<p>Identifying sensitivity points helps architects prioritize where to focus optimization efforts and where to invest in monitoring. See <a href="atam-process.md">ATAM Process</a>.</p>
+<h3 id="what-are-risks-in-atam">What are risks in ATAM?<a class="headerlink" href="#what-are-risks-in-atam" title="Permanent link">&para;</a></h3>
+<p>In the ATAM context, risks are architectural elements that may prevent a system from achieving its quality attribute goals. They often arise from reliance on unproven technology, ambitious performance targets, or architectural choices that are hard to reverse. For example:</p>
+<ul>
+<li>Using a single-node database when high availability is required</li>
+<li>Choosing a NoSQL database without verifying it supports the required query patterns</li>
+</ul>
+<p>Risks are documented during the ATAM analysis phase so the project team can develop mitigation strategies. See <a href="atam-process.md">ATAM Process</a>.</p>
+<h3 id="what-are-non-risks-in-atam">What are non-risks in ATAM?<a class="headerlink" href="#what-are-non-risks-in-atam" title="Permanent link">&para;</a></h3>
+<p>Non-risks are architectural elements that have been reviewed and determined to pose no significant threat to quality attribute goals. They represent well-understood decisions with known outcomes — for example, using a proven open-source database with an active support community for a workload the database is known to handle well.</p>
+<p>Documenting non-risks is as important as documenting risks because it provides explicit justification for decisions that might otherwise be questioned. See <a href="atam-process.md">ATAM Process</a>.</p>
+<h3 id="what-are-tradeoffs-in-atam">What are tradeoffs in ATAM?<a class="headerlink" href="#what-are-tradeoffs-in-atam" title="Permanent link">&para;</a></h3>
+<p>Tradeoffs are architectural decisions that improve one quality attribute at the cost of another. Tradeoffs are inherent in system design — there is rarely a solution that maximizes all quality attributes simultaneously. Classic examples include:</p>
+<ul>
+<li><strong>Caching</strong> improves performance but may reduce data consistency</li>
+<li><strong>Eventual consistency</strong> improves availability and write throughput but sacrifices immediate data accuracy</li>
+<li><strong>Denormalization</strong> improves read performance but increases storage and risks data integrity issues</li>
+</ul>
+<p>The ATAM process makes tradeoffs explicit so stakeholders can make informed decisions. See <a href="atam-process.md">ATAM Process</a>.</p>
+<h3 id="what-are-the-four-vs-of-nosql">What are the Four V's of NoSQL?<a class="headerlink" href="#what-are-the-four-vs-of-nosql" title="Permanent link">&para;</a></h3>
+<p>The Four V's are the core framework used on this site for evaluating NoSQL database options:</p>
+<ol>
+<li><strong>Volume</strong> — the quantity of data the system must store and process</li>
+<li><strong>Velocity</strong> — the speed at which data arrives and queries must respond</li>
+<li><strong>Variability</strong> — the diversity of data structures and schema flexibility required</li>
+<li><strong>Veracity</strong> — the accuracy, quality, and trustworthiness of the data</li>
+</ol>
+<p>Most real-world applications face challenges across multiple V's simultaneously. Evaluating each dimension systematically helps architects match their requirements to the strengths of specific NoSQL database types. See <a href="concepts/four-vs-of-nosql.md">Four V's of NoSQL</a>.</p>
+<h3 id="what-is-volume-in-nosql-database-selection">What is Volume in NoSQL database selection?<a class="headerlink" href="#what-is-volume-in-nosql-database-selection" title="Permanent link">&para;</a></h3>
+<p>Volume refers to the quantity of data a system must store, process, and manage. Volume challenges extend beyond simple storage capacity to include distributed storage architecture, data partitioning strategies, and horizontal scaling capabilities. Traditional relational databases scale vertically (bigger servers), while NoSQL databases are designed for horizontal scaling (more servers).</p>
+<p><strong>Real-world example:</strong> Facebook Messenger stores petabytes of message history in Apache Cassandra, adding billions of new rows per day. Teams must tune compaction and repair jobs to keep read latencies under control.</p>
+<p>See <a href="concepts/four-vs-of-nosql.md">Four V's of NoSQL</a>.</p>
+<h3 id="what-is-velocity-in-nosql-database-selection">What is Velocity in NoSQL database selection?<a class="headerlink" href="#what-is-velocity-in-nosql-database-selection" title="Permanent link">&para;</a></h3>
+<p>Velocity encompasses both the speed at which data enters the system and the speed at which queries must be answered. High-velocity workloads expose bottlenecks in write commit paths, create hot-partition risks, and stress cache invalidation mechanisms.</p>
+<p>NoSQL databases address velocity through distributed processing, asynchronous writes, multi-level caching, and optimized data structures like LSM trees.</p>
+<p><strong>Real-world example:</strong> Disney+ ingests billions of viewer-interaction bookmarks per day through Kinesis streams into Amazon DynamoDB, then serves them at sub-50 ms latency so users can resume playback on any device.</p>
+<p>See <a href="concepts/four-vs-of-nosql.md">Four V's of NoSQL</a>.</p>
+<h3 id="what-is-variability-in-nosql-database-selection">What is Variability in NoSQL database selection?<a class="headerlink" href="#what-is-variability-in-nosql-database-selection" title="Permanent link">&para;</a></h3>
+<p>Variability addresses the challenge of managing diverse data types, formats, and structures within a single system. Traditional relational databases require predefined schemas; NoSQL databases support schema-flexible or schemaless data models that can evolve with application requirements.</p>
+<p><strong>Real-world example:</strong> A leading fashion retailer migrated a highly variable product catalog to MongoDB so each SKU can store unique attributes (color, fabric, bundle contents) without schema changes.</p>
+<p>Variability is especially relevant for document databases and column-family stores. See <a href="concepts/four-vs-of-nosql.md">Four V's of NoSQL</a>.</p>
+<h3 id="what-is-veracity-in-nosql-database-selection">What is Veracity in NoSQL database selection?<a class="headerlink" href="#what-is-veracity-in-nosql-database-selection" title="Permanent link">&para;</a></h3>
+<p>Veracity addresses data quality, consistency, and trustworthiness in distributed NoSQL systems. Unlike relational databases with strict ACID guarantees, NoSQL databases often trade consistency for availability and partition tolerance, making data quality assurance more complex.</p>
+<p>Key veracity techniques include idempotent upserts for deduplication, schema registries to prevent schema drift, and the <strong>Write-Audit-Publish (WAP)</strong> pattern that validates data in isolation before making it available to consumers.</p>
+<p><strong>Real-world example:</strong> Cloud data lakes using Apache Iceberg implement WAP branches so each ingestion job writes to an isolation branch, runs AWS Glue Data Quality checks, and only merges into the main table on pass.</p>
+<p>See <a href="concepts/four-vs-of-nosql.md">Four V's of NoSQL</a>.</p>
+<h3 id="what-are-the-main-characteristics-of-relational-databases">What are the main characteristics of relational databases?<a class="headerlink" href="#what-are-the-main-characteristics-of-relational-databases" title="Permanent link">&para;</a></h3>
+<p>Relational databases organize data into structured tables with predefined schemas and enforce relationships between tables using foreign keys. Their key characteristics include:</p>
+<ul>
+<li>Structured schema with enforced relationships</li>
+<li>ACID compliance for reliable transactions</li>
+<li>SQL-based querying with complex join support</li>
+<li>Vertical scaling (more powerful hardware)</li>
+<li>Strong consistency guarantees</li>
+</ul>
+<p><strong>Best use cases:</strong> Financial transactions, inventory management, user authentication, order processing, and any application requiring immediate consistency.</p>
+<p><strong>Examples:</strong> PostgreSQL, MySQL, Oracle Database, Microsoft SQL Server. See <a href="db-types/relational/index.md">Relational</a>.</p>
+<h3 id="what-are-the-main-characteristics-of-column-family-databases">What are the main characteristics of column-family databases?<a class="headerlink" href="#what-are-the-main-characteristics-of-column-family-databases" title="Permanent link">&para;</a></h3>
+<p>Column-family databases store data organized by columns within rows, rather than complete rows together. This enables efficient compression, supports sparse data structures, and provides excellent write performance. Key characteristics include:</p>
+<ul>
+<li>Column-oriented storage within rows</li>
+<li>Sparse data support (rows can have different columns)</li>
+<li>Excellent write performance and compression</li>
+<li>Flexible schema within column families</li>
+<li>Horizontal scaling with eventual consistency</li>
+</ul>
+<p><strong>Best use cases:</strong> Time-series data, IoT sensor data, logging systems, and high-volume write workloads.</p>
+<p><strong>Examples:</strong> Apache Cassandra, HBase, Google Bigtable. See <a href="db-types/column-family/index.md">Column Family</a>.</p>
+<h3 id="what-are-the-main-characteristics-of-graph-databases">What are the main characteristics of graph databases?<a class="headerlink" href="#what-are-the-main-characteristics-of-graph-databases" title="Permanent link">&para;</a></h3>
+<p>Graph databases store data as nodes (entities) and edges (relationships), making them ideal for complex, highly connected data. Key characteristics include:</p>
+<ul>
+<li>Nodes and edges data model</li>
+<li>Efficient relationship traversal (no joins required)</li>
+<li>Flexible properties on both nodes and edges</li>
+<li>Specialized query languages (Cypher, Gremlin)</li>
+<li>ACID properties for graph operations in leading implementations</li>
+</ul>
+<p><strong>Best use cases:</strong> Social networks, fraud detection, recommendation engines, knowledge graphs, supply chain analysis, and AI/ML feature engineering.</p>
+<p><strong>Examples:</strong> Neo4j, Amazon Neptune, TigerGraph. See <a href="db-types/graph/index.md">Graph</a>.</p>
+<h3 id="what-are-the-main-characteristics-of-document-databases">What are the main characteristics of document databases?<a class="headerlink" href="#what-are-the-main-characteristics-of-document-databases" title="Permanent link">&para;</a></h3>
+<p>Document databases store data in flexible, schema-free documents — typically JSON, BSON, or XML. They provide a balance between the simplicity of key-value stores and the queryability of relational databases. Key characteristics include:</p>
+<ul>
+<li>Flexible, schema-free document structure</li>
+<li>Rich querying including nested fields and arrays</li>
+<li>Horizontal scaling with sharding</li>
+<li>Tunable consistency levels</li>
+<li>Native support for complex data types</li>
+</ul>
+<p><strong>Best use cases:</strong> Content management, product catalogs, user profiles, configuration management, and rapid application development.</p>
+<p><strong>Examples:</strong> MongoDB, Amazon DocumentDB, CouchDB, Firebase Firestore. See <a href="db-types/document/index.md">Document</a>.</p>
+<h3 id="what-are-acid-properties">What are ACID properties?<a class="headerlink" href="#what-are-acid-properties" title="Permanent link">&para;</a></h3>
+<p>ACID is a set of four properties that guarantee reliable database transaction processing:</p>
+<ul>
+<li><strong>Atomicity</strong> — all operations in a transaction succeed or none are applied</li>
+<li><strong>Consistency</strong> — each transaction brings the database from one valid state to another</li>
+<li><strong>Isolation</strong> — concurrent transactions do not interfere with each other</li>
+<li><strong>Durability</strong> — committed transactions survive system failures</li>
+</ul>
+<p>ACID is the standard for relational databases and is essential for financial systems, inventory management, and any application where partial transactions could cause data corruption. See <a href="concepts/acid-vs-base.md">ACID vs. BASE</a>.</p>
+<h3 id="what-are-base-properties">What are BASE properties?<a class="headerlink" href="#what-are-base-properties" title="Permanent link">&para;</a></h3>
+<p>BASE is an alternative consistency model designed for distributed NoSQL systems that prioritize availability over strict consistency:</p>
+<ul>
+<li><strong>Basically Available</strong> — the system guarantees availability even at the cost of some inconsistency</li>
+<li><strong>Soft State</strong> — the system state may change over time even without new input, due to propagation of updates</li>
+<li><strong>Eventual Consistency</strong> — the system will become consistent once updates stop propagating</li>
+</ul>
+<p>BASE systems are suitable for applications that can tolerate short periods of inconsistency — social media feeds, recommendation systems, and content delivery networks. See <a href="concepts/acid-vs-base.md">ACID vs. BASE</a>.</p>
+<h3 id="what-are-risk-themes-in-atam">What are risk themes in ATAM?<a class="headerlink" href="#what-are-risk-themes-in-atam" title="Permanent link">&para;</a></h3>
+<p>Risk themes are broad categories of related risks that emerge during the ATAM analysis process. Rather than treating every risk individually, risk themes group them by common root cause or quality attribute impact, helping the project team prioritize their mitigation efforts.</p>
+<p>For example, a "data consistency" risk theme might group risks related to eventual consistency, conflict resolution, and quorum configuration. Risk themes help architects communicate patterns of concern to non-technical stakeholders. See <a href="atam-process.md">ATAM Process</a>.</p>
+<hr />
+<h2 id="technical-detail-questions">Technical Detail Questions<a class="headerlink" href="#technical-detail-questions" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-the-cap-theorem">What is the CAP Theorem?<a class="headerlink" href="#what-is-the-cap-theorem" title="Permanent link">&para;</a></h3>
+<p>The CAP Theorem states that a distributed data system can guarantee at most two of the following three properties simultaneously:</p>
+<ul>
+<li><strong>Consistency (C)</strong> — all nodes return the same data at the same time</li>
+<li><strong>Availability (A)</strong> — every request receives a response</li>
+<li><strong>Partition Tolerance (P)</strong> — the system continues operating despite network partitions</li>
+</ul>
+<p>Since network partitions are unavoidable in real distributed systems, architects must choose between consistency and availability when a partition occurs. CP systems (like HBase) halt writes to maintain consistency; AP systems (like Cassandra) continue serving requests but may return stale data. See <a href="glossary.md">Glossary</a> for the CAP Theorem definition.</p>
+<h3 id="what-is-the-difference-between-eventual-consistency-and-strong-consistency">What is the difference between eventual consistency and strong consistency?<a class="headerlink" href="#what-is-the-difference-between-eventual-consistency-and-strong-consistency" title="Permanent link">&para;</a></h3>
+<p><strong>Strong consistency</strong> guarantees that all reads return the most recent write, regardless of which node handles the request. This requires synchronization across all replicas before acknowledging a write, which adds latency.</p>
+<p><strong>Eventual consistency</strong> allows reads to return stale data temporarily, but guarantees that all nodes will eventually converge on the same value if no new updates are made. This enables higher write throughput and availability at the cost of immediate data accuracy.</p>
+<p><strong>When eventual consistency causes problems:</strong> If two users simultaneously update the same record (e.g., book a shared resource), an eventually consistent system may allow both writes and later detect a conflict. See <a href="glossary.md">Glossary</a>.</p>
+<h3 id="what-is-sharding">What is sharding?<a class="headerlink" href="#what-is-sharding" title="Permanent link">&para;</a></h3>
+<p>Sharding is the horizontal partitioning of data across multiple database instances (shards), each responsible for a subset of the overall dataset. Sharding enables horizontal scaling by distributing both storage and query load across nodes.</p>
+<p><strong>Key considerations:</strong>
+- <strong>Shard key selection</strong> — the column(s) used to distribute data must minimize hotspots and support common query patterns
+- <strong>Rebalancing</strong> — when nodes are added or removed, data must be redistributed
+- <strong>Cross-shard queries</strong> — operations that span multiple shards are complex and expensive</p>
+<p>Many NoSQL databases (Cassandra, MongoDB) handle sharding automatically. See <a href="glossary.md">Glossary</a> for the Sharding definition.</p>
+<h3 id="what-is-consistent-hashing">What is consistent hashing?<a class="headerlink" href="#what-is-consistent-hashing" title="Permanent link">&para;</a></h3>
+<p>Consistent hashing is a distributed hashing scheme that minimizes data movement when nodes are added to or removed from a cluster. In a consistent hashing ring, each node is responsible for a range of hash values (token range). When a node joins or leaves, only the data in adjacent token ranges needs to move, rather than rehashing the entire dataset.</p>
+<p>Apache Cassandra uses consistent hashing for distributing data across cluster nodes. Combined with virtual nodes (vnodes), it provides excellent load balancing even when nodes have different capacities. See <a href="glossary.md">Glossary</a>.</p>
+<h3 id="what-is-replication-in-distributed-databases">What is replication in distributed databases?<a class="headerlink" href="#what-is-replication-in-distributed-databases" title="Permanent link">&para;</a></h3>
+<p>Replication is the process of copying data across multiple database nodes for redundancy, fault tolerance, and read scaling. Key replication patterns include:</p>
+<ul>
+<li><strong>Master-slave (primary-replica)</strong> — one primary node accepts writes, replicas synchronize and handle reads</li>
+<li><strong>Master-master (multi-primary)</strong> — multiple nodes accept writes, creating conflict resolution challenges</li>
+<li><strong>Peer-to-peer</strong> — all nodes are equal, as in Cassandra's ring topology</li>
+</ul>
+<p>Replication involves a consistency tradeoff: synchronous replication ensures all replicas match before acknowledging a write (strong consistency, higher latency); asynchronous replication acknowledges immediately and propagates later (lower latency, eventual consistency). See <a href="concepts/index.md">Concepts</a>.</p>
+<h3 id="what-is-denormalization">What is denormalization?<a class="headerlink" href="#what-is-denormalization" title="Permanent link">&para;</a></h3>
+<p>Denormalization is the deliberate introduction of redundant data into a database design to improve read performance. In relational databases, normalization reduces redundancy to avoid update anomalies; denormalization accepts redundancy to eliminate expensive joins.</p>
+<p><strong>Example:</strong> Storing a customer's name directly in every order record avoids a join to the customer table at query time, but means the name must be updated in multiple places if it changes.</p>
+<p>Denormalization is commonly used in NoSQL database design — particularly in column-family stores and document databases — where joins are not supported or are expensive. See <a href="glossary.md">Glossary</a>.</p>
+<h3 id="what-is-the-difference-between-schema-on-read-and-schema-on-write">What is the difference between schema-on-read and schema-on-write?<a class="headerlink" href="#what-is-the-difference-between-schema-on-read-and-schema-on-write" title="Permanent link">&para;</a></h3>
+<p><strong>Schema-on-write</strong> enforces the data structure when data is written to the database. Relational databases use this approach — every row must conform to the table definition. Schema violations are caught immediately at write time, which provides data integrity guarantees.</p>
+<p><strong>Schema-on-read</strong> applies schema interpretation when data is queried, rather than enforcing it at write time. Data lakes and many NoSQL databases use schema-on-read, enabling ingestion of diverse formats without upfront schema definition. The tradeoff is that data quality issues are not detected until the data is consumed.</p>
+<p>See <a href="glossary.md">Glossary</a> for formal definitions of both terms.</p>
+<h3 id="what-is-polyglot-persistence">What is polyglot persistence?<a class="headerlink" href="#what-is-polyglot-persistence" title="Permanent link">&para;</a></h3>
+<p>Polyglot persistence is the use of multiple different database technologies within a single application, each chosen for its fitness to a specific use case. For example, an e-commerce application might use:</p>
+<ul>
+<li><strong>PostgreSQL</strong> for transactional order data (ACID compliance)</li>
+<li><strong>Redis</strong> for session caching (sub-millisecond key-value lookups)</li>
+<li><strong>Elasticsearch</strong> for full-text product search</li>
+<li><strong>Neo4j</strong> for product recommendation graphs</li>
+</ul>
+<p>Polyglot persistence maximizes fitness-for-purpose but adds operational complexity. The ATAM process helps teams evaluate whether the performance gains justify the overhead. See <a href="glossary.md">Glossary</a>.</p>
+<h3 id="what-is-the-difference-between-oltp-and-olap">What is the difference between OLTP and OLAP?<a class="headerlink" href="#what-is-the-difference-between-oltp-and-olap" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>OLTP (Online Transaction Processing)</strong> systems handle high volumes of short, real-time transactions. They are optimized for writes, use row-oriented storage, and enforce ACID properties. Examples: order management, banking, reservations.</p>
+</li>
+<li>
+<p><strong>OLAP (Online Analytical Processing)</strong> systems handle complex analytical queries across large historical datasets. They are optimized for reads, use columnar storage, and pre-compute aggregations. Examples: business intelligence, financial reporting, trend analysis.</p>
+</li>
+</ul>
+<p>The two workloads have fundamentally different access patterns, which is why separate databases (or database engines) are typically used for each. See <a href="db-types/analytical/index.md">Analytical</a> and <a href="db-types/relational/index.md">Relational</a>.</p>
+<h3 id="what-is-a-star-schema">What is a star schema?<a class="headerlink" href="#what-is-a-star-schema" title="Permanent link">&para;</a></h3>
+<p>A star schema is a dimensional data modeling approach used in analytical (OLAP) databases. It consists of:</p>
+<ul>
+<li>A central <strong>fact table</strong> containing quantitative measures (revenue, quantity, cost)</li>
+<li>Multiple <strong>dimension tables</strong> containing descriptive attributes (customer, product, time, region)</li>
+</ul>
+<p>The fact table connects to dimension tables via foreign keys, forming a star-like shape. Star schemas optimize for analytical queries because they minimize joins and enable fast aggregation. See <a href="db-types/analytical/index.md">Analytical</a>.</p>
+<h3 id="what-query-languages-are-used-with-graph-databases">What query languages are used with graph databases?<a class="headerlink" href="#what-query-languages-are-used-with-graph-databases" title="Permanent link">&para;</a></h3>
+<p>Graph databases use specialized query languages designed for pattern matching and graph traversal:</p>
+<ul>
+<li><strong>Cypher</strong> — a declarative query language used primarily with Neo4j, using ASCII-art-like pattern syntax to describe graph patterns</li>
+<li><strong>Gremlin</strong> — an imperative traversal language from the Apache TinkerPop framework, supported by multiple databases including Amazon Neptune and JanusGraph</li>
+<li><strong>GSQL</strong> — TigerGraph's SQL-like query language extended with graph-specific operations</li>
+</ul>
+<p>Traditional SQL is not well-suited for graph queries because relationship traversal in graphs can require arbitrarily deep recursion, which SQL handles awkwardly. See <a href="db-types/graph/index.md">Graph</a> and <a href="glossary.md">Glossary</a>.</p>
+<h3 id="what-are-lsm-trees">What are LSM trees?<a class="headerlink" href="#what-are-lsm-trees" title="Permanent link">&para;</a></h3>
+<p>LSM trees (Log-Structured Merge Trees) are a data structure optimized for high-volume sequential write workloads. They work by:</p>
+<ol>
+<li>Accepting writes into an in-memory buffer (MemTable)</li>
+<li>Periodically flushing the buffer to immutable disk files (SSTables)</li>
+<li>Merging SSTables in background compaction jobs to reclaim space and improve read performance</li>
+</ol>
+<p>LSM trees trade write performance for read performance — reads must check multiple SSTables unless compaction is kept up. Apache Cassandra uses LSM trees, which is why it handles write-heavy workloads so effectively. See <a href="glossary.md">Glossary</a>.</p>
+<h3 id="what-is-a-bloom-filter">What is a bloom filter?<a class="headerlink" href="#what-is-a-bloom-filter" title="Permanent link">&para;</a></h3>
+<p>A bloom filter is a probabilistic data structure that tests whether an element is in a set. It can report false positives (claiming an element is present when it is not) but never false negatives (it will not miss a present element).</p>
+<p>In database systems, bloom filters dramatically reduce unnecessary disk reads. Apache Cassandra uses bloom filters during key lookups: if the filter says a key is not in a given SSTable, that SSTable is skipped entirely. This avoids disk I/O for most negative lookups. See <a href="glossary.md">Glossary</a>.</p>
+<h3 id="what-is-the-write-ahead-log-wal">What is the Write-Ahead Log (WAL)?<a class="headerlink" href="#what-is-the-write-ahead-log-wal" title="Permanent link">&para;</a></h3>
+<p>Write-ahead logging (WAL) is a durability technique where changes are written to a sequential log file before being applied to the main data structures. If the system crashes during a write, the WAL can be replayed to restore the database to a consistent state.</p>
+<p>WAL is used in both relational databases (for ACID durability) and NoSQL systems (Cassandra's CommitLog, for example). The sequential nature of log writes makes WAL efficient, as sequential disk I/O is much faster than random writes. See <a href="glossary.md">Glossary</a>.</p>
+<h3 id="what-is-tunable-consistency">What is tunable consistency?<a class="headerlink" href="#what-is-tunable-consistency" title="Permanent link">&para;</a></h3>
+<p>Tunable consistency is a feature of some NoSQL databases (most notably Apache Cassandra) that allows the application to specify the consistency level required for each read or write operation. The tradeoff is between consistency and latency/availability:</p>
+<ul>
+<li><strong>ONE</strong> — fastest, least consistent; only one replica must acknowledge</li>
+<li><strong>QUORUM</strong> — majority of replicas must agree; balanced consistency and performance</li>
+<li><strong>ALL</strong> — slowest, strongest; all replicas must agree</li>
+</ul>
+<p>Tunable consistency allows architects to apply strong consistency where business logic demands it (e.g., account balances) and eventual consistency where speed matters more (e.g., product view counts). See <a href="glossary.md">Glossary</a>.</p>
+<h3 id="what-are-virtual-nodes-vnodes-in-cassandra">What are virtual nodes (vnodes) in Cassandra?<a class="headerlink" href="#what-are-virtual-nodes-vnodes-in-cassandra" title="Permanent link">&para;</a></h3>
+<p>Virtual nodes (vnodes) are a technique used by Apache Cassandra to improve data distribution across a cluster. Rather than assigning each physical node a single token range in the consistent hashing ring, vnodes assigns each physical node multiple smaller token ranges scattered around the ring.</p>
+<p>This means:
+- Data is distributed more evenly across nodes of varying capacity
+- When a node joins or leaves, the load is spread across many nodes rather than one neighbor
+- Bootstrapping new nodes is faster because data moves from multiple sources</p>
+<p>Vnodes are enabled by default in modern Cassandra deployments. See <a href="glossary.md">Glossary</a>.</p>
+<h3 id="what-are-tombstones-in-distributed-databases">What are tombstones in distributed databases?<a class="headerlink" href="#what-are-tombstones-in-distributed-databases" title="Permanent link">&para;</a></h3>
+<p>In distributed databases like Cassandra, a tombstone is a marker that records a deletion. Rather than immediately removing data (which would be complex across distributed replicas), the system writes a tombstone record indicating the key has been deleted.</p>
+<p>Tombstones persist until compaction runs and all replicas have acknowledged the deletion past the configured <code>gc_grace_seconds</code> window. Accumulating too many tombstones without compaction can degrade read performance significantly. See <a href="glossary.md">Glossary</a>.</p>
+<h3 id="what-is-the-gossip-protocol">What is the gossip protocol?<a class="headerlink" href="#what-is-the-gossip-protocol" title="Permanent link">&para;</a></h3>
+<p>The gossip protocol is a peer-to-peer communication mechanism where nodes periodically exchange state information with randomly selected peers. Over time, information propagates to all nodes in the cluster without requiring a central coordinator.</p>
+<p>Apache Cassandra uses the gossip protocol for cluster membership management and failure detection. Each node gossips with a few peers every second, spreading information about which nodes are up, down, or joining. This enables self-healing clusters that detect and recover from node failures automatically. See <a href="glossary.md">Glossary</a>.</p>
+<h3 id="what-is-mapreduce">What is MapReduce?<a class="headerlink" href="#what-is-mapreduce" title="Permanent link">&para;</a></h3>
+<p>MapReduce is a programming model for processing large datasets in parallel across distributed computing clusters. It consists of two phases:</p>
+<ul>
+<li><strong>Map</strong> — the input dataset is split into chunks, and a map function processes each chunk independently, producing key-value pairs</li>
+<li><strong>Reduce</strong> — the key-value pairs from all map tasks are grouped by key and aggregated by a reduce function</li>
+</ul>
+<p>MapReduce was popularized by Google and forms the processing foundation of Apache Hadoop. It is well-suited for batch processing large datasets but has been largely supplemented by faster frameworks like Apache Spark for interactive analytics. See <a href="glossary.md">Glossary</a>.</p>
+<hr />
+<h2 id="common-challenge-questions">Common Challenge Questions<a class="headerlink" href="#common-challenge-questions" title="Permanent link">&para;</a></h2>
+<h3 id="when-should-i-choose-nosql-over-a-relational-database">When should I choose NoSQL over a relational database?<a class="headerlink" href="#when-should-i-choose-nosql-over-a-relational-database" title="Permanent link">&para;</a></h3>
+<p>Consider NoSQL when your application faces one or more of the following challenges:</p>
+<ul>
+<li><strong>Volume</strong>: Data volumes exceed what a single server can handle cost-effectively</li>
+<li><strong>Velocity</strong>: Write throughput or read latency requirements exceed relational database capabilities</li>
+<li><strong>Variability</strong>: The schema changes frequently or varies significantly per record</li>
+<li><strong>Horizontal scaling</strong>: You need to scale by adding commodity servers rather than more powerful hardware</li>
+</ul>
+<p>Relational databases remain the better choice when ACID compliance is non-negotiable (financial transactions), when complex multi-table joins are central to the workload, or when the team's SQL expertise is a critical constraint.</p>
+<p>Use the <a href="concepts/four-vs-of-nosql.md">Four V's of NoSQL</a> and the <a href="atam-db-process.md">ATAM DB Selection Process</a> as your evaluation framework.</p>
+<h3 id="how-do-i-select-the-right-database-type-for-my-use-case">How do I select the right database type for my use case?<a class="headerlink" href="#how-do-i-select-the-right-database-type-for-my-use-case" title="Permanent link">&para;</a></h3>
+<p>The selection process follows the ATAM approach:</p>
+<ol>
+<li><strong>Identify business drivers</strong> — what are the most critical requirements?</li>
+<li><strong>Define quality attribute scenarios</strong> — write concrete, measurable scenarios for performance, availability, scalability, etc.</li>
+<li><strong>Evaluate the Four V's</strong> — which of Volume, Velocity, Variability, Veracity dominate your workload?</li>
+<li><strong>Build a utility tree</strong> — rank and score each quality attribute</li>
+<li><strong>Map to database types</strong> — match your dominant V's to database strengths</li>
+</ol>
+<p>For example: dominant Velocity → key-value or column-family; dominant Variability → document database; complex relationships → graph database. See <a href="atam-db-process.md">ATAM DB Selection Process</a> and <a href="db-types/index.md">Database Types</a>.</p>
+<h3 id="what-challenges-arise-from-horizontal-scaling">What challenges arise from horizontal scaling?<a class="headerlink" href="#what-challenges-arise-from-horizontal-scaling" title="Permanent link">&para;</a></h3>
+<p>Horizontal scaling introduces several architectural challenges:</p>
+<ul>
+<li><strong>Data distribution</strong>: Choosing shard keys that avoid hotspots is non-trivial; a poor shard key concentrates all load on one node</li>
+<li><strong>Cross-shard queries</strong>: Queries spanning multiple shards are complex and slow</li>
+<li><strong>Distributed transactions</strong>: Maintaining ACID guarantees across shards requires two-phase commit (2PC), which adds latency and failure complexity</li>
+<li><strong>Operational complexity</strong>: Managing many nodes — upgrades, repairs, backups — is significantly harder than managing a single server</li>
+</ul>
+<p>The ATAM process explicitly surfaces these challenges as sensitivity points and tradeoffs so architects can make informed decisions. See <a href="concepts/four-vs-of-nosql.md">Four V's of NoSQL</a>.</p>
+<h3 id="how-do-i-handle-data-consistency-in-distributed-systems">How do I handle data consistency in distributed systems?<a class="headerlink" href="#how-do-i-handle-data-consistency-in-distributed-systems" title="Permanent link">&para;</a></h3>
+<p>Handling consistency in distributed systems requires deciding where your application sits on the consistency-availability spectrum:</p>
+<ul>
+<li><strong>For critical consistency</strong> (e.g., financial balances): use strong consistency reads (QUORUM or ALL), accept higher latency, and design for conflict prevention</li>
+<li><strong>For high availability with acceptable staleness</strong> (e.g., social media feeds): use eventual consistency, design for idempotent operations, and handle potential conflicts with last-write-wins or application-level merge logic</li>
+<li><strong>Tunable consistency</strong>: databases like Cassandra let you tune per-operation, so you can use QUORUM for writes and ONE for reads where appropriate</li>
+</ul>
+<p>The CAP Theorem establishes that you cannot have all three of Consistency, Availability, and Partition Tolerance simultaneously. See <a href="concepts/acid-vs-base.md">ACID vs. BASE</a> and <a href="glossary.md">Glossary</a>.</p>
+<h3 id="what-are-hot-partitions-and-how-do-i-avoid-them">What are hot partitions and how do I avoid them?<a class="headerlink" href="#what-are-hot-partitions-and-how-do-i-avoid-them" title="Permanent link">&para;</a></h3>
+<p>A hot partition occurs when a disproportionate fraction of read or write traffic targets a single shard or node — often because the shard key has low cardinality or follows a predictable access pattern.</p>
+<p><strong>Example:</strong> Using a timestamp as a shard key causes all current writes to hit the most recent time partition, making it a hotspot.</p>
+<p><strong>Mitigations:</strong>
+- Choose high-cardinality shard keys (e.g., user ID rather than state/region)
+- Add random salt to shard keys to spread writes (at the cost of scatter-gather reads)
+- Use auto-scaling write capacity (DynamoDB warm throughput provisioning)
+- Monitor partition-level metrics and rebalance proactively</p>
+<p>See <a href="concepts/four-vs-of-nosql.md">Four V's of NoSQL</a> for velocity challenge details.</p>
+<h3 id="how-does-atam-surface-conflicting-quality-attributes">How does ATAM surface conflicting quality attributes?<a class="headerlink" href="#how-does-atam-surface-conflicting-quality-attributes" title="Permanent link">&para;</a></h3>
+<p>When two quality attributes cannot be simultaneously maximized, ATAM documents the decision as a <strong>tradeoff</strong>. For example:</p>
+<ul>
+<li>A caching layer improves <strong>performance</strong> but may reduce <strong>consistency</strong> (stale cache hits)</li>
+<li>Synchronous replication improves <strong>consistency</strong> but reduces <strong>availability</strong> during node failures</li>
+</ul>
+<p>Tradeoffs are not problems to be solved — they are inherent in system design. The ATAM process makes tradeoffs explicit so stakeholders can consciously decide which attributes to prioritize. See <a href="atam-process.md">ATAM Process</a>.</p>
+<h3 id="how-do-i-ensure-data-quality-veracity-in-nosql-systems">How do I ensure data quality (veracity) in NoSQL systems?<a class="headerlink" href="#how-do-i-ensure-data-quality-veracity-in-nosql-systems" title="Permanent link">&para;</a></h3>
+<p>Data veracity in NoSQL systems requires deliberate design since schema-free databases don't enforce structure at write time. Key techniques include:</p>
+<ul>
+<li><strong>Schema registry</strong>: defines and validates document structure before ingestion</li>
+<li><strong>Idempotent upserts</strong>: prevent duplicate records from repeated event processing</li>
+<li><strong>Write-Audit-Publish (WAP) pattern</strong>: writes to an isolation branch, validates with automated quality rules, then merges to the main dataset only on pass</li>
+<li><strong>Data lineage tracking</strong>: records the origin and transformation history of data for debugging and compliance</li>
+<li><strong>Monitoring and alerting</strong>: detects anomalies (null explosions, value drift) in real time</li>
+</ul>
+<p>See <a href="concepts/four-vs-of-nosql.md">Four V's of NoSQL</a> for the veracity section.</p>
+<h3 id="what-is-the-object-relational-impedance-mismatch">What is the object-relational impedance mismatch?<a class="headerlink" href="#what-is-the-object-relational-impedance-mismatch" title="Permanent link">&para;</a></h3>
+<p>The object-relational impedance mismatch is the conceptual gap between how object-oriented programming languages model data (objects with inheritance, polymorphism, and references) and how relational databases store data (rows and columns in tables).</p>
+<p>Common friction points include:
+- <strong>Inheritance</strong>: an object hierarchy maps awkwardly to flat tables
+- <strong>Collections</strong>: one-to-many relationships require join tables
+- <strong>Identity</strong>: object references vs. database foreign keys</p>
+<p>Object-Relational Mappers (ORMs) like Hibernate or SQLAlchemy reduce this friction but add abstraction overhead and can generate inefficient queries. Document databases reduce the mismatch by storing objects as JSON documents. See <a href="glossary.md">Glossary</a>.</p>
+<h3 id="when-does-eventual-consistency-cause-problems">When does eventual consistency cause problems?<a class="headerlink" href="#when-does-eventual-consistency-cause-problems" title="Permanent link">&para;</a></h3>
+<p>Eventual consistency causes problems when an application depends on immediately seeing the results of its own writes or when two concurrent users modify shared state. Common problem scenarios:</p>
+<ul>
+<li><strong>Read-your-writes violations</strong>: a user updates their profile but immediately sees the old version on a different replica</li>
+<li><strong>Lost updates</strong>: two users increment a counter simultaneously; one increment is overwritten</li>
+<li><strong>Stale reads in financial systems</strong>: an account balance read from a lagging replica appears to have more funds than it actually does</li>
+</ul>
+<p>The solution is to use stronger consistency levels for sensitive operations (QUORUM or ALL reads), implement application-level optimistic locking, or choose a CP database for use cases where consistency is non-negotiable. See <a href="concepts/acid-vs-base.md">ACID vs. BASE</a>.</p>
+<h3 id="how-do-distributed-transactions-work-in-nosql-systems">How do distributed transactions work in NoSQL systems?<a class="headerlink" href="#how-do-distributed-transactions-work-in-nosql-systems" title="Permanent link">&para;</a></h3>
+<p>Distributed transactions — transactions that span multiple nodes or database systems while maintaining ACID properties — are one of the hardest problems in distributed systems. The standard protocol is <strong>Two-Phase Commit (2PC)</strong>:</p>
+<ol>
+<li><strong>Prepare phase</strong>: a coordinator asks all participants if they can commit</li>
+<li><strong>Commit phase</strong>: if all participants agree, the coordinator sends the commit; otherwise it sends a rollback</li>
+</ol>
+<p>2PC is reliable but adds latency (multiple network round-trips) and is vulnerable to coordinator failures. Most NoSQL databases avoid distributed transactions or support them only with significant performance overhead. When true distributed transactions are required, architects often use a saga pattern or choose a NewSQL database (like CockroachDB) that provides distributed ACID guarantees. See <a href="glossary.md">Glossary</a>.</p>
+<h3 id="what-are-the-common-pitfalls-in-nosql-database-selection">What are the common pitfalls in NoSQL database selection?<a class="headerlink" href="#what-are-the-common-pitfalls-in-nosql-database-selection" title="Permanent link">&para;</a></h3>
+<p>The most common pitfalls include:</p>
+<ol>
+<li><strong>Choosing based on hype</strong> rather than quality attribute fit</li>
+<li><strong>Ignoring operational complexity</strong> — NoSQL clusters require more ops expertise than single-node databases</li>
+<li><strong>Underestimating schema design effort</strong> — "schemaless" does not mean "no design required"</li>
+<li><strong>Poor shard key selection</strong> — leading to hotspots and cross-shard query pain</li>
+<li><strong>Assuming eventual consistency is acceptable</strong> — without validating that the application can handle stale reads</li>
+<li><strong>Neglecting veracity</strong> — not implementing data quality checks, leading to bad data in analytics pipelines</li>
+</ol>
+<p>The ATAM methodology guards against these pitfalls by requiring explicit quality attribute scenarios and tradeoff documentation before the architecture is committed. See <a href="atam-db-process.md">ATAM DB Selection Process</a>.</p>
+<hr />
+<h2 id="best-practice-questions">Best Practice Questions<a class="headerlink" href="#best-practice-questions" title="Permanent link">&para;</a></h2>
+<h3 id="how-do-i-apply-atam-to-database-selection">How do I apply ATAM to database selection?<a class="headerlink" href="#how-do-i-apply-atam-to-database-selection" title="Permanent link">&para;</a></h3>
+<p>Applying ATAM to database selection follows these steps:</p>
+<ol>
+<li><strong>Gather business drivers</strong>: understand what the business is trying to achieve and what constraints apply (budget, timeline, team skills)</li>
+<li><strong>Write quality attribute scenarios</strong>: for each important NFR, write a concrete, measurable scenario</li>
+<li><strong>Build a utility tree</strong>: score each quality attribute by importance (I) and ease of fulfillment (E)</li>
+<li><strong>Identify candidate architectures</strong>: propose two or three database architectures that could satisfy the requirements</li>
+<li><strong>Analyze tradeoffs</strong>: for each candidate, identify risks, non-risks, sensitivity points, and tradeoffs</li>
+<li><strong>Select and document</strong>: choose the architecture with the best fit and document all decisions for future reference</li>
+</ol>
+<p>The ATAM process is collaborative — it works best when architects, developers, and business stakeholders participate together. See <a href="atam-db-process.md">ATAM DB Selection Process</a>.</p>
+<h3 id="what-makes-a-good-quality-attribute-scenario">What makes a good quality attribute scenario?<a class="headerlink" href="#what-makes-a-good-quality-attribute-scenario" title="Permanent link">&para;</a></h3>
+<p>A good quality attribute scenario is specific, measurable, and actionable. It describes:</p>
+<ul>
+<li><strong>Stimulus</strong>: what triggers the behavior (a user request, a system event, a component failure)</li>
+<li><strong>Context</strong>: what conditions apply (normal load, peak load, after a network partition)</li>
+<li><strong>Response measure</strong>: how the system must respond and how it will be measured</li>
+</ul>
+<p><strong>Poor scenario:</strong> "The system should be fast."</p>
+<p><strong>Good scenario:</strong> "Under peak load of 10,000 concurrent users, 95% of product search queries return results in under 200 milliseconds."</p>
+<p>Good scenarios drive architectural decisions and can be validated through load testing. See <a href="atam-process.md">ATAM Process</a>.</p>
+<h3 id="how-should-i-structure-a-utility-tree-for-database-evaluation">How should I structure a utility tree for database evaluation?<a class="headerlink" href="#how-should-i-structure-a-utility-tree-for-database-evaluation" title="Permanent link">&para;</a></h3>
+<p>To build an effective utility tree for database evaluation:</p>
+<ol>
+<li><strong>Identify the relevant "-ilities"</strong>: scalability, availability, queryability, security, maintainability, findability, affordability, interoperability, transformability</li>
+<li><strong>Score each attribute</strong>: assign Importance (Critical/High/Medium/Low) and Ease (Easy/Medium/Hard) based on stakeholder input</li>
+<li><strong>Prioritize</strong>: focus analysis on attributes scored High importance / Hard fulfillment — these are the highest-risk areas</li>
+<li><strong>Link to scenarios</strong>: each attribute should map to at least one quality attribute scenario for validation</li>
+</ol>
+<p>The utility tree makes abstract NFRs tangible and provides a shared vocabulary for stakeholder discussions. See <a href="concepts/utility-tree.md">Utility Tree</a>.</p>
+<h3 id="when-should-i-use-a-graph-database-instead-of-a-document-database">When should I use a graph database instead of a document database?<a class="headerlink" href="#when-should-i-use-a-graph-database-instead-of-a-document-database" title="Permanent link">&para;</a></h3>
+<p>Choose a graph database when <strong>relationship traversal</strong> is the primary query pattern and relationships are many-to-many, arbitrarily deep, or require path finding. Indicators:</p>
+<ul>
+<li>Social network analysis (friend-of-friend queries)</li>
+<li>Fraud detection (unusual transaction chains)</li>
+<li>Recommendation engines (what did people similar to you buy?)</li>
+<li>Knowledge graphs and ontologies</li>
+<li>Supply chain traceability across multiple tiers</li>
+</ul>
+<p>Choose a document database when the primary challenge is <strong>schema variability</strong> and most queries retrieve whole documents with minimal cross-document relationship traversal.</p>
+<p>The key distinction: if your queries require traversing relationships that are not known at schema design time, a graph database will outperform a document database dramatically. See <a href="db-types/graph/index.md">Graph</a> and <a href="db-types/document/index.md">Document</a>.</p>
+<h3 id="what-are-best-practices-for-shard-key-selection">What are best practices for shard key selection?<a class="headerlink" href="#what-are-best-practices-for-shard-key-selection" title="Permanent link">&para;</a></h3>
+<p>Shard key selection is one of the most consequential decisions in NoSQL database design. Best practices:</p>
+<ul>
+<li><strong>High cardinality</strong>: choose a column with many distinct values (user ID, UUID) to distribute data evenly</li>
+<li><strong>Even distribution</strong>: avoid fields where a few values dominate (e.g., country code, status flag)</li>
+<li><strong>Query alignment</strong>: choose a key that appears in most of your primary queries to minimize cross-shard scatter-gather operations</li>
+<li><strong>Avoid monotonically increasing keys</strong>: sequential keys (timestamps, auto-increment IDs) create write hotspots on the latest partition</li>
+<li><strong>Test under realistic load</strong>: validate distribution and query patterns with production-representative data before going live</li>
+</ul>
+<p>A poor shard key is very expensive to change after the database is populated. See <a href="concepts/four-vs-of-nosql.md">Four V's of NoSQL</a>.</p>
+<h3 id="how-do-stakeholders-participate-in-the-atam-process">How do stakeholders participate in the ATAM process?<a class="headerlink" href="#how-do-stakeholders-participate-in-the-atam-process" title="Permanent link">&para;</a></h3>
+<p>ATAM is explicitly a collaborative, multi-stakeholder process. Different stakeholder types contribute differently:</p>
+<ul>
+<li><strong>Business owners</strong>: articulate business drivers, constraints, and budget</li>
+<li><strong>End users</strong>: describe functional requirements and usability needs through user stories</li>
+<li><strong>Architects</strong>: present the architecture plan and explain design decisions</li>
+<li><strong>Developers</strong>: identify implementation risks and technical sensitivity points</li>
+<li><strong>Operations teams</strong>: highlight maintainability, deployment, and monitoring concerns</li>
+<li><strong>Security officers</strong>: surface security risks and compliance requirements</li>
+</ul>
+<p>The ATAM facilitator guides the group through structured analysis sessions, ensuring all perspectives are heard before architectural decisions are locked in. See <a href="atam-process.md">ATAM Process</a>.</p>
+<h3 id="how-should-i-document-architectural-tradeoffs">How should I document architectural tradeoffs?<a class="headerlink" href="#how-should-i-document-architectural-tradeoffs" title="Permanent link">&para;</a></h3>
+<p>Document tradeoffs explicitly with enough context for future readers to understand why a decision was made:</p>
+<p><strong>Tradeoff template:</strong>
+- <strong>Decision</strong>: what was decided
+- <strong>Quality attribute improved</strong>: which attribute benefits
+- <strong>Quality attribute sacrificed</strong>: which attribute is harmed
+- <strong>Rationale</strong>: why this balance was chosen given business priorities
+- <strong>Alternatives considered</strong>: what other options were evaluated and why they were not chosen</p>
+<p>Example: "We chose eventual consistency for the product catalog (sacrificing read consistency) to achieve sub-10 ms write latency (improving velocity). Product descriptions can tolerate a 1-5 second propagation delay; customers will not notice."</p>
+<p>See <a href="atam-process.md">ATAM Process</a>.</p>
+<h3 id="what-are-the-best-practices-for-schema-design-in-nosql-databases">What are the best practices for schema design in NoSQL databases?<a class="headerlink" href="#what-are-the-best-practices-for-schema-design-in-nosql-databases" title="Permanent link">&para;</a></h3>
+<p>NoSQL schema design is query-driven rather than entity-driven:</p>
+<ol>
+<li><strong>Start with your access patterns</strong>: list all the queries your application will run before designing the schema</li>
+<li><strong>Denormalize for your primary queries</strong>: embed related data to avoid joins, accepting write overhead</li>
+<li><strong>Model for write path</strong>: in Cassandra, design tables around the partition key queries will use</li>
+<li><strong>Avoid unbounded data</strong>: never embed a collection that can grow without limit in a single document or row</li>
+<li><strong>Use secondary indexes sparingly</strong>: in many NoSQL databases, secondary indexes carry significant read overhead</li>
+<li><strong>Plan for schema evolution</strong>: add optional fields rather than breaking changes; use schema versioning</li>
+</ol>
+<p>The classic mistake is bringing relational normalization habits into NoSQL design. Start from queries, not from entities. See <a href="db-types/index.md">Database Types</a>.</p>
+<h3 id="what-is-the-star-case-study-process">What is the STAR case study process?<a class="headerlink" href="#what-is-the-star-case-study-process" title="Permanent link">&para;</a></h3>
+<p>The STAR (Situation, Task, Action, Result) process is the framework used on this site to structure NoSQL case studies. Each case study follows the same format:</p>
+<ul>
+<li><strong>Situation</strong>: what business problem or scale challenge was the organization facing?</li>
+<li><strong>Task</strong>: what database architecture decision needed to be made?</li>
+<li><strong>Action</strong>: what database technology or architectural pattern was adopted?</li>
+<li><strong>Result</strong>: what was the measurable outcome in terms of performance, cost, or capability?</li>
+</ul>
+<p>This consistent structure makes it easy to compare how different organizations addressed similar challenges and to draw generalizable lessons for database selection. See <a href="case-studies/index.md">Case Studies</a> and <a href="case-studies/star-process.md">STAR Case Study Process</a>.</p>
+<h3 id="how-should-i-evaluate-vendor-claims-against-quality-attributes">How should I evaluate vendor claims against quality attributes?<a class="headerlink" href="#how-should-i-evaluate-vendor-claims-against-quality-attributes" title="Permanent link">&para;</a></h3>
+<p>Vendor benchmarks and marketing materials are often optimized for specific scenarios that may not match your workload. Evaluation best practices:</p>
+<ol>
+<li><strong>Write quality attribute scenarios first</strong>: define what you need before reading vendor documentation</li>
+<li><strong>Request benchmarks on your workload</strong>: ask vendors to demonstrate performance with your data model and access patterns, not their reference benchmarks</li>
+<li><strong>Test at your scale</strong>: performance can change non-linearly as data volume and cluster size grow</li>
+<li><strong>Evaluate operational features</strong>: licensing, support SLAs, upgrade procedures, backup and recovery</li>
+<li><strong>Talk to reference customers</strong>: speak with organizations running similar workloads at similar scale</li>
+</ol>
+<p>The ATAM utility tree provides a structured scorecard for comparing vendors across multiple quality attributes simultaneously. See <a href="concepts/utility-tree.md">Utility Tree</a>.</p>
+<hr />
+<h2 id="advanced-topic-questions">Advanced Topic Questions<a class="headerlink" href="#advanced-topic-questions" title="Permanent link">&para;</a></h2>
+<h3 id="how-do-graph-databases-support-ai-and-machine-learning">How do graph databases support AI and machine learning?<a class="headerlink" href="#how-do-graph-databases-support-ai-and-machine-learning" title="Permanent link">&para;</a></h3>
+<p>Graph databases are increasingly important for AI/ML applications because they naturally represent the connected structures that many ML algorithms require:</p>
+<ul>
+<li><strong>Knowledge graphs</strong>: store entities and relationships that power question-answering systems and AI reasoning</li>
+<li><strong>Recommendation engines</strong>: model user-item-attribute relationships for collaborative filtering and content-based recommendations</li>
+<li><strong>Feature engineering</strong>: graph centrality, path length, and community membership are powerful features for fraud detection and churn prediction models</li>
+<li><strong>Graph Neural Networks (GNNs)</strong>: architectures like GraphSAGE operate directly on graph-structured data, learning from node properties and neighborhood topology</li>
+</ul>
+<p>TigerGraph, Neo4j, and Amazon Neptune all provide native ML integrations. See <a href="db-types/graph/index.md">Graph</a> and <a href="case-studies/tigergraph.md">TigerGraph Case Study</a>.</p>
+<h3 id="what-is-the-write-audit-publish-wap-pattern">What is the Write-Audit-Publish (WAP) pattern?<a class="headerlink" href="#what-is-the-write-audit-publish-wap-pattern" title="Permanent link">&para;</a></h3>
+<p>Write-Audit-Publish (WAP) is a data quality pattern for data lakes and lakehouse architectures that ensures data is validated before it becomes available to consumers:</p>
+<ol>
+<li><strong>Write</strong>: the ingestion job writes new data to an isolated branch (not the main table)</li>
+<li><strong>Audit</strong>: automated data quality rules run against the isolated branch, checking for schema violations, null rates, value ranges, and referential integrity</li>
+<li><strong>Publish</strong>: if all checks pass, the branch is merged into the main table; if checks fail, the job raises an alert and the data is held for investigation</li>
+</ol>
+<p>Apache Iceberg's branching feature makes WAP straightforward to implement. This pattern is the primary defense against the "garbage in, garbage out" problem in NoSQL analytics pipelines. See <a href="concepts/four-vs-of-nosql.md">Four V's of NoSQL</a>.</p>
+<h3 id="how-does-polyglot-persistence-relate-to-atam">How does polyglot persistence relate to ATAM?<a class="headerlink" href="#how-does-polyglot-persistence-relate-to-atam" title="Permanent link">&para;</a></h3>
+<p>Polyglot persistence — using multiple database technologies within one application — is itself a major architectural decision that the ATAM process should evaluate. The tradeoffs include:</p>
+<ul>
+<li><strong>Performance benefit</strong>: each data type is served by its optimal database (graph for relationships, key-value for caching, column-family for time-series)</li>
+<li><strong>Operational cost</strong>: each additional database technology requires its own expertise, monitoring, backup, and upgrade process</li>
+<li><strong>Data consistency</strong>: maintaining consistency across multiple independent databases is significantly more complex than within a single system</li>
+<li><strong>Integration complexity</strong>: moving data between systems requires ETL pipelines or event-driven synchronization</li>
+</ul>
+<p>ATAM helps teams decide whether the fitness-for-purpose gains justify the operational overhead. See <a href="atam-db-process.md">ATAM DB Selection Process</a> and <a href="glossary.md">Glossary</a>.</p>
+<h3 id="what-are-graph-neural-networks-gnns-and-when-are-they-used">What are graph neural networks (GNNs) and when are they used?<a class="headerlink" href="#what-are-graph-neural-networks-gnns-and-when-are-they-used" title="Permanent link">&para;</a></h3>
+<p>Graph Neural Networks (GNNs) are deep learning architectures designed to operate on graph-structured data. Unlike traditional neural networks that work on fixed-size inputs, GNNs aggregate information from a node's neighborhood in the graph to learn rich, context-aware representations.</p>
+<p><strong>Common use cases:</strong>
+- <strong>Molecular property prediction</strong>: learn from molecular interaction graphs to predict drug efficacy
+- <strong>Fraud detection</strong>: identify fraudulent transaction patterns in financial networks
+- <strong>Social recommendation</strong>: model user behavior as graph traversals for more accurate recommendations
+- <strong>Knowledge graph completion</strong>: predict missing relationships in large knowledge graphs</p>
+<p>GraphSAGE, Graph Convolutional Networks (GCN), and Graph Attention Networks (GAT) are leading GNN architectures. See <a href="glossary.md">Glossary</a>.</p>
+<h3 id="how-does-the-cap-theorem-affect-cloud-native-database-design">How does the CAP Theorem affect cloud-native database design?<a class="headerlink" href="#how-does-the-cap-theorem-affect-cloud-native-database-design" title="Permanent link">&para;</a></h3>
+<p>In cloud-native environments, network partitions are not just possible — they are expected. Cloud providers design for zone and region failures, meaning partition tolerance (P) is a non-negotiable requirement. This leaves architects choosing between:</p>
+<ul>
+<li><strong>CP systems</strong> (consistency + partition tolerance): halt writes during partitions to preserve consistency. Examples: HBase, Zookeeper, traditional relational databases with synchronous replication.</li>
+<li><strong>AP systems</strong> (availability + partition tolerance): continue serving requests during partitions, accepting temporary inconsistency. Examples: Cassandra, DynamoDB, CouchDB.</li>
+</ul>
+<p>Most cloud-native NoSQL databases are AP systems with tunable consistency, allowing architects to select the appropriate consistency level per operation. Architectures that require CP behavior in the cloud typically rely on consensus algorithms (Raft, Paxos) to provide strong guarantees across replicas. See <a href="glossary.md">Glossary</a> for CAP Theorem definition.</p>
+<h3 id="what-is-the-inmon-vs-kimball-debate-in-analytical-databases">What is the Inmon vs. Kimball debate in analytical databases?<a class="headerlink" href="#what-is-the-inmon-vs-kimball-debate-in-analytical-databases" title="Permanent link">&para;</a></h3>
+<p>The Inmon vs. Kimball debate is a foundational disagreement about how to organize data warehouses:</p>
+<ul>
+<li><strong>Bill Inmon's approach</strong> (enterprise data warehouse): build a normalized, integrated, enterprise-wide data warehouse first, then derive data marts for specific business functions. Provides a single source of truth but is complex and takes longer to deliver initial value.</li>
+<li><strong>Ralph Kimball's approach</strong> (dimensional modeling): build business-subject data marts using star schemas (facts + dimensions) and integrate them through a common bus architecture. Delivers faster time-to-value but requires careful bus design to avoid inconsistencies.</li>
+</ul>
+<p>Modern data lakehouses (Databricks, Snowflake) often blur these lines by providing both normalized storage and dimensional query layers. See <a href="db-types/analytical/index.md">Analytical</a> and <a href="db-types/analytical/inman-vs-kimball.md">Inmon vs. Kimball</a>.</p>
+<h3 id="what-is-the-role-of-streaming-platforms-like-kafka-in-nosql-architectures">What is the role of streaming platforms like Kafka in NoSQL architectures?<a class="headerlink" href="#what-is-the-role-of-streaming-platforms-like-kafka-in-nosql-architectures" title="Permanent link">&para;</a></h3>
+<p>Streaming platforms like Apache Kafka serve as the connective tissue between data producers and NoSQL databases in high-velocity architectures. Kafka decouples data production from consumption, providing:</p>
+<ul>
+<li><strong>Buffering</strong>: absorbs velocity spikes so NoSQL databases are not overwhelmed during bursts</li>
+<li><strong>Durability</strong>: retains events for configurable periods, enabling replay and recovery</li>
+<li><strong>Fan-out</strong>: multiple consumers (databases, analytics, monitoring) can read the same event stream independently</li>
+<li><strong>Schema evolution</strong>: schema registries on top of Kafka enforce and evolve event schemas</li>
+</ul>
+<p>A common pattern is Kafka → stream processor (Flink, Spark Streaming) → NoSQL database, providing reliable, exactly-once write semantics with backpressure control. See <a href="glossary.md">Glossary</a> for the Kafka definition.</p>
+<h3 id="what-are-the-future-directions-in-nosql-database-architecture">What are the future directions in NoSQL database architecture?<a class="headerlink" href="#what-are-the-future-directions-in-nosql-database-architecture" title="Permanent link">&para;</a></h3>
+<p>Several trends are shaping the future of NoSQL database architecture:</p>
+<ul>
+<li><strong>AI-native databases</strong>: graph databases and vector databases are becoming core infrastructure for LLM-powered applications, storing embeddings and knowledge graphs for retrieval-augmented generation (RAG)</li>
+<li><strong>Lakehouses</strong>: the convergence of data lakes and data warehouses (Apache Iceberg, Delta Lake) provides ACID transactions on cheap object storage at petabyte scale</li>
+<li><strong>Multi-model databases</strong>: single databases that support multiple data models (document + graph + key-value) reduce polyglot persistence complexity</li>
+<li><strong>Serverless databases</strong>: fully managed, auto-scaling databases (DynamoDB, CockroachDB Serverless) eliminate capacity planning</li>
+<li><strong>NewSQL</strong>: databases like CockroachDB and Google Spanner provide global ACID transactions at NoSQL scale, narrowing the consistency gap</li>
+</ul>
+<p>The ATAM methodology remains relevant regardless of technology trends because quality attributes — performance, availability, consistency, maintainability — are enduring concerns. See <a href="db-types/index.md">Database Types</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../sims/scaling-tradeoff-explorer/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Vertical vs. Horizontal Scaling Tradeoffs">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Vertical vs. Horizontal Scaling Tradeoffs
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../license/" class="md-footer__link md-footer__link--next" aria-label="Next: License">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                License
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

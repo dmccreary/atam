@@ -1,0 +1,21 @@
+{
+  "title": "CAP Theorem Interactive Explorer",
+  "description": "Students will be able to predict the behavior of CP and AP database systems under a network partition and select the appropriate consistency model given the quality attribute priorities of a specific scenario.",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-03",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "cap-theorem-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Apply (L3) — Use CAP theorem knowledge to select the appropriate consistency model for a given quality attribute scenario.",
+  "bloomVerb": "Use",
+  "completion_status": "scaffold",
+  "chapter_number": 11,
+  "chapter_title": "Distributed Systems Architecture Fundamentals",
+  "chapter_dir": "11-distributed-systems-fundamentals"
+}

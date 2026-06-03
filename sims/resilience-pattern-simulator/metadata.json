@@ -1,0 +1,21 @@
+{
+  "title": "Resilience Pattern Interaction Simulator",
+  "description": "Students will be able to analyze the combined effect of circuit breaker, retry, and bulkhead patterns on availability and latency under a specified failure scenario, and identify which combination best achieves a given availability response measure.",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-03",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "resilience-pattern-simulator",
+  "library": "p5.js",
+  "bloomLevel": "Analyze (L4) — Examine how resilience patterns interact under failure conditions to determine which combination most effectively addresses a given availability scenario.",
+  "bloomVerb": "Examine",
+  "completion_status": "scaffold",
+  "chapter_number": 9,
+  "chapter_title": "Architectural Tactics and Design Principles",
+  "chapter_dir": "09-architectural-tactics-principles"
+}

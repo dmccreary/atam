@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distributed System Component Explorer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Distributed System Component Explorer</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> distributed-system-explorer</p>
+            <p><strong>Library:</strong> p5.js</p>
+            <p><strong>Bloom Level:</strong> Understand (L2) — Explain the role of each distributed system infrastructure component and its quality attribute implications.</p>
+            <p><strong>Learning Objective:</strong> Students will be able to identify the major infrastructure components of a distributed system, explain each component's purpose, and describe the quality attribute implications of each component's design choices.</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: diagram
+    **sim-id:** distributed-system-explorer<br/>
+    **Library:** p5.js<br/>
+    **Status:** Specified
+    
+    Purpose: Interactive architecture diagram showing the major components of a distributed system (API gateway, service mesh, message broker, service registry, services, databases) and how they interact, with click-to-explore capability for each component and its quality attribute implications.
+    
+    Bloom Level: Understand (L2) — Explain the role of each distributed system infrastructure component and its quality attribute implications.
+    Bloom Verb: Explain
+    
+    Learning Objective: Students will be able to identify the major infrastructure components of a distributed system, explain each component's purpose, and describe the quality attribute implications of each component's design choices.
+    
+    Canvas layout:
+    - Central architecture diagram showing a realistic distributed system topology
+    - External clients at top, API gateway below them, service mesh envelope around internal services
+    - Four internal services with their sidecar proxies (small proxy icons beside each service)
+    - Message broker (Kafka icon) connected to two services via event streams
+    - Service registry connected to each service and the load balancer
+    - Databases (one per service, data ownership pattern) below services
+    - Each component labeled and color-coded by category
+    - Detail panel on right showing component description when clicked
+    
+    Component categories:
+    - Ingress (gold): API Gateway, Load Balancer
+    - Services (blue): Service A, Service B, Service C, Service D
+    - Service Mesh (teal): Sidecar Proxy (per service), Control Plane
+    - Messaging (orange): Message Broker (Kafka)
+    - Discovery (purple): Service Registry
+    - Data (green): Database per Service (4 databases)
+    
+    Interactive elements:
+    - Click any component to see: definition, quality attribute implications (what it supports, what it threatens), ATAM evaluation questions for this component
+    - Hover any connection arrow to see: protocol, synchrony (sync/async), and latency category
+    - "Failure Mode" button: click any service to simulate it going down; watch how the system diagram updates to show health status propagation
+    - Toggle "With Service Mesh" / "Without Service Mesh" to see the difference in security and observability coverage
+    
+    Color scheme: Gold for ingress, Blue for services, Teal for mesh, Orange for messaging, Purple for discovery, Green for data.
+    
+    Responsive: Diagram scales to container width; components reposition proportionally.
+    -->
+</body>
+</html>

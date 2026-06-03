@@ -1,0 +1,21 @@
+{
+  "title": "STRIDE Threat Model Explorer",
+  "description": "Students will be able to apply the STRIDE framework to a system's data flow diagram, identifying at least one threat from each STRIDE category for the depicted system.",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-03",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "stride-threat-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Apply (L3) — Use the STRIDE framework to identify threats at specific components and data flows in a system architecture.",
+  "bloomVerb": "Use (Apply STRIDE)",
+  "completion_status": "scaffold",
+  "chapter_number": 14,
+  "chapter_title": "Security Architecture",
+  "chapter_dir": "14-security-architecture"
+}

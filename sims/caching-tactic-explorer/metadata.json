@@ -1,0 +1,21 @@
+{
+  "title": "Caching Tactic Anatomy",
+  "description": "Students will be able to configure a cache with appropriate strategy, TTL, and invalidation policy for a given performance scenario, and explain the consistency implications of their configuration.",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-03",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "caching-tactic-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Apply (L3) — Use caching strategy knowledge to configure a cache for a specific performance vs. consistency tradeoff scenario.",
+  "bloomVerb": "Use",
+  "completion_status": "scaffold",
+  "chapter_number": 9,
+  "chapter_title": "Architectural Tactics and Design Principles",
+  "chapter_dir": "09-architectural-tactics-principles"
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "failover-architecture-explorer",
+  "diagram_name": "Active-Passive vs. Active-Active Failover",
+  "chapter_number": 16,
+  "chapter_title": "Observability, Reliability, and Cloud Operations",
+  "chapter_dir": "16-observability-reliability",
+  "library": "vis-network",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: Interactive simulation\n**sim-id:** failover-architecture-explorer<br/>\n**Library:** vis-network<br/>\n**Status:** Specified\n\n**Purpose:** Animated comparison of active-passive and active-active multi-region architectures showing traffic routing, replication flows, and failover behavior.\n\n**Nodes:**\n- Region A (primary): load balancer, app tier, database primary\n- Region B (standby/secondary): load balancer, app tier, database replica\n- DNS layer (global)\n- Client nodes (5 geographic locations)\n\n**Modes:**\n- Active-Passive: all traffic → Region A; replication arrows to Region B; \"Simulate Failure\" button triggers animated failover sequence showing DNS cutover and passive→active promotion\n- Active-Active: traffic split across regions; write routing arrows to primary database; replication arrows bidirectional\n\n**Display:** RTO/RPO indicators update dynamically based on replication lag slider and failover time configuration."
+}

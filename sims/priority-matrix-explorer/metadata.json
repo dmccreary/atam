@@ -1,0 +1,21 @@
+{
+  "title": "Priority Matrix and Analytical Roadmap",
+  "description": "Students will be able to interpret the priority matrix distribution of a utility tree, evaluate whether the (H,H) scenario count and distribution is appropriate for a complete evaluation, and identify which scenarios the evaluation team should address first.",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-03",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "priority-matrix-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Evaluate (L5) — Assess the priority distribution of a utility tree's scenarios and determine whether the analytical roadmap appropriately focuses on (H,H) scenarios.",
+  "bloomVerb": "Assess",
+  "completion_status": "scaffold",
+  "chapter_number": 7,
+  "chapter_title": "Utility Trees and Scenario Prioritization",
+  "chapter_dir": "07-utility-trees-prioritization"
+}

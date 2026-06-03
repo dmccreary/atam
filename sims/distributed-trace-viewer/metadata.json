@@ -1,0 +1,21 @@
+{
+  "title": "Distributed Tracing Visualization",
+  "description": "Students will be able to read a distributed trace waterfall diagram, identify the critical path spans contributing most to total latency, and diagnose the root cause of a latency issue from trace data.",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-03",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "distributed-trace-viewer",
+  "library": "p5.js",
+  "bloomLevel": "Analyze (L4) — Examine a distributed trace to identify the root cause of a latency issue, pinpointing which service and operation is the bottleneck.",
+  "bloomVerb": "Examine",
+  "completion_status": "scaffold",
+  "chapter_number": 11,
+  "chapter_title": "Distributed Systems Architecture Fundamentals",
+  "chapter_dir": "11-distributed-systems-fundamentals"
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Availability Architecture Analyzer",
+  "description": "Availability Architecture Analyzer",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-03",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "availability-architecture-explorer",
+  "library": "p5.js",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 16,
+  "chapter_title": "Observability, Reliability, and Cloud Operations",
+  "chapter_dir": "16-observability-reliability"
+}

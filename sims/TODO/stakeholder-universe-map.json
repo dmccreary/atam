@@ -1,0 +1,14 @@
+{
+  "sim_id": "stakeholder-universe-map",
+  "diagram_name": "Stakeholder Universe Map",
+  "chapter_number": 4,
+  "chapter_title": "Stakeholder and Business Analysis",
+  "chapter_dir": "04-stakeholder-business-analysis",
+  "library": "p5.js",
+  "bloom_level": "Understand (L2) — Explain the different categories of stakeholders and the types of architectural concerns each brings.",
+  "bloom_verb": "Explain",
+  "learning_objective": "Students will be able to identify stakeholder categories beyond the obvious technical roles, and explain what architectural concerns are most characteristic of each category.",
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: diagram\n**sim-id:** stakeholder-universe-map<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nPurpose: Visualize the complete stakeholder universe for a typical enterprise system, organized by category, with click-to-explore capability showing each stakeholder type's primary concerns and influence on architectural decisions.\n\nBloom Level: Understand (L2) — Explain the different categories of stakeholders and the types of architectural concerns each brings.\nBloom Verb: Explain\n\nLearning Objective: Students will be able to identify stakeholder categories beyond the obvious technical roles, and explain what architectural concerns are most characteristic of each category.\n\nCanvas layout:\n- Central oval labeled \"System Under Evaluation\"\n- Concentric ring structure: inner ring = direct users and operators, middle ring = organizational stakeholders, outer ring = external/regulatory stakeholders\n- Each stakeholder represented as a labeled icon placed in the appropriate ring and sector\n- Color-coded sectors: Technical (blue), Business (green), Operational (orange), External (gray)\n- Detail panel on the right that shows stakeholder description, primary concerns, and typical ATAM scenarios when clicked\n\nStakeholder icons to include:\nInner ring: End Users, Architects, Developers, Operations/SRE\nMiddle ring: Product Owner, Business Analyst, CFO/Executive Sponsor, Security Officer, Compliance Officer, QA/Test Lead, Data Owner\nOuter ring: Regulatory Body, External System Owners, Auditors, Partner Organizations\n\nInteractive elements:\n- Click any stakeholder icon to see: role description, primary quality attribute concerns, example ATAM scenarios they might contribute, and influence level\n- Hover a sector label to see its definition\n- \"Show Concerns\" button overlays the primary concern type (performance, availability, security, modifiability, etc.) on each icon as a colored badge\n- Toggle button to show/hide outer ring for different analysis scopes\n\nColor scheme: Blue for Technical sector, Green for Business sector, Orange for Operational sector, Gray for External/Regulatory sector. Ring boundaries in neutral gray.\n\nResponsive: Diagram scales proportionally to container width."
+}

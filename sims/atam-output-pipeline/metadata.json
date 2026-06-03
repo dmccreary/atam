@@ -1,0 +1,21 @@
+{
+  "title": "ATAM Output to Action Pipeline",
+  "description": "Students will be able to trace an ATAM risk finding from its identification in the evaluation session through its documentation in the risk register, its prioritization in the improvement plan, its scheduling in the architecture roadmap, and its verification through fitness function monitoring.",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-03",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "atam-output-pipeline",
+  "library": "p5.js",
+  "bloomLevel": "Understand (L2) — Explain how ATAM evaluation outputs are transformed into actionable organizational documents and ongoing monitoring practices.",
+  "bloomVerb": "Explain",
+  "completion_status": "scaffold",
+  "chapter_number": 10,
+  "chapter_title": "Sensitivity, Tradeoffs, Risk Analysis, and ATAM Reporting",
+  "chapter_dir": "10-risk-analysis-atam-reporting"
+}

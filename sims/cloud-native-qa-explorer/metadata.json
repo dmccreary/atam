@@ -1,0 +1,21 @@
+{
+  "title": "Cloud-Native Architecture Quality Attribute Stack",
+  "description": "Students will be able to identify at least three quality attribute contributions and one quality attribute risk at each layer of the cloud-native technology stack.",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-03",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "cloud-native-qa-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Analyze (L4) — Examine how each layer of the cloud-native stack contributes to specific quality attributes and introduces specific risks.",
+  "bloomVerb": "Examine",
+  "completion_status": "scaffold",
+  "chapter_number": 13,
+  "chapter_title": "Cloud-Native Architecture",
+  "chapter_dir": "13-cloud-native-architecture"
+}

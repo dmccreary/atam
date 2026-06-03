@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Architecture Building Blocks Explorer using vis-network</title>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/vis-network/styles/vis-network.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">Architecture Building Blocks Explorer</div>
+            <div class="header-row">
+                <div class="legend">
+                    <span class="legend-item"><span class="swatch comp"></span>Component</span>
+                    <span class="legend-item"><span class="line rest"></span>REST</span>
+                    <span class="legend-item"><span class="line grpc"></span>gRPC</span>
+                    <span class="legend-item"><span class="line async"></span>Async Event</span>
+                    <span class="legend-item"><span class="line db"></span>Direct DB Access</span>
+                </div>
+                <div class="view-selector">
+                    <label for="style-select">Style:</label>
+                    <select id="style-select">
+                        <option value="microservices">Microservices View</option>
+                        <option value="monolith">Monolith View</option>
+                        <option value="event-driven">Event-Driven View</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="network"></div>
+
+        <div class="infobox" id="infobox">
+            <div class="infobox-title" id="infobox-title">Click a component or connector</div>
+            <div class="infobox-body" id="infobox-body">
+                Click any blue component box to learn its role, or click a labeled
+                connector to see the quality-attribute tradeoff it introduces.
+                Use the style selector to compare architectural approaches.
+            </div>
+        </div>
+    </div>
+
+    <script src="architecture-building-blocks-explorer.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "sim_id": "rag-architecture-explorer",
+  "diagram_name": "RAG vs. GraphRAG Architecture Comparison",
+  "chapter_number": 17,
+  "chapter_title": "AI and Machine Learning System Architecture",
+  "chapter_dir": "17-ai-ml-system-architecture",
+  "library": "vis-network",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: Interactive architecture comparison\n**sim-id:** rag-architecture-explorer<br/>\n**Library:** vis-network<br/>\n**Status:** Specified\n\n**Purpose:** Side-by-side animated comparison of flat RAG and GraphRAG architectures showing the complete request flow from user query through retrieval to LLM generation.\n\n**Left panel (RAG):** User query → Embedding model → Vector DB (similarity search) → Top-K documents → LLM prompt assembly → LLM → Response\n\n**Right panel (GraphRAG):** User query → Entity extraction → Knowledge Graph (graph traversal) → Related entities + Vector DB (semantic search) → Combined context → LLM prompt → LLM → Response\n\n**Interactions:**\n- Click each component to see: purpose, latency contribution, quality risks\n- \"Show Latency Budget\" mode: animate request flow with per-step timing\n- Toggle \"Complex reasoning query\" vs. \"Simple factual query\" to see when GraphRAG advantage is most pronounced"
+}

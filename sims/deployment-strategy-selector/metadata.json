@@ -1,0 +1,21 @@
+{
+  "title": "Deployment Strategy Decision Matrix",
+  "description": "Students will be able to select the most appropriate deployment strategy for a given set of quality attribute priorities (rollback speed, zero-downtime requirement, cost tolerance, traffic validation need) and justify the selection with tradeoff analysis.",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-03",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "deployment-strategy-selector",
+  "library": "p5.js",
+  "bloomLevel": "Evaluate (L5) — Assess deployment strategies to select the approach that best fits a given set of quality attribute requirements and constraints.",
+  "bloomVerb": "Assess",
+  "completion_status": "scaffold",
+  "chapter_number": 13,
+  "chapter_title": "Cloud-Native Architecture",
+  "chapter_dir": "13-cloud-native-architecture"
+}

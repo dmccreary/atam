@@ -1,0 +1,14 @@
+{
+  "sim_id": "distributed-trace-explorer",
+  "diagram_name": "Distributed Tracing Waterfall View",
+  "chapter_number": 16,
+  "chapter_title": "Observability, Reliability, and Cloud Operations",
+  "chapter_dir": "16-observability-reliability",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: Interactive diagram\n**sim-id:** distributed-trace-explorer<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\n**Purpose:** Simulate a distributed trace waterfall for a 5-service e-commerce request (API Gateway → Auth Service → Product Service → Inventory DB → Recommendation Service), showing spans, timing, and latency contributions.\n\n**Controls:**\n- Service latency sliders (each service: 1–200ms)\n- \"Inject Slowness\" buttons per service to simulate a bottleneck\n- Toggle \"Database slow query\" checkbox\n\n**Display:**\n- Horizontal waterfall timeline showing span start/end for each service\n- Cumulative latency indicator (p50/p95 estimate)\n- Color coding: green < 50ms, yellow 50–150ms, red > 150ms per span\n- Total trace duration prominently displayed\n\n**Behavior:** When a service's latency exceeds a configurable threshold, it highlights the span in red and displays \"ATAM Sensitivity Point Detected\" banner."
+}

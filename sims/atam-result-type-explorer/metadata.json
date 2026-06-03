@@ -1,0 +1,21 @@
+{
+  "title": "Risk Result Type Explorer",
+  "description": "Students will be able to classify a given architectural decision into the correct ATAM result type (sensitivity point, tradeoff point, risk, non-risk) and explain the reasoning that justifies the classification.",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-03",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "atam-result-type-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Analyze (L4) — Differentiate between sensitivity points, tradeoff points, risks, and non-risks given concrete architectural decision descriptions.",
+  "bloomVerb": "Differentiate",
+  "completion_status": "scaffold",
+  "chapter_number": 10,
+  "chapter_title": "Sensitivity, Tradeoffs, Risk Analysis, and ATAM Reporting",
+  "chapter_dir": "10-risk-analysis-atam-reporting"
+}

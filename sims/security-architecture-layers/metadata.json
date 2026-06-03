@@ -1,0 +1,21 @@
+{
+  "title": "Security Architecture Layers",
+  "description": "Students will be able to map STRIDE threat categories to the defense-in-depth layers that address them, identify security layer gaps, and determine which attacks would succeed if a specific layer were absent.",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-03",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "security-architecture-layers",
+  "library": "p5.js",
+  "bloomLevel": "Analyze (L4) — Examine how defense-in-depth layers address specific STRIDE threat categories and identify which layers are missing or insufficient.",
+  "bloomVerb": "Examine",
+  "completion_status": "scaffold",
+  "chapter_number": 14,
+  "chapter_title": "Security Architecture",
+  "chapter_dir": "14-security-architecture"
+}
