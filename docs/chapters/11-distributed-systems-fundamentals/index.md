@@ -255,7 +255,7 @@ The resulting trace is a hierarchical timeline of everything that happened to fu
 
 #### Diagram: CAP Theorem Interactive Explorer
 
-<iframe src="../../sims/cap-theorem-explorer/main.html" width="100%" height="560px" scrolling="no"></iframe>
+<iframe src="../../sims/cap-theorem-explorer/main.html" width="100%" height="568px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>CAP Theorem Interactive Explorer</summary>

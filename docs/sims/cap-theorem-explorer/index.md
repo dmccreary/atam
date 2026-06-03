@@ -1,92 +1,71 @@
 ---
 title: CAP Theorem Interactive Explorer
-description: Students will be able to predict the behavior of CP and AP database systems under a network partition and select the appropriate consistency model given the quality attribute priorities of a specific scenario.
-status: scaffold
-library: p5.js
-bloom_level: Apply (L3) — Use CAP theorem knowledge to select the appropriate consistency model for a given quality attribute scenario.
+description: Interactive p5.js MicroSim that drives two replicas through a network partition in CP vs AP mode to make the CAP tradeoff concrete.
+image: /sims/cap-theorem-explorer/cap-theorem-explorer.png
+og:image: /sims/cap-theorem-explorer/cap-theorem-explorer.png
+twitter:image: /sims/cap-theorem-explorer/cap-theorem-explorer.png
+social:
+   cards: false
+quality_score: 0
 ---
 
 # CAP Theorem Interactive Explorer
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="568" width="100%" scrolling="no"></iframe>
 
-## Learning Objective
+[Run the CAP Theorem Explorer MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
+<br/>
+[Edit in the p5.js Editor](https://editor.p5js.org/)
 
-Students will be able to predict the behavior of CP and AP database systems under a network partition and select the appropriate consistency model given the quality attribute priorities of a specific scenario.
+## About This MicroSim
 
-- **Bloom Level:** Apply (L3) — Use CAP theorem knowledge to select the appropriate consistency model for a given quality attribute scenario.
-- **Bloom Verb:** Use
-- **Library:** p5.js
+This MicroSim makes the CAP theorem concrete. Two database replicas (Node A and Node B) are joined by a network link. You choose **CP** (consistency) or **AP** (availability) mode, write to A, read from B, and create or heal a network partition. Under a partition, the difference becomes visible: a **CP** system rejects reads from B to avoid returning stale data, while an **AP** system serves a possibly stale value and converges once the partition heals. Three scenario presets show when each model is the right choice.
 
-## Preview
+## How to Use
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+1. Pick **CP** or **AP** with the mode switch.
+2. **Send Write → A** and **Read ← B** while the network is healthy — everything is consistent.
+3. **Create Partition**, then write to A and read from B again. In CP the read is rejected; in AP it returns a stale value with a warning.
+4. **Heal Partition** in AP mode to watch Node B converge to Node A (eventual consistency).
+5. Load a **scenario** (Financial ledger, Shopping cart, Profile update) to see which model fits and why; use **Explain** for the rationale.
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+## Iframe Embed Code
 
-## Specification
+You can add this MicroSim to any web page by adding this to your HTML:
 
-The full specification below is extracted from
-[Chapter 11: Distributed Systems Architecture Fundamentals](../../chapters/11-distributed-systems-fundamentals/index.md).
-
-```text
-Type: microsim
-**sim-id:** cap-theorem-explorer<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
-
-Purpose: Interactive simulation of the CAP theorem trade-off, allowing students to experience the concrete consequences of CP vs AP choices during a simulated network partition event.
-
-Bloom Level: Apply (L3) — Use CAP theorem knowledge to select the appropriate consistency model for a given quality attribute scenario.
-Bloom Verb: Use
-
-Learning Objective: Students will be able to predict the behavior of CP and AP database systems under a network partition and select the appropriate consistency model given the quality attribute priorities of a specific scenario.
-
-Canvas layout:
-- Top: System diagram showing two database replicas (Node A, Node B) connected by a network link
-- Center left: Node A panel — showing current stored value and request queue
-- Center right: Node B panel — showing current stored value and request queue
-- Between nodes: Network link indicator (green=healthy, red=partitioned)
-- Bottom: Request simulation — buttons to "Send Write to A", "Send Read from B", "Heal Partition", "Create Partition"
-- Right panel: Current mode selector (CP / AP) and behavior explanation
-- Bottom panel: Simulation log showing what happened to each request
-
-Behavior in CP mode during partition:
-- Writes to Node A: succeed (coordinator can still reach A)
-- Reads from Node B: return error ("Consistency error: cannot guarantee up-to-date data during partition")
-- This illustrates: CP sacrifices availability to maintain consistency
-
-Behavior in AP mode during partition:
-- Writes to Node A: succeed
-- Reads from Node B: succeed but return potentially stale value (shows a badge: "Warning: This value may be X seconds stale")
-- After partition heals: Node B automatically syncs with Node A (eventual consistency convergence animated)
-- This illustrates: AP sacrifices consistency to maintain availability
-
-Scenario presets:
-- Financial ledger: "CP is required — customers must never see incorrect balances"
-- Shopping cart: "AP is acceptable — showing a slightly stale cart is better than an error"
-- User profile updates: "AP is acceptable with read-your-writes guarantee"
-
-Interactive elements:
-- Toggle between CP and AP mode using a prominent switch
-- Create/Heal partition with buttons
-- Send requests and observe the simulated response
-- "Explain Current Behavior" button provides a context-sensitive explanation
-
-Data Visibility Requirements:
-- Always show the current stored value on each node
-- When partition is active, show clearly whether values have diverged
-- After healing in AP mode, animate convergence to show eventual consistency in action
-
-Instructional Rationale: Active simulation of partition scenarios is appropriate for Apply because students must observe the concrete behavioral consequences of CP vs AP choices, not just understand the theorem abstractly.
-
-Color scheme: Green for healthy network, Red for partitioned state. Blue for CP mode, Orange for AP mode. Amber for stale value warnings.
-
-Responsive: Dual-node layout scales proportionally; stacks vertically on narrow screens.
+```html
+<iframe src="https://dmccreary.github.io/atam/sims/cap-theorem-explorer/main.html"
+        width="100%"
+        scrolling="no"></iframe>
 ```
 
-## Related Resources
+## Lesson Plan
 
-- [Chapter 11: Distributed Systems Architecture Fundamentals](../../chapters/11-distributed-systems-fundamentals/index.md)
+### Grade Level
+Undergraduate / Professional
+
+### Duration
+15-20 minutes
+
+### Prerequisites
+Familiarity with replication and the CAP theorem (consistency, availability, partition tolerance).
+
+### Bloom's Taxonomy Level
+Apply (L3)
+
+### Learning Objective
+Students will be able to predict the behavior of CP and AP database systems under a network partition and select the appropriate consistency model given the quality attribute priorities of a specific scenario.
+
+### Activities
+
+1. **Predict** (6 min): Before reading from B under a partition, students predict the result in CP and in AP, then verify.
+2. **Convergence** (5 min): Students observe AP convergence after healing and explain "eventual consistency" in their own words.
+3. **Choose** (6 min): For each preset scenario, students justify the recommended model from the quality attribute priorities.
+
+### Assessment
+Give students three new scenarios and ask them to choose CP or AP and justify the choice from the partition behavior.
+
+## References
+
+1. Bass, L., Clements, P., & Kazman, R. (2021). *Software Architecture in Practice* (4th ed.). Addison-Wesley.
+2. Kleppmann, M. (2017). *Designing Data-Intensive Applications*. O'Reilly. (Consistency and the CAP theorem.)

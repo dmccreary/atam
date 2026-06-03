@@ -3,142 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAP Theorem Interactive Explorer</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>CAP Theorem Interactive Explorer using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="cap-theorem-explorer.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>CAP Theorem Interactive Explorer</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> cap-theorem-explorer</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Apply (L3) — Use CAP theorem knowledge to select the appropriate consistency model for a given quality attribute scenario.</p>
-            <p><strong>Learning Objective:</strong> Students will be able to predict the behavior of CP and AP database systems under a network partition and select the appropriate consistency model given the quality attribute priorities of a specific scenario.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** cap-theorem-explorer<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    Purpose: Interactive simulation of the CAP theorem trade-off, allowing students to experience the concrete consequences of CP vs AP choices during a simulated network partition event.
-    
-    Bloom Level: Apply (L3) — Use CAP theorem knowledge to select the appropriate consistency model for a given quality attribute scenario.
-    Bloom Verb: Use
-    
-    Learning Objective: Students will be able to predict the behavior of CP and AP database systems under a network partition and select the appropriate consistency model given the quality attribute priorities of a specific scenario.
-    
-    Canvas layout:
-    - Top: System diagram showing two database replicas (Node A, Node B) connected by a network link
-    - Center left: Node A panel — showing current stored value and request queue
-    - Center right: Node B panel — showing current stored value and request queue
-    - Between nodes: Network link indicator (green=healthy, red=partitioned)
-    - Bottom: Request simulation — buttons to "Send Write to A", "Send Read from B", "Heal Partition", "Create Partition"
-    - Right panel: Current mode selector (CP / AP) and behavior explanation
-    - Bottom panel: Simulation log showing what happened to each request
-    
-    Behavior in CP mode during partition:
-    - Writes to Node A: succeed (coordinator can still reach A)
-    - Reads from Node B: return error ("Consistency error: cannot guarantee up-to-date data during partition")
-    - This illustrates: CP sacrifices availability to maintain consistency
-    
-    Behavior in AP mode during partition:
-    - Writes to Node A: succeed
-    - Reads from Node B: succeed but return potentially stale value (shows a badge: "Warning: This value may be X seconds stale")
-    - After partition heals: Node B automatically syncs with Node A (eventual consistency convergence animated)
-    - This illustrates: AP sacrifices consistency to maintain availability
-    
-    Scenario presets:
-    - Financial ledger: "CP is required — customers must never see incorrect balances"
-    - Shopping cart: "AP is acceptable — showing a slightly stale cart is better than an error"
-    - User profile updates: "AP is acceptable with read-your-writes guarantee"
-    
-    Interactive elements:
-    - Toggle between CP and AP mode using a prominent switch
-    - Create/Heal partition with buttons
-    - Send requests and observe the simulated response
-    - "Explain Current Behavior" button provides a context-sensitive explanation
-    
-    Data Visibility Requirements:
-    - Always show the current stored value on each node
-    - When partition is active, show clearly whether values have diverged
-    - After healing in AP mode, animate convergence to show eventual consistency in action
-    
-    Instructional Rationale: Active simulation of partition scenarios is appropriate for Apply because students must observe the concrete behavioral consequences of CP vs AP choices, not just understand the theorem abstractly.
-    
-    Color scheme: Green for healthy network, Red for partitioned state. Blue for CP mode, Orange for AP mode. Amber for stale value warnings.
-    
-    Responsive: Dual-node layout scales proportionally; stacks vertically on narrow screens.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>
