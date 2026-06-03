@@ -223,7 +223,7 @@ Bulkheads are a **tradeoff point** in availability vs. resource efficiency: they
 
 #### Diagram: Resilience Pattern Interaction Simulator
 
-<iframe src="../../sims/resilience-pattern-simulator/main.html" width="100%" height="580px" scrolling="no"></iframe>
+<iframe src="../../sims/resilience-pattern-simulator/main.html" width="100%" height="588px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Resilience Pattern Interaction Simulator</summary>
