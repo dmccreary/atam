@@ -115,7 +115,7 @@ Performance tactics target two sub-goals: controlling demand (reducing the work 
 
 #### Diagram: Caching Tactic Anatomy
 
-<iframe src="../../sims/caching-tactic-explorer/main.html" width="100%" height="560px" scrolling="no"></iframe>
+<iframe src="../../sims/caching-tactic-explorer/main.html" width="100%" height="558px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Caching Tactic Anatomy Explorer</summary>

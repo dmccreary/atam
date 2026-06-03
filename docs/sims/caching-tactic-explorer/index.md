@@ -1,80 +1,71 @@
 ---
-title: Caching Tactic Anatomy
-description: Students will be able to configure a cache with appropriate strategy, TTL, and invalidation policy for a given performance scenario, and explain the consistency implications of their configuration.
-status: scaffold
-library: p5.js
-bloom_level: Apply (L3) — Use caching strategy knowledge to configure a cache for a specific performance vs. consistency tradeoff scenario.
+title: Caching Tactic Explorer
+description: Interactive p5.js MicroSim simulating cache strategies (write-through, write-behind, cache-aside) with a live request stream and performance vs consistency metrics.
+image: /sims/caching-tactic-explorer/caching-tactic-explorer.png
+og:image: /sims/caching-tactic-explorer/caching-tactic-explorer.png
+twitter:image: /sims/caching-tactic-explorer/caching-tactic-explorer.png
+social:
+   cards: false
+quality_score: 0
 ---
 
-# Caching Tactic Anatomy
+# Caching Tactic Explorer
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="558" width="100%" scrolling="no"></iframe>
 
-## Learning Objective
+[Run the Caching Tactic Explorer MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
+<br/>
+[Edit in the p5.js Editor](https://editor.p5js.org/)
 
-Students will be able to configure a cache with appropriate strategy, TTL, and invalidation policy for a given performance scenario, and explain the consistency implications of their configuration.
+## About This MicroSim
 
-- **Bloom Level:** Apply (L3) — Use caching strategy knowledge to configure a cache for a specific performance vs. consistency tradeoff scenario.
-- **Bloom Verb:** Use
-- **Library:** p5.js
+This MicroSim simulates a cache under a live request stream (80% reads, 20% writes) so the performance-versus-consistency tradeoff of each caching strategy can be *felt*, not just read. A strategy selector switches between Write-Through, Write-Behind, and Cache-Aside; a request stream shows each operation colored by cache hit, miss, or write; a cache-state panel shows current entries with TTL freshness bars; and a metrics panel shows hit rate, average latency, and consistency lag in real time.
 
-## Preview
+## How to Use
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+1. **Pick a strategy** and watch the metrics change. Write-Through keeps consistency lag at zero but raises write latency; Write-Behind drops write latency but lets consistency lag grow.
+2. **Adjust TTL and cache size** with the sliders and watch the hit rate respond.
+3. Compare **average latency** against the reference (a cache hit is 5 ms; a miss to the database is 50 ms).
+4. Click **Introduce Stale Read** to mark an entry stale (a write that bypassed invalidation) — its freshness bar turns orange and shows how many milliseconds out of date it is.
+5. **Pause** to freeze the simulation and inspect a moment.
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+## Iframe Embed Code
 
-## Specification
+You can add this MicroSim to any web page by adding this to your HTML:
 
-The full specification below is extracted from
-[Chapter 9: Architectural Tactics and Design Principles](../../chapters/09-architectural-tactics-principles/index.md).
-
-```text
-Type: microsim
-**sim-id:** caching-tactic-explorer<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
-
-Purpose: Interactive simulation of cache behavior showing the performance impact, cache hit rate, and consistency tradeoffs of different caching strategies (write-through, write-behind, cache-aside), with student-controlled parameters.
-
-Bloom Level: Apply (L3) — Use caching strategy knowledge to configure a cache for a specific performance vs. consistency tradeoff scenario.
-Bloom Verb: Use
-
-Learning Objective: Students will be able to configure a cache with appropriate strategy, TTL, and invalidation policy for a given performance scenario, and explain the consistency implications of their configuration.
-
-Canvas layout:
-- Top: Cache strategy selector (Write-Through, Write-Behind/Write-Back, Cache-Aside)
-- Left: Live request stream showing incoming read/write operations with hit/miss indicators
-- Center: Cache state panel showing current entries, TTLs, and freshness indicators
-- Right: Metrics panel showing: hit rate (%), average latency (ms), consistency lag (seconds)
-- Bottom: Configuration panel — TTL slider (0-3600 seconds), cache size (10-1000 entries), "Enable Staleness Warning" toggle
-
-Cache strategies explained (visible in a collapsible reference panel):
-- Write-Through: Every write goes to cache AND database synchronously; cache is always consistent; writes are slower
-- Write-Behind: Writes go to cache immediately, database updated asynchronously; writes are fast; risk of data loss on cache crash
-- Cache-Aside (Lazy): Application reads from database on miss and populates cache; application manages cache; flexible but more code
-
-Behavior:
-- Simulated request stream: 80% reads, 20% writes at configurable rate
-- Each request shows in the stream panel with color coding: green (cache hit), yellow (cache miss → DB), red (write operation)
-- Metrics update in real-time as requests are processed
-- "Introduce Stale Read" button: simulates a write that bypasses cache invalidation; staleness indicator appears on affected entries
-- "Cache Eviction" event triggered when cache is full, with visual of LRU eviction
-
-Data Visibility Requirements:
-- Always show current hit rate prominently
-- Show average read latency comparison: cache hit (5ms) vs. cache miss + DB (50ms)
-- When staleness occurs, show exactly how many ms old the stale entry is
-
-Instructional Rationale: Real-time simulation with configurable parameters is appropriate for Apply because students must make configuration decisions and observe their consequences. Static description would not make the latency/consistency tradeoff felt.
-
-Color scheme: Green for hits, Red for writes, Yellow for misses. Blue for cache entries in good state, Orange for stale entries.
-
-Responsive: Panels resize to container width.
+```html
+<iframe src="https://dmccreary.github.io/atam/sims/caching-tactic-explorer/main.html"
+        width="100%"
+        scrolling="no"></iframe>
 ```
 
-## Related Resources
+## Lesson Plan
 
-- [Chapter 9: Architectural Tactics and Design Principles](../../chapters/09-architectural-tactics-principles/index.md)
+### Grade Level
+Undergraduate / Professional
+
+### Duration
+15-20 minutes
+
+### Prerequisites
+Familiarity with caching, TTL, and the performance/consistency tradeoff.
+
+### Bloom's Taxonomy Level
+Apply (L3)
+
+### Learning Objective
+Students will be able to configure a cache with an appropriate strategy, TTL, and size for a given performance scenario, and explain the consistency implications of their configuration.
+
+### Activities
+
+1. **Strategy comparison** (6 min): Students run all three strategies and record hit rate, average latency, and consistency lag for each.
+2. **Tune for a target** (7 min): Given a target ("average read latency under 20 ms"), students adjust TTL and size to reach it and explain why.
+3. **Consistency cost** (5 min): Using Write-Behind plus Introduce Stale Read, students explain the risk a fast-write configuration accepts.
+
+### Assessment
+Give students a scenario ("read-heavy product catalog, tolerates 30s staleness") and ask them to choose a strategy and TTL and justify it from the metrics.
+
+## References
+
+1. Bass, L., Clements, P., & Kazman, R. (2021). *Software Architecture in Practice* (4th ed.). Addison-Wesley.
+2. Kleppmann, M. (2017). *Designing Data-Intensive Applications*. O'Reilly. (Caching and consistency.)
