@@ -169,7 +169,7 @@ Two patterns that frequently accompany event-driven architectures deserve separa
 
 #### Diagram: Architectural Pattern Quality Attribute Matrix
 
-<iframe src="../../sims/pattern-quality-matrix/main.html" width="100%" height="580px" scrolling="no"></iframe>
+<iframe src="../../sims/pattern-quality-matrix/main.html" width="100%" height="578px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Architectural Pattern Quality Attribute Matrix</summary>

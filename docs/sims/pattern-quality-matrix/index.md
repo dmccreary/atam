@@ -1,88 +1,70 @@
 ---
 title: Architectural Pattern Quality Attribute Matrix
-description: Students will be able to compare at least six architectural patterns across four quality attribute dimensions, identify the pattern most suitable for a given set of (H,H) quality attribute scenarios, and explain the tradeoff mechanism responsible for each pattern's strength or weakness.
-status: scaffold
-library: p5.js
-bloom_level: Analyze (L4) — Compare architectural patterns across quality attribute dimensions to determine which pattern best fits a given set of prioritized quality attribute requirements.
+description: Interactive p5.js MicroSim comparing eight architectural patterns across eight quality attributes, with click-to-explore tradeoff mechanisms.
+image: /sims/pattern-quality-matrix/pattern-quality-matrix.png
+og:image: /sims/pattern-quality-matrix/pattern-quality-matrix.png
+twitter:image: /sims/pattern-quality-matrix/pattern-quality-matrix.png
+social:
+   cards: false
+quality_score: 0
 ---
 
 # Architectural Pattern Quality Attribute Matrix
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="578" width="100%" scrolling="no"></iframe>
 
-## Learning Objective
+[Run the Pattern Quality Matrix MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
+<br/>
+[Edit in the p5.js Editor](https://editor.p5js.org/)
 
-Students will be able to compare at least six architectural patterns across four quality attribute dimensions, identify the pattern most suitable for a given set of (H,H) quality attribute scenarios, and explain the tradeoff mechanism responsible for each pattern's strength or weakness.
+## About This MicroSim
 
-- **Bloom Level:** Analyze (L4) — Compare architectural patterns across quality attribute dimensions to determine which pattern best fits a given set of prioritized quality attribute requirements.
-- **Bloom Verb:** Compare
-- **Library:** p5.js
+This MicroSim is an 8×8 matrix that compares eight architectural patterns — Layered, Microservices, Event-Driven, CQRS, Strangler Fig, Hexagonal, Pipe-and-Filter, and SOA — across eight quality attributes. Each cell shows whether a pattern primarily **supports** (green), **threatens** (red), is **complex/depends** (yellow), or is **neutral** (gray) on that attribute. Clicking a cell reveals the specific tradeoff mechanism and what to probe for in an ATAM evaluation, helping students choose the pattern best suited to a set of prioritized quality attribute scenarios.
 
-## Preview
+## How to Use
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+1. **Click any cell** to read the tradeoff mechanism behind its rating and the related ATAM probing advice.
+2. **Click a column header** to sort the patterns by that quality attribute (best-supporting at the top) — a fast way to answer "which pattern is strongest for X?"
+3. **Click a pattern name** to see its one-line summary and its full quality-attribute profile.
+4. **Compare Two Patterns** lets you pick two patterns and view their ratings side by side.
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+## Iframe Embed Code
 
-## Specification
+You can add this MicroSim to any web page by adding this to your HTML:
 
-The full specification below is extracted from
-[Chapter 8: Architectural Patterns and Styles](../../chapters/08-architectural-patterns-styles/index.md).
-
-```text
-Type: diagram
-**sim-id:** pattern-quality-matrix<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
-
-Purpose: Interactive matrix showing the quality attribute profile of major architectural patterns — which attributes each pattern primarily supports (green), threatens (red), or is neutral on (gray) — with click-to-explore cells revealing the specific tradeoff mechanism.
-
-Bloom Level: Analyze (L4) — Compare architectural patterns across quality attribute dimensions to determine which pattern best fits a given set of prioritized quality attribute requirements.
-Bloom Verb: Compare
-
-Learning Objective: Students will be able to compare at least six architectural patterns across four quality attribute dimensions, identify the pattern most suitable for a given set of (H,H) quality attribute scenarios, and explain the tradeoff mechanism responsible for each pattern's strength or weakness.
-
-Canvas layout:
-- Grid: Patterns on rows (8 patterns), Quality Attributes on columns (8 attributes)
-- Each cell: colored indicator (green=supports, red=threatens, gray=neutral, yellow=complex/depends)
-- Clicking any cell opens a detail panel showing: the specific tradeoff mechanism, a realistic example, and what ATAM scenarios to watch for with this pattern+attribute combination
-- Column header click: sorts patterns by that quality attribute (best-supporting at top)
-- Row header click: shows full pattern summary and quality attribute profile
-
-Patterns (rows):
-1. Layered Architecture
-2. Microservices
-3. Event-Driven Architecture
-4. CQRS
-5. Strangler Fig
-6. Hexagonal / Clean Architecture
-7. Pipe-and-Filter
-8. SOA (legacy reference)
-
-Quality Attributes (columns):
-Performance, Availability, Security, Modifiability, Scalability, Testability, Deployability, Interoperability
-
-Cell values (sample):
-Microservices / Modifiability: Green — "Independent deployment boundary limits blast radius"
-Microservices / Performance: Red — "Service-to-service network calls add latency; synchronous chains compound it"
-Event-Driven / Availability: Green — "Producer/consumer decoupling; consumer unavailability doesn't affect producers"
-Event-Driven / Consistency: Yellow — "Eventual consistency: temporal window where state diverges"
-Layered / Testability: Green — "Each layer testable in isolation by stubbing adjacent layers"
-Layered / Performance: Yellow — "Layer traversal overhead; acceptable for moderate load, problematic for high-throughput"
-
-Interactive elements:
-- Click any cell to see mechanism detail
-- Click column header to sort by that attribute
-- "Compare Two Patterns" button lets student select two patterns and see a side-by-side profile
-- Hover any cell for one-line summary tooltip
-
-Color scheme: Green cells for "Primarily Supports", Red cells for "Primarily Threatens", Yellow cells for "Complex/Depends", Gray cells for Neutral. Header row and column in gold.
-
-Responsive: Matrix scrolls horizontally on narrow screens; column headers stay fixed.
+```html
+<iframe src="https://dmccreary.github.io/atam/sims/pattern-quality-matrix/main.html"
+        width="100%"
+        scrolling="no"></iframe>
 ```
 
-## Related Resources
+## Lesson Plan
 
-- [Chapter 8: Architectural Patterns and Styles](../../chapters/08-architectural-patterns-styles/index.md)
+### Grade Level
+Undergraduate / Professional
+
+### Duration
+15-20 minutes
+
+### Prerequisites
+Familiarity with common architectural patterns and the quality attributes used in ATAM.
+
+### Bloom's Taxonomy Level
+Analyze (L4)
+
+### Learning Objective
+Students will be able to compare at least six architectural patterns across multiple quality attribute dimensions, identify the pattern most suitable for a given set of (H,H) quality attribute scenarios, and explain the tradeoff mechanism responsible for each pattern's strength or weakness.
+
+### Activities
+
+1. **Find the strength** (5 min): For three quality attributes, students sort by the column and name the top pattern, then read the mechanism.
+2. **Choose for a scenario set** (8 min): Given two (H,H) scenarios (e.g., high Scalability + high Modifiability), students use the matrix to pick a pattern and justify it from the cell mechanisms.
+3. **Compare** (5 min): Students compare Microservices and Event-Driven side by side and explain where they diverge.
+
+### Assessment
+Give students a prioritized quality attribute profile and ask them to recommend a pattern, citing the supporting and threatening cells that justify the choice.
+
+## References
+
+1. Bass, L., Clements, P., & Kazman, R. (2021). *Software Architecture in Practice* (4th ed.). Addison-Wesley.
+2. Richards, M., & Ford, N. (2020). *Fundamentals of Software Architecture*. O'Reilly.

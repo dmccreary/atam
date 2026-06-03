@@ -1,21 +1,45 @@
 {
   "title": "Architectural Pattern Quality Attribute Matrix",
-  "description": "Students will be able to compare at least six architectural patterns across four quality attribute dimensions, identify the pattern most suitable for a given set of (H,H) quality attribute scenarios, and explain the tradeoff mechanism responsible for each pattern's strength or weakness.",
-  "creator": "Dementia Education Project",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for architectural pattern quality attribute matrix",
   "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en-US",
-  "rights": "CC BY 4.0",
-  "identifier": "pattern-quality-matrix",
-  "library": "p5.js",
-  "bloomLevel": "Analyze (L4) — Compare architectural patterns across quality attribute dimensions to determine which pattern best fits a given set of prioritized quality attribute requirements.",
-  "bloomVerb": "Compare",
-  "completion_status": "scaffold",
-  "chapter_number": 8,
-  "chapter_title": "Architectural Patterns and Styles",
-  "chapter_dir": "08-architectural-patterns-styles"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Architectural Pattern Quality Attribute Matrix",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "08-architectural-patterns-styles"
 }
