@@ -213,7 +213,7 @@ Once all scenarios are rated, organize them into the four priority quadrants: **
 
 #### Diagram: Utility Tree Construction Workshop Simulator
 
-<iframe src="../../sims/utility-tree-builder/main.html" width="100%" height="620px" scrolling="no"></iframe>
+<iframe src="../../sims/utility-tree-builder/main.html" width="100%" height="588px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Utility Tree Construction Workshop Simulator</summary>

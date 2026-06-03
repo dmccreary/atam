@@ -1,83 +1,73 @@
 ---
 title: Utility Tree Construction Workshop Simulator
-description: Students will be able to build a complete utility tree for a provided system description, including quality attribute branches, sub-attribute nodes, rated leaf scenarios, and an identified list of (H,H) priority scenarios.
-status: scaffold
-library: p5.js
-bloom_level: Create (L6) — Design a utility tree for a given system by constructing quality attribute branches, sub-attribute nodes, and rated leaf-level scenarios.
+description: Interactive p5.js MicroSim for designing a utility tree — add quality attribute branches, sub-attributes, and rated leaf scenarios with live validation.
+image: /sims/utility-tree-builder/utility-tree-builder.png
+og:image: /sims/utility-tree-builder/utility-tree-builder.png
+twitter:image: /sims/utility-tree-builder/utility-tree-builder.png
+social:
+   cards: false
+quality_score: 0
 ---
 
 # Utility Tree Construction Workshop Simulator
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="588" width="100%" scrolling="no"></iframe>
 
-## Learning Objective
+[Run the Utility Tree Builder MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
+<br/>
+[Edit in the p5.js Editor](https://editor.p5js.org/)
 
-Students will be able to build a complete utility tree for a provided system description, including quality attribute branches, sub-attribute nodes, rated leaf scenarios, and an identified list of (H,H) priority scenarios.
+## About This MicroSim
 
-- **Bloom Level:** Create (L6) — Design a utility tree for a given system by constructing quality attribute branches, sub-attribute nodes, and rated leaf-level scenarios.
-- **Bloom Verb:** Design
-- **Library:** p5.js
+This MicroSim is a guided builder for constructing a utility tree. A four-step editor on the left lets you add quality attribute **branches**, **sub-attribute** nodes, and rated **leaf scenarios**; the tree visualizes live on the right with color-coded (Importance, Difficulty) badges. An (H,H) counter and a **Validate Tree** button check your tree against the structural rules ATAM expects, scaffolding the otherwise blank-page task of designing a tree from scratch.
 
-## Preview
+## How to Use
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+1. **Add a branch**: pick a quality attribute and click **Add Branch**.
+2. **Select a node** by clicking it in the tree on the right — the editor steps act on whatever is selected.
+3. **Add a sub-attribute** to the selected branch (step 2), then **add a leaf scenario** to the selected sub-attribute (step 3).
+4. **Rate** the selected leaf with the Importance and Difficulty dropdowns (step 4); the leaf's badge updates immediately.
+5. Watch the **(H,H) scenarios** counter, and click **Validate Tree** for specific structural feedback (enough branches, sub-attributes per branch, a scenario per sub-attribute, ratings present, and at least two (H,H) scenarios).
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+Use **Load Example** to start from a partially built tree, or **Clear** to start fresh.
 
-## Specification
+## Iframe Embed Code
 
-The full specification below is extracted from
-[Chapter 7: Utility Trees and Scenario Prioritization](../../chapters/07-utility-trees-prioritization/index.md).
+You can add this MicroSim to any web page by adding this to your HTML:
 
-```text
-Type: microsim
-**sim-id:** utility-tree-builder<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
-
-Purpose: Interactive tool for building a utility tree step-by-step, allowing students to add quality attribute branches, create sub-attribute nodes, write leaf scenarios, and assign importance/difficulty ratings, with real-time visualization of the tree structure.
-
-Bloom Level: Create (L6) — Design a utility tree for a given system by constructing quality attribute branches, sub-attribute nodes, and rated leaf-level scenarios.
-Bloom Verb: Design
-
-Learning Objective: Students will be able to build a complete utility tree for a provided system description, including quality attribute branches, sub-attribute nodes, rated leaf scenarios, and an identified list of (H,H) priority scenarios.
-
-Canvas layout:
-- Left panel: Step-by-step construction panel with current step highlighted
-- Center: Live tree visualization updating as elements are added
-- Right panel: Scenario editor form (six fields + importance/difficulty selectors)
-- Bottom: (H,H) scenario counter and "Validate Tree" button
-
-Construction steps (guided):
-Step 1: Select quality attribute branches from checklist (Performance, Availability, Security, Modifiability, Interoperability, Scalability, others)
-Step 2: For each selected branch, add 2-4 sub-attribute nodes (text input)
-Step 3: For each sub-attribute, add 1-3 leaf scenarios using the six-component form
-Step 4: Rate each leaf scenario (Importance: H/M/L, Difficulty: H/M/L) using dropdowns
-Step 5: Review priority matrix — system automatically groups scenarios into (H,H), (H,M/L), (M/H,H), (M,M) quadrants
-
-Controls:
-- "Add Branch" button adds a new quality attribute branch
-- "Add Sub-Attribute" button (context-sensitive to selected branch) adds a node
-- "Add Scenario" button (context-sensitive to selected sub-attribute) opens scenario editor
-- Importance and Difficulty dropdowns per leaf scenario
-- "Auto-Rate" button applies suggested ratings based on scenario text keywords (demonstration mode)
-
-Validation (when "Validate Tree" button clicked):
-- Minimum structure check: at least 3 branches, 2 sub-attributes per branch, 1 scenario per sub-attribute
-- Coverage check: at least one scenario per major quality attribute in scope
-- Rating check: all leaf scenarios rated on both dimensions
-- (H,H) check: at least 2 (H,H) scenarios exist
-- Provides feedback: "Tree structure complete" / "Add sub-attributes to Performance branch" / "Missing importance rating on 3 scenarios"
-
-Instructional Rationale: Step-by-step construction with guided prompts is appropriate for the Create objective because it scaffolds the complex task of tree building while requiring students to supply all system-specific content. The validation feedback closes the loop on correctness.
-
-Color scheme: Gold for root, Blue for branches, Teal for sub-attributes, color-coded leaves by (I,D) rating. Green for validated elements.
-
-Responsive: Layout reflows to vertical on narrow screens.
+```html
+<iframe src="https://dmccreary.github.io/atam/sims/utility-tree-builder/main.html"
+        width="100%"
+        scrolling="no"></iframe>
 ```
 
-## Related Resources
+## Lesson Plan
 
-- [Chapter 7: Utility Trees and Scenario Prioritization](../../chapters/07-utility-trees-prioritization/index.md)
+### Grade Level
+Undergraduate / Professional
+
+### Duration
+20-25 minutes
+
+### Prerequisites
+Familiarity with quality attributes, the six-component scenario, and (Importance, Difficulty) rating.
+
+### Bloom's Taxonomy Level
+Create (L6)
+
+### Learning Objective
+Students will be able to build a complete utility tree for a provided system description, including quality attribute branches, sub-attribute nodes, rated leaf scenarios, and an identified set of (H,H) priority scenarios.
+
+### Activities
+
+1. **Scaffolded build** (10 min): Given a one-paragraph system description, students build a tree with at least three branches, two sub-attributes each, and rated scenarios.
+2. **Validate and revise** (8 min): Students click Validate Tree and resolve every flagged issue until the tree is well-formed.
+3. **Justify priorities** (5 min): Students explain why their (H,H) scenarios deserve first analytical attention.
+
+### Assessment
+Students submit a validated utility tree for an assigned system; the tree must pass all structural checks and include at least two well-justified (H,H) scenarios.
+
+## References
+
+1. Bass, L., Clements, P., & Kazman, R. (2021). *Software Architecture in Practice* (4th ed.). Addison-Wesley.
+2. Kazman, R., Klein, M., & Clements, P. (2000). *ATAM: Method for Architecture Evaluation* (CMU/SEI-2000-TR-004).
