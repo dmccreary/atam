@@ -1,0 +1,14 @@
+{
+  "sim_id": "responsible-ai-explorer",
+  "diagram_name": "Responsible AI Architecture Components",
+  "chapter_number": 17,
+  "chapter_title": "AI and Machine Learning System Architecture",
+  "chapter_dir": "17-ai-ml-system-architecture",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: Interactive framework diagram\n**sim-id:** responsible-ai-explorer<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\n**Purpose:** Interactive map of responsible AI architectural requirements across the five dimensions (fairness, safety, transparency, accountability, privacy), showing which architectural components address which requirements.\n\n**Controls:**\n- Hover over each dimension → highlights which architectural components address it\n- Click each architectural component → shows: purpose, implementation examples, ATAM quality attribute mapping\n- \"Compliance Gap Analysis\" mode: highlights requirements that the current architecture does not address\n\n**Display:**\n- Radar chart showing coverage across five responsible AI dimensions\n- Risk matrix: unaddressed requirements plotted by likelihood × impact\n- Regulatory requirement mapper (GDPR, EU AI Act, ECOA)"
+}

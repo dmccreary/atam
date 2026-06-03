@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priority Matrix and Analytical Roadmap</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Priority Matrix and Analytical Roadmap</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> priority-matrix-explorer</p>
+            <p><strong>Library:</strong> p5.js</p>
+            <p><strong>Bloom Level:</strong> Evaluate (L5) — Assess the priority distribution of a utility tree's scenarios and determine whether the analytical roadmap appropriately focuses on (H,H) scenarios.</p>
+            <p><strong>Learning Objective:</strong> Students will be able to interpret the priority matrix distribution of a utility tree, evaluate whether the (H,H) scenario count and distribution is appropriate for a complete evaluation, and identify which scenarios the evaluation team should address first.</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: diagram
+    **sim-id:** priority-matrix-explorer<br/>
+    **Library:** p5.js<br/>
+    **Status:** Specified
+    
+    Purpose: Interactive 2×2 priority matrix (Importance vs. Difficulty) showing a populated utility tree's scenarios distributed across quadrants, with click-to-explore and drag-to-reclassify interaction.
+    
+    Bloom Level: Evaluate (L5) — Assess the priority distribution of a utility tree's scenarios and determine whether the analytical roadmap appropriately focuses on (H,H) scenarios.
+    Bloom Verb: Assess
+    
+    Learning Objective: Students will be able to interpret the priority matrix distribution of a utility tree, evaluate whether the (H,H) scenario count and distribution is appropriate for a complete evaluation, and identify which scenarios the evaluation team should address first.
+    
+    Canvas layout:
+    - Large 2×2 matrix with axes: Importance (H/M/L, vertical, increasing upward) and Difficulty (L/M/H, horizontal, increasing rightward)
+    - Quadrant labels: Top-right = "Critical — Analyze First (H,H)", Top-left = "Confirm — Verify and Document (H,L)", Bottom-right = "Watch — Address If Resources Permit (L,H)", Bottom-left = "Monitor (L,L)"
+    - Scenario dots placed within appropriate quadrant, colored by quality attribute
+    - "Analytical sequence" arrows showing the recommended order of attention
+    - A legend panel listing each quality attribute and its color
+    - Detail panel showing scenario summary when a dot is clicked
+    
+    Populated example scenarios (from healthcare patient portal utility tree):
+    (H,H) quadrant:
+    - Patient appointment search <800ms under peak load [Performance, red]
+    - EHR integration failure doesn't prevent scheduling [Availability, blue]
+    - PHI access only for authenticated/authorized users [Security, green]
+    - Admin account compromise detected within 60 seconds [Security, green]
+    - New insurance provider integration without patient-facing changes [Modifiability, purple]
+    
+    (H,L) quadrant:
+    - Patient record retrieval <2s for large records [Performance, red]
+    - Maintenance window <30 min per week [Availability, blue]
+    - All PHI encrypted at rest and in transit [Security, green]
+    
+    (M,H) quadrant:
+    - HIPAA regulation change implementable in one sprint [Modifiability, purple]
+    - Authentication failover to backup IdP within 10 seconds [Availability, blue]
+    
+    (L,L) quadrant:
+    - Nightly claim reconciliation within 4-hour window [Performance, red]
+    
+    Interactive elements:
+    - Click any dot to see full scenario summary
+    - Drag dots between quadrants to explore how reclassification changes the analytical focus
+    - "Show Critical Path" button draws arrows connecting (H,H) scenarios in order of evaluation priority
+    - Filter button to show only a specific quality attribute's scenarios
+    - "(H,H) Count: N" badge updates when dots are moved
+    
+    Color scheme: Red for Performance, Blue for Availability, Green for Security, Purple for Modifiability, Teal for Scalability. Quadrant backgrounds in distinct light tints.
+    
+    Responsive: Matrix scales proportionally to container width.
+    -->
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "sim_id": "data-architecture-patterns",
+  "diagram_name": "Lambda vs. Kappa Architecture Comparison",
+  "chapter_number": 18,
+  "chapter_title": "Advanced Data, Emerging AI, and Autonomous Architectures",
+  "chapter_dir": "18-advanced-data-emerging-ai",
+  "library": "vis-network",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: Interactive comparison\n**sim-id:** data-architecture-patterns<br/>\n**Library:** vis-network<br/>\n**Status:** Specified\n\n**Purpose:** Side-by-side animated flow comparison of Lambda, Kappa, and Data Lakehouse architectures showing data flow from ingestion through serving.\n\n**Panels:**\n- Lambda: Data Sources → Kafka → (Batch Layer: HDFS + Spark / Speed Layer: Flink) → Serving Layer → Query\n- Kappa: Data Sources → Kafka (durable log) → Flink → Serving Store → Query\n- Lakehouse: Data Sources → Ingestion → Object Storage (Delta/Iceberg) → Query Engine → Analytics\n\n**Interactions:**\n- Click each component to see: technology examples, quality attribute strengths, failure modes\n- \"Simulate Reprocessing\" button: shows how each architecture handles historical recomputation\n- Quality attribute comparison radar chart: latency, consistency, operational complexity, cost"
+}

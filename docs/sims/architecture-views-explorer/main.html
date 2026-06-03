@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Architecture Views Explorer using vis-network</title>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/vis-network/styles/vis-network.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab active" data-view="cc">Component &amp; Connector</button>
+            <button class="tab" data-view="deployment">Deployment</button>
+            <button class="tab" data-view="security">Security</button>
+        </div>
+
+        <div id="network"></div>
+
+        <div class="title" id="title">Component &amp; Connector View</div>
+
+        <div class="infobox" id="infobox">
+            <div class="infobox-title" id="infobox-title">Click any node</div>
+            <div class="infobox-body" id="infobox-body">Click a node to see which stakeholders care about it and why.</div>
+        </div>
+
+        <div class="footer" id="footer"></div>
+    </div>
+
+    <script src="architecture-views-explorer.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "sim_id": "scaling-tradeoff-explorer",
+  "diagram_name": "Vertical vs. Horizontal Scaling Tradeoffs",
+  "chapter_number": 15,
+  "chapter_title": "Performance Engineering and Scaling",
+  "chapter_dir": "15-performance-engineering-scaling",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: Interactive simulation\n**sim-id:** scaling-tradeoff-explorer<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\n**Purpose:** Side-by-side comparison of vertical and horizontal scaling strategies showing cost curves, capacity ceilings, and fault isolation properties under different workload models.\n\n**Controls:**\n- Workload type selector: stateless, stateful, database-write-heavy\n- Growth rate slider: 5%–50% monthly\n- Current load slider\n- Parallelizable fraction slider (Amdahl's p): 0.5–1.0\n\n**Display:**\n- Left panel: vertical scaling — instance size vs. cost curve with saturation point\n- Right panel: horizontal scaling — nodes vs. throughput curve with Amdahl's wall\n- Bottom: time-to-saturation for each strategy at current growth rate\n- Recommendation panel: \"given these parameters, horizontal scaling hits Amdahl's wall at N nodes\""
+}

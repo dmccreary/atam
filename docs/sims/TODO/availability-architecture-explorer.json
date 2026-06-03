@@ -1,0 +1,14 @@
+{
+  "sim_id": "availability-architecture-explorer",
+  "diagram_name": "Availability Architecture Analyzer",
+  "chapter_number": 16,
+  "chapter_title": "Observability, Reliability, and Cloud Operations",
+  "chapter_dir": "16-observability-reliability",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: Interactive simulation\n**sim-id:** availability-architecture-explorer<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\n**Purpose:** Interactive system availability calculator. Users build a system architecture by placing components in series or parallel configurations and see the resulting system availability, MTBF, MTTR, and allowed downtime.\n\n**Controls:**\n- Add component button: specify individual availability (99%–99.999%)\n- Series/Parallel toggle for each component group\n- MTTR slider per component (1–240 minutes)\n\n**Display:**\n- Architecture diagram showing component arrangement\n- Real-time system availability calculation\n- \"Nines\" indicator (two through six nines)\n- Annual/monthly downtime budget in minutes\n- Weakest-link identification (component contributing most to unavailability)\n- SLO compliance indicator against configurable target"
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "performance-metrics-explorer",
+  "diagram_name": "Performance Metric Relationships",
+  "chapter_number": 15,
+  "chapter_title": "Performance Engineering and Scaling",
+  "chapter_dir": "15-performance-engineering-scaling",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: Interactive simulation\n**sim-id:** performance-metrics-explorer<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\n**Purpose:** Visualize the relationships between latency, throughput, response time, and concurrency using Little's Law. Users manipulate arrival rate and service time sliders to see how all metrics change.\n\n**Controls:**\n- Arrival Rate slider (requests/second): 10–1000\n- Service Time slider (ms): 1–500\n- Concurrency Limit slider: 1–100\n\n**Display panels:**\n- Live Little's Law calculation showing L, λ, W\n- Latency distribution histogram (p50/p95/p99 markers)\n- Throughput gauge\n- Queue depth indicator\n\n**Behavior:** When arrival rate × service time > concurrency limit, the queue grows visually and p99 latency spikes dramatically — illustrating queue saturation."
+}

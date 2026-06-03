@@ -1,0 +1,21 @@
+{
+  "title": "Utility Tree Construction Workshop Simulator",
+  "description": "Students will be able to build a complete utility tree for a provided system description, including quality attribute branches, sub-attribute nodes, rated leaf scenarios, and an identified list of (H,H) priority scenarios.",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-03",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "utility-tree-builder",
+  "library": "p5.js",
+  "bloomLevel": "Create (L6) — Design a utility tree for a given system by constructing quality attribute branches, sub-attribute nodes, and rated leaf-level scenarios.",
+  "bloomVerb": "Design",
+  "completion_status": "scaffold",
+  "chapter_number": 7,
+  "chapter_title": "Utility Trees and Scenario Prioritization",
+  "chapter_dir": "07-utility-trees-prioritization"
+}

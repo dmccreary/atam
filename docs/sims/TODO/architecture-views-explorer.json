@@ -1,0 +1,14 @@
+{
+  "sim_id": "architecture-views-explorer",
+  "diagram_name": "Architecture Views Explorer",
+  "chapter_number": 1,
+  "chapter_title": "Software Architecture Foundations",
+  "chapter_dir": "01-software-architecture-foundations",
+  "library": "vis-network",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: interactive-infographic\n**sim-id:** architecture-views-explorer<br/>\n**Library:** vis-network<br/>\n**Status:** Specified\n\n**Learning objective (Bloom L2 — Understand):** Students can explain why multiple views are necessary by switching between views of the same system and identifying which stakeholder concerns each view addresses and which it deliberately omits.\n\n**Visualization description:**\nThree tabbed views of the same simplified e-commerce system. Students click a tab to switch between views. Each view uses vis-network to render a different structural perspective.\n\n**Tab 1 — Component-and-Connector View:**\nShows the runtime components (services, databases, queues) and their connectors (REST, async events, DB access). Nodes labeled with service names. Connectors labeled with protocol. Clicking a node shows: \"This is a component. Stakeholders: Development Team, Operations. Primary concerns: interfaces, responsibilities, dependencies.\"\n\n**Tab 2 — Deployment View:**\nShows infrastructure containers (Kubernetes pods, cloud regions, managed services). Components from Tab 1 are grouped inside deployment units. Edges show network communication. Clicking a node shows: \"This is a deployment unit. Stakeholders: Operations, Security Team. Primary concerns: network topology, availability zones, scaling policies.\"\n\n**Tab 3 — Security View:**\nShows trust boundaries (colored regions), authentication flows (arrows labeled with auth mechanism), and data classification zones (color-coded). Clicking a boundary shows: \"This is a trust boundary. Stakeholders: Security Team, Compliance. Primary concerns: authentication points, data in transit, attack surface.\"\n\n**Footer panel (below all three views):** A static text box that updates when the tab changes, showing: \"Viewpoint used: [name] | Stakeholders: [list] | What this view shows: [X] | What this view deliberately omits: [Y]\". This enforces the viewpoint-as-recipe concept.\n\n**Canvas:** Responsive, minimum 640×480px per tab view.\n\nImplementation: Three vis-network DataSets; tab clicks trigger `network.setData()` swaps and footer panel text updates."
+}

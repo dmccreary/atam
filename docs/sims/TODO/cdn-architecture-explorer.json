@@ -1,0 +1,14 @@
+{
+  "sim_id": "cdn-architecture-explorer",
+  "diagram_name": "CDN Request Routing and Cache Flow",
+  "chapter_number": 15,
+  "chapter_title": "Performance Engineering and Scaling",
+  "chapter_dir": "15-performance-engineering-scaling",
+  "library": "vis-network",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: Interactive diagram\n**sim-id:** cdn-architecture-explorer<br/>\n**Library:** vis-network<br/>\n**Status:** Specified\n\n**Purpose:** Interactive map showing CDN PoP locations, origin servers, and request routing. Users click on simulated user locations to see which PoP handles their request and the latency comparison (with CDN vs. direct to origin).\n\n**Nodes:**\n- Origin server (central, labeled with data center location)\n- 8 CDN PoPs (distributed geographically — Americas, Europe, Asia-Pacific)\n- 5 simulated user locations\n\n**Interactions:**\n- Click user node → animated request path to nearest PoP → cache hit/miss decision → response path back\n- Toggle \"CDN Enabled/Disabled\" to show direct origin routing with latency comparison\n- Cache hit rate display updates as different users/request types are simulated"
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "architecture-building-blocks-explorer",
+  "diagram_name": "Architecture Building Blocks Explorer",
+  "chapter_number": 1,
+  "chapter_title": "Software Architecture Foundations",
+  "chapter_dir": "01-software-architecture-foundations",
+  "library": "vis-network",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: interactive-infographic\n**sim-id:** architecture-building-blocks-explorer<br/>\n**Library:** vis-network<br/>\n**Status:** Specified\n\n**Learning objective (Bloom L2 — Understand):** Students can explain the roles of components, connectors, and styles by identifying each in a realistic sample system and articulating why each connector choice has quality attribute consequences.\n\n**Visualization description:**\nA vis-network diagram showing a simplified e-commerce system with approximately 8–10 nodes. Node categories (colors match):\n- Components (blue boxes): Web Frontend, API Gateway, Order Service, Inventory Service, Payment Service, Notification Service, Order Database, Event Bus\n- Connectors (labeled edges): REST (synchronous, orange), gRPC (synchronous high-throughput, purple), Async Event (dotted, green), Direct DB Access (red, dashed)\n\n**Interactions:**\n- Clicking any **component node** opens an infobox explaining what type of component it is (service, data store, gateway), what responsibilities it has, and which quality attributes its design primarily affects.\n- Clicking any **connector edge** opens an infobox explaining the connector type (synchronous/async, protocol), typical latency characteristics, and the architectural tradeoff that connector choice introduces (e.g., \"REST here means the Order Service call to Payment Service is synchronous — an outage in Payment Service propagates directly to Order Service. An async event connector would decouple availability.\").\n- A **Style Selector** dropdown in the top-right corner lets students switch between \"Microservices View\" (current), \"Monolith View\" (collapses services into one component), and \"Event-Driven View\" (replaces synchronous connectors with async events). Switching style updates the diagram and displays a brief explanation of how the quality attribute profile changes.\n\n**Canvas:** Responsive, minimum 600×400px, uses `fit()` on load.\n**Color scheme:** Consistent with ATAM textbook palette (indigo/gold primary, component blues, connector oranges).\n\nImplementation: vis-network with DataSet for nodes and edges; dropdown triggers DataSet updates; click handlers render infobox in a styled div below the canvas."
+}

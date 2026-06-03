@@ -1,0 +1,21 @@
+{
+  "title": "ML Pipeline Architecture Flow",
+  "description": "ML Pipeline Architecture Flow",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-03",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "ml-pipeline-explorer",
+  "library": "vis-network",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 17,
+  "chapter_title": "AI and Machine Learning System Architecture",
+  "chapter_dir": "17-ai-ml-system-architecture"
+}

@@ -65,11 +65,13 @@ nav:
       - Graph Quality Analysis: learning-graph/quality-metrics.md
       - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
       - Mascot Style Guide: learning-graph/mascot-test.md
+      - FAQ Quality Report: learning-graph/faq-quality-report.md
 
   - MicroSims:
       - List of MicroSims: sims/index.md
       - Learning Graph Viewer: sims/graph-viewer/index.md
 
+  - FAQ: faq.md
   - License: license.md
   - Contact: contact.md
 

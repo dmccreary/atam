@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud-Native Architecture Quality Attribute Stack</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Cloud-Native Architecture Quality Attribute Stack</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> cloud-native-qa-explorer</p>
+            <p><strong>Library:</strong> p5.js</p>
+            <p><strong>Bloom Level:</strong> Analyze (L4) — Examine how each layer of the cloud-native stack contributes to specific quality attributes and introduces specific risks.</p>
+            <p><strong>Learning Objective:</strong> Students will be able to identify at least three quality attribute contributions and one quality attribute risk at each layer of the cloud-native technology stack.</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: diagram
+    **sim-id:** cloud-native-qa-explorer<br/>
+    **Library:** p5.js<br/>
+    **Status:** Specified
+    
+    Purpose: Interactive layer diagram showing the cloud-native technology stack (hardware → IaaS → containers → Kubernetes → services → applications) with quality attribute contributions and tradeoffs visible at each layer — click any layer to see its quality attribute profile.
+    
+    Bloom Level: Analyze (L4) — Examine how each layer of the cloud-native stack contributes to specific quality attributes and introduces specific risks.
+    Bloom Verb: Examine
+    
+    Learning Objective: Students will be able to identify at least three quality attribute contributions and one quality attribute risk at each layer of the cloud-native technology stack.
+    
+    Canvas layout:
+    - Vertical stack of five technology layers, each as a horizontal band
+    - Each layer labeled with: technology name, a brief role description, 2-3 "supports QA" badges (green), and 1-2 "threatens QA" badges (red)
+    - Clicking any layer expands a detail panel on the right showing full quality attribute analysis
+    - Arrow annotations on the right side showing which quality attributes are managed at which layer (e.g., "Scalability managed by Kubernetes HPA")
+    
+    Layers (bottom to top):
+    1. IaaS / Managed Services: "Virtual compute, storage, networking provided by cloud provider"
+       Supports: Availability (physical redundancy), Scalability (elastic provisioning)
+       Threatens: Vendor lock-in (proprietary services), Cost predictability
+    
+    2. Containers / Docker: "Packaging and isolation layer"
+       Supports: Portability, Consistency, Deployability
+       Threatens: Security (shared kernel), Complexity (image management)
+    
+    3. Kubernetes Orchestration: "Auto-healing, scaling, and service discovery"
+       Supports: Availability (auto-healing), Scalability (HPA), Deployability (rolling updates)
+       Threatens: Complexity (steep learning curve), Performance (network overhead)
+    
+    4. Infrastructure as Code / GitOps: "Declarative, version-controlled infrastructure"
+       Supports: Deployability (reproducible), Reliability (no drift), Auditability
+       Threatens: Learning curve, Change velocity (reviews required)
+    
+    5. Application / Service Mesh: "Business logic and cross-cutting concerns"
+       Supports: Modifiability, Security (mTLS via mesh), Observability
+       Threatens: Performance (sidecar overhead), Operational complexity
+    
+    Interactive elements:
+    - Click any layer to expand full quality attribute analysis in right panel
+    - "Show QA" button for each quality attribute highlights which layers contribute to it
+    - Hover "supports" badges to see the specific mechanism
+    
+    Color scheme: Five distinct layer colors from bottom (gray) to top (gold). Green badges for supports, red for threatens.
+    
+    Responsive: Stack compresses proportionally; detail panel moves below on narrow screens.
+    -->
+</body>
+</html>

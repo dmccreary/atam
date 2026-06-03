@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATAM Output to Action Pipeline</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>ATAM Output to Action Pipeline</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> atam-output-pipeline</p>
+            <p><strong>Library:</strong> p5.js</p>
+            <p><strong>Bloom Level:</strong> Understand (L2) — Explain how ATAM evaluation outputs are transformed into actionable organizational documents and ongoing monitoring practices.</p>
+            <p><strong>Learning Objective:</strong> Students will be able to trace an ATAM risk finding from its identification in the evaluation session through its documentation in the risk register, its prioritization in the improvement plan, its scheduling in the architecture roadmap, and its verification through fitness function monitoring.</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: workflow
+    **sim-id:** atam-output-pipeline<br/>
+    **Library:** p5.js<br/>
+    **Status:** Specified
+    
+    Purpose: Visualize the complete pipeline from ATAM evaluation outputs through risk register, improvement plan, architecture roadmap, and ongoing risk monitoring — showing how evaluation findings translate into organizational action.
+    
+    Bloom Level: Understand (L2) — Explain how ATAM evaluation outputs are transformed into actionable organizational documents and ongoing monitoring practices.
+    Bloom Verb: Explain
+    
+    Learning Objective: Students will be able to trace an ATAM risk finding from its identification in the evaluation session through its documentation in the risk register, its prioritization in the improvement plan, its scheduling in the architecture roadmap, and its verification through fitness function monitoring.
+    
+    Canvas layout:
+    - Six pipeline stages connected by horizontal arrows
+    - Each stage: title, description, output artifact name, and participant role responsible
+    - An example risk finding "card" flows through the pipeline (clicking "Run Example" animates it)
+    - Info panel on right shows full content for clicked stage or artifact
+    
+    Pipeline stages:
+    1. ATAM Evaluation Session
+       Output: Raw finding (sensitivity point / tradeoff / risk / non-risk)
+       Owner: Evaluation team + note-taker
+    
+    2. Risk Classification
+       Output: Classified risk with severity, probability, scenario reference
+       Owner: Evaluation leader
+    
+    3. Risk Theme Aggregation
+       Output: Risk themes with constituent risks and business impact
+       Owner: Evaluation leader + senior architect
+    
+    4. Architecture Evaluation Report
+       Output: Full report: executive summary, risk catalog, themes, recommendations
+       Owner: Evaluation team
+    
+    5. Architecture Improvement Plan
+       Output: Prioritized work items with owners and target dates
+       Owner: Architecture Review Board + project leads
+    
+    6. Ongoing Monitoring
+       Output: Fitness functions, observability alerts, periodic re-evaluation schedule
+       Owner: DevOps / SRE + governance
+    
+    Example risk finding animation:
+    "Ordering service calls inventory service synchronously; no circuit breaker present"
+    → Classified: Availability risk, Severity H, Probability M
+    → Grouped under theme: "No Systematic Resilience Strategy"
+    → Appears in report: Section 4.2, Risk AV-003
+    → Improvement plan: "Implement circuit breaker on inventory service calls, Sprint 14, Owner: Backend team lead"
+    → Monitoring: Fitness function — "Circuit breaker trip rate < 1% per 1000 requests; alert on > 5% within 60s"
+    
+    Interactive elements:
+    - Click each stage for full description
+    - "Run Example" button animates the example finding through all six stages
+    - Click any artifact name to see its template or sample content
+    
+    Color scheme: Blue for evaluation stages, Teal for documentation stages, Green for action stages, Orange for monitoring.
+    
+    Responsive: Stages stack vertically on narrow screens.
+    -->
+</body>
+</html>

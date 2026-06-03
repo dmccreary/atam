@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scenario Brainstorming and Prioritization Workshop Simulator</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Scenario Brainstorming and Prioritization Workshop Simulator</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> scenario-workshop-simulator</p>
+            <p><strong>Library:</strong> p5.js</p>
+            <p><strong>Bloom Level:</strong> Apply (L3) — Use scenario brainstorming and dot voting to produce a prioritized scenario catalog from multiple stakeholder perspectives.</p>
+            <p><strong>Learning Objective:</strong> Students will be able to simulate the ATAM scenario brainstorming and prioritization process, observe how different stakeholder voting patterns produce different priority orderings, and identify scenarios that represent coverage gaps in a catalog.</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: microsim
+    **sim-id:** scenario-workshop-simulator<br/>
+    **Library:** p5.js<br/>
+    **Status:** Specified
+    
+    Purpose: Simulate the scenario brainstorming and dot-voting prioritization process from an ATAM Phase 2 workshop, with multiple stakeholder perspectives contributing scenarios and the aggregate priority ordering emerging dynamically.
+    
+    Bloom Level: Apply (L3) — Use scenario brainstorming and dot voting to produce a prioritized scenario catalog from multiple stakeholder perspectives.
+    Bloom Verb: Use
+    
+    Learning Objective: Students will be able to simulate the ATAM scenario brainstorming and prioritization process, observe how different stakeholder voting patterns produce different priority orderings, and identify scenarios that represent coverage gaps in a catalog.
+    
+    Canvas layout:
+    - Top: Stakeholder selector panel (4 buttons: Business Owner, Security Officer, Operations Lead, Product Manager)
+    - Left: Scenario sticky-note grid (3×4 grid of generated scenarios, each showing QA type, brief description, vote count)
+    - Right: Live priority bar chart updating as votes are cast
+    - Bottom: "Vote" button (active for currently selected stakeholder), remaining votes counter, "Show Coverage" button
+    
+    Pre-populated scenarios (12, one per grid cell):
+    1. (Performance) API responds under 200ms under 500 concurrent users
+    2. (Availability) Payment service failover under 30 seconds
+    3. (Security) Credential-stuffing attack detection and blocking
+    4. (Modifiability) New payment method in under 5 developer-days
+    5. (Scalability) Handle 10× normal load during Black Friday
+    6. (Availability) Database failover with zero committed data loss
+    7. (Security) GDPR right-to-erasure within 72 hours
+    8. (Performance) Batch report generation within 2-hour SLA
+    9. (Modifiability) New product category without recommendation service change
+    10. (Scalability) Auto-scale without manual operator intervention
+    11. (Security) Admin account compromise detection within 60 seconds
+    12. (Availability) Graceful degradation when search is unavailable
+    
+    Default voting distributions (editable):
+    - Business Owner: 2 votes on #1, 2 votes on #5, 1 vote on #4
+    - Security Officer: 3 votes on #3, 2 votes on #11
+    - Operations Lead: 2 votes on #2, 2 votes on #6, 1 vote on #10
+    - Product Manager: 3 votes on #9, 2 votes on #4
+    
+    Behavior:
+    - Student selects stakeholder and clicks scenarios to allocate votes (max 5 per stakeholder)
+    - Bar chart updates in real time as votes are added
+    - "Show Coverage" button shows a coverage matrix: which QAs have scenarios, which are under-represented
+    - "Coverage Gap" warning appears if any quality attribute has zero scenarios
+    - "Add Scenario" button allows student to generate a new scenario for a gap area
+    
+    Instructional Rationale: Active simulation of the workshop process is appropriate for Apply because students need to experience the priority dynamics, not just read about them. The coverage assessment feature teaches the coverage-gap-identification skill.
+    
+    Color scheme: Sticky notes colored by QA type (matches Chapter 5 QA colors). Bar chart in gradient from high (gold) to low (gray). Warning indicators in red.
+    
+    Responsive: Grid and chart resize proportionally to container width.
+    -->
+</body>
+</html>

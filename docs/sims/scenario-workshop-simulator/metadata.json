@@ -1,0 +1,21 @@
+{
+  "title": "Scenario Brainstorming and Prioritization Workshop Simulator",
+  "description": "Students will be able to simulate the ATAM scenario brainstorming and prioritization process, observe how different stakeholder voting patterns produce different priority orderings, and identify scenarios that represent coverage gaps in a catalog.",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-03",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "scenario-workshop-simulator",
+  "library": "p5.js",
+  "bloomLevel": "Apply (L3) — Use scenario brainstorming and dot voting to produce a prioritized scenario catalog from multiple stakeholder perspectives.",
+  "bloomVerb": "Use",
+  "completion_status": "scaffold",
+  "chapter_number": 6,
+  "chapter_title": "Quality Attribute Scenarios",
+  "chapter_dir": "06-quality-attribute-scenarios"
+}

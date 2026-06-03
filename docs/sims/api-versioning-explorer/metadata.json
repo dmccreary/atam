@@ -1,0 +1,21 @@
+{
+  "title": "API Versioning and Contract-First Design Patterns",
+  "description": "Students will be able to compare API versioning strategies across dimensions of operational complexity, consumer migration burden, and modifiability cost, and select the most appropriate strategy for a given set of quality attribute priorities.",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-03",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "api-versioning-explorer",
+  "library": "p5.js",
+  "bloomLevel": "Evaluate (L5) — Assess API versioning strategies to select the approach most appropriate for a given modifiability scenario and consumer ecosystem.",
+  "bloomVerb": "Assess",
+  "completion_status": "scaffold",
+  "chapter_number": 12,
+  "chapter_title": "Distributed Systems Patterns",
+  "chapter_dir": "12-distributed-systems-patterns"
+}

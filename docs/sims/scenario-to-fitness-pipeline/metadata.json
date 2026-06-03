@@ -1,0 +1,21 @@
+{
+  "title": "Scenario Catalog to Fitness Function Pipeline",
+  "description": "Students will be able to trace a quality attribute scenario through the fitness function pipeline, identifying each transformation step and the artifact produced at each stage.",
+  "creator": "Dementia Education Project",
+  "date": "2026-06-03",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "scenario-to-fitness-pipeline",
+  "library": "p5.js",
+  "bloomLevel": "Analyze (L4) — Examine the relationship between a quality attribute scenario and its derived fitness function, tracing the architectural traceability chain.",
+  "bloomVerb": "Trace",
+  "completion_status": "scaffold",
+  "chapter_number": 6,
+  "chapter_title": "Quality Attribute Scenarios",
+  "chapter_dir": "06-quality-attribute-scenarios"
+}

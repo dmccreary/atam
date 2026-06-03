@@ -1,0 +1,14 @@
+{
+  "sim_id": "federated-learning-explorer",
+  "diagram_name": "Federated Learning Architecture",
+  "chapter_number": 18,
+  "chapter_title": "Advanced Data, Emerging AI, and Autonomous Architectures",
+  "chapter_dir": "18-advanced-data-emerging-ai",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-06-03",
+  "specification": "Type: Interactive simulation\n**sim-id:** federated-learning-explorer<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\n**Purpose:** Animated visualization of the federated learning training loop showing model distribution, local training, gradient aggregation, and model improvement across rounds.\n\n**Components:**\n- Central coordinator (hub)\n- 6 participating nodes (hospitals, devices, banks) with simulated local datasets\n- Communication channel animations\n\n**Controls:**\n- Privacy budget slider (differential privacy ε): 0.1–10 (lower = more privacy, more noise)\n- Non-IID heterogeneity slider: low–high (more heterogeneity = slower convergence)\n- Number of rounds slider: 1–100\n- Fraction of nodes per round: 0.2–1.0\n\n**Display:**\n- Animated model update flows (compression level visualization)\n- Convergence curve: global model accuracy vs. rounds\n- Privacy-utility tradeoff chart\n- \"Model leakage risk\" indicator based on privacy budget"
+}
