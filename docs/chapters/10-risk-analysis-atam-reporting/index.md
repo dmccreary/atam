@@ -108,7 +108,7 @@ The stakeholder discussion — and its documented resolution — becomes the des
 
 #### Diagram: Risk Result Type Explorer
 
-<iframe src="../../sims/atam-result-type-explorer/main.html" width="100%" height="560px" scrolling="no"></iframe>
+<iframe src="../../sims/atam-result-type-explorer/main.html" width="100%" height="558px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>ATAM Result Type Explorer</summary>
