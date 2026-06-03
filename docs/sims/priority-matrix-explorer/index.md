@@ -1,89 +1,71 @@
 ---
 title: Priority Matrix and Analytical Roadmap
-description: Students will be able to interpret the priority matrix distribution of a utility tree, evaluate whether the (H,H) scenario count and distribution is appropriate for a complete evaluation, and identify which scenarios the evaluation team should address first.
-status: scaffold
-library: p5.js
-bloom_level: Evaluate (L5) — Assess the priority distribution of a utility tree's scenarios and determine whether the analytical roadmap appropriately focuses on (H,H) scenarios.
+description: Interactive p5.js MicroSim for assessing a utility tree's scenario distribution across a 2x2 Importance-by-Difficulty priority matrix.
+image: /sims/priority-matrix-explorer/priority-matrix-explorer.png
+og:image: /sims/priority-matrix-explorer/priority-matrix-explorer.png
+twitter:image: /sims/priority-matrix-explorer/priority-matrix-explorer.png
+social:
+   cards: false
+quality_score: 0
 ---
 
 # Priority Matrix and Analytical Roadmap
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="572" width="100%" scrolling="no"></iframe>
 
-## Learning Objective
+[Run the Priority Matrix Explorer MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
+<br/>
+[Edit in the p5.js Editor](https://editor.p5js.org/)
 
-Students will be able to interpret the priority matrix distribution of a utility tree, evaluate whether the (H,H) scenario count and distribution is appropriate for a complete evaluation, and identify which scenarios the evaluation team should address first.
+## About This MicroSim
 
-- **Bloom Level:** Evaluate (L5) — Assess the priority distribution of a utility tree's scenarios and determine whether the analytical roadmap appropriately focuses on (H,H) scenarios.
-- **Bloom Verb:** Assess
-- **Library:** p5.js
+This MicroSim plots a healthcare patient-portal utility tree's leaf scenarios on a 2×2 priority matrix — **Importance** on the vertical axis, **Difficulty** on the horizontal. Each quadrant carries an analytical recommendation, and the top-right **Critical — Analyze First (H,H)** quadrant is the set an ATAM team examines first. Dots are colored by quality attribute and can be dragged between quadrants so students can judge whether a given distribution focuses the evaluation appropriately.
 
-## Preview
+## How to Use
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+1. **Click a dot** to read its full scenario and its Importance/Difficulty rating in the detail panel.
+2. **Drag a dot** to reclassify it. The **(H,H) Analyze-First** badge updates live, so you can see how reclassification changes the analytical roadmap.
+3. **Show Critical Path** links the (H,H) scenarios in evaluation order.
+4. **Filter** cycles through the quality attributes, dimming the others so you can assess one attribute's distribution at a time.
+5. **Reset** restores the original ratings.
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+## Iframe Embed Code
 
-## Specification
+You can add this MicroSim to any web page by adding this to your HTML:
 
-The full specification below is extracted from
-[Chapter 7: Utility Trees and Scenario Prioritization](../../chapters/07-utility-trees-prioritization/index.md).
-
-```text
-Type: diagram
-**sim-id:** priority-matrix-explorer<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
-
-Purpose: Interactive 2×2 priority matrix (Importance vs. Difficulty) showing a populated utility tree's scenarios distributed across quadrants, with click-to-explore and drag-to-reclassify interaction.
-
-Bloom Level: Evaluate (L5) — Assess the priority distribution of a utility tree's scenarios and determine whether the analytical roadmap appropriately focuses on (H,H) scenarios.
-Bloom Verb: Assess
-
-Learning Objective: Students will be able to interpret the priority matrix distribution of a utility tree, evaluate whether the (H,H) scenario count and distribution is appropriate for a complete evaluation, and identify which scenarios the evaluation team should address first.
-
-Canvas layout:
-- Large 2×2 matrix with axes: Importance (H/M/L, vertical, increasing upward) and Difficulty (L/M/H, horizontal, increasing rightward)
-- Quadrant labels: Top-right = "Critical — Analyze First (H,H)", Top-left = "Confirm — Verify and Document (H,L)", Bottom-right = "Watch — Address If Resources Permit (L,H)", Bottom-left = "Monitor (L,L)"
-- Scenario dots placed within appropriate quadrant, colored by quality attribute
-- "Analytical sequence" arrows showing the recommended order of attention
-- A legend panel listing each quality attribute and its color
-- Detail panel showing scenario summary when a dot is clicked
-
-Populated example scenarios (from healthcare patient portal utility tree):
-(H,H) quadrant:
-- Patient appointment search <800ms under peak load [Performance, red]
-- EHR integration failure doesn't prevent scheduling [Availability, blue]
-- PHI access only for authenticated/authorized users [Security, green]
-- Admin account compromise detected within 60 seconds [Security, green]
-- New insurance provider integration without patient-facing changes [Modifiability, purple]
-
-(H,L) quadrant:
-- Patient record retrieval <2s for large records [Performance, red]
-- Maintenance window <30 min per week [Availability, blue]
-- All PHI encrypted at rest and in transit [Security, green]
-
-(M,H) quadrant:
-- HIPAA regulation change implementable in one sprint [Modifiability, purple]
-- Authentication failover to backup IdP within 10 seconds [Availability, blue]
-
-(L,L) quadrant:
-- Nightly claim reconciliation within 4-hour window [Performance, red]
-
-Interactive elements:
-- Click any dot to see full scenario summary
-- Drag dots between quadrants to explore how reclassification changes the analytical focus
-- "Show Critical Path" button draws arrows connecting (H,H) scenarios in order of evaluation priority
-- Filter button to show only a specific quality attribute's scenarios
-- "(H,H) Count: N" badge updates when dots are moved
-
-Color scheme: Red for Performance, Blue for Availability, Green for Security, Purple for Modifiability, Teal for Scalability. Quadrant backgrounds in distinct light tints.
-
-Responsive: Matrix scales proportionally to container width.
+```html
+<iframe src="https://dmccreary.github.io/atam/sims/priority-matrix-explorer/main.html"
+        width="100%"
+        scrolling="no"></iframe>
 ```
 
-## Related Resources
+## Lesson Plan
 
-- [Chapter 7: Utility Trees and Scenario Prioritization](../../chapters/07-utility-trees-prioritization/index.md)
+### Grade Level
+Undergraduate / Professional
+
+### Duration
+15-20 minutes
+
+### Prerequisites
+Familiarity with utility trees and the (Importance, Difficulty) rating of leaf scenarios.
+
+### Bloom's Taxonomy Level
+Evaluate (L5)
+
+### Learning Objective
+Students will be able to interpret the priority-matrix distribution of a utility tree, evaluate whether the (H,H) scenario count and distribution is appropriate for a complete evaluation, and identify which scenarios the team should analyze first.
+
+### Activities
+
+1. **Read the distribution** (5 min): Students count the (H,H) scenarios and name the quality attributes that dominate the critical quadrant.
+2. **Stress test** (5 min): Students drag a borderline scenario across the Importance line and discuss how an over-full (H,H) quadrant dilutes a fixed analysis budget.
+3. **Roadmap** (5 min): Using Show Critical Path, students propose the order in which the team should analyze the critical scenarios and justify it.
+
+### Assessment
+Ask students whether a utility tree with twelve (H,H) scenarios and a one-day evaluation is well-formed, and to use the matrix to argue for re-rating some scenarios.
+
+## References
+
+1. Bass, L., Clements, P., & Kazman, R. (2021). *Software Architecture in Practice* (4th ed.). Addison-Wesley.
+2. Kazman, R., Klein, M., & Clements, P. (2000). *ATAM: Method for Architecture Evaluation* (CMU/SEI-2000-TR-004).

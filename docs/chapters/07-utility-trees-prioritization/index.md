@@ -313,7 +313,7 @@ When validation reveals gaps, the evaluation team uses targeted prompts to fill 
 
 #### Diagram: Priority Matrix and Analytical Roadmap
 
-<iframe src="../../sims/priority-matrix-explorer/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/priority-matrix-explorer/main.html" width="100%" height="572px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Priority Matrix and Analytical Roadmap</summary>
