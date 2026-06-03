@@ -3,134 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Risk Register and Theme Aggregation</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Risk Register and Theme Aggregation using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="risk-register-explorer.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Risk Register and Theme Aggregation</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> risk-register-explorer</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Evaluate (L5) — Assess a risk register to prioritize mitigation efforts, identify high-severity risk themes, and determine which architectural improvements would have the greatest risk-reduction impact.</p>
-            <p><strong>Learning Objective:</strong> Students will be able to interpret a populated risk register, identify the highest-priority risk themes, and recommend which architectural improvements would address the most severe risks most efficiently.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: diagram
-    **sim-id:** risk-register-explorer<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    Purpose: Interactive risk register visualization showing individual risks organized by quality attribute and severity, with theme aggregation — clicking a theme reveals the constituent risks, and clicking a risk shows its full documentation.
-    
-    Bloom Level: Evaluate (L5) — Assess a risk register to prioritize mitigation efforts, identify high-severity risk themes, and determine which architectural improvements would have the greatest risk-reduction impact.
-    Bloom Verb: Assess
-    
-    Learning Objective: Students will be able to interpret a populated risk register, identify the highest-priority risk themes, and recommend which architectural improvements would address the most severe risks most efficiently.
-    
-    Canvas layout:
-    - Left panel: Risk theme cards (4-5 themes) with theme name, affected QAs, risk count, and business impact rating (H/M/L)
-    - Center: Expandable risk tree — clicking a theme expands its constituent individual risks; each risk card shows QA, severity (H/M/L), probability (H/M/L), and scenario reference
-    - Right panel: Full risk detail when a risk item is clicked — decision, evidence, mechanism, severity, probability, mitigation options
-    - Top bar: Filter controls — filter by QA, severity, probability, theme
-    - Bottom: Summary stats — total risks by type (Sensitivity Points, Tradeoffs, Risks, Non-Risks) and by theme
-    
-    Example risk register (healthcare patient portal):
-    Theme 1: "No Systematic Resilience Strategy for External Dependencies"
-    - Risk: No circuit breaker on EHR integration [Availability, H, M]
-    - Risk: Synchronous payment call blocks checkout on payment timeout [Availability, H, H]
-    - Risk: Authentication service has no fallback for IdP unavailability [Availability, H, M]
-    
-    Theme 2: "Insufficient Load Testing for Peak Season"
-    - Risk: Search service untested at 3× normal load [Performance, H, H]
-    - Risk: Database connection pool sized for average, not peak, concurrency [Performance, H, M]
-    
-    Theme 3: "PHI Access Control Coverage Gaps"
-    - Risk: Bulk export API bypasses per-field access control [Security, H, H]
-    - Risk: Admin audit log not capturing indirect PHI access via joins [Security, M, H]
-    
-    Non-Risks: 6 items (well-addressed availability and performance scenarios)
-    
-    Interactive elements:
-    - Click any theme to expand/collapse its constituent risks
-    - Click any risk card to see full documentation in right panel
-    - "Sort by Severity × Probability" button reorders risks by combined priority score
-    - "Show Mitigation Plan" toggle shows recommended mitigations overlaid on risk cards
-    - "Generate Theme Summary" button produces a formatted theme summary paragraph for each theme
-    
-    Color scheme: Red for High severity, Orange for Medium, Yellow for Low. Themes in dark gold headers. Non-risks in green.
-    
-    Responsive: Tree layout reflows to a flat list on narrow screens.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>
