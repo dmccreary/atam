@@ -1,0 +1,3749 @@
+{
+  "metadata": {
+    "title": "Architecture Tradeoff Analysis Method (ATAM)",
+    "description": "A comprehensive learning graph for the CMU SEI Architecture Tradeoff Analysis Method, covering software architecture evaluation fundamentals, ATAM process and facilitation, stakeholder and business analysis, quality attributes and scenarios, utility trees, architectural tactics and patterns, risk analysis, distributed and cloud-native systems, security, performance, and AI/emerging systems.",
+    "creator": "Dan McCreary",
+    "date": "2026-06-02",
+    "version": "1.0",
+    "format": "Learning Graph JSON v1.0",
+    "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+    "license": "CC BY-NC-SA 4.0 DEED"
+  },
+  "groups": {
+    "FOUND": {
+      "classifierName": "Foundation Concepts",
+      "color": "SteelBlue",
+      "font": {
+        "color": "white"
+      }
+    },
+    "PROC": {
+      "classifierName": "ATAM Process and Facilitation",
+      "color": "DarkSlateBlue",
+      "font": {
+        "color": "white"
+      }
+    },
+    "STKE": {
+      "classifierName": "Stakeholder and Business Analysis",
+      "color": "DarkGoldenrod",
+      "font": {
+        "color": "white"
+      }
+    },
+    "QUAL": {
+      "classifierName": "Quality Attributes",
+      "color": "Gold",
+      "font": {
+        "color": "black"
+      }
+    },
+    "SCEN": {
+      "classifierName": "Scenarios and Utility Trees",
+      "color": "LimeGreen",
+      "font": {
+        "color": "black"
+      }
+    },
+    "TACT": {
+      "classifierName": "Architectural Tactics and Patterns",
+      "color": "DarkGreen",
+      "font": {
+        "color": "white"
+      }
+    },
+    "RISK": {
+      "classifierName": "Sensitivity, Tradeoffs, and Risk",
+      "color": "Crimson",
+      "font": {
+        "color": "white"
+      }
+    },
+    "DIST": {
+      "classifierName": "Distributed Systems Architecture",
+      "color": "Teal",
+      "font": {
+        "color": "white"
+      }
+    },
+    "CLOU": {
+      "classifierName": "Cloud-Native Architecture",
+      "color": "DodgerBlue",
+      "font": {
+        "color": "white"
+      }
+    },
+    "SECP": {
+      "classifierName": "Security Architecture",
+      "color": "DarkRed",
+      "font": {
+        "color": "white"
+      }
+    },
+    "PERF": {
+      "classifierName": "Performance and Observability",
+      "color": "LightSkyBlue",
+      "font": {
+        "color": "black"
+      }
+    },
+    "AIEM": {
+      "classifierName": "AI and Emerging Systems",
+      "color": "Orange",
+      "font": {
+        "color": "black"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "label": "Software Architecture Definition",
+      "group": "FOUND",
+      "shape": "box"
+    },
+    {
+      "id": 2,
+      "label": "Architectural Component",
+      "group": "FOUND"
+    },
+    {
+      "id": 3,
+      "label": "Architectural Connector",
+      "group": "FOUND"
+    },
+    {
+      "id": 4,
+      "label": "Architectural Style",
+      "group": "FOUND",
+      "shape": "box"
+    },
+    {
+      "id": 5,
+      "label": "Architecture View",
+      "group": "FOUND"
+    },
+    {
+      "id": 6,
+      "label": "Architecture Viewpoint",
+      "group": "FOUND"
+    },
+    {
+      "id": 7,
+      "label": "Architecture Documentation",
+      "group": "FOUND"
+    },
+    {
+      "id": 8,
+      "label": "Architectural Decision",
+      "group": "FOUND"
+    },
+    {
+      "id": 9,
+      "label": "Architecture Evaluation",
+      "group": "FOUND"
+    },
+    {
+      "id": 10,
+      "label": "Architecture-Centric Development",
+      "group": "FOUND"
+    },
+    {
+      "id": 11,
+      "label": "Cost of Architectural Mistakes",
+      "group": "FOUND"
+    },
+    {
+      "id": 12,
+      "label": "Architecture Quality Goals",
+      "group": "FOUND"
+    },
+    {
+      "id": 13,
+      "label": "Technical Debt",
+      "group": "FOUND",
+      "shape": "box"
+    },
+    {
+      "id": 14,
+      "label": "Architecture Conformance",
+      "group": "FOUND"
+    },
+    {
+      "id": 15,
+      "label": "Reference Architecture",
+      "group": "FOUND"
+    },
+    {
+      "id": 16,
+      "label": "Software Quality Definition",
+      "group": "FOUND",
+      "shape": "box"
+    },
+    {
+      "id": 17,
+      "label": "Quality Model",
+      "group": "FOUND"
+    },
+    {
+      "id": 18,
+      "label": "Architecture Review Board",
+      "group": "FOUND"
+    },
+    {
+      "id": 19,
+      "label": "Architecture Principles",
+      "group": "FOUND"
+    },
+    {
+      "id": 20,
+      "label": "Architectural Constraint",
+      "group": "FOUND"
+    },
+    {
+      "id": 21,
+      "label": "Architectural Concern",
+      "group": "FOUND"
+    },
+    {
+      "id": 22,
+      "label": "Architectural Driver",
+      "group": "FOUND"
+    },
+    {
+      "id": 23,
+      "label": "Architecture Description Lang",
+      "group": "FOUND"
+    },
+    {
+      "id": 24,
+      "label": "Architecture vs Design Scope",
+      "group": "FOUND"
+    },
+    {
+      "id": 25,
+      "label": "Separation of Concerns",
+      "group": "FOUND",
+      "shape": "box"
+    },
+    {
+      "id": 26,
+      "label": "Modular Decomposition",
+      "group": "FOUND",
+      "shape": "box"
+    },
+    {
+      "id": 27,
+      "label": "Abstraction in Architecture",
+      "group": "FOUND"
+    },
+    {
+      "id": 28,
+      "label": "System Context Diagram",
+      "group": "FOUND"
+    },
+    {
+      "id": 29,
+      "label": "Architecture Lifecycle",
+      "group": "FOUND"
+    },
+    {
+      "id": 30,
+      "label": "ATAM Definition",
+      "group": "PROC"
+    },
+    {
+      "id": 31,
+      "label": "ATAM Origins at CMU SEI",
+      "group": "PROC"
+    },
+    {
+      "id": 32,
+      "label": "ATAM Goals and Principles",
+      "group": "PROC"
+    },
+    {
+      "id": 33,
+      "label": "ATAM Phase 1",
+      "group": "PROC"
+    },
+    {
+      "id": 34,
+      "label": "ATAM Phase 2",
+      "group": "PROC"
+    },
+    {
+      "id": 35,
+      "label": "Evaluation Team Composition",
+      "group": "PROC"
+    },
+    {
+      "id": 36,
+      "label": "Evaluation Leader Role",
+      "group": "PROC"
+    },
+    {
+      "id": 37,
+      "label": "Architecture Owner Role",
+      "group": "PROC"
+    },
+    {
+      "id": 38,
+      "label": "Note-Taker Role",
+      "group": "PROC"
+    },
+    {
+      "id": 39,
+      "label": "Stakeholder Role in ATAM",
+      "group": "PROC"
+    },
+    {
+      "id": 40,
+      "label": "ATAM Phase 1 Activities",
+      "group": "PROC"
+    },
+    {
+      "id": 41,
+      "label": "ATAM Phase 2 Activities",
+      "group": "PROC"
+    },
+    {
+      "id": 42,
+      "label": "ATAM Scripted Presentations",
+      "group": "PROC"
+    },
+    {
+      "id": 43,
+      "label": "ATAM Outputs Summary",
+      "group": "PROC"
+    },
+    {
+      "id": 44,
+      "label": "Mini-ATAM",
+      "group": "PROC"
+    },
+    {
+      "id": 45,
+      "label": "ATAM vs SAAM Comparison",
+      "group": "PROC"
+    },
+    {
+      "id": 46,
+      "label": "SAAM Method",
+      "group": "PROC"
+    },
+    {
+      "id": 47,
+      "label": "ARID Method",
+      "group": "PROC"
+    },
+    {
+      "id": 48,
+      "label": "Lightweight Architecture Eval",
+      "group": "PROC"
+    },
+    {
+      "id": 49,
+      "label": "Architecture Review Methods",
+      "group": "PROC"
+    },
+    {
+      "id": 50,
+      "label": "ATAM Preparation Phase",
+      "group": "PROC"
+    },
+    {
+      "id": 51,
+      "label": "Architecture Evaluation Report",
+      "group": "PROC"
+    },
+    {
+      "id": 52,
+      "label": "ATAM Consensus Building",
+      "group": "PROC"
+    },
+    {
+      "id": 53,
+      "label": "ATAM Facilitation Techniques",
+      "group": "PROC"
+    },
+    {
+      "id": 54,
+      "label": "Evaluation Planning Document",
+      "group": "PROC"
+    },
+    {
+      "id": 55,
+      "label": "ATAM Team Formation",
+      "group": "PROC"
+    },
+    {
+      "id": 56,
+      "label": "Post-Evaluation Review",
+      "group": "PROC"
+    },
+    {
+      "id": 57,
+      "label": "Architecture Briefing Format",
+      "group": "PROC"
+    },
+    {
+      "id": 58,
+      "label": "Scripted Architecture Briefing",
+      "group": "PROC"
+    },
+    {
+      "id": 59,
+      "label": "Business Goal",
+      "group": "STKE",
+      "shape": "box"
+    },
+    {
+      "id": 60,
+      "label": "Business Driver",
+      "group": "STKE"
+    },
+    {
+      "id": 61,
+      "label": "Mission Statement",
+      "group": "STKE"
+    },
+    {
+      "id": 62,
+      "label": "Strategy Alignment",
+      "group": "STKE"
+    },
+    {
+      "id": 63,
+      "label": "Stakeholder Identification",
+      "group": "STKE"
+    },
+    {
+      "id": 64,
+      "label": "Stakeholder Analysis",
+      "group": "STKE"
+    },
+    {
+      "id": 65,
+      "label": "Stakeholder Concerns",
+      "group": "STKE"
+    },
+    {
+      "id": 66,
+      "label": "Stakeholder Workshop",
+      "group": "STKE"
+    },
+    {
+      "id": 67,
+      "label": "Stakeholder Engagement",
+      "group": "STKE"
+    },
+    {
+      "id": 68,
+      "label": "Technical Stakeholder",
+      "group": "STKE"
+    },
+    {
+      "id": 69,
+      "label": "Business Stakeholder",
+      "group": "STKE"
+    },
+    {
+      "id": 70,
+      "label": "Executive Sponsor Role",
+      "group": "STKE"
+    },
+    {
+      "id": 71,
+      "label": "Business-Architecture Alignment",
+      "group": "STKE"
+    },
+    {
+      "id": 72,
+      "label": "Organizational Context",
+      "group": "STKE"
+    },
+    {
+      "id": 73,
+      "label": "Competing Stakeholder Priorities",
+      "group": "STKE"
+    },
+    {
+      "id": 74,
+      "label": "Stakeholder Influence Analysis",
+      "group": "STKE"
+    },
+    {
+      "id": 75,
+      "label": "Stakeholder Communication",
+      "group": "STKE"
+    },
+    {
+      "id": 76,
+      "label": "Executive Briefing Techniques",
+      "group": "STKE"
+    },
+    {
+      "id": 77,
+      "label": "Decision-Making Authority",
+      "group": "STKE"
+    },
+    {
+      "id": 78,
+      "label": "Architecture Business Case",
+      "group": "STKE"
+    },
+    {
+      "id": 79,
+      "label": "ROI of Architecture Evaluation",
+      "group": "STKE"
+    },
+    {
+      "id": 80,
+      "label": "Stakeholder Buy-In Strategies",
+      "group": "STKE"
+    },
+    {
+      "id": 81,
+      "label": "Architecture Vision Document",
+      "group": "STKE"
+    },
+    {
+      "id": 82,
+      "label": "Architecture Roadmap",
+      "group": "STKE"
+    },
+    {
+      "id": 83,
+      "label": "Quality Attribute Definition",
+      "group": "QUAL"
+    },
+    {
+      "id": 84,
+      "label": "Performance Quality Attribute",
+      "group": "QUAL"
+    },
+    {
+      "id": 85,
+      "label": "Availability Quality Attribute",
+      "group": "QUAL"
+    },
+    {
+      "id": 86,
+      "label": "Security Quality Attribute",
+      "group": "QUAL"
+    },
+    {
+      "id": 87,
+      "label": "Modifiability Quality Attribute",
+      "group": "QUAL"
+    },
+    {
+      "id": 88,
+      "label": "Interoperability Quality Attribute",
+      "group": "QUAL"
+    },
+    {
+      "id": 89,
+      "label": "Scalability Quality Attribute",
+      "group": "QUAL"
+    },
+    {
+      "id": 90,
+      "label": "Reliability Quality Attribute",
+      "group": "QUAL"
+    },
+    {
+      "id": 91,
+      "label": "Usability Quality Attribute",
+      "group": "QUAL"
+    },
+    {
+      "id": 92,
+      "label": "Testability Quality Attribute",
+      "group": "QUAL"
+    },
+    {
+      "id": 93,
+      "label": "Deployability Quality Attribute",
+      "group": "QUAL"
+    },
+    {
+      "id": 94,
+      "label": "Portability Quality Attribute",
+      "group": "QUAL"
+    },
+    {
+      "id": 95,
+      "label": "Safety Quality Attribute",
+      "group": "QUAL"
+    },
+    {
+      "id": 96,
+      "label": "Maintainability Quality Attr",
+      "group": "QUAL"
+    },
+    {
+      "id": 97,
+      "label": "Energy Efficiency Quality Attr",
+      "group": "QUAL"
+    },
+    {
+      "id": 98,
+      "label": "Quality Attribute Taxonomy",
+      "group": "QUAL"
+    },
+    {
+      "id": 99,
+      "label": "Quality Attribute Conflict",
+      "group": "QUAL"
+    },
+    {
+      "id": 100,
+      "label": "Quality Attribute Prioritization",
+      "group": "QUAL"
+    },
+    {
+      "id": 101,
+      "label": "Functional vs Quality Req",
+      "group": "QUAL"
+    },
+    {
+      "id": 102,
+      "label": "Quality Attribute Requirement",
+      "group": "QUAL"
+    },
+    {
+      "id": 103,
+      "label": "Quality Attribute Tactic Catalog",
+      "group": "QUAL"
+    },
+    {
+      "id": 104,
+      "label": "Architectural Stimulus Response",
+      "group": "QUAL"
+    },
+    {
+      "id": 105,
+      "label": "Quality Attribute Workshop",
+      "group": "QUAL"
+    },
+    {
+      "id": 106,
+      "label": "Quality Attribute Scenario",
+      "group": "SCEN"
+    },
+    {
+      "id": 107,
+      "label": "Scenario Stimulus Source",
+      "group": "SCEN"
+    },
+    {
+      "id": 108,
+      "label": "Scenario Stimulus",
+      "group": "SCEN"
+    },
+    {
+      "id": 109,
+      "label": "Scenario Environment",
+      "group": "SCEN"
+    },
+    {
+      "id": 110,
+      "label": "Scenario Artifact",
+      "group": "SCEN"
+    },
+    {
+      "id": 111,
+      "label": "Scenario Response",
+      "group": "SCEN"
+    },
+    {
+      "id": 112,
+      "label": "Scenario Response Measure",
+      "group": "SCEN"
+    },
+    {
+      "id": 113,
+      "label": "General Scenario",
+      "group": "SCEN"
+    },
+    {
+      "id": 114,
+      "label": "Concrete Scenario",
+      "group": "SCEN"
+    },
+    {
+      "id": 115,
+      "label": "Scenario Brainstorming",
+      "group": "SCEN"
+    },
+    {
+      "id": 116,
+      "label": "Scenario Prioritization",
+      "group": "SCEN"
+    },
+    {
+      "id": 117,
+      "label": "Scenario Coverage Assessment",
+      "group": "SCEN"
+    },
+    {
+      "id": 118,
+      "label": "Scenario Catalog",
+      "group": "SCEN"
+    },
+    {
+      "id": 119,
+      "label": "Performance Scenario",
+      "group": "SCEN"
+    },
+    {
+      "id": 120,
+      "label": "Availability Scenario",
+      "group": "SCEN"
+    },
+    {
+      "id": 121,
+      "label": "Security Scenario",
+      "group": "SCEN"
+    },
+    {
+      "id": 122,
+      "label": "Modifiability Scenario",
+      "group": "SCEN"
+    },
+    {
+      "id": 123,
+      "label": "Scalability Scenario",
+      "group": "SCEN"
+    },
+    {
+      "id": 124,
+      "label": "Utility Tree",
+      "group": "SCEN"
+    },
+    {
+      "id": 125,
+      "label": "Utility Tree Root",
+      "group": "SCEN"
+    },
+    {
+      "id": 126,
+      "label": "Quality Attribute Branch",
+      "group": "SCEN"
+    },
+    {
+      "id": 127,
+      "label": "Sub-Attribute Node",
+      "group": "SCEN"
+    },
+    {
+      "id": 128,
+      "label": "Leaf-Level Scenario",
+      "group": "SCEN"
+    },
+    {
+      "id": 129,
+      "label": "Importance Rating",
+      "group": "SCEN"
+    },
+    {
+      "id": 130,
+      "label": "Difficulty Rating",
+      "group": "SCEN"
+    },
+    {
+      "id": 131,
+      "label": "HH Scenario Priority",
+      "group": "SCEN"
+    },
+    {
+      "id": 132,
+      "label": "Utility Tree Construction",
+      "group": "SCEN"
+    },
+    {
+      "id": 133,
+      "label": "Utility Tree Workshop",
+      "group": "SCEN"
+    },
+    {
+      "id": 134,
+      "label": "Scenario Importance vs Effort",
+      "group": "SCEN"
+    },
+    {
+      "id": 135,
+      "label": "Priority Negotiation",
+      "group": "SCEN"
+    },
+    {
+      "id": 136,
+      "label": "Utility Tree Validation",
+      "group": "SCEN"
+    },
+    {
+      "id": 137,
+      "label": "Architectural Pattern",
+      "group": "TACT"
+    },
+    {
+      "id": 138,
+      "label": "Architectural Tactic",
+      "group": "TACT"
+    },
+    {
+      "id": 139,
+      "label": "Layered Architecture Pattern",
+      "group": "TACT"
+    },
+    {
+      "id": 140,
+      "label": "Client-Server Architecture",
+      "group": "TACT"
+    },
+    {
+      "id": 141,
+      "label": "Service-Oriented Architecture",
+      "group": "TACT"
+    },
+    {
+      "id": 142,
+      "label": "Microservices Architecture",
+      "group": "TACT"
+    },
+    {
+      "id": 143,
+      "label": "Event-Driven Architecture",
+      "group": "TACT"
+    },
+    {
+      "id": 144,
+      "label": "Pipe-and-Filter Architecture",
+      "group": "TACT"
+    },
+    {
+      "id": 145,
+      "label": "Broker Architecture Pattern",
+      "group": "TACT"
+    },
+    {
+      "id": 146,
+      "label": "MVC Architecture Pattern",
+      "group": "TACT"
+    },
+    {
+      "id": 147,
+      "label": "CQRS Pattern",
+      "group": "TACT"
+    },
+    {
+      "id": 148,
+      "label": "Saga Transaction Pattern",
+      "group": "TACT"
+    },
+    {
+      "id": 149,
+      "label": "Strangler Fig Pattern",
+      "group": "TACT"
+    },
+    {
+      "id": 150,
+      "label": "Event Sourcing Pattern",
+      "group": "TACT"
+    },
+    {
+      "id": 151,
+      "label": "Domain-Driven Design",
+      "group": "TACT"
+    },
+    {
+      "id": 152,
+      "label": "Bounded Context",
+      "group": "TACT"
+    },
+    {
+      "id": 153,
+      "label": "Hexagonal Architecture",
+      "group": "TACT"
+    },
+    {
+      "id": 154,
+      "label": "Clean Architecture Pattern",
+      "group": "TACT"
+    },
+    {
+      "id": 155,
+      "label": "REST Architecture Style",
+      "group": "TACT"
+    },
+    {
+      "id": 156,
+      "label": "gRPC Communication Pattern",
+      "group": "TACT"
+    },
+    {
+      "id": 157,
+      "label": "GraphQL Architecture",
+      "group": "TACT"
+    },
+    {
+      "id": 158,
+      "label": "WebSocket Architecture",
+      "group": "TACT"
+    },
+    {
+      "id": 159,
+      "label": "Performance Tactic",
+      "group": "TACT"
+    },
+    {
+      "id": 160,
+      "label": "Availability Tactic",
+      "group": "TACT"
+    },
+    {
+      "id": 161,
+      "label": "Security Tactic",
+      "group": "TACT"
+    },
+    {
+      "id": 162,
+      "label": "Modifiability Tactic",
+      "group": "TACT"
+    },
+    {
+      "id": 163,
+      "label": "Caching Tactic",
+      "group": "TACT"
+    },
+    {
+      "id": 164,
+      "label": "Load Balancing Tactic",
+      "group": "TACT"
+    },
+    {
+      "id": 165,
+      "label": "Redundancy Tactic",
+      "group": "TACT"
+    },
+    {
+      "id": 166,
+      "label": "Replication Tactic",
+      "group": "TACT"
+    },
+    {
+      "id": 167,
+      "label": "Fault Tolerance Tactic",
+      "group": "TACT"
+    },
+    {
+      "id": 168,
+      "label": "Circuit Breaker Pattern",
+      "group": "TACT"
+    },
+    {
+      "id": 169,
+      "label": "Retry Pattern",
+      "group": "TACT"
+    },
+    {
+      "id": 170,
+      "label": "Bulkhead Pattern",
+      "group": "TACT"
+    },
+    {
+      "id": 171,
+      "label": "Tactic Interaction",
+      "group": "TACT"
+    },
+    {
+      "id": 172,
+      "label": "Architecture Decision Record",
+      "group": "TACT"
+    },
+    {
+      "id": 173,
+      "label": "Component Decomposition",
+      "group": "TACT"
+    },
+    {
+      "id": 174,
+      "label": "Interface Definition",
+      "group": "TACT"
+    },
+    {
+      "id": 175,
+      "label": "Module Coupling",
+      "group": "TACT",
+      "shape": "box"
+    },
+    {
+      "id": 176,
+      "label": "Module Cohesion",
+      "group": "TACT",
+      "shape": "box"
+    },
+    {
+      "id": 177,
+      "label": "Information Hiding Principle",
+      "group": "TACT"
+    },
+    {
+      "id": 178,
+      "label": "Encapsulation in Architecture",
+      "group": "TACT"
+    },
+    {
+      "id": 179,
+      "label": "Dependency Injection Pattern",
+      "group": "TACT"
+    },
+    {
+      "id": 180,
+      "label": "Plugin Architecture Pattern",
+      "group": "TACT"
+    },
+    {
+      "id": 181,
+      "label": "Sensitivity Point",
+      "group": "RISK",
+      "shape": "box"
+    },
+    {
+      "id": 182,
+      "label": "Tradeoff Point",
+      "group": "RISK"
+    },
+    {
+      "id": 183,
+      "label": "Architectural Risk",
+      "group": "RISK",
+      "shape": "box"
+    },
+    {
+      "id": 184,
+      "label": "Non-Risk",
+      "group": "RISK"
+    },
+    {
+      "id": 185,
+      "label": "Risk Theme",
+      "group": "RISK"
+    },
+    {
+      "id": 186,
+      "label": "Risk Identification",
+      "group": "RISK"
+    },
+    {
+      "id": 187,
+      "label": "Risk Classification",
+      "group": "RISK"
+    },
+    {
+      "id": 188,
+      "label": "Risk Severity Assessment",
+      "group": "RISK"
+    },
+    {
+      "id": 189,
+      "label": "Risk Probability Assessment",
+      "group": "RISK"
+    },
+    {
+      "id": 190,
+      "label": "Risk Register",
+      "group": "RISK"
+    },
+    {
+      "id": 191,
+      "label": "Risk Communication",
+      "group": "RISK"
+    },
+    {
+      "id": 192,
+      "label": "Risk-Driven Architecture",
+      "group": "RISK"
+    },
+    {
+      "id": 193,
+      "label": "Architectural Debt",
+      "group": "RISK"
+    },
+    {
+      "id": 194,
+      "label": "Risk Mitigation Strategy",
+      "group": "RISK"
+    },
+    {
+      "id": 195,
+      "label": "Risk Monitoring",
+      "group": "RISK"
+    },
+    {
+      "id": 196,
+      "label": "Conflicting Quality Attributes",
+      "group": "RISK"
+    },
+    {
+      "id": 197,
+      "label": "Design Rationale",
+      "group": "RISK"
+    },
+    {
+      "id": 198,
+      "label": "Architecture Decision Impact",
+      "group": "RISK"
+    },
+    {
+      "id": 199,
+      "label": "Sensitivity Analysis",
+      "group": "RISK"
+    },
+    {
+      "id": 200,
+      "label": "Risk Theme Documentation",
+      "group": "RISK"
+    },
+    {
+      "id": 201,
+      "label": "Distributed System Architecture",
+      "group": "DIST"
+    },
+    {
+      "id": 202,
+      "label": "Service Decomposition",
+      "group": "DIST"
+    },
+    {
+      "id": 203,
+      "label": "API Gateway Pattern",
+      "group": "DIST"
+    },
+    {
+      "id": 204,
+      "label": "Service Mesh Architecture",
+      "group": "DIST"
+    },
+    {
+      "id": 205,
+      "label": "Event-Driven Messaging",
+      "group": "DIST"
+    },
+    {
+      "id": 206,
+      "label": "Message Queue Architecture",
+      "group": "DIST"
+    },
+    {
+      "id": 207,
+      "label": "Publish-Subscribe Pattern",
+      "group": "DIST"
+    },
+    {
+      "id": 208,
+      "label": "Service Registry",
+      "group": "DIST"
+    },
+    {
+      "id": 209,
+      "label": "Service Discovery",
+      "group": "DIST"
+    },
+    {
+      "id": 210,
+      "label": "Distributed Transaction",
+      "group": "DIST"
+    },
+    {
+      "id": 211,
+      "label": "CAP Theorem",
+      "group": "DIST"
+    },
+    {
+      "id": 212,
+      "label": "Eventual Consistency",
+      "group": "DIST"
+    },
+    {
+      "id": 213,
+      "label": "Two-Phase Commit",
+      "group": "DIST"
+    },
+    {
+      "id": 214,
+      "label": "Distributed Tracing",
+      "group": "DIST"
+    },
+    {
+      "id": 215,
+      "label": "Service Contract",
+      "group": "DIST"
+    },
+    {
+      "id": 216,
+      "label": "API Versioning",
+      "group": "DIST"
+    },
+    {
+      "id": 217,
+      "label": "Backward Compatibility",
+      "group": "DIST"
+    },
+    {
+      "id": 218,
+      "label": "Integration Patterns",
+      "group": "DIST"
+    },
+    {
+      "id": 219,
+      "label": "Sidecar Pattern",
+      "group": "DIST"
+    },
+    {
+      "id": 220,
+      "label": "Ambassador Pattern",
+      "group": "DIST"
+    },
+    {
+      "id": 221,
+      "label": "Database per Service Pattern",
+      "group": "DIST"
+    },
+    {
+      "id": 222,
+      "label": "Shared Database Pattern",
+      "group": "DIST"
+    },
+    {
+      "id": 223,
+      "label": "Synchronous vs Async Comm",
+      "group": "DIST"
+    },
+    {
+      "id": 224,
+      "label": "gRPC vs REST Comparison",
+      "group": "DIST"
+    },
+    {
+      "id": 225,
+      "label": "Idempotency in Services",
+      "group": "DIST"
+    },
+    {
+      "id": 226,
+      "label": "Cloud-Native Architecture",
+      "group": "CLOU"
+    },
+    {
+      "id": 227,
+      "label": "Container Architecture",
+      "group": "CLOU"
+    },
+    {
+      "id": 228,
+      "label": "Docker Containerization",
+      "group": "CLOU"
+    },
+    {
+      "id": 229,
+      "label": "Kubernetes Orchestration",
+      "group": "CLOU"
+    },
+    {
+      "id": 230,
+      "label": "Serverless Architecture",
+      "group": "CLOU"
+    },
+    {
+      "id": 231,
+      "label": "Function as a Service",
+      "group": "CLOU"
+    },
+    {
+      "id": 232,
+      "label": "Infrastructure as Code",
+      "group": "CLOU"
+    },
+    {
+      "id": 233,
+      "label": "Immutable Infrastructure",
+      "group": "CLOU"
+    },
+    {
+      "id": 234,
+      "label": "Auto-Scaling Architecture",
+      "group": "CLOU"
+    },
+    {
+      "id": 235,
+      "label": "Cloud Service Models",
+      "group": "CLOU"
+    },
+    {
+      "id": 236,
+      "label": "Multi-Cloud Architecture",
+      "group": "CLOU"
+    },
+    {
+      "id": 237,
+      "label": "Hybrid Cloud Architecture",
+      "group": "CLOU"
+    },
+    {
+      "id": 238,
+      "label": "Cloud Resilience Patterns",
+      "group": "CLOU"
+    },
+    {
+      "id": 239,
+      "label": "Chaos Engineering",
+      "group": "CLOU"
+    },
+    {
+      "id": 240,
+      "label": "Blue-Green Deployment",
+      "group": "CLOU"
+    },
+    {
+      "id": 241,
+      "label": "Canary Release Strategy",
+      "group": "CLOU"
+    },
+    {
+      "id": 242,
+      "label": "Zero-Downtime Deployment",
+      "group": "CLOU"
+    },
+    {
+      "id": 243,
+      "label": "Cloud Cost Optimization",
+      "group": "CLOU"
+    },
+    {
+      "id": 244,
+      "label": "Cloud Vendor Lock-in",
+      "group": "CLOU"
+    },
+    {
+      "id": 245,
+      "label": "Elasticity in Cloud",
+      "group": "CLOU"
+    },
+    {
+      "id": 246,
+      "label": "Cloud Security Architecture",
+      "group": "CLOU"
+    },
+    {
+      "id": 247,
+      "label": "Managed Cloud Services",
+      "group": "CLOU"
+    },
+    {
+      "id": 248,
+      "label": "GitOps Architecture",
+      "group": "CLOU"
+    },
+    {
+      "id": 249,
+      "label": "Cost vs Reliability Tradeoff",
+      "group": "CLOU"
+    },
+    {
+      "id": 250,
+      "label": "Cloud Observability",
+      "group": "CLOU"
+    },
+    {
+      "id": 251,
+      "label": "Security Architecture Definition",
+      "group": "SECP"
+    },
+    {
+      "id": 252,
+      "label": "Threat Modeling",
+      "group": "SECP"
+    },
+    {
+      "id": 253,
+      "label": "STRIDE Threat Model",
+      "group": "SECP"
+    },
+    {
+      "id": 254,
+      "label": "Attack Surface Reduction",
+      "group": "SECP"
+    },
+    {
+      "id": 255,
+      "label": "Defense in Depth",
+      "group": "SECP"
+    },
+    {
+      "id": 256,
+      "label": "Zero Trust Architecture",
+      "group": "SECP"
+    },
+    {
+      "id": 257,
+      "label": "Authentication Architecture",
+      "group": "SECP"
+    },
+    {
+      "id": 258,
+      "label": "Authorization Architecture",
+      "group": "SECP"
+    },
+    {
+      "id": 259,
+      "label": "Encryption at Rest",
+      "group": "SECP"
+    },
+    {
+      "id": 260,
+      "label": "Encryption in Transit",
+      "group": "SECP"
+    },
+    {
+      "id": 261,
+      "label": "OAuth 2.0 Architecture",
+      "group": "SECP"
+    },
+    {
+      "id": 262,
+      "label": "API Security Design",
+      "group": "SECP"
+    },
+    {
+      "id": 263,
+      "label": "Secret Management",
+      "group": "SECP"
+    },
+    {
+      "id": 264,
+      "label": "Security Monitoring",
+      "group": "SECP"
+    },
+    {
+      "id": 265,
+      "label": "Intrusion Detection System",
+      "group": "SECP"
+    },
+    {
+      "id": 266,
+      "label": "SIEM Architecture",
+      "group": "SECP"
+    },
+    {
+      "id": 267,
+      "label": "Least Privilege Principle",
+      "group": "SECP"
+    },
+    {
+      "id": 268,
+      "label": "Security Compliance",
+      "group": "SECP"
+    },
+    {
+      "id": 269,
+      "label": "Secure Dev Lifecycle (SDLC)",
+      "group": "SECP"
+    },
+    {
+      "id": 270,
+      "label": "Penetration Testing in Arch",
+      "group": "SECP"
+    },
+    {
+      "id": 271,
+      "label": "Security Scenario Development",
+      "group": "SECP"
+    },
+    {
+      "id": 272,
+      "label": "Security Tactic Catalog",
+      "group": "SECP"
+    },
+    {
+      "id": 273,
+      "label": "Identity and Access Management",
+      "group": "SECP"
+    },
+    {
+      "id": 274,
+      "label": "Security Incident Response",
+      "group": "SECP"
+    },
+    {
+      "id": 275,
+      "label": "Privacy by Design",
+      "group": "SECP"
+    },
+    {
+      "id": 276,
+      "label": "Latency",
+      "group": "PERF",
+      "shape": "box"
+    },
+    {
+      "id": 277,
+      "label": "Throughput",
+      "group": "PERF",
+      "shape": "box"
+    },
+    {
+      "id": 278,
+      "label": "Response Time",
+      "group": "PERF"
+    },
+    {
+      "id": 279,
+      "label": "Performance Bottleneck",
+      "group": "PERF"
+    },
+    {
+      "id": 280,
+      "label": "Amdahl's Law",
+      "group": "PERF"
+    },
+    {
+      "id": 281,
+      "label": "Performance Profiling",
+      "group": "PERF"
+    },
+    {
+      "id": 282,
+      "label": "Load Testing",
+      "group": "PERF"
+    },
+    {
+      "id": 283,
+      "label": "Stress Testing",
+      "group": "PERF"
+    },
+    {
+      "id": 284,
+      "label": "Capacity Planning",
+      "group": "PERF"
+    },
+    {
+      "id": 285,
+      "label": "Vertical Scaling",
+      "group": "PERF"
+    },
+    {
+      "id": 286,
+      "label": "Horizontal Scaling",
+      "group": "PERF"
+    },
+    {
+      "id": 287,
+      "label": "Database Sharding",
+      "group": "PERF"
+    },
+    {
+      "id": 288,
+      "label": "Connection Pooling",
+      "group": "PERF"
+    },
+    {
+      "id": 289,
+      "label": "CDN Architecture",
+      "group": "PERF"
+    },
+    {
+      "id": 290,
+      "label": "Observability",
+      "group": "PERF"
+    },
+    {
+      "id": 291,
+      "label": "Logging Architecture",
+      "group": "PERF"
+    },
+    {
+      "id": 292,
+      "label": "Metrics Collection",
+      "group": "PERF"
+    },
+    {
+      "id": 293,
+      "label": "Health Check Pattern",
+      "group": "PERF"
+    },
+    {
+      "id": 294,
+      "label": "Service Level Objective (SLO)",
+      "group": "PERF"
+    },
+    {
+      "id": 295,
+      "label": "Service Level Indicator (SLI)",
+      "group": "PERF"
+    },
+    {
+      "id": 296,
+      "label": "Error Budget",
+      "group": "PERF"
+    },
+    {
+      "id": 297,
+      "label": "Site Reliability Engineering",
+      "group": "PERF"
+    },
+    {
+      "id": 298,
+      "label": "Mean Time to Recovery",
+      "group": "PERF"
+    },
+    {
+      "id": 299,
+      "label": "Mean Time Between Failures",
+      "group": "PERF"
+    },
+    {
+      "id": 300,
+      "label": "Availability Calculation",
+      "group": "PERF"
+    },
+    {
+      "id": 301,
+      "label": "Disaster Recovery",
+      "group": "PERF"
+    },
+    {
+      "id": 302,
+      "label": "Recovery Time Objective (RTO)",
+      "group": "PERF"
+    },
+    {
+      "id": 303,
+      "label": "Recovery Point Objective (RPO)",
+      "group": "PERF"
+    },
+    {
+      "id": 304,
+      "label": "Geographic Redundancy",
+      "group": "PERF"
+    },
+    {
+      "id": 305,
+      "label": "Active-Passive Failover",
+      "group": "PERF"
+    },
+    {
+      "id": 306,
+      "label": "AI System Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 307,
+      "label": "Machine Learning Pipeline",
+      "group": "AIEM"
+    },
+    {
+      "id": 308,
+      "label": "Model Training Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 309,
+      "label": "Model Serving Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 310,
+      "label": "Feature Store Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 311,
+      "label": "ML Model Registry",
+      "group": "AIEM"
+    },
+    {
+      "id": 312,
+      "label": "AI Latency Considerations",
+      "group": "AIEM"
+    },
+    {
+      "id": 313,
+      "label": "Non-Deterministic Behavior",
+      "group": "AIEM"
+    },
+    {
+      "id": 314,
+      "label": "Model Drift Detection",
+      "group": "AIEM"
+    },
+    {
+      "id": 315,
+      "label": "Data Pipeline Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 316,
+      "label": "Batch Processing Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 317,
+      "label": "Stream Processing Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 318,
+      "label": "LLM Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 319,
+      "label": "Prompt Engineering",
+      "group": "AIEM"
+    },
+    {
+      "id": 320,
+      "label": "RAG Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 321,
+      "label": "GraphRAG Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 322,
+      "label": "Vector Database Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 323,
+      "label": "AI Observability",
+      "group": "AIEM"
+    },
+    {
+      "id": 324,
+      "label": "AI Explainability",
+      "group": "AIEM"
+    },
+    {
+      "id": 325,
+      "label": "Responsible AI Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 326,
+      "label": "Data Mesh Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 327,
+      "label": "Data Lakehouse Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 328,
+      "label": "Lambda Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 329,
+      "label": "Kappa Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 330,
+      "label": "Space-Based Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 331,
+      "label": "AI Security Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 332,
+      "label": "AI Model Versioning",
+      "group": "AIEM"
+    },
+    {
+      "id": 333,
+      "label": "A/B Testing Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 334,
+      "label": "Online Learning Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 335,
+      "label": "Data Governance Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 336,
+      "label": "Multi-Modal AI Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 337,
+      "label": "Federated Learning",
+      "group": "AIEM"
+    },
+    {
+      "id": 338,
+      "label": "Edge AI Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 339,
+      "label": "AI Pipeline Monitoring",
+      "group": "AIEM"
+    },
+    {
+      "id": 340,
+      "label": "Autonomous System Architecture",
+      "group": "AIEM"
+    },
+    {
+      "id": 341,
+      "label": "Architecture Fitness Function",
+      "group": "FOUND"
+    },
+    {
+      "id": 342,
+      "label": "Evolutionary Architecture",
+      "group": "FOUND"
+    },
+    {
+      "id": 343,
+      "label": "Architecture Standard",
+      "group": "FOUND"
+    },
+    {
+      "id": 344,
+      "label": "Technology Radar",
+      "group": "FOUND"
+    },
+    {
+      "id": 345,
+      "label": "Architecture Debt Management",
+      "group": "RISK"
+    },
+    {
+      "id": 346,
+      "label": "Interoperability Tactic",
+      "group": "TACT"
+    },
+    {
+      "id": 347,
+      "label": "Schema Registry",
+      "group": "DIST"
+    },
+    {
+      "id": 348,
+      "label": "Message Transformation",
+      "group": "DIST"
+    },
+    {
+      "id": 349,
+      "label": "Contract-First Design",
+      "group": "DIST"
+    },
+    {
+      "id": 350,
+      "label": "Architecture Improvement Plan",
+      "group": "RISK"
+    }
+  ],
+  "edges": [
+    {
+      "from": 2,
+      "to": 1
+    },
+    {
+      "from": 3,
+      "to": 1
+    },
+    {
+      "from": 5,
+      "to": 1
+    },
+    {
+      "from": 5,
+      "to": 4
+    },
+    {
+      "from": 6,
+      "to": 5
+    },
+    {
+      "from": 7,
+      "to": 1
+    },
+    {
+      "from": 7,
+      "to": 5
+    },
+    {
+      "from": 7,
+      "to": 6
+    },
+    {
+      "from": 8,
+      "to": 1
+    },
+    {
+      "from": 9,
+      "to": 1
+    },
+    {
+      "from": 10,
+      "to": 9
+    },
+    {
+      "from": 11,
+      "to": 9
+    },
+    {
+      "from": 11,
+      "to": 13
+    },
+    {
+      "from": 12,
+      "to": 16
+    },
+    {
+      "from": 12,
+      "to": 9
+    },
+    {
+      "from": 14,
+      "to": 1
+    },
+    {
+      "from": 14,
+      "to": 9
+    },
+    {
+      "from": 15,
+      "to": 1
+    },
+    {
+      "from": 17,
+      "to": 16
+    },
+    {
+      "from": 18,
+      "to": 9
+    },
+    {
+      "from": 19,
+      "to": 1
+    },
+    {
+      "from": 19,
+      "to": 9
+    },
+    {
+      "from": 20,
+      "to": 1
+    },
+    {
+      "from": 21,
+      "to": 1
+    },
+    {
+      "from": 22,
+      "to": 1
+    },
+    {
+      "from": 22,
+      "to": 59
+    },
+    {
+      "from": 22,
+      "to": 60
+    },
+    {
+      "from": 23,
+      "to": 1
+    },
+    {
+      "from": 23,
+      "to": 7
+    },
+    {
+      "from": 24,
+      "to": 1
+    },
+    {
+      "from": 27,
+      "to": 1
+    },
+    {
+      "from": 27,
+      "to": 25
+    },
+    {
+      "from": 28,
+      "to": 1
+    },
+    {
+      "from": 29,
+      "to": 1
+    },
+    {
+      "from": 29,
+      "to": 9
+    },
+    {
+      "from": 30,
+      "to": 9
+    },
+    {
+      "from": 31,
+      "to": 30
+    },
+    {
+      "from": 32,
+      "to": 30
+    },
+    {
+      "from": 33,
+      "to": 32
+    },
+    {
+      "from": 34,
+      "to": 32
+    },
+    {
+      "from": 35,
+      "to": 30
+    },
+    {
+      "from": 36,
+      "to": 35
+    },
+    {
+      "from": 37,
+      "to": 35
+    },
+    {
+      "from": 38,
+      "to": 35
+    },
+    {
+      "from": 39,
+      "to": 35
+    },
+    {
+      "from": 40,
+      "to": 33
+    },
+    {
+      "from": 41,
+      "to": 34
+    },
+    {
+      "from": 42,
+      "to": 40
+    },
+    {
+      "from": 42,
+      "to": 41
+    },
+    {
+      "from": 43,
+      "to": 40
+    },
+    {
+      "from": 43,
+      "to": 41
+    },
+    {
+      "from": 44,
+      "to": 32
+    },
+    {
+      "from": 45,
+      "to": 30
+    },
+    {
+      "from": 45,
+      "to": 46
+    },
+    {
+      "from": 46,
+      "to": 9
+    },
+    {
+      "from": 47,
+      "to": 9
+    },
+    {
+      "from": 48,
+      "to": 9
+    },
+    {
+      "from": 49,
+      "to": 30
+    },
+    {
+      "from": 49,
+      "to": 46
+    },
+    {
+      "from": 49,
+      "to": 47
+    },
+    {
+      "from": 50,
+      "to": 33
+    },
+    {
+      "from": 50,
+      "to": 35
+    },
+    {
+      "from": 51,
+      "to": 40
+    },
+    {
+      "from": 51,
+      "to": 41
+    },
+    {
+      "from": 51,
+      "to": 43
+    },
+    {
+      "from": 51,
+      "to": 190
+    },
+    {
+      "from": 52,
+      "to": 50
+    },
+    {
+      "from": 52,
+      "to": 39
+    },
+    {
+      "from": 52,
+      "to": 75
+    },
+    {
+      "from": 53,
+      "to": 36
+    },
+    {
+      "from": 53,
+      "to": 52
+    },
+    {
+      "from": 54,
+      "to": 50
+    },
+    {
+      "from": 55,
+      "to": 35
+    },
+    {
+      "from": 56,
+      "to": 51
+    },
+    {
+      "from": 56,
+      "to": 191
+    },
+    {
+      "from": 57,
+      "to": 42
+    },
+    {
+      "from": 58,
+      "to": 57
+    },
+    {
+      "from": 58,
+      "to": 37
+    },
+    {
+      "from": 60,
+      "to": 59
+    },
+    {
+      "from": 61,
+      "to": 59
+    },
+    {
+      "from": 62,
+      "to": 61
+    },
+    {
+      "from": 62,
+      "to": 59
+    },
+    {
+      "from": 63,
+      "to": 59
+    },
+    {
+      "from": 64,
+      "to": 63
+    },
+    {
+      "from": 65,
+      "to": 64
+    },
+    {
+      "from": 66,
+      "to": 63
+    },
+    {
+      "from": 66,
+      "to": 65
+    },
+    {
+      "from": 67,
+      "to": 66
+    },
+    {
+      "from": 68,
+      "to": 63
+    },
+    {
+      "from": 69,
+      "to": 63
+    },
+    {
+      "from": 70,
+      "to": 69
+    },
+    {
+      "from": 71,
+      "to": 59
+    },
+    {
+      "from": 71,
+      "to": 1
+    },
+    {
+      "from": 72,
+      "to": 59
+    },
+    {
+      "from": 73,
+      "to": 63
+    },
+    {
+      "from": 73,
+      "to": 65
+    },
+    {
+      "from": 74,
+      "to": 64
+    },
+    {
+      "from": 75,
+      "to": 67
+    },
+    {
+      "from": 76,
+      "to": 75
+    },
+    {
+      "from": 76,
+      "to": 70
+    },
+    {
+      "from": 77,
+      "to": 62
+    },
+    {
+      "from": 77,
+      "to": 72
+    },
+    {
+      "from": 78,
+      "to": 59
+    },
+    {
+      "from": 78,
+      "to": 71
+    },
+    {
+      "from": 79,
+      "to": 78
+    },
+    {
+      "from": 80,
+      "to": 67
+    },
+    {
+      "from": 81,
+      "to": 62
+    },
+    {
+      "from": 81,
+      "to": 1
+    },
+    {
+      "from": 82,
+      "to": 81
+    },
+    {
+      "from": 82,
+      "to": 194
+    },
+    {
+      "from": 83,
+      "to": 16
+    },
+    {
+      "from": 83,
+      "to": 17
+    },
+    {
+      "from": 84,
+      "to": 83
+    },
+    {
+      "from": 85,
+      "to": 83
+    },
+    {
+      "from": 86,
+      "to": 83
+    },
+    {
+      "from": 87,
+      "to": 83
+    },
+    {
+      "from": 88,
+      "to": 83
+    },
+    {
+      "from": 89,
+      "to": 83
+    },
+    {
+      "from": 90,
+      "to": 83
+    },
+    {
+      "from": 90,
+      "to": 85
+    },
+    {
+      "from": 91,
+      "to": 83
+    },
+    {
+      "from": 92,
+      "to": 83
+    },
+    {
+      "from": 93,
+      "to": 83
+    },
+    {
+      "from": 94,
+      "to": 83
+    },
+    {
+      "from": 95,
+      "to": 83
+    },
+    {
+      "from": 96,
+      "to": 83
+    },
+    {
+      "from": 96,
+      "to": 87
+    },
+    {
+      "from": 97,
+      "to": 83
+    },
+    {
+      "from": 98,
+      "to": 83
+    },
+    {
+      "from": 99,
+      "to": 83
+    },
+    {
+      "from": 100,
+      "to": 83
+    },
+    {
+      "from": 101,
+      "to": 83
+    },
+    {
+      "from": 102,
+      "to": 83
+    },
+    {
+      "from": 103,
+      "to": 83
+    },
+    {
+      "from": 103,
+      "to": 138
+    },
+    {
+      "from": 104,
+      "to": 83
+    },
+    {
+      "from": 104,
+      "to": 2
+    },
+    {
+      "from": 104,
+      "to": 3
+    },
+    {
+      "from": 105,
+      "to": 83
+    },
+    {
+      "from": 105,
+      "to": 66
+    },
+    {
+      "from": 106,
+      "to": 83
+    },
+    {
+      "from": 106,
+      "to": 102
+    },
+    {
+      "from": 107,
+      "to": 106
+    },
+    {
+      "from": 108,
+      "to": 106
+    },
+    {
+      "from": 109,
+      "to": 106
+    },
+    {
+      "from": 110,
+      "to": 106
+    },
+    {
+      "from": 111,
+      "to": 106
+    },
+    {
+      "from": 112,
+      "to": 106
+    },
+    {
+      "from": 113,
+      "to": 107
+    },
+    {
+      "from": 113,
+      "to": 108
+    },
+    {
+      "from": 113,
+      "to": 109
+    },
+    {
+      "from": 113,
+      "to": 110
+    },
+    {
+      "from": 113,
+      "to": 111
+    },
+    {
+      "from": 113,
+      "to": 112
+    },
+    {
+      "from": 114,
+      "to": 113
+    },
+    {
+      "from": 115,
+      "to": 105
+    },
+    {
+      "from": 115,
+      "to": 114
+    },
+    {
+      "from": 116,
+      "to": 115
+    },
+    {
+      "from": 117,
+      "to": 116
+    },
+    {
+      "from": 118,
+      "to": 114
+    },
+    {
+      "from": 119,
+      "to": 113
+    },
+    {
+      "from": 119,
+      "to": 84
+    },
+    {
+      "from": 120,
+      "to": 113
+    },
+    {
+      "from": 120,
+      "to": 85
+    },
+    {
+      "from": 121,
+      "to": 113
+    },
+    {
+      "from": 121,
+      "to": 86
+    },
+    {
+      "from": 122,
+      "to": 113
+    },
+    {
+      "from": 122,
+      "to": 87
+    },
+    {
+      "from": 123,
+      "to": 113
+    },
+    {
+      "from": 123,
+      "to": 89
+    },
+    {
+      "from": 124,
+      "to": 116
+    },
+    {
+      "from": 124,
+      "to": 83
+    },
+    {
+      "from": 125,
+      "to": 124
+    },
+    {
+      "from": 126,
+      "to": 124
+    },
+    {
+      "from": 126,
+      "to": 83
+    },
+    {
+      "from": 127,
+      "to": 126
+    },
+    {
+      "from": 128,
+      "to": 114
+    },
+    {
+      "from": 128,
+      "to": 127
+    },
+    {
+      "from": 129,
+      "to": 116
+    },
+    {
+      "from": 130,
+      "to": 116
+    },
+    {
+      "from": 131,
+      "to": 129
+    },
+    {
+      "from": 131,
+      "to": 130
+    },
+    {
+      "from": 132,
+      "to": 124
+    },
+    {
+      "from": 132,
+      "to": 115
+    },
+    {
+      "from": 133,
+      "to": 132
+    },
+    {
+      "from": 133,
+      "to": 66
+    },
+    {
+      "from": 134,
+      "to": 129
+    },
+    {
+      "from": 134,
+      "to": 130
+    },
+    {
+      "from": 135,
+      "to": 133
+    },
+    {
+      "from": 135,
+      "to": 73
+    },
+    {
+      "from": 136,
+      "to": 132
+    },
+    {
+      "from": 137,
+      "to": 1
+    },
+    {
+      "from": 138,
+      "to": 1
+    },
+    {
+      "from": 138,
+      "to": 83
+    },
+    {
+      "from": 139,
+      "to": 137
+    },
+    {
+      "from": 140,
+      "to": 137
+    },
+    {
+      "from": 141,
+      "to": 140
+    },
+    {
+      "from": 141,
+      "to": 138
+    },
+    {
+      "from": 142,
+      "to": 141
+    },
+    {
+      "from": 143,
+      "to": 137
+    },
+    {
+      "from": 144,
+      "to": 137
+    },
+    {
+      "from": 145,
+      "to": 137
+    },
+    {
+      "from": 146,
+      "to": 137
+    },
+    {
+      "from": 147,
+      "to": 143
+    },
+    {
+      "from": 147,
+      "to": 141
+    },
+    {
+      "from": 148,
+      "to": 143
+    },
+    {
+      "from": 148,
+      "to": 210
+    },
+    {
+      "from": 149,
+      "to": 142
+    },
+    {
+      "from": 150,
+      "to": 143
+    },
+    {
+      "from": 151,
+      "to": 137
+    },
+    {
+      "from": 151,
+      "to": 1
+    },
+    {
+      "from": 152,
+      "to": 151
+    },
+    {
+      "from": 153,
+      "to": 137
+    },
+    {
+      "from": 154,
+      "to": 137
+    },
+    {
+      "from": 154,
+      "to": 25
+    },
+    {
+      "from": 155,
+      "to": 137
+    },
+    {
+      "from": 156,
+      "to": 155
+    },
+    {
+      "from": 157,
+      "to": 155
+    },
+    {
+      "from": 158,
+      "to": 155
+    },
+    {
+      "from": 159,
+      "to": 138
+    },
+    {
+      "from": 159,
+      "to": 84
+    },
+    {
+      "from": 160,
+      "to": 138
+    },
+    {
+      "from": 160,
+      "to": 85
+    },
+    {
+      "from": 161,
+      "to": 138
+    },
+    {
+      "from": 161,
+      "to": 86
+    },
+    {
+      "from": 162,
+      "to": 138
+    },
+    {
+      "from": 162,
+      "to": 87
+    },
+    {
+      "from": 163,
+      "to": 159
+    },
+    {
+      "from": 164,
+      "to": 159
+    },
+    {
+      "from": 164,
+      "to": 160
+    },
+    {
+      "from": 165,
+      "to": 160
+    },
+    {
+      "from": 166,
+      "to": 165
+    },
+    {
+      "from": 167,
+      "to": 160
+    },
+    {
+      "from": 168,
+      "to": 167
+    },
+    {
+      "from": 169,
+      "to": 167
+    },
+    {
+      "from": 170,
+      "to": 167
+    },
+    {
+      "from": 171,
+      "to": 138
+    },
+    {
+      "from": 172,
+      "to": 8
+    },
+    {
+      "from": 173,
+      "to": 1
+    },
+    {
+      "from": 173,
+      "to": 2
+    },
+    {
+      "from": 173,
+      "to": 26
+    },
+    {
+      "from": 174,
+      "to": 2
+    },
+    {
+      "from": 174,
+      "to": 3
+    },
+    {
+      "from": 177,
+      "to": 25
+    },
+    {
+      "from": 177,
+      "to": 176
+    },
+    {
+      "from": 178,
+      "to": 177
+    },
+    {
+      "from": 178,
+      "to": 175
+    },
+    {
+      "from": 179,
+      "to": 162
+    },
+    {
+      "from": 179,
+      "to": 178
+    },
+    {
+      "from": 180,
+      "to": 162
+    },
+    {
+      "from": 182,
+      "to": 181
+    },
+    {
+      "from": 184,
+      "to": 183
+    },
+    {
+      "from": 185,
+      "to": 183
+    },
+    {
+      "from": 186,
+      "to": 183
+    },
+    {
+      "from": 187,
+      "to": 186
+    },
+    {
+      "from": 188,
+      "to": 187
+    },
+    {
+      "from": 189,
+      "to": 187
+    },
+    {
+      "from": 190,
+      "to": 188
+    },
+    {
+      "from": 190,
+      "to": 189
+    },
+    {
+      "from": 191,
+      "to": 185
+    },
+    {
+      "from": 191,
+      "to": 190
+    },
+    {
+      "from": 192,
+      "to": 183
+    },
+    {
+      "from": 192,
+      "to": 181
+    },
+    {
+      "from": 193,
+      "to": 13
+    },
+    {
+      "from": 194,
+      "to": 190
+    },
+    {
+      "from": 195,
+      "to": 194
+    },
+    {
+      "from": 196,
+      "to": 99
+    },
+    {
+      "from": 196,
+      "to": 182
+    },
+    {
+      "from": 197,
+      "to": 8
+    },
+    {
+      "from": 197,
+      "to": 182
+    },
+    {
+      "from": 198,
+      "to": 8
+    },
+    {
+      "from": 198,
+      "to": 181
+    },
+    {
+      "from": 199,
+      "to": 181
+    },
+    {
+      "from": 199,
+      "to": 182
+    },
+    {
+      "from": 200,
+      "to": 185
+    },
+    {
+      "from": 200,
+      "to": 191
+    },
+    {
+      "from": 201,
+      "to": 1
+    },
+    {
+      "from": 202,
+      "to": 142
+    },
+    {
+      "from": 202,
+      "to": 201
+    },
+    {
+      "from": 203,
+      "to": 201
+    },
+    {
+      "from": 203,
+      "to": 155
+    },
+    {
+      "from": 204,
+      "to": 201
+    },
+    {
+      "from": 204,
+      "to": 142
+    },
+    {
+      "from": 205,
+      "to": 143
+    },
+    {
+      "from": 205,
+      "to": 201
+    },
+    {
+      "from": 206,
+      "to": 205
+    },
+    {
+      "from": 207,
+      "to": 205
+    },
+    {
+      "from": 207,
+      "to": 206
+    },
+    {
+      "from": 208,
+      "to": 201
+    },
+    {
+      "from": 208,
+      "to": 142
+    },
+    {
+      "from": 209,
+      "to": 208
+    },
+    {
+      "from": 210,
+      "to": 201
+    },
+    {
+      "from": 211,
+      "to": 201
+    },
+    {
+      "from": 212,
+      "to": 211
+    },
+    {
+      "from": 213,
+      "to": 210
+    },
+    {
+      "from": 214,
+      "to": 201
+    },
+    {
+      "from": 215,
+      "to": 174
+    },
+    {
+      "from": 215,
+      "to": 201
+    },
+    {
+      "from": 216,
+      "to": 215
+    },
+    {
+      "from": 217,
+      "to": 216
+    },
+    {
+      "from": 218,
+      "to": 201
+    },
+    {
+      "from": 218,
+      "to": 205
+    },
+    {
+      "from": 219,
+      "to": 204
+    },
+    {
+      "from": 220,
+      "to": 219
+    },
+    {
+      "from": 221,
+      "to": 202
+    },
+    {
+      "from": 222,
+      "to": 221
+    },
+    {
+      "from": 223,
+      "to": 205
+    },
+    {
+      "from": 223,
+      "to": 215
+    },
+    {
+      "from": 224,
+      "to": 156
+    },
+    {
+      "from": 224,
+      "to": 155
+    },
+    {
+      "from": 225,
+      "to": 210
+    },
+    {
+      "from": 226,
+      "to": 201
+    },
+    {
+      "from": 227,
+      "to": 226
+    },
+    {
+      "from": 228,
+      "to": 227
+    },
+    {
+      "from": 229,
+      "to": 228
+    },
+    {
+      "from": 230,
+      "to": 226
+    },
+    {
+      "from": 231,
+      "to": 230
+    },
+    {
+      "from": 232,
+      "to": 226
+    },
+    {
+      "from": 233,
+      "to": 232
+    },
+    {
+      "from": 234,
+      "to": 229
+    },
+    {
+      "from": 234,
+      "to": 89
+    },
+    {
+      "from": 235,
+      "to": 226
+    },
+    {
+      "from": 236,
+      "to": 235
+    },
+    {
+      "from": 237,
+      "to": 235
+    },
+    {
+      "from": 238,
+      "to": 167
+    },
+    {
+      "from": 238,
+      "to": 226
+    },
+    {
+      "from": 239,
+      "to": 238
+    },
+    {
+      "from": 240,
+      "to": 229
+    },
+    {
+      "from": 241,
+      "to": 240
+    },
+    {
+      "from": 242,
+      "to": 240
+    },
+    {
+      "from": 243,
+      "to": 235
+    },
+    {
+      "from": 244,
+      "to": 236
+    },
+    {
+      "from": 245,
+      "to": 234
+    },
+    {
+      "from": 245,
+      "to": 89
+    },
+    {
+      "from": 246,
+      "to": 226
+    },
+    {
+      "from": 246,
+      "to": 86
+    },
+    {
+      "from": 247,
+      "to": 235
+    },
+    {
+      "from": 248,
+      "to": 232
+    },
+    {
+      "from": 249,
+      "to": 243
+    },
+    {
+      "from": 249,
+      "to": 85
+    },
+    {
+      "from": 250,
+      "to": 229
+    },
+    {
+      "from": 250,
+      "to": 290
+    },
+    {
+      "from": 251,
+      "to": 86
+    },
+    {
+      "from": 252,
+      "to": 251
+    },
+    {
+      "from": 253,
+      "to": 252
+    },
+    {
+      "from": 254,
+      "to": 252
+    },
+    {
+      "from": 255,
+      "to": 251
+    },
+    {
+      "from": 256,
+      "to": 255
+    },
+    {
+      "from": 257,
+      "to": 251
+    },
+    {
+      "from": 258,
+      "to": 257
+    },
+    {
+      "from": 259,
+      "to": 251
+    },
+    {
+      "from": 260,
+      "to": 251
+    },
+    {
+      "from": 261,
+      "to": 258
+    },
+    {
+      "from": 262,
+      "to": 257
+    },
+    {
+      "from": 262,
+      "to": 203
+    },
+    {
+      "from": 263,
+      "to": 259
+    },
+    {
+      "from": 263,
+      "to": 258
+    },
+    {
+      "from": 264,
+      "to": 251
+    },
+    {
+      "from": 265,
+      "to": 264
+    },
+    {
+      "from": 266,
+      "to": 264
+    },
+    {
+      "from": 266,
+      "to": 265
+    },
+    {
+      "from": 267,
+      "to": 258
+    },
+    {
+      "from": 268,
+      "to": 251
+    },
+    {
+      "from": 269,
+      "to": 251
+    },
+    {
+      "from": 270,
+      "to": 254
+    },
+    {
+      "from": 271,
+      "to": 252
+    },
+    {
+      "from": 271,
+      "to": 121
+    },
+    {
+      "from": 272,
+      "to": 161
+    },
+    {
+      "from": 273,
+      "to": 257
+    },
+    {
+      "from": 273,
+      "to": 258
+    },
+    {
+      "from": 274,
+      "to": 266
+    },
+    {
+      "from": 275,
+      "to": 251
+    },
+    {
+      "from": 278,
+      "to": 276
+    },
+    {
+      "from": 279,
+      "to": 276
+    },
+    {
+      "from": 279,
+      "to": 277
+    },
+    {
+      "from": 280,
+      "to": 277
+    },
+    {
+      "from": 281,
+      "to": 279
+    },
+    {
+      "from": 282,
+      "to": 276
+    },
+    {
+      "from": 282,
+      "to": 277
+    },
+    {
+      "from": 283,
+      "to": 282
+    },
+    {
+      "from": 284,
+      "to": 282
+    },
+    {
+      "from": 284,
+      "to": 283
+    },
+    {
+      "from": 285,
+      "to": 84
+    },
+    {
+      "from": 285,
+      "to": 283
+    },
+    {
+      "from": 286,
+      "to": 285
+    },
+    {
+      "from": 287,
+      "to": 286
+    },
+    {
+      "from": 288,
+      "to": 163
+    },
+    {
+      "from": 289,
+      "to": 286
+    },
+    {
+      "from": 290,
+      "to": 276
+    },
+    {
+      "from": 290,
+      "to": 277
+    },
+    {
+      "from": 291,
+      "to": 290
+    },
+    {
+      "from": 292,
+      "to": 290
+    },
+    {
+      "from": 293,
+      "to": 290
+    },
+    {
+      "from": 294,
+      "to": 290
+    },
+    {
+      "from": 294,
+      "to": 83
+    },
+    {
+      "from": 295,
+      "to": 294
+    },
+    {
+      "from": 296,
+      "to": 294
+    },
+    {
+      "from": 297,
+      "to": 294
+    },
+    {
+      "from": 297,
+      "to": 295
+    },
+    {
+      "from": 297,
+      "to": 296
+    },
+    {
+      "from": 298,
+      "to": 85
+    },
+    {
+      "from": 298,
+      "to": 293
+    },
+    {
+      "from": 299,
+      "to": 85
+    },
+    {
+      "from": 300,
+      "to": 298
+    },
+    {
+      "from": 300,
+      "to": 299
+    },
+    {
+      "from": 301,
+      "to": 300
+    },
+    {
+      "from": 302,
+      "to": 301
+    },
+    {
+      "from": 303,
+      "to": 301
+    },
+    {
+      "from": 304,
+      "to": 166
+    },
+    {
+      "from": 304,
+      "to": 301
+    },
+    {
+      "from": 305,
+      "to": 165
+    },
+    {
+      "from": 305,
+      "to": 301
+    },
+    {
+      "from": 306,
+      "to": 1
+    },
+    {
+      "from": 307,
+      "to": 306
+    },
+    {
+      "from": 308,
+      "to": 307
+    },
+    {
+      "from": 309,
+      "to": 307
+    },
+    {
+      "from": 310,
+      "to": 307
+    },
+    {
+      "from": 311,
+      "to": 309
+    },
+    {
+      "from": 312,
+      "to": 276
+    },
+    {
+      "from": 312,
+      "to": 309
+    },
+    {
+      "from": 313,
+      "to": 306
+    },
+    {
+      "from": 314,
+      "to": 313
+    },
+    {
+      "from": 314,
+      "to": 311
+    },
+    {
+      "from": 315,
+      "to": 307
+    },
+    {
+      "from": 316,
+      "to": 315
+    },
+    {
+      "from": 317,
+      "to": 315
+    },
+    {
+      "from": 318,
+      "to": 306
+    },
+    {
+      "from": 319,
+      "to": 318
+    },
+    {
+      "from": 320,
+      "to": 318
+    },
+    {
+      "from": 321,
+      "to": 320
+    },
+    {
+      "from": 322,
+      "to": 320
+    },
+    {
+      "from": 323,
+      "to": 290
+    },
+    {
+      "from": 323,
+      "to": 306
+    },
+    {
+      "from": 324,
+      "to": 306
+    },
+    {
+      "from": 325,
+      "to": 324
+    },
+    {
+      "from": 325,
+      "to": 306
+    },
+    {
+      "from": 326,
+      "to": 201
+    },
+    {
+      "from": 326,
+      "to": 315
+    },
+    {
+      "from": 327,
+      "to": 315
+    },
+    {
+      "from": 328,
+      "to": 316
+    },
+    {
+      "from": 328,
+      "to": 317
+    },
+    {
+      "from": 329,
+      "to": 317
+    },
+    {
+      "from": 330,
+      "to": 201
+    },
+    {
+      "from": 331,
+      "to": 251
+    },
+    {
+      "from": 331,
+      "to": 306
+    },
+    {
+      "from": 332,
+      "to": 311
+    },
+    {
+      "from": 333,
+      "to": 309
+    },
+    {
+      "from": 334,
+      "to": 309
+    },
+    {
+      "from": 335,
+      "to": 315
+    },
+    {
+      "from": 336,
+      "to": 318
+    },
+    {
+      "from": 337,
+      "to": 308
+    },
+    {
+      "from": 338,
+      "to": 309
+    },
+    {
+      "from": 338,
+      "to": 306
+    },
+    {
+      "from": 339,
+      "to": 323
+    },
+    {
+      "from": 339,
+      "to": 311
+    },
+    {
+      "from": 340,
+      "to": 306
+    },
+    {
+      "from": 341,
+      "to": 1
+    },
+    {
+      "from": 341,
+      "to": 9
+    },
+    {
+      "from": 342,
+      "to": 341
+    },
+    {
+      "from": 343,
+      "to": 19
+    },
+    {
+      "from": 344,
+      "to": 343
+    },
+    {
+      "from": 345,
+      "to": 193
+    },
+    {
+      "from": 346,
+      "to": 88
+    },
+    {
+      "from": 346,
+      "to": 138
+    },
+    {
+      "from": 347,
+      "to": 215
+    },
+    {
+      "from": 348,
+      "to": 218
+    },
+    {
+      "from": 349,
+      "to": 215
+    },
+    {
+      "from": 349,
+      "to": 174
+    },
+    {
+      "from": 350,
+      "to": 192
+    },
+    {
+      "from": 350,
+      "to": 190
+    },
+    {
+      "from": 350,
+      "to": 197
+    }
+  ]
+}

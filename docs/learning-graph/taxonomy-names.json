@@ -1,0 +1,14 @@
+{
+  "FOUND": "Foundation Concepts",
+  "PROC": "ATAM Process and Facilitation",
+  "STKE": "Stakeholder and Business Analysis",
+  "QUAL": "Quality Attributes",
+  "SCEN": "Scenarios and Utility Trees",
+  "TACT": "Architectural Tactics and Patterns",
+  "RISK": "Sensitivity, Tradeoffs, and Risk",
+  "DIST": "Distributed Systems Architecture",
+  "CLOU": "Cloud-Native Architecture",
+  "SECP": "Security Architecture",
+  "PERF": "Performance and Observability",
+  "AIEM": "AI and Emerging Systems"
+}

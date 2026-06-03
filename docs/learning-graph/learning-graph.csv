@@ -1,0 +1,351 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Software Architecture Definition,,FOUND
+2,Architectural Component,1,FOUND
+3,Architectural Connector,1,FOUND
+4,Architectural Style,,FOUND
+5,Architecture View,1|4,FOUND
+6,Architecture Viewpoint,5,FOUND
+7,Architecture Documentation,1|5|6,FOUND
+8,Architectural Decision,1,FOUND
+9,Architecture Evaluation,1,FOUND
+10,Architecture-Centric Development,9,FOUND
+11,Cost of Architectural Mistakes,9|13,FOUND
+12,Architecture Quality Goals,16|9,FOUND
+13,Technical Debt,,FOUND
+14,Architecture Conformance,1|9,FOUND
+15,Reference Architecture,1,FOUND
+16,Software Quality Definition,,FOUND
+17,Quality Model,16,FOUND
+18,Architecture Review Board,9,FOUND
+19,Architecture Principles,1|9,FOUND
+20,Architectural Constraint,1,FOUND
+21,Architectural Concern,1,FOUND
+22,Architectural Driver,1|59|60,FOUND
+23,Architecture Description Lang,1|7,FOUND
+24,Architecture vs Design Scope,1,FOUND
+25,Separation of Concerns,,FOUND
+26,Modular Decomposition,,FOUND
+27,Abstraction in Architecture,1|25,FOUND
+28,System Context Diagram,1,FOUND
+29,Architecture Lifecycle,1|9,FOUND
+30,ATAM Definition,9,PROC
+31,ATAM Origins at CMU SEI,30,PROC
+32,ATAM Goals and Principles,30,PROC
+33,ATAM Phase 1,32,PROC
+34,ATAM Phase 2,32,PROC
+35,Evaluation Team Composition,30,PROC
+36,Evaluation Leader Role,35,PROC
+37,Architecture Owner Role,35,PROC
+38,Note-Taker Role,35,PROC
+39,Stakeholder Role in ATAM,35,PROC
+40,ATAM Phase 1 Activities,33,PROC
+41,ATAM Phase 2 Activities,34,PROC
+42,ATAM Scripted Presentations,40|41,PROC
+43,ATAM Outputs Summary,40|41,PROC
+44,Mini-ATAM,32,PROC
+45,ATAM vs SAAM Comparison,30|46,PROC
+46,SAAM Method,9,PROC
+47,ARID Method,9,PROC
+48,Lightweight Architecture Eval,9,PROC
+49,Architecture Review Methods,30|46|47,PROC
+50,ATAM Preparation Phase,33|35,PROC
+51,Architecture Evaluation Report,40|41|43|190,PROC
+52,ATAM Consensus Building,50|39|75,PROC
+53,ATAM Facilitation Techniques,36|52,PROC
+54,Evaluation Planning Document,50,PROC
+55,ATAM Team Formation,35,PROC
+56,Post-Evaluation Review,51|191,PROC
+57,Architecture Briefing Format,42,PROC
+58,Scripted Architecture Briefing,57|37,PROC
+59,Business Goal,,STKE
+60,Business Driver,59,STKE
+61,Mission Statement,59,STKE
+62,Strategy Alignment,61|59,STKE
+63,Stakeholder Identification,59,STKE
+64,Stakeholder Analysis,63,STKE
+65,Stakeholder Concerns,64,STKE
+66,Stakeholder Workshop,63|65,STKE
+67,Stakeholder Engagement,66,STKE
+68,Technical Stakeholder,63,STKE
+69,Business Stakeholder,63,STKE
+70,Executive Sponsor Role,69,STKE
+71,Business-Architecture Alignment,59|1,STKE
+72,Organizational Context,59,STKE
+73,Competing Stakeholder Priorities,63|65,STKE
+74,Stakeholder Influence Analysis,64,STKE
+75,Stakeholder Communication,67,STKE
+76,Executive Briefing Techniques,75|70,STKE
+77,Decision-Making Authority,62|72,STKE
+78,Architecture Business Case,59|71,STKE
+79,ROI of Architecture Evaluation,78,STKE
+80,Stakeholder Buy-In Strategies,67,STKE
+81,Architecture Vision Document,62|1,STKE
+82,Architecture Roadmap,81|194,STKE
+83,Quality Attribute Definition,16|17,QUAL
+84,Performance Quality Attribute,83,QUAL
+85,Availability Quality Attribute,83,QUAL
+86,Security Quality Attribute,83,QUAL
+87,Modifiability Quality Attribute,83,QUAL
+88,Interoperability Quality Attribute,83,QUAL
+89,Scalability Quality Attribute,83,QUAL
+90,Reliability Quality Attribute,83|85,QUAL
+91,Usability Quality Attribute,83,QUAL
+92,Testability Quality Attribute,83,QUAL
+93,Deployability Quality Attribute,83,QUAL
+94,Portability Quality Attribute,83,QUAL
+95,Safety Quality Attribute,83,QUAL
+96,Maintainability Quality Attr,83|87,QUAL
+97,Energy Efficiency Quality Attr,83,QUAL
+98,Quality Attribute Taxonomy,83,QUAL
+99,Quality Attribute Conflict,83,QUAL
+100,Quality Attribute Prioritization,83,QUAL
+101,Functional vs Quality Req,83,QUAL
+102,Quality Attribute Requirement,83,QUAL
+103,Quality Attribute Tactic Catalog,83|138,QUAL
+104,Architectural Stimulus Response,83|2|3,QUAL
+105,Quality Attribute Workshop,83|66,QUAL
+106,Quality Attribute Scenario,83|102,SCEN
+107,Scenario Stimulus Source,106,SCEN
+108,Scenario Stimulus,106,SCEN
+109,Scenario Environment,106,SCEN
+110,Scenario Artifact,106,SCEN
+111,Scenario Response,106,SCEN
+112,Scenario Response Measure,106,SCEN
+113,General Scenario,107|108|109|110|111|112,SCEN
+114,Concrete Scenario,113,SCEN
+115,Scenario Brainstorming,105|114,SCEN
+116,Scenario Prioritization,115,SCEN
+117,Scenario Coverage Assessment,116,SCEN
+118,Scenario Catalog,114,SCEN
+119,Performance Scenario,113|84,SCEN
+120,Availability Scenario,113|85,SCEN
+121,Security Scenario,113|86,SCEN
+122,Modifiability Scenario,113|87,SCEN
+123,Scalability Scenario,113|89,SCEN
+124,Utility Tree,116|83,SCEN
+125,Utility Tree Root,124,SCEN
+126,Quality Attribute Branch,124|83,SCEN
+127,Sub-Attribute Node,126,SCEN
+128,Leaf-Level Scenario,114|127,SCEN
+129,Importance Rating,116,SCEN
+130,Difficulty Rating,116,SCEN
+131,HH Scenario Priority,129|130,SCEN
+132,Utility Tree Construction,124|115,SCEN
+133,Utility Tree Workshop,132|66,SCEN
+134,Scenario Importance vs Effort,129|130,SCEN
+135,Priority Negotiation,133|73,SCEN
+136,Utility Tree Validation,132,SCEN
+137,Architectural Pattern,1,TACT
+138,Architectural Tactic,1|83,TACT
+139,Layered Architecture Pattern,137,TACT
+140,Client-Server Architecture,137,TACT
+141,Service-Oriented Architecture,140|138,TACT
+142,Microservices Architecture,141,TACT
+143,Event-Driven Architecture,137,TACT
+144,Pipe-and-Filter Architecture,137,TACT
+145,Broker Architecture Pattern,137,TACT
+146,MVC Architecture Pattern,137,TACT
+147,CQRS Pattern,143|141,TACT
+148,Saga Transaction Pattern,143|210,TACT
+149,Strangler Fig Pattern,142,TACT
+150,Event Sourcing Pattern,143,TACT
+151,Domain-Driven Design,137|1,TACT
+152,Bounded Context,151,TACT
+153,Hexagonal Architecture,137,TACT
+154,Clean Architecture Pattern,137|25,TACT
+155,REST Architecture Style,137,TACT
+156,gRPC Communication Pattern,155,TACT
+157,GraphQL Architecture,155,TACT
+158,WebSocket Architecture,155,TACT
+159,Performance Tactic,138|84,TACT
+160,Availability Tactic,138|85,TACT
+161,Security Tactic,138|86,TACT
+162,Modifiability Tactic,138|87,TACT
+163,Caching Tactic,159,TACT
+164,Load Balancing Tactic,159|160,TACT
+165,Redundancy Tactic,160,TACT
+166,Replication Tactic,165,TACT
+167,Fault Tolerance Tactic,160,TACT
+168,Circuit Breaker Pattern,167,TACT
+169,Retry Pattern,167,TACT
+170,Bulkhead Pattern,167,TACT
+171,Tactic Interaction,138,TACT
+172,Architecture Decision Record,8,TACT
+173,Component Decomposition,1|2|26,TACT
+174,Interface Definition,2|3,TACT
+175,Module Coupling,,TACT
+176,Module Cohesion,,TACT
+177,Information Hiding Principle,25|176,TACT
+178,Encapsulation in Architecture,177|175,TACT
+179,Dependency Injection Pattern,162|178,TACT
+180,Plugin Architecture Pattern,162,TACT
+181,Sensitivity Point,,RISK
+182,Tradeoff Point,181,RISK
+183,Architectural Risk,,RISK
+184,Non-Risk,183,RISK
+185,Risk Theme,183,RISK
+186,Risk Identification,183,RISK
+187,Risk Classification,186,RISK
+188,Risk Severity Assessment,187,RISK
+189,Risk Probability Assessment,187,RISK
+190,Risk Register,188|189,RISK
+191,Risk Communication,185|190,RISK
+192,Risk-Driven Architecture,183|181,RISK
+193,Architectural Debt,13,RISK
+194,Risk Mitigation Strategy,190,RISK
+195,Risk Monitoring,194,RISK
+196,Conflicting Quality Attributes,99|182,RISK
+197,Design Rationale,8|182,RISK
+198,Architecture Decision Impact,8|181,RISK
+199,Sensitivity Analysis,181|182,RISK
+200,Risk Theme Documentation,185|191,RISK
+201,Distributed System Architecture,1,DIST
+202,Service Decomposition,142|201,DIST
+203,API Gateway Pattern,201|155,DIST
+204,Service Mesh Architecture,201|142,DIST
+205,Event-Driven Messaging,143|201,DIST
+206,Message Queue Architecture,205,DIST
+207,Publish-Subscribe Pattern,205|206,DIST
+208,Service Registry,201|142,DIST
+209,Service Discovery,208,DIST
+210,Distributed Transaction,201,DIST
+211,CAP Theorem,201,DIST
+212,Eventual Consistency,211,DIST
+213,Two-Phase Commit,210,DIST
+214,Distributed Tracing,201,DIST
+215,Service Contract,174|201,DIST
+216,API Versioning,215,DIST
+217,Backward Compatibility,216,DIST
+218,Integration Patterns,201|205,DIST
+219,Sidecar Pattern,204,DIST
+220,Ambassador Pattern,219,DIST
+221,Database per Service Pattern,202,DIST
+222,Shared Database Pattern,221,DIST
+223,Synchronous vs Async Comm,205|215,DIST
+224,gRPC vs REST Comparison,156|155,DIST
+225,Idempotency in Services,210,DIST
+226,Cloud-Native Architecture,201,CLOU
+227,Container Architecture,226,CLOU
+228,Docker Containerization,227,CLOU
+229,Kubernetes Orchestration,228,CLOU
+230,Serverless Architecture,226,CLOU
+231,Function as a Service,230,CLOU
+232,Infrastructure as Code,226,CLOU
+233,Immutable Infrastructure,232,CLOU
+234,Auto-Scaling Architecture,229|89,CLOU
+235,Cloud Service Models,226,CLOU
+236,Multi-Cloud Architecture,235,CLOU
+237,Hybrid Cloud Architecture,235,CLOU
+238,Cloud Resilience Patterns,167|226,CLOU
+239,Chaos Engineering,238,CLOU
+240,Blue-Green Deployment,229,CLOU
+241,Canary Release Strategy,240,CLOU
+242,Zero-Downtime Deployment,240,CLOU
+243,Cloud Cost Optimization,235,CLOU
+244,Cloud Vendor Lock-in,236,CLOU
+245,Elasticity in Cloud,234|89,CLOU
+246,Cloud Security Architecture,226|86,CLOU
+247,Managed Cloud Services,235,CLOU
+248,GitOps Architecture,232,CLOU
+249,Cost vs Reliability Tradeoff,243|85,CLOU
+250,Cloud Observability,229|290,CLOU
+251,Security Architecture Definition,86,SECP
+252,Threat Modeling,251,SECP
+253,STRIDE Threat Model,252,SECP
+254,Attack Surface Reduction,252,SECP
+255,Defense in Depth,251,SECP
+256,Zero Trust Architecture,255,SECP
+257,Authentication Architecture,251,SECP
+258,Authorization Architecture,257,SECP
+259,Encryption at Rest,251,SECP
+260,Encryption in Transit,251,SECP
+261,OAuth 2.0 Architecture,258,SECP
+262,API Security Design,257|203,SECP
+263,Secret Management,259|258,SECP
+264,Security Monitoring,251,SECP
+265,Intrusion Detection System,264,SECP
+266,SIEM Architecture,264|265,SECP
+267,Least Privilege Principle,258,SECP
+268,Security Compliance,251,SECP
+269,Secure Dev Lifecycle (SDLC),251,SECP
+270,Penetration Testing in Arch,254,SECP
+271,Security Scenario Development,252|121,SECP
+272,Security Tactic Catalog,161,SECP
+273,Identity and Access Management,257|258,SECP
+274,Security Incident Response,266,SECP
+275,Privacy by Design,251,SECP
+276,Latency,,PERF
+277,Throughput,,PERF
+278,Response Time,276,PERF
+279,Performance Bottleneck,276|277,PERF
+280,Amdahl's Law,277,PERF
+281,Performance Profiling,279,PERF
+282,Load Testing,276|277,PERF
+283,Stress Testing,282,PERF
+284,Capacity Planning,282|283,PERF
+285,Vertical Scaling,84|283,PERF
+286,Horizontal Scaling,285,PERF
+287,Database Sharding,286,PERF
+288,Connection Pooling,163,PERF
+289,CDN Architecture,286,PERF
+290,Observability,276|277,PERF
+291,Logging Architecture,290,PERF
+292,Metrics Collection,290,PERF
+293,Health Check Pattern,290,PERF
+294,Service Level Objective (SLO),290|83,PERF
+295,Service Level Indicator (SLI),294,PERF
+296,Error Budget,294,PERF
+297,Site Reliability Engineering,294|295|296,PERF
+298,Mean Time to Recovery,85|293,PERF
+299,Mean Time Between Failures,85,PERF
+300,Availability Calculation,298|299,PERF
+301,Disaster Recovery,300,PERF
+302,Recovery Time Objective (RTO),301,PERF
+303,Recovery Point Objective (RPO),301,PERF
+304,Geographic Redundancy,166|301,PERF
+305,Active-Passive Failover,165|301,PERF
+306,AI System Architecture,1,AIEM
+307,Machine Learning Pipeline,306,AIEM
+308,Model Training Architecture,307,AIEM
+309,Model Serving Architecture,307,AIEM
+310,Feature Store Architecture,307,AIEM
+311,ML Model Registry,309,AIEM
+312,AI Latency Considerations,276|309,AIEM
+313,Non-Deterministic Behavior,306,AIEM
+314,Model Drift Detection,313|311,AIEM
+315,Data Pipeline Architecture,307,AIEM
+316,Batch Processing Architecture,315,AIEM
+317,Stream Processing Architecture,315,AIEM
+318,LLM Architecture,306,AIEM
+319,Prompt Engineering,318,AIEM
+320,RAG Architecture,318,AIEM
+321,GraphRAG Architecture,320,AIEM
+322,Vector Database Architecture,320,AIEM
+323,AI Observability,290|306,AIEM
+324,AI Explainability,306,AIEM
+325,Responsible AI Architecture,324|306,AIEM
+326,Data Mesh Architecture,201|315,AIEM
+327,Data Lakehouse Architecture,315,AIEM
+328,Lambda Architecture,316|317,AIEM
+329,Kappa Architecture,317,AIEM
+330,Space-Based Architecture,201,AIEM
+331,AI Security Architecture,251|306,AIEM
+332,AI Model Versioning,311,AIEM
+333,A/B Testing Architecture,309,AIEM
+334,Online Learning Architecture,309,AIEM
+335,Data Governance Architecture,315,AIEM
+336,Multi-Modal AI Architecture,318,AIEM
+337,Federated Learning,308,AIEM
+338,Edge AI Architecture,309|306,AIEM
+339,AI Pipeline Monitoring,323|311,AIEM
+340,Autonomous System Architecture,306,AIEM
+341,Architecture Fitness Function,1|9,FOUND
+342,Evolutionary Architecture,341,FOUND
+343,Architecture Standard,19,FOUND
+344,Technology Radar,343,FOUND
+345,Architecture Debt Management,193,RISK
+346,Interoperability Tactic,88|138,TACT
+347,Schema Registry,215,DIST
+348,Message Transformation,218,DIST
+349,Contract-First Design,215|174,DIST
+350,Architecture Improvement Plan,192|190|197,RISK
