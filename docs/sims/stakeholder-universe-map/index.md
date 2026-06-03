@@ -11,7 +11,7 @@ quality_score: 0
 
 # Stakeholder Universe Map
 
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="532" width="100%" scrolling="no"></iframe>
 
 [Run the Stakeholder Universe Map MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 <br/>
@@ -19,11 +19,11 @@ quality_score: 0
 
 ## About This MicroSim
 
-TODO: Describe what this MicroSim demonstrates.
+A map of the stakeholder universe for an enterprise system, organized into concentric rings (direct users and operators, organizational, external/regulatory) and four sectors. It helps students see beyond the obvious technical roles.
 
 ## How to Use
 
-TODO: Describe how students should interact with this MicroSim.
+Click any **stakeholder** for their concerns, a sample ATAM scenario, and influence level. **Hover** a sector label for its definition. Use **Show Concerns** to badge each stakeholder with their primary quality-attribute concern, and toggle the outer ring for different analysis scopes.
 
 ## Iframe Embed Code
 
@@ -31,7 +31,6 @@ You can add this MicroSim to any web page by adding this to your HTML:
 
 ```html
 <iframe src="https://dmccreary.github.io/atam/sims/stakeholder-universe-map/main.html"
-        height="450px"
         width="100%"
         scrolling="no"></iframe>
 ```
@@ -39,23 +38,30 @@ You can add this MicroSim to any web page by adding this to your HTML:
 ## Lesson Plan
 
 ### Grade Level
-9-12 (High School Geometry)
+Undergraduate / Professional
 
 ### Duration
 10-15 minutes
 
 ### Prerequisites
-TODO: List prerequisites.
+None.
+
+### Bloom's Taxonomy Level
+Understand (L2)
+
+### Learning Objective
+Students can identify stakeholder categories beyond the obvious technical roles and explain what architectural concerns are most characteristic of each.
 
 ### Activities
 
-1. **Exploration** (5 min): TODO
-2. **Guided Practice** (5 min): TODO
-3. **Assessment** (5 min): TODO
+1. **Exploration** (5 min): Students freely interact with the MicroSim to discover its behavior.
+2. **Guided Practice** (5 min): Working from the learning objective above, students answer 2-3 focused questions posed by the instructor.
+3. **Discussion** (5 min): Students share observations and connect them back to ATAM concepts.
 
 ### Assessment
-TODO: List assessment criteria.
+Ask students to name a non-technical stakeholder and the quality attribute scenario they would most likely contribute.
 
 ## References
 
-1. TODO: Add references.
+1. Bass, L., Clements, P., & Kazman, R. (2021). *Software Architecture in Practice* (4th ed.). Addison-Wesley.
+2. Kazman, R., Klein, M., & Clements, P. (2000). *ATAM: Method for Architecture Evaluation* (CMU/SEI-2000-TR-004).

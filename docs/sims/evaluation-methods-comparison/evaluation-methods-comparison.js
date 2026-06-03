@@ -89,9 +89,9 @@ function positionSelect() {
 
 function radarGeom() {
   const leftW = canvasWidth * 0.6;
-  const cx = leftW / 2;
+  const cx = leftW / 2 + 30;
   const cy = 60 + (drawHeight - 90) / 2;
-  const R = Math.min(leftW / 2 - 40, (drawHeight - 130) / 2);
+  const R = Math.min(leftW / 2 - 70, (drawHeight - 130) / 2);
   return { leftW, cx, cy, R };
 }
 

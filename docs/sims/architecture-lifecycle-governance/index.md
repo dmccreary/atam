@@ -11,7 +11,7 @@ quality_score: 0
 
 # Architecture Lifecycle with Governance Checkpoints
 
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="472" width="100%" scrolling="no"></iframe>
 
 [Run the Architecture Lifecycle with Governance Checkpoints MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 <br/>
@@ -19,11 +19,11 @@ quality_score: 0
 
 ## About This MicroSim
 
-TODO: Describe what this MicroSim demonstrates.
+The six phases of the architecture lifecycle with the governance activity at each phase, and the point where ATAM evaluation delivers the most value (highlighted in gold). It connects evaluation to the broader governance story.
 
 ## How to Use
 
-TODO: Describe how students should interact with this MicroSim.
+Click any **phase** to read its governance activities in the detail panel. Press **Show Risks** to reveal the phases where architectural debt is typically introduced.
 
 ## Iframe Embed Code
 
@@ -31,7 +31,6 @@ You can add this MicroSim to any web page by adding this to your HTML:
 
 ```html
 <iframe src="https://dmccreary.github.io/atam/sims/architecture-lifecycle-governance/main.html"
-        height="450px"
         width="100%"
         scrolling="no"></iframe>
 ```
@@ -39,23 +38,30 @@ You can add this MicroSim to any web page by adding this to your HTML:
 ## Lesson Plan
 
 ### Grade Level
-9-12 (High School Geometry)
+Undergraduate / Professional
 
 ### Duration
 10-15 minutes
 
 ### Prerequisites
-TODO: List prerequisites.
+None.
+
+### Bloom's Taxonomy Level
+Understand (L2)
+
+### Learning Objective
+Students can identify the phases of the architecture lifecycle and explain what governance activities occur at each phase, including where ATAM evaluation is most valuable.
 
 ### Activities
 
-1. **Exploration** (5 min): TODO
-2. **Guided Practice** (5 min): TODO
-3. **Assessment** (5 min): TODO
+1. **Exploration** (5 min): Students freely interact with the MicroSim to discover its behavior.
+2. **Guided Practice** (5 min): Working from the learning objective above, students answer 2-3 focused questions posed by the instructor.
+3. **Discussion** (5 min): Students share observations and connect them back to ATAM concepts.
 
 ### Assessment
-TODO: List assessment criteria.
+Ask students to name the governance activity at each phase and justify why ATAM evaluation is placed where it is.
 
 ## References
 
-1. TODO: Add references.
+1. Bass, L., Clements, P., & Kazman, R. (2021). *Software Architecture in Practice* (4th ed.). Addison-Wesley.
+2. Kazman, R., Klein, M., & Clements, P. (2000). *ATAM: Method for Architecture Evaluation* (CMU/SEI-2000-TR-004).

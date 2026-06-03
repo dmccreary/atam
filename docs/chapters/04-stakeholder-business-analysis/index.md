@@ -85,7 +85,7 @@ Stakeholder identification typically begins with the obvious: the sponsoring exe
 
 #### Diagram: Stakeholder Universe Map
 
-<iframe src="../../sims/stakeholder-universe-map/main.html" width="100%" height="540px" scrolling="no"></iframe>
+<iframe src="../../sims/stakeholder-universe-map/main.html" width="100%" height="532px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Stakeholder Universe Map</summary>
@@ -176,7 +176,7 @@ The architecture vision document is not a detailed design document — it is the
 
 #### Diagram: Business Goals to Architecture Driver Mapping
 
-<iframe src="../../sims/business-to-architecture-mapping/main.html" width="100%" height="560px" scrolling="no"></iframe>
+<iframe src="../../sims/business-to-architecture-mapping/main.html" width="100%" height="592px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Business Goals to Architecture Driver Mapping</summary>
@@ -290,7 +290,7 @@ The **architecture business case** and **ROI of architecture evaluation** docume
 
 #### Diagram: Stakeholder Priority Conflict Resolution
 
-<iframe src="../../sims/stakeholder-priority-matrix/main.html" width="100%" height="540px" scrolling="no"></iframe>
+<iframe src="../../sims/stakeholder-priority-matrix/main.html" width="100%" height="562px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Stakeholder Priority Conflict Resolution Matrix</summary>

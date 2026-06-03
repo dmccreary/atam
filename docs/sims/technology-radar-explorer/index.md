@@ -11,7 +11,7 @@ quality_score: 0
 
 # Interactive Technology Radar
 
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="542" width="100%" scrolling="no"></iframe>
 
 [Run the Interactive Technology Radar MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 <br/>
@@ -19,11 +19,11 @@ quality_score: 0
 
 ## About This MicroSim
 
-TODO: Describe what this MicroSim demonstrates.
+An interactive technology radar with four adoption rings (Adopt, Trial, Assess, Hold) and four quadrants. It helps students classify technologies by maturity and reason about the architectural risk of depending on Hold-ring technologies.
 
 ## How to Use
 
-TODO: Describe how students should interact with this MicroSim.
+Click any **dot** to read its ring rationale and architectural-risk implications. **Hover** a ring name for its meaning. Use the quadrant buttons to show or hide categories.
 
 ## Iframe Embed Code
 
@@ -31,7 +31,6 @@ You can add this MicroSim to any web page by adding this to your HTML:
 
 ```html
 <iframe src="https://dmccreary.github.io/atam/sims/technology-radar-explorer/main.html"
-        height="450px"
         width="100%"
         scrolling="no"></iframe>
 ```
@@ -39,23 +38,30 @@ You can add this MicroSim to any web page by adding this to your HTML:
 ## Lesson Plan
 
 ### Grade Level
-9-12 (High School Geometry)
+Undergraduate / Professional
 
 ### Duration
 10-15 minutes
 
 ### Prerequisites
-TODO: List prerequisites.
+General familiarity with common software technologies.
+
+### Bloom's Taxonomy Level
+Analyze (L4)
+
+### Learning Objective
+Students can classify a technology into the correct radar ring based on maturity and adoption posture, and explain the architectural risk of relying on Hold-ring technologies.
 
 ### Activities
 
-1. **Exploration** (5 min): TODO
-2. **Guided Practice** (5 min): TODO
-3. **Assessment** (5 min): TODO
+1. **Exploration** (5 min): Students freely interact with the MicroSim to discover its behavior.
+2. **Guided Practice** (5 min): Working from the learning objective above, students answer 2-3 focused questions posed by the instructor.
+3. **Discussion** (5 min): Students share observations and connect them back to ATAM concepts.
 
 ### Assessment
-TODO: List assessment criteria.
+Give students a technology not on the radar and ask them to place it in a ring and justify the architectural risk implications.
 
 ## References
 
-1. TODO: Add references.
+1. Bass, L., Clements, P., & Kazman, R. (2021). *Software Architecture in Practice* (4th ed.). Addison-Wesley.
+2. Kazman, R., Klein, M., & Clements, P. (2000). *ATAM: Method for Architecture Evaluation* (CMU/SEI-2000-TR-004).

@@ -122,7 +122,7 @@ The preparation phase also establishes the **ATAM team formation** — the speci
 
 #### Diagram: ATAM Two-Phase Process Flow
 
-<iframe src="../../sims/atam-process-flow/main.html" width="100%" height="580px" scrolling="no"></iframe>
+<iframe src="../../sims/atam-process-flow/main.html" width="100%" height="612px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>ATAM Two-Phase Process Flow</summary>
@@ -225,7 +225,7 @@ An ATAM evaluation team has four defined roles. Understanding these roles is imp
 
 #### Diagram: ATAM Team Roles and Interactions
 
-<iframe src="../../sims/atam-team-roles/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/atam-team-roles/main.html" width="100%" height="542px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>ATAM Team Roles and Interactions</summary>
@@ -313,7 +313,7 @@ The following table compares the four methods across key dimensions:
 
 #### Diagram: Architecture Evaluation Methods Comparison
 
-<iframe src="../../sims/evaluation-methods-comparison/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/evaluation-methods-comparison/main.html" width="100%" height="557px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Architecture Evaluation Methods Comparison</summary>

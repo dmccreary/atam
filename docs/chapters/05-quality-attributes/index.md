@@ -153,7 +153,7 @@ Usability is the quality attribute most directly tied to user behavior, making i
 
 #### Diagram: Quality Attribute Taxonomy and Conflict Map
 
-<iframe src="../../sims/quality-attribute-taxonomy/main.html" width="100%" height="580px" scrolling="no"></iframe>
+<iframe src="../../sims/quality-attribute-taxonomy/main.html" width="100%" height="542px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Quality Attribute Taxonomy and Conflict Map</summary>
@@ -267,7 +267,7 @@ The **Quality Attribute Workshop (QAW)** is a facilitated technique, developed a
 
 #### Diagram: Quality Attribute Requirement Construction Workbench
 
-<iframe src="../../sims/qa-requirement-workbench/main.html" width="100%" height="560px" scrolling="no"></iframe>
+<iframe src="../../sims/qa-requirement-workbench/main.html" width="100%" height="562px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Quality Attribute Requirement Construction Workbench</summary>
@@ -333,7 +333,7 @@ Quality attributes are not checkboxes. They are dimensions of a design space, an
 
 #### Diagram: Quality Attribute Coverage Dashboard
 
-<iframe src="../../sims/qa-coverage-dashboard/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/qa-coverage-dashboard/main.html" width="100%" height="552px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Quality Attribute Coverage Dashboard</summary>

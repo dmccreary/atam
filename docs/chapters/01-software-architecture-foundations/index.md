@@ -116,6 +116,9 @@ Two terms in the table need brief definitions. **Modifiability** is the ease wit
 
 #### Diagram: Architecture Building Blocks Explorer
 
+
+<iframe src="../../sims/architecture-building-blocks-explorer/main.html" width="100%" height="562px" scrolling="no"></iframe>
+
 <details markdown="1">
 <summary>Interactive explorer: components, connectors, and styles in a sample e-commerce system</summary>
 Type: interactive-infographic
@@ -158,6 +161,9 @@ An **architecture viewpoint** is the specification — the "camera angle" — th
 To exchange architecture documentation in a formal, machine-processable way, practitioners use **Architecture Description Languages (ADLs)**. An ADL is a notation specifically designed for describing software architectures — more structured and expressive than informal box-and-line drawings, but more tractable than full formal specification languages. Examples include ACME, Wright, and xADL. In practice most industry teams use lightweight informal notations (draw.io, Mermaid, the C4 model with PlantUML), supplemented by Architecture Decision Records — which we cover in Chapter 8. What matters is not the specific notation but the discipline of capturing architectural decisions and their rationale in a form that future team members can actually use. Because future team members *will* need to use it, almost certainly at the worst possible time.
 
 #### Diagram: Architecture Views Explorer
+
+
+<iframe src="../../sims/architecture-views-explorer/main.html" width="100%" height="602px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Interactive multi-view explorer: three views of the same system, one architecture</summary>
@@ -215,6 +221,9 @@ The amplification comes from propagation. An architectural flaw is not a bug in 
 
 #### Diagram: Technical Debt Accumulation Simulator
 
+
+<iframe src="../../sims/technical-debt-simulator/main.html" width="100%" height="552px" scrolling="no"></iframe>
+
 <details markdown="1">
 <summary>Interactive MicroSim: visualizing how architectural quality affects long-term feature delivery velocity</summary>
 Type: microsim
@@ -269,6 +278,9 @@ In architectural practice, software quality is structured by a **quality model**
 A quality goal is not "the system should be fast." A quality goal is "under peak load of 10,000 concurrent users, 95% of product search queries must complete in under 500 milliseconds, measured at the API gateway." The specificity is the entire point: vague quality goals cannot be evaluated, and unevaluable goals cannot drive architectural decisions. ATAM's most important early activity is forcing stakeholders to convert vague aspirations into precise, prioritized, measurable quality attribute scenarios — the analytical raw material that makes everything else in the method work.
 
 #### Diagram: Quality Attribute Taxonomy Explorer
+
+
+<iframe src="../../sims/quality-attribute-taxonomy/main.html" width="100%" height="542px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Interactive taxonomy: exploring quality attributes and their architectural implications</summary>

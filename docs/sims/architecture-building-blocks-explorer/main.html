@@ -11,26 +11,28 @@
 </head>
 <body>
     <div class="container">
+        <div class="header">
+            <div class="title">Architecture Building Blocks Explorer</div>
+            <div class="header-row">
+                <div class="legend">
+                    <span class="legend-item"><span class="swatch comp"></span>Component</span>
+                    <span class="legend-item"><span class="line rest"></span>REST</span>
+                    <span class="legend-item"><span class="line grpc"></span>gRPC</span>
+                    <span class="legend-item"><span class="line async"></span>Async Event</span>
+                    <span class="legend-item"><span class="line db"></span>Direct DB Access</span>
+                </div>
+                <div class="view-selector">
+                    <label for="style-select">Style:</label>
+                    <select id="style-select">
+                        <option value="microservices">Microservices View</option>
+                        <option value="monolith">Monolith View</option>
+                        <option value="event-driven">Event-Driven View</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
         <div id="network"></div>
-
-        <div class="title">Architecture Building Blocks Explorer</div>
-
-        <div class="legend">
-            <div class="legend-item"><span class="swatch comp"></span>Component</div>
-            <div class="legend-item"><span class="line rest"></span>REST (sync)</div>
-            <div class="legend-item"><span class="line grpc"></span>gRPC (sync)</div>
-            <div class="legend-item"><span class="line async"></span>Async Event</div>
-            <div class="legend-item"><span class="line db"></span>Direct DB Access</div>
-        </div>
-
-        <div class="view-selector">
-            <label for="style-select">Architectural Style:</label>
-            <select id="style-select">
-                <option value="microservices">Microservices View</option>
-                <option value="monolith">Monolith View</option>
-                <option value="event-driven">Event-Driven View</option>
-            </select>
-        </div>
 
         <div class="infobox" id="infobox">
             <div class="infobox-title" id="infobox-title">Click a component or connector</div>

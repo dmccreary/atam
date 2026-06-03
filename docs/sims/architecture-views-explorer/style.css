@@ -2,18 +2,22 @@
 
 body { font-family: Arial, sans-serif; background-color: aliceblue; }
 
-.container { position: relative; width: 100%; height: 100vh; overflow: hidden; }
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
 
 /* tab bar across the top */
 .tabs {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 44px;
+    flex: 0 0 44px;
     display: flex;
     gap: 4px;
     padding: 6px 8px 0 8px;
     background-color: #e8eaf6;
-    z-index: 20;
     border-bottom: 2px solid #c5cae9;
 }
 
@@ -33,8 +37,8 @@ body { font-family: Arial, sans-serif; background-color: aliceblue; }
 .tab.active { background-color: #ffffff; color: #1a237e; }
 
 #network {
-    position: absolute;
-    top: 44px; left: 0; right: 0; bottom: 150px;
+    flex: 1 1 auto;
+    min-height: 0;
     background-color: aliceblue;
 }
 
@@ -53,18 +57,15 @@ body { font-family: Arial, sans-serif; background-color: aliceblue; }
 }
 
 .infobox {
-    position: absolute;
-    bottom: 96px;
-    left: 10px;
-    right: 10px;
-    min-height: 48px;
+    flex: 0 0 auto;
+    min-height: 46px;
+    margin: 6px 10px 0 10px;
     background-color: rgba(255, 255, 255, 0.97);
     border: 1px solid #c5cae9;
     border-left: 5px solid #3949ab;
     border-radius: 8px;
     padding: 8px 12px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.12);
-    z-index: 10;
 }
 
 .infobox-title { font-size: 14px; font-weight: bold; color: #1a237e; margin-bottom: 3px; }
@@ -72,11 +73,9 @@ body { font-family: Arial, sans-serif; background-color: aliceblue; }
 
 /* viewpoint "recipe" footer */
 .footer {
-    position: absolute;
-    bottom: 8px;
-    left: 10px;
-    right: 10px;
-    height: 82px;
+    flex: 0 0 auto;
+    height: 84px;
+    margin: 6px 10px 8px 10px;
     overflow-y: auto;
     background-color: #1a237e;
     color: #ffffff;
@@ -84,7 +83,6 @@ body { font-family: Arial, sans-serif; background-color: aliceblue; }
     padding: 8px 12px;
     font-size: 13px;
     line-height: 1.5;
-    z-index: 10;
 }
 
 .footer b { color: #ffd54f; }

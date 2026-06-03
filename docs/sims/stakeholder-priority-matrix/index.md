@@ -11,7 +11,7 @@ quality_score: 0
 
 # Stakeholder Priority Conflict Resolution
 
-<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="562" width="100%" scrolling="no"></iframe>
 
 [Run the Stakeholder Priority Conflict Resolution MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 <br/>
@@ -19,11 +19,11 @@ quality_score: 0
 
 ## About This MicroSim
 
-TODO: Describe what this MicroSim demonstrates.
+A dot-voting workshop simulation. Four stakeholders each allocate five votes across six quality-attribute scenarios, and a live aggregate chart shows the negotiated priority ranking emerge from competing inputs.
 
 ## How to Use
 
-TODO: Describe how students should interact with this MicroSim.
+Select a **stakeholder**, then use the **+ / -** steppers on each scenario card to allocate their five votes. Watch the aggregate bar chart update in real time. Press **Show Conflicts** to flag scenarios where stakeholders diverge, and **Final Rankings** to lock in the prioritized list with a breakdown.
 
 ## Iframe Embed Code
 
@@ -31,7 +31,6 @@ You can add this MicroSim to any web page by adding this to your HTML:
 
 ```html
 <iframe src="https://dmccreary.github.io/atam/sims/stakeholder-priority-matrix/main.html"
-        height="450px"
         width="100%"
         scrolling="no"></iframe>
 ```
@@ -39,23 +38,30 @@ You can add this MicroSim to any web page by adding this to your HTML:
 ## Lesson Plan
 
 ### Grade Level
-9-12 (High School Geometry)
+Undergraduate / Professional
 
 ### Duration
 10-15 minutes
 
 ### Prerequisites
-TODO: List prerequisites.
+Familiarity with quality attribute scenarios.
+
+### Bloom's Taxonomy Level
+Apply (L3)
+
+### Learning Objective
+Students can simulate a stakeholder priority workshop by assigning votes from multiple perspectives and observing how the aggregate ranking emerges from individual votes.
 
 ### Activities
 
-1. **Exploration** (5 min): TODO
-2. **Guided Practice** (5 min): TODO
-3. **Assessment** (5 min): TODO
+1. **Exploration** (5 min): Students freely interact with the MicroSim to discover its behavior.
+2. **Guided Practice** (5 min): Working from the learning objective above, students answer 2-3 focused questions posed by the instructor.
+3. **Discussion** (5 min): Students share observations and connect them back to ATAM concepts.
 
 ### Assessment
-TODO: List assessment criteria.
+Ask students to identify the highest-conflict scenario and propose how a facilitator would resolve it.
 
 ## References
 
-1. TODO: Add references.
+1. Bass, L., Clements, P., & Kazman, R. (2021). *Software Architecture in Practice* (4th ed.). Addison-Wesley.
+2. Kazman, R., Klein, M., & Clements, P. (2000). *ATAM: Method for Architecture Evaluation* (CMU/SEI-2000-TR-004).

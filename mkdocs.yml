@@ -68,8 +68,61 @@ nav:
       - FAQ Quality Report: learning-graph/faq-quality-report.md
 
   - MicroSims:
-      - List of MicroSims: sims/index.md
-      - Learning Graph Viewer: sims/graph-viewer/index.md
+    - List of MicroSims: sims/index.md
+    - Active-Passive vs. Active-Active Failover: sims/failover-architecture-explorer/index.md
+    - ADR to Architecture Evolution Pipeline: sims/adr-evolution-timeline/index.md
+    - API Versioning and Contract-First Design Patterns: sims/api-versioning-explorer/index.md
+    - Architectural Pattern Quality Attribute Matrix: sims/pattern-quality-matrix/index.md
+    - Architecture Building Blocks Explorer: sims/architecture-building-blocks-explorer/index.md
+    - Architecture Evaluation Methods Comparison: sims/evaluation-methods-comparison/index.md
+    - Architecture Fitness Function Dashboard: sims/fitness-function-dashboard/index.md
+    - Architecture Lifecycle with Governance Checkpoints: sims/architecture-lifecycle-governance/index.md
+    - Architecture Views Explorer: sims/architecture-views-explorer/index.md
+    - ATAM Output to Action Pipeline: sims/atam-output-pipeline/index.md
+    - ATAM Team Roles and Interactions: sims/atam-team-roles/index.md
+    - ATAM Two-Phase Process Flow: sims/atam-process-flow/index.md
+    - Availability Architecture Analyzer: sims/availability-architecture-explorer/index.md
+    - Business Goals to Architecture Driver Mapping: sims/business-to-architecture-mapping/index.md
+    - Caching Tactic Anatomy: sims/caching-tactic-explorer/index.md
+    - CAP Theorem Interactive Explorer: sims/cap-theorem-explorer/index.md
+    - CDN Request Routing and Cache Flow: sims/cdn-architecture-explorer/index.md
+    - Cloud-Native Architecture Quality Attribute Stack: sims/cloud-native-qa-explorer/index.md
+    - Communication Style Tradeoff Explorer: sims/communication-style-explorer/index.md
+    - Deployment Strategy Decision Matrix: sims/deployment-strategy-selector/index.md
+    - Distributed System Component Explorer: sims/distributed-system-explorer/index.md
+    - Distributed Tracing Visualization: sims/distributed-trace-viewer/index.md
+    - Distributed Tracing Waterfall View: sims/distributed-trace-explorer/index.md
+    - Federated Learning Architecture: sims/federated-learning-explorer/index.md
+    - Interactive Technology Radar: sims/technology-radar-explorer/index.md
+    - Lambda vs. Kappa Architecture Comparison: sims/data-architecture-patterns/index.md
+    - Learning Graph Viewer: sims/graph-viewer/index.md
+    - ML Pipeline Architecture Flow: sims/ml-pipeline-explorer/index.md
+    - Performance Metric Relationships: sims/performance-metrics-explorer/index.md
+    - Priority Matrix and Analytical Roadmap: sims/priority-matrix-explorer/index.md
+    - Quality Attribute Coverage Dashboard: sims/qa-coverage-dashboard/index.md
+    - Quality Attribute Requirement Construction Workbench: sims/qa-requirement-workbench/index.md
+    - Quality Attribute Taxonomy and Conflict Map: sims/quality-attribute-taxonomy/index.md
+    - RAG vs. GraphRAG Architecture Comparison: sims/rag-architecture-explorer/index.md
+    - Resilience Pattern Interaction Simulator: sims/resilience-pattern-simulator/index.md
+    - Responsible AI Architecture Components: sims/responsible-ai-explorer/index.md
+    - Risk Register and Theme Aggregation: sims/risk-register-explorer/index.md
+    - Risk Result Type Explorer: sims/atam-result-type-explorer/index.md
+    - Saga Pattern Flow Simulator: sims/saga-flow-simulator/index.md
+    - Scenario Brainstorming and Prioritization Workshop Simulator: sims/scenario-workshop-simulator/index.md
+    - Scenario Catalog to Fitness Function Pipeline: sims/scenario-to-fitness-pipeline/index.md
+    - Scenario Construction Workbench: sims/scenario-construction-workbench/index.md
+    - Security Architecture Layers: sims/security-architecture-layers/index.md
+    - Separation of Concerns in a Layered Architecture: sims/separation-of-concerns-explorer/index.md
+    - Stakeholder Priority Conflict Resolution: sims/stakeholder-priority-matrix/index.md
+    - Stakeholder Universe Map: sims/stakeholder-universe-map/index.md
+    - STRIDE Threat Model Explorer: sims/stride-threat-explorer/index.md
+    - Tactic Interaction Web: sims/tactic-interaction-web/index.md
+    - Technical Debt Accumulation Simulator: sims/technical-debt-simulator/index.md
+    - Utility Tree Construction Workshop Simulator: sims/utility-tree-builder/index.md
+    - Utility Tree Interactive Explorer: sims/utility-tree-explorer/index.md
+    - Vertical vs. Horizontal Scaling Tradeoffs: sims/scaling-tradeoff-explorer/index.md
+
+
 
   - FAQ: faq.md
   - License: license.md

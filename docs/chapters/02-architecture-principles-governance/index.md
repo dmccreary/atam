@@ -99,7 +99,7 @@ The following table summarizes the relationship between decomposition quality, c
 
 #### Diagram: Separation of Concerns in a Layered Architecture
 
-<iframe src="../../sims/separation-of-concerns-explorer/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/separation-of-concerns-explorer/main.html" width="100%" height="472px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Separation of Concerns in a Layered Architecture</summary>
@@ -193,7 +193,7 @@ The increasing adoption of **automated conformance checking** is one of the most
 
 #### Diagram: Architecture Lifecycle with Governance Checkpoints
 
-<iframe src="../../sims/architecture-lifecycle-governance/main.html" width="100%" height="560px" scrolling="no"></iframe>
+<iframe src="../../sims/architecture-lifecycle-governance/main.html" width="100%" height="472px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Architecture Lifecycle with Governance Checkpoints</summary>
@@ -281,7 +281,7 @@ This idea connects directly to **evolutionary architecture** — an architectura
 
 #### Diagram: Architecture Fitness Function Dashboard
 
-<iframe src="../../sims/fitness-function-dashboard/main.html" width="100%" height="540px" scrolling="no"></iframe>
+<iframe src="../../sims/fitness-function-dashboard/main.html" width="100%" height="592px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Architecture Fitness Function Dashboard</summary>
@@ -355,7 +355,7 @@ In the ATAM context, the technology radar is particularly relevant to **modifiab
 
 #### Diagram: Interactive Technology Radar
 
-<iframe src="../../sims/technology-radar-explorer/main.html" width="100%" height="580px" scrolling="no"></iframe>
+<iframe src="../../sims/technology-radar-explorer/main.html" width="100%" height="542px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Interactive Technology Radar</summary>
