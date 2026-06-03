@@ -388,7 +388,7 @@ In this way, the scenario catalog connects ATAM's analytical output directly to 
 
 #### Diagram: Scenario Catalog to Fitness Function Pipeline
 
-<iframe src="../../sims/scenario-to-fitness-pipeline/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/scenario-to-fitness-pipeline/main.html" width="100%" height="552px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Scenario Catalog to Fitness Function Pipeline</summary>
