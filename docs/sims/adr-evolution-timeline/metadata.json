@@ -1,21 +1,45 @@
 {
   "title": "ADR to Architecture Evolution Pipeline",
-  "description": "Students will be able to trace an architectural decision through its ADR history, identify what triggered each revision, and explain the relationship between ATAM evaluation findings and ADR creation.",
-  "creator": "Dementia Education Project",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for adr to architecture evolution pipeline",
   "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en-US",
-  "rights": "CC BY 4.0",
-  "identifier": "adr-evolution-timeline",
-  "library": "p5.js",
-  "bloomLevel": "Understand (L2) — Explain how Architecture Decision Records document the evolution of architectural decisions over time, and how ATAM evaluations generate new or superseding ADRs.",
-  "bloomVerb": "Explain",
-  "completion_status": "scaffold",
-  "chapter_number": 8,
-  "chapter_title": "Architectural Patterns and Styles",
-  "chapter_dir": "08-architectural-patterns-styles"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "ADR to Architecture Evolution Pipeline",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Create",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "08-architectural-patterns-styles"
 }

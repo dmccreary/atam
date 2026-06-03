@@ -1,87 +1,70 @@
 ---
-title: ADR to Architecture Evolution Pipeline
-description: Students will be able to trace an architectural decision through its ADR history, identify what triggered each revision, and explain the relationship between ATAM evaluation findings and ADR creation.
-status: scaffold
-library: p5.js
-bloom_level: Understand (L2) — Explain how Architecture Decision Records document the evolution of architectural decisions over time, and how ATAM evaluations generate new or superseding ADRs.
+title: ADR Evolution Timeline
+description: Interactive p5.js MicroSim showing how Architecture Decision Records evolve over three years as requirements change and ATAM evaluations produce findings.
+image: /sims/adr-evolution-timeline/adr-evolution-timeline.png
+og:image: /sims/adr-evolution-timeline/adr-evolution-timeline.png
+twitter:image: /sims/adr-evolution-timeline/adr-evolution-timeline.png
+social:
+   cards: false
+quality_score: 0
 ---
 
-# ADR to Architecture Evolution Pipeline
+# ADR Evolution Timeline
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="588" width="100%" scrolling="no"></iframe>
 
-## Learning Objective
+[Run the ADR Evolution Timeline MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
+<br/>
+[Edit in the p5.js Editor](https://editor.p5js.org/)
 
-Students will be able to trace an architectural decision through its ADR history, identify what triggered each revision, and explain the relationship between ATAM evaluation findings and ADR creation.
+## About This MicroSim
 
-- **Bloom Level:** Understand (L2) — Explain how Architecture Decision Records document the evolution of architectural decisions over time, and how ATAM evaluations generate new or superseding ADRs.
-- **Bloom Verb:** Explain
-- **Library:** p5.js
+This MicroSim traces a system's architectural decisions across three years as a two-track timeline. Architecture Decision Records (ADRs) sit above the axis, color-coded by status (green = Active, orange = Superseded, gray = Deprecated). System events sit below — blue markers for requirement changes and gold diamonds for ATAM evaluations. Relationship arrows show which event triggered each ADR, and a dashed arrow shows one ADR superseding another. It makes concrete how ATAM evaluation findings flow directly into new or superseding decision records.
 
-## Preview
+## How to Use
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+1. **Click an ADR card** to read its full Context, Decision, and Consequences.
+2. **Click a system event** (blue circle or gold ATAM diamond) to see what it triggered — a blue arrow points to the ADR(s) it produced.
+3. Note the **dashed orange arrow**: ADR-003 (microservices) supersedes ADR-001 (layered), so ADR-001's status is Superseded.
+4. Click **Show ADR-Only** to collapse the events track and view the decision history on its own.
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+## Iframe Embed Code
 
-## Specification
+You can add this MicroSim to any web page by adding this to your HTML:
 
-The full specification below is extracted from
-[Chapter 8: Architectural Patterns and Styles](../../chapters/08-architectural-patterns-styles/index.md).
-
-```text
-Type: timeline
-**sim-id:** adr-evolution-timeline<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
-
-Purpose: Interactive timeline showing the evolution of a system's architectural decisions through a series of ADRs, from initial design through two ATAM evaluation cycles, demonstrating how ADRs capture the architectural decision history.
-
-Bloom Level: Understand (L2) — Explain how Architecture Decision Records document the evolution of architectural decisions over time, and how ATAM evaluations generate new or superseding ADRs.
-Bloom Verb: Explain
-
-Learning Objective: Students will be able to trace an architectural decision through its ADR history, identify what triggered each revision, and explain the relationship between ATAM evaluation findings and ADR creation.
-
-Canvas layout:
-- Horizontal timeline with two tracks: ADR track (top) and system events track (bottom)
-- ADR entries shown as labeled cards above the timeline, color-coded by status (green=Active, orange=Superseded, gray=Deprecated)
-- System events shown as labeled markers below (requirements change, ATAM evaluation, production incident, business pivot)
-- Connecting arrows between system events and the ADRs they triggered or updated
-- Detail panel on the right showing full ADR content when an entry is clicked
-
-Example timeline entries:
-
-Year 1:
-- Event: System design begins
-- ADR-001: Use layered architecture (Active, accepted based on initial team size and MVP requirements)
-- ADR-002: Use REST APIs for all external interfaces (Active)
-
-Year 2:
-- Event: Scale-out requirements emerge (10× growth)
-- ADR-003: Migrate high-load services to microservices (Active, supersedes parts of ADR-001)
-- ADR-001 status → Superseded (with link to ADR-003)
-- Event: ATAM Evaluation #1 — identifies authentication service as (H,H) latency risk
-- ADR-004: Add Redis caching layer to authentication service (Active, addresses ATAM finding)
-
-Year 3:
-- Event: Real-time dashboard feature required
-- ADR-005: Add WebSocket for dashboard event streaming (Active)
-- Event: ATAM Evaluation #2 — identifies WebSocket connection management as (M,H) scenario
-- ADR-006: Implement sticky load balancer with health-check-aware session persistence (Active)
-
-Interactive elements:
-- Click any ADR card to see its full content (Context, Decision, Consequences)
-- Click any system event marker to see what ADRs it triggered or modified
-- Hover connecting arrows to see the relationship type ("triggered by", "supersedes", "addresses finding")
-- "Show ADR-Only" button collapses system events track to show the ADR decision history alone
-
-Color scheme: Green for Active ADRs, Orange for Superseded, Gray for Deprecated. Blue for system events, Gold for ATAM evaluation events.
-
-Responsive: Timeline scrolls horizontally; panel stacks below on narrow screens.
+```html
+<iframe src="https://dmccreary.github.io/atam/sims/adr-evolution-timeline/main.html"
+        width="100%"
+        scrolling="no"></iframe>
 ```
 
-## Related Resources
+## Lesson Plan
 
-- [Chapter 8: Architectural Patterns and Styles](../../chapters/08-architectural-patterns-styles/index.md)
+### Grade Level
+Undergraduate / Professional
+
+### Duration
+10-15 minutes
+
+### Prerequisites
+Familiarity with Architecture Decision Records (ADRs) and the ATAM evaluation process.
+
+### Bloom's Taxonomy Level
+Understand (L2)
+
+### Learning Objective
+Students will be able to trace an architectural decision through its ADR history, identify what triggered each revision, and explain the relationship between ATAM evaluation findings and ADR creation.
+
+### Activities
+
+1. **Trace a decision** (5 min): Students follow ADR-001 → ADR-003 and explain why and when it was superseded.
+2. **Find the ATAM link** (5 min): Students click both gold ATAM events and name the ADR each produced and the finding behind it.
+3. **Discussion** (5 min): Students explain why recording superseded decisions (rather than deleting them) is valuable architectural history.
+
+### Assessment
+Give students a new finding ("ATAM Evaluation #3 flags the message broker as a single point of failure") and ask them to draft the triggered ADR's Context, Decision, and Consequences.
+
+## References
+
+1. Bass, L., Clements, P., & Kazman, R. (2021). *Software Architecture in Practice* (4th ed.). Addison-Wesley.
+2. Nygard, M. (2011). *Documenting Architecture Decisions*. (The original ADR proposal.)

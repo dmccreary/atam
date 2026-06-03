@@ -349,7 +349,7 @@ ADRs serve ATAM evaluations in two important ways. First, they provide the archi
 
 #### Diagram: ADR to Architecture Evolution Pipeline
 
-<iframe src="../../sims/adr-evolution-timeline/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/adr-evolution-timeline/main.html" width="100%" height="588px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Architecture Decision Record Evolution Timeline</summary>
