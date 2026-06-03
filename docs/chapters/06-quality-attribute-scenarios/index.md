@@ -314,7 +314,7 @@ If major coverage gaps exist, the evaluation team uses targeted prompts to fill 
 
 #### Diagram: Scenario Brainstorming and Prioritization Workshop Simulator
 
-<iframe src="../../sims/scenario-workshop-simulator/main.html" width="100%" height="580px" scrolling="no"></iframe>
+<iframe src="../../sims/scenario-workshop-simulator/main.html" width="100%" height="612px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Scenario Brainstorming and Prioritization Workshop Simulator</summary>
