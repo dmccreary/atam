@@ -38,24 +38,78 @@ nav:
 
   - Chapters:
       - List of Chapters: chapters/index.md
-      - 1. Software Architecture Foundations: chapters/01-software-architecture-foundations/index.md
-      - 2. Architecture Principles and Governance: chapters/02-architecture-principles-governance/index.md
-      - 3. ATAM Introduction and Process Phases: chapters/03-atam-introduction-process/index.md
-      - 4. Stakeholder and Business Analysis: chapters/04-stakeholder-business-analysis/index.md
-      - 5. Quality Attributes: chapters/05-quality-attributes/index.md
-      - 6. Quality Attribute Scenarios: chapters/06-quality-attribute-scenarios/index.md
-      - 7. Utility Trees and Prioritization: chapters/07-utility-trees-prioritization/index.md
-      - 8. Architectural Patterns and Styles: chapters/08-architectural-patterns-styles/index.md
-      - 9. Architectural Tactics and Principles: chapters/09-architectural-tactics-principles/index.md
-      - 10. Risk Analysis and ATAM Reporting: chapters/10-risk-analysis-atam-reporting/index.md
-      - 11. Distributed Systems Fundamentals: chapters/11-distributed-systems-fundamentals/index.md
-      - 12. Distributed Systems Patterns: chapters/12-distributed-systems-patterns/index.md
-      - 13. Cloud-Native Architecture: chapters/13-cloud-native-architecture/index.md
-      - 14. Security Architecture: chapters/14-security-architecture/index.md
-      - 15. Performance Engineering and Scaling: chapters/15-performance-engineering-scaling/index.md
-      - 16. Observability and Reliability: chapters/16-observability-reliability/index.md
-      - 17. AI and ML System Architecture: chapters/17-ai-ml-system-architecture/index.md
-      - 18. Advanced Data and Emerging AI: chapters/18-advanced-data-emerging-ai/index.md
+      - 1. Software Architecture Foundations:
+          - Content: chapters/01-software-architecture-foundations/index.md
+          - Quiz: chapters/01-software-architecture-foundations/quiz.md
+          - References: chapters/01-software-architecture-foundations/references.md
+      - 2. Architecture Principles and Governance:
+          - Content: chapters/02-architecture-principles-governance/index.md
+          - Quiz: chapters/02-architecture-principles-governance/quiz.md
+          - References: chapters/02-architecture-principles-governance/references.md
+      - 3. ATAM Introduction and Process Phases:
+          - Content: chapters/03-atam-introduction-process/index.md
+          - Quiz: chapters/03-atam-introduction-process/quiz.md
+          - References: chapters/03-atam-introduction-process/references.md
+      - 4. Stakeholder and Business Analysis:
+          - Content: chapters/04-stakeholder-business-analysis/index.md
+          - Quiz: chapters/04-stakeholder-business-analysis/quiz.md
+          - References: chapters/04-stakeholder-business-analysis/references.md
+      - 5. Quality Attributes:
+          - Content: chapters/05-quality-attributes/index.md
+          - Quiz: chapters/05-quality-attributes/quiz.md
+          - References: chapters/05-quality-attributes/references.md
+      - 6. Quality Attribute Scenarios:
+          - Content: chapters/06-quality-attribute-scenarios/index.md
+          - Quiz: chapters/06-quality-attribute-scenarios/quiz.md
+          - References: chapters/06-quality-attribute-scenarios/references.md
+      - 7. Utility Trees and Prioritization:
+          - Content: chapters/07-utility-trees-prioritization/index.md
+          - Quiz: chapters/07-utility-trees-prioritization/quiz.md
+          - References: chapters/07-utility-trees-prioritization/references.md
+      - 8. Architectural Patterns and Styles:
+          - Content: chapters/08-architectural-patterns-styles/index.md
+          - Quiz: chapters/08-architectural-patterns-styles/quiz.md
+          - References: chapters/08-architectural-patterns-styles/references.md
+      - 9. Architectural Tactics and Principles:
+          - Content: chapters/09-architectural-tactics-principles/index.md
+          - Quiz: chapters/09-architectural-tactics-principles/quiz.md
+          - References: chapters/09-architectural-tactics-principles/references.md
+      - 10. Risk Analysis and ATAM Reporting:
+          - Content: chapters/10-risk-analysis-atam-reporting/index.md
+          - Quiz: chapters/10-risk-analysis-atam-reporting/quiz.md
+          - References: chapters/10-risk-analysis-atam-reporting/references.md
+      - 11. Distributed Systems Fundamentals:
+          - Content: chapters/11-distributed-systems-fundamentals/index.md
+          - Quiz: chapters/11-distributed-systems-fundamentals/quiz.md
+          - References: chapters/11-distributed-systems-fundamentals/references.md
+      - 12. Distributed Systems Patterns:
+          - Content: chapters/12-distributed-systems-patterns/index.md
+          - Quiz: chapters/12-distributed-systems-patterns/quiz.md
+          - References: chapters/12-distributed-systems-patterns/references.md
+      - 13. Cloud-Native Architecture:
+          - Content: chapters/13-cloud-native-architecture/index.md
+          - Quiz: chapters/13-cloud-native-architecture/quiz.md
+          - References: chapters/13-cloud-native-architecture/references.md
+      - 14. Security Architecture:
+          - Content: chapters/14-security-architecture/index.md
+          - Quiz: chapters/14-security-architecture/quiz.md
+          - References: chapters/14-security-architecture/references.md
+      - 15. Performance Engineering and Scaling:
+          - Content: chapters/15-performance-engineering-scaling/index.md
+          - Quiz: chapters/15-performance-engineering-scaling/quiz.md
+          - References: chapters/15-performance-engineering-scaling/references.md
+      - 16. Observability and Reliability:
+          - Content: chapters/16-observability-reliability/index.md
+          - Quiz: chapters/16-observability-reliability/quiz.md
+          - References: chapters/16-observability-reliability/references.md
+      - 17. AI and ML System Architecture:
+          - Content: chapters/17-ai-ml-system-architecture/index.md
+          - Quiz: chapters/17-ai-ml-system-architecture/quiz.md
+          - References: chapters/17-ai-ml-system-architecture/references.md
+      - 18. Advanced Data and Emerging AI:
+          - Content: chapters/18-advanced-data-emerging-ai/index.md
+          - Quiz: chapters/18-advanced-data-emerging-ai/quiz.md
+          - References: chapters/18-advanced-data-emerging-ai/references.md
 
   - Learning Graph:
       - Introduction: learning-graph/index.md
@@ -65,7 +119,14 @@ nav:
       - Graph Quality Analysis: learning-graph/quality-metrics.md
       - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
       - Mascot Style Guide: learning-graph/mascot-test.md
+<<<<<<< HEAD
       - FAQ Quality Report: learning-graph/faq-quality-report.md
+=======
+      - Book Metrics: learning-graph/book-metrics.md
+      - Chapter Metrics: learning-graph/chapter-metrics.md
+      - Diagram Table: learning-graph/diagram-table.md
+      - Diagram Details: learning-graph/diagram-details.md
+>>>>>>> 0c330c2 (Add book-metrics.json learning graph metrics and content updates)
 
   - MicroSims:
     - List of MicroSims: sims/index.md
@@ -122,10 +183,14 @@ nav:
     - Utility Tree Interactive Explorer: sims/utility-tree-explorer/index.md
     - Vertical vs. Horizontal Scaling Tradeoffs: sims/scaling-tradeoff-explorer/index.md
 
+<<<<<<< HEAD
 
 
 
 
+=======
+  - Glossary: glossary.md
+>>>>>>> 0c330c2 (Add book-metrics.json learning graph metrics and content updates)
   - FAQ: faq.md
   - License: license.md
   - Contact: contact.md
