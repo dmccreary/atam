@@ -1,21 +1,45 @@
 {
   "title": "Distributed System Component Explorer",
-  "description": "Students will be able to identify the major infrastructure components of a distributed system, explain each component's purpose, and describe the quality attribute implications of each component's design choices.",
-  "creator": "Dementia Education Project",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for distributed system component explorer",
   "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en-US",
-  "rights": "CC BY 4.0",
-  "identifier": "distributed-system-explorer",
-  "library": "p5.js",
-  "bloomLevel": "Understand (L2) — Explain the role of each distributed system infrastructure component and its quality attribute implications.",
-  "bloomVerb": "Explain",
-  "completion_status": "scaffold",
-  "chapter_number": 11,
-  "chapter_title": "Distributed Systems Architecture Fundamentals",
-  "chapter_dir": "11-distributed-systems-fundamentals"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Distributed System Component Explorer",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Create",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "11-distributed-systems-fundamentals"
 }
