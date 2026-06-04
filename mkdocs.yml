@@ -119,14 +119,11 @@ nav:
       - Graph Quality Analysis: learning-graph/quality-metrics.md
       - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
       - Mascot Style Guide: learning-graph/mascot-test.md
-<<<<<<< HEAD
       - FAQ Quality Report: learning-graph/faq-quality-report.md
-=======
       - Book Metrics: learning-graph/book-metrics.md
       - Chapter Metrics: learning-graph/chapter-metrics.md
       - Diagram Table: learning-graph/diagram-table.md
       - Diagram Details: learning-graph/diagram-details.md
->>>>>>> 0c330c2 (Add book-metrics.json learning graph metrics and content updates)
 
   - MicroSims:
     - List of MicroSims: sims/index.md
@@ -183,14 +180,7 @@ nav:
     - Utility Tree Interactive Explorer: sims/utility-tree-explorer/index.md
     - Vertical vs. Horizontal Scaling Tradeoffs: sims/scaling-tradeoff-explorer/index.md
 
-<<<<<<< HEAD
-
-
-
-
-=======
   - Glossary: glossary.md
->>>>>>> 0c330c2 (Add book-metrics.json learning graph metrics and content updates)
   - FAQ: faq.md
   - License: license.md
   - Contact: contact.md
