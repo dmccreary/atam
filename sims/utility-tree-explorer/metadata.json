@@ -1,21 +1,45 @@
 {
   "title": "Utility Tree Interactive Explorer",
-  "description": "Students will be able to identify each level of a utility tree (root, quality attribute branch, sub-attribute node, leaf scenario), interpret the importance and difficulty ratings, and explain why (H,H) scenarios receive priority analytical attention.",
-  "creator": "Dementia Education Project",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for utility tree interactive explorer",
   "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en-US",
-  "rights": "CC BY 4.0",
-  "identifier": "utility-tree-explorer",
-  "library": "p5.js",
-  "bloomLevel": "Understand (L2) — Explain the hierarchical structure of a utility tree and interpret the importance/difficulty ratings of leaf-level scenarios.",
-  "bloomVerb": "Explain",
-  "completion_status": "scaffold",
-  "chapter_number": 7,
-  "chapter_title": "Utility Trees and Scenario Prioritization",
-  "chapter_dir": "07-utility-trees-prioritization"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Utility Tree Interactive Explorer",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Understand",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "07-utility-trees-prioritization"
 }

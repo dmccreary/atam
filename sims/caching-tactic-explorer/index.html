@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Students will be able to configure a cache with appropriate strategy, TTL, and invalidation policy for a given performance scenario, and explain the consistency implications of their configuration.">
+        <meta name="description" content="Interactive p5.js MicroSim simulating cache strategies (write-through, write-behind, cache-aside) with a live request stream and performance vs consistency metrics.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -22,15 +22,15 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
     
     
       
-        <title>Caching Tactic Anatomy - Architecture Tradeoff Analysis Method</title>
+        <title>Caching Tactic Explorer - Architecture Tradeoff Analysis Method</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -63,7 +63,9 @@
     
     
     
-  </head>
+    <meta property="og:image" content="https://dmccreary.github.io/atam/sims/caching-tactic-explorer/caching-tactic-explorer.png">
+  <meta name="twitter:image" content="https://dmccreary.github.io/atam/sims/caching-tactic-explorer/caching-tactic-explorer.png">
+</head>
   
   
     
@@ -80,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#caching-tactic-anatomy" class="md-skip">
+        <a href="#caching-tactic-explorer" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Caching Tactic Anatomy
+              Caching Tactic Explorer
             
           </span>
         </div>
@@ -127,13 +129,11 @@
     
     
     
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -172,14 +172,13 @@
     </div>
   </div>
 </div>
-      
     
     
       <div class="md-header__source">
         <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -224,7 +223,7 @@
       <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -244,10 +243,8 @@
       <a href="../.." class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Home
-    
   </span>
   
 
@@ -266,10 +263,8 @@
       <a href="../../about/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     About
-    
   </span>
   
 
@@ -288,10 +283,8 @@
       <a href="../../course-description/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Course Description
-    
   </span>
   
 
@@ -352,7 +345,6 @@
     
     
     
-    
       
         
         
@@ -361,16 +353,13 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-  
   
   
     <a href="../../chapters/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
     Chapters
-    
   </span>
   
 
@@ -412,7 +401,14 @@
       
         
       
-    
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -426,14 +422,11 @@
         
   
   
-  
     <a href="../../learning-graph/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
     Learning Graph
-    
   </span>
   
 
@@ -464,110 +457,213 @@
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
-    
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -580,14 +676,13 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
+          
           <div class="md-nav__link md-nav__container">
             <a href="../" class="md-nav__link ">
               
   
-  
   <span class="md-ellipsis">
     MicroSims
-    
   </span>
   
 
@@ -619,10 +714,8 @@
       <a href="../failover-architecture-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Active-Passive vs. Active-Active Failover
-    
   </span>
   
     
@@ -650,19 +743,9 @@
       <a href="../adr-evolution-timeline/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     ADR to Architecture Evolution Pipeline
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -681,10 +764,8 @@
       <a href="../api-versioning-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     API Versioning and Contract-First Design Patterns
-    
   </span>
   
     
@@ -712,19 +793,9 @@
       <a href="../pattern-quality-matrix/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Architectural Pattern Quality Attribute Matrix
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -743,10 +814,8 @@
       <a href="../architecture-building-blocks-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Architecture Building Blocks Explorer
-    
   </span>
   
 
@@ -766,10 +835,8 @@
       <a href="../evaluation-methods-comparison/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Architecture Evaluation Methods Comparison
-    
   </span>
   
 
@@ -789,10 +856,8 @@
       <a href="../fitness-function-dashboard/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Architecture Fitness Function Dashboard
-    
   </span>
   
 
@@ -812,10 +877,8 @@
       <a href="../architecture-lifecycle-governance/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Architecture Lifecycle with Governance Checkpoints
-    
   </span>
   
 
@@ -835,10 +898,8 @@
       <a href="../architecture-views-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Architecture Views Explorer
-    
   </span>
   
 
@@ -858,19 +919,9 @@
       <a href="../atam-output-pipeline/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     ATAM Output to Action Pipeline
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -889,10 +940,8 @@
       <a href="../atam-team-roles/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     ATAM Team Roles and Interactions
-    
   </span>
   
 
@@ -912,10 +961,8 @@
       <a href="../atam-process-flow/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     ATAM Two-Phase Process Flow
-    
   </span>
   
 
@@ -935,10 +982,8 @@
       <a href="../availability-architecture-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Availability Architecture Analyzer
-    
   </span>
   
     
@@ -966,10 +1011,8 @@
       <a href="../business-to-architecture-mapping/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Business Goals to Architecture Driver Mapping
-    
   </span>
   
 
@@ -998,19 +1041,9 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
-  
   <span class="md-ellipsis">
     Caching Tactic Anatomy
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -1019,19 +1052,9 @@
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
-  
   <span class="md-ellipsis">
     Caching Tactic Anatomy
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1052,6 +1075,79 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#about-this-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      About This MicroSim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iframe-embed-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iframe Embed Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grade-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grade Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#learning-objective" class="md-nav__link">
     <span class="md-ellipsis">
       Learning Objective
@@ -1059,29 +1155,34 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#preview" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
-      Preview
+      Activities
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#specification" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
     <span class="md-ellipsis">
-      Specification
+      Assessment
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#related-resources" class="md-nav__link">
+  <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
-      Related Resources
+      References
     </span>
   </a>
   
@@ -1106,19 +1207,9 @@
       <a href="../cap-theorem-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     CAP Theorem Interactive Explorer
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1137,10 +1228,8 @@
       <a href="../cdn-architecture-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     CDN Request Routing and Cache Flow
-    
   </span>
   
     
@@ -1168,10 +1257,8 @@
       <a href="../cloud-native-qa-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Cloud-Native Architecture Quality Attribute Stack
-    
   </span>
   
     
@@ -1199,19 +1286,9 @@
       <a href="../communication-style-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Communication Style Tradeoff Explorer
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1230,10 +1307,8 @@
       <a href="../deployment-strategy-selector/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Deployment Strategy Decision Matrix
-    
   </span>
   
     
@@ -1261,19 +1336,9 @@
       <a href="../distributed-system-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Distributed System Component Explorer
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1292,19 +1357,9 @@
       <a href="../distributed-trace-viewer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Distributed Tracing Visualization
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1323,10 +1378,8 @@
       <a href="../distributed-trace-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Distributed Tracing Waterfall View
-    
   </span>
   
     
@@ -1354,10 +1407,8 @@
       <a href="../federated-learning-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Federated Learning Architecture
-    
   </span>
   
     
@@ -1385,10 +1436,8 @@
       <a href="../technology-radar-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Interactive Technology Radar
-    
   </span>
   
 
@@ -1408,10 +1457,8 @@
       <a href="../data-architecture-patterns/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Lambda vs. Kappa Architecture Comparison
-    
   </span>
   
     
@@ -1439,10 +1486,8 @@
       <a href="../graph-viewer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Learning Graph Viewer
-    
   </span>
   
 
@@ -1462,10 +1507,8 @@
       <a href="../ml-pipeline-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     ML Pipeline Architecture Flow
-    
   </span>
   
     
@@ -1493,10 +1536,8 @@
       <a href="../performance-metrics-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Performance Metric Relationships
-    
   </span>
   
     
@@ -1524,19 +1565,9 @@
       <a href="../priority-matrix-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Priority Matrix and Analytical Roadmap
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1555,10 +1586,8 @@
       <a href="../qa-coverage-dashboard/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Quality Attribute Coverage Dashboard
-    
   </span>
   
 
@@ -1578,10 +1607,8 @@
       <a href="../qa-requirement-workbench/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Quality Attribute Requirement Construction Workbench
-    
   </span>
   
 
@@ -1601,10 +1628,8 @@
       <a href="../quality-attribute-taxonomy/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Quality Attribute Taxonomy and Conflict Map
-    
   </span>
   
 
@@ -1624,10 +1649,8 @@
       <a href="../rag-architecture-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     RAG vs. GraphRAG Architecture Comparison
-    
   </span>
   
     
@@ -1655,19 +1678,9 @@
       <a href="../resilience-pattern-simulator/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Resilience Pattern Interaction Simulator
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1686,10 +1699,8 @@
       <a href="../responsible-ai-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Responsible AI Architecture Components
-    
   </span>
   
     
@@ -1717,19 +1728,9 @@
       <a href="../risk-register-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Risk Register and Theme Aggregation
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1748,19 +1749,9 @@
       <a href="../atam-result-type-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Risk Result Type Explorer
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1779,10 +1770,8 @@
       <a href="../saga-flow-simulator/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Saga Pattern Flow Simulator
-    
   </span>
   
     
@@ -1810,10 +1799,8 @@
       <a href="../scenario-workshop-simulator/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Scenario Brainstorming and Prioritization Workshop Simulator
-    
   </span>
   
 
@@ -1833,10 +1820,8 @@
       <a href="../scenario-to-fitness-pipeline/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Scenario Catalog to Fitness Function Pipeline
-    
   </span>
   
 
@@ -1856,10 +1841,8 @@
       <a href="../scenario-construction-workbench/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Scenario Construction Workbench
-    
   </span>
   
 
@@ -1879,10 +1862,8 @@
       <a href="../security-architecture-layers/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Security Architecture Layers
-    
   </span>
   
     
@@ -1910,10 +1891,8 @@
       <a href="../separation-of-concerns-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Separation of Concerns in a Layered Architecture
-    
   </span>
   
 
@@ -1933,10 +1912,8 @@
       <a href="../stakeholder-priority-matrix/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Stakeholder Priority Conflict Resolution
-    
   </span>
   
 
@@ -1956,10 +1933,8 @@
       <a href="../stakeholder-universe-map/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Stakeholder Universe Map
-    
   </span>
   
 
@@ -1979,10 +1954,8 @@
       <a href="../stride-threat-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     STRIDE Threat Model Explorer
-    
   </span>
   
     
@@ -2010,19 +1983,9 @@
       <a href="../tactic-interaction-web/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Tactic Interaction Web
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -2041,10 +2004,8 @@
       <a href="../technical-debt-simulator/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Technical Debt Accumulation Simulator
-    
   </span>
   
 
@@ -2064,19 +2025,9 @@
       <a href="../utility-tree-builder/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Utility Tree Construction Workshop Simulator
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -2095,19 +2046,9 @@
       <a href="../utility-tree-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Utility Tree Interactive Explorer
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -2126,10 +2067,8 @@
       <a href="../scaling-tradeoff-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Vertical vs. Horizontal Scaling Tradeoffs
-    
   </span>
   
     
@@ -2161,13 +2100,31 @@
   
   
     <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../faq/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     FAQ
-    
   </span>
   
 
@@ -2186,10 +2143,8 @@
       <a href="../../license/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     License
-    
   </span>
   
 
@@ -2208,10 +2163,8 @@
       <a href="../../contact/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Contact
-    
   </span>
   
 
@@ -2247,6 +2200,79 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#about-this-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      About This MicroSim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iframe-embed-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iframe Embed Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grade-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grade Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#learning-objective" class="md-nav__link">
     <span class="md-ellipsis">
       Learning Objective
@@ -2254,29 +2280,34 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#preview" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
-      Preview
+      Activities
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#specification" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
     <span class="md-ellipsis">
-      Specification
+      Assessment
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#related-resources" class="md-nav__link">
+  <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
-      Related Resources
+      References
     </span>
   </a>
   
@@ -2296,7 +2327,6 @@
                 
                   
 
-
   
     <a href="https://github.com/dmccreary/atam/blob/main/docs/sims/caching-tactic-explorer/index.md" title="Edit this page" class="md-content__button md-icon">
       
@@ -2306,72 +2336,52 @@
   
 
 
-<h1 id="caching-tactic-anatomy">Caching Tactic Anatomy<a class="headerlink" href="#caching-tactic-anatomy" title="Permanent link">&para;</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Scaffold</p>
-<p>This MicroSim has been scaffolded from its specification. The interactive
-implementation has not been built yet.</p>
-</div>
-<h2 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h2>
-<p>Students will be able to configure a cache with appropriate strategy, TTL, and invalidation policy for a given performance scenario, and explain the consistency implications of their configuration.</p>
-<ul>
-<li><strong>Bloom Level:</strong> Apply (L3) — Use caching strategy knowledge to configure a cache for a specific performance vs. consistency tradeoff scenario.</li>
-<li><strong>Bloom Verb:</strong> Use</li>
-<li><strong>Library:</strong> p5.js</li>
-</ul>
-<h2 id="preview">Preview<a class="headerlink" href="#preview" title="Permanent link">&para;</a></h2>
-<iframe src="main.html" width="100%" height="600"></iframe>
+<h1 id="caching-tactic-explorer">Caching Tactic Explorer<a class="headerlink" href="#caching-tactic-explorer" title="Permanent link">&para;</a></h1>
+<iframe src="main.html" height="558" width="100%" scrolling="no"></iframe>
 
-<p><a class="md-button md-button--primary" href="main.html">Run MicroSim in Fullscreen</a></p>
-<h2 id="specification">Specification<a class="headerlink" href="#specification" title="Permanent link">&para;</a></h2>
-<p>The full specification below is extracted from
-<a href="../../chapters/09-architectural-tactics-principles/">Chapter 9: Architectural Tactics and Design Principles</a>.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Type: microsim
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>**sim-id:** caching-tactic-explorer&lt;br/&gt;
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>**Library:** p5.js&lt;br/&gt;
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>**Status:** Specified
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Purpose: Interactive simulation of cache behavior showing the performance impact, cache hit rate, and consistency tradeoffs of different caching strategies (write-through, write-behind, cache-aside), with student-controlled parameters.
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>Bloom Level: Apply (L3) — Use caching strategy knowledge to configure a cache for a specific performance vs. consistency tradeoff scenario.
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Bloom Verb: Use
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Learning Objective: Students will be able to configure a cache with appropriate strategy, TTL, and invalidation policy for a given performance scenario, and explain the consistency implications of their configuration.
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>Canvas layout:
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>- Top: Cache strategy selector (Write-Through, Write-Behind/Write-Back, Cache-Aside)
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>- Left: Live request stream showing incoming read/write operations with hit/miss indicators
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>- Center: Cache state panel showing current entries, TTLs, and freshness indicators
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>- Right: Metrics panel showing: hit rate (%), average latency (ms), consistency lag (seconds)
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>- Bottom: Configuration panel — TTL slider (0-3600 seconds), cache size (10-1000 entries), &quot;Enable Staleness Warning&quot; toggle
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>Cache strategies explained (visible in a collapsible reference panel):
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>- Write-Through: Every write goes to cache AND database synchronously; cache is always consistent; writes are slower
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>- Write-Behind: Writes go to cache immediately, database updated asynchronously; writes are fast; risk of data loss on cache crash
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>- Cache-Aside (Lazy): Application reads from database on miss and populates cache; application manages cache; flexible but more code
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>Behavior:
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>- Simulated request stream: 80% reads, 20% writes at configurable rate
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>- Each request shows in the stream panel with color coding: green (cache hit), yellow (cache miss → DB), red (write operation)
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>- Metrics update in real-time as requests are processed
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>- &quot;Introduce Stale Read&quot; button: simulates a write that bypasses cache invalidation; staleness indicator appears on affected entries
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>- &quot;Cache Eviction&quot; event triggered when cache is full, with visual of LRU eviction
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>Data Visibility Requirements:
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>- Always show current hit rate prominently
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>- Show average read latency comparison: cache hit (5ms) vs. cache miss + DB (50ms)
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>- When staleness occurs, show exactly how many ms old the stale entry is
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>Instructional Rationale: Real-time simulation with configurable parameters is appropriate for Apply because students must make configuration decisions and observe their consequences. Static description would not make the latency/consistency tradeoff felt.
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>Color scheme: Green for hits, Red for writes, Yellow for misses. Blue for cache entries in good state, Orange for stale entries.
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>Responsive: Panels resize to container width.
+<p><a class="md-button md-button--primary" href="main.html">Run the Caching Tactic Explorer MicroSim Fullscreen</a>
+<br/>
+<a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
+<h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
+<p>This MicroSim simulates a cache under a live request stream (80% reads, 20% writes) so the performance-versus-consistency tradeoff of each caching strategy can be <em>felt</em>, not just read. A strategy selector switches between Write-Through, Write-Behind, and Cache-Aside; a request stream shows each operation colored by cache hit, miss, or write; a cache-state panel shows current entries with TTL freshness bars; and a metrics panel shows hit rate, average latency, and consistency lag in real time.</p>
+<h2 id="how-to-use">How to Use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Pick a strategy</strong> and watch the metrics change. Write-Through keeps consistency lag at zero but raises write latency; Write-Behind drops write latency but lets consistency lag grow.</li>
+<li><strong>Adjust TTL and cache size</strong> with the sliders and watch the hit rate respond.</li>
+<li>Compare <strong>average latency</strong> against the reference (a cache hit is 5 ms; a miss to the database is 50 ms).</li>
+<li>Click <strong>Introduce Stale Read</strong> to mark an entry stale (a write that bypassed invalidation) — its freshness bar turns orange and shows how many milliseconds out of date it is.</li>
+<li><strong>Pause</strong> to freeze the simulation and inspect a moment.</li>
+</ol>
+<h2 id="iframe-embed-code">Iframe Embed Code<a class="headerlink" href="#iframe-embed-code" title="Permanent link">&para;</a></h2>
+<p>You can add this MicroSim to any web page by adding this to your HTML:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/atam/sims/caching-tactic-explorer/main.html&quot;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<h2 id="related-resources">Related Resources<a class="headerlink" href="#related-resources" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="../../chapters/09-architectural-tactics-principles/">Chapter 9: Architectural Tactics and Design Principles</a></li>
-</ul>
+<h2 id="lesson-plan">Lesson Plan<a class="headerlink" href="#lesson-plan" title="Permanent link">&para;</a></h2>
+<h3 id="grade-level">Grade Level<a class="headerlink" href="#grade-level" title="Permanent link">&para;</a></h3>
+<p>Undergraduate / Professional</p>
+<h3 id="duration">Duration<a class="headerlink" href="#duration" title="Permanent link">&para;</a></h3>
+<p>15-20 minutes</p>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<p>Familiarity with caching, TTL, and the performance/consistency tradeoff.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level<a class="headerlink" href="#blooms-taxonomy-level" title="Permanent link">&para;</a></h3>
+<p>Apply (L3)</p>
+<h3 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h3>
+<p>Students will be able to configure a cache with an appropriate strategy, TTL, and size for a given performance scenario, and explain the consistency implications of their configuration.</p>
+<h3 id="activities">Activities<a class="headerlink" href="#activities" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Strategy comparison</strong> (6 min): Students run all three strategies and record hit rate, average latency, and consistency lag for each.</li>
+<li><strong>Tune for a target</strong> (7 min): Given a target ("average read latency under 20 ms"), students adjust TTL and size to reach it and explain why.</li>
+<li><strong>Consistency cost</strong> (5 min): Using Write-Behind plus Introduce Stale Read, students explain the risk a fast-write configuration accepts.</li>
+</ol>
+<h3 id="assessment">Assessment<a class="headerlink" href="#assessment" title="Permanent link">&para;</a></h3>
+<p>Give students a scenario ("read-heavy product catalog, tolerates 30s staleness") and ask them to choose a strategy and TTL and justify it from the metrics.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Bass, L., Clements, P., &amp; Kazman, R. (2021). <em>Software Architecture in Practice</em> (4th ed.). Addison-Wesley.</li>
+<li>Kleppmann, M. (2017). <em>Designing Data-Intensive Applications</em>. O'Reilly. (Caching and consistency.)</li>
+</ol>
 
 
 
@@ -2466,12 +2476,10 @@ implementation has not been built yet.</p>
     </div>
     
     
-    
-      
-      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>

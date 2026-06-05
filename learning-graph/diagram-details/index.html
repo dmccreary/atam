@@ -1,0 +1,3142 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An interactive intelligent textbook on software architecture tradeoff analysis.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/atam/learning-graph/diagram-details/">
+      
+      
+        <link rel="prev" href="../diagram-table/">
+      
+      
+        <link rel="next" href="../../sims/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Diagram Details - Architecture Tradeoff Analysis Method</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#diagram-and-microsim-details" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Architecture Tradeoff Analysis Method" class="md-header__button md-logo" aria-label="Architecture Tradeoff Analysis Method" data-md-component="logo">
+      
+  <img src="../../img/mascot/neutral.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Architecture Tradeoff Analysis Method
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Diagram Details
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Architecture Tradeoff Analysis Method" class="md-nav__button md-logo" aria-label="Architecture Tradeoff Analysis Method" data-md-component="logo">
+      
+  <img src="../../img/mascot/neutral.png" alt="logo">
+
+    </a>
+    Architecture Tradeoff Analysis Method
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Learning Graph
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course-description-assessment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description Assessment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concept-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Concept List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concept-taxonomy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Concept Taxonomy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quality-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graph Quality Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../taxonomy-distribution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Taxonomy Distribution
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mascot-test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mascot Style Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq-quality-report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ Quality Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../book-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Book Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter-metrics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter Metrics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagram-table/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diagram Table
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Diagram Details
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Diagram Details
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-software-architecture-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 1: Software Architecture Foundations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 1: Software Architecture Foundations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-building-blocks-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture Building Blocks Explorer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-views-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture Views Explorer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality-attribute-taxonomy-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Attribute Taxonomy Explorer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-debt-accumulation-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Debt Accumulation Simulator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-2-architecture-principles-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 2: Architecture Principles Governance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 2: Architecture Principles Governance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-fitness-function-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture Fitness Function Dashboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-lifecycle-with-governance-checkpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture Lifecycle with Governance Checkpoints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-technology-radar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive Technology Radar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#separation-of-concerns-in-a-layered-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Separation of Concerns in a Layered Architecture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-3-atam-introduction-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 3: Atam Introduction Process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 3: Atam Introduction Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atam-team-roles-and-interactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      ATAM Team Roles and Interactions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atam-two-phase-process-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      ATAM Two-Phase Process Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-evaluation-methods-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture Evaluation Methods Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4-stakeholder-business-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 4: Stakeholder Business Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 4: Stakeholder Business Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-goals-to-architecture-driver-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business Goals to Architecture Driver Mapping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stakeholder-priority-conflict-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholder Priority Conflict Resolution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stakeholder-universe-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholder Universe Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-5-quality-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 5: Quality Attributes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 5: Quality Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quality-attribute-coverage-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Attribute Coverage Dashboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality-attribute-requirement-construction-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Attribute Requirement Construction Workbench
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality-attribute-taxonomy-and-conflict-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Attribute Taxonomy and Conflict Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-6-quality-attribute-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 6: Quality Attribute Scenarios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 6: Quality Attribute Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-brainstorming-and-prioritization-workshop-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario Brainstorming and Prioritization Workshop Simulator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-catalog-to-fitness-function-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario Catalog to Fitness Function Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-construction-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario Construction Workbench
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-7-utility-trees-prioritization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 7: Utility Trees Prioritization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 7: Utility Trees Prioritization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#priority-matrix-and-analytical-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Priority Matrix and Analytical Roadmap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utility-tree-construction-workshop-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utility Tree Construction Workshop Simulator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utility-tree-interactive-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utility Tree Interactive Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-8-architectural-patterns-styles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 8: Architectural Patterns Styles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 8: Architectural Patterns Styles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adr-to-architecture-evolution-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      ADR to Architecture Evolution Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architectural-pattern-quality-attribute-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architectural Pattern Quality Attribute Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communication-style-tradeoff-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Communication Style Tradeoff Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-9-architectural-tactics-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 9: Architectural Tactics Principles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 9: Architectural Tactics Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caching-tactic-anatomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caching Tactic Anatomy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resilience-pattern-interaction-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resilience Pattern Interaction Simulator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tactic-interaction-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tactic Interaction Web
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-10-risk-analysis-atam-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 10: Risk Analysis Atam Reporting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 10: Risk Analysis Atam Reporting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atam-output-to-action-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      ATAM Output to Action Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-register-and-theme-aggregation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Risk Register and Theme Aggregation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-result-type-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Risk Result Type Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-11-distributed-systems-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 11: Distributed Systems Fundamentals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 11: Distributed Systems Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cap-theorem-interactive-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAP Theorem Interactive Explorer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributed-system-component-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distributed System Component Explorer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributed-tracing-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distributed Tracing Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-12-distributed-systems-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 12: Distributed Systems Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 12: Distributed Systems Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-versioning-and-contract-first-design-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Versioning and Contract-First Design Patterns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saga-pattern-flow-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saga Pattern Flow Simulator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-13-cloud-native-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 13: Cloud Native Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 13: Cloud Native Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cloud-native-architecture-quality-attribute-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud-Native Architecture Quality Attribute Stack
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-strategy-decision-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment Strategy Decision Matrix
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-14-security-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 14: Security Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 14: Security Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stride-threat-model-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      STRIDE Threat Model Explorer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-architecture-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Architecture Layers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-15-performance-engineering-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 15: Performance Engineering Scaling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 15: Performance Engineering Scaling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cdn-request-routing-and-cache-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      CDN Request Routing and Cache Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-metric-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Metric Relationships
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertical-vs-horizontal-scaling-tradeoffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertical vs. Horizontal Scaling Tradeoffs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-16-observability-reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 16: Observability Reliability
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 16: Observability Reliability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#active-passive-vs-active-active-failover" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active-Passive vs. Active-Active Failover
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#availability-architecture-analyzer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Availability Architecture Analyzer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributed-tracing-waterfall-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distributed Tracing Waterfall View
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-17-ai-ml-system-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 17: Ai Ml System Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 17: Ai Ml System Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ml-pipeline-architecture-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      ML Pipeline Architecture Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rag-vs-graphrag-architecture-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAG vs. GraphRAG Architecture Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responsible-ai-architecture-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responsible AI Architecture Components
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-18-advanced-data-emerging-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 18: Advanced Data Emerging Ai
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 18: Advanced Data Emerging Ai">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#federated-learning-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Federated Learning Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lambda-vs-kappa-architecture-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lambda vs. Kappa Architecture Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-software-architecture-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 1: Software Architecture Foundations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 1: Software Architecture Foundations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-building-blocks-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture Building Blocks Explorer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-views-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture Views Explorer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality-attribute-taxonomy-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Attribute Taxonomy Explorer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-debt-accumulation-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Debt Accumulation Simulator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-2-architecture-principles-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 2: Architecture Principles Governance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 2: Architecture Principles Governance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-fitness-function-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture Fitness Function Dashboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-lifecycle-with-governance-checkpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture Lifecycle with Governance Checkpoints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-technology-radar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive Technology Radar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#separation-of-concerns-in-a-layered-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Separation of Concerns in a Layered Architecture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-3-atam-introduction-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 3: Atam Introduction Process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 3: Atam Introduction Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atam-team-roles-and-interactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      ATAM Team Roles and Interactions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atam-two-phase-process-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      ATAM Two-Phase Process Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-evaluation-methods-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture Evaluation Methods Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4-stakeholder-business-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 4: Stakeholder Business Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 4: Stakeholder Business Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-goals-to-architecture-driver-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business Goals to Architecture Driver Mapping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stakeholder-priority-conflict-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholder Priority Conflict Resolution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stakeholder-universe-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholder Universe Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-5-quality-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 5: Quality Attributes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 5: Quality Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quality-attribute-coverage-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Attribute Coverage Dashboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality-attribute-requirement-construction-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Attribute Requirement Construction Workbench
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality-attribute-taxonomy-and-conflict-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Attribute Taxonomy and Conflict Map
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-6-quality-attribute-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 6: Quality Attribute Scenarios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 6: Quality Attribute Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-brainstorming-and-prioritization-workshop-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario Brainstorming and Prioritization Workshop Simulator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-catalog-to-fitness-function-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario Catalog to Fitness Function Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-construction-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario Construction Workbench
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-7-utility-trees-prioritization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 7: Utility Trees Prioritization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 7: Utility Trees Prioritization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#priority-matrix-and-analytical-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Priority Matrix and Analytical Roadmap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utility-tree-construction-workshop-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utility Tree Construction Workshop Simulator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utility-tree-interactive-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utility Tree Interactive Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-8-architectural-patterns-styles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 8: Architectural Patterns Styles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 8: Architectural Patterns Styles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adr-to-architecture-evolution-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      ADR to Architecture Evolution Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architectural-pattern-quality-attribute-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architectural Pattern Quality Attribute Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communication-style-tradeoff-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Communication Style Tradeoff Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-9-architectural-tactics-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 9: Architectural Tactics Principles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 9: Architectural Tactics Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caching-tactic-anatomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caching Tactic Anatomy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resilience-pattern-interaction-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resilience Pattern Interaction Simulator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tactic-interaction-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tactic Interaction Web
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-10-risk-analysis-atam-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 10: Risk Analysis Atam Reporting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 10: Risk Analysis Atam Reporting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atam-output-to-action-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      ATAM Output to Action Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-register-and-theme-aggregation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Risk Register and Theme Aggregation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-result-type-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Risk Result Type Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-11-distributed-systems-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 11: Distributed Systems Fundamentals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 11: Distributed Systems Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cap-theorem-interactive-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAP Theorem Interactive Explorer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributed-system-component-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distributed System Component Explorer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributed-tracing-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distributed Tracing Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-12-distributed-systems-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 12: Distributed Systems Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 12: Distributed Systems Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-versioning-and-contract-first-design-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Versioning and Contract-First Design Patterns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saga-pattern-flow-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saga Pattern Flow Simulator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-13-cloud-native-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 13: Cloud Native Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 13: Cloud Native Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cloud-native-architecture-quality-attribute-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud-Native Architecture Quality Attribute Stack
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-strategy-decision-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment Strategy Decision Matrix
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-14-security-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 14: Security Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 14: Security Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stride-threat-model-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      STRIDE Threat Model Explorer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-architecture-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Architecture Layers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-15-performance-engineering-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 15: Performance Engineering Scaling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 15: Performance Engineering Scaling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cdn-request-routing-and-cache-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      CDN Request Routing and Cache Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-metric-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Metric Relationships
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertical-vs-horizontal-scaling-tradeoffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertical vs. Horizontal Scaling Tradeoffs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-16-observability-reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 16: Observability Reliability
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 16: Observability Reliability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#active-passive-vs-active-active-failover" class="md-nav__link">
+    <span class="md-ellipsis">
+      Active-Passive vs. Active-Active Failover
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#availability-architecture-analyzer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Availability Architecture Analyzer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributed-tracing-waterfall-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distributed Tracing Waterfall View
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-17-ai-ml-system-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 17: Ai Ml System Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 17: Ai Ml System Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ml-pipeline-architecture-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      ML Pipeline Architecture Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rag-vs-graphrag-architecture-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAG vs. GraphRAG Architecture Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responsible-ai-architecture-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responsible AI Architecture Components
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-18-advanced-data-emerging-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 18: Advanced Data Emerging Ai
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 18: Advanced Data Emerging Ai">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#federated-learning-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Federated Learning Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lambda-vs-kappa-architecture-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lambda vs. Kappa Architecture Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/atam/blob/main/docs/learning-graph/diagram-details.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="diagram-and-microsim-details">Diagram and MicroSim Details<a class="headerlink" href="#diagram-and-microsim-details" title="Permanent link">&para;</a></h1>
+<p><strong>Total Visual Elements:</strong> 52
+<strong>Diagrams:</strong> 5
+<strong>MicroSims:</strong> 43</p>
+<h2 id="chapter-1-software-architecture-foundations">Chapter 1: Software Architecture Foundations<a class="headerlink" href="#chapter-1-software-architecture-foundations" title="Permanent link">&para;</a></h2>
+<p><strong>Total elements:</strong> 4</p>
+<h3 id="architecture-building-blocks-explorer"><a href="../../chapters/01-software-architecture-foundations/#diagram-architecture-building-blocks-explorer">Architecture Building Blocks Explorer</a><a class="headerlink" href="#architecture-building-blocks-explorer" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Diagram</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 4</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="architecture-views-explorer"><a href="../../chapters/01-software-architecture-foundations/#diagram-architecture-views-explorer">Architecture Views Explorer</a><a class="headerlink" href="#architecture-views-explorer" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 3</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h3 id="quality-attribute-taxonomy-explorer"><a href="../../chapters/01-software-architecture-foundations/#diagram-quality-attribute-taxonomy-explorer">Quality Attribute Taxonomy Explorer</a><a class="headerlink" href="#quality-attribute-taxonomy-explorer" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Diagram</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 6</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="technical-debt-accumulation-simulator"><a href="../../chapters/01-software-architecture-foundations/#diagram-technical-debt-accumulation-simulator">Technical Debt Accumulation Simulator</a><a class="headerlink" href="#technical-debt-accumulation-simulator" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 10</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h2 id="chapter-2-architecture-principles-governance">Chapter 2: Architecture Principles Governance<a class="headerlink" href="#chapter-2-architecture-principles-governance" title="Permanent link">&para;</a></h2>
+<p><strong>Total elements:</strong> 4</p>
+<h3 id="architecture-fitness-function-dashboard"><a href="../../chapters/02-architecture-principles-governance/#diagram-architecture-fitness-function-dashboard">Architecture Fitness Function Dashboard</a><a class="headerlink" href="#architecture-fitness-function-dashboard" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 6</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="architecture-lifecycle-with-governance-checkpoints"><a href="../../chapters/02-architecture-principles-governance/#diagram-architecture-lifecycle-with-governance-checkpoints">Architecture Lifecycle with Governance Checkpoints</a><a class="headerlink" href="#architecture-lifecycle-with-governance-checkpoints" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 3</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="interactive-technology-radar"><a href="../../chapters/02-architecture-principles-governance/#diagram-interactive-technology-radar">Interactive Technology Radar</a><a class="headerlink" href="#interactive-technology-radar" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 3</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="separation-of-concerns-in-a-layered-architecture"><a href="../../chapters/02-architecture-principles-governance/#diagram-separation-of-concerns-in-a-layered-architecture">Separation of Concerns in a Layered Architecture</a><a class="headerlink" href="#separation-of-concerns-in-a-layered-architecture" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 12</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h2 id="chapter-3-atam-introduction-process">Chapter 3: Atam Introduction Process<a class="headerlink" href="#chapter-3-atam-introduction-process" title="Permanent link">&para;</a></h2>
+<p><strong>Total elements:</strong> 3</p>
+<h3 id="atam-team-roles-and-interactions"><a href="../../chapters/03-atam-introduction-process/#diagram-atam-team-roles-and-interactions">ATAM Team Roles and Interactions</a><a class="headerlink" href="#atam-team-roles-and-interactions" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 5</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="atam-two-phase-process-flow"><a href="../../chapters/03-atam-introduction-process/#diagram-atam-two-phase-process-flow">ATAM Two-Phase Process Flow</a><a class="headerlink" href="#atam-two-phase-process-flow" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 3</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="architecture-evaluation-methods-comparison"><a href="../../chapters/03-atam-introduction-process/#diagram-architecture-evaluation-methods-comparison">Architecture Evaluation Methods Comparison</a><a class="headerlink" href="#architecture-evaluation-methods-comparison" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 7</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h2 id="chapter-4-stakeholder-business-analysis">Chapter 4: Stakeholder Business Analysis<a class="headerlink" href="#chapter-4-stakeholder-business-analysis" title="Permanent link">&para;</a></h2>
+<p><strong>Total elements:</strong> 3</p>
+<h3 id="business-goals-to-architecture-driver-mapping"><a href="../../chapters/04-stakeholder-business-analysis/#diagram-business-goals-to-architecture-driver-mapping">Business Goals to Architecture Driver Mapping</a><a class="headerlink" href="#business-goals-to-architecture-driver-mapping" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 2</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="stakeholder-priority-conflict-resolution"><a href="../../chapters/04-stakeholder-business-analysis/#diagram-stakeholder-priority-conflict-resolution">Stakeholder Priority Conflict Resolution</a><a class="headerlink" href="#stakeholder-priority-conflict-resolution" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 8</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="stakeholder-universe-map"><a href="../../chapters/04-stakeholder-business-analysis/#diagram-stakeholder-universe-map">Stakeholder Universe Map</a><a class="headerlink" href="#stakeholder-universe-map" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 4</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h2 id="chapter-5-quality-attributes">Chapter 5: Quality Attributes<a class="headerlink" href="#chapter-5-quality-attributes" title="Permanent link">&para;</a></h2>
+<p><strong>Total elements:</strong> 3</p>
+<h3 id="quality-attribute-coverage-dashboard"><a href="../../chapters/05-quality-attributes/#diagram-quality-attribute-coverage-dashboard">Quality Attribute Coverage Dashboard</a><a class="headerlink" href="#quality-attribute-coverage-dashboard" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 3</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="quality-attribute-requirement-construction-workbench"><a href="../../chapters/05-quality-attributes/#diagram-quality-attribute-requirement-construction-workbench">Quality Attribute Requirement Construction Workbench</a><a class="headerlink" href="#quality-attribute-requirement-construction-workbench" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 8</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="quality-attribute-taxonomy-and-conflict-map"><a href="../../chapters/05-quality-attributes/#diagram-quality-attribute-taxonomy-and-conflict-map">Quality Attribute Taxonomy and Conflict Map</a><a class="headerlink" href="#quality-attribute-taxonomy-and-conflict-map" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 3</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h2 id="chapter-6-quality-attribute-scenarios">Chapter 6: Quality Attribute Scenarios<a class="headerlink" href="#chapter-6-quality-attribute-scenarios" title="Permanent link">&para;</a></h2>
+<p><strong>Total elements:</strong> 3</p>
+<h3 id="scenario-brainstorming-and-prioritization-workshop-simulator"><a href="../../chapters/06-quality-attribute-scenarios/#diagram-scenario-brainstorming-and-prioritization-workshop-simulator">Scenario Brainstorming and Prioritization Workshop Simulator</a><a class="headerlink" href="#scenario-brainstorming-and-prioritization-workshop-simulator" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 7</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="scenario-catalog-to-fitness-function-pipeline"><a href="../../chapters/06-quality-attribute-scenarios/#diagram-scenario-catalog-to-fitness-function-pipeline">Scenario Catalog to Fitness Function Pipeline</a><a class="headerlink" href="#scenario-catalog-to-fitness-function-pipeline" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 10</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="scenario-construction-workbench"><a href="../../chapters/06-quality-attribute-scenarios/#diagram-scenario-construction-workbench">Scenario Construction Workbench</a><a class="headerlink" href="#scenario-construction-workbench" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 8</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h2 id="chapter-7-utility-trees-prioritization">Chapter 7: Utility Trees Prioritization<a class="headerlink" href="#chapter-7-utility-trees-prioritization" title="Permanent link">&para;</a></h2>
+<p><strong>Total elements:</strong> 3</p>
+<h3 id="priority-matrix-and-analytical-roadmap"><a href="../../chapters/07-utility-trees-prioritization/#diagram-priority-matrix-and-analytical-roadmap">Priority Matrix and Analytical Roadmap</a><a class="headerlink" href="#priority-matrix-and-analytical-roadmap" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 4</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="utility-tree-construction-workshop-simulator"><a href="../../chapters/07-utility-trees-prioritization/#diagram-utility-tree-construction-workshop-simulator">Utility Tree Construction Workshop Simulator</a><a class="headerlink" href="#utility-tree-construction-workshop-simulator" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 14</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="utility-tree-interactive-explorer"><a href="../../chapters/07-utility-trees-prioritization/#diagram-utility-tree-interactive-explorer">Utility Tree Interactive Explorer</a><a class="headerlink" href="#utility-tree-interactive-explorer" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 5</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h2 id="chapter-8-architectural-patterns-styles">Chapter 8: Architectural Patterns Styles<a class="headerlink" href="#chapter-8-architectural-patterns-styles" title="Permanent link">&para;</a></h2>
+<p><strong>Total elements:</strong> 3</p>
+<h3 id="adr-to-architecture-evolution-pipeline"><a href="../../chapters/08-architectural-patterns-styles/#diagram-adr-to-architecture-evolution-pipeline">ADR to Architecture Evolution Pipeline</a><a class="headerlink" href="#adr-to-architecture-evolution-pipeline" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 3</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="architectural-pattern-quality-attribute-matrix"><a href="../../chapters/08-architectural-patterns-styles/#diagram-architectural-pattern-quality-attribute-matrix">Architectural Pattern Quality Attribute Matrix</a><a class="headerlink" href="#architectural-pattern-quality-attribute-matrix" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 2</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="communication-style-tradeoff-explorer"><a href="../../chapters/08-architectural-patterns-styles/#diagram-communication-style-tradeoff-explorer">Communication Style Tradeoff Explorer</a><a class="headerlink" href="#communication-style-tradeoff-explorer" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 10</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h2 id="chapter-9-architectural-tactics-principles">Chapter 9: Architectural Tactics Principles<a class="headerlink" href="#chapter-9-architectural-tactics-principles" title="Permanent link">&para;</a></h2>
+<p><strong>Total elements:</strong> 3</p>
+<h3 id="caching-tactic-anatomy"><a href="../../chapters/09-architectural-tactics-principles/#diagram-caching-tactic-anatomy">Caching Tactic Anatomy</a><a class="headerlink" href="#caching-tactic-anatomy" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 10</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="resilience-pattern-interaction-simulator"><a href="../../chapters/09-architectural-tactics-principles/#diagram-resilience-pattern-interaction-simulator">Resilience Pattern Interaction Simulator</a><a class="headerlink" href="#resilience-pattern-interaction-simulator" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 15</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="tactic-interaction-web"><a href="../../chapters/09-architectural-tactics-principles/#diagram-tactic-interaction-web">Tactic Interaction Web</a><a class="headerlink" href="#tactic-interaction-web" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Diagram</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 0</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h2 id="chapter-10-risk-analysis-atam-reporting">Chapter 10: Risk Analysis Atam Reporting<a class="headerlink" href="#chapter-10-risk-analysis-atam-reporting" title="Permanent link">&para;</a></h2>
+<p><strong>Total elements:</strong> 3</p>
+<h3 id="atam-output-to-action-pipeline"><a href="../../chapters/10-risk-analysis-atam-reporting/#diagram-atam-output-to-action-pipeline">ATAM Output to Action Pipeline</a><a class="headerlink" href="#atam-output-to-action-pipeline" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 2</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="risk-register-and-theme-aggregation"><a href="../../chapters/10-risk-analysis-atam-reporting/#diagram-risk-register-and-theme-aggregation">Risk Register and Theme Aggregation</a><a class="headerlink" href="#risk-register-and-theme-aggregation" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 9</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="risk-result-type-explorer"><a href="../../chapters/10-risk-analysis-atam-reporting/#diagram-risk-result-type-explorer">Risk Result Type Explorer</a><a class="headerlink" href="#risk-result-type-explorer" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 7</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h2 id="chapter-11-distributed-systems-fundamentals">Chapter 11: Distributed Systems Fundamentals<a class="headerlink" href="#chapter-11-distributed-systems-fundamentals" title="Permanent link">&para;</a></h2>
+<p><strong>Total elements:</strong> 3</p>
+<h3 id="cap-theorem-interactive-explorer"><a href="../../chapters/11-distributed-systems-fundamentals/#diagram-cap-theorem-interactive-explorer">CAP Theorem Interactive Explorer</a><a class="headerlink" href="#cap-theorem-interactive-explorer" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 9</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="distributed-system-component-explorer"><a href="../../chapters/11-distributed-systems-fundamentals/#diagram-distributed-system-component-explorer">Distributed System Component Explorer</a><a class="headerlink" href="#distributed-system-component-explorer" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 4</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="distributed-tracing-visualization"><a href="../../chapters/11-distributed-systems-fundamentals/#diagram-distributed-tracing-visualization">Distributed Tracing Visualization</a><a class="headerlink" href="#distributed-tracing-visualization" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 4</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h2 id="chapter-12-distributed-systems-patterns">Chapter 12: Distributed Systems Patterns<a class="headerlink" href="#chapter-12-distributed-systems-patterns" title="Permanent link">&para;</a></h2>
+<p><strong>Total elements:</strong> 2</p>
+<h3 id="api-versioning-and-contract-first-design-patterns"><a href="../../chapters/12-distributed-systems-patterns/#diagram-api-versioning-and-contract-first-design-patterns">API Versioning and Contract-First Design Patterns</a><a class="headerlink" href="#api-versioning-and-contract-first-design-patterns" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 5</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="saga-pattern-flow-simulator"><a href="../../chapters/12-distributed-systems-patterns/#diagram-saga-pattern-flow-simulator">Saga Pattern Flow Simulator</a><a class="headerlink" href="#saga-pattern-flow-simulator" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 4</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h2 id="chapter-13-cloud-native-architecture">Chapter 13: Cloud Native Architecture<a class="headerlink" href="#chapter-13-cloud-native-architecture" title="Permanent link">&para;</a></h2>
+<p><strong>Total elements:</strong> 2</p>
+<h3 id="cloud-native-architecture-quality-attribute-stack"><a href="../../chapters/13-cloud-native-architecture/#diagram-cloud-native-architecture-quality-attribute-stack">Cloud-Native Architecture Quality Attribute Stack</a><a class="headerlink" href="#cloud-native-architecture-quality-attribute-stack" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 4</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="deployment-strategy-decision-matrix"><a href="../../chapters/13-cloud-native-architecture/#diagram-deployment-strategy-decision-matrix">Deployment Strategy Decision Matrix</a><a class="headerlink" href="#deployment-strategy-decision-matrix" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 6</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h2 id="chapter-14-security-architecture">Chapter 14: Security Architecture<a class="headerlink" href="#chapter-14-security-architecture" title="Permanent link">&para;</a></h2>
+<p><strong>Total elements:</strong> 2</p>
+<h3 id="stride-threat-model-explorer"><a href="../../chapters/14-security-architecture/#diagram-stride-threat-model-explorer">STRIDE Threat Model Explorer</a><a class="headerlink" href="#stride-threat-model-explorer" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 4</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="security-architecture-layers"><a href="../../chapters/14-security-architecture/#diagram-security-architecture-layers">Security Architecture Layers</a><a class="headerlink" href="#security-architecture-layers" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 4</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h2 id="chapter-15-performance-engineering-scaling">Chapter 15: Performance Engineering Scaling<a class="headerlink" href="#chapter-15-performance-engineering-scaling" title="Permanent link">&para;</a></h2>
+<p><strong>Total elements:</strong> 3</p>
+<h3 id="cdn-request-routing-and-cache-flow"><a href="../../chapters/15-performance-engineering-scaling/#diagram-cdn-request-routing-and-cache-flow">CDN Request Routing and Cache Flow</a><a class="headerlink" href="#cdn-request-routing-and-cache-flow" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Diagram</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 2</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="performance-metric-relationships"><a href="../../chapters/15-performance-engineering-scaling/#diagram-performance-metric-relationships">Performance Metric Relationships</a><a class="headerlink" href="#performance-metric-relationships" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 7</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="vertical-vs-horizontal-scaling-tradeoffs"><a href="../../chapters/15-performance-engineering-scaling/#diagram-vertical-vs-horizontal-scaling-tradeoffs">Vertical vs. Horizontal Scaling Tradeoffs</a><a class="headerlink" href="#vertical-vs-horizontal-scaling-tradeoffs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 9</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h2 id="chapter-16-observability-reliability">Chapter 16: Observability Reliability<a class="headerlink" href="#chapter-16-observability-reliability" title="Permanent link">&para;</a></h2>
+<p><strong>Total elements:</strong> 3</p>
+<h3 id="active-passive-vs-active-active-failover"><a href="../../chapters/16-observability-reliability/#diagram-active-passive-vs-active-active-failover">Active-Passive vs. Active-Active Failover</a><a class="headerlink" href="#active-passive-vs-active-active-failover" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 3</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="availability-architecture-analyzer"><a href="../../chapters/16-observability-reliability/#diagram-availability-architecture-analyzer">Availability Architecture Analyzer</a><a class="headerlink" href="#availability-architecture-analyzer" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 5</li>
+<li><strong>Difficulty:</strong> Hard</li>
+</ul>
+<h3 id="distributed-tracing-waterfall-view"><a href="../../chapters/16-observability-reliability/#diagram-distributed-tracing-waterfall-view">Distributed Tracing Waterfall View</a><a class="headerlink" href="#distributed-tracing-waterfall-view" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 7</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h2 id="chapter-17-ai-ml-system-architecture">Chapter 17: Ai Ml System Architecture<a class="headerlink" href="#chapter-17-ai-ml-system-architecture" title="Permanent link">&para;</a></h2>
+<p><strong>Total elements:</strong> 3</p>
+<h3 id="ml-pipeline-architecture-flow"><a href="../../chapters/17-ai-ml-system-architecture/#diagram-ml-pipeline-architecture-flow">ML Pipeline Architecture Flow</a><a class="headerlink" href="#ml-pipeline-architecture-flow" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Diagram</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 3</li>
+<li><strong>Difficulty:</strong> Easy</li>
+</ul>
+<h3 id="rag-vs-graphrag-architecture-comparison"><a href="../../chapters/17-ai-ml-system-architecture/#diagram-rag-vs-graphrag-architecture-comparison">RAG vs. GraphRAG Architecture Comparison</a><a class="headerlink" href="#rag-vs-graphrag-architecture-comparison" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 3</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="responsible-ai-architecture-components"><a href="../../chapters/17-ai-ml-system-architecture/#diagram-responsible-ai-architecture-components">Responsible AI Architecture Components</a><a class="headerlink" href="#responsible-ai-architecture-components" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 2</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h2 id="chapter-18-advanced-data-emerging-ai">Chapter 18: Advanced Data Emerging Ai<a class="headerlink" href="#chapter-18-advanced-data-emerging-ai" title="Permanent link">&para;</a></h2>
+<p><strong>Total elements:</strong> 2</p>
+<h3 id="federated-learning-architecture"><a href="../../chapters/18-advanced-data-emerging-ai/#diagram-federated-learning-architecture">Federated Learning Architecture</a><a class="headerlink" href="#federated-learning-architecture" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Microsim</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 5</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+<h3 id="lambda-vs-kappa-architecture-comparison"><a href="../../chapters/18-advanced-data-emerging-ai/#diagram-lambda-vs-kappa-architecture-comparison">Lambda vs. Kappa Architecture Comparison</a><a class="headerlink" href="#lambda-vs-kappa-architecture-comparison" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Status:</strong> Specified</li>
+<li><strong>Type:</strong> Unknown</li>
+<li><strong>Bloom's Taxonomy:</strong> Not specified</li>
+<li><strong>UI Elements:</strong> 2</li>
+<li><strong>Difficulty:</strong> Medium</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../diagram-table/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Diagram Table">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Diagram Table
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../sims/" class="md-footer__link md-footer__link--next" aria-label="Next: List of MicroSims">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                List of MicroSims
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

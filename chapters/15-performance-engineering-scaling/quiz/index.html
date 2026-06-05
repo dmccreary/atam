@@ -1,0 +1,2284 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An interactive intelligent textbook on software architecture tradeoff analysis.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/atam/chapters/15-performance-engineering-scaling/quiz/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../references/">
+      
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Quiz - Architecture Tradeoff Analysis Method</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quiz-performance-engineering-and-scaling" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Architecture Tradeoff Analysis Method" class="md-header__button md-logo" aria-label="Architecture Tradeoff Analysis Method" data-md-component="logo">
+      
+  <img src="../../../img/mascot/neutral.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Architecture Tradeoff Analysis Method
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quiz
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Architecture Tradeoff Analysis Method" class="md-nav__button md-logo" aria-label="Architecture Tradeoff Analysis Method" data-md-component="logo">
+      
+  <img src="../../../img/mascot/neutral.png" alt="logo">
+
+    </a>
+    Architecture Tradeoff Analysis Method
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../01-software-architecture-foundations/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    1. Software Architecture Foundations
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../02-architecture-principles-governance/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    2. Architecture Principles and Governance
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../03-atam-introduction-process/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    3. ATAM Introduction and Process Phases
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../04-stakeholder-business-analysis/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    4. Stakeholder and Business Analysis
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../05-quality-attributes/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    5. Quality Attributes
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../06-quality-attribute-scenarios/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    6. Quality Attribute Scenarios
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../07-utility-trees-prioritization/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    7. Utility Trees and Prioritization
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../08-architectural-patterns-styles/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    8. Architectural Patterns and Styles
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../09-architectural-tactics-principles/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    9. Architectural Tactics and Principles
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../10-risk-analysis-atam-reporting/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    10. Risk Analysis and ATAM Reporting
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../11-distributed-systems-fundamentals/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    11. Distributed Systems Fundamentals
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../12-distributed-systems-patterns/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    12. Distributed Systems Patterns
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../13-cloud-native-architecture/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    13. Cloud-Native Architecture
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../14-security-architecture/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    14. Security Architecture
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_16" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    15. Performance Engineering and Scaling
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_16" id="__nav_4_16_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_16_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_16">
+            <span class="md-nav__icon md-icon"></span>
+            15. Performance Engineering and Scaling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Quiz
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Quiz
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 4
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 5
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 6
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 7
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 8
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 9
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 10
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 11
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-12-analyze" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 12 (Analyze)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../16-observability-reliability/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    16. Observability and Reliability
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../17-ai-ml-system-architecture/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    17. AI and ML System Architecture
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../18-advanced-data-emerging-ai/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    18. Advanced Data and Emerging AI
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 4
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 5
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 6
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 7
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 8
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 9
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 10
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 11
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-12-analyze" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 12 (Analyze)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/atam/blob/main/docs/chapters/15-performance-engineering-scaling/quiz.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="quiz-performance-engineering-and-scaling">Quiz: Performance Engineering and Scaling<a class="headerlink" href="#quiz-performance-engineering-and-scaling" title="Permanent link">&para;</a></h1>
+<p>Test your understanding of performance fundamentals including latency, throughput, Amdahl's Law, profiling, load testing, capacity planning, scaling strategies, database sharding, connection pooling, CDN, and observability. Each question is followed by a collapsed answer block.</p>
+<h2 id="questions">Questions<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
+<h3 id="question-1">Question 1<a class="headerlink" href="#question-1" title="Permanent link">&para;</a></h3>
+<p>Define and distinguish <strong>latency</strong>, <strong>response time</strong>, and <strong>throughput</strong>. Why must ATAM quality attribute scenarios always specify a percentile rather than an average?</p>
+<details class="note">
+<summary>Answer</summary>
+<p><strong>Latency</strong> is the time required for a single unit of work to pass through a specific component or network segment — a one-way measurement of transit time through a wire or processing unit. <strong>Response time</strong> (end-to-end latency) is what users actually experience: the total elapsed time from when they initiated a request to when they received a complete, usable response. It is composite, including all latency sources across the entire request path. <strong>Throughput</strong> is the rate at which a system processes work over a time window (requests per second, transactions per second) — a capacity measure, not a duration measure. <strong>Percentiles are essential</strong> because averages mask tail behavior. A system with average response time of 50ms but p99 of 5 seconds produces thousands of terrible user experiences per minute at scale. ATAM scenarios must specify a percentile (e.g., "p95 ≤ 200ms") because averages can be technically met while a significant fraction of users experience unacceptable latency.</p>
+</details>
+<hr />
+<h3 id="question-2">Question 2<a class="headerlink" href="#question-2" title="Permanent link">&para;</a></h3>
+<p>A web service has an average of 500 concurrent in-flight requests and an average response time of 100ms. According to Little's Law, what is its throughput?</p>
+<p>A. 500 requests per second<br />
+B. 5,000 requests per second<br />
+C. 50,000 requests per second<br />
+D. 50 requests per second  </p>
+<details class="note">
+<summary>Answer</summary>
+<p>The correct answer is <strong>B</strong>. Little's Law states: L = λ × W, where L is average in-flight requests, λ is throughput (arrival rate), and W is average response time. Solving for λ: λ = L / W = 500 / 0.100s = 5,000 requests per second. This illustrates the power of Little's Law: you can compute throughput from concurrency and response time measurements alone, without directly counting requests — making it useful for inferring system capacity from observable metrics.</p>
+</details>
+<hr />
+<h3 id="question-3">Question 3<a class="headerlink" href="#question-3" title="Permanent link">&para;</a></h3>
+<p>A system's workload is 80% parallelizable (p = 0.80). What is the maximum theoretical speedup achievable with unlimited parallel processors, and what speedup do you get with 8 processors?</p>
+<details class="note">
+<summary>Answer</summary>
+<p><strong>Maximum speedup</strong> (n → ∞): S = 1 / (1 - p) = 1 / (1 - 0.80) = 1 / 0.20 = <strong>5×</strong>. No matter how many processors are added, the 20% serial fraction caps speedup at 5×. <strong>With 8 processors</strong>: S(8) = 1 / ((1 - 0.80) + (0.80 / 8)) = 1 / (0.20 + 0.10) = 1 / 0.30 ≈ <strong>3.3×</strong>. Even with 8 processors, the speedup is only 3.3× of the theoretical 5× maximum. Amdahl's Law reveals that the serial fraction (any shared resource, global lock, single-writer database, or synchronous external call) fundamentally caps the benefit of horizontal scaling — making identification of the serial fraction one of the most important questions in performance ATAM analysis.</p>
+</details>
+<hr />
+<h3 id="question-4">Question 4<a class="headerlink" href="#question-4" title="Permanent link">&para;</a></h3>
+<p>In an ATAM evaluation, a team proposes horizontal scaling as their tactic to achieve a 10× throughput improvement. What is the most important follow-up question to ask, and why?</p>
+<details class="note">
+<summary>Answer</summary>
+<p>The most important question is: <strong>"What is your non-parallelizable fraction?"</strong> (or equivalently, "What serialized shared resources exist in the request path?"). Per Amdahl's Law, if any component in the request path cannot be parallelized — a single-writer database, a global lock, a distributed lock manager, a synchronous external API call, a centralized session store — that component caps the achievable horizontal scaling benefit. If a serialized component accounts for even 10% of request processing time (p = 0.90), the maximum speedup with horizontal scaling is 1/(1-0.90) = 10×, but only if that component's throughput also scales. If the shared database does not scale, horizontal application scaling provides zero benefit beyond what the database can serve. This question is the ATAM evaluator's "early warning system" for horizontal scaling proposals.</p>
+</details>
+<hr />
+<h3 id="question-5">Question 5<a class="headerlink" href="#question-5" title="Permanent link">&para;</a></h3>
+<p>Which of the following best describes the relationship between <strong>performance bottleneck identification</strong> and the principle "measure before you optimize"?</p>
+<p>A. Profiling should only be done after the architecture is finalized and deployed to production<br />
+B. Performance bottlenecks are always in the database, so profiling should focus there first<br />
+C. Without measurement data, developers optimize the code they understand best, which is rarely the actual bottleneck — profiling reveals the true 10-20% of code determining 80-90% of latency<br />
+D. Profiling and optimization should run concurrently to save time  </p>
+<details class="note">
+<summary>Answer</summary>
+<p>The correct answer is <strong>C</strong>. The industry observation is that 80-90% of a system's performance is determined by 10-20% of its code, and the specific 10-20% is rarely intuitive without measurement data. Without profiling, developers optimize the code they know best or the code they expect to be slow — which is frequently not the actual bottleneck. Profiling tools (sampling profilers, instrumentation profilers, distributed traces) reveal the actual hot path: the specific call chain where the system spends time. This data-driven approach prevents wasted optimization effort and ensures architectural changes target actual rather than hypothetical bottlenecks.</p>
+</details>
+<hr />
+<h3 id="question-6">Question 6<a class="headerlink" href="#question-6" title="Permanent link">&para;</a></h3>
+<p>Compare <strong>sampling profilers</strong> and <strong>instrumentation profilers</strong>. In what deployment context is each appropriate?</p>
+<details class="note">
+<summary>Answer</summary>
+<p><strong>Sampling profilers</strong> periodically interrupt execution (thousands of times per second) and record the current call stack, using statistical analysis to produce a "hot path." They have low overhead (1-5%), making them suitable for <strong>production use</strong> without significant performance impact. The tradeoff: they miss short-duration calls that don't happen to be active during a sample. <strong>Instrumentation profilers</strong> insert measurement code at every function entry and exit, capturing exact call counts and elapsed times. They provide complete coverage with no missed calls. The cost: substantial overhead (often 2-10× slowdown), limiting them to <strong>development and staging environments</strong> where exact call counts and durations are needed for detailed analysis. For distributed systems, distributed tracing systems complement both by providing end-to-end request decomposition across service boundaries.</p>
+</details>
+<hr />
+<h3 id="question-7">Question 7<a class="headerlink" href="#question-7" title="Permanent link">&para;</a></h3>
+<p>What is a <strong>shard key</strong> in database sharding, and why is shard key selection described as "one of the most consequential and irreversible architectural decisions" in a sharded system?</p>
+<details class="note">
+<summary>Answer</summary>
+<p>A shard key is the attribute used to determine which shard (horizontal partition) owns a given piece of data — all rows with the same shard key value reside on the same shard, and routing logic directs queries to the appropriate shard based on this key. It is consequential and irreversible because: (1) <strong>Uneven distribution</strong> (hot shards): a poorly chosen key where most traffic targets a small set of key values creates hot shards that receive disproportionate load, negating sharding's benefit. (2) <strong>Cross-shard joins</strong>: if the shard key doesn't co-locate related data, frequent queries require scatter-gather across all shards — expensive or impossible. (3) <strong>Re-sharding cost</strong>: changing the shard key requires migrating the entire dataset to a new sharding scheme, which is an extremely expensive, high-risk operation on a production system. Getting the shard key right before data is loaded is far cheaper than correcting it after.</p>
+</details>
+<hr />
+<h3 id="question-8">Question 8<a class="headerlink" href="#question-8" title="Permanent link">&para;</a></h3>
+<p>An application runs on a server with 8 CPU cores. A developer proposes a database connection pool size of 200 connections. What concern would you raise, and what is the recommended pool sizing approach?</p>
+<details class="note">
+<summary>Answer</summary>
+<p>A pool of 200 connections is significantly <strong>over-sized</strong> and likely to <em>degrade</em> rather than improve performance. With 200 active connections on 8 CPU cores, the database server must context-switch between 200 sessions, creating overhead that outweighs the benefit of additional concurrency. The counter-intuitive result is that reducing the pool size typically <em>improves</em> throughput by reducing context-switching. The recommended sizing formula (from HikariCP research by Brett Wooldridge): <code>pool_size = (core_count × 2) + effective_spindle_count</code>. For 8 cores with typical SSD storage: approximately 16-20 connections. This formula reflects that database operations involve both CPU processing and I/O waits — the factor of 2 accounts for some threads being blocked on I/O while others execute. Raising above this formula's result creates diminishing returns that turn into negative returns at high over-provisioning levels.</p>
+</details>
+<hr />
+<h3 id="question-9">Question 9<a class="headerlink" href="#question-9" title="Permanent link">&para;</a></h3>
+<p>What is a CDN <strong>cache hit ratio</strong>, and what does a hit ratio below 80% suggest about the CDN configuration?</p>
+<details class="note">
+<summary>Answer</summary>
+<p>The CDN cache hit ratio is the fraction of requests served from the CDN cache (Points of Presence) without reaching the origin server. A hit ratio above 80% means the CDN is providing significant latency reduction and origin load offloading. <strong>A hit ratio below 80% suggests several possible configuration problems</strong>: (1) <strong>TTL misconfiguration</strong> — content is expiring and being refetched from origin too frequently, either because TTLs are too short or cache headers are set incorrectly. (2) <strong>Cache key design issues</strong> — unnecessary query parameters are being included in the cache key, causing equivalent requests to be treated as cache misses (e.g., <code>?sessionid=</code> or tracking parameters that shouldn't vary cache content). (3) <strong>Content characteristics</strong> — highly personalized or user-specific content is being routed through the CDN even though it cannot be shared across users. (4) <strong>Geographic distribution mismatch</strong> — the CDN PoP locations don't match the user geographic distribution, causing more origin fetches due to cold caches at underserved PoPs.</p>
+</details>
+<hr />
+<h3 id="question-10">Question 10<a class="headerlink" href="#question-10" title="Permanent link">&para;</a></h3>
+<p>Which observability framework provides a systematic approach to <strong>resource-level</strong> performance analysis, and which provides a <strong>service-level</strong> perspective?</p>
+<p>A. RED Method for resources; USE Method for services<br />
+B. USE Method for resources (Utilization, Saturation, Errors); RED Method for services (Rate, Errors, Duration)<br />
+C. Both USE and RED apply to resources; neither applies to services<br />
+D. MTTR for resources; MTBF for services  </p>
+<details class="note">
+<summary>Answer</summary>
+<p>The correct answer is <strong>B</strong>. The <strong>USE Method</strong> (Brendan Gregg) applies to each resource (CPU, memory, disk, network interface, database connection pool): Utilization (what fraction of capacity is used?), Saturation (is there a queue forming?), Errors (error conditions associated with the resource?). A resource with high utilization, non-zero saturation, and increasing errors is a performance bottleneck. The <strong>RED Method</strong> applies to each service or endpoint: Rate (requests per second), Errors (fraction resulting in errors), Duration (p50/p95/p99 latency). Together, USE and RED provide the dual instrumentation model that maps ATAM performance scenarios to observable system behavior — USE finds the constrained resource causing the problem; RED shows the user-visible impact.</p>
+</details>
+<hr />
+<h3 id="question-11">Question 11<a class="headerlink" href="#question-11" title="Permanent link">&para;</a></h3>
+<p>Scenario: A high-frequency trading platform has a (H,H) performance scenario: "p99 order-to-confirmation latency ≤ 10ms; zero order loss; queue depth returns to zero within 500ms during a burst of 5,000 concurrent order submissions." The architecture uses a central matching engine that serializes all access to the order book through a mutex. What ATAM analysis would you conduct?</p>
+<details class="note">
+<summary>Answer</summary>
+<p>This scenario triggers Amdahl's Law analysis on the matching engine mutex. If the matching engine serializes all order book access: (1) <strong>Identify the serial fraction</strong>: estimate what fraction of total order processing time is spent in serialized mutex-protected sections. If locking, order book updates, and conflict detection account for 30% of processing time, the maximum parallel speedup is 1/(0.30) ≈ 3.3×, capping throughput regardless of how many threads or cores are added. (2) <strong>Classify the mutex as a sensitivity point</strong>: lock granularity (per-order-book-price-level vs. global) dramatically affects throughput under concurrency — small changes in granularity produce large throughput changes. (3) <strong>Classify the mutex-vs-lock-free choice as a tradeoff point</strong>: lock-free data structures (CAS operations, optimistic concurrency) improve throughput under contention but are significantly harder to implement correctly (complexity cost). (4) <strong>Document the 10ms p99 budget</strong>: profile the complete request path (network → validation → matching engine → persistence → confirmation) to determine how much time each stage consumes. If serialized matching engine access alone takes &gt; 10ms at P99 under 5,000 concurrent orders, the scenario is architecturally at risk even with optimization.</p>
+</details>
+<hr />
+<h3 id="question-12-analyze">Question 12 (Analyze)<a class="headerlink" href="#question-12-analyze" title="Permanent link">&para;</a></h3>
+<p>A capacity planning analysis reveals that the application's CPU utilization grows at 3% per 100 RPS, the database connection pool is at 70% utilization at current load (1,500 RPS), and the database has 20 available connection slots remaining. Traffic is growing at 25% per month. An architect proposes horizontal scaling of the application tier as the solution. Analyze the proposal using Amdahl's Law and capacity planning principles, and identify what the actual bottleneck is.</p>
+<details class="note">
+<summary>Answer</summary>
+<p>The horizontal scaling proposal addresses the wrong constraint. <strong>Actual bottleneck analysis</strong>: The database connection pool is the constraint, not the application tier. At 70% utilization with 20 slots remaining, the database connection pool saturates at approximately 1,500 × (100/70) ≈ 2,143 RPS. At 25% monthly growth, this saturation point is reached in approximately 2 months. Adding more application tier instances <em>increases demand</em> on the database connection pool without increasing its capacity — more application instances competing for 20 remaining connections will accelerate saturation, not relieve it. <strong>Amdahl's Law view</strong>: The database connection pool is a serialized resource (only one operation occupies one connection at a time). If the connection pool accounts for 20% of request time under saturation, the maximum application-tier scaling benefit is 1/(0.20) = 5× — but only if the database can serve the increased queries, which it cannot with a saturated pool. <strong>Correct recommendations</strong>: (1) Immediately: audit connection pool sizing — with the application's server core count, the formula suggests the pool may already be over-sized for the database, causing contention; (2) Short-term: add read replicas to offload read queries and increase effective connection capacity; (3) Medium-term: evaluate query optimization and caching to reduce queries-per-request before scaling either tier; (4) Long-term if needed: database sharding.</p>
+</details>
+<hr />
+<p><em>End of Quiz — Chapter 15</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Content">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Content
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../references/" class="md-footer__link md-footer__link--next" aria-label="Next: References">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                References
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

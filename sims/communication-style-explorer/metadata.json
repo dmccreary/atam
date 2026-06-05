@@ -1,21 +1,45 @@
 {
   "title": "Communication Style Tradeoff Explorer",
-  "description": "Students will be able to select the most appropriate communication style for a given quality attribute scenario set, and explain the tradeoff implications of their choice using the five comparison dimensions.",
-  "creator": "Dementia Education Project",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for communication style tradeoff explorer",
   "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en-US",
-  "rights": "CC BY 4.0",
-  "identifier": "communication-style-explorer",
-  "library": "p5.js",
-  "bloomLevel": "Evaluate (L5) — Assess which communication style best fits a set of quality attribute requirements and justify the selection with tradeoff analysis.",
-  "bloomVerb": "Assess",
-  "completion_status": "scaffold",
-  "chapter_number": 8,
-  "chapter_title": "Architectural Patterns and Styles",
-  "chapter_dir": "08-architectural-patterns-styles"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Communication Style Tradeoff Explorer",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "08-architectural-patterns-styles"
 }

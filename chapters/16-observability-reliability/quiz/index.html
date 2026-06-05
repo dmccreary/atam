@@ -1,0 +1,2284 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An interactive intelligent textbook on software architecture tradeoff analysis.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/atam/chapters/16-observability-reliability/quiz/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../references/">
+      
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Quiz - Architecture Tradeoff Analysis Method</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quiz-observability-reliability-and-cloud-operations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Architecture Tradeoff Analysis Method" class="md-header__button md-logo" aria-label="Architecture Tradeoff Analysis Method" data-md-component="logo">
+      
+  <img src="../../../img/mascot/neutral.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Architecture Tradeoff Analysis Method
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quiz
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Architecture Tradeoff Analysis Method" class="md-nav__button md-logo" aria-label="Architecture Tradeoff Analysis Method" data-md-component="logo">
+      
+  <img src="../../../img/mascot/neutral.png" alt="logo">
+
+    </a>
+    Architecture Tradeoff Analysis Method
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../01-software-architecture-foundations/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    1. Software Architecture Foundations
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../02-architecture-principles-governance/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    2. Architecture Principles and Governance
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../03-atam-introduction-process/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    3. ATAM Introduction and Process Phases
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../04-stakeholder-business-analysis/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    4. Stakeholder and Business Analysis
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../05-quality-attributes/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    5. Quality Attributes
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../06-quality-attribute-scenarios/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    6. Quality Attribute Scenarios
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../07-utility-trees-prioritization/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    7. Utility Trees and Prioritization
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../08-architectural-patterns-styles/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    8. Architectural Patterns and Styles
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../09-architectural-tactics-principles/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    9. Architectural Tactics and Principles
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../10-risk-analysis-atam-reporting/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    10. Risk Analysis and ATAM Reporting
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../11-distributed-systems-fundamentals/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    11. Distributed Systems Fundamentals
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../12-distributed-systems-patterns/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    12. Distributed Systems Patterns
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../13-cloud-native-architecture/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    13. Cloud-Native Architecture
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../14-security-architecture/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    14. Security Architecture
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../15-performance-engineering-scaling/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    15. Performance Engineering and Scaling
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_17" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    16. Observability and Reliability
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_17" id="__nav_4_17_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_17_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_17">
+            <span class="md-nav__icon md-icon"></span>
+            16. Observability and Reliability
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Quiz
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Quiz
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 4
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 5
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 6
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 7
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 8
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 9
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 10
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 11
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-12-analyze" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 12 (Analyze)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../17-ai-ml-system-architecture/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    17. AI and ML System Architecture
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../18-advanced-data-emerging-ai/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    18. Advanced Data and Emerging AI
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../sims/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 4
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 5
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 6
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 7
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 8
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 9
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 10
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 11
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-12-analyze" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 12 (Analyze)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/atam/blob/main/docs/chapters/16-observability-reliability/quiz.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="quiz-observability-reliability-and-cloud-operations">Quiz: Observability, Reliability, and Cloud Operations<a class="headerlink" href="#quiz-observability-reliability-and-cloud-operations" title="Permanent link">&para;</a></h1>
+<p>Test your understanding of observability pillars, SLIs, SLOs, error budgets, SRE practices, MTTR, MTBF, availability calculation, disaster recovery, and geographic redundancy. Each question is followed by a collapsed answer block.</p>
+<h2 id="questions">Questions<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
+<h3 id="question-1">Question 1<a class="headerlink" href="#question-1" title="Permanent link">&para;</a></h3>
+<p>What are the three pillars of observability, and what distinct type of question does each answer?</p>
+<details class="note">
+<summary>Answer</summary>
+<p>(1) <strong>Logs</strong> answer "what happened?" — timestamped records of discrete events (database queries, authentication events, exceptions). Logs provide the detailed narrative of specific incidents and are essential for debugging specific failures. (2) <strong>Metrics</strong> answer "how much and how fast?" — time-series numeric measurements of system and business behavior (request rate, error rate, latency percentiles, CPU utilization). Metrics enable trend analysis, alerting, and SLO tracking. (3) <strong>Distributed Traces</strong> answer "what did this specific request touch and how long did each piece take?" — causal chains connecting spans from multiple services involved in a single request. Traces enable root-cause diagnosis of latency issues in complex distributed systems. Each pillar has distinct strengths; effective observability requires all three, with trace IDs providing the correlation mechanism linking events across all three signal types.</p>
+</details>
+<hr />
+<h3 id="question-2">Question 2<a class="headerlink" href="#question-2" title="Permanent link">&para;</a></h3>
+<p>A service has an availability SLO of 99.95% over a 30-day window. The service has experienced 18 minutes of downtime this month. How many minutes of error budget remain?</p>
+<p>A. 3.6 minutes<br />
+B. 21.6 minutes<br />
+C. 18 minutes<br />
+D. 43.8 minutes  </p>
+<details class="note">
+<summary>Answer</summary>
+<p>The correct answer is <strong>A</strong>. Error budget calculation: 0.0005 (the non-compliant fraction = 1 - 0.9995) × 30 days × 24 hours × 60 minutes = 0.0005 × 43,200 = <strong>21.6 minutes</strong> total error budget. After 18 minutes of downtime: 21.6 - 18 = <strong>3.6 minutes remaining</strong>. At this point, 83.3% of the error budget has been consumed with the rest of the month remaining. This should trigger a halt on risky deployments and a shift in engineering focus toward reliability investment — exactly the kind of quantitative, actionable conversation the SLO/error-budget framework is designed to produce.</p>
+</details>
+<hr />
+<h3 id="question-3">Question 3<a class="headerlink" href="#question-3" title="Permanent link">&para;</a></h3>
+<p>Define <strong>SLI</strong> and <strong>SLO</strong> and explain why an SLI must be expressed as a ratio of events rather than a raw count.</p>
+<details class="note">
+<summary>Answer</summary>
+<p>A <strong>Service Level Indicator (SLI)</strong> is a carefully defined quantitative measure of service behavior that maps directly to user experience, expressed as: (number of good events) / (total events). A <strong>Service Level Objective (SLO)</strong> is the target for an SLI over a specified time window: "the availability SLI shall be ≥ 99.9% measured over any rolling 28-day period." SLIs must be ratios rather than raw counts because raw counts don't normalize for traffic volume. If a service processes 1 million requests on Monday and 10 million on Friday, having the same absolute number of errors on both days represents very different reliability — 0.1% error rate vs. 0.01% error rate. Ratios are scale-invariant and can be compared across time periods with different traffic levels, making SLOs stable and meaningful even as traffic grows.</p>
+</details>
+<hr />
+<h3 id="question-4">Question 4<a class="headerlink" href="#question-4" title="Permanent link">&para;</a></h3>
+<p>Explain the <strong>error budget</strong> concept and why it creates a productive organizational dynamic between product velocity and reliability.</p>
+<details class="note">
+<summary>Answer</summary>
+<p>An error budget is the allowed non-compliance with an SLO: the fraction of events that can be "bad" before the SLO is violated. For a 99.9% availability SLO over 28 days, the error budget is 0.1% × 28 days × 24 hours × 60 minutes = 40.3 minutes. This budget is <em>shared</em> between unplanned incidents (which consume it involuntarily) and intentional risks such as deployments, experiments, and migrations (which consume it deliberately). <strong>The organizational dynamic</strong>: when the error budget is healthy, the team can deploy frequently and take risks (velocity favored). When nearly exhausted, deployments should pause and reliability investment takes priority (stability favored). This replaces the traditional adversarial "dev wants to ship, ops wants stability" conflict with a shared accounting framework — both product management and site reliability engineering are now speaking the same currency (minutes of budget), making trade-off conversations quantitative and collaborative rather than political.</p>
+</details>
+<hr />
+<h3 id="question-5">Question 5<a class="headerlink" href="#question-5" title="Permanent link">&para;</a></h3>
+<p>A system has MTBF of 400 hours and MTTR of 4 hours. What is its availability? If automated runbook tooling reduces MTTR to 1 hour, how does availability change?</p>
+<details class="note">
+<summary>Answer</summary>
+<p><strong>Original availability</strong>: MTBF / (MTBF + MTTR) = 400 / (400 + 4) = 400 / 404 ≈ <strong>99.01%</strong>. <strong>With 1-hour MTTR</strong>: 400 / (400 + 1) = 400 / 401 ≈ <strong>99.75%</strong>. Reducing MTTR from 4 hours to 1 hour improved availability from 99.01% to 99.75% — without changing the underlying failure rate at all. This demonstrates that investing in recovery speed (runbook automation, on-call training, fast rollback mechanisms, better alerting) is often more cost-effective than investing in failure prevention (expensive hardware, exhaustive testing), because the same availability improvement can be achieved by reducing MTTR rather than increasing MTBF.</p>
+</details>
+<hr />
+<h3 id="question-6">Question 6<a class="headerlink" href="#question-6" title="Permanent link">&para;</a></h3>
+<p>Which of the following correctly describes how components in <strong>series</strong> vs. <strong>parallel</strong> affect system availability?</p>
+<p>A. Series components multiply their availability values; parallel components require all replicas to fail simultaneously, dramatically improving availability<br />
+B. Series components improve availability through redundancy; parallel components degrade it through complexity<br />
+C. Both series and parallel arrangements have no effect on system-level availability<br />
+D. Parallel components multiply their availability; series components require all nodes to be available  </p>
+<details class="note">
+<summary>Answer</summary>
+<p>The correct answer is <strong>A</strong>. <strong>Series</strong>: each component must be available for the system to be available. Availability is the product of all components: three components at 99.9% each yields 0.999 × 0.999 × 0.999 ≈ 99.7%. Each additional series component degrades overall availability. <strong>Parallel</strong>: any one component being available is sufficient; the system fails only when <em>all</em> replicas fail simultaneously. Two independent components at 99.9% each: 1 - (1 - 0.999)² = 1 - 0.000001 = 99.9999% — a 100× improvement for modest duplication cost. This algebra explains why highly available systems use redundancy at every layer and why the weakest link (the unreplicated component with no redundancy) is often the primary availability bottleneck.</p>
+</details>
+<hr />
+<h3 id="question-7">Question 7<a class="headerlink" href="#question-7" title="Permanent link">&para;</a></h3>
+<p>Three components are arranged in series with individual availabilities of 99.9%, 99.95%, and 99.99%. What is the system availability? Which component should receive reliability investment first?</p>
+<details class="note">
+<summary>Answer</summary>
+<p><strong>System availability</strong> = 0.999 × 0.9995 × 0.9999 ≈ <strong>99.84%</strong>. <strong>Priority for investment</strong>: the 99.9% component, because it contributes the most to unavailability (0.1% downtime vs. 0.05% and 0.01% for the others). Improving it from 99.9% to 99.99% would yield system availability of approximately 0.9999 × 0.9995 × 0.9999 ≈ 99.93% — a 0.09% improvement from that single change. This illustrates the <strong>weakest-link principle</strong>: reliability investment should target the component with the lowest availability first, because that component constrains the entire system's availability ceiling, regardless of how good the other components are.</p>
+</details>
+<hr />
+<h3 id="question-8">Question 8<a class="headerlink" href="#question-8" title="Permanent link">&para;</a></h3>
+<p>What are <strong>RTO</strong> and <strong>RPO</strong>, and why must they be explicitly negotiated with stakeholders rather than assumed by architects?</p>
+<details class="note">
+<summary>Answer</summary>
+<p><strong>Recovery Time Objective (RTO)</strong> is the maximum acceptable elapsed time from a disaster event to full service restoration — the business's tolerance for being unavailable. <strong>Recovery Point Objective (RPO)</strong> is the maximum acceptable data loss measured in time — if a disaster occurs now, how old can the most recent recovered data be? These must be explicitly negotiated with stakeholders because: (1) They are <strong>business decisions</strong>, not technical decisions — different stakeholders (finance, legal, product, operations) have different tolerances and constraints. (2) Each order-of-magnitude reduction in RTO or RPO roughly doubles infrastructure cost — without stakeholder alignment, architects may either over-engineer (spending on sub-minute RTO the business doesn't need) or under-engineer (designing for hours of RTO when the business requires minutes). (3) Conflicting implicit assumptions cause architectural surprises — a team that designs for 4-hour RTO when executives expect 15-minute RTO has a critical gap that ATAM should surface before, not after, a real disaster.</p>
+</details>
+<hr />
+<h3 id="question-9">Question 9<a class="headerlink" href="#question-9" title="Permanent link">&para;</a></h3>
+<p>Which disaster recovery tier provides the lowest RTO and RPO, and what is its key tradeoff?</p>
+<p>A. Backup and Restore — lowest RTO/RPO, simplest to operate<br />
+B. Warm Standby — moderate RTO/RPO, moderate cost<br />
+C. Multi-Site Active/Active — lowest RTO/RPO (&lt;1 minute / near-zero), at 8-10× baseline infrastructure cost and significant data consistency complexity<br />
+D. Pilot Light — lowest RTO/RPO, minimal cost  </p>
+<details class="note">
+<summary>Answer</summary>
+<p>The correct answer is <strong>C</strong>. <strong>Multi-Site Active/Active</strong> provides RTO of &lt; 1 minute and near-zero RPO because both (or all) regions handle live traffic simultaneously — there is no "standby promotion" delay and data is replicated continuously across regions. Its key tradeoff is cost (8-10× baseline infrastructure cost for full redundant deployments in multiple regions) and significantly increased <strong>data consistency complexity</strong>: writes happening in multiple regions simultaneously require either a global coordination layer (expensive latency), careful read-write routing, or an eventually consistent data model. The ATAM analysis point is that the RTO/RPO targets must be <em>explicitly established with stakeholders</em> before selecting a DR tier, because the cost difference between tiers is 2-10×.</p>
+</details>
+<hr />
+<h3 id="question-10">Question 10<a class="headerlink" href="#question-10" title="Permanent link">&para;</a></h3>
+<p>The five-nines (99.999%) availability target allows approximately 5.26 minutes of downtime per year. What architectural implication does this have for deployment practices?</p>
+<details class="note">
+<summary>Answer</summary>
+<p>At 99.999% availability, a single 10-minute deployment outage <strong>consumes the entire annual downtime budget</strong> almost twice over. This makes zero-downtime deployment practices (blue-green deployment, canary releases, rolling updates) a <strong>prerequisite</strong>, not an optional enhancement. With traditional "stop the service, deploy, restart" deployments, it is mathematically impossible to meet five-nines availability while doing regular releases. Additionally: planned maintenance windows (even monthly ones) must be eliminated, because any single maintenance window of more than 5 minutes violates the annual budget. Teams pursuing five-nines targets must instrument every deployment to measure downtime impact and automate rollback to occur within seconds of detecting a degradation.</p>
+</details>
+<hr />
+<h3 id="question-11">Question 11<a class="headerlink" href="#question-11" title="Permanent link">&para;</a></h3>
+<p>Scenario: An ATAM evaluation finds a system with a documented availability requirement of 99.99% and a disaster recovery strategy that consists of "weekly full backups exported to S3." What risks would you document in the risk register?</p>
+<details class="note">
+<summary>Answer</summary>
+<p>Multiple critical risks: (1) <strong>RPO misalignment</strong>: weekly backups imply RPO of up to 7 days — 99.99% availability typically implies near-zero RPO or RPO measured in seconds. A 7-day RPO is incompatible with the stated availability target. (2) <strong>RTO misalignment</strong>: restoring a full backup from S3 requires hours to days depending on data volume. 99.99% availability implies RTO of minutes (annual downtime budget = ~52 minutes). A restore-from-backup DR strategy cannot achieve this RTO. (3) <strong>Untested DR</strong>: a DR architecture that has never been tested in production conditions is a DR hypothesis, not a DR capability. Document severity as Critical; the gap between stated RTO/RPO and actual DR capability is multiple orders of magnitude. Recommended mitigation: conduct explicit RTO/RPO stakeholder negotiation, then redesign DR tier to match — likely Warm Standby or Active/Active, with quarterly DR drills.</p>
+</details>
+<hr />
+<h3 id="question-12-analyze">Question 12 (Analyze)<a class="headerlink" href="#question-12-analyze" title="Permanent link">&para;</a></h3>
+<p>A cloud-native system is designed with active-passive failover between two AWS regions. Region A is active (serving all traffic); Region B is passive (standby with data replication). The replication lag is typically 30 seconds. RTO is estimated at 8 minutes (time to detect failure, trigger DNS cutover, and warm up Region B services). RPO is 30 seconds (replication lag). A new business requirement states: "The system must recover from a full regional outage within 2 minutes with zero data loss." Analyze the gap between the current architecture and the new requirement, and evaluate the tradeoffs of the options available to meet it.</p>
+<details class="note">
+<summary>Answer</summary>
+<p><strong>Gap analysis</strong>: The requirement specifies RTO ≤ 2 minutes and RPO = 0. The current architecture provides RTO of 8 minutes (4× above target) and RPO of 30 seconds (non-zero data loss risk). <strong>Option 1 — Improve Active-Passive</strong>: Reduce RTO to &lt; 2 minutes by pre-warming Region B services at all times (eliminating warm-up time), automating failover detection and DNS cutover within 30 seconds, and switching from asynchronous to synchronous database replication (eliminating the 30-second RPO). Tradeoffs: synchronous replication adds latency to every write operation (the primary must wait for Region B acknowledgment before confirming the write to the application) — this impacts write latency performance scenarios. Pre-warming Region B increases steady-state cost (running services in standby, not just data replication). <strong>Option 2 — Switch to Active-Active</strong>: both regions serve live traffic simultaneously, eliminating the promotion delay entirely (RTO approaches 0 for traffic routing). Near-zero RPO is achievable with synchronous writes confirmed by both regions. Tradeoffs: significantly higher cost (8-10× baseline), and complex data consistency design — writes in both regions simultaneously require either a global coordination layer or an eventually consistent model, potentially affecting the consistency quality attribute. <strong>Recommendation for stakeholder conversation</strong>: quantify the cost of each option vs. the business cost of a regional outage exceeding 2 minutes. If the business cost of the gap (lost revenue, SLA penalties, regulatory exposure) exceeds the cost of the improvement, the investment is justified. The ATAM evaluation should document this as a tradeoff point between cost and RTO/RPO, not as a simple "must fix" finding.</p>
+</details>
+<hr />
+<p><em>End of Quiz — Chapter 16</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Content">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Content
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../references/" class="md-footer__link md-footer__link--next" aria-label="Next: References">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                References
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Dan McCreary. Licensed under <a href="license/">CC BY-NC-SA 4.0</a> for non-commercial use.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

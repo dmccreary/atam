@@ -3,130 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caching Tactic Anatomy</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Caching Tactic Anatomy using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="caching-tactic-explorer.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Caching Tactic Anatomy</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> caching-tactic-explorer</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Apply (L3) — Use caching strategy knowledge to configure a cache for a specific performance vs. consistency tradeoff scenario.</p>
-            <p><strong>Learning Objective:</strong> Students will be able to configure a cache with appropriate strategy, TTL, and invalidation policy for a given performance scenario, and explain the consistency implications of their configuration.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** caching-tactic-explorer<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    Purpose: Interactive simulation of cache behavior showing the performance impact, cache hit rate, and consistency tradeoffs of different caching strategies (write-through, write-behind, cache-aside), with student-controlled parameters.
-    
-    Bloom Level: Apply (L3) — Use caching strategy knowledge to configure a cache for a specific performance vs. consistency tradeoff scenario.
-    Bloom Verb: Use
-    
-    Learning Objective: Students will be able to configure a cache with appropriate strategy, TTL, and invalidation policy for a given performance scenario, and explain the consistency implications of their configuration.
-    
-    Canvas layout:
-    - Top: Cache strategy selector (Write-Through, Write-Behind/Write-Back, Cache-Aside)
-    - Left: Live request stream showing incoming read/write operations with hit/miss indicators
-    - Center: Cache state panel showing current entries, TTLs, and freshness indicators
-    - Right: Metrics panel showing: hit rate (%), average latency (ms), consistency lag (seconds)
-    - Bottom: Configuration panel — TTL slider (0-3600 seconds), cache size (10-1000 entries), "Enable Staleness Warning" toggle
-    
-    Cache strategies explained (visible in a collapsible reference panel):
-    - Write-Through: Every write goes to cache AND database synchronously; cache is always consistent; writes are slower
-    - Write-Behind: Writes go to cache immediately, database updated asynchronously; writes are fast; risk of data loss on cache crash
-    - Cache-Aside (Lazy): Application reads from database on miss and populates cache; application manages cache; flexible but more code
-    
-    Behavior:
-    - Simulated request stream: 80% reads, 20% writes at configurable rate
-    - Each request shows in the stream panel with color coding: green (cache hit), yellow (cache miss → DB), red (write operation)
-    - Metrics update in real-time as requests are processed
-    - "Introduce Stale Read" button: simulates a write that bypasses cache invalidation; staleness indicator appears on affected entries
-    - "Cache Eviction" event triggered when cache is full, with visual of LRU eviction
-    
-    Data Visibility Requirements:
-    - Always show current hit rate prominently
-    - Show average read latency comparison: cache hit (5ms) vs. cache miss + DB (50ms)
-    - When staleness occurs, show exactly how many ms old the stale entry is
-    
-    Instructional Rationale: Real-time simulation with configurable parameters is appropriate for Apply because students must make configuration decisions and observe their consequences. Static description would not make the latency/consistency tradeoff felt.
-    
-    Color scheme: Green for hits, Red for writes, Yellow for misses. Blue for cache entries in good state, Orange for stale entries.
-    
-    Responsive: Panels resize to container width.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

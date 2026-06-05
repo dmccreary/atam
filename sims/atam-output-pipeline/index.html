@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Students will be able to trace an ATAM risk finding from its identification in the evaluation session through its documentation in the risk register, its prioritization in the improvement plan, its scheduling in the architecture roadmap, and its verification through fitness function monitoring.">
+        <meta name="description" content="Interactive p5.js MicroSim tracing an ATAM finding through six stages from the evaluation session to ongoing monitoring.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -63,7 +63,9 @@
     
     
     
-  </head>
+    <meta property="og:image" content="https://dmccreary.github.io/atam/sims/atam-output-pipeline/atam-output-pipeline.png">
+  <meta name="twitter:image" content="https://dmccreary.github.io/atam/sims/atam-output-pipeline/atam-output-pipeline.png">
+</head>
   
   
     
@@ -127,13 +129,11 @@
     
     
     
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -172,14 +172,13 @@
     </div>
   </div>
 </div>
-      
     
     
       <div class="md-header__source">
         <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -224,7 +223,7 @@
       <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -244,10 +243,8 @@
       <a href="../.." class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Home
-    
   </span>
   
 
@@ -266,10 +263,8 @@
       <a href="../../about/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     About
-    
   </span>
   
 
@@ -288,10 +283,8 @@
       <a href="../../course-description/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Course Description
-    
   </span>
   
 
@@ -352,7 +345,6 @@
     
     
     
-    
       
         
         
@@ -361,16 +353,13 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-  
   
   
     <a href="../../chapters/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
     Chapters
-    
   </span>
   
 
@@ -412,7 +401,14 @@
       
         
       
-    
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -426,14 +422,11 @@
         
   
   
-  
     <a href="../../learning-graph/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
     Learning Graph
-    
   </span>
   
 
@@ -464,110 +457,213 @@
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
-    
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -580,14 +676,13 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
+          
           <div class="md-nav__link md-nav__container">
             <a href="../" class="md-nav__link ">
               
   
-  
   <span class="md-ellipsis">
     MicroSims
-    
   </span>
   
 
@@ -619,10 +714,8 @@
       <a href="../failover-architecture-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Active-Passive vs. Active-Active Failover
-    
   </span>
   
     
@@ -650,19 +743,9 @@
       <a href="../adr-evolution-timeline/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     ADR to Architecture Evolution Pipeline
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -681,10 +764,8 @@
       <a href="../api-versioning-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     API Versioning and Contract-First Design Patterns
-    
   </span>
   
     
@@ -712,19 +793,9 @@
       <a href="../pattern-quality-matrix/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Architectural Pattern Quality Attribute Matrix
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -743,10 +814,8 @@
       <a href="../architecture-building-blocks-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Architecture Building Blocks Explorer
-    
   </span>
   
 
@@ -766,10 +835,8 @@
       <a href="../evaluation-methods-comparison/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Architecture Evaluation Methods Comparison
-    
   </span>
   
 
@@ -789,10 +856,8 @@
       <a href="../fitness-function-dashboard/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Architecture Fitness Function Dashboard
-    
   </span>
   
 
@@ -812,10 +877,8 @@
       <a href="../architecture-lifecycle-governance/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Architecture Lifecycle with Governance Checkpoints
-    
   </span>
   
 
@@ -835,10 +898,8 @@
       <a href="../architecture-views-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Architecture Views Explorer
-    
   </span>
   
 
@@ -867,19 +928,9 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
-  
   <span class="md-ellipsis">
     ATAM Output to Action Pipeline
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -888,19 +939,9 @@
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
-  
   <span class="md-ellipsis">
     ATAM Output to Action Pipeline
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -921,6 +962,79 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#about-this-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      About This MicroSim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iframe-embed-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iframe Embed Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grade-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grade Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#learning-objective" class="md-nav__link">
     <span class="md-ellipsis">
       Learning Objective
@@ -928,29 +1042,34 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#preview" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
-      Preview
+      Activities
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#specification" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
     <span class="md-ellipsis">
-      Specification
+      Assessment
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#related-resources" class="md-nav__link">
+  <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
-      Related Resources
+      References
     </span>
   </a>
   
@@ -975,10 +1094,8 @@
       <a href="../atam-team-roles/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     ATAM Team Roles and Interactions
-    
   </span>
   
 
@@ -998,10 +1115,8 @@
       <a href="../atam-process-flow/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     ATAM Two-Phase Process Flow
-    
   </span>
   
 
@@ -1021,10 +1136,8 @@
       <a href="../availability-architecture-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Availability Architecture Analyzer
-    
   </span>
   
     
@@ -1052,10 +1165,8 @@
       <a href="../business-to-architecture-mapping/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Business Goals to Architecture Driver Mapping
-    
   </span>
   
 
@@ -1075,19 +1186,9 @@
       <a href="../caching-tactic-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Caching Tactic Anatomy
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1106,19 +1207,9 @@
       <a href="../cap-theorem-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     CAP Theorem Interactive Explorer
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1137,10 +1228,8 @@
       <a href="../cdn-architecture-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     CDN Request Routing and Cache Flow
-    
   </span>
   
     
@@ -1168,10 +1257,8 @@
       <a href="../cloud-native-qa-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Cloud-Native Architecture Quality Attribute Stack
-    
   </span>
   
     
@@ -1199,19 +1286,9 @@
       <a href="../communication-style-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Communication Style Tradeoff Explorer
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1230,10 +1307,8 @@
       <a href="../deployment-strategy-selector/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Deployment Strategy Decision Matrix
-    
   </span>
   
     
@@ -1261,19 +1336,9 @@
       <a href="../distributed-system-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Distributed System Component Explorer
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1292,19 +1357,9 @@
       <a href="../distributed-trace-viewer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Distributed Tracing Visualization
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1323,10 +1378,8 @@
       <a href="../distributed-trace-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Distributed Tracing Waterfall View
-    
   </span>
   
     
@@ -1354,10 +1407,8 @@
       <a href="../federated-learning-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Federated Learning Architecture
-    
   </span>
   
     
@@ -1385,10 +1436,8 @@
       <a href="../technology-radar-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Interactive Technology Radar
-    
   </span>
   
 
@@ -1408,10 +1457,8 @@
       <a href="../data-architecture-patterns/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Lambda vs. Kappa Architecture Comparison
-    
   </span>
   
     
@@ -1439,10 +1486,8 @@
       <a href="../graph-viewer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Learning Graph Viewer
-    
   </span>
   
 
@@ -1462,10 +1507,8 @@
       <a href="../ml-pipeline-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     ML Pipeline Architecture Flow
-    
   </span>
   
     
@@ -1493,10 +1536,8 @@
       <a href="../performance-metrics-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Performance Metric Relationships
-    
   </span>
   
     
@@ -1524,19 +1565,9 @@
       <a href="../priority-matrix-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Priority Matrix and Analytical Roadmap
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1555,10 +1586,8 @@
       <a href="../qa-coverage-dashboard/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Quality Attribute Coverage Dashboard
-    
   </span>
   
 
@@ -1578,10 +1607,8 @@
       <a href="../qa-requirement-workbench/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Quality Attribute Requirement Construction Workbench
-    
   </span>
   
 
@@ -1601,10 +1628,8 @@
       <a href="../quality-attribute-taxonomy/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Quality Attribute Taxonomy and Conflict Map
-    
   </span>
   
 
@@ -1624,10 +1649,8 @@
       <a href="../rag-architecture-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     RAG vs. GraphRAG Architecture Comparison
-    
   </span>
   
     
@@ -1655,19 +1678,9 @@
       <a href="../resilience-pattern-simulator/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Resilience Pattern Interaction Simulator
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1686,10 +1699,8 @@
       <a href="../responsible-ai-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Responsible AI Architecture Components
-    
   </span>
   
     
@@ -1717,19 +1728,9 @@
       <a href="../risk-register-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Risk Register and Theme Aggregation
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1748,19 +1749,9 @@
       <a href="../atam-result-type-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Risk Result Type Explorer
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1779,10 +1770,8 @@
       <a href="../saga-flow-simulator/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Saga Pattern Flow Simulator
-    
   </span>
   
     
@@ -1810,10 +1799,8 @@
       <a href="../scenario-workshop-simulator/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Scenario Brainstorming and Prioritization Workshop Simulator
-    
   </span>
   
 
@@ -1833,10 +1820,8 @@
       <a href="../scenario-to-fitness-pipeline/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Scenario Catalog to Fitness Function Pipeline
-    
   </span>
   
 
@@ -1856,10 +1841,8 @@
       <a href="../scenario-construction-workbench/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Scenario Construction Workbench
-    
   </span>
   
 
@@ -1879,10 +1862,8 @@
       <a href="../security-architecture-layers/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Security Architecture Layers
-    
   </span>
   
     
@@ -1910,10 +1891,8 @@
       <a href="../separation-of-concerns-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Separation of Concerns in a Layered Architecture
-    
   </span>
   
 
@@ -1933,10 +1912,8 @@
       <a href="../stakeholder-priority-matrix/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Stakeholder Priority Conflict Resolution
-    
   </span>
   
 
@@ -1956,10 +1933,8 @@
       <a href="../stakeholder-universe-map/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Stakeholder Universe Map
-    
   </span>
   
 
@@ -1979,10 +1954,8 @@
       <a href="../stride-threat-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     STRIDE Threat Model Explorer
-    
   </span>
   
     
@@ -2010,19 +1983,9 @@
       <a href="../tactic-interaction-web/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Tactic Interaction Web
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -2041,10 +2004,8 @@
       <a href="../technical-debt-simulator/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Technical Debt Accumulation Simulator
-    
   </span>
   
 
@@ -2064,19 +2025,9 @@
       <a href="../utility-tree-builder/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Utility Tree Construction Workshop Simulator
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -2095,19 +2046,9 @@
       <a href="../utility-tree-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Utility Tree Interactive Explorer
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -2126,10 +2067,8 @@
       <a href="../scaling-tradeoff-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Vertical vs. Horizontal Scaling Tradeoffs
-    
   </span>
   
     
@@ -2161,13 +2100,31 @@
   
   
     <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../faq/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     FAQ
-    
   </span>
   
 
@@ -2186,10 +2143,8 @@
       <a href="../../license/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     License
-    
   </span>
   
 
@@ -2208,10 +2163,8 @@
       <a href="../../contact/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Contact
-    
   </span>
   
 
@@ -2247,6 +2200,79 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#about-this-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      About This MicroSim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iframe-embed-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iframe Embed Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grade-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grade Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#learning-objective" class="md-nav__link">
     <span class="md-ellipsis">
       Learning Objective
@@ -2254,29 +2280,34 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#preview" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
-      Preview
+      Activities
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#specification" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
     <span class="md-ellipsis">
-      Specification
+      Assessment
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#related-resources" class="md-nav__link">
+  <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
-      Related Resources
+      References
     </span>
   </a>
   
@@ -2296,7 +2327,6 @@
                 
                   
 
-
   
     <a href="https://github.com/dmccreary/atam/blob/main/docs/sims/atam-output-pipeline/index.md" title="Edit this page" class="md-content__button md-icon">
       
@@ -2307,89 +2337,50 @@
 
 
 <h1 id="atam-output-to-action-pipeline">ATAM Output to Action Pipeline<a class="headerlink" href="#atam-output-to-action-pipeline" title="Permanent link">&para;</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Scaffold</p>
-<p>This MicroSim has been scaffolded from its specification. The interactive
-implementation has not been built yet.</p>
-</div>
-<h2 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h2>
-<p>Students will be able to trace an ATAM risk finding from its identification in the evaluation session through its documentation in the risk register, its prioritization in the improvement plan, its scheduling in the architecture roadmap, and its verification through fitness function monitoring.</p>
-<ul>
-<li><strong>Bloom Level:</strong> Understand (L2) — Explain how ATAM evaluation outputs are transformed into actionable organizational documents and ongoing monitoring practices.</li>
-<li><strong>Bloom Verb:</strong> Explain</li>
-<li><strong>Library:</strong> p5.js</li>
-</ul>
-<h2 id="preview">Preview<a class="headerlink" href="#preview" title="Permanent link">&para;</a></h2>
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" height="550" width="100%" scrolling="no"></iframe>
 
-<p><a class="md-button md-button--primary" href="main.html">Run MicroSim in Fullscreen</a></p>
-<h2 id="specification">Specification<a class="headerlink" href="#specification" title="Permanent link">&para;</a></h2>
-<p>The full specification below is extracted from
-<a href="../../chapters/10-risk-analysis-atam-reporting/">Chapter 10: Sensitivity, Tradeoffs, Risk Analysis, and ATAM Reporting</a>.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Type: workflow
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>**sim-id:** atam-output-pipeline&lt;br/&gt;
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>**Library:** p5.js&lt;br/&gt;
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>**Status:** Specified
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Purpose: Visualize the complete pipeline from ATAM evaluation outputs through risk register, improvement plan, architecture roadmap, and ongoing risk monitoring — showing how evaluation findings translate into organizational action.
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>Bloom Level: Understand (L2) — Explain how ATAM evaluation outputs are transformed into actionable organizational documents and ongoing monitoring practices.
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Bloom Verb: Explain
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Learning Objective: Students will be able to trace an ATAM risk finding from its identification in the evaluation session through its documentation in the risk register, its prioritization in the improvement plan, its scheduling in the architecture roadmap, and its verification through fitness function monitoring.
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>Canvas layout:
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>- Six pipeline stages connected by horizontal arrows
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>- Each stage: title, description, output artifact name, and participant role responsible
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>- An example risk finding &quot;card&quot; flows through the pipeline (clicking &quot;Run Example&quot; animates it)
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>- Info panel on right shows full content for clicked stage or artifact
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>Pipeline stages:
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>1. ATAM Evaluation Session
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>   Output: Raw finding (sensitivity point / tradeoff / risk / non-risk)
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>   Owner: Evaluation team + note-taker
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>2. Risk Classification
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>   Output: Classified risk with severity, probability, scenario reference
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>   Owner: Evaluation leader
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>3. Risk Theme Aggregation
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>   Output: Risk themes with constituent risks and business impact
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>   Owner: Evaluation leader + senior architect
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>4. Architecture Evaluation Report
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>   Output: Full report: executive summary, risk catalog, themes, recommendations
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>   Owner: Evaluation team
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>5. Architecture Improvement Plan
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>   Output: Prioritized work items with owners and target dates
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>   Owner: Architecture Review Board + project leads
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>6. Ongoing Monitoring
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>   Output: Fitness functions, observability alerts, periodic re-evaluation schedule
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>   Owner: DevOps / SRE + governance
-</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>
-</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>Example risk finding animation:
-</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>&quot;Ordering service calls inventory service synchronously; no circuit breaker present&quot;
-</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>→ Classified: Availability risk, Severity H, Probability M
-</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>→ Grouped under theme: &quot;No Systematic Resilience Strategy&quot;
-</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>→ Appears in report: Section 4.2, Risk AV-003
-</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>→ Improvement plan: &quot;Implement circuit breaker on inventory service calls, Sprint 14, Owner: Backend team lead&quot;
-</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>→ Monitoring: Fitness function — &quot;Circuit breaker trip rate &lt; 1% per 1000 requests; alert on &gt; 5% within 60s&quot;
-</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>
-</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>Interactive elements:
-</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>- Click each stage for full description
-</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>- &quot;Run Example&quot; button animates the example finding through all six stages
-</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>- Click any artifact name to see its template or sample content
-</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>
-</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>Color scheme: Blue for evaluation stages, Teal for documentation stages, Green for action stages, Orange for monitoring.
-</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>
-</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>Responsive: Stages stack vertically on narrow screens.
+<p><a class="md-button md-button--primary" href="main.html">Run the ATAM Output Pipeline MicroSim Fullscreen</a>
+<br/>
+<a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
+<h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
+<p>This MicroSim visualizes how an ATAM evaluation finding turns into organizational action, traced through six stages: <strong>Evaluation Session → Risk Classification → Risk Theme Aggregation → Architecture Evaluation Report → Architecture Improvement Plan → Ongoing Monitoring</strong>. Each stage names the output artifact it produces and the role responsible for it, color-coded by category (blue = evaluation, teal = documentation, green = action, orange = monitoring). A single example finding — a missing circuit breaker — flows through all six stages so students can follow the path from raw observation to a live fitness function.</p>
+<h2 id="how-to-use">How to Use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Click any stage</strong> to read its owner, its output, and the example artifact it produces.</li>
+<li>Click <strong>Run Example ▶</strong> to advance the example finding one stage at a time; completed stages gain a ✓ and the active stage shows ▶.</li>
+<li>Notice how the same finding changes shape at each stage — from a raw observation, to a classified risk, to a theme, to a report entry, to a planned work item, to a monitored fitness function.</li>
+</ol>
+<p>The step-through is intentionally discrete so each transformation and its owner can be examined.</p>
+<h2 id="iframe-embed-code">Iframe Embed Code<a class="headerlink" href="#iframe-embed-code" title="Permanent link">&para;</a></h2>
+<p>You can add this MicroSim to any web page by adding this to your HTML:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/atam/sims/atam-output-pipeline/main.html&quot;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<h2 id="related-resources">Related Resources<a class="headerlink" href="#related-resources" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="../../chapters/10-risk-analysis-atam-reporting/">Chapter 10: Sensitivity, Tradeoffs, Risk Analysis, and ATAM Reporting</a></li>
-</ul>
+<h2 id="lesson-plan">Lesson Plan<a class="headerlink" href="#lesson-plan" title="Permanent link">&para;</a></h2>
+<h3 id="grade-level">Grade Level<a class="headerlink" href="#grade-level" title="Permanent link">&para;</a></h3>
+<p>Undergraduate / Professional</p>
+<h3 id="duration">Duration<a class="headerlink" href="#duration" title="Permanent link">&para;</a></h3>
+<p>10-15 minutes</p>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<p>Familiarity with ATAM evaluation outputs (risks, themes) and the idea of fitness functions.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level<a class="headerlink" href="#blooms-taxonomy-level" title="Permanent link">&para;</a></h3>
+<p>Understand (L2)</p>
+<h3 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h3>
+<p>Students will be able to trace an ATAM risk finding from its identification in the evaluation session through the risk register, the improvement plan, the architecture roadmap, and verification through fitness function monitoring.</p>
+<h3 id="activities">Activities<a class="headerlink" href="#activities" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Trace</strong> (5 min): Students step through all six stages and record the artifact name and owner at each.</li>
+<li><strong>Role map</strong> (5 min): Students list which roles are responsible across the pipeline and where responsibility hands off.</li>
+<li><strong>Discussion</strong> (5 min): Students explain why an evaluation that stops at the report (no plan, no monitoring) fails to deliver value.</li>
+</ol>
+<h3 id="assessment">Assessment<a class="headerlink" href="#assessment" title="Permanent link">&para;</a></h3>
+<p>Give students a new raw finding and ask them to write the artifact each of the six stages would produce, including a concrete fitness function for the monitoring stage.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Bass, L., Clements, P., &amp; Kazman, R. (2021). <em>Software Architecture in Practice</em> (4th ed.). Addison-Wesley.</li>
+<li>Kazman, R., Klein, M., &amp; Clements, P. (2000). <em>ATAM: Method for Architecture Evaluation</em> (CMU/SEI-2000-TR-004).</li>
+</ol>
 
 
 
@@ -2484,12 +2475,10 @@ implementation has not been built yet.</p>
     </div>
     
     
-    
-      
-      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>

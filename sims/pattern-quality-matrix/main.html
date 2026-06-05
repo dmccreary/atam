@@ -3,138 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Architectural Pattern Quality Attribute Matrix</title>
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Architectural Pattern Quality Attribute Matrix using p5.js</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="pattern-quality-matrix.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Architectural Pattern Quality Attribute Matrix</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> pattern-quality-matrix</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> Analyze (L4) — Compare architectural patterns across quality attribute dimensions to determine which pattern best fits a given set of prioritized quality attribute requirements.</p>
-            <p><strong>Learning Objective:</strong> Students will be able to compare at least six architectural patterns across four quality attribute dimensions, identify the pattern most suitable for a given set of (H,H) quality attribute scenarios, and explain the tradeoff mechanism responsible for each pattern's strength or weakness.</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: diagram
-    **sim-id:** pattern-quality-matrix<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    Purpose: Interactive matrix showing the quality attribute profile of major architectural patterns — which attributes each pattern primarily supports (green), threatens (red), or is neutral on (gray) — with click-to-explore cells revealing the specific tradeoff mechanism.
-    
-    Bloom Level: Analyze (L4) — Compare architectural patterns across quality attribute dimensions to determine which pattern best fits a given set of prioritized quality attribute requirements.
-    Bloom Verb: Compare
-    
-    Learning Objective: Students will be able to compare at least six architectural patterns across four quality attribute dimensions, identify the pattern most suitable for a given set of (H,H) quality attribute scenarios, and explain the tradeoff mechanism responsible for each pattern's strength or weakness.
-    
-    Canvas layout:
-    - Grid: Patterns on rows (8 patterns), Quality Attributes on columns (8 attributes)
-    - Each cell: colored indicator (green=supports, red=threatens, gray=neutral, yellow=complex/depends)
-    - Clicking any cell opens a detail panel showing: the specific tradeoff mechanism, a realistic example, and what ATAM scenarios to watch for with this pattern+attribute combination
-    - Column header click: sorts patterns by that quality attribute (best-supporting at top)
-    - Row header click: shows full pattern summary and quality attribute profile
-    
-    Patterns (rows):
-    1. Layered Architecture
-    2. Microservices
-    3. Event-Driven Architecture
-    4. CQRS
-    5. Strangler Fig
-    6. Hexagonal / Clean Architecture
-    7. Pipe-and-Filter
-    8. SOA (legacy reference)
-    
-    Quality Attributes (columns):
-    Performance, Availability, Security, Modifiability, Scalability, Testability, Deployability, Interoperability
-    
-    Cell values (sample):
-    Microservices / Modifiability: Green — "Independent deployment boundary limits blast radius"
-    Microservices / Performance: Red — "Service-to-service network calls add latency; synchronous chains compound it"
-    Event-Driven / Availability: Green — "Producer/consumer decoupling; consumer unavailability doesn't affect producers"
-    Event-Driven / Consistency: Yellow — "Eventual consistency: temporal window where state diverges"
-    Layered / Testability: Green — "Each layer testable in isolation by stubbing adjacent layers"
-    Layered / Performance: Yellow — "Layer traversal overhead; acceptable for moderate load, problematic for high-throughput"
-    
-    Interactive elements:
-    - Click any cell to see mechanism detail
-    - Click column header to sort by that attribute
-    - "Compare Two Patterns" button lets student select two patterns and see a side-by-side profile
-    - Hover any cell for one-line summary tooltip
-    
-    Color scheme: Green cells for "Primarily Supports", Red cells for "Primarily Threatens", Yellow cells for "Complex/Depends", Gray cells for Neutral. Header row and column in gold.
-    
-    Responsive: Matrix scrolls horizontally on narrow screens; column headers stay fixed.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
 </body>
 </html>

@@ -1,21 +1,45 @@
 {
   "title": "Priority Matrix and Analytical Roadmap",
-  "description": "Students will be able to interpret the priority matrix distribution of a utility tree, evaluate whether the (H,H) scenario count and distribution is appropriate for a complete evaluation, and identify which scenarios the evaluation team should address first.",
-  "creator": "Dementia Education Project",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for priority matrix and analytical roadmap",
   "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en-US",
-  "rights": "CC BY 4.0",
-  "identifier": "priority-matrix-explorer",
-  "library": "p5.js",
-  "bloomLevel": "Evaluate (L5) — Assess the priority distribution of a utility tree's scenarios and determine whether the analytical roadmap appropriately focuses on (H,H) scenarios.",
-  "bloomVerb": "Assess",
-  "completion_status": "scaffold",
-  "chapter_number": 7,
-  "chapter_title": "Utility Trees and Scenario Prioritization",
-  "chapter_dir": "07-utility-trees-prioritization"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Priority Matrix and Analytical Roadmap",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "07-utility-trees-prioritization"
 }

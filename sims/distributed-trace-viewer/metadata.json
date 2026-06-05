@@ -1,21 +1,45 @@
 {
   "title": "Distributed Tracing Visualization",
-  "description": "Students will be able to read a distributed trace waterfall diagram, identify the critical path spans contributing most to total latency, and diagnose the root cause of a latency issue from trace data.",
-  "creator": "Dementia Education Project",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for distributed tracing visualization",
   "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en-US",
-  "rights": "CC BY 4.0",
-  "identifier": "distributed-trace-viewer",
-  "library": "p5.js",
-  "bloomLevel": "Analyze (L4) — Examine a distributed trace to identify the root cause of a latency issue, pinpointing which service and operation is the bottleneck.",
-  "bloomVerb": "Examine",
-  "completion_status": "scaffold",
-  "chapter_number": 11,
-  "chapter_title": "Distributed Systems Architecture Fundamentals",
-  "chapter_dir": "11-distributed-systems-fundamentals"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Distributed Tracing Visualization",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Create",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "11-distributed-systems-fundamentals"
 }

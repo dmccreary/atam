@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Students will be able to compare at least six architectural patterns across four quality attribute dimensions, identify the pattern most suitable for a given set of (H,H) quality attribute scenarios, and explain the tradeoff mechanism responsible for each pattern's strength or weakness.">
+        <meta name="description" content="Interactive p5.js MicroSim comparing eight architectural patterns across eight quality attributes, with click-to-explore tradeoff mechanisms.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -63,7 +63,9 @@
     
     
     
-  </head>
+    <meta property="og:image" content="https://dmccreary.github.io/atam/sims/pattern-quality-matrix/pattern-quality-matrix.png">
+  <meta name="twitter:image" content="https://dmccreary.github.io/atam/sims/pattern-quality-matrix/pattern-quality-matrix.png">
+</head>
   
   
     
@@ -127,13 +129,11 @@
     
     
     
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -172,14 +172,13 @@
     </div>
   </div>
 </div>
-      
     
     
       <div class="md-header__source">
         <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -224,7 +223,7 @@
       <a href="https://github.com/dmccreary/atam" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub Repo
@@ -244,10 +243,8 @@
       <a href="../.." class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Home
-    
   </span>
   
 
@@ -266,10 +263,8 @@
       <a href="../../about/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     About
-    
   </span>
   
 
@@ -288,10 +283,8 @@
       <a href="../../course-description/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Course Description
-    
   </span>
   
 
@@ -352,7 +345,6 @@
     
     
     
-    
       
         
         
@@ -361,16 +353,13 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-  
   
   
     <a href="../../chapters/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
     Chapters
-    
   </span>
   
 
@@ -412,7 +401,14 @@
       
         
       
-    
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -426,14 +422,11 @@
         
   
   
-  
     <a href="../../learning-graph/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
     Learning Graph
-    
   </span>
   
 
@@ -464,110 +457,213 @@
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
-    
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -580,14 +676,13 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
+          
           <div class="md-nav__link md-nav__container">
             <a href="../" class="md-nav__link ">
               
   
-  
   <span class="md-ellipsis">
     MicroSims
-    
   </span>
   
 
@@ -619,10 +714,8 @@
       <a href="../failover-architecture-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Active-Passive vs. Active-Active Failover
-    
   </span>
   
     
@@ -650,19 +743,9 @@
       <a href="../adr-evolution-timeline/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     ADR to Architecture Evolution Pipeline
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -681,10 +764,8 @@
       <a href="../api-versioning-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     API Versioning and Contract-First Design Patterns
-    
   </span>
   
     
@@ -721,19 +802,9 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
-  
   <span class="md-ellipsis">
     Architectural Pattern Quality Attribute Matrix
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -742,19 +813,9 @@
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
-  
   <span class="md-ellipsis">
     Architectural Pattern Quality Attribute Matrix
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -775,6 +836,79 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#about-this-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      About This MicroSim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iframe-embed-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iframe Embed Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grade-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grade Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#learning-objective" class="md-nav__link">
     <span class="md-ellipsis">
       Learning Objective
@@ -782,29 +916,34 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#preview" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
-      Preview
+      Activities
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#specification" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
     <span class="md-ellipsis">
-      Specification
+      Assessment
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#related-resources" class="md-nav__link">
+  <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
-      Related Resources
+      References
     </span>
   </a>
   
@@ -829,10 +968,8 @@
       <a href="../architecture-building-blocks-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Architecture Building Blocks Explorer
-    
   </span>
   
 
@@ -852,10 +989,8 @@
       <a href="../evaluation-methods-comparison/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Architecture Evaluation Methods Comparison
-    
   </span>
   
 
@@ -875,10 +1010,8 @@
       <a href="../fitness-function-dashboard/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Architecture Fitness Function Dashboard
-    
   </span>
   
 
@@ -898,10 +1031,8 @@
       <a href="../architecture-lifecycle-governance/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Architecture Lifecycle with Governance Checkpoints
-    
   </span>
   
 
@@ -921,10 +1052,8 @@
       <a href="../architecture-views-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Architecture Views Explorer
-    
   </span>
   
 
@@ -944,19 +1073,9 @@
       <a href="../atam-output-pipeline/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     ATAM Output to Action Pipeline
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -975,10 +1094,8 @@
       <a href="../atam-team-roles/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     ATAM Team Roles and Interactions
-    
   </span>
   
 
@@ -998,10 +1115,8 @@
       <a href="../atam-process-flow/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     ATAM Two-Phase Process Flow
-    
   </span>
   
 
@@ -1021,10 +1136,8 @@
       <a href="../availability-architecture-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Availability Architecture Analyzer
-    
   </span>
   
     
@@ -1052,10 +1165,8 @@
       <a href="../business-to-architecture-mapping/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Business Goals to Architecture Driver Mapping
-    
   </span>
   
 
@@ -1075,19 +1186,9 @@
       <a href="../caching-tactic-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Caching Tactic Anatomy
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1106,19 +1207,9 @@
       <a href="../cap-theorem-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     CAP Theorem Interactive Explorer
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1137,10 +1228,8 @@
       <a href="../cdn-architecture-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     CDN Request Routing and Cache Flow
-    
   </span>
   
     
@@ -1168,10 +1257,8 @@
       <a href="../cloud-native-qa-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Cloud-Native Architecture Quality Attribute Stack
-    
   </span>
   
     
@@ -1199,19 +1286,9 @@
       <a href="../communication-style-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Communication Style Tradeoff Explorer
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1230,10 +1307,8 @@
       <a href="../deployment-strategy-selector/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Deployment Strategy Decision Matrix
-    
   </span>
   
     
@@ -1261,19 +1336,9 @@
       <a href="../distributed-system-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Distributed System Component Explorer
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1292,19 +1357,9 @@
       <a href="../distributed-trace-viewer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Distributed Tracing Visualization
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1323,10 +1378,8 @@
       <a href="../distributed-trace-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Distributed Tracing Waterfall View
-    
   </span>
   
     
@@ -1354,10 +1407,8 @@
       <a href="../federated-learning-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Federated Learning Architecture
-    
   </span>
   
     
@@ -1385,10 +1436,8 @@
       <a href="../technology-radar-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Interactive Technology Radar
-    
   </span>
   
 
@@ -1408,10 +1457,8 @@
       <a href="../data-architecture-patterns/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Lambda vs. Kappa Architecture Comparison
-    
   </span>
   
     
@@ -1439,10 +1486,8 @@
       <a href="../graph-viewer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Learning Graph Viewer
-    
   </span>
   
 
@@ -1462,10 +1507,8 @@
       <a href="../ml-pipeline-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     ML Pipeline Architecture Flow
-    
   </span>
   
     
@@ -1493,10 +1536,8 @@
       <a href="../performance-metrics-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Performance Metric Relationships
-    
   </span>
   
     
@@ -1524,19 +1565,9 @@
       <a href="../priority-matrix-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Priority Matrix and Analytical Roadmap
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1555,10 +1586,8 @@
       <a href="../qa-coverage-dashboard/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Quality Attribute Coverage Dashboard
-    
   </span>
   
 
@@ -1578,10 +1607,8 @@
       <a href="../qa-requirement-workbench/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Quality Attribute Requirement Construction Workbench
-    
   </span>
   
 
@@ -1601,10 +1628,8 @@
       <a href="../quality-attribute-taxonomy/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Quality Attribute Taxonomy and Conflict Map
-    
   </span>
   
 
@@ -1624,10 +1649,8 @@
       <a href="../rag-architecture-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     RAG vs. GraphRAG Architecture Comparison
-    
   </span>
   
     
@@ -1655,19 +1678,9 @@
       <a href="../resilience-pattern-simulator/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Resilience Pattern Interaction Simulator
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1686,10 +1699,8 @@
       <a href="../responsible-ai-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Responsible AI Architecture Components
-    
   </span>
   
     
@@ -1717,19 +1728,9 @@
       <a href="../risk-register-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Risk Register and Theme Aggregation
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1748,19 +1749,9 @@
       <a href="../atam-result-type-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Risk Result Type Explorer
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -1779,10 +1770,8 @@
       <a href="../saga-flow-simulator/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Saga Pattern Flow Simulator
-    
   </span>
   
     
@@ -1810,10 +1799,8 @@
       <a href="../scenario-workshop-simulator/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Scenario Brainstorming and Prioritization Workshop Simulator
-    
   </span>
   
 
@@ -1833,10 +1820,8 @@
       <a href="../scenario-to-fitness-pipeline/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Scenario Catalog to Fitness Function Pipeline
-    
   </span>
   
 
@@ -1856,10 +1841,8 @@
       <a href="../scenario-construction-workbench/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Scenario Construction Workbench
-    
   </span>
   
 
@@ -1879,10 +1862,8 @@
       <a href="../security-architecture-layers/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Security Architecture Layers
-    
   </span>
   
     
@@ -1910,10 +1891,8 @@
       <a href="../separation-of-concerns-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Separation of Concerns in a Layered Architecture
-    
   </span>
   
 
@@ -1933,10 +1912,8 @@
       <a href="../stakeholder-priority-matrix/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Stakeholder Priority Conflict Resolution
-    
   </span>
   
 
@@ -1956,10 +1933,8 @@
       <a href="../stakeholder-universe-map/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Stakeholder Universe Map
-    
   </span>
   
 
@@ -1979,10 +1954,8 @@
       <a href="../stride-threat-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     STRIDE Threat Model Explorer
-    
   </span>
   
     
@@ -2010,19 +1983,9 @@
       <a href="../tactic-interaction-web/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Tactic Interaction Web
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -2041,10 +2004,8 @@
       <a href="../technical-debt-simulator/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Technical Debt Accumulation Simulator
-    
   </span>
   
 
@@ -2064,19 +2025,9 @@
       <a href="../utility-tree-builder/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Utility Tree Construction Workshop Simulator
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -2095,19 +2046,9 @@
       <a href="../utility-tree-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Utility Tree Interactive Explorer
-    
   </span>
-  
-    
-  
-  
-    <span class="md-status md-status--scaffold" title="Scaffold — placeholder, not yet implemented">
-    </span>
-  
-
   
 
       </a>
@@ -2126,10 +2067,8 @@
       <a href="../scaling-tradeoff-explorer/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Vertical vs. Horizontal Scaling Tradeoffs
-    
   </span>
   
     
@@ -2161,13 +2100,31 @@
   
   
     <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../faq/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     FAQ
-    
   </span>
   
 
@@ -2186,10 +2143,8 @@
       <a href="../../license/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     License
-    
   </span>
   
 
@@ -2208,10 +2163,8 @@
       <a href="../../contact/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
     Contact
-    
   </span>
   
 
@@ -2247,6 +2200,79 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#about-this-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      About This MicroSim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iframe-embed-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iframe Embed Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson Plan
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grade-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grade Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blooms-taxonomy-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloom's Taxonomy Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#learning-objective" class="md-nav__link">
     <span class="md-ellipsis">
       Learning Objective
@@ -2254,29 +2280,34 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#preview" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
     <span class="md-ellipsis">
-      Preview
+      Activities
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#specification" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
     <span class="md-ellipsis">
-      Specification
+      Assessment
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#related-resources" class="md-nav__link">
+  <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
-      Related Resources
+      References
     </span>
   </a>
   
@@ -2296,7 +2327,6 @@
                 
                   
 
-
   
     <a href="https://github.com/dmccreary/atam/blob/main/docs/sims/pattern-quality-matrix/index.md" title="Edit this page" class="md-content__button md-icon">
       
@@ -2307,79 +2337,50 @@
 
 
 <h1 id="architectural-pattern-quality-attribute-matrix">Architectural Pattern Quality Attribute Matrix<a class="headerlink" href="#architectural-pattern-quality-attribute-matrix" title="Permanent link">&para;</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Scaffold</p>
-<p>This MicroSim has been scaffolded from its specification. The interactive
-implementation has not been built yet.</p>
-</div>
-<h2 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h2>
-<p>Students will be able to compare at least six architectural patterns across four quality attribute dimensions, identify the pattern most suitable for a given set of (H,H) quality attribute scenarios, and explain the tradeoff mechanism responsible for each pattern's strength or weakness.</p>
-<ul>
-<li><strong>Bloom Level:</strong> Analyze (L4) — Compare architectural patterns across quality attribute dimensions to determine which pattern best fits a given set of prioritized quality attribute requirements.</li>
-<li><strong>Bloom Verb:</strong> Compare</li>
-<li><strong>Library:</strong> p5.js</li>
-</ul>
-<h2 id="preview">Preview<a class="headerlink" href="#preview" title="Permanent link">&para;</a></h2>
-<iframe src="main.html" width="100%" height="600"></iframe>
+<iframe src="main.html" height="578" width="100%" scrolling="no"></iframe>
 
-<p><a class="md-button md-button--primary" href="main.html">Run MicroSim in Fullscreen</a></p>
-<h2 id="specification">Specification<a class="headerlink" href="#specification" title="Permanent link">&para;</a></h2>
-<p>The full specification below is extracted from
-<a href="../../chapters/08-architectural-patterns-styles/">Chapter 8: Architectural Patterns and Styles</a>.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Type: diagram
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>**sim-id:** pattern-quality-matrix&lt;br/&gt;
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>**Library:** p5.js&lt;br/&gt;
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>**Status:** Specified
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Purpose: Interactive matrix showing the quality attribute profile of major architectural patterns — which attributes each pattern primarily supports (green), threatens (red), or is neutral on (gray) — with click-to-explore cells revealing the specific tradeoff mechanism.
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>Bloom Level: Analyze (L4) — Compare architectural patterns across quality attribute dimensions to determine which pattern best fits a given set of prioritized quality attribute requirements.
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Bloom Verb: Compare
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Learning Objective: Students will be able to compare at least six architectural patterns across four quality attribute dimensions, identify the pattern most suitable for a given set of (H,H) quality attribute scenarios, and explain the tradeoff mechanism responsible for each pattern&#39;s strength or weakness.
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>Canvas layout:
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>- Grid: Patterns on rows (8 patterns), Quality Attributes on columns (8 attributes)
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>- Each cell: colored indicator (green=supports, red=threatens, gray=neutral, yellow=complex/depends)
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>- Clicking any cell opens a detail panel showing: the specific tradeoff mechanism, a realistic example, and what ATAM scenarios to watch for with this pattern+attribute combination
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>- Column header click: sorts patterns by that quality attribute (best-supporting at top)
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>- Row header click: shows full pattern summary and quality attribute profile
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>Patterns (rows):
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>1. Layered Architecture
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>2. Microservices
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>3. Event-Driven Architecture
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>4. CQRS
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>5. Strangler Fig
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>6. Hexagonal / Clean Architecture
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>7. Pipe-and-Filter
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>8. SOA (legacy reference)
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>Quality Attributes (columns):
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>Performance, Availability, Security, Modifiability, Scalability, Testability, Deployability, Interoperability
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>Cell values (sample):
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>Microservices / Modifiability: Green — &quot;Independent deployment boundary limits blast radius&quot;
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>Microservices / Performance: Red — &quot;Service-to-service network calls add latency; synchronous chains compound it&quot;
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>Event-Driven / Availability: Green — &quot;Producer/consumer decoupling; consumer unavailability doesn&#39;t affect producers&quot;
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>Event-Driven / Consistency: Yellow — &quot;Eventual consistency: temporal window where state diverges&quot;
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>Layered / Testability: Green — &quot;Each layer testable in isolation by stubbing adjacent layers&quot;
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>Layered / Performance: Yellow — &quot;Layer traversal overhead; acceptable for moderate load, problematic for high-throughput&quot;
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>Interactive elements:
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>- Click any cell to see mechanism detail
-</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>- Click column header to sort by that attribute
-</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>- &quot;Compare Two Patterns&quot; button lets student select two patterns and see a side-by-side profile
-</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>- Hover any cell for one-line summary tooltip
-</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>
-</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>Color scheme: Green cells for &quot;Primarily Supports&quot;, Red cells for &quot;Primarily Threatens&quot;, Yellow cells for &quot;Complex/Depends&quot;, Gray cells for Neutral. Header row and column in gold.
-</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>
-</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>Responsive: Matrix scrolls horizontally on narrow screens; column headers stay fixed.
+<p><a class="md-button md-button--primary" href="main.html">Run the Pattern Quality Matrix MicroSim Fullscreen</a>
+<br/>
+<a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
+<h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
+<p>This MicroSim is an 8×8 matrix that compares eight architectural patterns — Layered, Microservices, Event-Driven, CQRS, Strangler Fig, Hexagonal, Pipe-and-Filter, and SOA — across eight quality attributes. Each cell shows whether a pattern primarily <strong>supports</strong> (green), <strong>threatens</strong> (red), is <strong>complex/depends</strong> (yellow), or is <strong>neutral</strong> (gray) on that attribute. Clicking a cell reveals the specific tradeoff mechanism and what to probe for in an ATAM evaluation, helping students choose the pattern best suited to a set of prioritized quality attribute scenarios.</p>
+<h2 id="how-to-use">How to Use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Click any cell</strong> to read the tradeoff mechanism behind its rating and the related ATAM probing advice.</li>
+<li><strong>Click a column header</strong> to sort the patterns by that quality attribute (best-supporting at the top) — a fast way to answer "which pattern is strongest for X?"</li>
+<li><strong>Click a pattern name</strong> to see its one-line summary and its full quality-attribute profile.</li>
+<li><strong>Compare Two Patterns</strong> lets you pick two patterns and view their ratings side by side.</li>
+</ol>
+<h2 id="iframe-embed-code">Iframe Embed Code<a class="headerlink" href="#iframe-embed-code" title="Permanent link">&para;</a></h2>
+<p>You can add this MicroSim to any web page by adding this to your HTML:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/atam/sims/pattern-quality-matrix/main.html&quot;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<h2 id="related-resources">Related Resources<a class="headerlink" href="#related-resources" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="../../chapters/08-architectural-patterns-styles/">Chapter 8: Architectural Patterns and Styles</a></li>
-</ul>
+<h2 id="lesson-plan">Lesson Plan<a class="headerlink" href="#lesson-plan" title="Permanent link">&para;</a></h2>
+<h3 id="grade-level">Grade Level<a class="headerlink" href="#grade-level" title="Permanent link">&para;</a></h3>
+<p>Undergraduate / Professional</p>
+<h3 id="duration">Duration<a class="headerlink" href="#duration" title="Permanent link">&para;</a></h3>
+<p>15-20 minutes</p>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<p>Familiarity with common architectural patterns and the quality attributes used in ATAM.</p>
+<h3 id="blooms-taxonomy-level">Bloom's Taxonomy Level<a class="headerlink" href="#blooms-taxonomy-level" title="Permanent link">&para;</a></h3>
+<p>Analyze (L4)</p>
+<h3 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h3>
+<p>Students will be able to compare at least six architectural patterns across multiple quality attribute dimensions, identify the pattern most suitable for a given set of (H,H) quality attribute scenarios, and explain the tradeoff mechanism responsible for each pattern's strength or weakness.</p>
+<h3 id="activities">Activities<a class="headerlink" href="#activities" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Find the strength</strong> (5 min): For three quality attributes, students sort by the column and name the top pattern, then read the mechanism.</li>
+<li><strong>Choose for a scenario set</strong> (8 min): Given two (H,H) scenarios (e.g., high Scalability + high Modifiability), students use the matrix to pick a pattern and justify it from the cell mechanisms.</li>
+<li><strong>Compare</strong> (5 min): Students compare Microservices and Event-Driven side by side and explain where they diverge.</li>
+</ol>
+<h3 id="assessment">Assessment<a class="headerlink" href="#assessment" title="Permanent link">&para;</a></h3>
+<p>Give students a prioritized quality attribute profile and ask them to recommend a pattern, citing the supporting and threatening cells that justify the choice.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Bass, L., Clements, P., &amp; Kazman, R. (2021). <em>Software Architecture in Practice</em> (4th ed.). Addison-Wesley.</li>
+<li>Richards, M., &amp; Ford, N. (2020). <em>Fundamentals of Software Architecture</em>. O'Reilly.</li>
+</ol>
 
 
 
@@ -2474,12 +2475,10 @@ implementation has not been built yet.</p>
     </div>
     
     
-    
-      
-      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>

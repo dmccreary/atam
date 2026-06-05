@@ -1,21 +1,45 @@
 {
   "title": "Risk Register and Theme Aggregation",
-  "description": "Students will be able to interpret a populated risk register, identify the highest-priority risk themes, and recommend which architectural improvements would address the most severe risks most efficiently.",
-  "creator": "Dementia Education Project",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for risk register and theme aggregation",
   "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en-US",
-  "rights": "CC BY 4.0",
-  "identifier": "risk-register-explorer",
-  "library": "p5.js",
-  "bloomLevel": "Evaluate (L5) — Assess a risk register to prioritize mitigation efforts, identify high-severity risk themes, and determine which architectural improvements would have the greatest risk-reduction impact.",
-  "bloomVerb": "Assess",
-  "completion_status": "scaffold",
-  "chapter_number": 10,
-  "chapter_title": "Sensitivity, Tradeoffs, Risk Analysis, and ATAM Reporting",
-  "chapter_dir": "10-risk-analysis-atam-reporting"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Risk Register and Theme Aggregation",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "10-risk-analysis-atam-reporting"
 }

@@ -1,21 +1,45 @@
 {
   "title": "Utility Tree Construction Workshop Simulator",
-  "description": "Students will be able to build a complete utility tree for a provided system description, including quality attribute branches, sub-attribute nodes, rated leaf scenarios, and an identified list of (H,H) priority scenarios.",
-  "creator": "Dementia Education Project",
+  "creator": "Dan McCreary",
+  "subject": "High School Geometry",
+  "description": "Interactive MicroSim for utility tree construction workshop simulator",
   "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
-  "type": "Interactive Simulation",
-  "format": "text/html",
-  "language": "en-US",
-  "rights": "CC BY 4.0",
-  "identifier": "utility-tree-builder",
-  "library": "p5.js",
-  "bloomLevel": "Create (L6) — Design a utility tree for a given system by constructing quality attribute branches, sub-attribute nodes, and rated leaf-level scenarios.",
-  "bloomVerb": "Design",
-  "completion_status": "scaffold",
-  "chapter_number": 7,
-  "chapter_title": "Utility Trees and Scenario Prioritization",
-  "chapter_dir": "07-utility-trees-prioritization"
+  "educational": {
+    "gradeLevel": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "subjectArea": "Mathematics",
+    "topic": "Utility Tree Construction Workshop Simulator",
+    "learningObjectives": [
+      "TODO: Add learning objectives"
+    ],
+    "bloomsTaxonomy": "Create",
+    "duration": "10-15 minutes",
+    "prerequisites": [],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 450
+    },
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Interactive exploration",
+    "keyQuestions": [],
+    "commonMisconceptions": [],
+    "assessmentOpportunities": []
+  },
+  "chapter": "07-utility-trees-prioritization"
 }
