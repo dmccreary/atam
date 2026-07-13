@@ -1,0 +1,509 @@
+{
+  "project": {
+    "title": "Architecture Tradeoff Analysis Method",
+    "subtitle": "Auto-scanned intelligent textbook",
+    "author": "Dan McCreary",
+    "costPerMTokens": 15,
+    "sessionBudget": {
+      "pro": 900000,
+      "max": 3500000
+    }
+  },
+  "sections": {
+    "scaffold": {
+      "status": "published",
+      "tokensTarget": 2000,
+      "tokensDone": 2000
+    },
+    "course-description": {
+      "status": "published",
+      "tokensTarget": 4000,
+      "tokensDone": 2417
+    },
+    "learning-graph": {
+      "status": "published",
+      "tokensTarget": 20000,
+      "tokensDone": 20000
+    },
+    "chapter-structure": {
+      "status": "published",
+      "tokensTarget": 15000,
+      "tokensDone": 15000
+    },
+    "chapter-content": {
+      "countLabel": "18 chapters",
+      "children": [
+        {
+          "n": 1,
+          "title": "Software Architecture Foundations",
+          "status": "published",
+          "tokens": 10000
+        },
+        {
+          "n": 2,
+          "title": "Architecture Principles and Governance",
+          "status": "published",
+          "tokens": 10000
+        },
+        {
+          "n": 3,
+          "title": "ATAM Introduction and Process Phases",
+          "status": "published",
+          "tokens": 10000
+        },
+        {
+          "n": 4,
+          "title": "Stakeholder and Business Analysis",
+          "status": "published",
+          "tokens": 10000
+        },
+        {
+          "n": 5,
+          "title": "Quality Attributes",
+          "status": "published",
+          "tokens": 10000
+        },
+        {
+          "n": 6,
+          "title": "Quality Attribute Scenarios",
+          "status": "published",
+          "tokens": 10000
+        },
+        {
+          "n": 7,
+          "title": "Utility Trees and Scenario Prioritization",
+          "status": "published",
+          "tokens": 10000
+        },
+        {
+          "n": 8,
+          "title": "Architectural Patterns and Styles",
+          "status": "published",
+          "tokens": 10000
+        },
+        {
+          "n": 9,
+          "title": "Architectural Tactics and Design Principles",
+          "status": "published",
+          "tokens": 10000
+        },
+        {
+          "n": 10,
+          "title": "Sensitivity, Tradeoffs, Risk Analysis, and ATAM Reporting",
+          "status": "published",
+          "tokens": 10000
+        },
+        {
+          "n": 11,
+          "title": "Distributed Systems Architecture Fundamentals",
+          "status": "published",
+          "tokens": 10000
+        },
+        {
+          "n": 12,
+          "title": "Distributed Systems Patterns",
+          "status": "published",
+          "tokens": 10000
+        },
+        {
+          "n": 13,
+          "title": "Cloud-Native Architecture",
+          "status": "published",
+          "tokens": 10000
+        },
+        {
+          "n": 14,
+          "title": "Security Architecture",
+          "status": "published",
+          "tokens": 10000
+        },
+        {
+          "n": 15,
+          "title": "Performance Engineering and Scaling",
+          "status": "published",
+          "tokens": 10000
+        },
+        {
+          "n": 16,
+          "title": "Observability, Reliability, and Cloud Operations",
+          "status": "published",
+          "tokens": 10000
+        },
+        {
+          "n": 17,
+          "title": "AI and Machine Learning System Architecture",
+          "status": "published",
+          "tokens": 10000
+        },
+        {
+          "n": 18,
+          "title": "Advanced Data, Emerging AI, and Autonomous Architectures",
+          "status": "published",
+          "tokens": 10000
+        }
+      ]
+    },
+    "chapter-images": {
+      "status": "published",
+      "tokensTarget": 8000,
+      "tokensDone": 8000
+    },
+    "microsims": {
+      "countLabel": "52 simulations",
+      "children": [
+        {
+          "n": 1,
+          "title": "ADR to Architecture Evolution Pipeline",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 2,
+          "title": "API Versioning and Contract-First Design Patterns",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 3,
+          "title": "Architecture Building Blocks Explorer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 4,
+          "title": "Architecture Lifecycle with Governance Checkpoints",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 5,
+          "title": "Architecture Views Explorer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 6,
+          "title": "ATAM Output to Action Pipeline",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 7,
+          "title": "ATAM Two-Phase Process Flow",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 8,
+          "title": "Risk Result Type Explorer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 9,
+          "title": "ATAM Team Roles and Interactions",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 10,
+          "title": "Availability Architecture Analyzer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 11,
+          "title": "Business Goals to Architecture Driver Mapping",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 12,
+          "title": "Caching Tactic Anatomy",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 13,
+          "title": "CAP Theorem Interactive Explorer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 14,
+          "title": "CDN Request Routing and Cache Flow",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 15,
+          "title": "Cloud-Native Architecture Quality Attribute Stack",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 16,
+          "title": "Communication Style Tradeoff Explorer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 17,
+          "title": "Lambda vs. Kappa Architecture Comparison",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 18,
+          "title": "Deployment Strategy Decision Matrix",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 19,
+          "title": "Distributed System Component Explorer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 20,
+          "title": "Distributed Tracing Waterfall View",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 21,
+          "title": "Distributed Tracing Visualization",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 22,
+          "title": "Architecture Evaluation Methods Comparison",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 23,
+          "title": "Active-Passive vs. Active-Active Failover",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 24,
+          "title": "Federated Learning Architecture",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 25,
+          "title": "Architecture Fitness Function Dashboard",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 26,
+          "title": "Graph Viewer",
+          "status": "drafted",
+          "tokens": 5000
+        },
+        {
+          "n": 27,
+          "title": "ML Pipeline Architecture Flow",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 28,
+          "title": "Architectural Pattern Quality Attribute Matrix",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 29,
+          "title": "Performance Metric Relationships",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 30,
+          "title": "Priority Matrix and Analytical Roadmap",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 31,
+          "title": "Quality Attribute Coverage Dashboard",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 32,
+          "title": "Quality Attribute Requirement Construction Workbench",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 33,
+          "title": "Quality Attribute Taxonomy and Conflict Map",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 34,
+          "title": "RAG vs. GraphRAG Architecture Comparison",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 35,
+          "title": "Resilience Pattern Interaction Simulator",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 36,
+          "title": "Responsible AI Architecture Components",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 37,
+          "title": "Risk Register and Theme Aggregation",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 38,
+          "title": "Saga Pattern Flow Simulator",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 39,
+          "title": "Vertical vs. Horizontal Scaling Tradeoffs",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 40,
+          "title": "Scenario Construction Workbench",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 41,
+          "title": "Scenario Catalog to Fitness Function Pipeline",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 42,
+          "title": "Scenario Brainstorming and Prioritization Workshop Simulator",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 43,
+          "title": "Security Architecture Layers",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 44,
+          "title": "Separation of Concerns in a Layered Architecture",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 45,
+          "title": "Stakeholder Priority Conflict Resolution",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 46,
+          "title": "Stakeholder Universe Map",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 47,
+          "title": "STRIDE Threat Model Explorer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 48,
+          "title": "Tactic Interaction Web",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 49,
+          "title": "Technical Debt Accumulation Simulator",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 50,
+          "title": "Interactive Technology Radar",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 51,
+          "title": "Utility Tree Construction Workshop Simulator",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 52,
+          "title": "Utility Tree Interactive Explorer",
+          "status": "published",
+          "tokens": 5000
+        }
+      ]
+    },
+    "glossary": {
+      "status": "published",
+      "tokensTarget": 51213,
+      "tokensDone": 51213
+    },
+    "faq": {
+      "status": "published",
+      "tokensTarget": 12000,
+      "tokensDone": 9728
+    },
+    "quiz": {
+      "status": "published",
+      "tokensTarget": 55074,
+      "tokensDone": 55074
+    },
+    "reference": {
+      "status": "published",
+      "tokensTarget": 20000,
+      "tokensDone": 10883
+    },
+    "teachers-guide": {
+      "status": "not-started",
+      "tokensTarget": 15000,
+      "tokensDone": 0
+    },
+    "book-metrics": {
+      "status": "drafted",
+      "tokensTarget": 2000,
+      "tokensDone": 900
+    },
+    "publish": {
+      "status": "published",
+      "tokensTarget": 10000,
+      "tokensDone": 10000
+    },
+    "stories": {
+      "status": "not-started",
+      "tokensTarget": 30000,
+      "tokensDone": 0
+    }
+  }
+}
