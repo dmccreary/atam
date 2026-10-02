@@ -58,7 +58,7 @@ Lambda architecture solves a real problem — the inability of early streaming s
 
 #### Diagram: Lambda vs. Kappa Architecture Comparison
 
-<iframe src="../../sims/data-architecture-patterns/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/data-architecture-patterns/main.html" width="100%" height="547px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Data Architecture Patterns Comparison Explorer
@@ -151,7 +151,7 @@ The quality attribute tradeoffs of federated learning are significant. **Privacy
 
 #### Diagram: Federated Learning Architecture
 
-<iframe src="../../sims/federated-learning-explorer/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/federated-learning-explorer/main.html" width="100%" height="547px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Federated Learning Architecture Explorer

@@ -212,7 +212,7 @@ The responsible AI framework has several dimensions that have direct architectur
 
 #### Diagram: Responsible AI Architecture Components
 
-<iframe src="../../sims/responsible-ai-explorer/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/responsible-ai-explorer/main.html" width="100%" height="572px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Responsible AI Architecture Components Explorer

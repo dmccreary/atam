@@ -1,45 +1,68 @@
 {
   "title": "Lambda vs. Kappa Architecture Comparison",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for lambda vs. kappa architecture comparison",
+  "subject": "Software Architecture",
+  "description": "Follow data from its sources to the queries it serves through lambda, kappa, and lakehouse architectures side by side, step through how each one reprocesses history, and compare their freshness, consistency, simplicity, and cost.",
   "date": "2026-10-02",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "data-architecture-patterns",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
-      "11",
-      "12"
+      "Graduate",
+      "Adult"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Lambda vs. Kappa Architecture Comparison",
+    "subjectArea": "Computer Science",
+    "topic": "Lambda architecture, kappa architecture, data lakehouse, reprocessing, and data architecture tradeoffs",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to compare lambda, kappa, and lakehouse architectures by tracing the path of data from ingestion to serving, explaining how each one recomputes historical results, and weighing their freshness, consistency, operational simplicity, and cost."
     ],
-    "bloomsTaxonomy": "Understand",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "Compare",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Batch processing and stream processing",
+      "Event logs and replay",
+      "Data lakes and data warehouses"
+    ],
     "standards": []
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 545
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Side-by-side structural comparison with a common three-step walk-through and a qualitative quality attribute profile",
+    "keyQuestions": [
+      "What does lambda pay for having both a batch layer and a speed layer?",
+      "What must be true of the event log for a kappa architecture to recompute history?",
+      "Why does the lakehouse score highest on consistency and lowest on freshness?",
+      "Which architecture would you choose if the transformation logic changes every week?"
+    ],
+    "commonMisconceptions": [
+      "Kappa is lambda without the batch layer and nothing else changes (it depends on a log that retains history and on a stream processor capable of replaying it).",
+      "Lambda is obsolete (its batch layer still gives the most routine path to a complete recomputation).",
+      "A lakehouse replaces stream processing (it targets analytics, with freshness of minutes).",
+      "The architecture with the most components is the most capable (each added path is more to operate and keep consistent)."
+    ],
+    "assessmentOpportunities": [
+      "Give students a scenario such as \"the usage dashboard shall reflect events within 5 seconds, and a corrected billing rule shall be applied to 3 years of history within 24 hours\" and ask them to evaluate lambda and kappa against both response measures, name the sensitivity point for each, and state the tradeoff they would record."
+    ]
   },
-  "chapter": "18-advanced-data-emerging-ai"
+  "chapter": "18-advanced-data-emerging-ai",
+  "completion_status": "implemented"
 }

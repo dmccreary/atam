@@ -213,7 +213,7 @@ function drawDiagram(m, top, h) {
   const colW = (x1 - x0) / n;
   const yMid = top + h / 2 + 2;
   const boxH = 24, gap = 5;
-  const boxW = Math.min(104, colW - 30);
+  const boxW = Math.min(104, colW - 24);
   colHits = [];
 
   // the request path through the chain

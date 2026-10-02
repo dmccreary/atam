@@ -1,45 +1,68 @@
 {
   "title": "Responsible AI Architecture Components",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for responsible ai architecture components",
+  "subject": "Software Architecture",
+  "description": "Map fifteen responsible AI requirements in five dimensions to the architectural components that address them, add or remove components from a credit-scoring architecture, and run a gap analysis that ranks the unaddressed requirements by risk and by regulation.",
   "date": "2026-10-02",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "responsible-ai-explorer",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
-      "11",
-      "12"
+      "Graduate",
+      "Adult"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Responsible AI Architecture Components",
+    "subjectArea": "Computer Science",
+    "topic": "Responsible AI architecture, fairness, safety, transparency, accountability, privacy, and compliance gap analysis",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to assess an AI system architecture against responsible AI requirements by mapping each requirement to the component that addresses it, identifying the gaps, and prioritizing them by likelihood, impact, and regulatory exposure."
     ],
-    "bloomsTaxonomy": "Understand",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
+    "bloomsTaxonomy": "Evaluate",
+    "bloomVerb": "Assess",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Responsible AI dimensions",
+      "Model registry, guardrails, and explainability",
+      "ATAM risks and tradeoff points"
+    ],
     "standards": []
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 570
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Evaluate-and-improve: a requirements-to-components map with immediate coverage feedback and a risk-ranked gap analysis",
+    "keyQuestions": [
+      "Which component makes each requirement true, and what happens to the requirement if that component is missing?",
+      "Which unaddressed requirement would you close first, and on what grounds?",
+      "Where do two responsible AI dimensions pull against each other in this architecture?",
+      "What does full coverage on the radar not tell you?"
+    ],
+    "commonMisconceptions": [
+      "Responsible AI is a policy matter, not an architectural one (each requirement needs a component that implements it).",
+      "Full coverage means the system is compliant (coverage shows that a component exists, not that it works or that the law is satisfied).",
+      "The dimensions reinforce one another (monitoring fairness needs protected attributes that data minimization would remove).",
+      "Model quality tooling covers responsible AI (accuracy metrics say nothing about explanations, erasure, or audit trails)."
+    ],
+    "assessmentOpportunities": [
+      "Give students a different starting architecture (for example, guardrails, audit log, and explainability service only) and ask them to list the unaddressed requirements, pick the three they would close first with a justification based on likelihood, impact, and regulation, and state one risk and one tradeoff point they would record in an ATAM evaluation of the result."
+    ]
   },
-  "chapter": "17-ai-ml-system-architecture"
+  "chapter": "17-ai-ml-system-architecture",
+  "completion_status": "implemented"
 }

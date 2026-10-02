@@ -1,5 +1,5 @@
 // Responsible AI Architecture Components
-// CANVAS_HEIGHT: 550
+// CANVAS_HEIGHT: 570
 // Bloom L5 (Evaluate): students ASSESS an AI architecture against fifteen responsible AI
 // requirements in five dimensions. They add or remove architectural components, watch the
 // coverage radar change, and use the gap analysis to judge which unaddressed requirements
@@ -14,7 +14,7 @@
 
 let containerWidth;
 let canvasWidth = 400;
-let drawHeight = 500;
+let drawHeight = 520;
 let controlHeight = 50;
 let canvasHeight = drawHeight + controlHeight;
 let containerHeight = canvasHeight;
@@ -37,21 +37,21 @@ const REQS = [
     why: 'EU AI Act Art. 10 requires data governance, including examination for bias; ECOA forbids discrimination in credit.' },
   { id: 'F2', text: 'Fairness metrics gate each release', regs: 'EC', like: 3, imp: 3,
     why: 'Without a gate, a model that disadvantages a protected group ships unnoticed.' },
-  { id: 'F3', text: 'Disparate impact monitored in production', regs: 'EC', like: 2, imp: 3,
+  { id: 'F3', text: 'Disparate impact monitored live', regs: 'EC', like: 2, imp: 3,
     why: 'A model that was fair at release can drift into disparate impact as the population changes.' },
   { id: 'S1', text: 'Inputs and outputs screened', regs: 'E', like: 2, imp: 2,
     why: 'EU AI Act Art. 15 asks for accuracy, robustness, and cybersecurity appropriate to the risk.' },
   { id: 'S2', text: 'Adversarial testing before release', regs: 'E', like: 2, imp: 2,
     why: 'EU AI Act Art. 9 requires a risk management system that includes testing.' },
-  { id: 'S3', text: 'Human fallback when the model is unsure', regs: 'GE', like: 2, imp: 3,
+  { id: 'S3', text: 'Human fallback for unsure cases', regs: 'GE', like: 2, imp: 3,
     why: 'EU AI Act Art. 14 requires human oversight; GDPR Art. 22 gives a right to human intervention in automated decisions.' },
   { id: 'T1', text: 'Each decision can be explained', regs: 'GEC', like: 3, imp: 3,
-    why: 'ECOA requires specific reasons in an adverse action notice; GDPR and the EU AI Act give rights to an explanation of automated decisions.' },
+    why: 'ECOA requires specific reasons in an adverse action notice; GDPR requires meaningful information about the logic of automated decisions, and the EU AI Act adds a right to an explanation.' },
   { id: 'T2', text: 'Model purpose and limits documented', regs: 'E', like: 2, imp: 2,
     why: 'EU AI Act Art. 11 and 13 require technical documentation and instructions for use.' },
   { id: 'T3', text: 'People told an AI system is used', regs: 'GE', like: 2, imp: 2,
     why: 'GDPR requires telling people about automated decision-making; the EU AI Act requires informing people subject to a high-risk system.' },
-  { id: 'A1', text: 'Lineage: data, code, evaluation recorded', regs: 'E', like: 2, imp: 3,
+  { id: 'A1', text: 'Lineage of data, code, evaluation', regs: 'E', like: 2, imp: 3,
     why: 'EU AI Act Art. 11 technical documentation depends on knowing what each model was built from.' },
   { id: 'A2', text: 'Every prediction logged for audit', regs: 'E', like: 2, imp: 3,
     why: 'EU AI Act Art. 12 requires automatic record-keeping over the system\'s lifetime.' },
@@ -66,7 +66,7 @@ const REQS = [
 ];
 
 const COMPS = [
-  { id: 'bias', name: ['Bias and fairness', 'testing'], covers: ['F1', 'F2'], on: true,
+  { id: 'bias', name: ['Bias, fairness', 'testing'], covers: ['F1', 'F2'], on: true,
     purpose: 'Audits training data for representation gaps and evaluates fairness metrics before a model is released.',
     examples: 'Per-group representation reports; demographic parity and equalized odds checks in the evaluation stage.',
     atam: 'Fairness scenarios. A tradeoff point: fairness definitions conflict with each other and with accuracy.' },
@@ -192,7 +192,7 @@ function draw() {
   textStyle(NORMAL);
 
   // which things are lit by the pointer or the selection
-  const top = 38, zoneH = 310;
+  const top = 38, zoneH = 322;
   const full = canvasWidth - margin * 2;
   const aW = narrow ? full * 0.56 : full * 0.41, bW = narrow ? full * 0.44 - 6 : full * 0.29, cW = full - aW - bW - 16;
   const ax = margin, bx = margin + aW + 8, cx = bx + bW + 8;
@@ -226,7 +226,7 @@ function hotSets() {
     h.any = true; h.comps.add(k.c.id); h.col = DIMS.find(d => d.id === k.c.covers[0][0]).col;
     for (const id of k.c.covers) h.reqs.add(id);
   }
-  if (!h.any && selected) { const c = comp(selected); h.comps.add(c.id); for (const id of c.covers) h.reqs.add(id); }
+  if (!h.any && selected) { for (const id of comp(selected).covers) h.reqs.add(id); }   // selection lights its requirements
   return h;
 }
 
@@ -332,12 +332,12 @@ function drawCoverage(x, y, w, h) {
     if (i === 0) { textAlign(CENTER, BOTTOM); text(lbl, cx, ly - 1); }
     else if (i === 1) { textAlign(LEFT, CENTER); text(d.name, lx, ly - 6); text(Math.round(val[i] * 3) + '/3', lx, ly + 6); }
     else if (i === 4) { textAlign(RIGHT, CENTER); text(d.name, lx, ly - 6); text(Math.round(val[i] * 3) + '/3', lx, ly + 6); }
-    else if (i === 2) { textAlign(CENTER, TOP); text(lbl, constrain(lx + 4, x + 6 + textWidth(lbl) / 2, x + w - 6 - textWidth(lbl) / 2), ly + 15); }
-    else { textAlign(CENTER, TOP); text(lbl, constrain(lx - 4, x + 6 + textWidth(lbl) / 2, x + w - 6 - textWidth(lbl) / 2), ly + 2); }
+    else if (i === 2) { textAlign(CENTER, TOP); text(lbl, constrain(lx + 12, x + 6 + textWidth(lbl) / 2, x + w - 6 - textWidth(lbl) / 2), ly + 22); }
+    else { textAlign(CENTER, TOP); text(lbl, constrain(lx - 12, x + 6 + textWidth(lbl) / 2, x + w - 6 - textWidth(lbl) / 2), ly + 9); }
     textStyle(NORMAL);
   }
   // coverage per regulation
-  let by = y + 208;
+  let by = y + 216;
   fill(NAVY[0], NAVY[1], NAVY[2]); textAlign(LEFT, TOP); textStyle(BOLD); textSize(12);
   text(fitText('Coverage by regulation', w - 14), x + 8, by); textStyle(NORMAL);
   by += 19;
@@ -410,16 +410,23 @@ function drawGaps(x, y, w, h, narrow) {
   text(fitText(gaps.length ? 'Gap analysis: ' + gaps.length + ' unaddressed' + (rf ? ' under ' + regSelect.value() : '') + ', highest risk first'
     : 'Gap analysis: no unaddressed requirements' + (rf ? ' under ' + regSelect.value() : ''), tw), tx, ty);
   textStyle(NORMAL); ty += 21;
-  const lv = ['', 'low', 'medium', 'high'];
+  const lv = ['', 'low', 'med', 'high'];
+  let shown = 0;
   for (const r of gaps) {
-    if (ty + 15 > limit) { break; }
+    if (ty + 15 > limit) break;
     const d = dimOf(r);
     textSize(12); textAlign(LEFT, TOP); textStyle(BOLD); fill(d.col[0], d.col[1], d.col[2]); text(r.id, tx, ty); textStyle(NORMAL);
-    fill(30);
-    const tail = '  →  ' + closers(r).map(c => c.name.join(' ')).join(', ');
-    const risk = narrow ? '' : '   (' + lv[r.like] + ' likelihood, ' + lv[r.imp] + ' impact)';
-    text(fitText(r.text + tail + risk, tw - 24), tx + 24, ty);
-    ty += 15.5;
+    // likelihood and impact at the right end of the row, the fix in the middle
+    const risk = narrow ? '' : 'L ' + lv[r.like] + ' · I ' + lv[r.imp];
+    textSize(11); const rw = risk ? textWidth(risk) + 10 : 0;
+    fill(110); textAlign(RIGHT, TOP); text(risk, tx + tw, ty + 1);
+    fill(30); textSize(12); textAlign(LEFT, TOP);
+    text(fitText(r.text + '  →  ' + closers(r).map(c => c.name.join(' ')).join(', '), tw - 24 - rw), tx + 24, ty);
+    ty += 15.5; shown++;
+  }
+  if (shown < gaps.length) {
+    fill(110); textSize(11); textAlign(RIGHT, TOP);
+    text('+' + (gaps.length - shown) + ' more', x + w - 14 - mW, y + 10);
   }
   if (!gaps.length) drawWrapped('Every requirement in view has a component behind it. Coverage is not the same as quality: ' +
     'an ATAM evaluation would still ask how well each component works and what it costs.', tx, ty, tw, 12.5, 16, color(30), limit);
@@ -483,7 +490,7 @@ function mousePressed() {
       return;
     }
   }
-  if (mouseY < 354) selected = null;
+  if (mouseY < 366) selected = null;
 }
 
 function windowResized() {

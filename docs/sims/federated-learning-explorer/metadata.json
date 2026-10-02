@@ -1,45 +1,68 @@
 {
   "title": "Federated Learning Architecture",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for federated learning architecture",
+  "subject": "Software Architecture",
+  "description": "Step through the federated averaging loop across six hospitals and a coordinator, and see how the privacy budget, data heterogeneity, number of rounds, and participation rate change the accuracy of the global model in a live run on a small synthetic problem.",
   "date": "2026-10-02",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "federated-learning-explorer",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
-      "11",
-      "12"
+      "Graduate",
+      "Adult"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Federated Learning Architecture",
+    "subjectArea": "Computer Science",
+    "topic": "Federated learning, federated averaging, differential privacy, non-IID data, and the privacy-utility tradeoff",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to trace one round of federated averaging, explain what does and does not leave each participant, and examine how the privacy budget, data heterogeneity, number of rounds, and participation rate affect the accuracy of the global model."
     ],
-    "bloomsTaxonomy": "Understand",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "Examine",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Model training and model weights",
+      "Privacy as a quality attribute",
+      "Accuracy as a model quality measure"
+    ],
     "standards": []
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 545
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Step-through of the training loop combined with parameter exploration on a live simulation, with a pooled-training baseline for comparison",
+    "keyQuestions": [
+      "What exactly leaves a hospital in each round, and what could an observer still learn from it?",
+      "Why does a smaller ε lower accuracy, and why does the cost shrink when more participants are averaged?",
+      "Why does heterogeneous data slow convergence, and why does it hurt even the pooled-data baseline?",
+      "When do more rounds stop helping?"
+    ],
+    "commonMisconceptions": [
+      "Federated learning is private because the data never leaves (model updates can still leak information, which is why noise and clipping are added).",
+      "More privacy is free (the noise that protects participants lowers accuracy, most of all when participants are few).",
+      "Federated training matches centralized training (with heterogeneous data it converges more slowly and often to a lower accuracy).",
+      "More rounds always help (once the model has converged, extra rounds add only noise)."
+    ],
+    "assessmentOpportunities": [
+      "Give students the scenario \"six hospitals train a shared diagnostic model; no patient record may leave a hospital, and the model must stay within three points of the accuracy of pooled training\" and ask them to find settings that meet it, state which parameter the accuracy response is most sensitive to, and name one residual privacy risk that keeping the data local does not remove."
+    ]
   },
-  "chapter": "18-advanced-data-emerging-ai"
+  "chapter": "18-advanced-data-emerging-ai",
+  "completion_status": "implemented"
 }
