@@ -1,62 +1,61 @@
 ---
 title: Federated Learning Architecture
-description: Federated Learning Architecture
-status: scaffold
-library: p5.js
-bloom_level: TBD
+description: Interactive p5.js MicroSim for federated learning architecture.
+image: /sims/federated-learning-explorer/federated-learning-explorer.png
+og:image: /sims/federated-learning-explorer/federated-learning-explorer.png
+twitter:image: /sims/federated-learning-explorer/federated-learning-explorer.png
+social:
+   cards: false
+quality_score: 0
 ---
 
 # Federated Learning Architecture
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
 
-## Learning Objective
+[Run the Federated Learning Architecture MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
+<br/>
+[Edit in the p5.js Editor](https://editor.p5js.org/)
 
-TBD
+## About This MicroSim
 
-- **Bloom Level:** TBD
-- **Bloom Verb:** TBD
-- **Library:** p5.js
+TODO: Describe what this MicroSim demonstrates.
 
-## Preview
+## How to Use
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+TODO: Describe how students should interact with this MicroSim.
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+## Iframe Embed Code
 
-## Specification
+You can add this MicroSim to any web page by adding this to your HTML:
 
-The full specification below is extracted from
-[Chapter 18: Advanced Data, Emerging AI, and Autonomous Architectures](../../chapters/18-advanced-data-emerging-ai/index.md).
-
-```text
-Type: Interactive simulation
-**sim-id:** federated-learning-explorer<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
-
-**Purpose:** Animated visualization of the federated learning training loop showing model distribution, local training, gradient aggregation, and model improvement across rounds.
-
-**Components:**
-- Central coordinator (hub)
-- 6 participating nodes (hospitals, devices, banks) with simulated local datasets
-- Communication channel animations
-
-**Controls:**
-- Privacy budget slider (differential privacy ε): 0.1–10 (lower = more privacy, more noise)
-- Non-IID heterogeneity slider: low–high (more heterogeneity = slower convergence)
-- Number of rounds slider: 1–100
-- Fraction of nodes per round: 0.2–1.0
-
-**Display:**
-- Animated model update flows (compression level visualization)
-- Convergence curve: global model accuracy vs. rounds
-- Privacy-utility tradeoff chart
-- "Model leakage risk" indicator based on privacy budget
+```html
+<iframe src="https://dmccreary.github.io/atam/sims/federated-learning-explorer/main.html"
+        height="450px"
+        width="100%"
+        scrolling="no"></iframe>
 ```
 
-## Related Resources
+## Lesson Plan
 
-- [Chapter 18: Advanced Data, Emerging AI, and Autonomous Architectures](../../chapters/18-advanced-data-emerging-ai/index.md)
+### Grade Level
+9-12 (High School Geometry)
+
+### Duration
+10-15 minutes
+
+### Prerequisites
+TODO: List prerequisites.
+
+### Activities
+
+1. **Exploration** (5 min): TODO
+2. **Guided Practice** (5 min): TODO
+3. **Assessment** (5 min): TODO
+
+### Assessment
+TODO: List assessment criteria.
+
+## References
+
+1. TODO: Add references.

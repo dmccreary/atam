@@ -1,55 +1,61 @@
 ---
 title: Lambda vs. Kappa Architecture Comparison
-description: Lambda vs. Kappa Architecture Comparison
-status: scaffold
-library: vis-network
-bloom_level: TBD
+description: Interactive p5.js MicroSim for lambda vs. kappa architecture comparison.
+image: /sims/data-architecture-patterns/data-architecture-patterns.png
+og:image: /sims/data-architecture-patterns/data-architecture-patterns.png
+twitter:image: /sims/data-architecture-patterns/data-architecture-patterns.png
+social:
+   cards: false
+quality_score: 0
 ---
 
 # Lambda vs. Kappa Architecture Comparison
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
 
-## Learning Objective
+[Run the Lambda vs. Kappa Architecture Comparison MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
+<br/>
+[Edit in the p5.js Editor](https://editor.p5js.org/)
 
-TBD
+## About This MicroSim
 
-- **Bloom Level:** TBD
-- **Bloom Verb:** TBD
-- **Library:** vis-network
+TODO: Describe what this MicroSim demonstrates.
 
-## Preview
+## How to Use
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+TODO: Describe how students should interact with this MicroSim.
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+## Iframe Embed Code
 
-## Specification
+You can add this MicroSim to any web page by adding this to your HTML:
 
-The full specification below is extracted from
-[Chapter 18: Advanced Data, Emerging AI, and Autonomous Architectures](../../chapters/18-advanced-data-emerging-ai/index.md).
-
-```text
-Type: Interactive comparison
-**sim-id:** data-architecture-patterns<br/>
-**Library:** vis-network<br/>
-**Status:** Specified
-
-**Purpose:** Side-by-side animated flow comparison of Lambda, Kappa, and Data Lakehouse architectures showing data flow from ingestion through serving.
-
-**Panels:**
-- Lambda: Data Sources → Kafka → (Batch Layer: HDFS + Spark / Speed Layer: Flink) → Serving Layer → Query
-- Kappa: Data Sources → Kafka (durable log) → Flink → Serving Store → Query
-- Lakehouse: Data Sources → Ingestion → Object Storage (Delta/Iceberg) → Query Engine → Analytics
-
-**Interactions:**
-- Click each component to see: technology examples, quality attribute strengths, failure modes
-- "Simulate Reprocessing" button: shows how each architecture handles historical recomputation
-- Quality attribute comparison radar chart: latency, consistency, operational complexity, cost
+```html
+<iframe src="https://dmccreary.github.io/atam/sims/data-architecture-patterns/main.html"
+        height="450px"
+        width="100%"
+        scrolling="no"></iframe>
 ```
 
-## Related Resources
+## Lesson Plan
 
-- [Chapter 18: Advanced Data, Emerging AI, and Autonomous Architectures](../../chapters/18-advanced-data-emerging-ai/index.md)
+### Grade Level
+9-12 (High School Geometry)
+
+### Duration
+10-15 minutes
+
+### Prerequisites
+TODO: List prerequisites.
+
+### Activities
+
+1. **Exploration** (5 min): TODO
+2. **Guided Practice** (5 min): TODO
+3. **Assessment** (5 min): TODO
+
+### Assessment
+TODO: List assessment criteria.
+
+## References
+
+1. TODO: Add references.

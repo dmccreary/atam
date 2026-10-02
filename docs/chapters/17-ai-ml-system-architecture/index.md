@@ -40,7 +40,7 @@ The canonical ML pipeline has five major stages. **Data ingestion** collects raw
 
 #### Diagram: ML Pipeline Architecture Flow
 
-<iframe src="../../sims/ml-pipeline-explorer/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/ml-pipeline-explorer/main.html" width="100%" height="472px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Machine Learning Pipeline Architecture Explorer
@@ -140,7 +140,7 @@ GraphRAG architectures combine a knowledge graph (Neo4j, Amazon Neptune, propert
 
 #### Diagram: RAG vs. GraphRAG Architecture Comparison
 
-<iframe src="../../sims/rag-architecture-explorer/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/rag-architecture-explorer/main.html" width="100%" height="577px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>RAG vs. GraphRAG Architecture Explorer

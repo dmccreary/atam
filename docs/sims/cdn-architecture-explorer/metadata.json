@@ -1,21 +1,68 @@
 {
   "title": "CDN Request Routing and Cache Flow",
-  "description": "CDN Request Routing and Cache Flow",
-  "creator": "Dementia Education Project",
-  "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
+  "creator": "Dan McCreary",
+  "subject": "Software Architecture",
+  "description": "Send requests from five users on a schematic world map to the nearest CDN point of presence, and compare the latency of a cache hit, a cache miss, an uncacheable request, and a direct-to-origin request while TTLs expire and caches are purged.",
+  "date": "2026-10-02",
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en-US",
-  "rights": "CC BY 4.0",
+  "rights": "CC BY-NC-SA 4.0",
   "identifier": "cdn-architecture-explorer",
-  "library": "vis-network",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 15,
-  "chapter_title": "Performance Engineering and Scaling",
-  "chapter_dir": "15-performance-engineering-scaling"
+  "educational": {
+    "gradeLevel": [
+      "Graduate",
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Content delivery networks, edge caching, TTL, invalidation, and cache hit ratio",
+    "learningObjectives": [
+      "Students will be able to compare the response time of a CDN cache hit, a cache miss, an uncacheable request, and a direct-to-origin request, and explain how TTL, invalidation, and content cacheability determine the cache hit ratio."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "Compare",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Latency and round-trip time",
+      "HTTP request and response",
+      "Caching and time to live (TTL)"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 535
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Predict, test, and compare: one-shot request traces with a persistent latency breakdown and running session totals",
+    "keyQuestions": [
+      "Why is a cache miss slower than sending the request straight to the origin?",
+      "What determines how much a hit saves for a particular user?",
+      "What is the difference between a copy expiring and a copy being invalidated, and what does each do to origin load?",
+      "Which kinds of content lower the cache hit ratio, and what can the architect do about them?"
+    ],
+    "commonMisconceptions": [
+      "A CDN makes every request faster (a miss detours through the PoP and is slower than going direct).",
+      "A copy cached at one PoP is available at all of them (each PoP fills its own cache).",
+      "A long TTL is always better (it raises the hit ratio but serves stale content until it expires or is purged).",
+      "All content can be cached at the edge (personalized responses must come from the origin)."
+    ],
+    "assessmentOpportunities": [
+      "Give students the scenario \"95% of page loads worldwide shall complete the main asset request in under 100 ms\" and ask them to name the two architectural parameters this response measure is most sensitive to (PoP placement and cache hit ratio), state one design change that raises the hit ratio, and explain the staleness risk a longer TTL introduces."
+    ]
+  },
+  "chapter": "15-performance-engineering-scaling",
+  "completion_status": "implemented"
 }

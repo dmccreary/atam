@@ -1,21 +1,66 @@
 {
   "title": "API Versioning and Contract-First Design Patterns",
-  "description": "Students will be able to compare API versioning strategies across dimensions of operational complexity, consumer migration burden, and modifiability cost, and select the most appropriate strategy for a given set of quality attribute priorities.",
-  "creator": "Dementia Education Project",
-  "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
+  "creator": "Dan McCreary",
+  "subject": "Software Architecture",
+  "description": "Compare URL versioning, header versioning, content negotiation, and additive-only evolution for a scenario you choose, see which strategy fits best and what tradeoff it accepts, and walk through the contract-first workflow that keeps changes compatible.",
+  "date": "2026-10-01",
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en-US",
-  "rights": "CC BY 4.0",
+  "rights": "CC BY-NC-SA 4.0",
   "identifier": "api-versioning-explorer",
-  "library": "p5.js",
-  "bloomLevel": "Evaluate (L5) — Assess API versioning strategies to select the approach most appropriate for a given modifiability scenario and consumer ecosystem.",
-  "bloomVerb": "Assess",
-  "completion_status": "scaffold",
-  "chapter_number": 12,
-  "chapter_title": "Distributed Systems Patterns",
-  "chapter_dir": "12-distributed-systems-patterns"
+  "educational": {
+    "gradeLevel": [
+      "Graduate",
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "API versioning strategies and contract-first design",
+    "learningObjectives": [
+      "Students will be able to compare API versioning strategies across dimensions of operational complexity, consumer migration burden, and modifiability cost, and select the most appropriate strategy for a given set of quality attribute priorities."
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "bloomVerb": "Assess",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Service contracts",
+      "Backward and forward compatibility",
+      "HTTP headers and media types"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 540
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Scenario-based evaluation with an explicit scoring model and justification feedback",
+    "keyQuestions": [
+      "Does this change break existing consumers, and if not, why version at all?",
+      "Who are the consumers, and can their upgrade be coordinated?",
+      "Which tradeoff does the recommended strategy accept, and who pays for it?"
+    ],
+    "commonMisconceptions": [
+      "Every API change needs a new version (backward-compatible changes do not).",
+      "The most RESTful strategy is automatically the best one (it is also the most complex).",
+      "Versioning strategy is a URL-design detail rather than a modifiability decision that sets how costly every future change is."
+    ],
+    "assessmentOpportunities": [
+      "Present a scenario (for example, an internal order-events stream that must change a field's type) and ask students to select a versioning strategy, state the tradeoff they accept, and name the contract-first control that enforces it. Grade the justification, not the choice."
+    ]
+  },
+  "chapter": "12-distributed-systems-patterns",
+  "completion_status": "implemented"
 }

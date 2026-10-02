@@ -120,7 +120,7 @@ Before examining the two Saga coordination styles, let us understand the key con
 
 #### Diagram: Saga Pattern Flow Simulator
 
-<iframe src="../../sims/saga-flow-simulator/main.html" width="100%" height="580px" scrolling="no"></iframe>
+<iframe src="../../sims/saga-flow-simulator/main.html" width="100%" height="502px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Saga Transaction Pattern Flow Simulator</summary>
@@ -225,7 +225,7 @@ A **schema registry** is a centralized catalog of event and message schemas, wit
 
 #### Diagram: API Versioning and Contract-First Design Patterns
 
-<iframe src="../../sims/api-versioning-explorer/main.html" width="100%" height="540px" scrolling="no"></iframe>
+<iframe src="../../sims/api-versioning-explorer/main.html" width="100%" height="542px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>API Versioning and Contract-First Design Explorer</summary>

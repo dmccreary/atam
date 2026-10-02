@@ -1,21 +1,69 @@
 {
   "title": "Active-Passive vs. Active-Active Failover",
-  "description": "Active-Passive vs. Active-Active Failover",
-  "creator": "Dementia Education Project",
-  "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
+  "creator": "Dan McCreary",
+  "subject": "Software Architecture",
+  "description": "Step through the loss of a cloud region under active-passive and active-active designs, and see how replication lag sets the recovery point (RPO) and how detection, promotion, and DNS TTL add up to the recovery time (RTO).",
+  "date": "2026-10-02",
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en-US",
-  "rights": "CC BY 4.0",
+  "rights": "CC BY-NC-SA 4.0",
   "identifier": "failover-architecture-explorer",
-  "library": "vis-network",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 16,
-  "chapter_title": "Observability, Reliability, and Cloud Operations",
-  "chapter_dir": "16-observability-reliability"
+  "educational": {
+    "gradeLevel": [
+      "Graduate",
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Multi-region failover, active-passive and active-active deployment, RTO and RPO",
+    "learningObjectives": [
+      "Students will be able to compare active-passive and active-active multi-region architectures by tracing what happens to traffic and data when a region fails, and relate replication lag, detection time, promotion time, and DNS TTL to the RPO and RTO each design achieves."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "Compare",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "RTO and RPO",
+      "Database replication (synchronous and asynchronous)",
+      "DNS and TTL",
+      "Health checks"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 560
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Step-through comparison of one failure under two designs, with parameters tied to the response measures they control",
+    "keyQuestions": [
+      "Which parameter alone determines how much data is lost, and why is it the same in both designs?",
+      "Which step does active-active skip, and what does it pay every day in exchange?",
+      "What must be true of Region B's capacity for an active-active failover to succeed?",
+      "Why might an architect choose a longer detection time on purpose?"
+    ],
+    "commonMisconceptions": [
+      "Active-active means no data loss (RPO is set by replication lag in both designs).",
+      "RTO is the time to promote the standby (detection and DNS cutover are part of it too).",
+      "A standby region guarantees recovery (a failover that has never been rehearsed is a hypothesis).",
+      "Active-active is simply better (it adds write-conflict handling and requires spare capacity in every region)."
+    ],
+    "assessmentOpportunities": [
+      "Give students the scenario \"after the loss of a region, order processing shall resume within 5 minutes with no more than 30 seconds of lost orders\" and ask them to say which design meets it with which parameter values, identify the sensitivity points (replication lag for RPO; promotion time and DNS TTL for RTO), and state the main risk each design introduces."
+    ]
+  },
+  "chapter": "16-observability-reliability",
+  "completion_status": "implemented"
 }

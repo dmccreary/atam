@@ -48,7 +48,7 @@ A second critical concept is the **percentile model of latency distribution**. P
 
 #### Diagram: Performance Metric Relationships
 
-<iframe src="../../sims/performance-metrics-explorer/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/performance-metrics-explorer/main.html" width="100%" height="547px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Performance Metric Relationships Explorer
@@ -150,7 +150,7 @@ The interaction between horizontal scaling and Amdahl's Law is particularly impo
 
 #### Diagram: Vertical vs. Horizontal Scaling Tradeoffs
 
-<iframe src="../../sims/scaling-tradeoff-explorer/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/scaling-tradeoff-explorer/main.html" width="100%" height="502px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Vertical vs. Horizontal Scaling Tradeoffs Explorer
@@ -215,7 +215,7 @@ The CDN **cache hit ratio** is the key performance metric: what fraction of requ
 
 #### Diagram: CDN Request Routing and Cache Flow
 
-<iframe src="../../sims/cdn-architecture-explorer/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/cdn-architecture-explorer/main.html" width="100%" height="537px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>CDN Architecture and Cache Flow Explorer

@@ -145,7 +145,7 @@ Together, these practices produce key quality attribute improvements:
 
 #### Diagram: Cloud-Native Architecture Quality Attribute Stack
 
-<iframe src="../../sims/cloud-native-qa-explorer/main.html" width="100%" height="580px" scrolling="no"></iframe>
+<iframe src="../../sims/cloud-native-qa-explorer/main.html" width="100%" height="542px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Cloud-Native Architecture Quality Attribute Stack</summary>
@@ -244,7 +244,7 @@ This is a genuine ATAM tradeoff point with two competing quality attributes:
 
 #### Diagram: Deployment Strategy Decision Matrix
 
-<iframe src="../../sims/deployment-strategy-selector/main.html" width="100%" height="540px" scrolling="no"></iframe>
+<iframe src="../../sims/deployment-strategy-selector/main.html" width="100%" height="597px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Deployment Strategy Decision Matrix</summary>

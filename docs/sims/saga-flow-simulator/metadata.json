@@ -1,21 +1,66 @@
 {
   "title": "Saga Pattern Flow Simulator",
-  "description": "Students will be able to trace the flow of a Saga transaction through its service steps, identify which compensating transactions are required for each step, and determine what system state results from a partial failure at each point in the Saga.",
-  "creator": "Dementia Education Project",
-  "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
+  "creator": "Dan McCreary",
+  "subject": "Software Architecture",
+  "description": "Step through a choreography-based saga for placing an order across Order, Inventory, Payment, and Shipping services, inject a failure at any step, and trace the compensating transactions that run in reverse order.",
+  "date": "2026-10-01",
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en-US",
-  "rights": "CC BY 4.0",
+  "rights": "CC BY-NC-SA 4.0",
   "identifier": "saga-flow-simulator",
-  "library": "p5.js",
-  "bloomLevel": "Apply (L3) — Use the Saga pattern to trace a distributed transaction through its steps and compensation logic.",
-  "bloomVerb": "Trace",
-  "completion_status": "scaffold",
-  "chapter_number": 12,
-  "chapter_title": "Distributed Systems Patterns",
-  "chapter_dir": "12-distributed-systems-patterns"
+  "educational": {
+    "gradeLevel": [
+      "Graduate",
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Saga pattern, choreography, and compensating transactions",
+    "learningObjectives": [
+      "Students will be able to trace the flow of a Saga transaction through its service steps, identify which compensating transactions are required for each step, and determine what system state results from a partial failure at each point in the Saga."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "Trace",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "ACID transactions",
+      "Publish/subscribe messaging",
+      "Two-Phase Commit and its limits"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 500
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Step-through worked example with failure injection and predict-then-check",
+    "keyQuestions": [
+      "If the transaction at step N fails, which compensating transactions must run, and in what order?",
+      "What intermediate states are visible to other requests while the saga is in progress?",
+      "Why is a compensating transaction not the same as a database rollback?"
+    ],
+    "commonMisconceptions": [
+      "A saga rolls back like an ACID transaction (it commits each step and later compensates).",
+      "The service whose transaction failed must also compensate (its local transaction aborted, so it has nothing to undo).",
+      "A saga provides isolation (other requests can observe the intermediate states)."
+    ],
+    "assessmentOpportunities": [
+      "Ask students to add a fifth participant, a Loyalty Service that awards points after payment, and to write its forward transaction, its compensating transaction, and the events it must publish and subscribe to. Then ask what happens if the compensation itself fails."
+    ]
+  },
+  "chapter": "12-distributed-systems-patterns",
+  "completion_status": "implemented"
 }

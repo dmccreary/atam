@@ -1,21 +1,66 @@
 {
   "title": "Security Architecture Layers",
-  "description": "Students will be able to map STRIDE threat categories to the defense-in-depth layers that address them, identify security layer gaps, and determine which attacks would succeed if a specific layer were absent.",
-  "creator": "Dementia Education Project",
-  "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
+  "creator": "Dan McCreary",
+  "subject": "Software Architecture",
+  "description": "Concentric defense-in-depth rings (perimeter, transport, authentication, authorization, data, monitoring) with six attack arrows: remove a layer to see which attacks get further, and use the STRIDE gap finder to see which threat categories depend on a single layer.",
+  "date": "2026-10-01",
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en-US",
-  "rights": "CC BY 4.0",
+  "rights": "CC BY-NC-SA 4.0",
   "identifier": "security-architecture-layers",
-  "library": "p5.js",
-  "bloomLevel": "Analyze (L4) — Examine how defense-in-depth layers address specific STRIDE threat categories and identify which layers are missing or insufficient.",
-  "bloomVerb": "Examine",
-  "completion_status": "scaffold",
-  "chapter_number": 14,
-  "chapter_title": "Security Architecture",
-  "chapter_dir": "14-security-architecture"
+  "educational": {
+    "gradeLevel": [
+      "Graduate",
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Defense in depth and STRIDE coverage by security layer",
+    "learningObjectives": [
+      "Students will be able to map STRIDE threat categories to the defense-in-depth layers that address them, identify security layer gaps, and determine which attacks would succeed if a specific layer were absent."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "Examine",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "STRIDE threat categories",
+      "Authentication versus authorization",
+      "Encryption in transit and at rest"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 575
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "What-if analysis: remove a layer, observe which attacks get further, then check coverage by threat category",
+    "keyQuestions": [
+      "If this layer were absent, which attacks would reach the data, and which would another layer still stop?",
+      "Which STRIDE categories are addressed by more than one layer, and which by only one?",
+      "What does monitoring contribute when it does not block anything?"
+    ],
+    "commonMisconceptions": [
+      "A strong perimeter is enough (stolen credentials, stolen tokens, and insiders pass straight through it).",
+      "Encryption in transit also protects against injection (TLS protects the channel, not the payload).",
+      "Monitoring is optional because it blocks nothing (without it a successful attack goes unnoticed)."
+    ],
+    "assessmentOpportunities": [
+      "Describe a system that has a WAF, TLS, and role-based access control but no MFA, no encryption at rest, and no central logging. Ask students which of the six attacks succeed, which STRIDE categories are uncovered, and which single addition they would make first and why."
+    ]
+  },
+  "chapter": "14-security-architecture",
+  "completion_status": "implemented"
 }

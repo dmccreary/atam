@@ -1,21 +1,66 @@
 {
   "title": "Cloud-Native Architecture Quality Attribute Stack",
-  "description": "Students will be able to identify at least three quality attribute contributions and one quality attribute risk at each layer of the cloud-native technology stack.",
-  "creator": "Dementia Education Project",
-  "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
+  "creator": "Dan McCreary",
+  "subject": "Software Architecture",
+  "description": "Interactive layer diagram of the cloud-native stack (IaaS, containers, Kubernetes, infrastructure as code, application and service mesh) showing which quality attributes each layer supports and which it puts at risk.",
+  "date": "2026-10-01",
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en-US",
-  "rights": "CC BY 4.0",
+  "rights": "CC BY-NC-SA 4.0",
   "identifier": "cloud-native-qa-explorer",
-  "library": "p5.js",
-  "bloomLevel": "Analyze (L4) — Examine how each layer of the cloud-native stack contributes to specific quality attributes and introduces specific risks.",
-  "bloomVerb": "Examine",
-  "completion_status": "scaffold",
-  "chapter_number": 13,
-  "chapter_title": "Cloud-Native Architecture",
-  "chapter_dir": "13-cloud-native-architecture"
+  "educational": {
+    "gradeLevel": [
+      "Graduate",
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Quality attribute contributions and risks of the cloud-native technology stack",
+    "learningObjectives": [
+      "Students will be able to identify at least three quality attribute contributions and one quality attribute risk at each layer of the cloud-native technology stack."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "Examine",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "Containers and orchestration basics",
+      "Infrastructure as code",
+      "Quality attribute vocabulary"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 540
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Structured comparison: examine each layer, then trace one attribute across layers",
+    "keyQuestions": [
+      "Which quality attributes does each layer support, and through what mechanism?",
+      "Which attribute is put at risk at the most layers?",
+      "Where does one layer compensate for a weakness introduced by another?"
+    ],
+    "commonMisconceptions": [
+      "Adopting Kubernetes makes a system available and scalable by itself (probes, replicas, and capacity still have to be designed).",
+      "Each layer only adds benefits (every layer also adds complexity or overhead).",
+      "Containers isolate workloads as strongly as virtual machines (they share the host kernel)."
+    ],
+    "assessmentOpportunities": [
+      "Remove one layer (for example, \"the team deploys containers by hand, with no orchestrator\") and ask students which supported attributes are lost, which risks disappear, and whether the result is a risk or a non-risk for a stated availability scenario."
+    ]
+  },
+  "chapter": "13-cloud-native-architecture",
+  "completion_status": "implemented"
 }

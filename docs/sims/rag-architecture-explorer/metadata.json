@@ -1,21 +1,68 @@
 {
   "title": "RAG vs. GraphRAG Architecture Comparison",
-  "description": "RAG vs. GraphRAG Architecture Comparison",
-  "creator": "Dementia Education Project",
-  "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
+  "creator": "Dan McCreary",
+  "subject": "Software Architecture",
+  "description": "Trace one question through a flat RAG pipeline and a GraphRAG pipeline side by side, compare the context each one retrieves and the answer it can support, and inspect the purpose, latency, and quality risks of every component.",
+  "date": "2026-10-02",
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en-US",
-  "rights": "CC BY 4.0",
+  "rights": "CC BY-NC-SA 4.0",
   "identifier": "rag-architecture-explorer",
-  "library": "vis-network",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 17,
-  "chapter_title": "AI and Machine Learning System Architecture",
-  "chapter_dir": "17-ai-ml-system-architecture"
+  "educational": {
+    "gradeLevel": [
+      "Graduate",
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Retrieval-augmented generation, GraphRAG, vector search, knowledge graph traversal, and latency budgets",
+    "learningObjectives": [
+      "Students will be able to compare flat RAG and GraphRAG by tracing a query through each pipeline, explain why vector similarity alone misses multi-hop facts, and identify the latency and quality risks each added component introduces."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "Compare",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Embeddings and vector similarity search",
+      "Knowledge graphs and triples",
+      "LLM prompts and context windows"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 575
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Side-by-side worked example with the retrieved data visible, a step-through trace, and click-to-inspect component details",
+    "keyQuestions": [
+      "Why can a fact be essential to the answer and still not be similar to the question?",
+      "What does GraphRAG need that flat RAG does not, and who has to build and maintain it?",
+      "Which step dominates the latency budget in both pipelines, and what does that imply for optimizing retrieval?",
+      "For which kinds of questions is the knowledge graph not worth its cost?"
+    ],
+    "commonMisconceptions": [
+      "Retrieval finds what is relevant (it finds what is similar to the question; the two can differ).",
+      "GraphRAG is always better (for single-fact questions it adds cost and latency and no information).",
+      "Retrieval is the slow part (generation dominates the latency budget).",
+      "An incomplete context produces an obviously wrong answer (it usually produces a fluent, plausible, incomplete one)."
+    ],
+    "assessmentOpportunities": [
+      "Give students three questions about a product catalog (a single-fact lookup, a comparison of two items, and a question that needs a chain of three relationships) and ask them to say for each one whether flat RAG is likely to be sufficient, justify the answer in terms of what similarity search can retrieve, and name the component whose failure would most damage the answer."
+    ]
+  },
+  "chapter": "17-ai-ml-system-architecture",
+  "completion_status": "implemented"
 }

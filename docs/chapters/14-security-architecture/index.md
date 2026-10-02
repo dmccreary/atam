@@ -90,7 +90,7 @@ Before a STRIDE analysis can proceed, the team must define the **attack surface*
 
 #### Diagram: STRIDE Threat Model Explorer
 
-<iframe src="../../sims/stride-threat-explorer/main.html" width="100%" height="560px" scrolling="no"></iframe>
+<iframe src="../../sims/stride-threat-explorer/main.html" width="100%" height="572px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>STRIDE Threat Model Explorer</summary>
@@ -208,7 +208,7 @@ ATAM sensitivity point: TLS version and cipher suite configuration. TLS 1.2 and 
 
 #### Diagram: Security Architecture Layers
 
-<iframe src="../../sims/security-architecture-layers/main.html" width="100%" height="560px" scrolling="no"></iframe>
+<iframe src="../../sims/security-architecture-layers/main.html" width="100%" height="577px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Security Architecture Defense-in-Depth Layers</summary>

@@ -1,21 +1,66 @@
 {
   "title": "Vertical vs. Horizontal Scaling Tradeoffs",
-  "description": "Vertical vs. Horizontal Scaling Tradeoffs",
-  "creator": "Dementia Education Project",
-  "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
+  "creator": "Dan McCreary",
+  "subject": "Software Architecture",
+  "description": "Compare scaling up with scaling out for a workload: see the cost curve and hard ceiling of a bigger machine next to the Amdahl's Law throughput curve of more machines, and how many months each strategy lasts at a chosen growth rate.",
+  "date": "2026-10-01",
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en-US",
-  "rights": "CC BY 4.0",
+  "rights": "CC BY-NC-SA 4.0",
   "identifier": "scaling-tradeoff-explorer",
-  "library": "p5.js",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 15,
-  "chapter_title": "Performance Engineering and Scaling",
-  "chapter_dir": "15-performance-engineering-scaling"
+  "educational": {
+    "gradeLevel": [
+      "Graduate",
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Vertical and horizontal scaling, Amdahl's Law, and capacity planning",
+    "learningObjectives": [
+      "Students will be able to compare vertical and horizontal scaling for a given workload by relating the cost curve and size ceiling of scaling up to the Amdahl's Law limit of scaling out, and estimate how long each strategy lasts at a given growth rate."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "Compare",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Amdahl's Law",
+      "Vertical and horizontal scaling",
+      "Throughput and capacity"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 500
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Side-by-side comparison with parameter exploration and a stated interpretation to test against",
+    "keyQuestions": [
+      "What is the non-parallelizable fraction of this workload, and what limit does it set?",
+      "Which strategy runs out first at this growth rate, and what would extend it?",
+      "What does each strategy cost at the current load, and what does a single machine failure remove?"
+    ],
+    "commonMisconceptions": [
+      "Adding servers always adds proportional capacity (the serial fraction caps the speedup).",
+      "Vertical scaling is always the expensive option (at small sizes it costs about the same and needs no redesign).",
+      "A workload's parallelizable fraction is fixed (sharding, partitioning, and removing shared state raise it)."
+    ],
+    "assessmentOpportunities": [
+      "Give students a scenario (for example, \"a stateful service at 5,000 requests per second growing 20% per month, with a measured serial fraction of 15%\") and ask for the Amdahl limit, whether scaling out can carry the load in six months, and the ATAM finding they would record (risk, sensitivity point, or tradeoff point) with a justification."
+    ]
+  },
+  "chapter": "15-performance-engineering-scaling",
+  "completion_status": "implemented"
 }

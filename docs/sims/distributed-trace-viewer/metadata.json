@@ -1,45 +1,66 @@
 {
   "title": "Distributed Tracing Visualization",
   "creator": "Dan McCreary",
-  "subject": "High School Geometry",
-  "description": "Interactive MicroSim for distributed tracing visualization",
-  "date": "2026-06-03",
+  "subject": "Software Architecture",
+  "description": "Interactive p5.js waterfall of a slow checkout request across nine services: click spans, compare against a fast baseline, and highlight the critical path to find the root cause of the latency.",
+  "date": "2026-10-01",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "identifier": "distributed-trace-viewer",
   "educational": {
     "gradeLevel": [
-      "9",
-      "10",
-      "11",
-      "12"
+      "Graduate",
+      "Adult"
     ],
-    "subjectArea": "Mathematics",
-    "topic": "Distributed Tracing Visualization",
+    "subjectArea": "Computer Science",
+    "topic": "Distributed tracing and latency diagnosis",
     "learningObjectives": [
-      "TODO: Add learning objectives"
+      "Students will be able to read a distributed trace waterfall diagram, identify the critical path spans contributing most to total latency, and diagnose the root cause of a latency issue from trace data."
     ],
-    "bloomsTaxonomy": "Create",
-    "duration": "10-15 minutes",
-    "prerequisites": [],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "Examine",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Microservice request flows",
+      "Latency and response time",
+      "Cache hits and misses"
+    ],
     "standards": []
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.0",
+    "version": "1.11.10",
     "canvasDimensions": {
       "width": "responsive",
-      "height": 450
+      "height": 550
     },
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "p5.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
+      "hasAltText": true,
       "keyboardNavigable": false
     }
   },
   "pedagogical": {
-    "teachingStrategy": "Interactive exploration",
-    "keyQuestions": [],
-    "commonMisconceptions": [],
-    "assessmentOpportunities": []
+    "teachingStrategy": "Analysis of a worked case: inspect, compare against a baseline, and rank contributors",
+    "keyQuestions": [
+      "Which span is the root cause of the regression, and which spans merely inherit its delay?",
+      "Why is a span's self time more useful than its duration when looking for a bottleneck?",
+      "Which contributor can the team remove, and which can it only contain?"
+    ],
+    "commonMisconceptions": [
+      "The longest bar is the root cause (parent spans are long because their children are long).",
+      "A fast span cannot be the trigger of a latency problem (the 15 ms cache miss causes the 190 ms query).",
+      "The largest contributor is always the thing to fix (external latency may be outside the team's control)."
+    ],
+    "assessmentOpportunities": [
+      "Give students the scenario \"95th percentile checkout response time shall not exceed 500 ms\" and ask them to name the two findings in this trace, classify each as an ATAM risk or sensitivity point, and propose one tactic for each."
+    ]
   },
-  "chapter": "11-distributed-systems-fundamentals"
+  "chapter": "11-distributed-systems-fundamentals",
+  "completion_status": "implemented"
 }

@@ -1,21 +1,66 @@
 {
   "title": "Performance Metric Relationships",
-  "description": "Performance Metric Relationships",
-  "creator": "Dementia Education Project",
-  "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
+  "creator": "Dan McCreary",
+  "subject": "Software Architecture",
+  "description": "Move arrival rate, service time, and concurrency limit sliders to see how throughput, response time, queue depth, and p50/p95/p99 latency are tied together by Little's Law, and what happens when the queue saturates.",
+  "date": "2026-10-01",
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en-US",
-  "rights": "CC BY 4.0",
+  "rights": "CC BY-NC-SA 4.0",
   "identifier": "performance-metrics-explorer",
-  "library": "p5.js",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 15,
-  "chapter_title": "Performance Engineering and Scaling",
-  "chapter_dir": "15-performance-engineering-scaling"
+  "educational": {
+    "gradeLevel": [
+      "Graduate",
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Latency, throughput, concurrency, and Little's Law",
+    "learningObjectives": [
+      "Students will be able to use Little's Law to relate arrival rate, response time, and the number of requests in a system, and predict when a concurrency limit saturates and tail latency grows."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "Use",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Latency, response time, and throughput",
+      "Percentiles (p50, p95, p99)",
+      "Concurrency limits such as thread or connection pools"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 545
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Parameter exploration with predict-then-check against a live calculation",
+    "keyQuestions": [
+      "How many workers does this workload need on average, and how much headroom does the limit leave?",
+      "Why does p99 grow so much faster than p50 as utilization rises?",
+      "What are the two levers for reducing response time, according to Little's Law?"
+    ],
+    "commonMisconceptions": [
+      "A system at 90% utilization still has 10% to spare (waiting time is already growing steeply).",
+      "Average response time describes what users experience (the tail can be several times the median).",
+      "Throughput keeps rising with load (it is capped at capacity once the system saturates)."
+    ],
+    "assessmentOpportunities": [
+      "Give students a response measure (for example, \"p95 response time under 200 ms at 300 requests per second\") and a 60 ms service time. Ask for the offered load, the minimum concurrency that is stable, a limit that meets the measure in this model, and the assumption they would most want to verify with a load test."
+    ]
+  },
+  "chapter": "15-performance-engineering-scaling",
+  "completion_status": "implemented"
 }

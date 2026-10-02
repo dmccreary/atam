@@ -1,21 +1,68 @@
 {
   "title": "Availability Architecture Analyzer",
-  "description": "Availability Architecture Analyzer",
-  "creator": "Dementia Education Project",
-  "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
+  "creator": "Dan McCreary",
+  "subject": "Software Architecture",
+  "description": "Build a system from stages in series and replicas in parallel, then read its availability, nines, downtime per year and month, expected outages, weakest link, and whether it meets an SLO target.",
+  "date": "2026-10-02",
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en-US",
-  "rights": "CC BY 4.0",
+  "rights": "CC BY-NC-SA 4.0",
   "identifier": "availability-architecture-explorer",
-  "library": "p5.js",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 16,
-  "chapter_title": "Observability, Reliability, and Cloud Operations",
-  "chapter_dir": "16-observability-reliability"
+  "educational": {
+    "gradeLevel": [
+      "Graduate",
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Series and parallel availability, nines and downtime, MTBF and MTTR, and SLO compliance",
+    "learningObjectives": [
+      "Students will be able to calculate the availability of a system built from components in series and in parallel, convert it to downtime per year, identify the weakest link, and determine whether the design meets an availability SLO."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "Calculate",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Availability as a percentage of time",
+      "MTBF and MTTR",
+      "Service level objectives"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 535
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Worked calculator: build, predict, check, and repair a design against a target",
+    "keyQuestions": [
+      "Why is a chain of components less available than its least available member?",
+      "Why does a second replica help so much, and what assumption is that gain built on?",
+      "Which stage limits the system now, and is it the one with the lowest availability figure?",
+      "Two designs have the same availability. What else would you want to know before choosing between them?"
+    ],
+    "commonMisconceptions": [
+      "A system is as available as its best (or its average) component (in series the availabilities multiply, so it is worse than the worst).",
+      "The weakest link is the component with the lowest availability figure (it is often the one with no redundancy).",
+      "Adding replicas always gives the calculated gain (only if they fail independently).",
+      "Availability tells you how outages feel (the same percentage can be many short outages or a few long ones, depending on MTTR)."
+    ],
+    "assessmentOpportunities": [
+      "Give students the scenario \"the order service shall be available 99.95% of the time, measured over a year\" and a five-stage design, and ask them to compute the system availability, state the annual downtime budget and whether the design fits inside it, identify the weakest link, and name one assumption in the calculation that an ATAM evaluation team should challenge."
+    ]
+  },
+  "chapter": "16-observability-reliability",
+  "completion_status": "implemented"
 }

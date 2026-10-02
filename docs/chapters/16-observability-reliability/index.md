@@ -62,7 +62,7 @@ The value of distributed tracing for ATAM performance analysis is direct: tracin
 
 #### Diagram: Distributed Tracing Waterfall View
 
-<iframe src="../../sims/distributed-trace-explorer/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/distributed-trace-explorer/main.html" width="100%" height="572px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Distributed Tracing Waterfall Explorer
@@ -154,7 +154,7 @@ The table immediately reveals something important: achieving five or six nines r
 
 #### Diagram: Availability Architecture Analyzer
 
-<iframe src="../../sims/availability-architecture-explorer/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/availability-architecture-explorer/main.html" width="100%" height="537px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Availability Architecture Analyzer
@@ -221,7 +221,7 @@ The architectural choice between active-passive and active-active is one of the 
 
 #### Diagram: Active-Passive vs. Active-Active Failover
 
-<iframe src="../../sims/failover-architecture-explorer/main.html" width="100%" height="520px" scrolling="no"></iframe>
+<iframe src="../../sims/failover-architecture-explorer/main.html" width="100%" height="562px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Failover Architecture Pattern Explorer

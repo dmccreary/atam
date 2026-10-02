@@ -1,21 +1,68 @@
 {
   "title": "ML Pipeline Architecture Flow",
-  "description": "ML Pipeline Architecture Flow",
-  "creator": "Dementia Education Project",
-  "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
+  "creator": "Dan McCreary",
+  "subject": "Software Architecture",
+  "description": "Click through the nine stages of a machine learning pipeline to see the quality attribute risks, failure modes, and ATAM sensitivity points of each, compare batch, online, and streaming inference, and step through a drift alert and the retraining loop.",
+  "date": "2026-10-02",
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en-US",
-  "rights": "CC BY 4.0",
+  "rights": "CC BY-NC-SA 4.0",
   "identifier": "ml-pipeline-explorer",
-  "library": "vis-network",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 17,
-  "chapter_title": "AI and Machine Learning System Architecture",
-  "chapter_dir": "17-ai-ml-system-architecture"
+  "educational": {
+    "gradeLevel": [
+      "Graduate",
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Machine learning pipeline architecture, serving modes, model drift, and continuous training",
+    "learningObjectives": [
+      "Students will be able to examine a machine learning pipeline stage by stage, relate each stage to the quality attribute risks and sensitivity points it introduces, and compare how batch, online, and streaming inference change where those risks fall."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "Examine",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Stages of a machine learning pipeline",
+      "Feature store and model registry",
+      "ATAM sensitivity points"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 470
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Guided exploration of a clickable architecture diagram with a mode comparison and a short step-through of the drift and retraining loop",
+    "keyQuestions": [
+      "Which stages are on the request path in online inference, and what does that do to their risk?",
+      "Where can training and serving disagree about a feature, and which component exists to prevent it?",
+      "Why does a drifting model raise no ordinary alarm?",
+      "Which gates must a retrained model pass before it replaces the one in production?"
+    ],
+    "commonMisconceptions": [
+      "The model is the risky part of an ML system (most risks sit in the data stages and in monitoring).",
+      "Deployment is the end of the pipeline (monitoring and retraining make it a loop).",
+      "If infrastructure metrics are healthy, the model is healthy (drift degrades quality without raising errors).",
+      "Serving mode is an implementation detail (it moves the risks to different stages)."
+    ],
+    "assessmentOpportunities": [
+      "Give students a short description of an ML system (for example, an online fraud scoring service retrained monthly) and ask them to write two quality attribute scenarios for it, name the pipeline stage each scenario is most sensitive to, and state what would detect model drift and what would trigger retraining."
+    ]
+  },
+  "chapter": "17-ai-ml-system-architecture",
+  "completion_status": "implemented"
 }

@@ -1,21 +1,66 @@
 {
   "title": "Deployment Strategy Decision Matrix",
-  "description": "Students will be able to select the most appropriate deployment strategy for a given set of quality attribute priorities (rollback speed, zero-downtime requirement, cost tolerance, traffic validation need) and justify the selection with tradeoff analysis.",
-  "creator": "Dementia Education Project",
-  "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
+  "creator": "Dan McCreary",
+  "subject": "Software Architecture",
+  "description": "Set your needs for zero downtime, rollback speed, low cost, and live-traffic validation, then see which deployment strategy (blue-green, canary, rolling update, or recreate) has the smallest gap, what tradeoff it accepts, and how its release unfolds phase by phase.",
+  "date": "2026-10-01",
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en-US",
-  "rights": "CC BY 4.0",
+  "rights": "CC BY-NC-SA 4.0",
   "identifier": "deployment-strategy-selector",
-  "library": "p5.js",
-  "bloomLevel": "Evaluate (L5) — Assess deployment strategies to select the approach that best fits a given set of quality attribute requirements and constraints.",
-  "bloomVerb": "Assess",
-  "completion_status": "scaffold",
-  "chapter_number": 13,
-  "chapter_title": "Cloud-Native Architecture",
-  "chapter_dir": "13-cloud-native-architecture"
+  "educational": {
+    "gradeLevel": [
+      "Graduate",
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Blue-green, canary, rolling, and recreate deployment strategies",
+    "learningObjectives": [
+      "Students will be able to select the most appropriate deployment strategy for a given set of quality attribute priorities (rollback speed, zero-downtime requirement, cost tolerance, traffic validation need) and justify the selection with tradeoff analysis."
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "bloomVerb": "Assess",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Load balancers and traffic routing",
+      "Kubernetes Deployments and rolling updates",
+      "Deployability and availability scenarios"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 595
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Commit-then-compare evaluation with a transparent gap model and a stepped process walk-through",
+    "keyQuestions": [
+      "Which of your stated needs does each strategy fail to meet, and by how much?",
+      "What does the recommended strategy cost you that the runner-up would not?",
+      "During the release, how long do two versions serve users at the same time, and what does that require of the data schema?"
+    ],
+    "commonMisconceptions": [
+      "Zero-downtime strategies are interchangeable (they differ in rollback speed, cost, and how much real traffic validates the release).",
+      "A rolling update is a canary release (its traffic share is a side effect of the instance count, not a controlled, monitored experiment).",
+      "Blue-green is always the safest choice (it validates nothing with live traffic before all users switch)."
+    ],
+    "assessmentOpportunities": [
+      "Give a deployability scenario (for example, \"a defective release must be reverted within one minute with no failed customer requests\") and ask students to choose a strategy, name the tradeoff accepted, and classify the decision as a risk or a non-risk for that scenario."
+    ]
+  },
+  "chapter": "13-cloud-native-architecture",
+  "completion_status": "implemented"
 }

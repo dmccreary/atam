@@ -1,88 +1,78 @@
 ---
 title: Saga Pattern Flow Simulator
-description: Students will be able to trace the flow of a Saga transaction through its service steps, identify which compensating transactions are required for each step, and determine what system state results from a partial failure at each point in the Saga.
-status: scaffold
-library: p5.js
-bloom_level: Apply (L3) — Use the Saga pattern to trace a distributed transaction through its steps and compensation logic.
+description: Step through a choreography-based saga for placing an order across Order, Inventory, Payment, and Shipping services, inject a failure at any step, and trace the compensating transactions that run in reverse order.
+image: /sims/saga-flow-simulator/saga-flow-simulator.png
+og:image: /sims/saga-flow-simulator/saga-flow-simulator.png
+twitter:image: /sims/saga-flow-simulator/saga-flow-simulator.png
+social:
+   cards: false
+quality_score: 0
 ---
 
 # Saga Pattern Flow Simulator
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="502" width="100%" scrolling="no"></iframe>
 
-## Learning Objective
+[Run the Saga Pattern Flow Simulator MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
+<br/>
+[Edit in the p5.js Editor](https://editor.p5js.org/)
 
-Students will be able to trace the flow of a Saga transaction through its service steps, identify which compensating transactions are required for each step, and determine what system state results from a partial failure at each point in the Saga.
+## About This MicroSim
 
-- **Bloom Level:** Apply (L3) — Use the Saga pattern to trace a distributed transaction through its steps and compensation logic.
-- **Bloom Verb:** Trace
-- **Library:** p5.js
+This MicroSim steps through a **choreography-based saga**: an e-commerce order that spans four services, each with its own database. There is no central coordinator and no distributed lock. Each service runs one **local transaction** (T1 to T5), commits it, and publishes an event; the next service reacts to that event. The sim shows every service's status (Pending, Processing, Committed, Failed, Compensating, Compensated), the data it currently holds, and the payload of the event that was just published.
 
-## Preview
+Press **Inject Failure** while a service is processing and its local transaction aborts. The services that already committed must then run **compensating transactions** (C3 refund the charge, C2 release the stock, C1 reject the order) in reverse order, each triggered by the previous service's event. A compensation is a new transaction that semantically undoes an earlier one; it is not a rollback, which is why a refunded charge still appears in the payment history. Between steps the system is visibly in an intermediate state (stock reserved but not yet paid for), which is the isolation that a saga gives up in exchange for availability.
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+In an **orchestration-based** saga the same transactions and compensations would run, but a central orchestrator would send a command to each service and decide what to do next, instead of the services reacting to each other's events. Order numbers, amounts, and IDs are illustrative.
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+## How to Use
 
-## Specification
+1. Press **Next Step** to run one local transaction at a time. Watch the active service's status change and read the event payload on the right.
+2. After step 1, 2, or 3 a service is shown as **PROCESSING**. Press **Inject Failure** to make that service's transaction fail instead of commit.
+3. Keep pressing **Next Step** to run each compensating transaction. Red arrows above the services carry the failure and compensation events.
+4. Read the **Log** line to see the order in which transactions and compensations ran, and the saga badge for the overall outcome.
+5. Press **Reset** and fail a different step. Compare how many compensations each failure point requires.
 
-The full specification below is extracted from
-[Chapter 12: Distributed Systems Patterns](../../chapters/12-distributed-systems-patterns/index.md).
+## Iframe Embed Code
 
-```text
-Type: microsim
-**sim-id:** saga-flow-simulator<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
+You can add this MicroSim to any web page by adding this to your HTML:
 
-Purpose: Interactive simulation of a choreography-based Saga transaction (e-commerce order placement spanning inventory, payment, and shipping services), showing the happy path and compensation path when a step fails.
-
-Bloom Level: Apply (L3) — Use the Saga pattern to trace a distributed transaction through its steps and compensation logic.
-Bloom Verb: Trace
-
-Learning Objective: Students will be able to trace the flow of a Saga transaction through its service steps, identify which compensating transactions are required for each step, and determine what system state results from a partial failure at each point in the Saga.
-
-Canvas layout:
-- Three service boxes horizontally: Inventory Service, Payment Service, Shipping Service
-- Horizontal event flow arrows between services
-- Transaction steps numbered 1-6 along the flow
-- Status indicators per service: Pending / Processing / Committed / Compensating / Compensated
-- A "Saga State" panel showing the overall Saga status (In Progress / Succeeded / Compensating / Failed)
-- A step-by-step navigator: "Next Step" button and "Inject Failure" button
-
-Happy path steps:
-1. Order Service creates Order [PENDING] and publishes OrderCreated event
-2. Inventory Service receives OrderCreated, reserves inventory, publishes InventoryReserved
-3. Payment Service receives InventoryReserved, charges credit card, publishes PaymentProcessed
-4. Shipping Service receives PaymentProcessed, creates shipment, publishes ShipmentCreated
-5. Order Service receives ShipmentCreated, marks Order [CONFIRMED]
-
-Compensation path (if Payment fails at Step 3):
-3a. PaymentService fails, publishes PaymentFailed
-4a. Inventory Service receives PaymentFailed, releases reservation, publishes InventoryReleased
-5a. Order Service marks Order [CANCELLED]
-
-Interactive controls:
-- "Next Step" advances through the Saga one step at a time
-- "Inject Failure" (available at each step) simulates a failure at the current step, triggering compensation
-- "Reset" returns to initial state
-- Step-by-step mode shows event payloads for each arrow
-
-Data Visibility Requirements:
-- Always show each service's current state (pending/processing/committed/compensating/compensated)
-- Show the event payload when an arrow is active
-- When compensation is triggered, highlight the compensation arrows in red
-- Show the Saga's overall success/failure status prominently
-
-Instructional Rationale: Step-by-step simulation with failure injection is appropriate for Apply because students must trace both the forward and compensation paths with concrete steps, not just understand the concept abstractly.
-
-Color scheme: Blue for forward flow arrows, Red for compensation arrows. Green for Committed states, Orange for Compensating, Gray for Compensated.
-
-Responsive: Service boxes resize proportionally; flow arrows adapt to container width.
+```html
+<iframe src="https://dmccreary.github.io/atam/sims/saga-flow-simulator/main.html"
+        height="502"
+        width="100%"
+        scrolling="no"></iframe>
 ```
 
-## Related Resources
+## Lesson Plan
 
-- [Chapter 12: Distributed Systems Patterns](../../chapters/12-distributed-systems-patterns/index.md)
+### Grade Level
+Graduate / Professional
+
+### Duration
+15-20 minutes
+
+### Prerequisites
+Local ACID transactions, event-driven messaging (publish/subscribe), and why Two-Phase Commit is avoided across microservices.
+
+### Bloom's Taxonomy Level
+Apply (L3)
+
+### Learning Objective
+Students will be able to trace the flow of a Saga transaction through its service steps, identify which compensating transactions are required for each step, and determine what system state results from a partial failure at each point in the Saga.
+
+### Activities
+
+1. **Happy path** (4 min): Students step through all five transactions and, after each step, state what an outside observer could see (for example, stock reserved but card not yet charged).
+2. **Predict, then fail** (8 min): For each of the three failure points, students first write the list of compensations they expect, in order, then inject the failure and check their list against the Log line.
+3. **Compensation is not rollback** (4 min): Students explain why the payment step ends as "Refunded $59.98" rather than "No charge", and name one saga step that could not be compensated at all (for example, an email already sent).
+4. **Choreography vs. orchestration** (4 min): Students redraw the payment-failure path with a central orchestrator and list one quality attribute each style supports and one it threatens.
+
+### Assessment
+Ask students to add a fifth participant, a Loyalty Service that awards points after payment, and to write its forward transaction, its compensating transaction, and the events it must publish and subscribe to. Then ask what happens if the compensation itself fails.
+
+## References
+
+1. Garcia-Molina, H., & Salem, K. (1987). Sagas. *Proceedings of the 1987 ACM SIGMOD International Conference on Management of Data*, 249-259.
+2. Richardson, C. (2018). *Microservices Patterns*. Manning. (Chapter 4: Managing transactions with sagas.)
+3. Bass, L., Clements, P., & Kazman, R. (2021). *Software Architecture in Practice* (4th ed.). Addison-Wesley.

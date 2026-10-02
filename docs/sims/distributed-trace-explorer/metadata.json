@@ -1,21 +1,68 @@
 {
-  "title": "Distributed Tracing Waterfall View",
-  "description": "Distributed Tracing Waterfall View",
-  "creator": "Dementia Education Project",
-  "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
+  "title": "Distributed Trace Latency What-If Explorer",
+  "creator": "Dan McCreary",
+  "subject": "Software Architecture",
+  "description": "Set the latency of each service in a five-span product page trace and watch the waterfall, the critical path, the slack of the parallel branch, and a simulated p95 respond, to find the sensitivity points of a response time scenario.",
+  "date": "2026-10-02",
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en-US",
-  "rights": "CC BY 4.0",
+  "rights": "CC BY-NC-SA 4.0",
   "identifier": "distributed-trace-explorer",
-  "library": "p5.js",
-  "bloomLevel": "TBD",
-  "bloomVerb": "TBD",
-  "completion_status": "scaffold",
-  "chapter_number": 16,
-  "chapter_title": "Observability, Reliability, and Cloud Operations",
-  "chapter_dir": "16-observability-reliability"
+  "educational": {
+    "gradeLevel": [
+      "Graduate",
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Distributed tracing, critical path, latency budgets, and ATAM sensitivity points",
+    "learningObjectives": [
+      "Students will be able to predict how a change in one service's latency changes the end-to-end duration of a trace, differentiate spans on the critical path from spans with slack, and identify the sensitivity points of a response time scenario."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "Differentiate",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Spans, traces, and waterfall views",
+      "Latency percentiles (p50, p95)",
+      "ATAM sensitivity points"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 570
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Predict-then-test parameter exploration on a model with one parallel branch, with the critical path and slack made explicit",
+    "keyQuestions": [
+      "Which spans can slow down without slowing the request, and by how much?",
+      "Why does optimizing a span that is not on the critical path fail to improve response time?",
+      "Why is the estimated p95 so much higher than the single trace, and why is it lower than the sum of the spans' own p95 values?",
+      "Which architectural decision would you record as a sensitivity point for this scenario?"
+    ],
+    "commonMisconceptions": [
+      "Every slow span slows the request (a span with slack does not).",
+      "The total is the sum of all span durations (parallel calls overlap, and a parent span already contains its children).",
+      "The slowest service is always the one to optimize (only if it is on the critical path).",
+      "Percentiles add up across spans (the p95 of a sum is not the sum of the p95s)."
+    ],
+    "assessmentOpportunities": [
+      "Give students the scenario \"the product page shall respond within 250 ms at p95\" and a set of slider values, and ask them to list the sensitivity points, state which span has slack and how much, and say whether speeding up the Recommendation Service would help. A correct answer ties each claim to the critical path."
+    ]
+  },
+  "chapter": "16-observability-reliability",
+  "completion_status": "implemented"
 }

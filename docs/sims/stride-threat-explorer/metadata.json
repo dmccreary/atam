@@ -1,21 +1,66 @@
 {
   "title": "STRIDE Threat Model Explorer",
-  "description": "Students will be able to apply the STRIDE framework to a system's data flow diagram, identifying at least one threat from each STRIDE category for the depicted system.",
-  "creator": "Dementia Education Project",
-  "date": "2026-06-03",
-  "subject": [
-    "dementia"
-  ],
+  "creator": "Dan McCreary",
+  "subject": "Software Architecture",
+  "description": "Apply STRIDE to a data flow diagram of a healthcare patient portal: select any component or data flow, read the threat in each applicable category, and record a mitigation for it while a tracker shows which of the six categories you have covered.",
+  "date": "2026-10-01",
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en-US",
-  "rights": "CC BY 4.0",
+  "rights": "CC BY-NC-SA 4.0",
   "identifier": "stride-threat-explorer",
-  "library": "p5.js",
-  "bloomLevel": "Apply (L3) — Use the STRIDE framework to identify threats at specific components and data flows in a system architecture.",
-  "bloomVerb": "Use (Apply STRIDE)",
-  "completion_status": "scaffold",
-  "chapter_number": 14,
-  "chapter_title": "Security Architecture",
-  "chapter_dir": "14-security-architecture"
+  "educational": {
+    "gradeLevel": [
+      "Graduate",
+      "Adult"
+    ],
+    "subjectArea": "Computer Science",
+    "topic": "Threat modeling with STRIDE on a data flow diagram",
+    "learningObjectives": [
+      "Students will be able to apply the STRIDE framework to a system's data flow diagram, identifying at least one threat from each STRIDE category for the depicted system."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "Use",
+    "duration": "20-25 minutes",
+    "prerequisites": [
+      "Confidentiality, integrity, availability, non-repudiation",
+      "STRIDE categories",
+      "Data flow diagrams and trust boundaries"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 570
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": false
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Worked application of a framework to a concrete system, with commit-then-reveal mitigations and coverage feedback",
+    "keyQuestions": [
+      "Which STRIDE categories apply to this kind of element, and which do not?",
+      "Which security property does each threat violate?",
+      "Which data flows cross a trust boundary, and what changes at the boundary?"
+    ],
+    "commonMisconceptions": [
+      "Every STRIDE category applies to every element (a data flow has no identity to spoof and no privileges to elevate).",
+      "Traffic inside the trusted zone needs no protection (internal flows still face tampering and disclosure).",
+      "A threat model is finished once each category has one threat (coverage of categories is a minimum, not completeness)."
+    ],
+    "assessmentOpportunities": [
+      "Give students a new element (for example, an appointment-reminder service that sends SMS messages) and ask for one threat per applicable STRIDE category with a mitigation each, plus one security scenario written in six-part form."
+    ]
+  },
+  "chapter": "14-security-architecture",
+  "completion_status": "implemented"
 }

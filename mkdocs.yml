@@ -148,8 +148,8 @@ nav:
     - Communication Style Tradeoff Explorer: sims/communication-style-explorer/index.md
     - Deployment Strategy Decision Matrix: sims/deployment-strategy-selector/index.md
     - Distributed System Component Explorer: sims/distributed-system-explorer/index.md
+    - Distributed Trace Latency What-If Explorer: sims/distributed-trace-explorer/index.md
     - Distributed Tracing Visualization: sims/distributed-trace-viewer/index.md
-    - Distributed Tracing Waterfall View: sims/distributed-trace-explorer/index.md
     - Federated Learning Architecture: sims/federated-learning-explorer/index.md
     - Interactive Technology Radar: sims/technology-radar-explorer/index.md
     - Lambda vs. Kappa Architecture Comparison: sims/data-architecture-patterns/index.md

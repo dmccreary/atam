@@ -1,55 +1,61 @@
 ---
 title: Responsible AI Architecture Components
-description: Responsible AI Architecture Components
-status: scaffold
-library: p5.js
-bloom_level: TBD
+description: Interactive p5.js MicroSim for responsible ai architecture components.
+image: /sims/responsible-ai-explorer/responsible-ai-explorer.png
+og:image: /sims/responsible-ai-explorer/responsible-ai-explorer.png
+twitter:image: /sims/responsible-ai-explorer/responsible-ai-explorer.png
+social:
+   cards: false
+quality_score: 0
 ---
 
 # Responsible AI Architecture Components
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="450px" width="100%" scrolling="no"></iframe>
 
-## Learning Objective
+[Run the Responsible AI Architecture Components MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
+<br/>
+[Edit in the p5.js Editor](https://editor.p5js.org/)
 
-TBD
+## About This MicroSim
 
-- **Bloom Level:** TBD
-- **Bloom Verb:** TBD
-- **Library:** p5.js
+TODO: Describe what this MicroSim demonstrates.
 
-## Preview
+## How to Use
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+TODO: Describe how students should interact with this MicroSim.
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+## Iframe Embed Code
 
-## Specification
+You can add this MicroSim to any web page by adding this to your HTML:
 
-The full specification below is extracted from
-[Chapter 17: AI and Machine Learning System Architecture](../../chapters/17-ai-ml-system-architecture/index.md).
-
-```text
-Type: Interactive framework diagram
-**sim-id:** responsible-ai-explorer<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
-
-**Purpose:** Interactive map of responsible AI architectural requirements across the five dimensions (fairness, safety, transparency, accountability, privacy), showing which architectural components address which requirements.
-
-**Controls:**
-- Hover over each dimension → highlights which architectural components address it
-- Click each architectural component → shows: purpose, implementation examples, ATAM quality attribute mapping
-- "Compliance Gap Analysis" mode: highlights requirements that the current architecture does not address
-
-**Display:**
-- Radar chart showing coverage across five responsible AI dimensions
-- Risk matrix: unaddressed requirements plotted by likelihood × impact
-- Regulatory requirement mapper (GDPR, EU AI Act, ECOA)
+```html
+<iframe src="https://dmccreary.github.io/atam/sims/responsible-ai-explorer/main.html"
+        height="450px"
+        width="100%"
+        scrolling="no"></iframe>
 ```
 
-## Related Resources
+## Lesson Plan
 
-- [Chapter 17: AI and Machine Learning System Architecture](../../chapters/17-ai-ml-system-architecture/index.md)
+### Grade Level
+9-12 (High School Geometry)
+
+### Duration
+10-15 minutes
+
+### Prerequisites
+TODO: List prerequisites.
+
+### Activities
+
+1. **Exploration** (5 min): TODO
+2. **Guided Practice** (5 min): TODO
+3. **Assessment** (5 min): TODO
+
+### Assessment
+TODO: List assessment criteria.
+
+## References
+
+1. TODO: Add references.
